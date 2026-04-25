@@ -25,14 +25,42 @@ The course is structured around four modules, each ending in a real, presentable
 
 ## Calendar
 
-- **First day of classes:** Mon Aug 17, 2026
-- **Labor Day (no class):** Mon Sep 1
-- **Veterans Day:** Tue Nov 11 (no class impact, both M/W meetings preserved — confirm campus observance)
+- **First day of classes:** Tue Aug 18, 2026 *(semester starts Tuesday — Week 1 has no Monday meeting)*
+- **Labor Day (no class):** Mon Sep 7
+- **Veterans Day (no class):** Wed Nov 11
 - **Fall recess:** Nov 23–27
 - **Last day of classes:** Fri Dec 5
 - **Finals week:** Dec 7–12
 
-**Total class meetings:** 29 (14 full weeks + Wed-only Week 3)
+### Week-by-week meeting calendar
+
+| Wk | Mon | Wed | Status |
+|---|---|---|---|
+| 1 | — | Aug 19 | Wed only (semester starts Tue Aug 18) |
+| 2 | Aug 24 | Aug 26 | full |
+| 3 | Aug 31 | Sep 2 | full |
+| 4 | ~~Sep 7~~ Labor Day | Sep 9 | Wed only |
+| 5 | Sep 14 | Sep 16 | full |
+| 6 | Sep 21 | Sep 23 | full |
+| 7 | Sep 28 | Sep 30 | full |
+| 8 | Oct 5 | Oct 7 | full |
+| 9 | Oct 12 | Oct 14 | full |
+| 10 | Oct 19 | Oct 21 | full |
+| 11 | Oct 26 | Oct 28 | full |
+| 12 | Nov 2 | Nov 4 | full |
+| 13 | Nov 9 | ~~Nov 11~~ Veterans Day | Mon only |
+| 14 | Nov 16 | Nov 18 | full |
+| — | Fall recess | Nov 23–27 | no class |
+| 15 | Nov 30 | Dec 2 | full |
+| Finals | Dec 7–12 | | |
+
+**Total class meetings:** 27 (12 full weeks + 3 single-day weeks)
+
+### Pacing notes
+
+- **Week 1 is intentionally a single Wed session** (orientation + setup) — content fits the half-week comfortably.
+- **Week 4 loses its Monday** (Labor Day) — falls during Module 2 (editing/mixing). Concepts that would have been introduced Monday are handled in the Wednesday lab.
+- **Week 13 loses its Wednesday** (Veterans Day) — falls during Module 4b (MIDI/synth). Reduces hands-on time slightly; students should have foundational MIDI competency by then.
 
 ---
 
