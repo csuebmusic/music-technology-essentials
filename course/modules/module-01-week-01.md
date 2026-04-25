@@ -25,15 +25,16 @@ By the end of this single session, students should be able to:
 1. Locate, open, and navigate Finder; understand file paths, folders, and basic keyboard shortcuts
 2. Connect to the lab NAS and locate their personal student folder
 3. Save files using the course naming convention
-4. Identify the headphone jack, MIDI keyboard, and audio interface at their station and connect them correctly
-5. Verify their audio setup using Audio MIDI Setup
-6. Record a short audio clip and save it to the correct location
+4. Identify each piece of gear at their station (USB hub, audio interface, mic, MIDI keyboard, headphones) and connect them correctly
+5. Set the three knobs on an audio interface (gain, main, headphone) in the correct order, starting from zero
+6. Use a software level meter to set mic gain at a usable level
+7. Record a short audio clip through the full signal chain and save it to the correct location
 
 ---
 
 ## Session plan (Wed Aug 19, 100 minutes)
 
-### Block 1 — Welcome & framing (3:00–3:15)
+### Block 1 — Welcome & framing (3:00–3:10)
 
 - Instructor introduction
 - Quick overview of the course: what we'll do, when projects are due, how the semester is shaped
@@ -41,20 +42,20 @@ By the end of this single session, students should be able to:
 - The vibe: hands-on, project-based, no prior experience expected
 - Where to find everything: Canvas (announcements, grades), GitHub repo (course materials, handouts), NAS (working files)
 
-### Block 2 — Mac & Finder fundamentals (3:15–3:50)
+### Block 2 — Mac & Finder fundamentals (3:10–3:40)
 
 Task-based, not lecture. TA demos each step on the projector, then students do it.
 
-- Opening Finder; understanding the menu bar
+- Opening Finder; understanding the menu bar, Dock, Desktop
 - Folders, files, and paths
 - Essential keyboard shortcuts: `Cmd+C`, `Cmd+V`, `Cmd+X`, `Cmd+Z`, `Cmd+S`, `Cmd+Shift+N` (new folder), `Cmd+Space` (Spotlight)
-- Taking a screenshot: `Cmd+Shift+4` (region), `Cmd+Shift+5` (options)
-- Where downloads go; how to find them
+- Taking a screenshot: `Cmd+Shift+4` (region)
+- The "don't save to Desktop" rule (Desktop is wiped periodically)
 - Show/hide file extensions (Finder → Settings → Advanced — turn extensions ON)
 
-**Practical exercise:** Each student opens the local handout (`/Users/Shared/Downloads/01-first-day-setup.pdf` — pre-loaded by the TA), takes a screenshot of their Desktop, and saves it.
+**Practical exercise:** Each student opens the local handout (`/Users/Shared/Downloads/01-first-day-setup.pdf` — pre-loaded by the TA), makes a throwaway folder on the Desktop, takes a screenshot, drags it into the folder, and deletes the folder.
 
-### Block 3 — Connecting to the NAS (3:50–4:10)
+### Block 3 — Connecting to the NAS (3:40–4:00)
 
 - What a NAS is, in plain terms: shared storage for the lab
 - Connecting via Finder: `Cmd+K` → `smb://[lab-nas-address]` → log in
@@ -64,31 +65,32 @@ Task-based, not lecture. TA demos each step on the projector, then students do i
 
 **Practical exercise:** Each student connects to the NAS, finds their `lastname/` folder, creates a subfolder `lastname/week-01/`, and confirms they can navigate in and out.
 
-### Block 4 — Plugging in gear (4:10–4:25)
+### Block 4 — Set up gear and make a recording (4:00–4:40)
 
-The lab has varied equipment — different audio interfaces, different MIDI keyboards — all connecting through a single USB hub at each station. The Mac mini itself is mounted behind the monitor and not visible to students. Students need to understand the *categories* of gear, not memorize one specific model.
+This is the day's main event. Students plug in their full signal chain (mic, audio interface, headphones, MIDI keyboard), set their levels, and produce one successful recording. The deliverable for the day comes out of this block.
 
-- The USB hub: where everything plugs in; do not unplug the hub itself
-- The audio interface: what it does (analog ↔ digital), where headphones go, where mics would go
-- The MIDI keyboard: what it does (sends note data, no sound on its own), connects via USB hub
-- Headphones: where they plug in (the audio interface)
-- Audio MIDI Setup: open it, find their interface, set it as the system input/output
+The pedagogical arc is the full signal chain in miniature: physical sound → mic → cable → interface → gain → software → file. Students will return to every link in this chain across the semester. Day 1 is the first time they touch all of it.
 
-**Practical exercise:** Each student plugs in their gear into the hub at their station, opens Audio MIDI Setup, and verifies that their audio interface is recognized and selected.
+**Order of operations (matters — don't shortcut):**
 
-### Block 5 — Hello world: record and save (4:25–4:40)
+1. **All three interface knobs to zero** (gain, main/output, headphone) — protects ears and gear before anything is plugged in
+2. **Plug in:** audio interface USB → hub; mic XLR → interface; MIDI keyboard USB → hub; headphones → interface headphone jack
+3. **Headphone in-line slider all the way up** (the in-line slider on the headphone cable — common cause of confusion later)
+4. **Verify in Audio MIDI Setup**, set as system input/output
+5. **Open QuickTime → File → New Audio Recording**, select interface from dropdown
+6. **Bring up monitoring**: headphone knob to ~25%, then main knob to ~25%
+7. **Set the gain** by talking into the mic and watching QuickTime's level meter — target is meter moving regularly but not pinning the right edge
+8. **Record** name + one word, **listen back**, **save** as `lastname-hello.m4a` to `lastname/week-01/` on NAS
 
-The point of this exercise is to prove the whole chain works: gear plugged in → audio captured → file saved in the right place with the right name.
-
-**Practical exercise:**
-
-1. Open QuickTime Player (`Cmd+Space` → "QuickTime")
-2. File → New Audio Recording
-3. Click the dropdown next to the record button and select the audio interface
-4. Record yourself saying your name and one word about why you're taking this class
-5. Save as `lastname-hello.m4a` in your `lastname/week-01/` folder on the NAS
+**Light touch on gain staging.** This is a foundational concept in the course, but Day 1 isn't where it gets the full treatment. For today, students should leave knowing:
+- The three knobs exist and what each does in one sentence
+- The order to turn them up (gain last)
+- The visual meter is the goal — moving but not pinned
+- We'll return to gain staging properly in Module 3
 
 Before students leave, the TA confirms each file landed correctly by opening the NAS folder on the projector.
+
+**Fallback if gear is broken:** If a student's mic, interface, or hub isn't working and can't be quickly fixed, they record using QuickTime's built-in mic (no interface) and save the file as normal. The TA fixes the gear after class. Day 1 success = file in the right place; the full signal chain is the goal but not the requirement.
 
 ---
 

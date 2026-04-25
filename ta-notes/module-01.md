@@ -14,9 +14,12 @@ Do all of this **at least one day in advance** of Aug 19, ideally two:
 - [ ] Confirm every student has a NAS account and a `lastname/` folder pre-created
 - [ ] Get the list of student last names from the registrar; pre-create folders matching exactly (lowercase, hyphenate any spaces)
 - [ ] Write the NAS server address on the whiteboard before class starts
-- [ ] Place `01-first-day-setup.pdf` (exported from `handouts/01-first-day-setup.md`) into `/Users/Shared/Downloads/` on every lab machine
+- [ ] Place `01-first-day-setup.pdf` (exported from `handouts/01-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
+- [ ] Walk through every station: confirm USB hub works, audio interface is recognized, mic and XLR cable are at the station, MIDI keyboard is at the station, headphones are at the station with the in-line slider all the way up
+- [ ] Test-record at one station end-to-end (mic → interface → QuickTime → NAS) to confirm the full chain works
 - [ ] Walk through the entire session yourself end-to-end on a lab machine the day before, as if you were a student. Time yourself. This will surface every broken thing.
-- [ ] Have a backup plan if the NAS is down: students save locally to `~/Desktop/lastname/week-01/` and you'll move files later. **Do not cancel the session over a network issue.**
+- [ ] Have a backup plan if the NAS is down: students save locally to a temp folder you'll move later. **Do not cancel the session over a network issue.**
+- [ ] Have at least one spare hub, one spare XLR cable, and one spare set of headphones available in case something fails during class
 
 ---
 
@@ -37,7 +40,7 @@ The right pacing: **slow enough that the slowest student keeps up, with side-tas
 
 ## Block-by-block notes
 
-### Block 1 — Welcome (15 min)
+### Block 1 — Welcome (10 min)
 
 - Introduce yourself briefly. Say you're a grad student in [program], working with Inés.
 - Don't read the syllabus aloud — just tell them where to find it (Canvas) and what's on it (4 modules, one project per module, a midterm and a final).
@@ -46,7 +49,7 @@ The right pacing: **slow enough that the slowest student keeps up, with side-tas
 
 **Do not** spend this block on classroom rules or grading policies. Those go on Canvas. Day 1 is for hands-on energy.
 
-### Block 2 — Mac & Finder (35 min)
+### Block 2 — Mac & Finder (30 min)
 
 This is the longest single block. Pace it carefully.
 
@@ -107,49 +110,73 @@ smith-soundpiece-v1.wav
 
 Drill the rules: lowercase, hyphens, no spaces, no special characters. **Tell them why:** different operating systems and different software treat capitalization, spaces, and special characters inconsistently. A file named `My Project (final!).wav` will eventually break something.
 
-### Block 4 — Plug in gear (15 min)
+### Block 4 — Set up gear and make a recording (40 min)
+
+This is the day's main event. Students plug in their full signal chain, set their levels, and produce one successful recording. Combine what was previously two blocks — the pedagogical arc is one continuous activity.
 
 The lab has different audio interfaces and MIDI keyboards across stations, all connecting through a USB hub on each desk. The Mac mini itself is mounted behind the monitor and students never see or touch it. Teach categories, not specific models.
 
-**Point at the USB hub.** Explain: *"Everything plugs into this hub. The hub is already connected to the computer behind your monitor. Don't unplug the hub — just plug your gear into the open ports on it."*
+**Time-keeping note.** This block runs 40 minutes, which is tight for what it covers. Demo each step on the projector, then circulate while students do it themselves. Don't move to the next step until most of the room is caught up.
 
-**Hold up an audio interface.** Say what it does in one sentence: *"This converts analog audio (sound from a microphone, or sound to your headphones) into digital audio that the computer can work with, and back."* Show where headphones plug in. Show where mics will plug in (you don't need to plug a mic in today).
+#### Step-by-step facilitation
 
-**Hold up a MIDI keyboard.** Say what it does: *"This sends note information to the computer. It doesn't make sound on its own — it's a controller. The sound comes from software."*
+**Show the gear.** Hold up each piece and say what it does in one sentence:
 
-**Have students plug in:**
+- *USB hub:* "Everything plugs into this. It's already connected to the computer behind your monitor. Don't unplug the hub itself."
+- *Audio interface:* "This converts analog audio (sound from a microphone, or sound to your headphones) into digital audio that the computer can work with, and back."
+- *Microphone:* "This is a tabletop mic. It plugs into the audio interface using an XLR cable — the thick three-pin one."
+- *MIDI keyboard:* "This sends note information to the computer. It doesn't make sound on its own — it's a controller. The sound comes from software."
+
+**Knobs to zero first.** Before anything else, have students turn all three interface knobs (gain, main, headphone) all the way down. *Say why:* "If something is set wrong, you can get a sudden loud sound when you plug in. Starting at zero protects your ears and the gear. This is something you'll do for the rest of your life if you keep working with audio."
+
+**Plug everything in (in this order):**
 
 1. Audio interface → USB hub
-2. Headphones → audio interface (headphone jack)
+2. Mic → audio interface front-panel input (XLR)
 3. MIDI keyboard → USB hub
+4. Headphones → headphone jack on the audio interface
 
-**Open Audio MIDI Setup.** `Cmd + Space`, type "Audio MIDI Setup." It opens. Students should see their audio interface listed in the left panel. If they don't:
+**The headphone slider gotcha.** The lab headphones have an in-line volume slider on the cable. Have students slide it all the way up *before* putting headphones on. This is a real Day 1 trap — students think the gear is broken when actually the slider is at zero. Calling it out early saves 10 minutes of confusion.
 
-- Common cause: USB cable not seated properly in the hub. Have them unplug and re-plug into the same hub port.
+**Audio MIDI Setup.** `Cmd + Space`, type "Audio MIDI Setup." It opens. Students should see their audio interface listed.
+
+If they don't:
+- Common cause: USB cable not seated properly. Replug into the same hub port.
 - Common cause: a flaky port on the hub. Try a different port on the same hub.
 - Common cause: interface needs power switch (rare on USB-bus-powered units, common on larger ones).
 - If a whole hub appears dead (multiple devices not recognized), have the student switch stations and flag the hub for replacement.
 
-**Set the interface as system input/output.** In Audio MIDI Setup, right-click the interface → "Use this device for sound input" and "Use this device for sound output." This step is easy to forget and causes confusion in Block 5.
+Right-click the interface → "Use this device for sound input" and "Use this device for sound output." This step is easy to forget and causes confusion later.
 
-### Block 5 — Hello world (15 min)
+**Open QuickTime → New Audio Recording.** Walk students through opening QuickTime, choosing File → New Audio Recording, clicking the dropdown arrow next to the record button, and selecting their audio interface as the source.
 
-The point: every student leaves having saved a file in the right place. This is the win moment.
+**Bring up monitoring.** Have students put headphones on (slider already up — see above), then turn up the headphone knob to ~25% (about a quarter turn), then the main knob to ~25%. They probably won't hear anything yet because gain is still at zero. That's fine.
 
-1. Open QuickTime Player.
-2. File → New Audio Recording.
-3. Click the small dropdown next to the record button and select the audio interface.
-4. Record themselves saying their name and one word about why they're in the class.
-5. Stop, File → Save, name the file `lastname-hello.m4a`, save to `lastname/week-01/` on the NAS.
+**Set the gain — this is the moment.** Have students talk into the mic at normal volume (suggest "count to twenty" or "say what you had for breakfast"). While talking, slowly turn up the gain knob. They watch the QuickTime level meter. Stop when the meter is regularly moving but not pinning the right edge.
 
-**Common confusion:** Students forget to pick their audio interface in QuickTime's dropdown and end up recording from the built-in mic. The recording will still work, but it won't go through the interface they just plugged in. If you're being strict about teaching signal flow, have them re-record. If time is short, accept it — the point is the file lands in the right place.
+This is the first time most students will see input level visually represented. Worth pausing here briefly:
 
-**Common confusion:** Students try to save the file before the NAS folder shows up in the save dialog. Show them how to navigate to the NAS in any save dialog (it's in the Finder sidebar, which appears in save dialogs too).
+> "What you just did is called *gain staging* — setting the input level so the signal is strong enough to be useful, but not so strong that it distorts. It's one of the most important skills in recording, and we'll come back to it properly in Module 3. For today, the rule is: meter moving = good, meter pinned all the way to the right = too hot, turn down."
 
-**Before students leave**, open the NAS folder on the projector and scroll through to confirm every student's file is there. This is a small ritual but it makes the work feel real.
+Don't go deeper than that on Day 1. The temptation will be to teach digital headroom, dBFS, the relationship between input gain and noise floor — save it. Day 1 is the introduction; Module 3 is the proper treatment.
+
+**Record + save.** Hit record, say name + one word, stop, listen back. Save as `lastname-hello.m4a` to NAS at `lastname/week-01/`.
+
+**Common confusions during this block:**
+
+- *"I can't hear anything in the headphones."* — Check in this order: (1) headphone slider on cable all the way up; (2) headphone knob on interface above zero; (3) audio interface set as system output in Audio MIDI Setup; (4) main/output knob above zero.
+- *"My meter isn't moving when I talk."* — Gain knob is at zero, or wrong input is selected in QuickTime, or mic XLR cable not seated properly.
+- *"My meter is pinning red the whole time."* — Gain too high. Turn it down until peaks just stop hitting the right edge.
+- *"My recording sounds quiet."* — Gain was too low when recording. Have them re-record with the gain higher.
+- *"My recording sounds distorted/crunchy."* — Gain was too high (clipping). Re-record with the gain lower.
+- *"I forgot to pick the audio interface in QuickTime."* — They recorded through the Mac mini's nonexistent built-in mic and got nothing, or got something through the wrong source. Have them re-record.
+- *"I can't find the NAS in the save dialog."* — The NAS appears in the sidebar of save dialogs the same way it does in Finder. Show them the sidebar.
+
+**Fallback if gear is genuinely broken.** If a station has a hardware problem you can't fix in 5 minutes, have the student record through QuickTime's built-in option (which on a Mac mini may mean the monitor's mic, or no mic at all). The point is they leave with a file on the NAS. Fix the gear after class. Day 1 success = file in the right place.
+
+**Before students leave**, open the NAS folder on the projector and scroll through to confirm every student's file is there. This is a small ritual but makes the work feel real.
 
 If a student's file isn't there:
-
 - Don't single them out publicly. Quietly help them after class or in office hours.
 - Most often the issue is they saved locally instead of to the NAS. Have them drag the file into the NAS folder.
 
@@ -170,7 +197,9 @@ If a student's file isn't there:
 - **"I saved it but I can't find it."** — They saved to a default location like Desktop or Documents instead of the NAS. Walk them through Recents in Finder to find the file, then drag it.
 - **"My screenshot didn't work."** — They held the wrong key combination. `Cmd + Shift + 4` to drag a region. The screenshot lands on Desktop.
 - **"Audio MIDI Setup is empty."** — The interface isn't seated properly. Replug.
-- **"I can't hear anything in the headphones."** — Either the interface isn't selected as system output, or the headphone volume on the interface itself is at zero. Check both.
+- **"I can't hear anything in the headphones."** — Check four things in this order: (1) the in-line slider on the headphone cable is all the way up, (2) the headphone knob on the interface is above zero, (3) the audio interface is selected as system output in Audio MIDI Setup, (4) the main/output knob is above zero.
+- **"My meter isn't moving when I talk."** — Gain knob still at zero, wrong input selected in QuickTime, or XLR cable not seated.
+- **"My recording sounds distorted."** — Gain was too high during recording. Re-record with the gain lower.
 - **"I don't know my last name's spelling on the NAS."** — Send them to the projector list of folders and have them find theirs.
 - **"The NAS folder doesn't have my name."** — Account creation gap. Have them save locally for now; you'll add the folder after class.
 
@@ -181,12 +210,14 @@ If a student's file isn't there:
 If you're behind:
 
 - Cut Block 2 short. Mac fundamentals continue informally throughout the semester. As long as students can find Finder and save a file, the rest can be picked up.
-- The non-negotiable blocks are 3 (NAS), 4 (gear), and 5 (hello world). If you have to drop something, drop the screenshots exercise.
+- Block 4 (gear + recording) is the heart of the day. Don't shortcut the order-of-operations (knobs to zero, slider up, plug in, monitor up, gain last). That sequence is the lesson.
+- If absolutely necessary, accept a less-than-perfect gain setting and let students just get a recording. Module 3 will treat this properly.
 
 If you're ahead:
 
 - Have students record a second clip and save it as `lastname-hello-v2.m4a`. Reinforces the versioning convention.
-- Or have them open Audacity (which will be a focus next week) just to see the icon in Applications.
+- Have them try adjusting the gain too low (recording too quiet) and too high (clipping) to hear the difference. Sets up Module 3.
+- Open Audacity (which will be a focus next week) just to see the icon in Applications.
 
 ---
 

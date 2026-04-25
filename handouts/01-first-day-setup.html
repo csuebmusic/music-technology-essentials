@@ -26,13 +26,13 @@
 <ol class="steps">
   <li>Get comfortable with the Mac and Finder.</li>
   <li>Connect to the class file server (the NAS).</li>
-  <li>Plug in headphones, an audio interface, and a MIDI keyboard.</li>
-  <li>Make a short recording and save it in the right place.</li>
+  <li>Plug in your audio interface, microphone, MIDI keyboard, and headphones.</li>
+  <li>Set your levels and make a short recording — your first piece of work in this class.</li>
 </ol>
 
 <div class="callout">
   <div class="callout-label">A note about the lab</div>
-  <p>The room is <strong>MB2525</strong>, shared between the Music and Art departments. Please leave your station the way you found it. The cables you'll touch are at your station — headphones, audio interface, MIDI keyboard. Don't unplug things from the back of the computer.</p>
+  <p>The room is <strong>MB2525</strong>, shared between the Music and Art departments. Please leave your station the way you found it. The cables you'll touch are at your station — audio interface, mic, headphones, MIDI keyboard. The computer itself is mounted behind the monitor and you won't need to touch it.</p>
 </div>
 
 <hr>
@@ -205,41 +205,55 @@ garcia-fieldrec-traffic.wav</code></pre>
 
 <hr>
 
-<h2>Part 4 — Plug in your gear</h2>
+<h2>Part 4 — Set up your gear and make a recording</h2>
 
-<p>Three things to plug in at your station. Everything goes through a single <strong>USB hub</strong> sitting on your desk — that's the small box with several USB ports on it. The hub is already connected to the computer (which is mounted behind your monitor — you won't see it). Don't unplug the hub from anywhere.</p>
+<p>This is the longest part of today, and the most important. By the end of it, you'll have your gear plugged in, your levels set, and your first audio file saved on the NAS. Take your time. The order of these steps matters — going out of order can mean blasting your ears or recording something that's distorted.</p>
 
-<h3>The audio interface</h3>
+<h3>What's at your station</h3>
 
-<p>This is the small box on your desk with knobs and inputs. It converts analog sound (from a microphone, or to your headphones) into digital sound the computer understands, and back again.</p>
+<p>Four pieces of gear:</p>
 
-<ol class="steps">
-  <li>Find the USB cable coming out of the back of the audio interface.</li>
-  <li>Plug it into any open port on the USB hub.</li>
-</ol>
+<ul>
+  <li><strong>USB hub</strong> — the small box with several USB ports. Already connected to the computer (mounted behind the monitor). Don't unplug the hub from anywhere.</li>
+  <li><strong>Audio interface</strong> — the box with knobs. Converts analog sound (from a mic, or to your headphones) into digital sound the computer can work with.</li>
+  <li><strong>Microphone</strong> — a tabletop mic. Plugged into the audio interface using an XLR cable (the thick three-pin cable).</li>
+  <li><strong>MIDI keyboard</strong> — a small piano-style controller. Sends note information to the computer; doesn't make sound on its own.</li>
+</ul>
 
-<h3>Headphones</h3>
+<h3>Step 1 — Turn the interface knobs all the way down</h3>
 
-<ol class="steps">
-  <li>Find the headphone jack on the audio interface — it's labeled with a headphones icon.</li>
-  <li>Plug your headphones into that jack. <strong>Not into the monitor or anywhere else.</strong></li>
-</ol>
+<p>Before plugging anything in or putting headphones on, find these three knobs on your audio interface and turn each one <strong>all the way down</strong> (counterclockwise, to zero):</p>
 
-<h3>The MIDI keyboard</h3>
-
-<p>The MIDI keyboard is a small piano-style keyboard. It doesn't make sound on its own — it sends note information to the computer, and software makes the sound.</p>
-
-<ol class="steps">
-  <li>Find the USB cable on the MIDI keyboard.</li>
-  <li>Plug it into any open port on the USB hub.</li>
-</ol>
+<ul>
+  <li><strong>Gain knob</strong> (sometimes labeled "Input" or with a number — there's one per input channel). Controls how much the interface boosts the mic signal coming in.</li>
+  <li><strong>Main / Output knob</strong> (sometimes labeled "Monitor" or "Output"). Controls how loud the audio plays back to monitors and headphones.</li>
+  <li><strong>Headphone knob</strong> (labeled with a headphones icon). Controls headphone volume specifically.</li>
+</ul>
 
 <div class="callout">
-  <div class="callout-label">About the gear</div>
-  <p>The lab has different brands and models of audio interfaces and MIDI keyboards at different stations. Don't worry about model numbers. The shapes and ports are similar across all of them, and your TA will help you identify what's at your station.</p>
+  <div class="callout-label">Why all the way down first</div>
+  <p>If a cable is loose or something is set incorrectly, you can get a sudden loud burst of sound when you plug in. Starting with everything at zero protects your ears and the gear. You'll always do this before plugging anything in, for the rest of your life as someone who works with audio.</p>
 </div>
 
-<h3>Verify in Audio MIDI Setup</h3>
+<h3>Step 2 — Plug everything in</h3>
+
+<ol class="steps">
+  <li>Plug the audio interface's USB cable into any open port on the USB hub.</li>
+  <li>Plug the microphone's XLR cable into the input on the front of the audio interface (the round 3-pin socket).</li>
+  <li>Plug the MIDI keyboard's USB cable into any open port on the USB hub.</li>
+  <li>Plug your headphones into the headphone jack on the audio interface (labeled with a headphones icon). <strong>Not into the monitor or the hub.</strong></li>
+</ol>
+
+<h3>Step 3 — Slide the headphone volume control all the way up</h3>
+
+<p>The headphones in the lab have a small in-line volume slider on the cable itself. <strong>Slide it all the way up</strong> right now. We'll control your actual volume from the audio interface knob — but if this slider is anywhere below maximum, you'll hear nothing or barely anything no matter what you do, and you'll think the gear is broken.</p>
+
+<div class="callout warn">
+  <div class="callout-label">If you can't hear anything later</div>
+  <p>Check this slider first. It's the single most common reason people think their headphones aren't working.</p>
+</div>
+
+<h3>Step 4 — Verify the interface is connected</h3>
 
 <ol class="steps">
   <li>Hold <kbd>Cmd</kbd> + <kbd>Space</kbd>. A search bar opens in the middle of the screen.</li>
@@ -247,6 +261,7 @@ garcia-fieldrec-traffic.wav</code></pre>
   <li>On the left, you should see your audio interface listed. (It will have the brand name on it, like "Focusrite Scarlett" or "PreSonus AudioBox.")</li>
   <li>Right-click your interface in the list, and click <strong>Use this device for sound input</strong>.</li>
   <li>Right-click again, and click <strong>Use this device for sound output</strong>.</li>
+  <li>Close Audio MIDI Setup.</li>
 </ol>
 
 <div class="callout warn">
@@ -254,39 +269,60 @@ garcia-fieldrec-traffic.wav</code></pre>
   <p>Unplug the USB cable from the hub, wait a moment, and plug it back into a different port on the hub. If still nothing, raise your hand.</p>
 </div>
 
-<hr>
+<h3>Step 5 — Open QuickTime and start a new audio recording</h3>
 
-<h2>Part 5 — Make your first recording</h2>
-
-<p>This is the proof everything works.</p>
-
-<h3>Open QuickTime Player</h3>
+<p>QuickTime is going to act as our level meter — we'll watch it to see how strong the mic signal is.</p>
 
 <ol class="steps">
-  <li>Hold <kbd>Cmd</kbd> + <kbd>Space</kbd>.</li>
-  <li>Type <strong>QuickTime Player</strong> and press <kbd>return</kbd>.</li>
-  <li>QuickTime opens. (You may see a dialog asking what to open — close it.)</li>
-</ol>
-
-<h3>Start a new audio recording</h3>
-
-<ol class="steps">
+  <li>Hold <kbd>Cmd</kbd> + <kbd>Space</kbd>, type <strong>QuickTime Player</strong>, press <kbd>return</kbd>.</li>
+  <li>QuickTime opens. (If it shows a dialog asking what to open, close it.)</li>
   <li>From the menu bar, click <strong>File</strong>, then <strong>New Audio Recording</strong>.</li>
   <li>A small window appears with a red record button in the middle.</li>
-  <li>Look just to the right of the red button — there's a small downward arrow. Click it.</li>
-  <li>A menu appears showing audio sources. Pick your audio interface (the one you set up in Part 4).</li>
+  <li>Click the small downward arrow just to the right of the red button.</li>
+  <li>From the menu, pick your audio interface as the source.</li>
 </ol>
 
-<h3>Record</h3>
+<p>You'll see a horizontal level meter under the record button. Right now it should be flat — we haven't set the gain yet.</p>
+
+<h3>Step 6 — Bring up your headphone monitoring</h3>
+
+<p>This lets you hear yourself before recording.</p>
+
+<ol class="steps">
+  <li>Put the headphones on.</li>
+  <li>Slowly turn up the <strong>headphone knob</strong> on the interface, about a quarter of the way.</li>
+  <li>Slowly turn up the <strong>main / output knob</strong> on the interface, about a quarter of the way.</li>
+</ol>
+
+<p>You probably still won't hear anything yet — that's because the gain isn't set. That's next.</p>
+
+<h3>Step 7 — Set the gain by talking and watching the meter</h3>
+
+<p>This is where the signal chain comes alive.</p>
+
+<ol class="steps">
+  <li>Speak at normal volume into the mic. Keep talking — say what you had for breakfast, count to twenty, anything.</li>
+  <li>While talking, slowly turn up the <strong>gain knob</strong> on the interface.</li>
+  <li>Watch QuickTime's level meter. As you turn up the gain, the meter will start moving with your voice.</li>
+  <li>Stop turning up when the meter is regularly moving but <strong>never hitting all the way to the right</strong>. Roughly half to two-thirds across is a good target.</li>
+  <li>You should also be hearing yourself in the headphones now. If it's too loud or too quiet, adjust the headphone knob.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">What you're doing</div>
+  <p>You just did <em>gain staging</em> — setting the input level so the signal is strong enough to be useful, but not so strong it distorts. We'll come back to this properly in Module 3 when we focus on recording. For today, the rule is: meter moving = good, meter pinned all the way to the right = too hot, turn down.</p>
+</div>
+
+<h3>Step 8 — Record</h3>
 
 <ol class="steps">
   <li>Click the red record button.</li>
   <li>Say your name and one word about why you're taking this class.</li>
   <li>Click the same button (now a stop button) to stop.</li>
-  <li>Click the small play button to listen back through your headphones. If you hear yourself — it worked.</li>
+  <li>Click the small play button to listen back. If you hear yourself clearly — it worked.</li>
 </ol>
 
-<h3>Save your file</h3>
+<h3>Step 9 — Save the file to the NAS</h3>
 
 <ol class="steps">
   <li>From the menu bar, click <strong>File</strong>, then <strong>Save</strong>.</li>
@@ -297,7 +333,7 @@ garcia-fieldrec-traffic.wav</code></pre>
   <li>Click <strong>Save</strong>.</li>
 </ol>
 
-<p>The file is now on the NAS. Your work is done for the day.</p>
+<p>The file is now on the NAS. You touched the entire audio signal chain to get here — mic, cable, interface, gain, software, file. That's the foundation for everything we'll do this semester.</p>
 
 <hr>
 
