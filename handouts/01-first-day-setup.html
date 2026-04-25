@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 — Your First Day</title>
+  <link rel="stylesheet" href="handout.css">
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Handout 01 · Wed Aug 19, 2026</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 01 · Computer &amp; Studio Fluency</div>
+  <h1>Your First Day</h1>
+  <div class="subtitle">Get set up. Make a sound. Save a file.</div>
+</div>
+
+<p class="lede">Welcome. By the end of class today, you'll have your own folder on the lab server, you'll know how to find it, and you'll have made your first audio file. If anything in this handout looks unfamiliar — that's expected. We'll go through everything together.</p>
+
+<h2>What we're doing today</h2>
+
+<ol class="steps">
+  <li>Get comfortable with the Mac and Finder.</li>
+  <li>Connect to the class file server (the NAS).</li>
+  <li>Plug in headphones, an audio interface, and a MIDI keyboard.</li>
+  <li>Make a short recording and save it in the right place.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">A note about the lab</div>
+  <p>The room is <strong>MB2525</strong>, shared between the Music and Art departments. Please leave your station the way you found it. The cables you'll touch are at your station — headphones, audio interface, MIDI keyboard. Don't unplug things from the back of the computer.</p>
+</div>
+
+<hr>
+
+<h2>Part 1 — The Mac and Finder</h2>
+
+<p>If you've never used a Mac before, this part is for you. If you have, you can use this section as a refresher.</p>
+
+<h3>The basics of the screen</h3>
+
+<ul>
+  <li>The bar across the top is the <strong>menu bar</strong>. The words there change depending on what app you're using.</li>
+  <li>The bar at the bottom (or side) with icons is the <strong>Dock</strong>. Apps live there.</li>
+  <li>The space behind everything is the <strong>Desktop</strong>. Files saved here show up as icons on screen.</li>
+</ul>
+
+<h3>Open Finder</h3>
+
+<ol class="steps">
+  <li>Look at the <strong>Dock</strong> at the bottom of the screen.</li>
+  <li>Find the icon that looks like a blue and white smiley face. That's <strong>Finder</strong>.</li>
+  <li>Click it once. A window opens. This is how you look at files on the computer.</li>
+</ol>
+
+<h3>Make a folder</h3>
+
+<ol class="steps">
+  <li>In the Finder window, click <strong>Desktop</strong> in the left sidebar.</li>
+  <li>From the menu bar at the top, click <strong>File</strong>, then <strong>New Folder</strong>. (Or hold <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>.)</li>
+  <li>A new folder appears called "untitled folder," with the name highlighted.</li>
+  <li>Type <code>test</code> and press <kbd>return</kbd>. The folder is now called <code>test</code>.</li>
+  <li>Double-click <code>test</code> to open it. It's empty. That's fine.</li>
+</ol>
+
+<h3>Take a screenshot</h3>
+
+<ol class="steps">
+  <li>Hold <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> at the same time.</li>
+  <li>Your cursor turns into a small crosshair.</li>
+  <li>Click and drag a rectangle around any part of the screen. When you let go, the screenshot is saved.</li>
+  <li>By default, the screenshot saves to your <strong>Desktop</strong>. Look there — you'll see it.</li>
+</ol>
+
+<h3>Move the screenshot into the folder</h3>
+
+<ol class="steps">
+  <li>Click and hold the screenshot icon on your Desktop.</li>
+  <li>Drag it on top of the <code>test</code> folder.</li>
+  <li>Release. The screenshot disappears from the Desktop and is now inside the folder.</li>
+  <li>Double-click <code>test</code> to confirm it's in there.</li>
+</ol>
+
+<h3>Throw the folder away</h3>
+
+<ol class="steps">
+  <li>Click the <code>test</code> folder once to select it.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>delete</kbd>. The folder moves to the Trash.</li>
+</ol>
+
+<p>You just used Finder. Everything else builds on that.</p>
+
+<h3>Show file extensions</h3>
+
+<p>A <strong>file extension</strong> is the part of a file name after the dot — like <code>.wav</code>, <code>.mp3</code>, <code>.png</code>. By default the Mac hides extensions, which is bad for audio work. Turn them on:</p>
+
+<ol class="steps">
+  <li>Make sure Finder is the active app (click any Finder window).</li>
+  <li>From the menu bar, click <strong>Finder</strong>, then <strong>Settings</strong>.</li>
+  <li>Click the <strong>Advanced</strong> tab.</li>
+  <li>Check the box that says <strong>Show all filename extensions</strong>.</li>
+  <li>Close the Settings window.</li>
+</ol>
+
+<h3>Shortcuts to remember</h3>
+
+<table class="shortcut-table">
+  <thead>
+    <tr><th>Keys</th><th>What it does</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><kbd>Cmd</kbd> + <kbd>C</kbd> / <kbd>Cmd</kbd> + <kbd>V</kbd></td><td>Copy / paste</td></tr>
+    <tr><td><kbd>Cmd</kbd> + <kbd>Z</kbd></td><td>Undo</td></tr>
+    <tr><td><kbd>Cmd</kbd> + <kbd>S</kbd></td><td>Save</td></tr>
+    <tr><td><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd></td><td>New folder (in Finder)</td></tr>
+    <tr><td><kbd>Cmd</kbd> + <kbd>Space</kbd></td><td>Spotlight (search anything)</td></tr>
+    <tr><td><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd></td><td>Screenshot a region</td></tr>
+    <tr><td><kbd>Cmd</kbd> + <kbd>K</kbd></td><td>Connect to a server (in Finder)</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Part 2 — Connecting to the NAS</h2>
+
+<p>The <strong>NAS</strong> is the file server in the lab. Think of it as a giant hard drive that every computer in the room can see at the same time. Your work for this class lives there.</p>
+
+<h3>Connect</h3>
+
+<ol class="steps">
+  <li>Click any empty area of the Desktop, or click a Finder window, so Finder is the active app.</li>
+  <li>Hold <kbd>Cmd</kbd> + <kbd>K</kbd>. A small window opens that says "Connect to Server."</li>
+  <li>Type the server address — your TA will write it on the whiteboard.</li>
+  <li>Click <strong>Connect</strong>.</li>
+  <li>Enter the username and password your TA gives you.</li>
+  <li>Check the box that says <strong>Remember this password in my keychain</strong> so you don't have to type it every time.</li>
+  <li>Click <strong>Connect</strong> again.</li>
+</ol>
+
+<p>The NAS now appears in Finder's sidebar on the left, under <strong>Locations</strong>.</p>
+
+<h3>Find your folder</h3>
+
+<ol class="steps">
+  <li>Click the NAS in Finder's sidebar.</li>
+  <li>Open the <code>music</code> folder.</li>
+  <li>Open the <code>students</code> folder.</li>
+  <li>Find the folder with your last name. That one is yours.</li>
+</ol>
+
+<h3>Make a subfolder for this week</h3>
+
+<ol class="steps">
+  <li>Open your <code>lastname</code> folder.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd> to make a new folder.</li>
+  <li>Name it <code>week-01</code>. Press <kbd>return</kbd>.</li>
+</ol>
+
+<div class="callout warn">
+  <div class="callout-label">If something goes wrong</div>
+  <p>The most common problem is a typo in the server address, or a wrong password. Re-read what's on the whiteboard, retype carefully, and try again. If you still can't connect, raise your hand — your TA will help.</p>
+</div>
+
+<hr>
+
+<h2>Part 3 — File and folder names</h2>
+
+<p>This part is short but important. Bad file names cause real problems later. Follow these rules from Day 1.</p>
+
+<h3>The rules</h3>
+
+<ul>
+  <li><strong>Lowercase only.</strong> No capital letters.</li>
+  <li><strong>Hyphens, not spaces.</strong> Use <code>my-project</code>, not <code>My Project</code>.</li>
+  <li><strong>No special characters.</strong> No <code>&amp;</code>, <code>!</code>, <code>@</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>(</code>, <code>)</code>.</li>
+  <li><strong>Be descriptive.</strong> A good name tells you what's inside without opening it.</li>
+  <li><strong>Use versions.</strong> When you make changes, save as <code>v1</code>, then <code>v2</code>. Don't overwrite.</li>
+</ul>
+
+<h3>The format for this class</h3>
+
+<pre><code>lastname-projectname-version.ext</code></pre>
+
+<p>Examples:</p>
+
+<pre><code>thiebaut-hello.m4a
+smith-soundpiece-v1.wav
+garcia-fieldrec-traffic.wav</code></pre>
+
+<div class="callout">
+  <div class="callout-label">Why these rules</div>
+  <p>Capital letters, spaces, and special characters get treated inconsistently by different software and operating systems. A file named <code>My Project (final!).wav</code> will eventually break something — even if it works on your machine right now. The rules above are the convention used in audio production studios for the same reason.</p>
+</div>
+
+<hr>
+
+<h2>Part 4 — Plug in your gear</h2>
+
+<p>Three things to plug in at your station:</p>
+
+<h3>The audio interface</h3>
+
+<p>This is the small box on your desk with knobs and inputs. It converts analog sound (from a microphone, or to your headphones) into digital sound the computer understands, and back again.</p>
+
+<ol class="steps">
+  <li>Find the USB cable coming out of the back of the audio interface.</li>
+  <li>Plug it into a USB port on the computer. (If the cable has a Type-C end, look for the matching port.)</li>
+</ol>
+
+<h3>Headphones</h3>
+
+<ol class="steps">
+  <li>Find the headphone jack on the audio interface — it's labeled with a headphones icon.</li>
+  <li>Plug your headphones into that jack. <strong>Not into the computer.</strong></li>
+</ol>
+
+<h3>The MIDI keyboard</h3>
+
+<p>The MIDI keyboard is a small piano-style keyboard. It doesn't make sound on its own — it sends note information to the computer, and software makes the sound.</p>
+
+<ol class="steps">
+  <li>Find the USB cable on the MIDI keyboard.</li>
+  <li>Plug it into a USB port on the computer.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">About the gear</div>
+  <p>The lab has different brands and models of audio interfaces and MIDI keyboards at different stations. Don't worry about model numbers. The shapes and ports are similar across all of them, and your TA will help you identify what's at your station.</p>
+</div>
+
+<h3>Verify in Audio MIDI Setup</h3>
+
+<ol class="steps">
+  <li>Hold <kbd>Cmd</kbd> + <kbd>Space</kbd>. A search bar opens in the middle of the screen.</li>
+  <li>Type <strong>Audio MIDI Setup</strong> and press <kbd>return</kbd>. The app opens.</li>
+  <li>On the left, you should see your audio interface listed. (It will have the brand name on it, like "Focusrite Scarlett" or "PreSonus AudioBox.")</li>
+  <li>Right-click your interface in the list, and click <strong>Use this device for sound input</strong>.</li>
+  <li>Right-click again, and click <strong>Use this device for sound output</strong>.</li>
+</ol>
+
+<div class="callout warn">
+  <div class="callout-label">If your interface isn't listed</div>
+  <p>Unplug the USB cable, wait a moment, and plug it back in. If still nothing, try a different USB port. If still nothing, raise your hand.</p>
+</div>
+
+<hr>
+
+<h2>Part 5 — Make your first recording</h2>
+
+<p>This is the proof everything works.</p>
+
+<h3>Open QuickTime Player</h3>
+
+<ol class="steps">
+  <li>Hold <kbd>Cmd</kbd> + <kbd>Space</kbd>.</li>
+  <li>Type <strong>QuickTime Player</strong> and press <kbd>return</kbd>.</li>
+  <li>QuickTime opens. (You may see a dialog asking what to open — close it.)</li>
+</ol>
+
+<h3>Start a new audio recording</h3>
+
+<ol class="steps">
+  <li>From the menu bar, click <strong>File</strong>, then <strong>New Audio Recording</strong>.</li>
+  <li>A small window appears with a red record button in the middle.</li>
+  <li>Look just to the right of the red button — there's a small downward arrow. Click it.</li>
+  <li>A menu appears showing audio sources. Pick your audio interface (the one you set up in Part 4).</li>
+</ol>
+
+<h3>Record</h3>
+
+<ol class="steps">
+  <li>Click the red record button.</li>
+  <li>Say your name and one word about why you're taking this class.</li>
+  <li>Click the same button (now a stop button) to stop.</li>
+  <li>Click the small play button to listen back through your headphones. If you hear yourself — it worked.</li>
+</ol>
+
+<h3>Save your file</h3>
+
+<ol class="steps">
+  <li>From the menu bar, click <strong>File</strong>, then <strong>Save</strong>.</li>
+  <li>A save dialog opens.</li>
+  <li>In the Name field, type <code>lastname-hello</code> (using your actual last name, no caps, no spaces).</li>
+  <li>In the sidebar of the save dialog, find the NAS under <strong>Locations</strong>.</li>
+  <li>Navigate to your <code>lastname</code> folder, then into <code>week-01</code>.</li>
+  <li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p>The file is now on the NAS. Your work is done for the day.</p>
+
+<hr>
+
+<h2>What to remember for next class</h2>
+
+<p>Monday Aug 24 we start the basics of digital audio. Bring:</p>
+
+<ul>
+  <li>The NAS server address (write it down somewhere you'll find it again)</li>
+  <li>Your NAS username</li>
+  <li>The naming convention: lowercase, hyphens, no spaces, no special characters</li>
+  <li>Yourself, on time, ready to go</li>
+</ul>
+
+<p>You don't need to bring anything else.</p>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Handout 01 / 01</span>
+</footer>
+
+</body>
+</html>
