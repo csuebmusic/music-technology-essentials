@@ -66,14 +66,15 @@ Task-based, not lecture. TA demos each step on the projector, then students do i
 
 ### Block 4 — Plugging in gear (4:10–4:25)
 
-The lab has varied equipment — different audio interfaces, different MIDI keyboards. Students need to understand the *categories* of gear, not memorize one specific model.
+The lab has varied equipment — different audio interfaces, different MIDI keyboards — all connecting through a single USB hub at each station. The Mac mini itself is mounted behind the monitor and not visible to students. Students need to understand the *categories* of gear, not memorize one specific model.
 
+- The USB hub: where everything plugs in; do not unplug the hub itself
 - The audio interface: what it does (analog ↔ digital), where headphones go, where mics would go
-- The MIDI keyboard: what it does (sends note data, no sound on its own), how it connects (USB)
-- Headphones: where they plug in (the interface, not the computer)
+- The MIDI keyboard: what it does (sends note data, no sound on its own), connects via USB hub
+- Headphones: where they plug in (the audio interface)
 - Audio MIDI Setup: open it, find their interface, set it as the system input/output
 
-**Practical exercise:** Each student plugs in their gear at their station, opens Audio MIDI Setup, and verifies that their audio interface is recognized and selected.
+**Practical exercise:** Each student plugs in their gear into the hub at their station, opens Audio MIDI Setup, and verifies that their audio interface is recognized and selected.
 
 ### Block 5 — Hello world: record and save (4:25–4:40)
 

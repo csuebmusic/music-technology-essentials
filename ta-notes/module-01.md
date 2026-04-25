@@ -109,7 +109,9 @@ Drill the rules: lowercase, hyphens, no spaces, no special characters. **Tell th
 
 ### Block 4 — Plug in gear (15 min)
 
-The lab has different audio interfaces and MIDI keyboards across stations. Don't try to teach a single model — teach the categories.
+The lab has different audio interfaces and MIDI keyboards across stations, all connecting through a USB hub on each desk. The Mac mini itself is mounted behind the monitor and students never see or touch it. Teach categories, not specific models.
+
+**Point at the USB hub.** Explain: *"Everything plugs into this hub. The hub is already connected to the computer behind your monitor. Don't unplug the hub — just plug your gear into the open ports on it."*
 
 **Hold up an audio interface.** Say what it does in one sentence: *"This converts analog audio (sound from a microphone, or sound to your headphones) into digital audio that the computer can work with, and back."* Show where headphones plug in. Show where mics will plug in (you don't need to plug a mic in today).
 
@@ -117,15 +119,16 @@ The lab has different audio interfaces and MIDI keyboards across stations. Don't
 
 **Have students plug in:**
 
-1. Audio interface → computer (USB)
-2. Headphones → audio interface
-3. MIDI keyboard → computer (USB)
+1. Audio interface → USB hub
+2. Headphones → audio interface (headphone jack)
+3. MIDI keyboard → USB hub
 
 **Open Audio MIDI Setup.** `Cmd + Space`, type "Audio MIDI Setup." It opens. Students should see their audio interface listed in the left panel. If they don't:
 
-- Common cause: USB cable not seated properly. Have them unplug and re-plug.
-- Common cause: wrong USB port (a few stations have flaky ports). Try another.
+- Common cause: USB cable not seated properly in the hub. Have them unplug and re-plug into the same hub port.
+- Common cause: a flaky port on the hub. Try a different port on the same hub.
 - Common cause: interface needs power switch (rare on USB-bus-powered units, common on larger ones).
+- If a whole hub appears dead (multiple devices not recognized), have the student switch stations and flag the hub for replacement.
 
 **Set the interface as system input/output.** In Audio MIDI Setup, right-click the interface → "Use this device for sound input" and "Use this device for sound output." This step is easy to forget and causes confusion in Block 5.
 
@@ -156,7 +159,7 @@ If a student's file isn't there:
 
 - *"Do I need a Mac at home?"* — No. The lab has everything they need. If they want to work outside the lab, an external SSD is enough.
 - *"Can I use my own headphones?"* — Yes. The lab provides them but personal headphones are fine.
-- *"What if my audio interface isn't working?"* — Try: unplug/replug, try another USB port, check Audio MIDI Setup. If still broken, switch stations and report it.
+- *"What if my audio interface isn't working?"* — Try: unplug from the hub, replug into a different hub port, check Audio MIDI Setup. If still broken, switch stations and report it.
 - *"Can I take my files home on a USB drive?"* — Yes, but the NAS is the source of truth for graded work. Always work from the NAS in class.
 - *"Do I need to buy a textbook?"* — No. Course materials are in the GitHub repo and on Canvas.
 
