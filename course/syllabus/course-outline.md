@@ -1,0 +1,196 @@
+# MUS 381 — Essentials of Music Technology
+
+**Course outline — Fall 2026**
+CSU East Bay, Department of Music
+Mondays & Wednesdays, 3:00–4:40 PM
+Lab: MB2525 (2nd floor, Music Building)
+
+---
+
+## Course philosophy
+
+This is an introductory course in music technology for students with little or no prior experience. The goal is to build genuine fluency in core tools and concepts — file management, digital audio, editing, mixing, recording, sample-based production, and DAW work — through hands-on, project-based learning.
+
+The course is structured around four modules, each ending in a real, presentable deliverable. Students listen, analyze, and create in response throughout.
+
+---
+
+## Schedule structure
+
+- **Mondays** — lecture (concept introduction + listening example)
+- **Wednesdays** — lab (guided hands-on tutorial)
+- **Per module** — listening assignment with guided questions
+
+---
+
+## Calendar
+
+- **First day of classes:** Mon Aug 17, 2026
+- **Labor Day (no class):** Mon Sep 1
+- **Veterans Day:** Tue Nov 11 (no class impact, both M/W meetings preserved — confirm campus observance)
+- **Fall recess:** Nov 23–27
+- **Last day of classes:** Fri Dec 5
+- **Finals week:** Dec 7–12
+
+**Total class meetings:** 29 (14 full weeks + Wed-only Week 3)
+
+---
+
+## Module overview
+
+| # | Module | Weeks | Deliverable |
+|---|---|---|---|
+| 1 | Computer & studio fluency | 1 | — (setup) |
+| 2 | Digital audio + editing + mixing in Audacity | 2–5 | **Project 1: Musique concrète–light piece** (Wed Wk 5) |
+| 3 | Recording, sample prep, library building | 6–8 | **Midterm: sample library + terminology exam** (Wk 8) |
+| 4 | Ableton — audio (Wks 9–11) + MIDI/synth (Wks 12–14) | 9–14 | Final project Draft 1 (Wk 14) |
+| — | Revision week | 15 | Final project Draft 2 (Wk 15) |
+| — | Finals | Dec 7–12 | Final exam (cumulative) + final piece uploaded to NAS, posted for class listening |
+
+---
+
+## Module 1 — Computer & studio fluency (Week 1)
+
+**Why this module:** Most students arrive without Mac experience or studio fluency. Before any music-technology content can land, students need to be able to navigate files, plug things in, and find their work. This module is short but essential.
+
+**Topics:**
+- Mac fundamentals: Finder, file paths, keyboard shortcuts
+- File management: folder structures, naming conventions, where things live
+- The lab NAS: connecting, navigating, saving work to the right place
+- Audio MIDI Setup app
+- Connecting MIDI keyboard, audio interface, headphones
+- Submission workflow: NAS for working files, Canvas for graded submissions
+
+**Deliverable:** None — Wednesday lab is a setup and orientation activity. Students leave Week 1 with their NAS folder configured, gear plugged in, and a "hello world" file saved in the right place.
+
+---
+
+## Module 2 — Digital audio + editing + mixing in Audacity (Weeks 2–5)
+
+**Why this module:** Audacity is free, simple, and forces destructive-editing thinking, which is pedagogically useful for learning what edits actually *do*. Starting in Audacity (rather than Ableton) lets students focus on listening and editing without DAW complexity. The musique concrète tradition is the historical and aesthetic anchor — students manipulate existing sound material to create something new.
+
+**Topics:**
+- Digital audio fundamentals: sample rate, bit depth, waveforms, file formats
+- Audacity interface and workflow
+- Editing techniques: cuts, fades, time selection, copy/paste, splitting and arranging
+- Levels and gain staging
+- Basic EQ and dynamics (compression, limiting)
+- Stereo placement and panning
+- Building a piece from sourced material
+
+**Listening:** musique concrète and sound collage tradition (Schaeffer, Henry, more recent examples)
+
+**Source sounds:** Provided on the NAS (`/music/shared/sample-banks/project1/`). Students download, manipulate, and arrange.
+
+**Deliverable: Project 1 — Musique concrète–light piece**
+- 2 minutes maximum
+- Built from server-provided source sounds
+- Demonstrates editing + basic mixing skills
+- Presented during Wednesday lab of Week 5
+
+---
+
+## Module 3 — Recording, sample prep, library building (Weeks 6–8)
+
+**Why this module:** Now that students can edit and arrange, they learn to *generate* their own raw material. This module builds field-recording fundamentals, basic studio recording, and the skill of preparing sounds for later creative use. The deliverable is the library itself — a curated, organized, usable resource the student will draw from for the rest of the semester (and beyond).
+
+**Topics:**
+- Microphones: dynamic vs condenser, polar patterns, basic mic technique
+- Cables and signal flow
+- The audio interface: gain, monitoring, levels
+- Phone-based field recording: practical techniques, what makes a good recording
+- Recording etiquette and ethics (where you can record, what you can record)
+- Sample prep: cropping, normalizing, renaming, tagging
+- Library organization: folder structure, naming conventions, metadata
+
+**Listening:** Field recording and acousmatic tradition (Chris Watson, Hildegard Westerkamp, Francisco López, others)
+
+**Deliverable: Midterm**
+- **Sample library** — minimum [N] sounds, organized in a documented folder structure on the NAS, with naming conventions, prepared and ready for use
+- **Terminology exam** — covers Modules 1–3 vocabulary and concepts
+
+---
+
+## Module 4 — Ableton (Weeks 9–14)
+
+**Why this module:** Ableton is the destination DAW for the course. Six weeks gives students real fluency, not just exposure. The module is split into two halves — audio first (which connects directly to their sample library work from Module 3), then MIDI and synthesis (which opens up a new creative dimension). The split lets students build confidence with familiar material before tackling new abstractions.
+
+### Module 4a — Ableton: audio (Weeks 9–11)
+
+**Topics:**
+- Ableton interface: Session view vs Arrangement view
+- Importing samples and audio files
+- Warping: how it works, when to use it
+- Clip envelopes and basic automation
+- Effects in Ableton: built-in EQ, compressors, reverbs, delays
+- Building a track from the student's own sample library
+
+**Listening:** Producers using sample manipulation (Holly Herndon, Oneohtrix Point Never, hip-hop producers, others)
+
+### Module 4b — Ableton: MIDI + synthesis light touch (Weeks 12–14)
+
+**Topics:**
+- What is MIDI? (data, not sound)
+- MIDI in Ableton: drawing notes, recording from keyboard, editing
+- Ableton instruments: Drum Rack, Simpler, Operator, Wavetable
+- Anatomy of a synth (one lecture): oscillator, filter, envelope, LFO
+- Combining audio and MIDI in arrangement
+
+**Listening:** MIDI as a control layer (Bach inventions to Aphex Twin to electronic dance music)
+
+**Deliverable:**
+- Week 14 (Wed): Final project Draft 1
+- Week 15 (Wed): Final project Draft 2 (after revision based on Draft 1 feedback)
+
+---
+
+## Final project (Weeks 14–15 + Finals)
+
+**Scope:** Open. Students may produce any kind of piece — audio-driven, MIDI-driven, or combined. The piece should demonstrate fluency with the skills built across the semester.
+
+**Process:**
+- **Week 14 Wed:** Draft 1 due. In-class listening and feedback.
+- **Week 15 Wed:** Draft 2 due. Final revision pass.
+- **Finals week:** Final piece uploaded to NAS, final exam (cumulative).
+
+**Sharing:** All final pieces posted to the class folder on the NAS for everyone to hear. Optional SoundCloud upload encouraged for students who want to use the piece in their portfolio.
+
+---
+
+## Assessment overview
+
+| Component | Weight | Notes |
+|---|---|---|
+| Project 1 (musique concrète–light piece) | TBD | Module 2 deliverable |
+| Midterm: sample library + exam | TBD | Module 3 deliverable |
+| Final project (Draft 1 + Draft 2 + final) | TBD | Module 4 deliverable |
+| Final exam (cumulative) | TBD | Finals week |
+| Listening responses | TBD | One per module |
+| Weekly tutorial completion | TBD | Wednesday labs |
+
+*Weights to be finalized.*
+
+---
+
+## Infrastructure notes
+
+- **Working files:** All in-progress work lives on the lab NAS in MB2525. Students cannot work from home unless they bring an external drive.
+- **Submissions:** Final exports for graded work submitted via Canvas; raw working files remain on the NAS.
+- **Software:** Audacity (free, installed on lab machines) and Ableton Live (lab license).
+- **Hardware:** Lab provides MIDI keyboards, audio interfaces, headphones. Students record on phones for field work.
+
+---
+
+## Texts
+
+No required textbook. Course materials, handouts, and interactive tools live in this repository and are made available to students via Canvas / the NAS.
+
+Faculty/TA reference texts (not assigned):
+- Hosken, *An Introduction to Music Technology* (primary reference)
+- Huber, *Modern Recording Techniques* (recording module)
+- Holmes, *Electronic and Experimental Music* (historical/aesthetic context)
+- *The Cambridge Companion to Electronic Music*
+
+---
+
+*This is a living document. Week-by-week plans, handouts, tutorials, and TA notes are developed in adjacent folders within this repository.*
