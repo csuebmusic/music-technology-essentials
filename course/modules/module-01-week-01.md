@@ -55,7 +55,7 @@ Task-based, not lecture. TA demos each step on the projector, then students do i
 - The "don't save to Desktop" rule (Desktop is wiped periodically)
 - Show/hide file extensions (Finder → Settings → Advanced — turn extensions ON)
 
-**Practical exercise:** Each student opens the local handout (`/Users/Shared/Downloads/01-first-day-setup.pdf` — pre-loaded by the TA), makes a throwaway folder on the Desktop, takes a screenshot, drags it into the folder, and deletes the folder.
+**Practical exercise:** Each student opens the local handout (`/Users/Shared/Downloads/01-first-day-setup.pdf` — pre-loaded by the TA), makes a throwaway folder on the Desktop, takes a screenshot, renames it (previewing the naming convention), drags it into the folder, and deletes the folder.
 
 ### Block 3 — Set up folders and connect to the NAS (3:40–4:00)
 

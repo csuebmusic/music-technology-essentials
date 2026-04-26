@@ -60,11 +60,12 @@ This is the longest single block. Pace it carefully.
 - "Open Finder." (Some students don't know what Finder is. Show the smiley-face icon.)
 - "Take a screenshot." (`Cmd+Shift+4`, drag a region.)
 - "Now find that screenshot." (It goes to Desktop by default — this is where many students freeze. Walk them through opening Desktop in Finder.)
+- "Rename it to `my-screenshot`." (Click once to select, press `return`, type, press `return` again.) This previews the naming convention they'll learn properly in Block 3, and gets them comfortable with Finder's rename behavior — students often try to double-click and end up opening the file instead.
 - "Make a new folder called `test`." (Right-click → New Folder, OR `Cmd+Shift+N`.)
 - "Drag the screenshot into the folder."
 - "Now delete the folder." (Drag to Trash, or `Cmd+Delete`.)
 
-That whole sequence in five minutes teaches: Finder, screenshots, Desktop location, folder creation, drag-and-drop, deletion.
+That whole sequence in five minutes teaches: Finder, screenshots, Desktop location, renaming files, folder creation, drag-and-drop, deletion.
 
 **Show file extensions.** This matters more than students realize. Walk them through Finder → Settings → Advanced → "Show all filename extensions." Some students will have the toggle already on; some won't. Make sure everyone leaves with extensions visible.
 
