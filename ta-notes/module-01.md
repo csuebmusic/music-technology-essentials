@@ -83,6 +83,8 @@ This is the make-or-break block. Plan it carefully.
 5. Navigate to `/music/students/`
 6. Find your last name folder
 
+**Important: do not save the password.** When students authenticate, the Mac will offer a checkbox to save the password to the keychain. **Tell students explicitly to leave it unchecked.** Lab machines are shared — saving credentials to the keychain means the next student at that station can connect under someone else's account. Students should type their password each session. The handout doesn't mention this checkbox so students aren't prompted toward it; just call it out verbally if you see anyone hovering over it.
+
 Once students are watching, have them all do it together at the same time. **This is the moment most likely to break.** If it does:
 
 - Common cause: typo in the server address. Have them re-check.
