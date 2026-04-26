@@ -10,6 +10,7 @@ All handouts are HTML, sharing a single stylesheet (`handout.css`) for visual co
 
 - `handout.css` — shared stylesheet for all handouts
 - `01-first-day-setup.html` — Module 1, Wed Aug 19 (first day of class)
+- `02-end-of-session-checklist.html` — End-of-session reference card, used every session
 
 ## Distribution
 

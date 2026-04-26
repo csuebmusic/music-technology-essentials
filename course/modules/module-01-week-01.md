@@ -29,6 +29,7 @@ By the end of this single session, students should be able to:
 5. Set the three knobs on an audio interface (gain, main, headphone) in the correct order, starting from zero
 6. Use a software level meter to set mic gain at a usable level
 7. Record a short audio clip through the full signal chain and save it to the correct location
+8. Run through the end-of-session exit routine: backup, sign-outs, eject, quit, leave the station clean
 
 ---
 
@@ -92,6 +93,8 @@ The pedagogical arc is the full signal chain in miniature: physical sound → mi
 Before students leave, the TA confirms each file landed correctly by opening the NAS folder on the projector.
 
 **Fallback if gear is broken:** If a student's mic, interface, or hub isn't working and can't be quickly fixed, they record using QuickTime's built-in mic (no interface) and save the file as normal. The TA fixes the gear after class. Day 1 success = file in the right place; the full signal chain is the goal but not the requirement.
+
+**Last 3 minutes — exit routine.** TA walks through Handout 02 (End-of-Session Checklist) on the projector. Students do steps 2–6 today (their Day 1 file is already saved on NAS, so step 1 is done). The exit routine becomes habit from Wednesday Aug 26 onward.
 
 ---
 

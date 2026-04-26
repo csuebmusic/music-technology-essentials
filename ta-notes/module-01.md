@@ -15,6 +15,7 @@ Do all of this **at least one day in advance** of Aug 19, ideally two:
 - [ ] Get the list of student last names from the registrar; pre-create folders matching exactly (lowercase, hyphenate any spaces)
 - [ ] Write the NAS server address on the whiteboard before class starts
 - [ ] Place `01-first-day-setup.pdf` (exported from `handouts/01-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
+- [ ] Print `02-end-of-session-checklist.pdf` (exported from `handouts/02-end-of-session-checklist.html`) and post it at every station — laminated if possible. This is the reference card students follow at the end of every session for the rest of the semester.
 - [ ] Walk through every station: confirm USB hub works, audio interface is recognized, mic and XLR cable are at the station, MIDI keyboard is at the station, headphones are at the station with the in-line slider all the way up
 - [ ] Test-record at one station end-to-end (mic → interface → QuickTime → NAS) to confirm the full chain works
 - [ ] Walk through the entire session yourself end-to-end on a lab machine the day before, as if you were a student. Time yourself. This will surface every broken thing.
@@ -191,6 +192,19 @@ Don't go deeper than that on Day 1. The temptation will be to teach digital head
 If a student's file isn't there:
 - Don't single them out publicly. Quietly help them after class or in office hours.
 - Most often the issue is they saved locally instead of to the NAS. Have them drag the file into the NAS folder.
+
+**Teach the exit routine — last 3 minutes of class.** Before dismissing, walk students through the end-of-session checklist on the projector. They have a printed copy at every station (Handout 02) and a section in the Day 1 handout, but verbal reinforcement on Day 1 sets the habit:
+
+1. Save on NAS (already done — the hello file is there)
+2. Copy to `~/Documents/lastname/` (today, this means making the local folder for the first time, then dragging the hello file across)
+3. Sign out of any browser accounts (Canvas, Google, etc.) and quit the browser
+4. Eject the NAS from Finder
+5. Quit all apps with `Cmd + Q`
+6. Knobs to zero, headphones away, chair in
+
+Tell them this is a 2-minute routine they'll do every session for the rest of the semester. Make it feel like normal lab hygiene, not a chore.
+
+**Common Day-1 confusion:** Students will try to *move* (not copy) their file from NAS to Documents and end up with no file on the NAS. Show them the Option-drag (or right-click → Copy / right-click → Paste) explicitly. Or, easier: tell them to use `Cmd + C` on the file, navigate to Documents, `Cmd + V`. Copy is the default with `Cmd + C / V`; only drag is ambiguous.
 
 ---
 
