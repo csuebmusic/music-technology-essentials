@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUS 381 · Module 2 Listening: Musique concrète</title>
   <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Listening-specific styles */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure svg {
+      max-width: 100%;
+      height: auto;
+    }
+    figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.75rem;
+    }
+    /* YouTube embed: responsive 16:9 wrapper */
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      margin: 1rem 0;
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-fallback {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +65,183 @@
 
 <p class="lede">Project 1 asks you to build a piece from existing sound material, to treat sound as something you cut, shape, and arrange, rather than something you perform live or notate on a staff. This is the central idea of <strong>musique concrète</strong>, a tradition started in Paris in 1948 by Pierre Schaeffer. He recorded everyday sounds (trains, doors, voices, water) and worked with them as raw material, the way a sculptor works with stone.</p>
 
-<p>This week's listening introduces you to the tradition. Listen with the ears of someone who is about to make a piece this way. You'll be asked to think about what techniques you hear, what choices the composers made, and what you might try yourself.</p>
+<p>This week's listening introduces you to that tradition. But before you press play, it's worth knowing something important about the pieces you're about to hear: they were not made on a computer.</p>
+
+<hr>
+
+<h2>Before you listen: a brief history</h2>
+
+<p>The composers who started musique concrète were working decades before digital audio existed. Pierre Schaeffer's <em>Études de bruits</em> (1948), the first works in the genre, were cut directly to acetate disc, since usable magnetic tape recorders weren't yet widely available in France. By the early 1950s tape had taken over, and for the next thirty years, this tradition was a tape tradition. Composers built their pieces by physically splicing pieces of magnetic tape with razor blades, looping them, slowing them down or speeding them up, playing them backward. The "edit" wasn't a click in software: it was a cut with a blade, a piece of adhesive splicing tape, and a careful placement on a metal block.</p>
+
+<p>This matters for how you listen. The artifacts you might hear, things like surface noise, slight pitch instability, the audible seam of an edit, are not flaws in the recording. They're the sound of the medium itself, the physical reality of working with magnetic tape and disc. Schaeffer and Henry weren't trying to sound digital and failing. They were working in their actual material, the way a sculptor works in marble rather than aspiring to be a 3D printer.</p>
+
+<figure>
+  <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reel-to-reel tape recorder with splicing block">
+    <rect width="600" height="240" fill="var(--bg-alt)"/>
+
+    <!-- TAPE DECK BODY: rectangular, dominates left 2/3 of canvas -->
+    <rect x="40" y="40" width="380" height="180" fill="none" stroke="var(--ink)" stroke-width="2" rx="4"/>
+
+    <!-- Two reels: outer rim, hub, and tape coil -->
+    <!-- Left reel -->
+    <circle cx="120" cy="105" r="50" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+    <circle cx="120" cy="105" r="42" fill="none" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <circle cx="120" cy="105" r="35" fill="var(--accent)" opacity="0.18"/>
+    <circle cx="120" cy="105" r="35" fill="none" stroke="var(--accent)" stroke-width="1"/>
+    <circle cx="120" cy="105" r="8" fill="var(--ink)"/>
+    <!-- Reel spokes -->
+    <line x1="120" y1="73" x2="120" y2="137" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <line x1="88" y1="105" x2="152" y2="105" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <line x1="98" y1="83" x2="142" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <line x1="142" y1="83" x2="98" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
+
+    <!-- Right reel -->
+    <circle cx="340" cy="105" r="50" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+    <circle cx="340" cy="105" r="42" fill="none" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <circle cx="340" cy="105" r="22" fill="var(--accent)" opacity="0.12"/>
+    <circle cx="340" cy="105" r="22" fill="none" stroke="var(--accent)" stroke-width="1"/>
+    <circle cx="340" cy="105" r="8" fill="var(--ink)"/>
+    <!-- Reel spokes -->
+    <line x1="340" y1="73" x2="340" y2="137" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <line x1="308" y1="105" x2="372" y2="105" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <line x1="318" y1="83" x2="362" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
+    <line x1="362" y1="83" x2="318" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
+
+    <!-- Tape running between reels: pulls down through the head/capstan area -->
+    <path d="M 155 120 Q 175 145, 200 165 L 260 165 Q 285 145, 305 120"
+          fill="none" stroke="var(--accent)" stroke-width="1.8"/>
+
+    <!-- Heads: 3 small rectangles in the center bottom area, where tape passes -->
+    <rect x="208" y="160" width="8" height="20" fill="var(--ink)" opacity="0.85"/>
+    <rect x="226" y="160" width="8" height="20" fill="var(--ink)" opacity="0.85"/>
+    <rect x="244" y="160" width="8" height="20" fill="var(--ink)" opacity="0.85"/>
+    <text x="230" y="200" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">heads</text>
+
+    <!-- Capstan and pinch roller -->
+    <circle cx="270" cy="170" r="4" fill="var(--ink)"/>
+    <circle cx="278" cy="170" r="3" fill="none" stroke="var(--ink)" stroke-width="0.8"/>
+
+    <!-- Reel labels -->
+    <text x="120" y="180" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">supply reel</text>
+    <text x="340" y="180" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">take-up reel</text>
+
+    <!-- Deck label -->
+    <text x="230" y="60" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="1">REEL-TO-REEL TAPE RECORDER</text>
+
+    <!-- SPLICING BLOCK: separate object on the right side -->
+    <rect x="460" y="100" width="120" height="40" fill="none" stroke="var(--ink)" stroke-width="2" rx="2"/>
+
+    <!-- The 45° splicing groove -->
+    <line x1="475" y1="100" x2="500" y2="140" stroke="var(--ink)" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.5"/>
+    <line x1="540" y1="100" x2="565" y2="140" stroke="var(--ink)" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.5"/>
+
+    <!-- A piece of tape laid in the block, cut at 45° -->
+    <path d="M 465 115 L 510 115 L 522 132 L 575 132" fill="none" stroke="var(--accent)" stroke-width="1.8"/>
+    <line x1="510" y1="115" x2="522" y2="132" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2,1"/>
+
+    <!-- Razor blade above -->
+    <path d="M 510 75 L 530 75 L 528 90 L 512 90 Z" fill="var(--ink)" opacity="0.4"/>
+    <line x1="520" y1="90" x2="520" y2="110" stroke="var(--ink)" stroke-width="0.5" stroke-dasharray="1,1"/>
+
+    <!-- Splicing block label -->
+    <text x="520" y="160" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="1">SPLICING BLOCK</text>
+    <text x="520" y="173" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">cut, then splice</text>
+
+    <!-- Subtle annotation: the angle creates a crossfade -->
+    <text x="520" y="200" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" text-anchor="middle">45° cut for smooth join</text>
+  </svg>
+  <figcaption>The tools of musique concrète before computers: a reel-to-reel tape recorder and a splicing block. A composer would record source sounds onto tape, then physically cut the tape with a razor blade in the splicing block (the 45° cut creates a smooth crossfade where two pieces join), apply adhesive splicing tape to bond the pieces, and play the result back. Every "edit" was a physical action.</figcaption>
+</figure>
+
+<p>Digital audio took a long time to arrive in this tradition. Computer-based music synthesis began in research labs as early as the 1950s, but the equipment was expensive and limited. Tape stayed dominant through the 1970s. The first commercial digital samplers arrived around 1979, but they cost as much as a house. Through the 1980s and into the early 1990s, studios began mixing tape and digital workflows. Hard-disk recording gradually became affordable. By the late 1990s, anyone with a personal computer and a little software could do digitally what had previously required a tape studio. Within another decade, working in tape became a deliberate aesthetic choice rather than a default.</p>
+
+<figure>
+  <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of recording media in musique concrète from 1948 to today">
+    <rect width="600" height="200" fill="var(--bg-alt)"/>
+
+    <!-- Three era bands across the bottom half -->
+    <!-- Tape era: 1948 to ~1980 -->
+    <rect x="40" y="120" width="280" height="36" fill="var(--accent)" opacity="0.22"/>
+    <text x="180" y="143" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="1">ANALOG TAPE</text>
+
+    <!-- Transition era: ~1980 to ~2000 -->
+    <rect x="320" y="120" width="160" height="36" fill="var(--ink)" opacity="0.12"/>
+    <text x="400" y="143" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="1">TAPE + DIGITAL</text>
+
+    <!-- Digital era: ~2000 to today -->
+    <rect x="480" y="120" width="80" height="36" fill="var(--accent)" opacity="0.55"/>
+    <text x="520" y="143" font-family="DM Mono, monospace" font-size="10" fill="var(--bg)" text-anchor="middle" letter-spacing="1">DIGITAL</text>
+
+    <!-- Time axis (just below the bands) -->
+    <line x1="40" y1="170" x2="560" y2="170" stroke="var(--ink)" stroke-width="1.5"/>
+
+    <!-- Year tick marks: 1948, 1963, 1977, 1990, 2000, today (2026)
+         Span is 1948 to 2026 = 78 years across 520 px = 6.667 px/year
+         x(year) = 40 + 6.667 * (year - 1948)
+         1948 → 40, 1963 → 140, 1977 → 233.3, 1990 → 320, 2000 → 386.7, 2026 → 560 -->
+    <g stroke="var(--ink)" stroke-width="1">
+      <line x1="40" y1="166" x2="40" y2="174"/>
+      <line x1="140" y1="166" x2="140" y2="174"/>
+      <line x1="233" y1="166" x2="233" y2="174"/>
+      <line x1="320" y1="166" x2="320" y2="174"/>
+      <line x1="387" y1="166" x2="387" y2="174"/>
+      <line x1="560" y1="166" x2="560" y2="174"/>
+    </g>
+    <g font-family="DM Mono, monospace" font-size="9.5" fill="var(--ink-soft)" text-anchor="middle">
+      <text x="40" y="188">1948</text>
+      <text x="140" y="188">1963</text>
+      <text x="233" y="188">~1977</text>
+      <text x="320" y="188">~1990</text>
+      <text x="387" y="188">~2000</text>
+      <text x="560" y="188">today</text>
+    </g>
+
+    <!-- Event markers above the timeline: arrows pointing down to the year on the axis -->
+    <!-- 1948 Schaeffer first piece -->
+    <g>
+      <line x1="40" y1="100" x2="40" y2="120" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="40" cy="100" r="3" fill="var(--accent)"/>
+      <text x="40" y="90" font-family="DM Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="start" font-weight="500">Schaeffer</text>
+      <text x="40" y="78" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="start">first études</text>
+    </g>
+
+    <!-- 1963 Henry -->
+    <g>
+      <line x1="140" y1="60" x2="140" y2="120" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="140" cy="60" r="3" fill="var(--accent)"/>
+      <text x="140" y="50" font-family="DM Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle" font-weight="500">Henry</text>
+      <text x="140" y="38" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">Variations pour</text>
+      <text x="140" y="27" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">une porte…</text>
+    </g>
+
+    <!-- 1977 Fairlight CMI -->
+    <g>
+      <line x1="233" y1="100" x2="233" y2="120" stroke="var(--ink)" stroke-width="1"/>
+      <circle cx="233" cy="100" r="2.5" fill="var(--ink)"/>
+      <text x="233" y="90" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">first commercial</text>
+      <text x="233" y="79" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">digital sampler</text>
+    </g>
+
+    <!-- 1990 hard disk recording -->
+    <g>
+      <line x1="320" y1="65" x2="320" y2="120" stroke="var(--ink)" stroke-width="1"/>
+      <circle cx="320" cy="65" r="2.5" fill="var(--ink)"/>
+      <text x="320" y="55" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">hard-disk</text>
+      <text x="320" y="44" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">recording</text>
+    </g>
+
+    <!-- 2000 DAWs go mainstream -->
+    <g>
+      <line x1="387" y1="100" x2="387" y2="120" stroke="var(--ink)" stroke-width="1"/>
+      <circle cx="387" cy="100" r="2.5" fill="var(--ink)"/>
+      <text x="387" y="90" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">DAWs go</text>
+      <text x="387" y="79" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">mainstream</text>
+    </g>
+  </svg>
+  <figcaption>Roughly when each medium was dominant for studio composition. The two pieces in this listening assignment fall squarely in the analog tape era; both were made entirely without computers. By the time you were born, tape had become a deliberate aesthetic choice rather than a working necessity.</figcaption>
+</figure>
+
+<p>Knowing the medium tells you how to listen. The pieces you're about to hear were physical objects: lengths of tape, with cuts in them, played on machines. They sound the way they sound for reasons that include the medium. Hold that in your ears as you listen, and listen with the ears of someone who is about to make a piece in the same tradition. You'll be asked to think about what techniques you hear, what choices the composers made, and what you might try yourself.</p>
 
 <hr>
 
@@ -29,11 +249,21 @@
 
 <h3>1 · Pierre Schaeffer · <em>Étude aux chemins de fer</em> (1948)</h3>
 
-<p>The first piece of musique concrète ever made. Built entirely from train sounds. About 3 minutes. Listen on Spotify, YouTube, or any streaming service: search "Schaeffer Étude aux chemins de fer."</p>
+<p>The first piece of musique concrète ever made. Built entirely from train sounds. About 3 minutes.</p>
+
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/_KCMFvi7ooE" title="Pierre Schaeffer - Étude aux chemins de fer (1948)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="video-fallback">If the video doesn't load, search YouTube for "Schaeffer Étude aux chemins de fer."</p>
 
 <h3>2 · Pierre Henry · <em>Variations pour une porte et un soupir</em>, opening section (1963)</h3>
 
-<p>Built from the sound of a single door and a single sigh. The full work is long, so listen to <strong>just the first 5 minutes</strong> of the opening movement. Search "Henry Variations pour une porte et un soupir."</p>
+<p>Built from the sound of a single door and a single sigh. The full work is long, so listen to <strong>just the first 5 minutes</strong>. The embed below starts at the beginning and ends at 5 minutes automatically.</p>
+
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/dud4D6PeHqQ?start=0&end=300" title="Pierre Henry - Variations pour une porte et un soupir (1963), opening 5 minutes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="video-fallback">If the video doesn't load, search YouTube for "Henry Variations pour une porte et un soupir."</p>
 
 <h3>3 · A contemporary example, your choice</h3>
 
