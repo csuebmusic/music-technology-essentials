@@ -1,14 +1,15 @@
 # Handouts
 
-Student-facing course materials for MUS 381.
+Student-facing reference materials for use during lab sessions. Lab-specific in nature: things students follow along with at their station, or refer back to during a session.
 
 ## Format
 
-All handouts are HTML, sharing a single stylesheet (`handout.css`) for visual consistency. The aesthetic is modern minimal with a mechanical-retro tilt: DM Sans for body, DM Mono for accents, warm low-saturation palette, generous whitespace.
+All handouts are HTML and share the central stylesheet at [`assets/style.css`](../assets/style.css). The aesthetic is modern minimal with a mechanical-retro tilt: DM Sans for body, DM Mono for accents, warm low-saturation palette, generous whitespace.
+
+This same stylesheet is used by readings, listening assignments, and project prompts — every student-facing document in the course shares one visual system.
 
 ## Files
 
-- `handout.css` — shared stylesheet for all handouts
 - `01-first-day-setup.html` — Module 1, Wed Aug 19 (first day of class)
 - `02-session-routines.html` — Start-of-session and end-of-session reference card, used every session
 
@@ -28,6 +29,8 @@ When writing new handouts, use `01-first-day-setup.html` as a template. Maintain
 - `<table class="shortcut-table">` for keyboard shortcuts and similar
 - `<div class="callout">` for asides; `.callout.warn` for problem-troubleshooting; `.callout.tip` for friendly tips
 - `<kbd>` for keys, `<code>` for file names, paths, and code
+
+CSS link path: `../assets/style.css`
 
 ## Tone
 

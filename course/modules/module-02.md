@@ -63,7 +63,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 
 A 2-minute piece built entirely from source sounds provided on the NAS, demonstrating editing and mixing skills learned in the module.
 
-Full project prompt and rubric: [`course/projects/project-01-musique-concrete.md`](../projects/project-01-musique-concrete.md)
+Full project prompt and rubric: [`course/projects/project-01-musique-concrete.html`](../projects/project-01-musique-concrete.html)
 
 **Timeline:**
 - Wk 3 Wed — students begin building
@@ -76,7 +76,7 @@ Full project prompt and rubric: [`course/projects/project-01-musique-concrete.md
 
 **Module 2 listening:** musique concrète and sound-collage tradition — Pierre Schaeffer (*Étude aux chemins de fer*), Pierre Henry (*Variations pour une porte et un soupir*), and one contemporary example.
 
-Full listening assignment with guided questions: [`course/listening/module-02-listening.md`](../listening/module-02-listening.md)
+Full listening assignment with guided questions: [`course/listening/module-02-listening.html`](../listening/module-02-listening.html)
 
 **Due:** Mon Wk 5 (Sep 14), before class.
 

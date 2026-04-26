@@ -4,7 +4,11 @@ This folder holds one listening assignment per module. The pattern is consistent
 
 ## Format
 
-Each module's listening assignment lives at `module-XX-listening.md`. The student-facing version may also be exported as a handout if needed for distribution; the markdown is the source of truth.
+All listening assignments are HTML, using the central stylesheet at [`assets/style.css`](../../assets/style.css). They share the same visual system as handouts, readings, and project prompts.
+
+Filename: `module-XX-listening.html`.
+
+CSS link path: `../../assets/style.css`.
 
 ## Standard structure
 
@@ -12,7 +16,7 @@ Every listening assignment should include:
 
 - **Module and due date** at the top
 - **Why we're listening to this** — one short paragraph framing the connection to what students are learning
-- **The listening list** — 1–3 pieces with composer/artist, title, year, and a way to find them (link, where to stream, etc.)
+- **The listening list** — 1–3 pieces with composer/artist, title, year, and a way to find them
 - **Guided questions** — 3–5 questions students answer in writing
 - **Length expectation** — typically half a page total; not a long essay
 - **Where to submit** — Canvas (text submission) is the default
