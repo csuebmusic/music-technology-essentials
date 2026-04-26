@@ -727,7 +727,7 @@
   <li><strong>24-bit:</strong> ~144 dB SNR (more than human hearing can resolve)</li>
 </ul>
 
-<p>For comparison, here's how those numbers sit alongside other audio media you might know:</p>
+<p>For comparison, here's how those numbers sit alongside the dynamic range of unamplified music:</p>
 
 <figure>
   <svg viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg">
@@ -757,60 +757,47 @@
     </g>
 
     <!-- Format bars: each starts at 0 dB (y=30) and extends down to noise floor.
-         Layout: 6 format bars + 1 orchestra reference column. Bars 50px wide, gap 10px.
-         Starting at x=110 leaves room for axis labels.
-         Format bars (1-6): x = 110, 170, 230, 290, 350, 410
-         Orchestra column: x = 480 (with extra gap to separate it visually) -->
+         Layout: 4 format bars at x=120/200/280/360 (60 wide, 20 gap),
+         orchestra reference at x=460 (with extra gap to separate it visually). -->
 
     <!-- 4-bit: ~24 dB SNR → noise floor at y=65.2 -->
-    <rect x="110" y="30" width="50" height="35.2" fill="var(--accent)" opacity="0.55"/>
-    <text x="135" y="78" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">4-bit</text>
-    <text x="135" y="91" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~24 dB</text>
+    <rect x="120" y="30" width="60" height="35.2" fill="var(--accent)" opacity="0.5"/>
+    <text x="150" y="78" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">4-bit</text>
+    <text x="150" y="91" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~24 dB</text>
 
     <!-- 8-bit: ~48 dB → y=100.4 -->
-    <rect x="170" y="30" width="50" height="70.4" fill="var(--accent)" opacity="0.65"/>
-    <text x="195" y="113" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">8-bit</text>
-    <text x="195" y="126" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~48 dB</text>
-
-    <!-- Cassette: ~55 dB → y=30 + 80.67 = 110.67 -->
-    <rect x="230" y="30" width="50" height="80.67" fill="var(--ink-soft)" opacity="0.5"/>
-    <text x="255" y="123" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">cassette</text>
-    <text x="255" y="136" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~55 dB</text>
-
-    <!-- Vinyl: ~65 dB → y=30 + 95.33 = 125.33 -->
-    <rect x="290" y="30" width="50" height="95.33" fill="var(--ink-soft)" opacity="0.5"/>
-    <text x="315" y="138" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">vinyl LP</text>
-    <text x="315" y="151" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~65 dB</text>
+    <rect x="200" y="30" width="60" height="70.4" fill="var(--accent)" opacity="0.65"/>
+    <text x="230" y="113" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">8-bit</text>
+    <text x="230" y="126" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~48 dB</text>
 
     <!-- 16-bit: ~96 dB → y=170.8 -->
-    <rect x="350" y="30" width="50" height="140.8" fill="var(--accent)" opacity="0.85"/>
-    <text x="375" y="183" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">16-bit</text>
-    <text x="375" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~96 dB (CD)</text>
+    <rect x="280" y="30" width="60" height="140.8" fill="var(--accent)" opacity="0.85"/>
+    <text x="310" y="183" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">16-bit</text>
+    <text x="310" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~96 dB (CD)</text>
 
     <!-- 24-bit: ~144 dB → y=241.2 -->
-    <rect x="410" y="30" width="50" height="211.2" fill="var(--accent)"/>
-    <text x="435" y="254" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">24-bit</text>
-    <text x="435" y="267" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~144 dB</text>
+    <rect x="360" y="30" width="60" height="211.2" fill="var(--accent)"/>
+    <text x="390" y="254" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">24-bit</text>
+    <text x="390" y="267" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~144 dB</text>
 
     <!-- Orchestra dynamic range band: from fortissimo (~-6 dBFS) down to pianissimo (~-86 dBFS) -->
     <!-- ff at -6 dB → y = 30 + 1.4667*6 = 38.8 -->
     <!-- pp at -86 dB → y = 30 + 1.4667*86 = 156.1 -->
-    <!-- Height = 156.1 - 38.8 = 117.3 -->
-    <rect x="480" y="38.8" width="50" height="117.3" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3,2"/>
-    <rect x="480" y="38.8" width="50" height="117.3" fill="var(--ink)" opacity="0.08"/>
+    <rect x="460" y="38.8" width="60" height="117.3" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <rect x="460" y="38.8" width="60" height="117.3" fill="var(--ink)" opacity="0.08"/>
 
-    <!-- ff and pp tick marks pointing into the column from the right -->
-    <line x1="530" y1="38.8" x2="540" y2="38.8" stroke="var(--ink)" stroke-width="1"/>
-    <text x="544" y="42" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">ff</text>
-    <line x1="530" y1="156.1" x2="540" y2="156.1" stroke="var(--ink)" stroke-width="1"/>
-    <text x="544" y="159" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">pp</text>
+    <!-- ff and pp tick marks on the right edge of the orchestra column -->
+    <line x1="520" y1="38.8" x2="530" y2="38.8" stroke="var(--ink)" stroke-width="1"/>
+    <text x="534" y="42" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">ff</text>
+    <line x1="520" y1="156.1" x2="530" y2="156.1" stroke="var(--ink)" stroke-width="1"/>
+    <text x="534" y="159" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">pp</text>
 
     <!-- Orchestra label centered -->
-    <text x="505" y="170" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">orchestra</text>
-    <text x="505" y="183" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">ff to pp</text>
-    <text x="505" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~80 dB range</text>
+    <text x="490" y="170" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">orchestra</text>
+    <text x="490" y="183" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">ff to pp</text>
+    <text x="490" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~80 dB range</text>
   </svg>
-  <figcaption>Dynamic range available at different bit depths, with cassette and vinyl shown for comparison. The rightmost column shows where a live orchestra sits: from fortissimo near full scale down to pianissimo around -86 dBFS, an ~80 dB range. Notice that the orchestra's quietest pianissimo falls below the noise floor of every consumer format until 16-bit. That's why CDs went 16-bit. 32-bit float (not shown) is effectively unlimited within audible thresholds.</figcaption>
+  <figcaption>Dynamic range available at four bit depths, with the dynamic range of a live orchestra shown as a real-world reference. The orchestra spans from fortissimo near full scale down to pianissimo around -86 dBFS, an ~80 dB range. Notice that the orchestra's quietest pianissimo falls below the noise floor of 4-bit and 8-bit, but fits comfortably inside 16-bit and is dwarfed by 24-bit. That's why CDs went 16-bit. 32-bit float (not shown) is effectively unlimited within audible thresholds.</figcaption>
 </figure>
 
 <p>This is why CDs settled on 16-bit: it covers the full dynamic range of unamplified music with a small margin to spare. It's also why professional recording uses 24-bit even when delivering at 16-bit: the extra headroom protects you from accidentally clipping during recording or losing detail during processing. <strong>You record with margin, then commit to less margin only at the final mixdown.</strong></p>
