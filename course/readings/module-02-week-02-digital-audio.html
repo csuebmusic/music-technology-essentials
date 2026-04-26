@@ -34,6 +34,61 @@
       margin-left: 0;
       margin-bottom: 0.5rem;
     }
+
+    /* Audio comparison block: a labeled group of three audio players */
+    .audio-compare {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .audio-compare-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .audio-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin: 0.75rem 0;
+      padding: 0.5rem 0;
+    }
+    .audio-row + .audio-row {
+      border-top: 1px dashed var(--rule);
+      padding-top: 1.1rem;
+    }
+    .audio-label {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+      flex: 0 0 9.5rem;
+    }
+    .audio-label-sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      margin-top: 0.15rem;
+    }
+    .audio-row audio {
+      flex: 1;
+      min-width: 0;
+      height: 36px;
+    }
+    /* Style the audio element controls to be less browser-default-y where possible */
+    .audio-row audio::-webkit-media-controls-panel {
+      background: var(--bg);
+    }
+    .audio-note {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin: 1rem 0 0;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -475,9 +530,21 @@
   <figcaption>The audible range, two Nyquist limits, and the two common sample rates on a single linear frequency axis. Each Nyquist limit is exactly half its sample rate (the dotted arrows). Anything above the Nyquist line can't be properly represented by that sample rate: a problem we'll come back to in Sound Design.</figcaption>
 </figure>
 
-<div class="callout">
-  <div class="callout-label">In lecture</div>
-  <p>We'll listen to a short sound at 44.1 kHz, then drop it to 8 kHz (telephone quality) and 4 kHz (truly lo-fi) so you can hear what sample rate actually does. <em>Some artists deliberately use low sample rates as an aesthetic choice: you'll recognize the sound from old video games, lo-fi hip-hop, and certain glitch records.</em></p>
+<div class="audio-compare">
+  <div class="audio-compare-title">Listen: same sound, three sample rates</div>
+  <div class="audio-row">
+    <div class="audio-label">44.1 kHz<span class="audio-label-sub">CD quality</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/source-44k-16bit.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <div class="audio-label">8 kHz<span class="audio-label-sub">telephone quality</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/sr-8k-16bit.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <div class="audio-label">4 kHz<span class="audio-label-sub">truly lo-fi</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/sr-4k-16bit.wav"></audio>
+  </div>
+  <p class="audio-note">Listen on headphones if you can. As the sample rate drops, high frequencies disappear first: the sharp attacks soften, the brightness dulls, and at 4 kHz everything sounds like it's behind a thick wall. <em>Some artists deliberately reach for low sample rates as an aesthetic. You'll recognize the sound from old video games, lo-fi hip-hop, and certain glitch records.</em></p>
 </div>
 
 <hr>
@@ -556,9 +623,21 @@
 
 <p>You'll see 16, 24, and 32-bit float in the wild. The standards are evolving: what was "professional" twenty years ago (16-bit) is now baseline, and what was high-end ten years ago (24-bit) is now common. The trend is toward more headroom.</p>
 
-<div class="callout">
-  <div class="callout-label">In lecture</div>
-  <p>We'll listen to the same sound at 16-bit, 8-bit, and 4-bit. Notice how the noise floor rises dramatically as bit depth drops: that hiss isn't from the recording, it's from the rounding errors. <em>Like low sample rates, low bit depths have an aesthetic of their own. Some producers reach for them on purpose.</em></p>
+<div class="audio-compare">
+  <div class="audio-compare-title">Listen: same sound, three bit depths</div>
+  <div class="audio-row">
+    <div class="audio-label">16-bit<span class="audio-label-sub">CD standard</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/source-44k-16bit.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <div class="audio-label">8-bit<span class="audio-label-sub">early sampler era</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/bd-8bit-44k.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <div class="audio-label">4-bit<span class="audio-label-sub">degraded on purpose</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/bd-4bit-44k.wav"></audio>
+  </div>
+  <p class="audio-note">Pay attention to what happens during the quiet decay at the end of each clip. At 16-bit the noise floor is essentially silent. At 8-bit you'll hear a low hiss. At 4-bit it's loud and obviously grainy: that's the sound of the rounding errors becoming the signal. <em>Like low sample rates, low bit depths have an aesthetic of their own. Some producers reach for them on purpose.</em></p>
 </div>
 
 <hr>
