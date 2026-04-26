@@ -16,10 +16,11 @@ Do all of this **at least one day in advance** of Aug 19, ideally two:
 - [ ] Write the NAS server address on the whiteboard before class starts
 - [ ] Place `01-first-day-setup.pdf` (exported from `handouts/01-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
 - [ ] Print `02-session-routines.pdf` (exported from `handouts/02-session-routines.html`) and post it at every station — laminated if possible. This is the reference card students follow at the start and end of every session for the rest of the semester.
+- [ ] **Wipe local `~/Documents/` on every lab machine** of any leftover student folders from previous semesters. Local folders accumulate over time; clean state every fall and spring.
 - [ ] Walk through every station: confirm USB hub works, audio interface is recognized, mic and XLR cable are at the station, MIDI keyboard is at the station, headphones are at the station with the in-line slider all the way up
-- [ ] Test-record at one station end-to-end (mic → interface → QuickTime → NAS) to confirm the full chain works
+- [ ] Test-record at one station end-to-end (mic → interface → QuickTime → local save → NAS upload) to confirm the full chain works
 - [ ] Walk through the entire session yourself end-to-end on a lab machine the day before, as if you were a student. Time yourself. This will surface every broken thing.
-- [ ] Have a backup plan if the NAS is down: students save locally to a temp folder you'll move later. **Do not cancel the session over a network issue.**
+- [ ] Have a backup plan if the NAS is down: students save locally only, you collect their work via USB drive at the end. **Do not cancel the session over a network issue.**
 - [ ] Have at least one spare hub, one spare XLR cable, and one spare set of headphones available in case something fails during class
 
 ---
@@ -131,7 +132,7 @@ Drill the rules: lowercase, hyphens, no spaces, no special characters. **Tell th
 
 ### Block 4 — Set up gear and make a recording (35 min) + Exit routine (5 min)
 
-This is the day's main event. Students plug in their full signal chain, set their levels, and produce one successful recording, then run the exit routine to upload to the NAS for the first time. Combine what was previously two blocks — the pedagogical arc is one continuous activity ending with the upload.
+This is the day's main event. Students plug in their full signal chain, set their levels, and produce one successful recording, then run the exit routine to upload to the NAS for the first time. The pedagogical arc is one continuous activity ending with the upload.
 
 The lab has different audio interfaces and MIDI keyboards across stations, all connecting through a USB hub on each desk. The Mac mini itself is mounted behind the monitor and students never see or touch it. Teach categories, not specific models.
 
@@ -189,7 +190,7 @@ Don't go deeper than that on Day 1. The temptation will be to teach digital head
 
 **Record + save.** Hit record, say name + one word, stop, listen back. Save as `lastname-hello.m4a` to `~/Documents/lastname/week-01/` (local). The NAS upload happens during the exit routine.
 
-**Common confusions during this block:**
+**Block 4 confusions — gear, signal chain, recording:**
 
 - *"I can't hear anything in the headphones."* — Check in this order: (1) headphone slider on cable all the way up; (2) headphone knob on interface above zero; (3) audio interface set as system output in Audio MIDI Setup; (4) main/output knob above zero; (5) for stations with a mix knob, that it isn't pinned all the way to one side.
 - *"I hear myself but no playback."* (only for stations with mix knob) — Mix knob is too far toward direct. Move toward the computer/USB side.
@@ -199,7 +200,6 @@ Don't go deeper than that on Day 1. The temptation will be to teach digital head
 - *"My recording sounds quiet."* — Gain was too low when recording. Have them re-record with the gain higher.
 - *"My recording sounds distorted/crunchy."* — Gain was too high (clipping). Re-record with the gain lower.
 - *"I forgot to pick the audio interface in QuickTime."* — They recorded through the Mac mini's nonexistent built-in mic and got nothing, or got something through the wrong source. Have them re-record.
-- *"I can't find the NAS in the save dialog."* — The NAS appears in the sidebar of save dialogs the same way it does in Finder. Show them the sidebar.
 
 **Fallback if gear is genuinely broken.** If a station has a hardware problem you can't fix in 5 minutes, have the student record through QuickTime's built-in option (which on a Mac mini may mean the monitor's mic, or no mic at all). The point is they leave having saved locally and uploaded to the NAS. Fix the gear after class. Day 1 success = file uploaded to the NAS during the exit routine.
 
@@ -223,7 +223,7 @@ Walk them through:
 8. Quit all apps with `Cmd + Q`
 9. Knobs to zero, headphones away, chair in
 
-Tell them this is a 2-minute routine they'll do every session for the rest of the semester, and that **starting Wednesday Aug 26, every session also begins with downloading from the NAS** (the start-of-session half of Handout 02).
+Tell them this is a routine they'll do every session for the rest of the semester — about 2 minutes once it's habit. Today it'll take longer because we're walking through it for the first time. **Starting Wednesday Aug 26, every session also begins with downloading from the NAS** (the start-of-session half of Handout 02).
 
 **Verify uploads on the projector.** Once everyone is done, open `/music/students/` on the projector and scroll through. Confirm every student's folder is there with their hello file inside. This is the same "small ritual" as before, but now it confirms upload happened, not just save.
 
@@ -240,24 +240,23 @@ Tell them this is a 2-minute routine they'll do every session for the rest of th
 - *"Do I need a Mac at home?"* — No. The lab has everything they need. The NAS keeps your work synced between lab machines.
 - *"Can I use my own headphones?"* — Yes. The lab provides them but personal headphones are fine.
 - *"What if my audio interface isn't working?"* — Try: unplug from the hub, replug into a different hub port, check Audio MIDI Setup. If still broken, switch stations and report it.
-- *"Can I take my files home on a USB drive?"* — Yes — copy from your local `~/Documents/lastname/` folder. The NAS stays in the lab. (Note: home Macs may not handle some lab software the same way, so working at home is at your own risk.)
+- *"Can I take my files home on a USB drive?"* — Yes — copy your `lastname/` folder from `~/Documents/` to a USB drive, personal cloud storage, or anywhere you can access from home. The NAS stays in the lab. Audacity is free and runs anywhere, so working at home on Module 2 material is fine. Ableton is lab-license-only, so Module 4 work mostly stays in the lab.
 - *"What if I forget to upload at the end?"* — Your work is stranded on that machine. The next time you're at that exact same station, it'll still be in `~/Documents/lastname/`, but if you're at a different station, you'll be working from an older version. Always upload.
 - *"What if I forget to download at the start?"* — You'll be working from an older version. Sync regularly: download at start, upload at end. If you realize mid-session, save what you've done, then go check the NAS to see what you should have started with.
 - *"Do I need to buy a textbook?"* — No. Course materials are in the GitHub repo and on Canvas.
 
 ---
 
-## Common confusions to watch for
+## General confusions to watch for
+
+These show up across the whole day, not tied to any one block. Block-specific confusions live with their respective blocks above.
 
 - **"I saved it but I can't find it."** — They saved to Desktop or Downloads instead of `~/Documents/lastname/`. Walk them through Recents in Finder to find the file, then drag it.
 - **"My screenshot didn't work."** — They held the wrong key combination. `Cmd + Shift + 4` to drag a region. The screenshot lands on Desktop.
-- **"Audio MIDI Setup is empty."** — The interface isn't seated properly. Replug.
-- **"I can't hear anything in the headphones."** — Check four things in this order: (1) the in-line slider on the headphone cable is all the way up, (2) the headphone knob on the interface is above zero, (3) the audio interface is selected as system output in Audio MIDI Setup, (4) the main/output knob is above zero.
-- **"My meter isn't moving when I talk."** — Gain knob still at zero, wrong input selected in QuickTime, or XLR cable not seated.
-- **"My recording sounds distorted."** — Gain was too high during recording. Re-record with the gain lower.
 - **"I don't know my last name's spelling on the NAS."** — Send them to the projector list of folders and have them find theirs.
 - **"The NAS folder doesn't have my name."** — Account creation gap. Have them work locally for the session; create the folder after class and have them upload at the next session.
 - **"Local and NAS folders look different."** — Sync issue. Whichever has the newer modification date is the trusted version. Copy that one over the older one. If they can't tell which is newer, ask the TA before deleting anything.
+- **"macOS asked me Replace or Keep Both."** — Always Replace at end of session. Keep Both creates `lastname` and `lastname 2` on the NAS, which is a sync mess.
 
 ---
 

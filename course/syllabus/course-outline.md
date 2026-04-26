@@ -84,12 +84,12 @@ The course is structured around four modules, each ending in a real, presentable
 **Topics:**
 - Mac fundamentals: Finder, file paths, keyboard shortcuts
 - File management: folder structures, naming conventions, where things live
-- The lab NAS: connecting, navigating, saving work to the right place
+- The local-first / NAS-as-sync workflow: where files live, how they move between machines
 - Audio MIDI Setup app
-- Connecting MIDI keyboard, audio interface, headphones
-- Submission workflow: NAS for working files, Canvas for graded submissions
+- Connecting MIDI keyboard, audio interface, microphone, headphones via USB hub
+- Submission workflow: NAS for syncing working files; Canvas for graded submissions
 
-**Deliverable:** None — Wednesday lab is a setup and orientation activity. Students leave Week 1 with their NAS folder configured, gear plugged in, and a "hello world" file saved in the right place.
+**Deliverable:** None — Wednesday lab is a setup and orientation activity. Students leave Week 1 with their local working folder created at `~/Documents/lastname/`, their NAS folder verified, gear plugged in and tested, and a "hello world" file uploaded to the NAS via the exit routine.
 
 ---
 
@@ -202,10 +202,11 @@ The course is structured around four modules, each ending in a real, presentable
 
 ## Infrastructure notes
 
-- **Working files:** All in-progress work lives on the lab NAS in MB2525. Students cannot work from home unless they bring an external drive.
-- **Submissions:** Final exports for graded work submitted via Canvas; raw working files remain on the NAS.
+- **Working files:** Students work locally during sessions in `~/Documents/lastname/` on whichever lab machine they're using. The lab NAS at MB2525 holds the master copy of each student's work. Students download from the NAS at the start of every session and upload at the end.
+- **Sync hygiene:** Local folders on lab machines accumulate across the semester and are wiped between semesters. The NAS is the source of truth.
+- **Submissions:** Final exports for graded work submitted via Canvas; raw working files synced to the NAS.
 - **Software:** Audacity (free, installed on lab machines) and Ableton Live (lab license).
-- **Hardware:** Lab provides MIDI keyboards, audio interfaces, headphones. Students record on phones for field work.
+- **Hardware:** Each lab station has a Mac mini (mounted behind the monitor), USB hub, audio interface, tabletop microphone, MIDI keyboard, and headphones.
 
 ---
 

@@ -51,7 +51,7 @@
   <li>Open another Finder window (<kbd>Cmd</kbd> + <kbd>N</kbd>) and navigate to <code>~/Documents/</code>.</li>
   <li>Look for a <code>lastname/</code> folder in <code>~/Documents/</code>.
     <ul>
-      <li><strong>If it exists</strong> — compare with the NAS version. If the NAS version is newer (check modification dates in Finder), drag the NAS folder into <code>~/Documents/</code> to update your local copy. macOS will ask if you want to replace; choose <strong>Replace</strong>.</li>
+      <li><strong>If it exists</strong> — compare with the NAS version. If the NAS version is newer (check modification dates), drag the NAS folder into <code>~/Documents/</code> to update your local copy. macOS will ask because the folder already exists; choose <strong>Replace</strong> (not Keep Both — that creates duplicates).</li>
       <li><strong>If it doesn't exist</strong> (you're at a new computer, or this is your first session) — drag your <code>lastname/</code> folder from the NAS into <code>~/Documents/</code> to download it.</li>
     </ul>
   </li>
@@ -60,7 +60,7 @@
 
 <div class="callout">
   <div class="callout-label">Checking modification dates</div>
-  <p>In Finder, click the <strong>columns view</strong> button (the third icon at the top of the window) to see the date modified for each item. If the dates match, your two copies are already in sync — nothing to download. If the NAS is newer, download. If the local is newer, you didn't upload last time — fix that immediately by skipping ahead to the End-of-session steps and uploading to NAS first.</p>
+  <p>In Finder, switch to <strong>list view</strong> by clicking the second icon at the top of the window (or pressing <kbd>Cmd</kbd> + <kbd>2</kbd>). This shows the date modified next to each item. If the dates match, your two copies are already in sync — nothing to download. If the NAS is newer, download. If the local is newer, you didn't upload last time — fix that immediately by skipping ahead to the End-of-session steps and uploading to NAS first.</p>
 </div>
 
 <p>Now you're ready to work. Open Audacity, Ableton, or whatever you're using, and work entirely from your local <code>~/Documents/lastname/</code> folder.</p>
@@ -75,13 +75,18 @@
   <li>Save your work in whatever app you've been using (<kbd>Cmd</kbd> + <kbd>S</kbd>).</li>
   <li>Connect to the NAS again: <kbd>Cmd</kbd> + <kbd>K</kbd> in Finder.</li>
   <li>Navigate to your <code>lastname/</code> folder on the NAS in one Finder window, and to <code>~/Documents/lastname/</code> in another.</li>
-  <li>Drag your <code>lastname/</code> folder from <code>~/Documents/</code> onto the NAS, replacing the older version. (If macOS asks whether to <em>copy</em> or <em>move</em>, choose <strong>copy</strong> — keep the local version too.)</li>
+  <li>Drag your <code>lastname/</code> folder from <code>~/Documents/</code> onto the NAS. macOS will ask: "An item named <code>lastname</code> already exists in this location." Choose <strong>Replace</strong> — your local version is the one with today's work.</li>
   <li>Confirm the upload finished. The folder on the NAS should now show today's modification date.</li>
   <li>Eject the NAS from Finder's sidebar.</li>
   <li>Sign out of any browser accounts (Canvas, Google, Microsoft, etc.) and quit your browser (<kbd>Cmd</kbd> + <kbd>Q</kbd>).</li>
   <li>Quit all apps with <kbd>Cmd</kbd> + <kbd>Q</kbd>. Look at the Dock — any app with a small dot under its icon is still running.</li>
   <li>Audio interface knobs back to zero. Headphones away. Chair in.</li>
 </ol>
+
+<div class="callout warn">
+  <div class="callout-label">Don't choose "Keep Both"</div>
+  <p>When you upload and macOS asks whether to Replace, the dialog also offers <strong>Keep Both</strong>. Don't pick that — it'll create <code>lastname</code> and <code>lastname 2</code> on the NAS, and the next session you'll have no idea which is current. Always choose <strong>Replace</strong> when uploading at end of session.</p>
+</div>
 
 <hr>
 
@@ -90,7 +95,7 @@
 <p>If you ever sit down and realize the local copy and NAS copy seem out of sync — different file sizes, different folder contents — pause and figure out which is newer before doing anything.</p>
 
 <ul>
-  <li>Check modification dates in Finder columns view.</li>
+  <li>Check modification dates in Finder list view (<kbd>Cmd</kbd> + <kbd>2</kbd>).</li>
   <li>Whichever is newer is the one you trust. Copy it over the older one.</li>
   <li>Never delete a folder until you're sure you've got the current version somewhere safe.</li>
   <li>If you can't tell, don't guess. Ask the TA before deleting anything.</li>
