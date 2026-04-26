@@ -94,21 +94,40 @@ def build_source():
 # ----- Format conversions -----
 
 def to_int16(audio_float):
-    """Convert -1..1 float32 to int16."""
-    clipped = np.clip(audio_float, -1.0, 1.0)
+    """
+    Convert -1..1 float32 to int16. Includes defensive clipping at slightly
+    less than full scale (0.999) so that if any upstream processing pushes
+    samples to exactly ±1.0, the int16 conversion doesn't quantize awkwardly
+    at the boundary.
+    """
+    clipped = np.clip(audio_float, -0.999, 0.999)
     return (clipped * 32767).astype(np.int16)
 
 
-def reduce_bit_depth(audio_float, target_bits):
+def reduce_bit_depth(audio_float, target_bits, headroom_db=-3.0):
     """
-    Reduce bit depth by quantizing to fewer levels, then leave as float32
-    (we'll save as 16-bit so it can be played in browsers, but the
-    quantization is what makes it sound degraded).
+    Reduce bit depth by quantizing to fewer levels. Returns float32 audio
+    with quantization grid imposed; we'll save as 16-bit so it can be
+    played in browsers, but the quantization is what makes it sound
+    degraded.
+
+    `headroom_db` lowers the signal before quantization to prevent the
+    rounding from pushing values past full scale. At low bit depths this
+    matters a lot: 4-bit has step size of 1/8, which means a peak sample
+    can round upward by up to 1/16 of full scale. Without headroom,
+    samples already near 0 dBFS will be pushed past it and clip when
+    converted to int16. Real-world bit depth reduction (in DAWs, mastering
+    chains) always leaves headroom before quantization for this reason.
     """
+    # Apply headroom: scale down by `headroom_db` worth of attenuation
+    headroom_linear = 10 ** (headroom_db / 20.0)
+    audio_attenuated = audio_float * headroom_linear
+
+    # Quantize to (target_bits) bits, then map back to full-scale float
     levels = 2 ** target_bits
     half_levels = levels // 2
-    # Quantize to (target_bits) bits, then map back to full-scale float
-    quantized = np.round(audio_float * (half_levels - 1)) / (half_levels - 1)
+    quantized = np.round(audio_attenuated * (half_levels - 1)) / (half_levels - 1)
+
     return quantized.astype(np.float32)
 
 
