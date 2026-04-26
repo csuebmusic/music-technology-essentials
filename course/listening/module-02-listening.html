@@ -48,6 +48,48 @@
       margin-top: 0.4rem;
       font-style: italic;
     }
+    /* Photo grid: side-by-side or stacked photos with captions */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 640px) {
+      .photo-grid { grid-template-columns: 1fr; }
+    }
+    .photo-grid figure {
+      margin: 0;
+    }
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      display: block;
+    }
+    .photo-grid figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.6rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .photo-attribution {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint, var(--ink-soft));
+      margin-top: 0.3rem;
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -75,83 +117,20 @@
 
 <p>This matters for how you listen. The artifacts you might hear, things like surface noise, slight pitch instability, the audible seam of an edit, are not flaws in the recording. They're the sound of the medium itself, the physical reality of working with magnetic tape and disc. Schaeffer and Henry weren't trying to sound digital and failing. They were working in their actual material, the way a sculptor works in marble rather than aspiring to be a 3D printer.</p>
 
-<figure>
-  <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reel-to-reel tape recorder with splicing block">
-    <rect width="600" height="240" fill="var(--bg-alt)"/>
+<div class="photo-grid">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Studio%20di%20fonologia%20del%201955%20della%20sede%20Rai%20di%20Milano%20-%20Museo%20degli%20strumenti%20musicali%20del%20castello%20sforzesco%20-%20Milano.JPG?width=900" alt="Equipment racks and mixing console of the Studio di Fonologia Musicale della RAI di Milano, restored at the Museum of Musical Instruments in Milan." loading="lazy">
+    <figcaption>Studio di Fonologia Musicale della RAI · Milan, founded 1955</figcaption>
+    <p class="photo-attribution">Photo: Stefano Stabile, CC BY-SA 3.0 via Wikimedia Commons</p>
+  </figure>
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/EMI%20tape%20splicing%20block%20affixed%20to%20a%20Revox%20tape%20recorder.jpg?width=900" alt="Close-up of an EMI tape splicing block mounted on a Revox tape recorder, with a section of magnetic tape laid in the splicing groove." loading="lazy">
+    <figcaption>EMI splicing block on a Revox deck · the actual edit interface</figcaption>
+    <p class="photo-attribution">Photo: CC-licensed via Wikimedia Commons</p>
+  </figure>
+</div>
 
-    <!-- TAPE DECK BODY: rectangular, dominates left 2/3 of canvas -->
-    <rect x="40" y="40" width="380" height="180" fill="none" stroke="var(--ink)" stroke-width="2" rx="4"/>
-
-    <!-- Two reels: outer rim, hub, and tape coil -->
-    <!-- Left reel -->
-    <circle cx="120" cy="105" r="50" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-    <circle cx="120" cy="105" r="42" fill="none" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <circle cx="120" cy="105" r="35" fill="var(--accent)" opacity="0.18"/>
-    <circle cx="120" cy="105" r="35" fill="none" stroke="var(--accent)" stroke-width="1"/>
-    <circle cx="120" cy="105" r="8" fill="var(--ink)"/>
-    <!-- Reel spokes -->
-    <line x1="120" y1="73" x2="120" y2="137" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <line x1="88" y1="105" x2="152" y2="105" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <line x1="98" y1="83" x2="142" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <line x1="142" y1="83" x2="98" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
-
-    <!-- Right reel -->
-    <circle cx="340" cy="105" r="50" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-    <circle cx="340" cy="105" r="42" fill="none" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <circle cx="340" cy="105" r="22" fill="var(--accent)" opacity="0.12"/>
-    <circle cx="340" cy="105" r="22" fill="none" stroke="var(--accent)" stroke-width="1"/>
-    <circle cx="340" cy="105" r="8" fill="var(--ink)"/>
-    <!-- Reel spokes -->
-    <line x1="340" y1="73" x2="340" y2="137" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <line x1="308" y1="105" x2="372" y2="105" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <line x1="318" y1="83" x2="362" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
-    <line x1="362" y1="83" x2="318" y2="127" stroke="var(--ink-soft)" stroke-width="0.8"/>
-
-    <!-- Tape running between reels: pulls down through the head/capstan area -->
-    <path d="M 155 120 Q 175 145, 200 165 L 260 165 Q 285 145, 305 120"
-          fill="none" stroke="var(--accent)" stroke-width="1.8"/>
-
-    <!-- Heads: 3 small rectangles in the center bottom area, where tape passes -->
-    <rect x="208" y="160" width="8" height="20" fill="var(--ink)" opacity="0.85"/>
-    <rect x="226" y="160" width="8" height="20" fill="var(--ink)" opacity="0.85"/>
-    <rect x="244" y="160" width="8" height="20" fill="var(--ink)" opacity="0.85"/>
-    <text x="230" y="200" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">heads</text>
-
-    <!-- Capstan and pinch roller -->
-    <circle cx="270" cy="170" r="4" fill="var(--ink)"/>
-    <circle cx="278" cy="170" r="3" fill="none" stroke="var(--ink)" stroke-width="0.8"/>
-
-    <!-- Reel labels -->
-    <text x="120" y="180" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">supply reel</text>
-    <text x="340" y="180" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">take-up reel</text>
-
-    <!-- Deck label -->
-    <text x="230" y="60" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="1">REEL-TO-REEL TAPE RECORDER</text>
-
-    <!-- SPLICING BLOCK: separate object on the right side -->
-    <rect x="460" y="100" width="120" height="40" fill="none" stroke="var(--ink)" stroke-width="2" rx="2"/>
-
-    <!-- The 45° splicing groove -->
-    <line x1="475" y1="100" x2="500" y2="140" stroke="var(--ink)" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.5"/>
-    <line x1="540" y1="100" x2="565" y2="140" stroke="var(--ink)" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.5"/>
-
-    <!-- A piece of tape laid in the block, cut at 45° -->
-    <path d="M 465 115 L 510 115 L 522 132 L 575 132" fill="none" stroke="var(--accent)" stroke-width="1.8"/>
-    <line x1="510" y1="115" x2="522" y2="132" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2,1"/>
-
-    <!-- Razor blade above -->
-    <path d="M 510 75 L 530 75 L 528 90 L 512 90 Z" fill="var(--ink)" opacity="0.4"/>
-    <line x1="520" y1="90" x2="520" y2="110" stroke="var(--ink)" stroke-width="0.5" stroke-dasharray="1,1"/>
-
-    <!-- Splicing block label -->
-    <text x="520" y="160" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="1">SPLICING BLOCK</text>
-    <text x="520" y="173" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">cut, then splice</text>
-
-    <!-- Subtle annotation: the angle creates a crossfade -->
-    <text x="520" y="200" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" text-anchor="middle">45° cut for smooth join</text>
-  </svg>
-  <figcaption>The tools of musique concrète before computers: a reel-to-reel tape recorder and a splicing block. A composer would record source sounds onto tape, then physically cut the tape with a razor blade in the splicing block (the 45° cut creates a smooth crossfade where two pieces join), apply adhesive splicing tape to bond the pieces, and play the result back. Every "edit" was a physical action.</figcaption>
-</figure>
+<p class="figure-context">Left: a sister studio to the one Schaeffer ran in Paris. The Studio di Fonologia in Milan was founded in 1955 by Luciano Berio and Bruno Maderna for the same kind of work. Composers including Berio, Maderna, Nono, Pousseur, Cage, and Stockhausen made pieces here using equipment like this. Right: the splicing block, the tool that turned cutting magnetic tape into a precise editing interface. The block holds the tape in a shallow groove; the diagonal slot guides a razor blade for a 45° cut that creates a smooth crossfade when two pieces are rejoined.</p>
 
 <p>Digital audio took a long time to arrive in this tradition. Computer-based music synthesis began in research labs as early as the 1950s, but the equipment was expensive and limited. Tape stayed dominant through the 1970s. The first commercial digital samplers arrived around 1979, but they cost as much as a house. Through the 1980s and into the early 1990s, studios began mixing tape and digital workflows. Hard-disk recording gradually became affordable. By the late 1990s, anyone with a personal computer and a little software could do digitally what had previously required a tape studio. Within another decade, working in tape became a deliberate aesthetic choice rather than a default.</p>
 
@@ -252,18 +231,18 @@
 <p>The first piece of musique concrète ever made. Built entirely from train sounds. About 3 minutes.</p>
 
 <div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/_KCMFvi7ooE" title="Pierre Schaeffer - Étude aux chemins de fer (1948)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/9i1bLCrakEE?end=173" title="Pierre Schaeffer - Étude aux chemins de fer (1948)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
 <p class="video-fallback">If the video doesn't load, search YouTube for "Schaeffer Étude aux chemins de fer."</p>
 
-<h3>2 · Pierre Henry · <em>Variations pour une porte et un soupir</em>, opening section (1963)</h3>
+<h3>2 · Pierre Henry · <em>Variations pour une porte et un soupir</em>, first movement (1963)</h3>
 
-<p>Built from the sound of a single door and a single sigh. The full work is long, so listen to <strong>just the first 5 minutes</strong>. The embed below starts at the beginning and ends at 5 minutes automatically.</p>
+<p>Built from the sound of a single door and a single sigh. The full work has 25 numbered movements; listen to the <strong>first movement, "Sommeil"</strong> (sleep), embedded below. About 2 and a half minutes. If you want to hear more, click through to YouTube and the related movements appear in the sidebar.</p>
 
 <div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/dud4D6PeHqQ?start=0&end=300" title="Pierre Henry - Variations pour une porte et un soupir (1963), opening 5 minutes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/MjCgW3ea6js" title="Pierre Henry - Variations pour une porte et un soupir, 1. Sommeil (1963)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
-<p class="video-fallback">If the video doesn't load, search YouTube for "Henry Variations pour une porte et un soupir."</p>
+<p class="video-fallback">If the video doesn't load, search YouTube for "Henry Variations pour une porte et un soupir Sommeil."</p>
 
 <h3>3 · A contemporary example, your choice</h3>
 
