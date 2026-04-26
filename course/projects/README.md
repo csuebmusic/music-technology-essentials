@@ -27,3 +27,7 @@ Every project prompt should include:
 ## Tone
 
 Student-facing. Direct about expectations. Generous about creative latitude. The goal is for students to leave the prompt knowing exactly what they have to do, what they have freedom to do, and what they'll be evaluated on.
+
+## Prose conventions
+
+All student-facing HTML follows a shared set of prose conventions documented in [`assets/README.md`](../../assets/README.md). The most important: no em dashes (use commas, parentheses, colons, or middle dots instead).

@@ -35,6 +35,10 @@ The questions are intentionally not "did you like it" or "what does it mean." Li
 
 Student-facing, warm, direct. Each assignment should make clear that there are no wrong answers as long as the student is genuinely listening and writing about what they hear.
 
+## Prose conventions
+
+All student-facing HTML follows a shared set of prose conventions documented in [`assets/README.md`](../../assets/README.md). The most important: no em dashes (use commas, parentheses, colons, or middle dots instead).
+
 ## Grading
 
 Listening responses are low-stakes — completion plus genuine engagement. A typical rubric: full credit if the response addresses all questions and shows real listening; partial credit if it's superficial or skips questions; no credit if not submitted.

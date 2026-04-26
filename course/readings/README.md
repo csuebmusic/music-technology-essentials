@@ -55,3 +55,7 @@ Visuals can be inline SVG (built in the warm palette) or referenced images. Phot
 ## Tone
 
 Beginner-friendly but substantive. The goal is "the textbook chapter that doesn't exist commercially" — accurate, well-paced, with personality. Define every technical term the first time it appears and use it consistently. Connect concepts to musical and creative outcomes wherever possible.
+
+## Prose conventions
+
+All student-facing HTML follows a shared set of prose conventions documented in [`assets/README.md`](../../assets/README.md). The most important: no em dashes (use commas, parentheses, colons, or middle dots instead).
