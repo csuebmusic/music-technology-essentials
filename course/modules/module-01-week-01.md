@@ -23,13 +23,14 @@ This module is short but foundational. Everything downstream depends on it.
 By the end of this single session, students should be able to:
 
 1. Locate, open, and navigate Finder; understand file paths, folders, and basic keyboard shortcuts
-2. Connect to the lab NAS and locate their personal student folder
+2. Set up a local working folder at `~/Documents/lastname/` and connect to the lab NAS
 3. Save files using the course naming convention
 4. Identify each piece of gear at their station (USB hub, audio interface, mic, MIDI keyboard, headphones) and connect them correctly
 5. Set the three knobs on an audio interface (gain, main, headphone) in the correct order, starting from zero
 6. Use a software level meter to set mic gain at a usable level
-7. Record a short audio clip through the full signal chain and save it to the correct location
-8. Run through the end-of-session exit routine: backup, sign-outs, eject, quit, leave the station clean
+7. Record a short audio clip through the full signal chain and save it to their local folder
+8. Run through the end-of-session routine: upload local folder to NAS, eject NAS, sign out of browser accounts, quit apps, leave the station clean
+9. Articulate the local-first / NAS-as-sync workflow that the course will use all semester
 
 ---
 
@@ -56,19 +57,24 @@ Task-based, not lecture. TA demos each step on the projector, then students do i
 
 **Practical exercise:** Each student opens the local handout (`/Users/Shared/Downloads/01-first-day-setup.pdf` — pre-loaded by the TA), makes a throwaway folder on the Desktop, takes a screenshot, drags it into the folder, and deletes the folder.
 
-### Block 3 — Connecting to the NAS (3:40–4:00)
+### Block 3 — Set up folders and connect to the NAS (3:40–4:00)
 
-- What a NAS is, in plain terms: shared storage for the lab
-- Connecting via Finder: `Cmd+K` → `smb://[lab-nas-address]` → log in
-- Navigating to `/music/students/[lastname]/`
-- The folder convention: `lastname/` at the top level, then per-project subfolders
-- The file naming convention: `lastname-projectname-version.ext` — lowercase, hyphens (not spaces), no special characters
+This is where the **workflow model** of the course is established. Students learn that they work locally and use the NAS to sync between sessions. Establishing this on Day 1 sets a precedent for the rest of the semester.
 
-**Practical exercise:** Each student connects to the NAS, finds their `lastname/` folder, creates a subfolder `lastname/week-01/`, and confirms they can navigate in and out.
+- Two-folder model: `~/Documents/lastname/` (local working copy) and `nas:/music/students/lastname/` (master / sync location)
+- The pattern: download from NAS at start of session, work locally, upload to NAS at end
+- Folder convention: `lastname/` at the top level, then per-week or per-project subfolders
+- File naming convention: `lastname-projectname-version.ext` — lowercase, hyphens, no spaces, no special characters
+
+**Practical exercise:**
+1. Each student creates `~/Documents/lastname/week-01/` locally
+2. Connects to the NAS (`Cmd+K`, `smb://[address]`, log in — do NOT save credentials to keychain)
+3. Confirms their personal folder exists at `/music/students/lastname/`
+4. Ejects the NAS — they'll reconnect at the end of the session to upload
 
 ### Block 4 — Set up gear and make a recording (4:00–4:40)
 
-This is the day's main event. Students plug in their full signal chain (mic, audio interface, headphones, MIDI keyboard), set their levels, and produce one successful recording. The deliverable for the day comes out of this block.
+This is the day's main event. Students plug in their full signal chain (mic, audio interface, headphones, MIDI keyboard), set their levels, and produce one successful recording. The recording gets saved to their *local* folder during the session; uploading to the NAS happens as part of the exit routine.
 
 The pedagogical arc is the full signal chain in miniature: physical sound → mic → cable → interface → gain → software → file. Students will return to every link in this chain across the semester. Day 1 is the first time they touch all of it.
 
@@ -82,7 +88,7 @@ The pedagogical arc is the full signal chain in miniature: physical sound → mi
 6. **Bring up monitoring**: headphone knob to noon, then main knob to noon
 7. **If the interface has a Mix / Direct-USB knob**, set it to ~60% direct / 40% USB (about 11 o'clock if direct is on the left). Roughly half of lab interfaces have this; the rest skip this step.
 8. **Set the gain** by talking into the mic and watching QuickTime's level meter — target is meter moving regularly but not pinning the right edge
-9. **Record** name + one word, **listen back**, **save** as `lastname-hello.m4a` to `lastname/week-01/` on NAS
+9. **Record** name + one word, **listen back**, **save** as `lastname-hello.m4a` to `~/Documents/lastname/week-01/` (local)
 
 **Light touch on gain staging.** This is a foundational concept in the course, but Day 1 isn't where it gets the full treatment. For today, students should leave knowing:
 - The three knobs exist and what each does in one sentence
@@ -90,17 +96,15 @@ The pedagogical arc is the full signal chain in miniature: physical sound → mi
 - The visual meter is the goal — moving but not pinned
 - We'll return to gain staging properly in Module 3
 
-Before students leave, the TA confirms each file landed correctly by opening the NAS folder on the projector.
+**Fallback if gear is broken:** If a student's mic, interface, or hub isn't working and can't be quickly fixed, they record using QuickTime's built-in mic (no interface) and save the file as normal to the local folder. The TA fixes the gear after class. Day 1 success = file in the local folder, then uploaded to NAS during exit routine.
 
-**Fallback if gear is broken:** If a student's mic, interface, or hub isn't working and can't be quickly fixed, they record using QuickTime's built-in mic (no interface) and save the file as normal. The TA fixes the gear after class. Day 1 success = file in the right place; the full signal chain is the goal but not the requirement.
-
-**Last 3 minutes — exit routine.** TA walks through Handout 02 (End-of-Session Checklist) on the projector. Students do steps 2–6 today (their Day 1 file is already saved on NAS, so step 1 is done). The exit routine becomes habit from Wednesday Aug 26 onward.
+**Last 5 minutes — exit routine.** TA walks through Handout 02 (Session Routines) on the projector. Students reconnect to the NAS, upload their `lastname/` folder for the first time, eject, and complete the rest of the routine. Once everyone has uploaded, the TA opens the NAS on the projector and scrolls through to confirm every student's folder is there with their hello file inside.
 
 ---
 
 ## Deliverable
 
-A single file at `nas:/music/students/[lastname]/week-01/[lastname]-hello.m4a`. Not graded — just confirmation everyone made it through Day 1.
+A `lastname/` folder uploaded to the NAS at `/music/students/[lastname]/`, containing `week-01/[lastname]-hello.m4a`. The local copy at `~/Documents/lastname/` should also exist. Not graded — confirmation everyone made it through Day 1 with the workflow established.
 
 ---
 

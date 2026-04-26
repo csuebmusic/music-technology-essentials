@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 — Session Routines</title>
+  <link rel="stylesheet" href="handout.css">
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Reference card</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Lab reference · MB2525</div>
+  <h1>Session Routines</h1>
+  <div class="subtitle">How you start and end every session in the lab.</div>
+</div>
+
+<p class="lede">In this class, you work locally on whichever lab computer you're sitting at, and use the NAS to keep your work in sync between sessions. This card has two halves: what to do when you arrive, and what to do before you leave. Both halves take a couple of minutes. Do them every time.</p>
+
+<hr>
+
+<h2>How the workflow works</h2>
+
+<p>You always have <strong>two copies</strong> of your work:</p>
+
+<ul>
+  <li><strong>Local</strong> — at <code>~/Documents/lastname/</code> on whichever lab computer you're using. This is where you actually work during a session. Local files load fast and are reliable.</li>
+  <li><strong>NAS</strong> — at <code>/music/students/lastname/</code> on the lab server. This is the master copy. It's how your work moves between computers.</li>
+</ul>
+
+<p>The pattern is: <strong>download from NAS at the start, upload to NAS at the end.</strong> The local copy is where you work; the NAS is how you transport.</p>
+
+<div class="callout warn">
+  <div class="callout-label">The most important rule</div>
+  <p>Always upload to the NAS before you leave. If you forget, your work is stranded on whatever computer you used, and the next time you sit at a different computer you'll be working from an older version.</p>
+</div>
+
+<hr>
+
+<h2>Start of session</h2>
+
+<p>Do this when you sit down, before opening any creative software.</p>
+
+<ol class="steps">
+  <li>Connect to the NAS: in Finder, hold <kbd>Cmd</kbd> + <kbd>K</kbd>, enter the server address, sign in.</li>
+  <li>In Finder, navigate to your <code>lastname/</code> folder on the NAS.</li>
+  <li>Open another Finder window (<kbd>Cmd</kbd> + <kbd>N</kbd>) and navigate to <code>~/Documents/</code>.</li>
+  <li>Look for a <code>lastname/</code> folder in <code>~/Documents/</code>.
+    <ul>
+      <li><strong>If it exists</strong> — compare with the NAS version. If the NAS version is newer (check modification dates in Finder), drag the NAS folder into <code>~/Documents/</code> to update your local copy. macOS will ask if you want to replace; choose <strong>Replace</strong>.</li>
+      <li><strong>If it doesn't exist</strong> (you're at a new computer, or this is your first session) — drag your <code>lastname/</code> folder from the NAS into <code>~/Documents/</code> to download it.</li>
+    </ul>
+  </li>
+  <li>Eject the NAS from Finder's sidebar — you don't need it mounted during the session.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Checking modification dates</div>
+  <p>In Finder, click the <strong>columns view</strong> button (the third icon at the top of the window) to see the date modified for each item. If the dates match, your two copies are already in sync — nothing to download. If the NAS is newer, download. If the local is newer, you didn't upload last time — fix that immediately by skipping ahead to the End-of-session steps and uploading to NAS first.</p>
+</div>
+
+<p>Now you're ready to work. Open Audacity, Ableton, or whatever you're using, and work entirely from your local <code>~/Documents/lastname/</code> folder.</p>
+
+<hr>
+
+<h2>End of session</h2>
+
+<p>Do this before you leave the lab. Every session.</p>
+
+<ol class="steps">
+  <li>Save your work in whatever app you've been using (<kbd>Cmd</kbd> + <kbd>S</kbd>).</li>
+  <li>Connect to the NAS again: <kbd>Cmd</kbd> + <kbd>K</kbd> in Finder.</li>
+  <li>Navigate to your <code>lastname/</code> folder on the NAS in one Finder window, and to <code>~/Documents/lastname/</code> in another.</li>
+  <li>Drag your <code>lastname/</code> folder from <code>~/Documents/</code> onto the NAS, replacing the older version. (If macOS asks whether to <em>copy</em> or <em>move</em>, choose <strong>copy</strong> — keep the local version too.)</li>
+  <li>Confirm the upload finished. The folder on the NAS should now show today's modification date.</li>
+  <li>Eject the NAS from Finder's sidebar.</li>
+  <li>Sign out of any browser accounts (Canvas, Google, Microsoft, etc.) and quit your browser (<kbd>Cmd</kbd> + <kbd>Q</kbd>).</li>
+  <li>Quit all apps with <kbd>Cmd</kbd> + <kbd>Q</kbd>. Look at the Dock — any app with a small dot under its icon is still running.</li>
+  <li>Audio interface knobs back to zero. Headphones away. Chair in.</li>
+</ol>
+
+<hr>
+
+<h2>If two copies disagree</h2>
+
+<p>If you ever sit down and realize the local copy and NAS copy seem out of sync — different file sizes, different folder contents — pause and figure out which is newer before doing anything.</p>
+
+<ul>
+  <li>Check modification dates in Finder columns view.</li>
+  <li>Whichever is newer is the one you trust. Copy it over the older one.</li>
+  <li>Never delete a folder until you're sure you've got the current version somewhere safe.</li>
+  <li>If you can't tell, don't guess. Ask the TA before deleting anything.</li>
+</ul>
+
+<hr>
+
+<h2>Quick versions</h2>
+
+<h3>Start</h3>
+<p>Connect to NAS → download <code>lastname/</code> to <code>~/Documents/</code> → eject NAS → work.</p>
+
+<h3>End</h3>
+<p>Save → connect to NAS → upload <code>lastname/</code> from <code>~/Documents/</code> → eject NAS → sign out of browser → quit apps → knobs to zero.</p>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Handout 02 · Session routines</span>
+</footer>
+
+</body>
+</html>
