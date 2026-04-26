@@ -89,6 +89,66 @@
       margin: 1rem 0 0;
       line-height: 1.5;
     }
+
+    /* Tone generator widget */
+    .tone-tool {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .tone-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .tone-button {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      padding: 0.5rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      min-width: 5.5rem;
+    }
+    .tone-button:hover { background: var(--accent-soft); }
+    .tone-button.playing { background: var(--ink); }
+    .tone-readout {
+      font-family: var(--mono);
+      font-size: 1.4rem;
+      color: var(--ink);
+    }
+    .tone-freq { font-weight: 500; }
+    .tone-unit {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      margin-left: 0.25rem;
+    }
+    .tone-slider {
+      width: 100%;
+      margin: 0.5rem 0 0.5rem;
+      accent-color: var(--accent);
+    }
+    .tone-scale {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      margin-bottom: 1rem;
+    }
+    .tone-note {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +189,7 @@
     <text x="10" y="20" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">amplitude</text>
     <text x="540" y="170" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">time →</text>
   </svg>
-  <figcaption>A sine wave: the simplest possible waveform. Continuous.</figcaption>
+  <figcaption>A sine wave: the simplest possible waveform. Smooth. Continuous. Infinite resolution.</figcaption>
 </figure>
 
 <p>That's sound in the analog world: a continuous, smoothly changing physical phenomenon. A microphone is a device that catches those pressure waves and turns them into a corresponding electrical signal: a tiny voltage that wiggles in time with the air. The signal is still continuous, still analog. It's just electricity instead of air. To work with sound on a computer, we have to do something else: turn that continuous signal into <strong>numbers</strong>.</p>
@@ -275,7 +335,7 @@
 
 <p>The Nyquist theorem is the only piece of math you need to know to make sense of why sample rates are what they are. <strong>Half the sample rate is the highest frequency that can be represented.</strong> At 44.1 kHz, you can capture frequencies up to about 22 kHz, which covers the entire audible range, with a little room to spare.</p>
 
-<h3>44.1 kHz vs. 48 kHz · both are conventions</h3>
+<h3>44.1 kHz vs. 48 kHz</h3>
 
 <p>You'll see two sample rates everywhere in modern audio production: <strong>44.1 kHz</strong> and <strong>48 kHz</strong>. Both work; both cover the audible range with margin to spare. The reason there are two comes down to history.</p>
 
@@ -312,67 +372,6 @@
   </div>
   <p class="tone-note"><strong>Keep your headphones at low volume before pressing Play.</strong> Sine tones are loud and fatiguing: start quiet, listen briefly, stop when you're done. High frequencies in particular can damage hearing if played too loud.</p>
 </div>
-
-<style>
-  .tone-tool {
-    background: var(--bg-alt);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-  }
-  .tone-controls {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1.25rem;
-  }
-  .tone-button {
-    font-family: var(--mono);
-    font-size: 0.92rem;
-    padding: 0.5rem 1.5rem;
-    background: var(--accent);
-    color: var(--bg);
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    min-width: 5.5rem;
-  }
-  .tone-button:hover { background: var(--accent-soft); }
-  .tone-button.playing { background: var(--ink); }
-  .tone-readout {
-    font-family: var(--mono);
-    font-size: 1.4rem;
-    color: var(--ink);
-  }
-  .tone-freq { font-weight: 500; }
-  .tone-unit {
-    font-size: 0.92rem;
-    color: var(--ink-soft);
-    margin-left: 0.25rem;
-  }
-  .tone-slider {
-    width: 100%;
-    margin: 0.5rem 0 0.5rem;
-    accent-color: var(--accent);
-  }
-  .tone-scale {
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--ink-faint);
-    margin-bottom: 1rem;
-  }
-  .tone-note {
-    font-size: 0.88rem;
-    color: var(--ink-soft);
-    margin: 0;
-    line-height: 1.5;
-  }
-</style>
 
 <script>
 (function() {
@@ -549,7 +548,7 @@
 
 <h2>4 · Bit depth</h2>
 
-<p>Sample rate is how often we measure. <strong>Bit depth</strong> is how precisely we measure each sample. Each sample is stored as a binary number, and bit depth is how many digits long that number is.</p>
+<p>If sample rate is about <em>when</em> we measure, <strong>bit depth</strong> is about <em>how precisely</em>. Each sample isn't just a number; it's a number with finite resolution. Bit depth tells you how many possible values that number can take. Each sample is stored as a binary number, and bit depth is how many digits long that number is.</p>
 
 <p>An 8-bit sample can take 256 possible values (because 2 to the power of 8 is 256). A 16-bit sample can take 65,536 values. A 24-bit sample can take over 16 million values. The more bits, the finer the gradations of amplitude available: the more precisely each sample can describe the actual height of the wave at that moment.</p>
 
