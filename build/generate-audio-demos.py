@@ -59,23 +59,34 @@ def karplus_strong_pluck(freq, duration_sec, sr=SR, decay=0.997, brightness=0.5)
 
 def build_source():
     """
-    Build a ~7 second pluck sequence: 4 notes, last one held into silence
-    so quantization noise becomes audible during decay.
+    Build a ~3 second pluck sequence: 4 notes in quick succession, with the
+    last one held into a brief decay tail.
+
+    Total duration is deliberately short. At low bit depths, quiet samples
+    round down to zero — the natural Karplus-Strong decay floors out into
+    pure silence around 2.3 seconds at 4-bit. A longer file would have
+    several seconds of dead air at low bit depths, which sounds broken
+    rather than pedagogically illuminating. By keeping the file to ~3
+    seconds, we give the 4-bit version time to demonstrate its loud
+    quantization noise, then trail naturally into a short silence at the
+    end. The 16-bit and 8-bit versions still demonstrate full decay within
+    the same window.
     """
     sr = SR
-    sequence = np.zeros(int(7.5 * sr), dtype=np.float32)
+    sequence = np.zeros(int(3.0 * sr), dtype=np.float32)
 
-    # Notes: A3, C#4, E4, A4 (an A major arpeggio) — bright but resolved.
+    # Notes: A3, C#4, E4, A4 (an A major arpeggio): bright but resolved.
+    # Tightly spaced so all 4 attacks land in the first second.
     notes = [
-        (220.00, 0.0),   # A3 at 0.0s
-        (277.18, 0.6),   # C#4 at 0.6s
-        (329.63, 1.2),   # E4 at 1.2s
-        (440.00, 1.8),   # A4 at 1.8s, held longest
+        (220.00, 0.0),    # A3 at 0.0s
+        (277.18, 0.25),   # C#4 at 0.25s
+        (329.63, 0.5),    # E4 at 0.5s
+        (440.00, 0.75),   # A4 at 0.75s, held longest
     ]
 
     for freq, start_sec in notes:
-        # Each note rings for ~5 seconds (long decay overlaps with subsequent notes)
-        pluck = karplus_strong_pluck(freq, duration_sec=5.5, decay=0.998, brightness=0.4)
+        # Each note rings for ~2.5 seconds; decay overlaps with later notes
+        pluck = karplus_strong_pluck(freq, duration_sec=2.5, decay=0.998, brightness=0.4)
         start_idx = int(start_sec * sr)
         end_idx = start_idx + len(pluck)
         if end_idx > len(sequence):
