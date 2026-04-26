@@ -132,9 +132,7 @@
   <figcaption>A sine wave: the simplest possible waveform. Continuous.</figcaption>
 </figure>
 
-<p>That's sound in the analog world: a continuous, smoothly changing physical phenomenon. A microphone is a device that catches those pressure waves and turns them into a corresponding electrical signal: a tiny voltage that wiggles in time with the air. The signal is still continuous, still analog. It's just electricity instead of air.</p>
-
-<p>To work with sound on a computer, we have to do something else: turn that continuous signal into <strong>numbers</strong>.</p>
+<p>That's sound in the analog world: a continuous, smoothly changing physical phenomenon. A microphone is a device that catches those pressure waves and turns them into a corresponding electrical signal: a tiny voltage that wiggles in time with the air. The signal is still continuous, still analog. It's just electricity instead of air. To work with sound on a computer, we have to do something else: turn that continuous signal into <strong>numbers</strong>.</p>
 
 <hr>
 
@@ -527,7 +525,7 @@
       <text x="560" y="152">50 kHz</text>
     </g>
   </svg>
-  <figcaption>The audible range, two Nyquist limits, and the two common sample rates on a single linear frequency axis. Each Nyquist limit is exactly half its sample rate (the dotted arrows). Anything above the Nyquist line can't be properly represented by that sample rate: a problem we'll come back to in Sound Design.</figcaption>
+  <figcaption>The audible range, two Nyquist limits, and the two common sample rates on a single linear frequency axis. Each Nyquist limit is exactly half its sample rate (the dotted arrows). Anything above the Nyquist line can't be properly represented by that sample rate: the result is a phenomenon called <em>aliasing</em>, which we'll come back to in section 5.</figcaption>
 </figure>
 
 <div class="audio-compare">
@@ -729,11 +727,29 @@
   <dt>Quantization</dt>
   <dd>The process of rounding a continuous amplitude value to the nearest available digital value. Quantization noise is the audible side effect when bit depth is too low.</dd>
 
+  <dt>Quantization noise</dt>
+  <dd>The audible artifact of bit depth reduction. As samples round to the nearest available value, the rounding errors accumulate as a low-level hiss. The lower the bit depth, the louder the noise relative to the signal.</dd>
+
+  <dt>Aliasing</dt>
+  <dd>The audible artifact of sample rate being too low for the frequencies present. Frequencies above the Nyquist limit don't disappear; they fold back into the audible range as false lower frequencies, producing strange whistles and inharmonic tones.</dd>
+
+  <dt>Signal-to-noise ratio (SNR)</dt>
+  <dd>The ratio of the desired signal level to the background noise level, measured in decibels (dB). Higher is better. Bit depth sets a hard ceiling on SNR: roughly 6 dB per bit. 16-bit gives about 96 dB SNR; 8-bit gives about 48 dB.</dd>
+
+  <dt>Headroom</dt>
+  <dd>The margin between your loudest signal and the maximum the system can handle. Working with headroom (i.e. signal peaks below 0 dBFS) gives processing chains room to operate without clipping. A standard practice in audio production.</dd>
+
   <dt>ADC / DAC</dt>
   <dd>Analog-to-Digital Converter / Digital-to-Analog Converter. The hardware in your audio interface that handles recording and playback.</dd>
 
   <dt>WAV / AIFF</dt>
   <dd>Uncompressed audio file formats. Use these for working files and final exports.</dd>
+
+  <dt>Lossy compression</dt>
+  <dd>A compression strategy that makes audio files smaller by discarding information the human ear can't easily hear (masked frequencies, redundancies, etc.). The discarded information is gone permanently. MP3 and AAC use lossy compression.</dd>
+
+  <dt>Lossless compression</dt>
+  <dd>A compression strategy that makes audio files smaller without throwing any information away. The compressed file decodes back to bit-perfect identical with the original. FLAC and ALAC use lossless compression.</dd>
 
   <dt>MP3 / AAC</dt>
   <dd>Lossy compressed formats. Smaller files, slight quality loss. Use only for distribution, never for editing.</dd>
@@ -749,7 +765,7 @@
 <p>Optional, for the curious. None of this is required.</p>
 
 <ul>
-  <li>Hosken, <em>An Introduction to Music Technology</em>, Chapter 6: covers the same material at slightly more depth, including more on the math of digital audio.</li>
+  <li>Hosken, <em>An Introduction to Music Technology</em> (2nd ed., 2015), Chapter 6 "Digital Audio Data": covers the same material as this reading at slightly greater depth, including the math of bit depth and sample rate, and a fuller treatment of file format tradeoffs.</li>
   <li>Search "Nyquist theorem visualized" on YouTube for short videos that illustrate why double-the-frequency works.</li>
   <li>The <em>xiph.org</em> "Digital Show &amp; Tell" video by Christopher "Monty" Montgomery is a 25-minute deep dive that's surprisingly watchable, with real oscilloscope demonstrations of sampling concepts.</li>
 </ul>
