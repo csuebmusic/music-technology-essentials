@@ -152,6 +152,14 @@ Right-click the interface → "Use this device for sound input" and "Use this de
 
 **Bring up monitoring.** Have students put headphones on (slider already up — see above), then turn up the headphone knob to about noon (12 o'clock, knob pointing straight up), then the main knob to about noon. They probably won't hear anything yet because gain is still at zero. That's fine.
 
+**The mix knob (only some interfaces).** Roughly half of the lab interfaces have an additional knob labeled "Mix" or "Direct/USB" — it controls the headphone balance between the live input signal and what the computer is sending back. The other half handle this internally and don't expose it to the user.
+
+Before you teach the gain step, point this out:
+
+> "Some of you have an extra knob labeled Mix or Direct-USB. If you do, set it to about 60% toward the direct/input side and 40% toward the computer side — about 11 o'clock if direct is on the left. This means you'll hear mostly yourself live, plus a little of any playback the computer sends. If your interface doesn't have this knob, don't worry — it handles this for you. We'll come back to this concept in Module 3."
+
+Walk to the stations that have it and confirm they've set it correctly. This is a tiny piece of "your gear may differ" diversity — embrace it as a teaching moment rather than something to apologize for.
+
 **Set the gain — this is the moment.** Have students talk into the mic at normal volume (suggest "count to twenty" or "say what you had for breakfast"). While talking, slowly turn up the gain knob. They watch the QuickTime level meter. Stop when the meter is regularly moving but not pinning the right edge.
 
 This is the first time most students will see input level visually represented. Worth pausing here briefly:
@@ -164,7 +172,9 @@ Don't go deeper than that on Day 1. The temptation will be to teach digital head
 
 **Common confusions during this block:**
 
-- *"I can't hear anything in the headphones."* — Check in this order: (1) headphone slider on cable all the way up; (2) headphone knob on interface above zero; (3) audio interface set as system output in Audio MIDI Setup; (4) main/output knob above zero.
+- *"I can't hear anything in the headphones."* — Check in this order: (1) headphone slider on cable all the way up; (2) headphone knob on interface above zero; (3) audio interface set as system output in Audio MIDI Setup; (4) main/output knob above zero; (5) for stations with a mix knob, that it isn't pinned all the way to one side.
+- *"I hear myself but no playback."* (only for stations with mix knob) — Mix knob is too far toward direct. Move toward the computer/USB side.
+- *"I hear playback but not myself."* (only for stations with mix knob) — Mix knob is too far toward computer. Move toward the direct/input side.
 - *"My meter isn't moving when I talk."* — Gain knob is at zero, or wrong input is selected in QuickTime, or mic XLR cable not seated properly.
 - *"My meter is pinning red the whole time."* — Gain too high. Turn it down until peaks just stop hitting the right edge.
 - *"My recording sounds quiet."* — Gain was too low when recording. Have them re-record with the gain higher.

@@ -76,11 +76,12 @@ The pedagogical arc is the full signal chain in miniature: physical sound → mi
 1. **All three interface knobs to zero** (gain, main/output, headphone) — protects ears and gear before anything is plugged in
 2. **Plug in:** audio interface USB → hub; mic XLR → interface; MIDI keyboard USB → hub; headphones → interface headphone jack
 3. **Headphone in-line slider all the way up** (the in-line slider on the headphone cable — common cause of confusion later)
-4. **Verify in Audio MIDI Setup**, set as system input/output
+4. **Verify in Audio MIDI Setup**, set as system input/output, *quit* the app (not close — Day 1 chance to teach close vs quit)
 5. **Open QuickTime → File → New Audio Recording**, select interface from dropdown
-6. **Bring up monitoring**: headphone knob to ~25%, then main knob to ~25%
-7. **Set the gain** by talking into the mic and watching QuickTime's level meter — target is meter moving regularly but not pinning the right edge
-8. **Record** name + one word, **listen back**, **save** as `lastname-hello.m4a` to `lastname/week-01/` on NAS
+6. **Bring up monitoring**: headphone knob to noon, then main knob to noon
+7. **If the interface has a Mix / Direct-USB knob**, set it to ~60% direct / 40% USB (about 11 o'clock if direct is on the left). Roughly half of lab interfaces have this; the rest skip this step.
+8. **Set the gain** by talking into the mic and watching QuickTime's level meter — target is meter moving regularly but not pinning the right edge
+9. **Record** name + one word, **listen back**, **save** as `lastname-hello.m4a` to `lastname/week-01/` on NAS
 
 **Light touch on gain staging.** This is a foundational concept in the course, but Day 1 isn't where it gets the full treatment. For today, students should leave knowing:
 - The three knobs exist and what each does in one sentence
