@@ -150,7 +150,7 @@ Right-click the interface → "Use this device for sound input" and "Use this de
 
 **Open QuickTime → New Audio Recording.** Walk students through opening QuickTime, choosing File → New Audio Recording, clicking the dropdown arrow next to the record button, and selecting their audio interface as the source.
 
-**Bring up monitoring.** Have students put headphones on (slider already up — see above), then turn up the headphone knob to ~25% (about a quarter turn), then the main knob to ~25%. They probably won't hear anything yet because gain is still at zero. That's fine.
+**Bring up monitoring.** Have students put headphones on (slider already up — see above), then turn up the headphone knob to about noon (12 o'clock, knob pointing straight up), then the main knob to about noon. They probably won't hear anything yet because gain is still at zero. That's fine.
 
 **Set the gain — this is the moment.** Have students talk into the mic at normal volume (suggest "count to twenty" or "say what you had for breakfast"). While talking, slowly turn up the gain knob. They watch the QuickTime level meter. Stop when the meter is regularly moving but not pinning the right edge.
 
