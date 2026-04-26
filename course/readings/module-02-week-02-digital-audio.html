@@ -639,7 +639,173 @@
 
 <hr>
 
-<h2>5 · File formats</h2>
+<h2>5 · When the choices get audible: aliasing and signal-to-noise ratio</h2>
+
+<p>Sample rate and bit depth are abstract numbers, but each has a specific audible consequence when it isn't enough for the job. Knowing the names of those consequences turns mysterious artifacts into something you can identify, avoid, or (if you want) deliberately use.</p>
+
+<h3>Aliasing · the cost of a sample rate that's too low</h3>
+
+<p>The Nyquist theorem says you can only capture frequencies below half the sample rate. But what happens to frequencies above that limit? They don't politely disappear. They <strong>fold back</strong> into the audible range as false lower frequencies. This phenomenon is called <strong>aliasing</strong>.</p>
+
+<p>You've seen aliasing without knowing the name. In old movies, a wagon wheel spinning forward sometimes appears to spin backward, because the camera's frame rate isn't fast enough to catch every spoke. The wheel's rotation is "above the camera's Nyquist limit," so the eye (or the film) reconstructs a slower, false rotation. Audio aliasing is the same thing happening to sound: a real high frequency gets reconstructed as a false low one.</p>
+
+<figure>
+  <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="mathgrid5" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--rule-soft)" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="600" height="200" fill="var(--bg-alt)" />
+    <rect width="600" height="200" fill="url(#mathgrid5)" />
+    <line x1="0" y1="100" x2="600" y2="100" stroke="var(--rule)" stroke-width="1"/>
+
+    <!-- Original high-frequency sine: 8 full cycles, faint grey -->
+    <path d="M 0 100 Q 9.375 30, 18.75 100 T 37.5 100 T 56.25 100 T 75 100 T 93.75 100 T 112.5 100 T 131.25 100 T 150 100 T 168.75 100 T 187.5 100 T 206.25 100 T 225 100 T 243.75 100 T 262.5 100 T 281.25 100 T 300 100 T 318.75 100 T 337.5 100 T 356.25 100 T 375 100 T 393.75 100 T 412.5 100 T 431.25 100 T 450 100 T 468.75 100 T 487.5 100 T 506.25 100 T 525 100 T 543.75 100 T 562.5 100 T 581.25 100 T 600 100"
+          fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+
+    <!-- Sample dots at 9 evenly-spaced points across 8 cycles (severe undersampling) -->
+    <!-- Sampling at 9/600 px = sparse; samples land at near-zero crossings consistently -->
+    <!-- Compute positions: sample at t=0/9, 1/9, ... 8/9 of the canvas, evaluate the sine -->
+    <!-- Sine has 8 cycles in 600 px; period = 75 px; freq = 1/75 cycles/px -->
+    <!-- Sample sine value: y = 100 - 60 * sin(2*pi * 8 * t / 600) where t is x position -->
+    <g fill="var(--accent)">
+      <!-- 9 samples evenly spaced, demonstrating beating with the 8-cycle waveform -->
+      <circle cx="0" cy="100" r="4"/>
+      <circle cx="75" cy="89.74" r="4"/>
+      <circle cx="150" cy="79.47" r="4"/>
+      <circle cx="225" cy="100" r="4"/>
+      <circle cx="300" cy="120.26" r="4"/>
+      <circle cx="375" cy="120.26" r="4"/>
+      <circle cx="450" cy="100" r="4"/>
+      <circle cx="525" cy="79.47" r="4"/>
+      <circle cx="600" cy="89.74" r="4"/>
+    </g>
+
+    <!-- Connect the dots: a low-frequency curve that doesn't actually exist in the source -->
+    <path d="M 0 100 Q 75 89.74, 150 79.47 Q 225 100, 300 120.26 Q 375 120.26, 450 100 Q 525 79.47, 600 89.74"
+          fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6,3"/>
+
+    <!-- Labels -->
+    <text x="10" y="20" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">grey: actual high-frequency wave</text>
+    <text x="10" y="180" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)">rust dashes: what the samples seem to trace · a false low frequency</text>
+  </svg>
+  <figcaption>A sine wave sampled too sparsely. The actual signal (grey) is a high frequency, well above this sample rate's Nyquist limit. The samples (rust dots) catch the wave at unfortunate moments, and connecting them produces a curve (rust dashes) that looks like a much lower frequency. That false low frequency is aliasing: a frequency the source never contained, manufactured by the sampling process.</figcaption>
+</figure>
+
+<p>Aliasing is genuinely strange-sounding. It produces inharmonic whistles, sliding tones, and a kind of sour, "off" quality on bright sounds. Once you hear it, you recognize it.</p>
+
+<p>This is why <strong>every digital audio system applies an anti-alias filter before sampling</strong>. The filter removes any content above the Nyquist limit before the ADC sees it, so there's nothing left to fold back. Your audio interface does this automatically; so does Audacity when you change a project's sample rate; so do all professional ADCs. You don't have to think about it as long as you stay inside the standard tools. But knowing the filter exists tells you why "above Nyquist" isn't just a number: it's the boundary of what reality the digital system can hold.</p>
+
+<div class="audio-compare">
+  <div class="audio-compare-title">Listen: with vs. without anti-alias filtering</div>
+  <div class="audio-row">
+    <div class="audio-label">8 kHz, filtered<span class="audio-label-sub">the right way</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/sr-8k-16bit.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <div class="audio-label">8 kHz, no filter<span class="audio-label-sub">aliasing artifacts</span></div>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-02/alias-8k-no-filter.wav"></audio>
+  </div>
+  <p class="audio-note">Both files are at the same effective sample rate (8 kHz of bandwidth). The filtered version simply rolls off the high frequencies, sounding muffled. The no-filter version rolls those same high frequencies <em>down</em> into the audible range as false ones, producing whistles and inharmonic ring. The first is what your ADC actually does. The second is what would happen if it didn't. <em>Some chiptune and 8-bit aesthetics deliberately court aliasing for its specific texture.</em></p>
+</div>
+
+<h3>Signal-to-noise ratio · the cost of a bit depth that's too low</h3>
+
+<p>Bit depth limits how soft a sound can be before it disappears into quantization noise. The metric for this is <strong>signal-to-noise ratio (SNR)</strong>: the ratio of your loudest signal to the noise floor, measured in decibels (dB). Higher is better.</p>
+
+<p>There's a clean rule of thumb: <strong>each bit gives you about 6 dB of SNR.</strong> So:</p>
+
+<ul>
+  <li><strong>4-bit:</strong> ~24 dB SNR (loud hiss)</li>
+  <li><strong>8-bit:</strong> ~48 dB SNR (audible hiss)</li>
+  <li><strong>16-bit:</strong> ~96 dB SNR (essentially silent noise floor for music)</li>
+  <li><strong>24-bit:</strong> ~144 dB SNR (more than human hearing can resolve)</li>
+</ul>
+
+<p>For comparison, here's how those numbers sit alongside other audio media you might know:</p>
+
+<figure>
+  <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="280" fill="var(--bg-alt)"/>
+
+    <!-- Vertical scale: 0 dB at top, -150 dB at bottom -->
+    <!-- y = 30 is 0 dB (top), y = 250 is -150 dB. So 220 px / 150 dB = ~1.467 px/dB -->
+    <!-- y(dB) = 30 + (1.467 * (-dB))   so 0 dB → 30, -96 dB → 30 + 141 = 171 -->
+
+    <!-- Vertical axis -->
+    <line x1="80" y1="30" x2="80" y2="250" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="40" y="20" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">0 dB (full scale)</text>
+
+    <!-- dB tick marks every 24 dB -->
+    <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">
+      <line x1="76" y1="65.2" x2="84" y2="65.2" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="69">-24</text>
+      <line x1="76" y1="100.4" x2="84" y2="100.4" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="104">-48</text>
+      <line x1="76" y1="135.6" x2="84" y2="135.6" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="139">-72</text>
+      <line x1="76" y1="170.8" x2="84" y2="170.8" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="174">-96</text>
+      <line x1="76" y1="206" x2="84" y2="206" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="210">-120</text>
+      <line x1="76" y1="241.2" x2="84" y2="241.2" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="245">-144</text>
+    </g>
+
+    <!-- Bars: each shows the noise floor for that format. Bar starts at 0 dB (top) and extends down to noise floor. -->
+    <!-- Format bars are 50 px wide, gap of 10 px -->
+    <!-- 4-bit: SNR ~24 dB → noise floor at -24 dB → y2 = 65.2 -->
+    <!-- 8-bit: ~48 dB → -48 → y2 = 100.4 -->
+    <!-- Cassette: ~55 dB → -55 → y2 = 30 + 80.7 = 110.7 -->
+    <!-- Vinyl LP: ~65 dB → -65 → y2 = 30 + 95.4 = 125.4 -->
+    <!-- 16-bit (CD): ~96 dB → -96 → y2 = 170.8 -->
+    <!-- 24-bit: ~144 dB → -144 → y2 = 30 + 211.2 = 241.2 -->
+
+    <!-- 4-bit -->
+    <rect x="120" y="30" width="50" height="35.2" fill="var(--accent)" opacity="0.55"/>
+    <text x="145" y="78" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">4-bit</text>
+    <text x="145" y="91" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~24 dB</text>
+
+    <!-- 8-bit -->
+    <rect x="190" y="30" width="50" height="70.4" fill="var(--accent)" opacity="0.65"/>
+    <text x="215" y="113" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">8-bit</text>
+    <text x="215" y="126" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~48 dB</text>
+
+    <!-- Cassette tape -->
+    <rect x="260" y="30" width="50" height="80.7" fill="var(--ink-soft)" opacity="0.5"/>
+    <text x="285" y="123" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">cassette</text>
+    <text x="285" y="136" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~55 dB</text>
+
+    <!-- Vinyl LP -->
+    <rect x="330" y="30" width="50" height="95.4" fill="var(--ink-soft)" opacity="0.5"/>
+    <text x="355" y="138" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">vinyl LP</text>
+    <text x="355" y="151" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~65 dB</text>
+
+    <!-- 16-bit (CD) -->
+    <rect x="400" y="30" width="50" height="140.8" fill="var(--accent)" opacity="0.85"/>
+    <text x="425" y="183" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">16-bit (CD)</text>
+    <text x="425" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~96 dB</text>
+
+    <!-- 24-bit -->
+    <rect x="470" y="30" width="50" height="211.2" fill="var(--accent)"/>
+    <text x="495" y="254" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">24-bit</text>
+    <text x="495" y="267" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~144 dB</text>
+
+    <!-- Reference line: live orchestra dynamic range, ~80 dB -->
+    <line x1="100" y1="147.4" x2="540" y2="147.4" stroke="var(--ink)" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.7"/>
+    <text x="555" y="150" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">orchestra ~80 dB</text>
+  </svg>
+  <figcaption>Dynamic range available at different bit depths, with cassette and vinyl shown for comparison. The dotted line marks the dynamic range of a live orchestra (about 80 dB from softest pianissimo to loudest fortissimo): it fits comfortably inside 16-bit, doesn't quite fit in 8-bit, and is dwarfed by 24-bit. 32-bit float (not shown) is effectively unlimited within audible thresholds.</figcaption>
+</figure>
+
+<p>This is why CDs settled on 16-bit: it gives more dynamic range than the loudest unamplified music actually has. It's also why professional recording uses 24-bit even when delivering at 16-bit: the extra headroom protects you from accidentally clipping during recording or losing detail during processing. <strong>You record with margin, then commit to less margin only at the final mixdown.</strong></p>
+
+<p>That principle (record with headroom, commit later) is one of the most important practices in audio. We'll return to it in Module 3.</p>
+
+<hr>
+
+<h2>6 · File formats</h2>
 
 <p>Once you have an array of numbers representing audio, you have to store them somewhere. A <strong>file format</strong> is an agreement about how those numbers (and information about them: sample rate, bit depth, number of channels, length, etc.) get arranged inside a file. Different formats make different tradeoffs.</p>
 
@@ -680,7 +846,7 @@
 
 <hr>
 
-<h2>6 · What this means for what you make</h2>
+<h2>7 · What this means for what you make</h2>
 
 <p>You don't need to think about most of this most of the time. The point of this reading isn't to make you obsess over numbers. It's so that when something goes wrong, or when you want to make a deliberate aesthetic choice, you have the vocabulary to think clearly about it.</p>
 

@@ -173,6 +173,34 @@ def downsample_then_back(audio_float, source_sr, intermediate_sr):
     return upsampled
 
 
+def downsample_naive_then_back(audio_float, source_sr, intermediate_sr):
+    """
+    Demonstration of aliasing: downsample WITHOUT an anti-alias filter,
+    then upsample back. Result contains audible aliasing artifacts —
+    high-frequency content above the intermediate Nyquist folds back as
+    false lower frequencies. This is what would happen if you skipped
+    the filter that real ADCs always include.
+
+    We do this by simple decimation (taking every Nth sample) rather
+    than scipy's polyphase resampler, which includes proper filtering.
+    Then we upsample back via zero-order hold (sample-and-hold) so the
+    result plays at source_sr without smoothing the artifact away.
+    """
+    # Naive decimation: take every Nth sample, no filter
+    decimation = source_sr // intermediate_sr
+    decimated = audio_float[::decimation]
+
+    # Naive upsampling via zero-order hold: each sample held for `decimation` samples
+    upsampled = np.repeat(decimated, decimation)
+
+    # Match original length
+    if len(upsampled) < len(audio_float):
+        upsampled = np.pad(upsampled, (0, len(audio_float) - len(upsampled)))
+    else:
+        upsampled = upsampled[: len(audio_float)]
+    return upsampled
+
+
 # ----- Build everything -----
 
 def main():
@@ -200,6 +228,15 @@ def main():
         out_path = os.path.join(OUT_DIR, f"bd-{label}-44k.wav")
         wavfile.write(out_path, SR, to_int16(degraded))
         print(f"  → {out_path}")
+
+    # 4. Aliasing demo: same source, downsampled to 8k WITHOUT anti-alias
+    # filtering. The resulting file has audible aliasing where high-frequency
+    # content folds back into the audible range as false lower frequencies.
+    # This is the artifact every digital audio system is designed to prevent.
+    aliased = downsample_naive_then_back(source, SR, 8000)
+    out_path = os.path.join(OUT_DIR, "alias-8k-no-filter.wav")
+    wavfile.write(out_path, SR, to_int16(aliased))
+    print(f"  → {out_path}")
 
     print("\nDone. Files in assets/audio/module-02-week-02/")
 

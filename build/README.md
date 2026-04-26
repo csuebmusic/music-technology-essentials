@@ -16,16 +16,19 @@ Output directory: `assets/audio/module-02-week-02/`
 | File | Sample rate | Bit depth | Purpose |
 |---|---|---|---|
 | `source-44k-16bit.wav` | 44.1 kHz | 16-bit | Reference source (CD quality) |
-| `sr-8k-16bit.wav` | 44.1 kHz playback, 8 kHz bandwidth | 16-bit | Telephone-quality demo |
-| `sr-4k-16bit.wav` | 44.1 kHz playback, 4 kHz bandwidth | 16-bit | Truly lo-fi demo |
+| `sr-8k-16bit.wav` | 44.1 kHz playback, 8 kHz bandwidth | 16-bit | Telephone-quality demo (anti-alias filtered) |
+| `sr-4k-16bit.wav` | 44.1 kHz playback, 4 kHz bandwidth | 16-bit | Truly lo-fi demo (anti-alias filtered) |
 | `bd-8bit-44k.wav` | 44.1 kHz | 8-bit (quantized) | Audible quantization noise |
 | `bd-4bit-44k.wav` | 44.1 kHz | 4-bit (quantized) | Severely degraded |
+| `alias-8k-no-filter.wav` | 44.1 kHz playback, 8 kHz bandwidth | 16-bit | Aliasing demo: same bandwidth as `sr-8k-16bit` but produced via naive decimation (no anti-alias filter), so high frequencies fold back as audible artifacts |
 
-All five files play at 44.1 kHz so they sound at the same speed in any
+All six files play at 44.1 kHz so they sound at the same speed in any
 browser's `<audio>` element. The "sample rate" demos are bandwidth-
-reduced to simulate what a low-sample-rate system would have captured;
-the "bit depth" demos are quantized to fewer levels to expose
-quantization noise.
+reduced via proper polyphase filtering to simulate what a real ADC
+captures at low rate; the "aliasing" demo skips the filter to expose
+the artifact that anti-alias filters exist to prevent. The "bit
+depth" demos are quantized to fewer levels to expose quantization
+noise.
 
 ### The source sound
 
