@@ -58,6 +58,21 @@ Cards open in a new tab (`target="_blank" rel="noopener noreferrer"`) so student
 
 Student-facing, warm, direct. Each assignment should make clear that there are no wrong answers as long as the student is genuinely listening and writing about what they hear.
 
+## Submission details
+
+Every listening assignment ends with a `.submission-card` block (style defined in `assets/style.css`) covering:
+
+- **Where**: Canvas, under the listed assignment
+- **File format**: Word (`.docx`) or PDF (`.pdf`) — no plain-text Canvas submissions
+- **Filename**: `lastname-listening-NN.docx` (matching the project naming convention)
+- **Length**: about half a page, 250 to 350 words
+- **Formatting**: 12 pt, double-spaced, 1-inch margins, Times New Roman or Garamond, with name/course/assignment/date at top
+- **Citations**: Chicago Manual of Style (notes-bibliography) or MLA Handbook, student picks one and stays consistent. Include at least one worked example for a recording citation, since that's the format students are most likely to need and least likely to have written before.
+
+The card is the canonical form for all written assignments submitted to Canvas across the course (listening responses, midterm written component, final reflection, etc.). See `module-02-listening.html` for the markup pattern.
+
+For project assignments where the deliverable is an audio file (not a written response), the submission flow is different: files go to NAS following the `lastname-projectNN.wav` convention. Don't use the submission card for those.
+
 ## Prose conventions
 
 All student-facing HTML follows a shared set of prose conventions documented in [`assets/README.md`](../../assets/README.md). The most important: no em dashes (use commas, parentheses, colons, or middle dots instead).

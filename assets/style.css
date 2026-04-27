@@ -290,6 +290,83 @@ table.shortcut-table td:first-child kbd { margin-right: 0.25rem; }
 
 .callout.tip { background: var(--bg-alt); }
 
+/* --- Submission card --- */
+/* For written assignments submitted via Canvas. Visually distinct from
+   .callout: full border, labeled rows, operational feel. */
+
+.submission-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.submission-card .submission-title {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+  font-weight: 500;
+}
+
+.submission-card .submission-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--rule-soft);
+  align-items: baseline;
+}
+
+.submission-card .submission-row:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.submission-card .submission-row:last-of-type {
+  padding-bottom: 0;
+}
+
+.submission-card .submission-label {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.submission-card .submission-value {
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.submission-card .submission-value code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--bg);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  border: 1px solid var(--rule-soft);
+}
+
+.submission-card .submission-value em {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* Mobile: stack rows */
+@media (max-width: 560px) {
+  .submission-card .submission-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
 /* --- Rules and dividers --- */
 
 hr {
