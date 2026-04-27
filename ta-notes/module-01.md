@@ -45,11 +45,16 @@ The right pacing: **slow enough that the slowest student keeps up, with side-tas
 ### Block 1 — Welcome (10 min)
 
 - Introduce yourself briefly. Say you're a grad student in [program], working with Inés.
-- Don't read the syllabus aloud — just tell them where to find it (Canvas) and what's on it (4 modules, one project per module, a midterm and a final).
+- **Walk them through the highlights of the syllabus.** Don't read it aloud, but do flag the parts that affect their semester:
+  - **Projects.** One per module, four total. Project 1 (Module 2) is a 2-minute musique concrète piece due Wed Sep 16. The midterm (Module 3) is a sample library plus a terminology exam. The final (Module 4) is an Ableton piece due during finals week.
+  - **Exams.** Midterm and a cumulative final exam during finals week. Tell them when (the calendar in the syllabus has the dates).
+  - **Attendance.** This is a hands-on lab course. Most of the work happens in the room, with gear they don't have at home. Missing class is missing the work. Point them to the exact attendance policy in the syllabus.
+  - **Late policy.** Spell out where it is in the syllabus and the headline (e.g., "X points per day late, communicate with the instructor in advance for extensions" — read the actual wording so you state it correctly). Don't dwell on it, but make sure they know it exists and where to find it.
+- Tell them where to find the full syllabus (Canvas) and that the headlines you just gave are not a substitute for reading it themselves.
 - The most important thing to communicate: **"You don't need to know any of this already. That's why we're here."**
 - Tell them about the NAS in plain words: *"Everyone in this room is going to be working with big audio files all semester. The lab has a shared file server — we call it the NAS — and that's where your work lives. By the end of today you'll have your own folder on it."*
 
-**Do not** spend this block on classroom rules or grading policies. Those go on Canvas. Day 1 is for hands-on energy.
+Aim for the syllabus walkthrough to take about 3 minutes. The point is to flag and locate, not to lecture. Students who want details have Canvas; what they need from you in class is *I know where this lives and that I'm responsible for it*.
 
 ### Block 2 — Mac & Finder (30 min)
 

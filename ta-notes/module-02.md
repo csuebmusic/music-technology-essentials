@@ -629,7 +629,7 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 **A student didn't upload to the class folder, only their working folder.** Catch this before they leave. The class folder is part of the submission — the rubric explicitly mentions both folders. Walk them through the copy.
 
-**A student is absent.** Their submission is whatever's in the class folder by end of class. If nothing's there by end of class, late policy applies. Note absences for instructor follow-up.
+**A student is absent.** Their submission is whatever's in the class folder by end of class. If nothing's there by end of class, the late policy in the syllabus applies. Note absences for instructor follow-up.
 
 **A piece has technical issues (silent, distorted, wrong format).** Help diagnose for ~5 minutes. Common causes: exported as MP3 instead of WAV (fix in Audacity export settings), exported at wrong sample rate (export again), file is silent because tracks were muted before export (unmute, re-export). If you can't fix in 5 minutes, the student submits what they have and follows up with the instructor.
 

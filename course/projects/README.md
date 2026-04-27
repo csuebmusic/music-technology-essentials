@@ -18,11 +18,11 @@ Every project prompt should include:
 - **Constraints** — length, source material, software, format, naming
 - **What "demonstrating skills" means** — the qualitative goals
 - **Process expectations** — start early, save versions, etc.
-- **Presentation/submission details** — when and where
+- **Submission details** — the `.submission-card` block (where files go, file format, filename, due date)
 - **Rubric** — explicit criteria with point values
 - **What I'm not grading** — equally important to set expectations
-- **Late policy**
-- **Drawing inspiration** — connection back to listening, references, examples
+
+Course-wide policies (late submissions, attendance, academic integrity, etc.) live in the syllabus, not in individual project prompts. If a project has unusual logistics (a non-standard submission flow, a multi-stage deliverable, a presentation component), explain those in the Submission section; otherwise the syllabus's policies cover it.
 
 ## Tone
 
