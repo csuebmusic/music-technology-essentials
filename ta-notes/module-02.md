@@ -19,7 +19,7 @@ This file is the operational runbook for all seven sessions. Module spec (the "w
 - [Session 4 — Wed Wk 3 (Sep 2): Editing techniques + Project 1 begins](#session-4--wed-wk-3-sep-2-editing-techniques--project-1-begins)
 - [Session 5 — Wed Wk 4 (Sep 9): Mixing tool Part 1 + Project 1 work](#session-5--wed-wk-4-sep-9-mixing-tool-part-1--project-1-work)
 - [Session 6 — Mon Wk 5 (Sep 14): Dynamics + mixing tool Part 2](#session-6--mon-wk-5-sep-14-dynamics--mixing-tool-part-2)
-- [Session 7 — Wed Wk 5 (Sep 16): Project 1 presentations](#session-7--wed-wk-5-sep-16-project-1-presentations)
+- [Session 7 — Wed Wk 5 (Sep 16): Project 1 final work session + submission](#session-7--wed-wk-5-sep-16-project-1-final-work-session--submission)
 - [End-of-module assessment](#end-of-module-assessment)
 
 ---
@@ -373,8 +373,8 @@ Pull up the Project 1 prompt on the projector. Walk through it section by sectio
 - **Read the prompt aloud.** Yes, all of it. They'll skim if you don't.
 - **Constraints.** 2 minutes max (90 seconds min). Sample bank only. WAV 44.1/16-bit. Filename `lastname-project01.wav`.
 - **What demonstrating skills means.** Go through the five bullets. These are the rubric items; students should hear them now and remember them.
-- **Process expectations.** Start early. Save versions. Listen on different headphones. Take breaks.
-- **Presentation:** Wed Sep 16, two weeks from today. Each student plays their piece + one sentence intro.
+- **Process expectations.** Start early. Save versions. Take breaks. Ask for feedback during lab time.
+- **Submission:** Wed Sep 16, two weeks from today. End of class, files uploaded to NAS (private working folder + class listening folder). No live presentation — listening happens asynchronously after, with a short peer-listening response due Mon Sep 21.
 - **Rubric.** Five dimensions, 20 points each, 100 total. Late penalty: 10 points/day.
 
 End with: "You'll start working on it today. The rest of class is your time."
@@ -438,7 +438,7 @@ Students learn the first half of mixing concepts — levels, EQ basics, stereo p
 
 #### Block 1 — Quick check-in (10 min)
 
-Open: "Show of hands — who's spent at least an hour on Project 1 since last Wednesday?" If most hands are up, great. If most aren't, name it: "You need to be working on this between sessions. Two more sessions before presentations."
+Open: "Show of hands — who's spent at least an hour on Project 1 since last Wednesday?" If most hands are up, great. If most aren't, name it: "You need to be working on this between sessions. Two more sessions before submission."
 
 Quick survey: "What's the hardest thing about it so far?" Listen. Common answers: "I don't know what to make," "my edits sound choppy," "I don't know when to stop." All normal. Acknowledge.
 
@@ -467,7 +467,7 @@ Walk the room. Listen on their headphones to short excerpts — you can give spe
 
 #### Block 5 — Wrap (5 min)
 
-Quick close. "Mon Wk 5 we add the last mixing concept — dynamics. Then Wed Wk 5 is presentations. Plan your work accordingly."
+Quick close. "Mon Wk 5 we add the last mixing concept — dynamics. Then Wed Wk 5 is your final work session and submission. Plan your work accordingly."
 
 ### Common confusions
 
@@ -486,7 +486,7 @@ Quick close. "Mon Wk 5 we add the last mixing concept — dynamics. Then Wed Wk 
 
 **100 min · Lecture-style turning into lab · MB2525**
 
-This is the last new content of the module. After today, Wed Wk 5 is purely presentations.
+This is the last new content of the module. After today, Wed Wk 5 is the final work session and submission deadline.
 
 > **Notes:** Listening assignment is **due today**, before class. Spot-check Canvas before class to know who submitted. The mixing tool Part 2 is not yet built; update this plan once it is.
 
@@ -532,18 +532,19 @@ Demo the tool, then students work in pairs for 15 minutes with prompts (TBD).
 
 Students apply dynamics (and any earlier mixing concepts) to their pieces. Walk the room.
 
-This is the last session before presentations. Anyone whose piece isn't substantially complete needs to make a plan. Sit with them: "What's the gap? What do you need to do tonight and tomorrow?"
+This is the last session before submission. Anyone whose piece isn't substantially complete needs to make a plan. Sit with them: "What's the gap? What do you need to do tonight, tomorrow, and during Wednesday's work session?"
 
-#### Block 5 — Presentation logistics (5 min)
+#### Block 5 — Submission logistics (5 min)
 
-Wed Wk 5 (Sep 16) is presentations. Walk through what to expect:
-- We'll go in alphabetical order
-- Each student plays their piece (don't talk during the playback)
-- Before pressing play, share *one sentence* about the piece (the prompt has examples)
-- After all pieces, brief discussion period
-- Final files due to NAS by start of class
+Wed Wk 5 (Sep 16) is the final work session and submission deadline. Walk through what to expect:
+- Class is a final work session — no new content, just time to finish
+- Files due to NAS by **end of class**, not start
+- Two locations: their private working folder (`lastname/project-01/`) and the class listening folder (`/music/shared/mus-381-fall-2026/project-01-pieces/`). Both must have the final WAV.
+- A short peer-listening response is due Mon Sep 21 (about classmates' pieces in the listening folder), separate assignment
 
 Mention the rubric one more time — five dimensions, students should self-assess against it as they finish their work.
+
+The shift from "presentations" to "submission + asynchronous listening" is intentional: the math doesn't work for 25 students at 3-5 minutes each, and asynchronous listening gives students more thoughtful encounters with each other's pieces. Don't apologize for the change; frame it as the design.
 
 ### Common confusions
 
@@ -562,90 +563,90 @@ Mention the rubric one more time — five dimensions, students should self-asses
 
 ---
 
-## Session 7 — Wed Wk 5 (Sep 16): Project 1 presentations
+## Session 7 — Wed Wk 5 (Sep 16): Project 1 final work session + submission
 
-**100 min · Presentation format · MB2525**
+**100 min · Lab-style · MB2525**
 
-This is the high-stakes session of the module. For students, it's the first time they share original work in this course. The room dynamic matters as much as the technical execution.
+This is the closing session of Module 2. There is no live presentation. Class time is dedicated to finishing pieces and uploading them to NAS by end of class. Listening to each other's pieces happens asynchronously in the days after, with a short peer-listening response due Mon Sep 21.
+
+Why no presentations? Math: 25 students × 3-5 minutes each is longer than class time, and asynchronous listening gives students more careful, repeatable encounters with each other's work. The trade-off is the live "press play" moment, which some pedagogies value highly. We'll partly recover the cohort feeling on Mon Sep 21 with a brief discussion of what students heard.
 
 ### Goal
 
-Every student presents their Project 1. Pieces are submitted to NAS. The class hears each other's work, builds a sense of the cohort's range, and starts to understand what the medium does.
+Every student finishes Project 1 and uploads to both NAS folders by end of class. The class listening folder fills up. Students leave with a piece in the world.
 
 ### Pre-class checklist
 
-- **Verify all final pieces are uploaded to NAS** to `lastname/project-01/lastname-project01.wav`. Spot-check at least 5-6 folders. If a file is missing, message that student before class — there's still time to upload, but they need to know.
-- Have a backup playback method ready: if a student's NAS upload didn't go through, have them play from their local machine. *Don't* spend more than 60 seconds troubleshooting during their slot — pivot to local playback fast.
-- Speakers in MB2525 are essential today. Verify they work. Set the volume to a comfortable listening level (loud enough to hear detail; not so loud it's punishing).
-- Have the alphabetical presentation order written down. Decide in advance.
-- Know the rubric. You'll be using it.
+- **Verify the class listening folder exists and is writable by students.** Path: `/music/shared/mus-381-fall-2026/project-01-pieces/`. Permissions: students can write (drop their final WAV in), but cannot delete or modify others' files. Test this before class — drop a placeholder file in, then have one student try to add one and try to modify someone else's. If permissions aren't right, escalate to IT before students start uploading.
+- **Spot-check working folders** for 5-6 students. They should have at least a `lastname-project01-vN.aup3` project file by now, and ideally an in-progress export. If a student's working folder is empty or has only one early version, flag them to check in with first thing.
+- Walk the room (gear baseline).
+- Have the project prompt ([`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
 
 ### Block-by-block
 
 #### Block 1 — Open and frame (5 min)
 
-Open warmly: "Today everyone shares the piece they've been working on for two and a half weeks. This is the first time most of you have made and shared something in this medium. That takes nerve."
+Open: "Today is your final work session for Project 1. By end of class, your final WAV is uploaded to two places. After today, you'll listen to each other's pieces in the class listening folder, and a short response is due Monday."
 
-Set ground rules:
-- Listen carefully when each piece plays — no phones, no whispering
-- Applause after each piece
-- We'll do brief reflection together after all pieces
-- The pieces don't have to be "finished" or "polished" to count — a 90-second sketch played sincerely is a real submission
+Walk through the submission card from the prompt on the projector. Be explicit about both folders:
+1. Your private working folder: `lastname/project-01/lastname-project01.wav`
+2. The class listening folder: `/music/shared/mus-381-fall-2026/project-01-pieces/lastname-project01.wav`
 
-Introduce the order: alphabetical by last name. "When I call your name, walk up, share your one sentence, press play, sit down."
+"Drag a copy of your final file to the class folder. Don't move it — copy. Your working folder still gets a copy too."
 
-#### Block 2 — Presentations (75 min)
+Mention the peer-listening response due Mon Sep 21. They've gotten an assignment ahead of time so they can plan to listen during the week.
 
-For 25 students at ~3 minutes each (1 minute setup + 2 minute piece): 75 minutes. Tight but workable. If presentations run shorter (some pieces will be 90 seconds), you have buffer.
+#### Block 2 — Final work time (80 min)
 
-For each student:
-1. Call their name
-2. They walk to the instructor machine, find their file on the NAS
-3. They turn to the class and say their sentence ("I built this around X" or similar)
-4. They press play
-5. The class listens
-6. After the piece ends, applause
-7. *Optional, brief* reaction from you — one observation, not an evaluation. Examples: "I noticed how the sharp metallic sounds came back at the end" or "Beautiful use of silence." Save evaluation for the rubric, not the room.
+Students work. Walk the room. This is the most one-on-one time you'll have with the cohort all module — use it.
 
-If a student's NAS file isn't there: pivot fast. "Open Finder, navigate to your local Documents folder, find your file, drag it to Audacity. We'll play from your local copy." Time it tightly — 60 seconds max. If they can't find it on local either, move to the next student and circle back at the end.
+Triage what students need:
 
-#### Block 3 — Group reflection (15 min)
+- **Students nearly done:** check their export. WAV at 44.1/16-bit? Right filename? Right length (90 seconds to 2 minutes)? Listen to the last 30 seconds with them — endings often reveal whether the piece is actually finished. If yes, walk them through the upload to the class folder.
+- **Students mid-mix:** sit with them, listen for 30-60 seconds on their headphones, give one specific suggestion. Don't try to fix everything; pick the highest-leverage thing.
+- **Students still editing:** check whether they're going to make the deadline. If their piece is 30 seconds and they have an hour left, that's a real problem — talk through what's achievable in the time. It's better to submit a 90-second piece they're proud of than a 2-minute piece that runs out of steam.
+- **Students who are stuck or panicking:** sit. Listen. Ask what's hard. Sometimes the unblock is small ("I don't know how to fade out the end") and sometimes it's bigger ("I hate everything I made"). Either way, the response is calm presence and small concrete next steps.
 
-After all pieces have played, open the room:
+About 30 minutes before the end of class, give a verbal time check: "30 minutes left. If you haven't started exporting yet, start now."
 
-- "What did you notice across the pieces? Common moves? Differences?"
-- "Anyone surprised by something they heard in someone else's work?"
-- "What did you learn making yours that you wish you'd known earlier?"
+About 10 minutes before the end: "10 minutes. Final export, name check, upload to both folders."
 
-This isn't evaluation — it's the cohort processing the experience together. Students often hear things in classmates' pieces that they want to try in their own future work; that's the productive outcome.
+About 2 minutes before: "Make sure your file is in both folders before you leave. If you're stuck on upload, flag me now."
 
-#### Block 4 — Close and bridge to Module 3 (5 min)
+#### Block 3 — Confirm uploads + bridge to Module 3 (15 min)
 
-Close: "You did something hard. You took a constraint, applied techniques, and made something. That's the work of a music technologist. Project 1 is graded against the rubric and you'll see scores in a few days."
+Walk the room while students are wrapping up. Verify visually that files are landing in the class folder — refresh the folder on the instructor machine and watch files appear.
 
-Bridge to Module 3: "Next Monday we move into recording. Project 1 was made entirely from sounds someone else recorded for you. Module 3, you become the person who records the sounds. Bring curiosity."
+Quick close to the room:
+
+"You did something hard. You took a constraint and a folder of sounds and made a piece. The first piece is the hardest. Listen to each other's work this week — Monday we'll talk briefly about what you heard, and your peer-listening response is due then.
+
+Module 3 starts Monday. We move from manipulating someone else's sounds to recording your own. Bring curiosity."
 
 ### Common situations
 
-**A student's piece is incomplete (e.g., 30 seconds long, clearly unfinished).** Play what they have. Treat it the same as any other piece — applause, optional one-sentence observation. Grading happens against the rubric in private; the room is not a judgment space. Late penalty applies per the rubric (10 points/day), but you don't announce that publicly.
+**A student's piece isn't done.** Their submission is what's in the class folder at end of class. If they upload a 60-second draft, that's their submission. Late penalty applies if they upload after class ends. Don't allow informal extensions during class — be consistent. Real extensions go through the instructor in advance.
 
-**A student is absent on presentation day.** Their piece is still due to the NAS by start of class. Play it without them present (note their absence to follow up about why). Late submission policy applies.
+**A student didn't upload to the class folder, only their working folder.** Catch this before they leave. The class folder is part of the submission — the rubric explicitly mentions both folders. Walk them through the copy.
 
-**A piece causes an emotional reaction (a piece that's deeply somber, a piece that's deeply funny, etc.).** Honor the reaction. If laughter is appropriate, let people laugh. If a piece lands with weight, give a beat of silence before applause. Follow the room.
+**A student is absent.** Their submission is whatever's in the class folder by end of class. If nothing's there by end of class, late policy applies. Note absences for instructor follow-up.
 
-**A piece has technical issues during playback (it sounds wrong, distorted, doesn't play correctly).** First troubleshoot for 30 seconds: check the file, check the playback chain. If it sounds the same wrong way it did when they exported it, that's their submission — play it as-is. If the file is corrupted or the upload was bad, ask them to retry from local; if that fails, move on and circle back.
+**A piece has technical issues (silent, distorted, wrong format).** Help diagnose for ~5 minutes. Common causes: exported as MP3 instead of WAV (fix in Audacity export settings), exported at wrong sample rate (export again), file is silent because tracks were muted before export (unmute, re-export). If you can't fix in 5 minutes, the student submits what they have and follows up with the instructor.
+
+**The class listening folder doesn't accept uploads (permissions issue).** Students upload only to their private working folder. After class, you (or the instructor) batch-copy files into the class folder. Document the issue for IT. Don't let students stand there waiting.
 
 ### Grading
 
-Use the rubric in [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade pieces individually, after class — don't rush in the moment.
+Use the rubric in [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class — listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
 
-Late submissions: 10 points/day. Pieces not submitted by the start of class on Wed Sep 16 are late.
+Late submissions: 10 points/day. Pieces not in the class listening folder by end of class on Wed Sep 16 are late.
 
 ### After class
 
-- Confirm all final WAV files are on NAS in the right place
-- Begin grading
-- Plan to return scores within a week — feedback now is much more useful than feedback at the end of the semester
+- Confirm every student has a file in the class listening folder. Note the missing ones.
+- For students whose files are only in their private working folder, message them — they need to add to the class folder for the submission to be complete (or you can copy on their behalf, instructor's call).
+- Begin grading. Plan to return scores within a week.
+- The class listening folder is now populated. Listening happens between today and Mon Sep 21, when the peer-listening response is due.
 
 ---
 

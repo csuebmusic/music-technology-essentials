@@ -10,7 +10,7 @@ This is the foundation module of the course. Students learn what digital audio a
 
 Audacity is chosen as the working DAW for this module because it's free, simple, and forces destructive-editing thinking. Students focus on listening and editing without the cognitive load of a full DAW. The musique concrète tradition is the historical and aesthetic anchor — students manipulate existing sound material to create something new.
 
-The arc of the module: understand the medium → orient to the tool → edit → mix → present a finished piece.
+The arc of the module: understand the medium → orient to the tool → edit → mix → finish a piece.
 
 ---
 
@@ -24,7 +24,7 @@ By the end of this module, students should be able to:
 4. Apply core editing techniques — cuts, fades, time selection, copy/paste, splitting, arranging
 5. Make basic mixing decisions: levels, EQ, stereo placement, dynamics
 6. Produce a 2-minute musique concrète–style piece from sourced material that demonstrates editing and mixing fluency
-7. Present and discuss their work in a class setting
+7. Submit a finished piece for class listening, and engage with classmates' work through asynchronous peer listening
 8. Place their work in the historical and aesthetic context of musique concrète and sound-collage practice
 
 ---
@@ -39,7 +39,7 @@ By the end of this module, students should be able to:
 | 3 | Wed | Sep 2 | Lab: Editing techniques · Project 1 begins |
 | 4 | Wed | Sep 9 | Lab Part 1: Interactive mixing tool (levels/EQ/stereo) · Part 2: Project 1 work *(no Mon Sep 7, Labor Day)* |
 | 5 | Mon | Sep 14 | Lecture: Dynamics + Interactive mixing tool Part 2 (compression/limiting) |
-| 5 | Wed | Sep 16 | **Project 1 finishing + presentations** |
+| 5 | Wed | Sep 16 | **Project 1 final work session + submission** |
 
 Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each week are in [`ta-notes/module-02.md`](../../ta-notes/module-02.md).
 
@@ -59,7 +59,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 
 ---
 
-## Deliverable: Project 1 — Musique concrète–light piece
+## Deliverable: Project 1 — Musique concrète
 
 A 2-minute piece built entirely from source sounds provided on the NAS, demonstrating editing and mixing skills learned in the module.
 
@@ -68,7 +68,7 @@ Full project prompt and rubric: [`course/projects/project-01-musique-concrete.ht
 **Timeline:**
 - Wk 3 Wed — students begin building
 - Wk 4 Wed — continue building, apply mixing concepts as they're introduced
-- Wk 5 Wed — finishing, present to class
+- Wk 5 Wed — final work session + submission, files uploaded to NAS (private working folder + class listening folder)
 
 ---
 

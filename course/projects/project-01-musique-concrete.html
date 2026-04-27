@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUS 381 · Project 1: Musique concrète–light piece</title>
+  <title>MUS 381 · Project 1: Musique concrète</title>
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 
 <div class="title-block">
   <div class="module-tag">Module 02 · Digital audio, editing &amp; mixing</div>
-  <h1>Project 1: Musique concrète–light piece</h1>
+  <h1>Project 1: Musique concrète</h1>
   <div class="subtitle">Presented Wed Sep 16, 2026 (Wk 5)</div>
 </div>
 
@@ -32,7 +32,7 @@
   <li><strong>Source material:</strong> Only sounds from the project sample bank at <code>/music/shared/sample-banks/project1/</code>. You may use any sound from the bank, in any combination, processed in any way.</li>
   <li><strong>Software:</strong> Audacity</li>
   <li><strong>Format:</strong> Final export as WAV, 44.1 kHz, 16-bit (we'll cover what those mean)</li>
-  <li><strong>Filename:</strong> <code>lastname-project01.wav</code> (in your <code>lastname/project-01/</code> folder, locally and on the NAS)</li>
+  <li><strong>Filename:</strong> <code>lastname-project01.wav</code> (see Submission below for full file flow)</li>
 </ul>
 
 <hr>
@@ -44,12 +44,78 @@
 <ul>
   <li><strong>Listened first:</strong> chose source sounds with intention rather than randomly</li>
   <li><strong>Edited deliberately:</strong> cuts, fades, and time placements are choices, not accidents</li>
-  <li><strong>Built structure:</strong> the piece has shape, it goes somewhere, it isn't 2 minutes of one texture</li>
+  <li><strong>Built structure:</strong> the piece has shape over time, it goes somewhere, it isn't 2 minutes of one texture (see <a href="#on-structure">On structure</a> below)</li>
   <li><strong>Mixed thoughtfully:</strong> levels are balanced, frequencies have room to breathe, stereo placement is considered</li>
   <li><strong>Used the tools you've learned:</strong> the techniques covered in Module 2 are visible in the piece</li>
 </ul>
 
 <p>You don't need to use every technique. A piece that masterfully uses three editing techniques is stronger than one that crams in every effect Audacity offers.</p>
+
+<h3 id="on-structure">On structure</h3>
+
+<p>For most of you this will be the first time you've thought about <strong>form</strong>, the overall shape of a piece across its full duration. Form is one of the things that turns a sequence of sounds into a piece of music. It's a deliberate decision, not an accident.</p>
+
+<p>The simplest way in: think of your piece as a small set of <strong>sections</strong>, each with its own character. A section might be defined by a particular sound, a particular texture, a particular density, or a particular emotional quality. Sections give a piece a sense of going somewhere.</p>
+
+<p>One classical shape, useful as a starting point, is <strong>ABA</strong>:</p>
+
+<figure class="form-diagram">
+  <svg viewBox="0 0 600 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ABA form diagram showing three sections across a two-minute timeline">
+    <rect width="600" height="110" fill="var(--bg-alt)"/>
+
+    <!-- Three section blocks. Total span: x=40 to x=560 (520 units = 2:00).
+         A:  0:00-0:40 (260 units wide, x=40 to x=300, but we'll do ~33% / 33% / 33% for visual balance)
+         Better proportion: A = 35%, B = 30%, A' = 35% to read as 'frame, contrast, frame'
+         A:  x=40, w=182  (40 to 222)
+         B:  x=222, w=156 (222 to 378)
+         A': x=378, w=182 (378 to 560)
+    -->
+
+    <!-- Section A -->
+    <rect x="40" y="25" width="182" height="40" fill="var(--accent)" opacity="0.45"/>
+    <text x="131" y="50" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="var(--ink)" text-anchor="middle">A</text>
+
+    <!-- Section B -->
+    <rect x="222" y="25" width="156" height="40" fill="var(--ink)" opacity="0.18"/>
+    <text x="300" y="50" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="var(--ink)" text-anchor="middle">B</text>
+
+    <!-- Section A' (return) -->
+    <rect x="378" y="25" width="182" height="40" fill="var(--accent)" opacity="0.45"/>
+    <text x="469" y="50" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="var(--ink)" text-anchor="middle">A</text>
+
+    <!-- Time axis below blocks -->
+    <line x1="40" y1="78" x2="560" y2="78" stroke="var(--ink-soft)" stroke-width="1"/>
+    <line x1="40" y1="74" x2="40" y2="82" stroke="var(--ink-soft)" stroke-width="1"/>
+    <line x1="222" y1="74" x2="222" y2="82" stroke="var(--ink-soft)" stroke-width="1"/>
+    <line x1="378" y1="74" x2="378" y2="82" stroke="var(--ink-soft)" stroke-width="1"/>
+    <line x1="560" y1="74" x2="560" y2="82" stroke="var(--ink-soft)" stroke-width="1"/>
+
+    <!-- Time labels -->
+    <text x="40" y="98" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">0:00</text>
+    <text x="222" y="98" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">~0:40</text>
+    <text x="378" y="98" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">~1:20</text>
+    <text x="560" y="98" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">2:00</text>
+
+    <!-- Section labels above -->
+    <text x="131" y="18" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle" letter-spacing="0.5">SECTION A</text>
+    <text x="300" y="18" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle" letter-spacing="0.5">SECTION B</text>
+    <text x="469" y="18" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle" letter-spacing="0.5">RETURN TO A</text>
+  </svg>
+  <figcaption>ABA form across a 2-minute piece: an opening idea (A), a contrasting idea (B), then a return to A. The return doesn't have to be identical, just recognizably the same world.</figcaption>
+</figure>
+
+<p>Imagine your sounds fall into two groups. Section A might be built from sharp metallic hits arranged sparsely. Section B might be built from sustained water textures, dense and continuous. The return to A might bring back the metallic hits but layered with fragments of the water texture, so the listener hears both worlds together. That's a complete piece in three sections.</p>
+
+<p>ABA is one possibility, not the only one. Other shapes you might consider:</p>
+
+<ul>
+  <li><strong>Through-composed:</strong> no return. The piece moves through a sequence of ideas and ends somewhere new. Useful when you want the listener to feel a journey.</li>
+  <li><strong>Narrative arc:</strong> a single direction across the whole piece. Quiet to loud, sparse to dense, chaotic to calm, or the reverse. The shape is gradual rather than sectional.</li>
+  <li><strong>Terraced:</strong> sections that progressively add or remove elements. Each new section piles more on, or strips more away, than the last.</li>
+  <li><strong>Drone with events:</strong> a continuous underlying texture (a single sustained sound, or a slowly shifting one) with discrete events placed on top of it. The drone provides continuity; the events provide change.</li>
+</ul>
+
+<p>Whichever shape you choose, choose it deliberately. Before you finish, you should be able to draw your piece on a napkin: how many sections, what changes between them, where the listener is asked to pay attention to what.</p>
 
 <hr>
 
@@ -60,18 +126,46 @@
 <ul>
   <li><strong>Start early.</strong> First experiments happen in the Wed Wk 3 lab. Don't wait until Wk 5.</li>
   <li><strong>Save versions.</strong> <code>lastname-project01-v1.wav</code>, <code>v2</code>, <code>v3</code>. You'll want to be able to go back.</li>
-  <li><strong>Listen on different headphones if possible.</strong> What sounds great on one set of headphones may sound off on another.</li>
   <li><strong>Take breaks.</strong> Listen with fresh ears. Most mixing decisions get worse the longer you stare at the screen without resting.</li>
   <li><strong>Ask for feedback during lab time.</strong> The TA and your classmates are resources.</li>
 </ul>
 
 <hr>
 
-<h2>Presentation (Wed Sep 16)</h2>
+<h2>Submission</h2>
 
-<p>Each student will play their piece for the class on Wed Wk 5. Presentations are short (just play the piece) but plan to share <strong>one sentence about your piece</strong> beforehand. Something like: "I built this around the contrast between sharp metallic sounds and long water textures." or "I tried to make a narrative arc, chaotic to calm." Just one sentence to set the listener up.</p>
+<p>There is no live presentation for Project 1. Wed Sep 16 is a final work session: you'll spend class time finishing your piece, and the deadline is the end of that session. Your final WAV gets uploaded to two places.</p>
 
-<p>After each piece, a few seconds of silence, then we move on. No critique in the room: the listening response form (separate) is where written feedback happens.</p>
+<div class="submission-card">
+  <div class="submission-title">Submission details</div>
+
+  <div class="submission-row">
+    <div class="submission-label">Working folder</div>
+    <div class="submission-value">Your private project folder on NAS: <code>/music/students/lastname/project-01/</code>. This is where your <code>.aup3</code> project file, all your version saves (<code>v1</code>, <code>v2</code>, etc.), and your final WAV all live. Only you and the instructor see this.</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Class listening folder</div>
+    <div class="submission-value">A copy of your final WAV also goes in <code>/music/shared/mus-381-fall-2026/project-01-pieces/</code>. This is read-only for the class, so everyone can listen to each other's work in the days after submission. Drag a copy of your final file here at the end of Wednesday's session.</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">File format</div>
+    <div class="submission-value">WAV, 44.1 kHz, 16-bit (the Module 2 standard).</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Filename</div>
+    <div class="submission-value"><code>lastname-project01.wav</code> (lowercase, hyphens, your last name).</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Due</div>
+    <div class="submission-value">End of class, Wed Sep 16.</div>
+  </div>
+</div>
+
+<p>After Wednesday, take some time to listen to classmates' pieces in the class listening folder. A short peer-listening response is due Mon Sep 21 (separate assignment). The point isn't to evaluate, just to listen, and to come prepared to discuss what you heard.</p>
 
 <hr>
 
@@ -118,7 +212,7 @@
 <ul>
   <li>Project folder is organized: versions saved, files named per convention</li>
   <li>Final export is correctly formatted (WAV, 44.1/16, named correctly)</li>
-  <li>Submitted on time, presented on the assigned day</li>
+  <li>Submitted on time, in both the private working folder and the class listening folder</li>
   <li>Evidence of revision: the final piece is clearly not a first draft</li>
 </ul>
 
@@ -137,7 +231,7 @@
 
 <h2>Late policy</h2>
 
-<p>Late submissions lose 10 points per day late. Pieces not submitted by the start of class on Wed Sep 16 are considered late. If something serious is going on, talk to the instructor before the deadline. Extensions are possible when communicated in advance.</p>
+<p>Late submissions lose 10 points per day late. Pieces not submitted to both the working folder and the class listening folder by the end of class on Wed Sep 16 are considered late. If something serious is going on, talk to the instructor before the deadline. Extensions are possible when communicated in advance.</p>
 
 <hr>
 

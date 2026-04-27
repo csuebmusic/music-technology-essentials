@@ -367,6 +367,31 @@ table.shortcut-table td:first-child kbd { margin-right: 0.25rem; }
   }
 }
 
+/* --- Form / structure diagrams --- */
+/* For inline SVG figures showing musical form (sections across time).
+   Used in project prompts and any reading that discusses form. */
+
+figure.form-diagram {
+  margin: 1.75rem 0;
+  text-align: center;
+}
+
+figure.form-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+figure.form-diagram figcaption {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-top: 0.75rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
 /* --- Rules and dividers --- */
 
 hr {
