@@ -48,7 +48,18 @@
       margin-top: 0.4rem;
       font-style: italic;
     }
-    /* Photo grid: side-by-side or stacked photos with captions */
+    /* Photo display: single photo or side-by-side grid */
+    .photo-single {
+      margin: 2rem 0;
+    }
+    .photo-single img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      display: block;
+    }
     .photo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -58,7 +69,8 @@
     @media (max-width: 640px) {
       .photo-grid { grid-template-columns: 1fr; }
     }
-    .photo-grid figure {
+    .photo-grid figure,
+    .photo-single figure {
       margin: 0;
     }
     .photo-grid img {
@@ -70,7 +82,8 @@
       border-radius: 3px;
       display: block;
     }
-    .photo-grid figcaption {
+    .photo-grid figcaption,
+    .photo-single figcaption {
       font-family: var(--mono);
       font-size: 0.78rem;
       text-transform: uppercase;
@@ -113,24 +126,35 @@
 
 <h2>Before you listen: a brief history</h2>
 
-<p>The composers who started musique concrète were working decades before digital audio existed. Pierre Schaeffer's <em>Études de bruits</em> (1948), the first works in the genre, were cut directly to acetate disc, since usable magnetic tape recorders weren't yet widely available in France. By the early 1950s tape had taken over, and for the next thirty years, this tradition was a tape tradition. Composers built their pieces by physically splicing pieces of magnetic tape with razor blades, looping them, slowing them down or speeding them up, playing them backward. The "edit" wasn't a click in software: it was a cut with a blade, a piece of adhesive splicing tape, and a careful placement on a metal block.</p>
+<p>The composers who started musique concrète were working decades before digital audio existed. Pierre Schaeffer's <em>Études de bruits</em> (1948), the first works in the genre, were cut directly to acetate disc, since usable magnetic tape recorders weren't yet widely available in France. By the early 1950s tape had taken over, and for the next thirty years, this tradition was a tape tradition.</p>
 
-<p>This matters for how you listen. The artifacts you might hear, things like surface noise, slight pitch instability, the audible seam of an edit, are not flaws in the recording. They're the sound of the medium itself, the physical reality of working with magnetic tape and disc. Schaeffer and Henry weren't trying to sound digital and failing. They were working in their actual material, the way a sculptor works in marble rather than aspiring to be a 3D printer.</p>
-
-<div class="photo-grid">
+<div class="photo-single">
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Studio%20di%20fonologia%20del%201955%20della%20sede%20Rai%20di%20Milano%20-%20Museo%20degli%20strumenti%20musicali%20del%20castello%20sforzesco%20-%20Milano.JPG?width=900" alt="Equipment racks and mixing console of the Studio di Fonologia Musicale della RAI di Milano, restored at the Museum of Musical Instruments in Milan." loading="lazy">
-    <figcaption>Studio di Fonologia Musicale della RAI · Milan, founded 1955</figcaption>
-    <p class="photo-attribution">Photo: Stefano Stabile, CC BY-SA 3.0 via Wikimedia Commons</p>
-  </figure>
-  <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/EMI%20tape%20splicing%20block%20affixed%20to%20a%20Revox%20tape%20recorder.jpg?width=900" alt="Close-up of an EMI tape splicing block mounted on a Revox tape recorder, with a section of magnetic tape laid in the splicing groove." loading="lazy">
-    <figcaption>EMI splicing block on a Revox deck · the actual edit interface</figcaption>
-    <p class="photo-attribution">Photo: CC-licensed via Wikimedia Commons</p>
+    <img src="../../assets/images/module-02-week-02/reel-schaeffer.jpeg" alt="A row of reel-to-reel tape recorders in a recording studio, photographed in black and white. Several decks sit side by side on a long workbench, with reels of tape mounted on the spindles." loading="lazy">
+    <figcaption>Tape decks at the Paris GRMC studio · 1950s</figcaption>
+    <p class="photo-attribution">Photo via The Vinyl Factory, "A guide to Pierre Schaeffer, the godfather of sampling"</p>
   </figure>
 </div>
 
-<p class="figure-context">Left: a sister studio to the one Schaeffer ran in Paris. The Studio di Fonologia in Milan was founded in 1955 by Luciano Berio and Bruno Maderna for the same kind of work. Composers including Berio, Maderna, Nono, Pousseur, Cage, and Stockhausen made pieces here using equipment like this. Right: the splicing block, the tool that turned cutting magnetic tape into a precise editing interface. The block holds the tape in a shallow groove; the diagonal slot guides a razor blade for a 45° cut that creates a smooth crossfade when two pieces are rejoined.</p>
+<p>Composers built their pieces by physically splicing pieces of magnetic tape with razor blades, looping them, slowing them down or speeding them up, playing them backward. The "edit" wasn't a click in software: it was a cut with a blade, a piece of adhesive splicing tape, and a careful placement on a metal block.</p>
+
+<div class="photo-single">
+  <figure>
+    <img src="../../assets/images/module-02-week-02/splicing-tape.jpg" alt="Close-up of two hands working with magnetic tape: one hand holds a section of brown tape laid into a metal splicing block; the other holds a hobby knife about to cut along the diagonal groove." loading="lazy">
+    <figcaption>The edit: tape held in a splicing block, cut with a knife along the diagonal groove</figcaption>
+    <p class="photo-attribution">Photo: University of Maryland Digital Collections (Flickr), CC BY-NC-ND 2.0, via Toby Rush, <em>Music Theory 21c</em></p>
+  </figure>
+</div>
+
+<p>This matters for how you listen. The artifacts you might hear, things like surface noise, slight pitch instability, the audible seam of an edit, are not flaws in the recording. They're the sound of the medium itself, the physical reality of working with magnetic tape and disc. Schaeffer and Henry weren't trying to sound digital and failing. They were working in their actual material, the way a sculptor works in marble rather than aspiring to be a 3D printer.</p>
+
+<div class="photo-single">
+  <figure>
+    <img src="../../assets/images/module-02-week-02/studio-dessai-henry.jpg" alt="Black and white photograph of Pierre Henry working at the console of the Studio d'Essai in Paris. He sits in front of a mixing desk with a score in front of him, surrounded by equipment racks and tape decks. The famous bone-shaped acoustic baffle, known as 'Schaeffer's ear,' is visible behind him." loading="lazy">
+    <figcaption>Pierre Henry at the Studio d'Essai console · Paris, late 1950s</figcaption>
+    <p class="photo-attribution">Photo via Lawrence Casserley, "Guide to Electronic Music Techniques," <em>Electronics &amp; Music Maker</em>, June 1981 (muzines.co.uk)</p>
+  </figure>
+</div>
 
 <p>Digital audio took a long time to arrive in this tradition. Computer-based music synthesis began in research labs as early as the 1950s, but the equipment was expensive and limited. Tape stayed dominant through the 1970s. The first commercial digital samplers arrived around 1979, but they cost as much as a house. Through the 1980s and into the early 1990s, studios began mixing tape and digital workflows. Hard-disk recording gradually became affordable. By the late 1990s, anyone with a personal computer and a little software could do digitally what had previously required a tape studio. Within another decade, working in tape became a deliberate aesthetic choice rather than a default.</p>
 
@@ -231,18 +255,18 @@
 <p>The first piece of musique concrète ever made. Built entirely from train sounds. About 3 minutes.</p>
 
 <div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/9i1bLCrakEE?end=173" title="Pierre Schaeffer - Étude aux chemins de fer (1948)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/tJwoQlYUVTk" title="Pierre Schaeffer - Étude aux chemins de fer (1948)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
 <p class="video-fallback">If the video doesn't load, search YouTube for "Schaeffer Étude aux chemins de fer."</p>
 
-<h3>2 · Pierre Henry · <em>Variations pour une porte et un soupir</em>, first movement (1963)</h3>
+<h3>2 · Pierre Henry · <em>Variations pour une porte et un soupir</em>, opening section (1963)</h3>
 
-<p>Built from the sound of a single door and a single sigh. The full work has 25 numbered movements; listen to the <strong>first movement, "Sommeil"</strong> (sleep), embedded below. About 2 and a half minutes. If you want to hear more, click through to YouTube and the related movements appear in the sidebar.</p>
+<p>Built from the sound of a single door and a single sigh. The full work has 25 numbered movements; the embed below is the complete album playlist. Listen to <strong>at least the first 5 minutes</strong> (about the first three or four movements). If you find yourself drawn in, keep going. The playlist will play through to the end on its own.</p>
 
 <div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/MjCgW3ea6js" title="Pierre Henry - Variations pour une porte et un soupir, 1. Sommeil (1963)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_kYT9Z5N2jqAuTcqEjksv9kozTMGtORrZE" title="Pierre Henry - Variations pour une porte et un soupir (1963), full work playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
-<p class="video-fallback">If the video doesn't load, search YouTube for "Henry Variations pour une porte et un soupir Sommeil."</p>
+<p class="video-fallback">If the playlist doesn't load, search YouTube for "Henry Variations pour une porte et un soupir."</p>
 
 <h3>3 · A contemporary example, your choice</h3>
 
