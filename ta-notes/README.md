@@ -28,3 +28,11 @@ Length-wise, TA notes typically run 3-5x the corresponding module plan. That's e
 ## Updating after teaching
 
 TA notes are living documents. After each semester, the TA (or Inés) should update them based on what happened — what confused students, what timing assumptions were wrong, what gear failed. The module plan stays stable; the TA notes evolve.
+
+## Course-wide operational documents
+
+Some files in this folder apply course-wide rather than to a single module:
+
+- [`nas-archival-policy.md`](./nas-archival-policy.md) — what happens to student working files on the lab NAS over time. Defines the active → archive → deleted lifecycle, who runs it, and how students are notified. The TA executes the annual archive transition under the instructor's supervision.
+- [`sample-bank-project-01.md`](./sample-bank-project-01.md) — sourcing and curating the shared sample bank used in Module 2's Project 1. Module-adjacent but lives here because the bank is curated once and reused.
+
