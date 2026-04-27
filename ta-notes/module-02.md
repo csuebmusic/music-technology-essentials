@@ -375,7 +375,7 @@ Pull up the Project 1 prompt on the projector. Walk through it section by sectio
 - **What demonstrating skills means.** Go through the five bullets. These are the rubric items; students should hear them now and remember them.
 - **Process expectations.** Start early. Save versions. Take breaks. Ask for feedback during lab time.
 - **Submission:** Wed Sep 16, two weeks from today. End of class, files uploaded to NAS (private working folder + class listening folder). No live presentation — listening happens asynchronously after, with a short peer-listening response due Mon Sep 21.
-- **Rubric.** Five dimensions, 20 points each, 100 total. Late penalty: 10 points/day.
+- **Rubric.** Five dimensions, 20 points each, 100 total. Late submissions are handled per the syllabus's late policy.
 
 End with: "You'll start working on it today. The rest of class is your time."
 
@@ -625,7 +625,7 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 ### Common situations
 
-**A student's piece isn't done.** Their submission is what's in the class folder at end of class. If they upload a 60-second draft, that's their submission. Late penalty applies if they upload after class ends. Don't allow informal extensions during class — be consistent. Real extensions go through the instructor in advance.
+**A student's piece isn't done.** Their submission is what's in the class folder at end of class. If they upload a 60-second draft, that's their submission. The late policy in the syllabus applies if they upload after class ends. Don't allow informal extensions during class — be consistent. Real extensions go through the instructor in advance.
 
 **A student didn't upload to the class folder, only their working folder.** Catch this before they leave. The class folder is part of the submission — the rubric explicitly mentions both folders. Walk them through the copy.
 
@@ -639,7 +639,7 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 Use the rubric in [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class — listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
 
-Late submissions: 10 points/day. Pieces not in the class listening folder by end of class on Wed Sep 16 are late.
+Late submissions are handled per the syllabus's late policy. Pieces not in the class listening folder by end of class on Wed Sep 16 are late.
 
 ### After class
 
