@@ -287,7 +287,16 @@ Three components:
 
 (Some teachers use ADSR — Attack, Decay, Sustain, Release — distinguishing the initial peak from the steady-state. For Module 2 we keep it to three; Module 4 will introduce the four-stage version with synthesis.)
 
-Demo: play three contrasting sounds from the sample bank. After each, ask the class: "Describe the envelope. Sharp attack, long sustain, no release? Slow attack, long sustain, gradual release?"
+Open the reading on the projector and play the three contrasting envelope demos (sharp / sustained / evolving). After each, ask the class: "Describe the envelope. Sharp attack, long sustain, no release? Slow attack, long sustain, gradual release?"
+
+**Then open the envelope explorer in the reading and demonstrate live.** This is the centerpiece of the block. The tool has three sliders (attack, sustain, release) and a play button; the source is a fixed sine tone, only the envelope changes. Drag the sliders to walk through:
+
+- "Watch what happens when I make the attack tiny." Drag attack to its minimum, sustain to zero, release short. Press play. The result is percussive — sounds nothing like a sustained note even though the source is a sine.
+- "Now I'll stretch the attack way out." Drag attack to ~1500 ms. Press play. Same source, but it swells in. Completely different character.
+- "What if I take the sustain out entirely?" Drag sustain to zero, attack and release to medium. Press play. The peak of the envelope only exists for an instant.
+- "Now a balanced shape — clear attack, clear body, clear ending." Drag to roughly 200/800/600. Press play.
+
+The pedagogical point: the same source sound becomes radically different sounds based only on its envelope. This is what students will be doing to their source recordings in Project 1, even when they're not thinking about it explicitly.
 
 Then play the listening assignment Schaeffer or Henry pieces (or a short excerpt) and ask: "What envelopes are you hearing? Are most of these sounds sharp or smooth at the attack?"
 

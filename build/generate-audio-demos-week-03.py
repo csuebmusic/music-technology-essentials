@@ -75,6 +75,29 @@ def apply_envelope(audio, attack_s, sustain_s, release_s, sr=SR):
     return out[:total]
 
 
+def apply_curved_envelope(audio, attack_s, sustain_s, release_s, curve=2.5, sr=SR):
+    """
+    Apply an ASR envelope with curved (power-law) attack and release.
+    `curve > 1` produces an ease-in attack (slow start, faster finish) and
+    a mirrored ease-out release. This sounds more like a natural swell than
+    a linear ramp — the attack feels gradual rather than metronomic, and
+    the release fades organically rather than sliding linearly to silence.
+    """
+    n_a = int(attack_s * sr)
+    n_s = int(sustain_s * sr)
+    n_r = int(release_s * sr)
+    total = n_a + n_s + n_r
+
+    attack = np.linspace(0, 1, n_a, dtype=np.float32) ** curve
+    sustain = np.ones(n_s, dtype=np.float32)
+    release = (np.linspace(1, 0, n_r, dtype=np.float32)) ** curve
+
+    env = np.concatenate([attack, sustain, release])
+    out = np.zeros(max(total, len(audio)), dtype=np.float32)
+    out[:total] = audio[:total] * env
+    return out[:total]
+
+
 def lowpass_sos(cutoff_hz, sr=SR, order=4):
     return butter(order, cutoff_hz / (sr / 2), btype="low", output="sos")
 
@@ -121,10 +144,18 @@ def woodblock(duration_sec=0.4, sr=SR, seed=1):
     return filt * env
 
 
-def slow_pad(duration_sec=4.0, freq=220.0, sr=SR):
+def slow_pad(duration_sec=5.5, freq=220.0, sr=SR):
     """
-    Slow-attack sustained tone with a triangle/sine mixture, smoothed.
-    Long attack (~800 ms), long sustain, gentle release (~600 ms).
+    Slow-attack sustained tone with a sine mixture and a curved ASR
+    envelope. Total duration is split as 1.8 s attack + 2.0 s sustain
+    + 1.5 s release = 5.3 s.
+
+    The curved envelope (power=2.5) gives a clearly gradual swell at the
+    start and a clearly gentle fade at the end — more exaggerated than the
+    linear ramps used in the first draft, which felt more metronomic than
+    organic. The pedagogical point is to contrast strongly with the
+    woodblock (sharp attack, no sustain) and the evolving texture (no
+    clear stages).
     """
     n = int(duration_sec * sr)
     t = np.arange(n) / sr
@@ -137,8 +168,9 @@ def slow_pad(duration_sec=4.0, freq=220.0, sr=SR):
     # Gentle slow vibrato in amplitude for organic feel
     lfo = 1.0 + 0.04 * np.sin(2 * np.pi * 0.6 * t)
     osc = osc * lfo.astype(np.float32)
-    # Apply ASR envelope
-    return apply_envelope(osc, attack_s=0.8, sustain_s=2.6, release_s=0.6, sr=sr)
+    # Apply curved ASR envelope: longer attack and release than the linear
+    # version, with a power-law curve for a more natural swell.
+    return apply_curved_envelope(osc, attack_s=1.8, sustain_s=2.0, release_s=1.5, curve=2.5, sr=sr)
 
 
 def evolving_texture(duration_sec=4.5, sr=SR, seed=7):
@@ -216,7 +248,7 @@ def crossfade_join(audio_a, audio_b, fade_s=0.2, sr=SR):
 def build():
     # Section 1: three contrasting envelopes
     write_wav(os.path.join(OUT_DIR, "env-sharp.wav"), woodblock(0.4))
-    write_wav(os.path.join(OUT_DIR, "env-sustained.wav"), slow_pad(4.0, freq=220))
+    write_wav(os.path.join(OUT_DIR, "env-sustained.wav"), slow_pad(5.5, freq=220))
     write_wav(os.path.join(OUT_DIR, "env-evolving.wav"), evolving_texture(4.5))
 
     # Section 3: one source, four envelopes

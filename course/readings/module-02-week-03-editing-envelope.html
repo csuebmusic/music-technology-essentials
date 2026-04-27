@@ -88,6 +88,92 @@
       margin: 1rem 0 0;
       line-height: 1.5;
     }
+
+    /* Envelope explorer tool (Section 1) */
+    .env-tool {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .env-tool-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .env-preview {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.25rem;
+      background: var(--bg);
+      border-radius: 3px;
+    }
+    .env-sliders {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr 4.5rem;
+      gap: 0.75rem 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .env-slider-label {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+    .env-slider-input {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+    .env-slider-readout {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+      text-align: right;
+    }
+    .env-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .env-button {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      padding: 0.55rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      min-width: 5.5rem;
+    }
+    .env-button:hover { background: var(--accent-soft); }
+    .env-button.playing { background: var(--ink); }
+    .env-button.reset {
+      background: transparent;
+      color: var(--ink-soft);
+      border: 1px solid var(--rule);
+    }
+    .env-button.reset:hover { background: var(--bg); color: var(--ink); }
+    .env-note {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin: 1.25rem 0 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 540px) {
+      .env-sliders {
+        grid-template-columns: 5rem 1fr 4rem;
+        gap: 0.5rem 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -135,6 +221,8 @@
     <line x1="60" y1="40" x2="60" y2="180" stroke="var(--ink)" stroke-width="1.5"/>
     <text x="50" y="40" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="end">loud</text>
     <text x="50" y="183" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="end">silent</text>
+    <!-- Amplitude axis label, rotated -->
+    <text x="18" y="110" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90, 18, 110)">← amplitude →</text>
 
     <!-- The envelope curve: a generic ASR shape.
          Attack: from (60,180) ramping up to (180,55), quick rise
@@ -147,15 +235,15 @@
     <line x1="180" y1="40" x2="180" y2="180" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
     <line x1="380" y1="40" x2="380" y2="180" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
 
-    <!-- Stage labels -->
-    <text x="120" y="32" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">ATTACK</text>
-    <text x="280" y="32" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">SUSTAIN</text>
-    <text x="450" y="32" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">RELEASE</text>
+    <!-- Stage labels with paired descriptions -->
+    <text x="120" y="22" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">ATTACK</text>
+    <text x="120" y="35" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle" font-style="italic">how it begins</text>
 
-    <!-- Stage descriptions below -->
-    <text x="120" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle">how it begins</text>
-    <text x="280" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle">how it continues</text>
-    <text x="450" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle">how it ends</text>
+    <text x="280" y="22" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">SUSTAIN</text>
+    <text x="280" y="35" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle" font-style="italic">how it continues</text>
+
+    <text x="450" y="22" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">RELEASE</text>
+    <text x="450" y="35" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle" font-style="italic">how it ends</text>
   </svg>
   <figcaption>The three stages of a sound's envelope. Real envelopes vary widely in the duration and shape of each stage, but most sounds can be described in these terms.</figcaption>
 </figure>
@@ -208,6 +296,239 @@
 <h3>A note on synthesis vocabulary</h3>
 
 <p>You may have heard the acronym <strong>ADSR</strong>: attack, decay, sustain, release. This is the four-stage version of the envelope used in synthesizers, where the attack peak and the steady sustain level can be set independently (decay is the transition between them). For Module 2 we're working with recorded sounds, so the three-stage version (attack, sustain, release) is enough. Module 4 will introduce ADSR when we get into synthesis with Ableton.</p>
+
+<h3>Try it: shape an envelope</h3>
+
+<p>Use the three sliders below to shape an envelope, then press play. The source is a fixed sine tone at 330 Hz; only the envelope changes. Try the extremes: a very short attack with no sustain (you'll get something percussive), a long attack with no release (it ends abruptly even though it began gradually), a balanced shape with all three stages clearly present. Notice how much the same source tone changes character based only on its envelope.</p>
+
+<div class="env-tool" id="envTool">
+  <div class="env-tool-title">Envelope Explorer</div>
+
+  <svg class="env-preview" id="envPreview" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Envelope preview, updates as sliders change">
+    <rect width="600" height="160" fill="var(--bg)"/>
+    <!-- Time axis -->
+    <line x1="40" y1="130" x2="560" y2="130" stroke="var(--ink)" stroke-width="1"/>
+    <!-- Amplitude axis -->
+    <line x1="40" y1="20" x2="40" y2="130" stroke="var(--ink)" stroke-width="1"/>
+    <!-- Curve will be drawn here by JS -->
+    <path id="envCurve" d="" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <!-- Stage region dividers (drawn by JS) -->
+    <line id="envDivA" x1="0" y1="20" x2="0" y2="130" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <line id="envDivB" x1="0" y1="20" x2="0" y2="130" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <!-- Stage labels (positioned by JS) -->
+    <text id="envLabelA" x="0" y="14" font-family="DM Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle" letter-spacing="0.5">A</text>
+    <text id="envLabelS" x="0" y="14" font-family="DM Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle" letter-spacing="0.5">S</text>
+    <text id="envLabelR" x="0" y="14" font-family="DM Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle" letter-spacing="0.5">R</text>
+    <!-- Total time readout -->
+    <text id="envTotalTime" x="556" y="148" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">0.00s</text>
+  </svg>
+
+  <div class="env-sliders">
+    <span class="env-slider-label">Attack</span>
+    <input type="range" id="envAttack" class="env-slider-input" min="5" max="2000" step="5" value="100">
+    <span class="env-slider-readout" id="envAttackReadout">100 ms</span>
+
+    <span class="env-slider-label">Sustain</span>
+    <input type="range" id="envSustain" class="env-slider-input" min="0" max="2000" step="10" value="600">
+    <span class="env-slider-readout" id="envSustainReadout">600 ms</span>
+
+    <span class="env-slider-label">Release</span>
+    <input type="range" id="envRelease" class="env-slider-input" min="5" max="2000" step="5" value="400">
+    <span class="env-slider-readout" id="envReleaseReadout">400 ms</span>
+  </div>
+
+  <div class="env-controls">
+    <button id="envPlay" class="env-button">Play</button>
+    <button id="envReset" class="env-button reset">Reset</button>
+  </div>
+
+  <p class="env-note"><strong>Keep your headphones at low volume before pressing Play.</strong> The source is a 330 Hz sine tone, played at a conservative level. Try setting attack to its minimum and sustain to zero for a percussive sound, or attack at 1500 ms and sustain at 1500 ms for a long swell.</p>
+</div>
+
+<script>
+(function() {
+  const tool = document.getElementById('envTool');
+  if (!tool) return;
+
+  const attackSlider = document.getElementById('envAttack');
+  const sustainSlider = document.getElementById('envSustain');
+  const releaseSlider = document.getElementById('envRelease');
+  const attackReadout = document.getElementById('envAttackReadout');
+  const sustainReadout = document.getElementById('envSustainReadout');
+  const releaseReadout = document.getElementById('envReleaseReadout');
+  const playButton = document.getElementById('envPlay');
+  const resetButton = document.getElementById('envReset');
+
+  const curvePath = document.getElementById('envCurve');
+  const divA = document.getElementById('envDivA');
+  const divB = document.getElementById('envDivB');
+  const labelA = document.getElementById('envLabelA');
+  const labelS = document.getElementById('envLabelS');
+  const labelR = document.getElementById('envLabelR');
+  const totalTimeReadout = document.getElementById('envTotalTime');
+
+  const DEFAULTS = { attack: 100, sustain: 600, release: 400 };
+  const FREQ_HZ = 330;
+  const PEAK_GAIN = 0.12;  // conservative, sine tones are fatiguing
+
+  // Preview SVG geometry: drawing area is x=40..560 (520 wide), y=20..130 (110 tall)
+  const X0 = 40, X1 = 560, Y_TOP = 20, Y_BOTTOM = 130;
+  const X_WIDTH = X1 - X0;
+  const Y_HEIGHT = Y_BOTTOM - Y_TOP;
+
+  let audioCtx = null;
+  let oscillator = null;
+  let gainNode = null;
+  let currentlyPlaying = false;
+  let endTimeoutId = null;
+
+  function formatMs(ms) {
+    if (ms < 1000) return Math.round(ms) + ' ms';
+    return (ms / 1000).toFixed(2) + ' s';
+  }
+
+  function readSliders() {
+    return {
+      attack: parseFloat(attackSlider.value),
+      sustain: parseFloat(sustainSlider.value),
+      release: parseFloat(releaseSlider.value)
+    };
+  }
+
+  function updateReadouts() {
+    const v = readSliders();
+    attackReadout.textContent = formatMs(v.attack);
+    sustainReadout.textContent = formatMs(v.sustain);
+    releaseReadout.textContent = formatMs(v.release);
+  }
+
+  function updatePreview() {
+    const v = readSliders();
+    const total = v.attack + v.sustain + v.release;
+    if (total === 0) {
+      curvePath.setAttribute('d', '');
+      return;
+    }
+    const xAttackEnd = X0 + (v.attack / total) * X_WIDTH;
+    const xSustainEnd = X0 + ((v.attack + v.sustain) / total) * X_WIDTH;
+    const xReleaseEnd = X1;
+
+    // Build path: silent at start, ramp to full, hold, ramp to silent
+    const d = [
+      'M', X0, Y_BOTTOM,
+      'L', xAttackEnd, Y_TOP,
+      'L', xSustainEnd, Y_TOP,
+      'L', xReleaseEnd, Y_BOTTOM
+    ].join(' ');
+    curvePath.setAttribute('d', d);
+
+    // Update dividers
+    divA.setAttribute('x1', xAttackEnd);
+    divA.setAttribute('x2', xAttackEnd);
+    divB.setAttribute('x1', xSustainEnd);
+    divB.setAttribute('x2', xSustainEnd);
+
+    // Position stage labels at the midpoint of each stage region
+    labelA.setAttribute('x', (X0 + xAttackEnd) / 2);
+    labelS.setAttribute('x', (xAttackEnd + xSustainEnd) / 2);
+    labelR.setAttribute('x', (xSustainEnd + xReleaseEnd) / 2);
+
+    // Hide labels for stages that are too narrow to fit text
+    labelA.style.opacity = (xAttackEnd - X0) > 18 ? 1 : 0;
+    labelS.style.opacity = (xSustainEnd - xAttackEnd) > 18 ? 1 : 0;
+    labelR.style.opacity = (xReleaseEnd - xSustainEnd) > 18 ? 1 : 0;
+
+    // Total time readout
+    totalTimeReadout.textContent = (total / 1000).toFixed(2) + 's';
+  }
+
+  function stopCurrent() {
+    if (endTimeoutId) {
+      clearTimeout(endTimeoutId);
+      endTimeoutId = null;
+    }
+    if (oscillator) {
+      try { oscillator.stop(); } catch (e) { /* already stopped */ }
+      oscillator = null;
+    }
+    gainNode = null;
+    currentlyPlaying = false;
+    playButton.textContent = 'Play';
+    playButton.classList.remove('playing');
+  }
+
+  function play() {
+    if (currentlyPlaying) {
+      stopCurrent();
+      return;
+    }
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    const v = readSliders();
+    const attackS = v.attack / 1000;
+    const sustainS = v.sustain / 1000;
+    const releaseS = v.release / 1000;
+    const totalS = attackS + sustainS + releaseS;
+
+    if (totalS < 0.01) return;  // nothing to play
+
+    const now = audioCtx.currentTime;
+
+    oscillator = audioCtx.createOscillator();
+    gainNode = audioCtx.createGain();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = FREQ_HZ;
+
+    // Schedule the envelope on the gain node.
+    // setValueAtTime + linearRampToValueAtTime gives us a clean piecewise ramp.
+    gainNode.gain.setValueAtTime(0, now);
+    gainNode.gain.linearRampToValueAtTime(PEAK_GAIN, now + attackS);
+    if (sustainS > 0) {
+      gainNode.gain.linearRampToValueAtTime(PEAK_GAIN, now + attackS + sustainS);
+    }
+    gainNode.gain.linearRampToValueAtTime(0, now + totalS);
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    oscillator.start(now);
+    oscillator.stop(now + totalS + 0.05);
+
+    currentlyPlaying = true;
+    playButton.textContent = 'Stop';
+    playButton.classList.add('playing');
+
+    endTimeoutId = setTimeout(() => {
+      stopCurrent();
+    }, totalS * 1000 + 50);
+  }
+
+  function reset() {
+    stopCurrent();
+    attackSlider.value = DEFAULTS.attack;
+    sustainSlider.value = DEFAULTS.sustain;
+    releaseSlider.value = DEFAULTS.release;
+    updateReadouts();
+    updatePreview();
+  }
+
+  // Wire up
+  [attackSlider, sustainSlider, releaseSlider].forEach(s => {
+    s.addEventListener('input', () => {
+      updateReadouts();
+      updatePreview();
+    });
+  });
+  playButton.addEventListener('click', play);
+  resetButton.addEventListener('click', reset);
+
+  // Initial render
+  updateReadouts();
+  updatePreview();
+})();
+</script>
 
 <hr>
 
