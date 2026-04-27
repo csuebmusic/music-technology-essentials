@@ -259,14 +259,14 @@ Quick close: "Next Monday we go deeper into editing. Wednesday after that, you s
 
 Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course — Module 4's synthesis section depends on it.
 
-> **Note on the reading:** the Mon Wk 3 reading on editing concepts and envelope is not yet written. This plan describes what it should cover and how to teach with it; update once the reading exists.
+The reading for today is [`course/readings/module-02-week-03-editing-envelope.html`](../course/readings/module-02-week-03-editing-envelope.html). It includes 9 audio demos: three contrasting envelope shapes (sharp, sustained, evolving), one source transformed by four edits (truncate, reverse, fade-in), and a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
-- Read the Mon Wk 3 reading (when it exists)
+- Read the Mon Wk 3 reading and listen to all 9 audio demos
 - Pull up the listening assignment — students have had it since Monday but most won't have started; nudge them today
 - Pull up Audacity on the instructor machine; you'll do a few short demos
-- Have a few sample sounds queued — ideally with contrasting envelopes (a sharp percussion hit, a sustained string drone, a complex evolving sound)
+- Have a few sample sounds queued — ideally with contrasting envelopes (a sharp percussion hit, a sustained string drone, a complex evolving sound). The reading's audio demos are good fallbacks if your sample bank doesn't have variety yet.
 
 ### Block-by-block
 

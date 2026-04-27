@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Editing Concepts &amp; Envelope</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Reading-specific tweaks (mirrors module-02-week-02 styles) */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure svg {
+      max-width: 100%;
+      height: auto;
+    }
+    figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.75rem;
+    }
+    .vocab dt {
+      font-family: var(--mono);
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 1rem;
+      font-size: 0.92rem;
+    }
+    .vocab dd {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Audio comparison block: a labeled group of audio players */
+    .audio-compare {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .audio-compare-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .audio-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin: 0.75rem 0;
+      padding: 0.5rem 0;
+    }
+    .audio-row + .audio-row {
+      border-top: 1px dashed var(--rule);
+      padding-top: 1.1rem;
+    }
+    .audio-label {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+      flex: 0 0 9.5rem;
+    }
+    .audio-label-sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      margin-top: 0.15rem;
+    }
+    .audio-row audio {
+      flex: 1;
+      min-width: 0;
+      height: 36px;
+    }
+    .audio-row audio::-webkit-media-controls-panel {
+      background: var(--bg);
+    }
+    .audio-note {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin: 1rem 0 0;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Reading · Module 02 · Mon Wk 3</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 02 · Digital audio, editing &amp; mixing</div>
+  <h1>Editing concepts &amp; envelope</h1>
+  <div class="subtitle">For Mon Aug 31, 2026</div>
+</div>
+
+<p class="lede">Last week you learned what digital audio <em>is</em>: a list of numbers measured at a rate, with a precision. You also opened Audacity for the first time, imported a sound, and made an edit. This week we step back from the software to talk about <strong>what edits actually do to sound</strong>, and to introduce a vocabulary you'll use for the rest of the course: the <strong>envelope</strong> of a sound.</p>
+
+<p>Project 1 starts on Wednesday. The vocabulary in this reading is what you'll use to describe the sounds you want, find what you need in the sample bank, and shape what you make. Read carefully.</p>
+
+<hr>
+
+<h2>1 · The envelope of a sound</h2>
+
+<p>Every sound has a shape over time. It starts somewhere, exists for some duration, and ends. The way it does each of these things is part of what makes the sound recognizable, and a property your ears use almost unconsciously to identify what you're hearing.</p>
+
+<p>Consider three different sounds:</p>
+
+<ul>
+  <li>A wood block struck once: a sharp impact, a fraction of a second, gone</li>
+  <li>A bowed violin note held for several seconds, ending when the bow stops</li>
+  <li>The sound of a stream: continuous, evolving, with no clear beginning or end</li>
+</ul>
+
+<p>These sounds have very different shapes over time. We call this shape the <strong>envelope</strong> of the sound, and we describe it using three stages: <strong>attack</strong>, <strong>sustain</strong>, and <strong>release</strong>.</p>
+
+<figure>
+  <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Envelope diagram showing attack, sustain, and release stages">
+    <rect width="600" height="220" fill="var(--bg-alt)"/>
+
+    <!-- Time axis -->
+    <line x1="60" y1="180" x2="540" y2="180" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="300" y="205" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">time →</text>
+
+    <!-- Amplitude axis (left vertical) -->
+    <line x1="60" y1="40" x2="60" y2="180" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="50" y="40" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="end">loud</text>
+    <text x="50" y="183" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="end">silent</text>
+
+    <!-- The envelope curve: a generic ASR shape.
+         Attack: from (60,180) ramping up to (180,55), quick rise
+         Sustain: from (180,55) to (380,75), a slowly drooping plateau
+         Release: from (380,75) curving down to (520,180), gradual fade -->
+    <path d="M 60 180 Q 100 70, 180 55 L 380 75 Q 460 90, 520 180"
+          fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+
+    <!-- Section dividers (vertical dashed lines) -->
+    <line x1="180" y1="40" x2="180" y2="180" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <line x1="380" y1="40" x2="380" y2="180" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+    <!-- Stage labels -->
+    <text x="120" y="32" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">ATTACK</text>
+    <text x="280" y="32" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">SUSTAIN</text>
+    <text x="450" y="32" font-family="DM Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="500" letter-spacing="0.5">RELEASE</text>
+
+    <!-- Stage descriptions below -->
+    <text x="120" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle">how it begins</text>
+    <text x="280" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle">how it continues</text>
+    <text x="450" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)" text-anchor="middle">how it ends</text>
+  </svg>
+  <figcaption>The three stages of a sound's envelope. Real envelopes vary widely in the duration and shape of each stage, but most sounds can be described in these terms.</figcaption>
+</figure>
+
+<h3>Attack</h3>
+
+<p>The attack is how a sound begins. A wood block struck with a mallet has a <em>sharp</em> attack: the sound goes from silence to full volume almost instantly. A bowed violin note has a <em>slow</em> attack: the bow catches the string gradually and the sound swells in. A note swelled with a volume pedal can have an even slower attack, taking several seconds to reach full volume.</p>
+
+<p>Attack is one of the most important cues your ear uses to identify what kind of sound you're hearing. A piano and a violin playing the same note at the same volume sound completely different, largely because their attacks are different. Reverse a piano note (take the recording and play it backward) and it stops sounding like a piano almost entirely, because the attack now has the shape of a piano release.</p>
+
+<h3>Sustain</h3>
+
+<p>The sustain is what happens during the body of the sound, after the attack and before the release. Some sounds have <em>steady</em> sustains: an organ note holds at roughly the same volume and timbre for as long as the key is pressed. Some have <em>evolving</em> sustains: a vocal "ahhh" wavers and shifts, or a bowed string note has subtle changes in pressure and bow speed that show up in the sound.</p>
+
+<p>Many sounds have very <em>short</em> sustains, or none at all. A wood block has effectively no sustain, there's an attack and then almost immediately the release. A handclap is similar. Pure percussion is mostly attack-and-release with no sustain in between.</p>
+
+<h3>Release</h3>
+
+<p>The release is how a sound ends. Some releases are <em>abrupt</em>: a recording stops, a finger lifts off a piano key with the damper engaged, a clap dies out instantly. Some are <em>gradual</em>: a piano note rings on after the key is released, decaying slowly. A reverberant space adds to the release of every sound in it. A single hand clap in a cathedral has a release of several seconds, even though the original clap was instant.</p>
+
+<p>Release is also where you can hear the medium most clearly. A short tape loop's release is shaped by the splice; a digital file's release is exactly as long as the data. The same source sound can have a different release in different recordings or in different rooms.</p>
+
+<h3>Listen: three contrasting envelopes</h3>
+
+<p>Listen to each of the following with the envelope vocabulary in mind. Try to describe each one in terms of its attack, sustain, and release.</p>
+
+<div class="audio-compare">
+  <div class="audio-compare-title">Three envelope shapes</div>
+  <div class="audio-row">
+    <span class="audio-label">Sharp attack
+      <span class="audio-label-sub">no sustain, fast release</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/env-sharp.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Slow attack
+      <span class="audio-label-sub">long sustain, gradual release</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/env-sustained.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Evolving texture
+      <span class="audio-label-sub">no clear boundaries</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/env-evolving.wav"></audio>
+  </div>
+  <p class="audio-note">The first sound is mostly attack and release with no sustain in between. The second has a gradual swell into a sustained body, then a gentle decay. The third has no clear stages at all: the envelope is continuous and the sound is constantly changing within itself. Many sounds in the world fall into this third category, and it's worth noticing that the three-stage model isn't a perfect fit for every sound. It's a useful starting point, not a constraint.</p>
+</div>
+
+<h3>A note on synthesis vocabulary</h3>
+
+<p>You may have heard the acronym <strong>ADSR</strong>: attack, decay, sustain, release. This is the four-stage version of the envelope used in synthesizers, where the attack peak and the steady sustain level can be set independently (decay is the transition between them). For Module 2 we're working with recorded sounds, so the three-stage version (attack, sustain, release) is enough. Module 4 will introduce ADSR when we get into synthesis with Ableton.</p>
+
+<hr>
+
+<h2>2 · Editing as a vocabulary</h2>
+
+<p>Last week you opened Audacity, made a basic cut, and saved a project. That was a single move from a much larger vocabulary. Composers in the musique concrète tradition used these moves with razor blades and tape; you'll use them with a mouse and software. The principle is the same.</p>
+
+<p>The fundamental insight is that <strong>recorded sound is material you can shape</strong>, not a fixed performance. Once a sound is recorded, you can cut it, repeat it, reverse it, slow it down, layer it, splice it next to other sounds. Each of these moves is a creative choice. The vocabulary below is what those moves are called.</p>
+
+<dl class="vocab">
+  <dt>Cut</dt>
+  <dd>Remove a selected region. The audio on either side of the cut closes the gap. Like deleting a phrase from the middle of a sentence.</dd>
+
+  <dt>Trim</dt>
+  <dd>Keep a selected region and remove everything else. The opposite of cut. Useful for isolating a single sound from a longer recording.</dd>
+
+  <dt>Splice / arrange</dt>
+  <dd>Place sounds next to each other in time. The fundamental musique concrète move: take a fragment of one recording, place a fragment of another after it, and a third after that. The arrangement is the composition.</dd>
+
+  <dt>Fade in / fade out</dt>
+  <dd>A volume ramp at the boundary of an edit. A fade-in starts from silence and ramps up to full volume over some short duration; a fade-out is the reverse. Even very short fades (10 to 50 milliseconds) prevent click pops at edit boundaries. Use fades on every edit.</dd>
+
+  <dt>Crossfade</dt>
+  <dd>The overlap of a fade-out and a fade-in: one sound fades out as another fades in. The seam between two sounds becomes smooth instead of abrupt. Crossfades are how editors make hard cuts disappear.</dd>
+
+  <dt>Loop</dt>
+  <dd>A region played repeatedly. Useful as a working aid (loop a section while you adjust an effect) or as a compositional move (a tape-loop pattern that becomes the rhythmic backbone of a piece).</dd>
+
+  <dt>Reverse</dt>
+  <dd>Play a sound backward. The recording is the same, but the envelope is flipped: the attack becomes the release, and the release becomes the attack. A piano note played backward swells in instead of striking; a struck cymbal played backward sounds like a swelling rush of air.</dd>
+
+  <dt>Time-stretch</dt>
+  <dd>Make a sound longer or shorter without changing its pitch. Modern software does this through clever signal processing. Older techniques (slowing down or speeding up tape) couple time and pitch: a sound played at half-speed is also lower in pitch by an octave.</dd>
+
+  <dt>Pitch-shift</dt>
+  <dd>Move a sound up or down in pitch without changing its duration. The complement to time-stretch in modern software. Extreme shifts produce artifacts; subtle shifts can transform a sound's character without making the manipulation obvious.</dd>
+</dl>
+
+<p>Schaeffer didn't have any of this in software. He had razor blades, splicing tape, and tape machines that could play at half-speed or backward. But his moves were the same: cut, splice, loop, reverse, time-stretch (via tape speed). The tradition is consistent across tools. The tools have just gotten faster and more reversible.</p>
+
+<hr>
+
+<h2>3 · Editing changes envelope</h2>
+
+<p>The envelope vocabulary and the editing vocabulary are connected. Almost every edit you can make on a sound changes its envelope in some way. This is worth seeing explicitly.</p>
+
+<p>Take a single source sound: a plucked string, lasting about three seconds. Sharp attack at the moment of the pluck, a sustained body that decays gradually, a natural release as the string's energy dissipates.</p>
+
+<div class="audio-compare">
+  <div class="audio-compare-title">One source, four envelopes</div>
+  <div class="audio-row">
+    <span class="audio-label">Source
+      <span class="audio-label-sub">plucked, full duration</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/edit-source.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Truncated
+      <span class="audio-label-sub">cut at 0.5 seconds</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/edit-truncated.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Reversed
+      <span class="audio-label-sub">played backward</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/edit-reversed.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Faded in
+      <span class="audio-label-sub">1-second fade applied</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/edit-fade-in.wav"></audio>
+  </div>
+  <p class="audio-note">All four are the same recording. The source has a complete attack-sustain-release shape. The truncated version cuts off the release; the sound is the same up to 0.5 seconds, but instead of decaying naturally it ends abruptly. The reversed version flips the envelope: a sound that began with a sharp attack now begins with a slow swell. The fade-in version replaces the original sharp attack with a gradual one. None of these involves a different recording. They are all the same source, transformed by editing.</p>
+</div>
+
+<h3>Edit boundaries are envelope problems</h3>
+
+<p>When you place two sounds next to each other in a piece, the seam between them is a small envelope problem. Sound A has a release; sound B has an attack. If you simply cut A off and start B, you might hear a click pop at the boundary, because the waveform of A doesn't end at zero and the waveform of B doesn't start at zero. The mismatch is audible.</p>
+
+<p>Two solutions. The first: a small fade-out on A and a small fade-in on B. Each waveform now starts and ends at zero, so there's no jump. The second: a crossfade, where A and B overlap briefly. The result is smoother still: the seam is not just silent at the boundary, it's an active blend.</p>
+
+<div class="audio-compare">
+  <div class="audio-compare-title">Two sounds, two seams</div>
+  <div class="audio-row">
+    <span class="audio-label">Hard cut
+      <span class="audio-label-sub">no fade at the boundary</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/seam-hardcut.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Crossfade
+      <span class="audio-label-sub">200 ms overlap</span>
+    </span>
+    <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/seam-crossfade.wav"></audio>
+  </div>
+  <p class="audio-note">Listen for the moment of transition in each. The hard cut produces an audible click as the waveforms collide. The crossfade smooths the seam to the point that, depending on the source material, you might not notice it as a transition at all. The principle: in editing, the seams are where listeners catch you out. Fades and crossfades are how you make seams invisible.</p>
+</div>
+
+<hr>
+
+<h2>4 · Listening with the vocabulary</h2>
+
+<p>Now turn this back on the listening assignment. As you listen to Schaeffer's <em>Étude aux chemins de fer</em> and Henry's <em>Variations pour une porte et un soupir</em>, listen with two questions in mind:</p>
+
+<ul>
+  <li><strong>What are the envelopes of the source sounds?</strong> Are the trains in Schaeffer mostly sharp attacks, mostly long sustains, or some mix? What about Henry's doors and sighs?</li>
+  <li><strong>What edit moves do you hear?</strong> Cuts, fades, crossfades, loops, reversals, speed changes. Try to identify at least three specific edit moves in each piece you listen to.</li>
+</ul>
+
+<p>You won't always be sure. The whole point of musique concrète is that the source sounds are transformed past the point of obvious recognition. But you can train your ear to notice these moves over time, and that ear will serve you when you start making your own piece on Wednesday.</p>
+
+<hr>
+
+<h2>Vocabulary</h2>
+
+<dl class="vocab">
+  <dt>Envelope</dt>
+  <dd>The shape of a sound over time, described in three stages: attack, sustain, release.</dd>
+
+  <dt>Attack</dt>
+  <dd>How a sound begins. The transition from silence to the body of the sound. Sharp attacks happen quickly; slow attacks happen gradually.</dd>
+
+  <dt>Sustain</dt>
+  <dd>The body of a sound, after the attack. Can be steady (an organ note) or evolving (a vocal "ahhh"); some sounds have very short sustains or none at all.</dd>
+
+  <dt>Release</dt>
+  <dd>How a sound ends. The transition from the body of the sound back to silence. Can be abrupt (cut off) or gradual (decay).</dd>
+
+  <dt>ADSR</dt>
+  <dd>Attack, Decay, Sustain, Release. The four-stage envelope used in synthesizers, where decay is the transition between the attack peak and the steady sustain level. We'll meet this in Module 4 when we work with Ableton's synths.</dd>
+
+  <dt>Cut</dt>
+  <dd>Remove a selected region of audio.</dd>
+
+  <dt>Trim</dt>
+  <dd>Keep a selected region and remove everything else.</dd>
+
+  <dt>Splice</dt>
+  <dd>Place audio fragments next to each other in time. The original musique concrète move, named after the physical splicing of magnetic tape.</dd>
+
+  <dt>Fade</dt>
+  <dd>A volume ramp at the boundary of an edit. Prevents click pops and shapes how a sound enters or leaves.</dd>
+
+  <dt>Crossfade</dt>
+  <dd>An overlap of a fade-out and a fade-in. The seam between two sounds becomes a blend.</dd>
+
+  <dt>Loop</dt>
+  <dd>A region played repeatedly. Useful as a working aid or as a compositional element.</dd>
+
+  <dt>Reverse</dt>
+  <dd>Play a sound backward. The envelope flips: attack becomes release, release becomes attack.</dd>
+
+  <dt>Time-stretch</dt>
+  <dd>Change the duration of a sound without changing its pitch. Modern signal-processing technique.</dd>
+
+  <dt>Pitch-shift</dt>
+  <dd>Change the pitch of a sound without changing its duration. The complement to time-stretch.</dd>
+</dl>
+
+<hr>
+
+<h2>What this means for Project 1</h2>
+
+<p>Project 1 starts on Wednesday. You'll be choosing source sounds from a sample bank and arranging them into a 2-minute piece. The vocabulary in this reading is what you'll use to describe what you're doing.</p>
+
+<p>When you audition a sound from the bank, you can ask: what's its envelope? When you decide where to place it in your piece, you're making a choice about how its envelope sits next to other sounds. When you reverse a sound, time-stretch it, or apply a fade, you're changing its envelope deliberately. The vocabulary lets you describe the choices you're making, which is the prerequisite to making them well.</p>
+
+<p>Wednesday is hands-on practice with the editing techniques covered here. Bring headphones.</p>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Reading · Module 02 · Mon Wk 3</span>
+</footer>
+
+</body>
+</html>
