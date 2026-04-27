@@ -23,7 +23,7 @@ ta-notes/        TA-facing teaching notes, common confusions, pacing
 - **Term:** Fall 2026 (15 weeks)
 - **Format:** Mondays = lecture, Wednesdays = lab
 - **Modules:** 4 (Computer fluency → Audacity → Recording/sampling → Ableton)
-- **Deliverables:** Project 1 (musique concrète–light), midterm (sample library + exam), final project (open), final exam (cumulative)
+- **Deliverables:** Project 1 (musique concrète piece), midterm (sample library + exam), final project (open), final exam (cumulative)
 
 See [`course/syllabus/course-outline.md`](course/syllabus/course-outline.md) for full details.
 

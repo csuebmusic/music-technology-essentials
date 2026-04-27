@@ -1,6 +1,6 @@
 # Listening assignments — pattern and template
 
-This folder holds the listening assignments for each module. Most modules have one historical listening assignment (recordings from outside the class); some also have a peer listening assignment (students listen to each other's project work). The patterns are consistent so students know what to expect.
+This folder holds the listening assignments for each module. Each module has a historical listening assignment (recordings from outside the class). Modules 2 and 3 also have a peer listening assignment, where students listen to each other's project work — Project 1 pieces in Module 2, sample libraries in Module 3. The patterns are consistent so students know what to expect.
 
 ## Format
 
@@ -58,7 +58,12 @@ Cards open in a new tab (`target="_blank" rel="noopener noreferrer"`) so student
 
 ## Peer listening
 
-When a project's deliverable is an audio file, the cohort listens to each other's work. The peer listening assignment is structurally similar to the historical listening assignment (HTML, submission card, the same writing conventions) but differs in source and tone:
+When a module's deliverable is something the cohort can listen to, students listen to each other's work. There are two peer listening assignments in the course:
+
+- **Module 2:** Students listen to each other's Project 1 pieces (finished compositions) in the class listening folder.
+- **Module 3:** Students browse and listen to each other's midterm sample libraries (collections of curated source recordings). The format differs from Module 2's because the artifact is a library, not a piece — prompts orient toward what's in the library and what they'd do with it.
+
+Both peer listening assignments are structurally similar to historical listening (HTML, submission card, the same writing conventions) but differ in source and tone:
 
 - **Source.** Students listen to files in the class listening folder on the NAS, not external recordings. There are no embedded links — they navigate to the folder themselves.
 - **Scope.** Students listen to *every* piece in the folder but only write about a chosen subset (3-4 pieces is typical). This models real peer listening: listen widely, write about what stood out.

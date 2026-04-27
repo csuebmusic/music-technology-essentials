@@ -34,7 +34,7 @@ Em dashes (`—`, U+2014) are not used in student-facing HTML. They can read as 
 - **Period** when separating two complete thoughts that should stand apart
 - **Middle dot (`·`, U+00B7)** for title separators in `<title>` elements and `<h1>`/`<h2>`/`<h3>` metadata-style headings (e.g. `Step 1 · Turn the knobs down`)
 
-En dashes (`–`, U+2013) are preserved where they form correct typographic compounds, like `musique concrète–light piece`. The convention is about em dashes, not en dashes.
+En dashes (`–`, U+2013) are preserved where they form correct typographic compounds, like `musique concrète–style found sounds` (combining a multi-word noun phrase with a modifier). The convention is about em dashes, not en dashes.
 
 This convention applies only to **student-facing** HTML. Markdown files (module specs, TA notes, READMEs) are internal-facing and em dashes are fine there.
 

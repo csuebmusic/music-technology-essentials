@@ -11,7 +11,7 @@ Lab: MB2525 (2nd floor, Music Building)
 
 This is an introductory course in music technology for students with little or no prior experience. The goal is to build genuine fluency in core tools and concepts — file management, digital audio, editing, mixing, recording, sample-based production, and DAW work — through hands-on, project-based learning.
 
-The course is structured around four modules, each ending in a real, presentable deliverable. Students listen, analyze, and create in response throughout.
+The course is structured around four modules, each ending in a real deliverable. Students listen, analyze, and create in response throughout.
 
 ---
 
@@ -19,7 +19,7 @@ The course is structured around four modules, each ending in a real, presentable
 
 - **Mondays** — lecture (concept introduction + listening example)
 - **Wednesdays** — lab (guided hands-on tutorial)
-- **Per module** — listening assignment with guided questions
+- **Listening assignments** — at least one historical listening per module with guided questions; Modules 2 and 3 also include a peer listening assignment where students listen to each other's project work (Project 1 pieces and midterm sample libraries respectively)
 
 ---
 
@@ -69,7 +69,7 @@ The course is structured around four modules, each ending in a real, presentable
 | # | Module | Weeks | Deliverable |
 |---|---|---|---|
 | 1 | Computer & studio fluency | 1 | — (setup) |
-| 2 | Digital audio + editing + mixing in Audacity | 2–5 | **Project 1: Musique concrète–light piece** (Wed Wk 5) |
+| 2 | Digital audio + editing + mixing in Audacity | 2–5 | **Project 1: Musique concrète** (Wed Wk 5) |
 | 3 | Recording, sample prep, library building | 6–8 | **Midterm: sample library + terminology exam** (Wk 8) |
 | 4 | Ableton — audio (Wks 9–11) + MIDI/synth (Wks 12–14) | 9–14 | Final project Draft 1 (Wk 14) |
 | — | Revision week | 15 | Final project Draft 2 (Wk 15) |
@@ -106,15 +106,15 @@ The course is structured around four modules, each ending in a real, presentable
 - Stereo placement and panning
 - Building a piece from sourced material
 
-**Listening:** musique concrète and sound collage tradition (Schaeffer, Henry, more recent examples)
+**Listening:** musique concrète and sound collage tradition (Schaeffer, Henry, more recent examples). Module 2 also includes a peer listening assignment after Project 1 submission, where students listen to each other's pieces in the class listening folder and respond briefly.
 
 **Source sounds:** Provided on the NAS (`/music/shared/sample-banks/project1/`). Students download, manipulate, and arrange.
 
-**Deliverable: Project 1 — Musique concrète–light piece**
-- 2 minutes maximum
+**Deliverable: Project 1 — Musique concrète**
+- 2 minutes maximum (90 seconds minimum)
 - Built from server-provided source sounds
 - Demonstrates editing + basic mixing skills
-- Presented during Wednesday lab of Week 5
+- Final WAV uploaded to NAS by end of Wednesday lab in Week 5 (private working folder + class listening folder for peer listening)
 
 ---
 
@@ -131,7 +131,7 @@ The course is structured around four modules, each ending in a real, presentable
 - Sample prep: cropping, normalizing, renaming, tagging
 - Library organization: folder structure, naming conventions, metadata
 
-**Listening:** Field recording and acousmatic tradition (Chris Watson, Hildegard Westerkamp, Francisco López, others)
+**Listening:** Field recording and acousmatic tradition (Chris Watson, Hildegard Westerkamp, Francisco López, others). Module 3 also includes a peer listening assignment after midterm submission, where students browse and listen to each other's sample libraries and respond briefly. The format differs from Module 2's peer listening: students are listening to libraries (collections of curated sounds) rather than finished pieces, so the prompts are oriented toward what's in the libraries and what they'd do with it.
 
 **Deliverable: Midterm**
 - **Sample library** — minimum [N] sounds, organized in a documented folder structure on the NAS, with naming conventions, prepared and ready for use
@@ -189,11 +189,11 @@ The course is structured around four modules, each ending in a real, presentable
 
 | Component | Weight | Notes |
 |---|---|---|
-| Project 1 (musique concrète–light piece) | TBD | Module 2 deliverable |
+| Project 1 (musique concrète piece) | TBD | Module 2 deliverable |
 | Midterm: sample library + exam | TBD | Module 3 deliverable |
 | Final project (Draft 1 + Draft 2 + final) | TBD | Module 4 deliverable |
 | Final exam (cumulative) | TBD | Finals week |
-| Listening responses | TBD | One per module |
+| Listening responses | TBD | Historical listening per module; peer listening in Modules 2 and 3 |
 | Weekly tutorial completion | TBD | Wednesday labs |
 
 *Weights to be finalized.*
@@ -204,7 +204,7 @@ The course is structured around four modules, each ending in a real, presentable
 
 - **Working files:** Students work locally during sessions in `~/Documents/lastname/` on whichever lab machine they're using. The lab NAS at MB2525 holds the master copy of each student's work. Students download from the NAS at the start of every session and upload at the end.
 - **Sync hygiene:** Local folders on lab machines accumulate across the semester and are wiped between semesters. The NAS is the source of truth.
-- **Submissions:** Final exports for graded work submitted via Canvas; raw working files synced to the NAS.
+- **Submissions:** Audio deliverables (Project 1 piece, midterm sample library, final piece) are submitted to the NAS following the `lastname-projectNN.wav` convention, in both a private working folder and a class listening folder where applicable. Written deliverables (listening responses, peer-listening responses, the final exam) are submitted on Canvas as Word or PDF following the per-assignment submission card.
 - **Software:** Audacity (free, installed on lab machines) and Ableton Live (lab license).
 - **Hardware:** Each lab station has a Mac mini (mounted behind the monitor), USB hub, audio interface, tabletop microphone, MIDI keyboard, and headphones.
 
