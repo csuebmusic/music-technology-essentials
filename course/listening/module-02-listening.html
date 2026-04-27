@@ -23,30 +23,66 @@
       color: var(--ink-soft);
       margin-top: 0.75rem;
     }
-    /* YouTube embed: responsive 16:9 wrapper */
-    .video-embed {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+    /* Listen-link cards: styled hyperlinks to external audio sources */
+    .listen-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
       margin: 1rem 0;
       background: var(--bg-alt);
       border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
       border-radius: 4px;
-      overflow: hidden;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.15s ease, border-color 0.15s ease;
     }
-    .video-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .listen-link:hover {
+      background: var(--bg);
+      border-color: var(--accent);
+      border-left-color: var(--accent);
     }
-    .video-fallback {
-      font-size: 0.85rem;
+    .listen-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .listen-link .listen-icon {
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .listen-link .listen-body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .listen-link .listen-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    .listen-link .listen-meta {
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--ink-soft);
-      margin-top: 0.4rem;
-      font-style: italic;
+      margin-top: 0.25rem;
+    }
+    .listen-link .listen-arrow {
+      flex: 0 0 auto;
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--ink-soft);
     }
     /* Photo display: single photo or side-by-side grid */
     .photo-single {
@@ -254,19 +290,27 @@
 
 <p>The first piece of musique concrète ever made. Built entirely from train sounds. About 3 minutes.</p>
 
-<div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/tJwoQlYUVTk" title="Pierre Schaeffer - Étude aux chemins de fer (1948)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-</div>
-<p class="video-fallback">If the video doesn't load, search YouTube for "Schaeffer Étude aux chemins de fer."</p>
+<a class="listen-link" href="https://www.youtube.com/watch?v=tJwoQlYUVTk" target="_blank" rel="noopener noreferrer">
+  <span class="listen-icon" aria-hidden="true">▶</span>
+  <span class="listen-body">
+    <span class="listen-title">Listen on YouTube: Schaeffer, <em>Étude aux chemins de fer</em></span>
+    <span class="listen-meta">~3 min · opens in a new tab</span>
+  </span>
+  <span class="listen-arrow" aria-hidden="true">↗</span>
+</a>
 
 <h3>2 · Pierre Henry · <em>Variations pour une porte et un soupir</em>, opening section (1963)</h3>
 
-<p>Built from the sound of a single door and a single sigh. The full work has 25 numbered movements; the embed below is the complete album playlist. Listen to <strong>at least the first 5 minutes</strong> (about the first three or four movements). If you find yourself drawn in, keep going. The playlist will play through to the end on its own.</p>
+<p>Built from the sound of a single door and a single sigh. The full work has 25 numbered movements; the link below opens the complete album playlist on YouTube. Listen to <strong>at least the first 5 minutes</strong> (about the first three or four movements). If you find yourself drawn in, keep going. The playlist will play through to the end on its own.</p>
 
-<div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_kYT9Z5N2jqAuTcqEjksv9kozTMGtORrZE" title="Pierre Henry - Variations pour une porte et un soupir (1963), full work playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-</div>
-<p class="video-fallback">If the playlist doesn't load, search YouTube for "Henry Variations pour une porte et un soupir."</p>
+<a class="listen-link" href="https://www.youtube.com/playlist?list=OLAK5uy_kYT9Z5N2jqAuTcqEjksv9kozTMGtORrZE" target="_blank" rel="noopener noreferrer">
+  <span class="listen-icon" aria-hidden="true">▶</span>
+  <span class="listen-body">
+    <span class="listen-title">Listen on YouTube: Henry, <em>Variations pour une porte et un soupir</em> (full album playlist)</span>
+    <span class="listen-meta">25 movements · listen to at least the first 5 min · opens in a new tab</span>
+  </span>
+  <span class="listen-arrow" aria-hidden="true">↗</span>
+</a>
 
 <h3>3 · A contemporary example, your choice</h3>
 
