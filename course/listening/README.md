@@ -31,6 +31,29 @@ Questions follow a consistent shape, drawn from Inés's pedagogy of listen → a
 
 The questions are intentionally not "did you like it" or "what does it mean." Listening responses are about training the ear, not opinion-sharing.
 
+## Photos and historical context
+
+When the historical or technological context matters for how students should listen (e.g., knowing that musique concrète was originally a tape practice, not a digital one), include a short framing section before the listening list. A few paragraphs of prose, interleaved with photos, is usually enough.
+
+**Photo sourcing: Inés provides the photos.** Do not pull images from Wikimedia, Google, or other public sources independently. When a listening assignment needs photos, ask Inés for them and wait. She will also provide source URLs for attribution. Once received, store images at `assets/images/module-XX-week-YY/` and reference them locally (no hotlinking).
+
+Compress large images before committing. Target: under 200 KB each, roughly 1200–1400 px on the long side. Use `Pillow` or `cwebp`.
+
+**Photo display CSS** lives in the head `<style>` block of each listening file. Two layouts:
+
+- `.photo-single` — one photo per beat, used when interleaving images through prose. Each photo gets its own `<figure>` with caption and attribution line.
+- `.photo-grid` — two photos side-by-side (stacked on mobile under 640px). Use sparingly, typically for direct comparisons.
+
+Each photo includes a `.photo-attribution` paragraph beneath the caption with proper credit (photographer or original source, license if applicable, the URL Inés provided).
+
+## Audio and video links
+
+**Use styled hyperlink cards (`.listen-link`), not iframe embeds.** Embeds look nice but fail in too many ways: uploaders disable embedding, third-party iframes load tracking scripts, accessibility suffers, and a single broken iframe makes the assignment unusable.
+
+A `.listen-link` card is a single `<a>` element with three children: a circular play icon (left), a title and meta line (center), and an external-link arrow (right). Both Schaeffer and Henry on `module-02-listening.html` use this pattern — copy the markup and CSS from there.
+
+Cards open in a new tab (`target="_blank" rel="noopener noreferrer"`) so students don't lose the assignment page when they click through to listen.
+
 ## Tone
 
 Student-facing, warm, direct. Each assignment should make clear that there are no wrong answers as long as the student is genuinely listening and writing about what they hear.
