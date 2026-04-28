@@ -20,6 +20,51 @@ Documents in subfolders link to the stylesheet via a relative path:
 - From `course/projects/` → `../../assets/style.css`
 - From `course/listening/` → `../../assets/style.css`
 
+## Document chrome convention
+
+Every document in the repo identifies itself with the same vocabulary and the same order. This applies to readings, listening assignments, project prompts, handouts, module specs, and TA notes — both HTML and markdown.
+
+### The pattern
+
+`Module XX · Role` — module-tagged context first, role within the module second. Modules are zero-padded (`Module 01`, `Module 02`); roles are not (`Lecture 1`, `Project 1`, `Handout 1`).
+
+For documents that aren't tied to a single module (e.g. a lab reference card used all semester), the leading word is the context type (`Lab`), followed by the document's role.
+
+### HTML files
+
+The header `<span class="meta">` and the matching footer span both contain the role line for the document. They identify it without dating it.
+
+| Document type | Header / footer right span |
+|---|---|
+| Reading | `Module XX · Lecture N` |
+| Listening assignment | `Module XX · Listening` |
+| Peer listening assignment | `Module XX · Peer listening` |
+| Project prompt | `Module XX · Project N` |
+| Module-tied handout | `Module XX · Handout N` |
+| Module-agnostic handout | `Lab · Reference card` |
+
+Lecture numbers count only Monday lectures within a module. Project numbers count globally across the semester. Handout numbers count globally across the semester (so handouts are referred to as `Handout 1`, `Handout 2`, etc., regardless of which module they're in — but the *header* still tags them with their module if they're module-specific).
+
+The title block's module tag (`<div class="module-tag">`) carries the module's *thematic* label (e.g. `Module 02 · Digital audio, editing & mixing`), shared across all documents in a module.
+
+The title block's subtitle is a one-sentence description of the document's content. **Subtitles do not contain dates.** Schedules shift each semester; positional labels and content descriptions don't.
+
+### Markdown files
+
+Markdown docs (module specs, TA notes) use the H1 to identify themselves:
+
+| Document type | H1 line |
+|---|---|
+| Module spec | `# Module XX — [Module title]` |
+| TA notes for a module | `# TA Notes — Module XX` |
+| Operational TA doc (NAS policy, sample bank prep) | `# [Document title]` (no module reference; these are course-wide) |
+
+If a metadata line is useful immediately under the H1, put it as bold text and keep it dateless. For example: `**Weeks 2–5** (7 sessions)`. Date ranges live in `course/syllabus/course-outline.md` and nowhere else.
+
+### Why no dates anywhere except the syllabus
+
+Dates change every semester. The schedule is one document; if it lives in many places, it has to be updated in many places. Lecture numbers, project numbers, and module thematic labels are stable. Re-running this course in a future semester should require updating only `course-outline.md` and the schedule tables inside module specs, not chrome on every reading and project prompt.
+
 ## Writing conventions for student-facing HTML
 
 Beyond visual styling, all student-facing HTML follows a few prose conventions:

@@ -1,6 +1,6 @@
-# Module 1 — Computer & Studio Fluency
+# Module 01 — Computer & Studio Fluency
 
-**Week 1 — Wednesday Aug 19, 2026** (single session, 3:00–4:40 PM, MB2525)
+**Week 1** (1 session)
 
 ---
 

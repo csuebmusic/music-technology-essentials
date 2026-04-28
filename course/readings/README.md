@@ -41,7 +41,7 @@ Aim for ~10–15 minutes of focused student reading per file. The TA spends 90 m
 
 ## Authoring
 
-Use existing readings as templates. The header, title block, and footer follow a fixed precedent so the textbook feels consistent across the semester:
+Use existing readings as templates. The header, title block, and footer follow the cross-document chrome convention documented in [`assets/README.md`](../../assets/README.md#document-chrome-convention). The reading-specific shape:
 
 ```html
 <header class="handout-header">

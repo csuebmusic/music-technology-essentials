@@ -1,4 +1,4 @@
-# TA Notes — Module 2 (Weeks 2–5, Aug 24 – Sep 16)
+# TA Notes — Module 02
 
 This module is the foundation of the course. Students learn what digital audio is, how to manipulate it, and how to shape a balanced mix — and they make their first piece. By the end of Wk 5 they should be able to take a folder of source sounds and produce a deliberately edited, mixed, 2-minute piece. That is not a small jump from Day 1.
 

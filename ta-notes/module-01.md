@@ -1,4 +1,4 @@
-# TA Notes — Module 1 (Week 1, Wed Aug 19)
+# TA Notes — Module 01
 
 This is the first day of class. The single biggest thing you can do is establish that the lab is a low-stakes, supportive place to learn. Most students arrive nervous about technology. If they leave feeling like *they* did something — saved a file, plugged in gear, made a recording — they'll come back Monday ready to learn. If they leave feeling lost, the rest of the semester is harder.
 

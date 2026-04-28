@@ -1,6 +1,6 @@
-# Module 2 — Digital Audio, Editing & Mixing in Audacity
+# Module 02 — Digital Audio, Editing & Mixing in Audacity
 
-**Weeks 2–5 · Aug 24 – Sep 16, 2026** (7 sessions)
+**Weeks 2–5** (7 sessions)
 
 ---
 
