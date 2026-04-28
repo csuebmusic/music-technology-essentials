@@ -74,6 +74,72 @@ pipeline in one language and one script keeps the build simple.
 The students never see this code — they just hear the resulting files
 embedded in the reading.
 
+## `generate-audio-demos-week-03.py`
+
+Generates the audio demo files used in the Module 2 Week 3 reading
+(`course/readings/module-02-week-03-editing-envelope.html`). Twelve
+files in total, supporting four pedagogical moments in the reading.
+
+### What it produces
+
+Output directory: `assets/audio/module-02-week-03/`
+
+**Three contrasting envelopes** (Section 1, the envelope concept):
+
+| File | Synthesis | Purpose |
+|---|---|---|
+| `env-sharp.wav` | Filtered noise burst with very fast envelope | Sharp attack, no sustain, fast release (woodblock-like) |
+| `env-sustained.wav` | Sine mixture with curved 1.8 s attack + 1.5 s release | Slow swell, long sustain, gentle decay (pad-like) |
+| `env-evolving.wav` | Filtered noise with slow LFO on cutoff | Continuous texture with no clear ASR boundaries |
+
+**One source, four envelopes** (Section 3, editing changes envelope):
+
+| File | Operation | Purpose |
+|---|---|---|
+| `edit-source.wav` | Karplus-Strong pluck, 3 s, A3 | Reference: complete attack-sustain-release |
+| `edit-truncated.wav` | Source cut hard at 0.5 s | Demonstrates: cutting off the release |
+| `edit-reversed.wav` | Source played backward | Demonstrates: attack ↔ release swap |
+| `edit-fade-in.wav` | Source with 1 s linear fade-in | Demonstrates: replacing a sharp attack with a slow one |
+
+**Edit-boundary seam** (Section 3, click pops at hard cuts):
+
+| File | Operation | Purpose |
+|---|---|---|
+| `seam-hardcut.wav` | Two band-passed noise textures concatenated | Audible click at the boundary |
+| `seam-crossfade.wav` | Same two textures with 200 ms crossfade | No audible click |
+
+**Time-pitch coupling** (Section 2, tape physics):
+
+| File | Operation | Purpose |
+|---|---|---|
+| `tape-source.wav` | Voice recording from `assets/audio/source/voice-tape-demo.aif`, mono 44.1k | Reference: 1× speed, ~5.7 s |
+| `tape-slow.wav` | Same source via `asetrate=33075,aresample=44100` | 0.75× speed, ~7.6 s, ~5 semitones lower |
+| `tape-fast.wav` | Same source via `asetrate=58800,aresample=44100` | 1.33× speed, ~4.3 s, ~5 semitones higher |
+
+The tape demos use ffmpeg's `asetrate` filter rather than DSP-based
+time-stretch or pitch-shift. `asetrate` reinterprets the file's
+sample rate without changing the sample data, which is mathematically
+identical to what a tape machine does at non-standard playback speed:
+duration and pitch shift together, by exactly the same ratio. This
+preserves the pedagogical claim of the section (time and pitch are
+*physically* coupled in this regime) — the demo doesn't cheat with
+modern processing.
+
+### Re-running
+
+```
+python3 build/generate-audio-demos-week-03.py
+```
+
+Requires `numpy`, `scipy`, and `ffmpeg` (the latter for the tape
+demos). The voice source must be present at
+`assets/audio/source/voice-tape-demo.aif`; if it's missing, the
+script prints a warning and skips the tape demos but still rebuilds
+the other 9 files.
+
+The Karplus-Strong source used in the editing demos uses a fixed
+random seed (42), so output is deterministic across runs.
+
 ## File naming convention
 
 Build scripts use lowercase with hyphens, matching the rest of the

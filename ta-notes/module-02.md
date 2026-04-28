@@ -4,7 +4,7 @@ This module is the foundation of the course. Students learn what digital audio i
 
 The module spans seven sessions. They are not interchangeable. The Mondays are lecture-style (concept introduction, listening, discussion); the Wednesdays are lab-style (hands-on, tools, project work). Students need both rhythms — the Monday sessions give them vocabulary and ear training, the Wednesday sessions give them craft. If you find yourself drifting toward the lab pattern on a Monday, pull back: students who only do the lab work without the conceptual frame produce technically functional but creatively shallow pieces.
 
-Project 1 launches Wed Wk 3 and is presented Wed Wk 5. Two and a half weeks. The clock is tight on purpose — students who have a month tend to use the first three weeks avoiding the work.
+Project 1 launches Wed Wk 3 and is due Wed Wk 5. Two and a half weeks. The clock is tight on purpose — students who have a month tend to use the first three weeks avoiding the work.
 
 This file is the operational runbook for all seven sessions. Module spec (the "what") is in [`course/modules/module-02.md`](../course/modules/module-02.md); this file is the "how."
 

@@ -74,26 +74,6 @@ def write_wav(path, audio, sr=SR, bit_depth=16, peak_dbfs=-3.0):
     print(f"Wrote {path} ({len(audio)/sr:.2f} s)")
 
 
-def apply_envelope(audio, attack_s, sustain_s, release_s, sr=SR):
-    """
-    Apply a piecewise linear ASR envelope to audio.
-    Total duration = attack + sustain + release.
-    The audio array should be at least that long; trailing samples are zeroed.
-    """
-    n_a = int(attack_s * sr)
-    n_s = int(sustain_s * sr)
-    n_r = int(release_s * sr)
-    total = n_a + n_s + n_r
-    env = np.concatenate([
-        np.linspace(0, 1, n_a, dtype=np.float32),
-        np.ones(n_s, dtype=np.float32),
-        np.linspace(1, 0, n_r, dtype=np.float32),
-    ])
-    out = np.zeros(max(total, len(audio)), dtype=np.float32)
-    out[:total] = audio[:total] * env
-    return out[:total]
-
-
 def apply_curved_envelope(audio, attack_s, sustain_s, release_s, curve=2.5, sr=SR):
     """
     Apply an ASR envelope with curved (power-law) attack and release.
@@ -219,23 +199,6 @@ def evolving_texture(duration_sec=4.5, sr=SR, seed=7):
     output[:fade_n] *= np.linspace(0, 1, fade_n)
     output[-fade_n:] *= np.linspace(1, 0, fade_n)
     return output
-
-
-def sine_tone(freq, duration_sec, sr=SR, fade_s=0.005):
-    """
-    Pure sine tone with very short fade-in/fade-out (default 5 ms each)
-    to prevent click pops at the start and end. Used for the tape-coupling
-    demo where the visual is a clean sine and the audible result must be
-    just-the-pitch with no envelope artifacts.
-    """
-    n = int(duration_sec * sr)
-    t = np.arange(n) / sr
-    out = np.sin(2 * np.pi * freq * t).astype(np.float32)
-    fade_n = int(fade_s * sr)
-    if fade_n > 0 and 2 * fade_n < n:
-        out[:fade_n] *= np.linspace(0, 1, fade_n)
-        out[-fade_n:] *= np.linspace(1, 0, fade_n)
-    return out
 
 
 # ----- Editing operations -----
