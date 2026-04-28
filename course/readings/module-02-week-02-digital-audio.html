@@ -705,24 +705,16 @@
 
 <p>What happens when bit depth is too low? The amplitude of each sample has to round to the nearest available value. Subtle differences get flattened. Quiet sounds can disappear entirely if they're too small to register on the coarse grid. Worst of all, the rounding itself produces a kind of low-level hiss: what engineers call <strong>quantization noise</strong>. The result is a noisier, grainier, less detailed sound.</p>
 
-<p>The CD standard is <strong>16-bit</strong>, with 65,536 possible values per sample. This is enough for high-quality audio: the noise floor is so low you can barely hear it. Professional recording often uses <strong>24-bit</strong>, which gives even more headroom for processing. <strong>8-bit</strong> audio sounds noticeably grainy and was used in early samplers and video game music. <strong>4-bit</strong> sounds genuinely degraded: a deliberate aesthetic effect.</p>
-
-<h3>Integer vs. floating-point</h3>
-
-<p>Everything we've discussed so far is <strong>integer</strong> bit depth: each sample is a whole number, and there's a strict ceiling on how loud a sample can be (the maximum positive integer). Go above it and the value gets clipped: distorted, ugly, irrecoverable.</p>
-
-<p>Modern DAWs handle audio internally at <strong>32-bit floating-point</strong>, which works differently. Instead of fixed integer values, each sample is stored as a number that can represent a much wider range, including values "above 0 dB" without clipping. This is why you can have a track in Ableton that briefly exceeds full scale during processing, then bring it back down with a fader, and it still sounds clean: the data was never actually clipped, just temporarily very large. 32-bit float is the production standard now: it's what Ableton, Logic, Pro Tools, and every serious DAW uses internally for processing and increasingly for project files too.</p>
-
-<p>You don't need to think about 32-bit float much directly: it's an internal detail. But know that when you see "32-bit" listed as an option in software, it's referring to floating-point, not a wildly higher integer resolution than 24-bit.</p>
+<p>The CD standard is <strong>16-bit</strong>, with 65,536 possible values per sample. This is enough for high-quality audio: the noise floor is so low you can barely hear it. Professional recording often uses <strong>24-bit</strong>, which gives even more headroom for processing. <strong>32-bit</strong> goes further still and is the highest resolution offered by modern DAWs like Ableton, Logic, and Pro Tools. <strong>8-bit</strong> audio sounds noticeably grainy and was used in early samplers and video game music. <strong>4-bit</strong> sounds genuinely degraded: a deliberate aesthetic effect.</p>
 
 <h3>What we'll use in this course</h3>
 
 <ul>
   <li><strong>Module 2 (Audacity):</strong> 16-bit for working files and final exports. CD standard, simple, reliable.</li>
-  <li><strong>Module 4 (Ableton):</strong> 32-bit float internally, exporting to 24-bit or 16-bit when delivering finished work.</li>
+  <li><strong>Module 4 (Ableton):</strong> 32-bit for working files. The modern production standard inside a DAW: more headroom than you'll ever need while you're still mixing. We'll export to 16- or 24-bit at the end when delivering finished work.</li>
 </ul>
 
-<p>You'll see 16, 24, and 32-bit float in the wild. The standards are evolving: what was "professional" twenty years ago (16-bit) is now baseline, and what was high-end ten years ago (24-bit) is now common. The trend is toward more headroom.</p>
+<p>You'll see 16, 24, and 32-bit in the wild. The standards are evolving: what was "professional" twenty years ago (16-bit) is now baseline, and what was high-end ten years ago (24-bit) is now common. The trend is toward more headroom.</p>
 
 <div class="audio-compare">
   <div class="audio-compare-title">Listen: same sound, three bit depths</div>
@@ -829,79 +821,89 @@
   <li><strong>8-bit:</strong> ~48 dB SNR (audible hiss)</li>
   <li><strong>16-bit:</strong> ~96 dB SNR (essentially silent noise floor for music)</li>
   <li><strong>24-bit:</strong> ~144 dB SNR (more than human hearing can resolve)</li>
+  <li><strong>32-bit:</strong> ~192 dB SNR (vastly more than human hearing can resolve)</li>
 </ul>
 
 <p>For comparison, here's how those numbers sit alongside the dynamic range of unamplified music:</p>
 
 <figure>
-  <svg viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg">
-    <rect width="600" height="290" fill="var(--bg-alt)"/>
+  <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="320" fill="var(--bg-alt)"/>
 
-    <!-- Vertical scale: 0 dB at top (y=30), -150 dB at bottom (y=250). 220 px / 150 dB = 1.4667 px/dB -->
-    <!-- y(dB) = 30 + 1.4667 * (-dB)   so 0 → 30, -24 → 65.2, -48 → 100.4, -72 → 135.6, -96 → 170.8, -120 → 206.0, -144 → 241.2 -->
+    <!-- Vertical scale: 0 dB at top (y=30), -192 dB at bottom (y=270). 240 px / 192 dB = 1.25 px/dB -->
+    <!-- y(dB) = 30 + 1.25 * (-dB)   so 0 → 30, -24 → 60, -48 → 90, -72 → 120, -96 → 150, -120 → 180, -144 → 210, -168 → 240, -192 → 270 -->
 
     <!-- Vertical axis -->
-    <line x1="80" y1="30" x2="80" y2="250" stroke="var(--ink)" stroke-width="1.5"/>
+    <line x1="80" y1="30" x2="80" y2="270" stroke="var(--ink)" stroke-width="1.5"/>
     <text x="40" y="20" font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">0 dB (full scale)</text>
 
     <!-- dB tick marks every 24 dB -->
     <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">
-      <line x1="76" y1="65.2" x2="84" y2="65.2" stroke="var(--ink)" stroke-width="1"/>
-      <text x="72" y="69">-24</text>
-      <line x1="76" y1="100.4" x2="84" y2="100.4" stroke="var(--ink)" stroke-width="1"/>
-      <text x="72" y="104">-48</text>
-      <line x1="76" y1="135.6" x2="84" y2="135.6" stroke="var(--ink)" stroke-width="1"/>
-      <text x="72" y="139">-72</text>
-      <line x1="76" y1="170.8" x2="84" y2="170.8" stroke="var(--ink)" stroke-width="1"/>
-      <text x="72" y="174">-96</text>
-      <line x1="76" y1="206" x2="84" y2="206" stroke="var(--ink)" stroke-width="1"/>
-      <text x="72" y="210">-120</text>
-      <line x1="76" y1="241.2" x2="84" y2="241.2" stroke="var(--ink)" stroke-width="1"/>
-      <text x="72" y="245">-144</text>
+      <line x1="76" y1="60" x2="84" y2="60" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="64">-24</text>
+      <line x1="76" y1="90" x2="84" y2="90" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="94">-48</text>
+      <line x1="76" y1="120" x2="84" y2="120" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="124">-72</text>
+      <line x1="76" y1="150" x2="84" y2="150" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="154">-96</text>
+      <line x1="76" y1="180" x2="84" y2="180" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="184">-120</text>
+      <line x1="76" y1="210" x2="84" y2="210" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="214">-144</text>
+      <line x1="76" y1="240" x2="84" y2="240" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="244">-168</text>
+      <line x1="76" y1="270" x2="84" y2="270" stroke="var(--ink)" stroke-width="1"/>
+      <text x="72" y="274">-192</text>
     </g>
 
     <!-- Format bars: each starts at 0 dB (y=30) and extends down to noise floor.
-         Layout: 4 format bars at x=120/200/280/360 (60 wide, 20 gap),
-         orchestra reference at x=460 (with extra gap to separate it visually). -->
+         Layout: 5 format bars at x=110/175/240/305/370 (50 wide, 15 gap),
+         orchestra reference at x=450 (with extra gap to separate it visually). -->
 
-    <!-- 4-bit: ~24 dB SNR → noise floor at y=65.2 -->
-    <rect x="120" y="30" width="60" height="35.2" fill="var(--accent)" opacity="0.5"/>
-    <text x="150" y="78" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">4-bit</text>
-    <text x="150" y="91" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~24 dB</text>
+    <!-- 4-bit: ~24 dB SNR → noise floor at y=60, height 30 -->
+    <rect x="110" y="30" width="50" height="30" fill="var(--accent)" opacity="0.45"/>
+    <text x="135" y="78" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">4-bit</text>
+    <text x="135" y="91" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~24 dB</text>
 
-    <!-- 8-bit: ~48 dB → y=100.4 -->
-    <rect x="200" y="30" width="60" height="70.4" fill="var(--accent)" opacity="0.65"/>
-    <text x="230" y="113" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">8-bit</text>
-    <text x="230" y="126" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~48 dB</text>
+    <!-- 8-bit: ~48 dB → y=90, height 60 -->
+    <rect x="175" y="30" width="50" height="60" fill="var(--accent)" opacity="0.6"/>
+    <text x="200" y="108" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">8-bit</text>
+    <text x="200" y="121" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~48 dB</text>
 
-    <!-- 16-bit: ~96 dB → y=170.8 -->
-    <rect x="280" y="30" width="60" height="140.8" fill="var(--accent)" opacity="0.85"/>
-    <text x="310" y="183" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">16-bit</text>
-    <text x="310" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~96 dB (CD)</text>
+    <!-- 16-bit: ~96 dB → y=150, height 120 -->
+    <rect x="240" y="30" width="50" height="120" fill="var(--accent)" opacity="0.75"/>
+    <text x="265" y="168" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">16-bit</text>
+    <text x="265" y="181" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~96 dB (CD)</text>
 
-    <!-- 24-bit: ~144 dB → y=241.2 -->
-    <rect x="360" y="30" width="60" height="211.2" fill="var(--accent)"/>
-    <text x="390" y="254" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">24-bit</text>
-    <text x="390" y="267" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~144 dB</text>
+    <!-- 24-bit: ~144 dB → y=210, height 180 -->
+    <rect x="305" y="30" width="50" height="180" fill="var(--accent)" opacity="0.9"/>
+    <text x="330" y="228" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">24-bit</text>
+    <text x="330" y="241" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~144 dB</text>
+
+    <!-- 32-bit: ~192 dB → y=270, height 240 -->
+    <rect x="370" y="30" width="50" height="240" fill="var(--accent)"/>
+    <text x="395" y="288" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">32-bit</text>
+    <text x="395" y="301" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~192 dB</text>
 
     <!-- Orchestra dynamic range band: from fortissimo (~-6 dBFS) down to pianissimo (~-86 dBFS) -->
-    <!-- ff at -6 dB → y = 30 + 1.4667*6 = 38.8 -->
-    <!-- pp at -86 dB → y = 30 + 1.4667*86 = 156.1 -->
-    <rect x="460" y="38.8" width="60" height="117.3" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3,2"/>
-    <rect x="460" y="38.8" width="60" height="117.3" fill="var(--ink)" opacity="0.08"/>
+    <!-- ff at -6 dB → y = 30 + 1.25*6 = 37.5 -->
+    <!-- pp at -86 dB → y = 30 + 1.25*86 = 137.5 -->
+    <rect x="450" y="37.5" width="50" height="100" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <rect x="450" y="37.5" width="50" height="100" fill="var(--ink)" opacity="0.08"/>
 
     <!-- ff and pp tick marks on the right edge of the orchestra column -->
-    <line x1="520" y1="38.8" x2="530" y2="38.8" stroke="var(--ink)" stroke-width="1"/>
-    <text x="534" y="42" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">ff</text>
-    <line x1="520" y1="156.1" x2="530" y2="156.1" stroke="var(--ink)" stroke-width="1"/>
-    <text x="534" y="159" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">pp</text>
+    <line x1="500" y1="37.5" x2="510" y2="37.5" stroke="var(--ink)" stroke-width="1"/>
+    <text x="514" y="41" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">ff</text>
+    <line x1="500" y1="137.5" x2="510" y2="137.5" stroke="var(--ink)" stroke-width="1"/>
+    <text x="514" y="141" font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">pp</text>
 
     <!-- Orchestra label centered -->
-    <text x="490" y="170" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">orchestra</text>
-    <text x="490" y="183" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">ff to pp</text>
-    <text x="490" y="196" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~80 dB range</text>
+    <text x="475" y="155" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle">orchestra</text>
+    <text x="475" y="168" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">ff to pp</text>
+    <text x="475" y="181" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">~80 dB range</text>
   </svg>
-  <figcaption>Dynamic range available at four bit depths, with the dynamic range of a live orchestra shown as a real-world reference. The orchestra spans from fortissimo near full scale down to pianissimo around -86 dBFS, an ~80 dB range. Notice that the orchestra's quietest pianissimo falls below the noise floor of 4-bit and 8-bit, but fits comfortably inside 16-bit and is dwarfed by 24-bit. That's why CDs went 16-bit. 32-bit float (not shown) is effectively unlimited within audible thresholds.</figcaption>
+  <figcaption>Dynamic range available at five bit depths, with the dynamic range of a live orchestra shown as a real-world reference. The orchestra spans from fortissimo near full scale down to pianissimo around -86 dBFS, an ~80 dB range. Notice that the orchestra's quietest pianissimo falls below the noise floor of 4-bit and 8-bit, but fits comfortably inside 16-bit and is dwarfed by 24- and 32-bit. That's why CDs went 16-bit, why pro recording moved to 24-bit, and why DAWs offer 32-bit for the working stages where you most want the headroom.</figcaption>
 </figure>
 
 <p>This is why CDs settled on 16-bit: it covers the full dynamic range of unamplified music with a small margin to spare. It's also why professional recording uses 24-bit even when delivering at 16-bit: the extra headroom protects you from accidentally clipping during recording or losing detail during processing. <strong>You record with margin, then commit to less margin only at the final mixdown.</strong></p>
@@ -960,7 +962,7 @@
 <ul>
   <li><strong>Always work in WAV.</strong> Convert to MP3 only at the very end and only when needed.</li>
   <li><strong>44.1 kHz, 16-bit</strong> is your default for Module 2 in Audacity.</li>
-  <li><strong>48 kHz, 32-bit float</strong> is the default you'll move to in Module 4 with Ableton: the modern digital production standard.</li>
+  <li><strong>48 kHz, 32-bit</strong> is the default you'll move to in Module 4 with Ableton: the modern digital production standard.</li>
   <li><strong>Lower sample rates and bit depths have an aesthetic.</strong> "Lo-fi" is often literally that: files at low sample rates and bit depths, on purpose.</li>
   <li><strong>The numbers don't make the music.</strong> A great recording at 44.1 kHz / 16-bit will outlast a mediocre one at 192 kHz / 24-bit. Focus on what you're capturing and how, not on chasing the highest specs.</li>
 </ul>
@@ -986,10 +988,7 @@
   <dd>How many samples are taken per second. Measured in Hz or kHz. Standard for audio: 44.1 kHz.</dd>
 
   <dt>Bit depth</dt>
-  <dd>How many bits are used to store each sample. Higher bit depth = finer amplitude resolution. Standards: 16-bit (CD), 24-bit (recording), 32-bit float (DAW processing).</dd>
-
-  <dt>32-bit floating-point</dt>
-  <dd>An alternative way of storing samples that allows values above 0 dB without clipping. Used internally by all major DAWs. The de facto modern production standard for working files.</dd>
+  <dd>How many bits are used to store each sample. Higher bit depth = finer amplitude resolution and a lower noise floor. Standards: 16-bit (CD), 24-bit (recording), 32-bit (DAW working files).</dd>
 
   <dt>Nyquist theorem</dt>
   <dd>The principle that you need to sample at twice the highest frequency you want to capture. Why 44.1 kHz works for human hearing.</dd>
