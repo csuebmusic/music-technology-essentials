@@ -35,6 +35,58 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Vocabulary video demos: a short Audacity screen recording showing
+       the operation, with playback-speed controls below. */
+    .vocab-video {
+      margin: 0.75rem 0 1.25rem 0;
+      max-width: 480px;
+    }
+    .vocab-video video {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+    }
+    .vocab-video-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+    .vocab-video-controls .speed-label {
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 0.25rem;
+    }
+    .vocab-video-controls .speed-btn {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      background: transparent;
+      color: var(--ink-soft);
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+    .vocab-video-controls .speed-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .vocab-video-controls .speed-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .vocab dd > p:first-child {
+      margin-top: 0;
+    }
+
     /* Audio comparison block: a labeled group of audio players */
     .audio-compare {
       background: var(--bg-alt);
@@ -525,6 +577,29 @@
   updateReadouts();
   updatePreview();
 })();
+
+// Vocabulary-video speed controls.
+// Each .vocab-video figure has a <video> and a row of .speed-btn buttons.
+// Clicking a speed button sets that video's playbackRate and toggles
+// the .active class within its own controls group.
+(function() {
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.speed-btn');
+    if (!btn) return;
+    const figure = btn.closest('.vocab-video');
+    if (!figure) return;
+    const video = figure.querySelector('video');
+    if (!video) return;
+    const rate = parseFloat(btn.dataset.rate);
+    if (!isFinite(rate)) return;
+    video.playbackRate = rate;
+    // Update active state within this controls group only
+    const controls = btn.parentElement;
+    controls.querySelectorAll('.speed-btn').forEach(function(b) {
+      b.classList.toggle('active', b === btn);
+    });
+  });
+})();
 </script>
 
 <hr>
@@ -537,10 +612,36 @@
 
 <dl class="vocab">
   <dt>Cut</dt>
-  <dd>Remove a selected region. The audio on either side of the cut closes the gap. Like deleting a phrase from the middle of a sentence.</dd>
+  <dd>
+    <p>Remove a selected region. The audio on either side of the cut closes the gap. Like deleting a phrase from the middle of a sentence.</p>
+    <figure class="vocab-video">
+      <video controls preload="metadata" muted playsinline>
+        <source src="../../assets/videos/module-02-week-03/cut.mp4" type="video/mp4">
+      </video>
+      <div class="vocab-video-controls">
+        <span class="speed-label">speed</span>
+        <button type="button" class="speed-btn" data-rate="0.5">0.5×</button>
+        <button type="button" class="speed-btn active" data-rate="1">1×</button>
+        <button type="button" class="speed-btn" data-rate="2">2×</button>
+      </div>
+    </figure>
+  </dd>
 
   <dt>Trim</dt>
-  <dd>Keep a selected region and remove everything else. The opposite of cut. Useful for isolating a single sound from a longer recording.</dd>
+  <dd>
+    <p>Keep a selected region and remove everything else. The opposite of cut. Useful for isolating a single sound from a longer recording.</p>
+    <figure class="vocab-video">
+      <video controls preload="metadata" muted playsinline>
+        <source src="../../assets/videos/module-02-week-03/trim.mp4" type="video/mp4">
+      </video>
+      <div class="vocab-video-controls">
+        <span class="speed-label">speed</span>
+        <button type="button" class="speed-btn" data-rate="0.5">0.5×</button>
+        <button type="button" class="speed-btn active" data-rate="1">1×</button>
+        <button type="button" class="speed-btn" data-rate="2">2×</button>
+      </div>
+    </figure>
+  </dd>
 
   <dt>Splice / arrange</dt>
   <dd>Place sounds next to each other in time. The fundamental musique concrète move: take a fragment of one recording, place a fragment of another after it, and a third after that. The arrangement is the composition.</dd>
