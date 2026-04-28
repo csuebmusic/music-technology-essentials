@@ -696,6 +696,17 @@ If many students show the same pattern, it points back to the module rather than
 - **Pieces have audible click pops at edit boundaries** → fade habit (Wed Wk 3) didn't stick. Make fades part of every Module 3 demo.
 - **Students can't describe their own pieces** → vocabulary (envelope, edit techniques) didn't transfer. Add description exercises to Module 3 listening.
 
+### Forward promises to deliver in later modules
+
+Module 02 readings make several "we'll come back to this" promises. Track them so they don't go stale:
+
+- **Mon Wk 2 reading, section 5 (SNR / dynamic range):** "That principle (record with headroom, commit later) is one of the most important practices in audio. We'll return to it in Module 3." — Module 3 covers recording, so the mic-gain / input-level discussion is the place to deliver this. Make sure recording-with-margin shows up explicitly in the Module 3 recording session.
+- **Mon Wk 2 reading, section 7 (warning callout):** points students forward to "the tape-physics situation we'll see in Week 3." — delivered by Mon Wk 3 reading's time-pitch coupling section. (Already in place.)
+- **Mon Wk 3 reading (synthesis vocab note + Reverse vocab):** "Module 4 will introduce ADSR when we get into synthesis with Ableton." — Module 4 spec needs to introduce ADSR explicitly when synthesis comes online.
+- **Mon Wk 3 reading (Loop entry):** "Looping is far more central in DAWs built around it; we'll come back to it in Module 4 with Ableton." — Module 4 needs to handle looping as a first-class concept once we move into Ableton.
+
+When drafting Module 3 and Module 4 specs, scan this list and make sure each promise is covered. If a promise stops being relevant, edit the original reading rather than leave a dangling pointer.
+
 ### What gets logged
 
 After Module 2 ends, write a short retrospective (1 page, in this file or a separate retrospective doc) covering:

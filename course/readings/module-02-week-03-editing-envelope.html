@@ -241,7 +241,7 @@
   <div class="subtitle">Editing as a vocabulary, and the shape of sound over time.</div>
 </div>
 
-<p class="lede">Last week you learned what digital audio <em>is</em>: a list of numbers measured at a rate, with a precision. You also opened Audacity for the first time, imported a sound, and made an edit. This week we step back from the software to talk about <strong>what edits actually do to sound</strong>, and to introduce a vocabulary you'll use for the rest of the course: the <strong>envelope</strong> of a sound. Project 1 begins in the Wednesday lab, and the vocabulary in this reading is what you'll use to describe the sounds you want, find what you need in the sample bank, and shape what you make.</p>
+<p class="lede">Last week you learned what digital audio <em>is</em>: a list of numbers measured at a rate, each one stored with some precision. You also opened Audacity for the first time, imported a sound, and made an edit. This week we step back from the software to talk about <strong>what edits actually do to sound</strong>, and to introduce a vocabulary you'll use for the rest of the course: the <strong>envelope</strong> of a sound. Project 1 begins in the Wednesday lab, and the vocabulary in this reading is what you'll use to describe the sounds you want, find what you need in the sample bank, and shape what you make.</p>
 
 <hr>
 
@@ -345,7 +345,7 @@
 
 <h3>A note on synthesis vocabulary</h3>
 
-<p>You may have heard the acronym <strong>ADSR</strong>: attack, decay, sustain, release. This is the four-stage version of the envelope used in synthesizers, where the attack peak and the steady sustain level can be set independently (decay is the transition between them). For Module 2 we're working with recorded sounds, so the three-stage version (attack, sustain, release) is enough. Module 4 will introduce ADSR when we get into synthesis with Ableton.</p>
+<p>You may have heard the acronym <strong>ADSR</strong>: attack, decay, sustain, release. This is the four-stage version of the envelope used in synthesizers. <strong>Decay</strong> is a new stage that sits between the attack peak and the held sustain level: it shapes how the sound settles down to the level it holds while a key is pressed. For Module 2 we're working with recorded sounds, so the three-stage version (attack, sustain, release) is enough. Module 4 will introduce ADSR when we get into synthesis with Ableton.</p>
 
 <h3>Try it: shape an envelope</h3>
 
@@ -695,11 +695,27 @@
   <dd>
     <p>A region played repeatedly. Useful as a working aid (loop a section while you adjust an effect) or as a compositional move (a tape-loop pattern that becomes the rhythmic backbone of a piece). In Audacity, you achieve this two ways: as a playback feature (the loop button in the transport, which repeats the selected region while you listen, without changing the audio), or by copying an audio clip and pasting it in succession within the track. Looping is far more central in DAWs built around it; we'll come back to it in Module 4 with Ableton.</p>
   </dd>
+
+  <dt>Reverse</dt>
+  <dd>
+    <p>Play a sound backward. The recording is the same, but its envelope is flipped: the attack becomes the release, and the release becomes the attack. A piano note played backward swells in instead of striking; a struck cymbal played backward sounds like a swelling rush of air. Reverse changes the direction of the sound through time, not its duration or its pitch. It's one of the iconic moves of musique concrète: Schaeffer didn't have software, so he played tape backward by physically reversing the reel, and the resulting sounds became part of the language of the genre.</p>
+    <figure class="vocab-video">
+      <video controls preload="metadata" muted playsinline>
+        <source src="../../assets/videos/module-02-week-03/reverse.mp4" type="video/mp4">
+      </video>
+      <div class="vocab-video-controls">
+        <span class="speed-label">speed</span>
+        <button type="button" class="speed-btn" data-rate="0.5">0.5×</button>
+        <button type="button" class="speed-btn active" data-rate="1">1×</button>
+        <button type="button" class="speed-btn" data-rate="2">2×</button>
+      </div>
+    </figure>
+  </dd>
 </dl>
 
 <hr class="dotted">
 
-<p>So far, every move in this list is fairly intuitive: you cut, you keep, you arrange, you fade, you blend, you repeat. The next two moves are different. They both come out of a quirk of physics: in recorded sound, time and pitch aren't independent. To understand them you first have to understand that.</p>
+<p>So far, every move in this list is fairly intuitive: you cut, you keep, you arrange, you fade, you blend, you repeat, you reverse. The next two moves are different. They both come out of a quirk of physics: in recorded sound, time and pitch aren't independent. To understand them you first have to understand that.</p>
 
 <h3>A pause: time and pitch are coupled</h3>
 
@@ -783,36 +799,14 @@
   <dd>Make a sound longer or shorter <em>without</em> changing its pitch. Modern software analyzes the recording and rebuilds it at the new duration, holding the pitch constant. The opposite of what tape would do: when you slow a sound down with time-stretch, you keep the pitch where it was.</dd>
 
   <dt>Pitch-shift</dt>
-  <dd>Move a sound up or down in pitch <em>without</em> changing its duration. The complement to time-stretch: tape would have done both at once.</dd>
+  <dd>Move a sound up or down in pitch <em>without</em> changing its duration. The complement to time-stretch.</dd>
 </dl>
 
 <p>Both are processing-intensive operations and both produce artifacts at extreme settings. Subtle shifts (a few semitones, a 10-20% time change) usually sound clean; dramatic ones (an octave up, doubling the duration) often sound digitally manipulated. The artifacts can be a bug or a feature, depending on what you're after.</p>
 
-<h3>One more move: reverse</h3>
-
-<dl class="vocab">
-  <dt>Reverse</dt>
-  <dd>
-    <p>Play a sound backward. The recording is the same, but its envelope is flipped: the attack becomes the release, and the release becomes the attack. A piano note played backward swells in instead of striking; a struck cymbal played backward sounds like a swelling rush of air. Reverse changes the direction of the sound through time, not its duration or its pitch.</p>
-    <figure class="vocab-video">
-      <video controls preload="metadata" muted playsinline>
-        <source src="../../assets/videos/module-02-week-03/reverse.mp4" type="video/mp4">
-      </video>
-      <div class="vocab-video-controls">
-        <span class="speed-label">speed</span>
-        <button type="button" class="speed-btn" data-rate="0.5">0.5×</button>
-        <button type="button" class="speed-btn active" data-rate="1">1×</button>
-        <button type="button" class="speed-btn" data-rate="2">2×</button>
-      </div>
-    </figure>
-  </dd>
-</dl>
-
-<p>Reverse is one of the iconic moves of musique concrète. Schaeffer didn't have software; he played a tape backward by physically reversing the reel, and the resulting sounds became part of the language of the genre.</p>
-
 <h3>Same moves, different tools</h3>
 
-<p>The tradition is consistent across tools. Cut, splice, loop, reverse, time-and-pitch via tape speed: these moves all started with razor blades and tape machines. What software has added is speed (a click instead of a razor cut), reversibility (Cmd-Z instead of starting over), and the ability to separate things, like time and pitch, that physical tape kept locked together.</p>
+<p>The tradition is consistent across tools. Cut, splice, loop, reverse, time-and-pitch via tape speed: these moves all started with razor blades and tape machines. What software has added is speed (a click instead of a razor cut), reversibility (an undo button instead of starting over), and the ability to separate things, like time and pitch, that physical tape kept locked together.</p>
 
 <hr>
 
@@ -885,6 +879,8 @@
   <li><strong>What edit moves do you hear?</strong> Cuts, fades, crossfades, loops, reversals, speed changes. Try to identify at least three specific edit moves in each piece you listen to.</li>
 </ul>
 
+<p>For example: when you hear a sustained train whistle in Schaeffer suddenly cut off, ask yourself which it is. Is that a hard edit, with the recording chopped at that moment? A fast fade-out? Or a natural release the source happened to have? Sometimes you can tell, sometimes you can't, and being uncertain is part of the listening practice. The vocabulary doesn't promise certainty; it gives you a way to articulate what you're hearing and what you suspect, even when you're not sure.</p>
+
 <p>You won't always be sure. The whole point of musique concrète is that the source sounds are transformed past the point of obvious recognition. But you can train your ear to notice these moves over time, and that ear will serve you when you start making your own piece on Wednesday.</p>
 
 <hr>
@@ -905,7 +901,7 @@
   <dd>How a sound ends. The transition from the body of the sound back to silence. Can be abrupt (cut off) or gradual (decay).</dd>
 
   <dt>ADSR</dt>
-  <dd>Attack, Decay, Sustain, Release. The four-stage envelope used in synthesizers, where decay is the transition between the attack peak and the steady sustain level. We'll meet this in Module 4 when we work with Ableton's synths.</dd>
+  <dd>Attack, Decay, Sustain, Release. The four-stage envelope used in synthesizers. Decay sits between the attack peak and the held sustain level: it shapes how the sound settles down to the level it holds while a key is pressed. We'll meet this in Module 4 when we work with Ableton's synths.</dd>
 
   <dt>Cut</dt>
   <dd>Remove a selected region of audio.</dd>
