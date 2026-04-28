@@ -11,11 +11,12 @@ videos/
 │   ├── trim.mp4
 │   ├── splice.mp4
 │   ├── fades.mp4
-│   └── crossfade.mp4
+│   ├── crossfade.mp4
+│   └── reverse.mp4
 └── …
 ```
 
-The editing-vocabulary set has five videos, not six: the *loop* term doesn't get a video because Audacity's looping is split between a playback-only feature and the manual copy-paste-in-succession workaround. Both are covered in the prose definition with a forward pointer to Module 4 (Ableton), where looping is a first-class compositional tool.
+The editing-vocabulary set has six videos. The *loop* term doesn't get a video because Audacity's looping is split between a playback-only feature and the manual copy-paste-in-succession workaround. Both are covered in the prose definition with a forward pointer to Module 4 (Ableton), where looping is a first-class compositional tool.
 
 ## Recording specs
 
