@@ -607,32 +607,32 @@
     <text x="420" y="230" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">2 s</text>
     <text x="580" y="230" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">3 s</text>
   </svg>
-  <figcaption>The same waveform played at three speeds. The slowed version takes twice as long and its pitch drops by an octave; the sped-up version takes half as long and its pitch rises by an octave. Time and pitch shift together.</figcaption>
+  <figcaption>The same waveform played at three speeds. The slowed version's cycles are wider, so it takes longer and its pitch drops; the sped-up version's cycles are narrower, so it's shorter and higher. Time and pitch shift together. The audio below applies the same operation to a voice recording, at a gentler ratio.</figcaption>
 </figure>
 
-<p>Now press play on each of the three audio examples below. The diagram showed the principle on a sine wave because the cycles are visible at a glance; the audio plays a voice recording, where the perceptual change lands hardest. It's the same operation in both cases: sample-rate reinterpretation, exactly what tape did at half or double speed.</p>
+<p>Now press play on each of the three audio examples below. The diagram showed the principle on a sine wave because the cycles are visible at a glance; the audio plays a voice recording, where the perceptual change lands hardest. It's the same operation in both cases: sample-rate reinterpretation, exactly what tape did when its playback speed was changed. The audio uses a more conservative speed change than the diagram (the slow version is 1.33× as long instead of 2× as long), so the slow version stays digestible, but the principle is identical.</p>
 
 <div class="audio-compare">
   <div class="audio-compare-title">Time and pitch coupled (tape physics)</div>
   <div class="audio-row">
     <span class="audio-label">Source
-      <span class="audio-label-sub">1×, 1.5 s</span>
+      <span class="audio-label-sub">1×, ~5.7 s</span>
     </span>
     <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/tape-source.wav"></audio>
   </div>
   <div class="audio-row">
-    <span class="audio-label">Slow (½×)
-      <span class="audio-label-sub">3.0 s, octave down</span>
+    <span class="audio-label">Slow (0.75×)
+      <span class="audio-label-sub">~7.6 s, ~5 semitones lower</span>
     </span>
     <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/tape-slow.wav"></audio>
   </div>
   <div class="audio-row">
-    <span class="audio-label">Fast (2×)
-      <span class="audio-label-sub">0.75 s, octave up</span>
+    <span class="audio-label">Fast (1.33×)
+      <span class="audio-label-sub">~4.3 s, ~5 semitones higher</span>
     </span>
     <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/tape-fast.wav"></audio>
   </div>
-  <p class="audio-note">All three are the same voice recording. The slow version is exactly twice the duration of the source and an octave lower; the fast version is exactly half the duration and an octave higher. There's no signal-processing trickery: each version was made by reinterpreting the recording's sample rate, which is mathematically the same operation a tape player performs when you change its playback speed. The only difference between this and a tape machine is that we're doing it digitally.</p>
+  <p class="audio-note">All three are the same voice recording. The slow version is exactly 4/3 the duration of the source and exactly 3/4 of its pitch (about 5 semitones lower); the fast version is exactly 3/4 the duration and 4/3 of the pitch (about 5 semitones higher). The ratios match: when one goes up, the other goes down by the same amount. There's no signal-processing trickery in either version: each was made by reinterpreting the recording's sample rate, which is mathematically the same operation a tape player performs when its playback speed changes. The only difference between this and a tape machine is that we're doing it digitally.</p>
 </div>
 
 <p>This is the world before signal processing. If you wanted a recording to be longer, you slowed it down, but it also went lower. If you wanted to raise its pitch, you sped it up, but it also got shorter. Schaeffer worked entirely in this world. So did every studio recording made before about 1990.</p>
