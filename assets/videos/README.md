@@ -9,18 +9,19 @@ videos/
 ├── module-02-week-03/    Editing vocabulary (Lecture 2)
 │   ├── cut.mp4
 │   ├── trim.mp4
-│   ├── splice.mp4        (planned)
-│   ├── fade.mp4          (planned)
-│   ├── crossfade.mp4     (planned)
-│   └── loop.mp4          (planned)
+│   ├── splice.mp4
+│   ├── fades.mp4
+│   └── crossfade.mp4
 └── …
 ```
+
+The editing-vocabulary set has five videos, not six: the *loop* term doesn't get a video because Audacity's looping is split between a playback-only feature and the manual copy-paste-in-succession workaround. Both are covered in the prose definition with a forward pointer to Module 4 (Ableton), where looping is a first-class compositional tool.
 
 ## Recording specs
 
 For consistency across the editing-vocabulary set, each clip should:
 
-- **Use the same source audio.** A single voice recording (or other sound with a clear envelope) used across all six terms. Reinforces the "one source, transformed by edits" framing of the module.
+- **Use the same source audio.** A single voice recording (or other sound with a clear envelope) used across all clips in the set. Reinforces the "one source, transformed by edits" framing of the module.
 - **Be silent.** No audio track. Record video only, or strip the audio in post. Browsers block autoplay-with-sound by default, and silent clips don't make surprise noise when students scroll past.
 - **Be short.** 5 to 12 seconds. Long enough to show source → operation → result. Short enough that students don't lose patience.
 - **Capture the Audacity track view, not the whole desktop.** The waveform region with at least the timeline, transport, and Edit menu visible. Avoid showing the whole macOS window with menus and the dock.
