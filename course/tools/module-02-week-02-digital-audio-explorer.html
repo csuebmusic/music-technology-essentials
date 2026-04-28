@@ -343,7 +343,7 @@
     <span class="slider-readout" id="sineAmpLabel">0.50</span>
   </div>
 
-  <p class="tool-note"><strong>Listen for:</strong> the way pitch and loudness behave as <em>independent</em> dimensions. Move only frequency: pitch changes, loudness doesn't. Move only amplitude: loudness changes, pitch doesn't. Notice that very low frequencies (below ~60 Hz) feel more than they sound, and very high frequencies (above ~12 kHz) get thin and piercing. The slider is logarithmic, like musical pitch: every doubling is one octave.</p>
+  <p class="tool-note"><strong>Listen for:</strong> the way pitch and loudness behave as <em>independent</em> dimensions. Move only frequency: pitch changes, loudness doesn't. Move only amplitude: loudness changes, pitch doesn't. The waveform display confirms this visually. Frequency changes the <em>cycle density</em> (low frequencies show a few wide humps; high frequencies show tightly packed cycles). Amplitude changes the <em>height</em> of the wave (full slider fills the display; half slider is half-tall; zero is a flat line). Notice that very low frequencies (below ~60 Hz) feel more than they sound, and very high frequencies (above ~12 kHz) get thin and piercing. The slider is logarithmic, like musical pitch: every doubling is one octave.</p>
 </div>
 
 <hr>
@@ -628,23 +628,57 @@
   // Draw a periodic waveform sampled across the canvas width.
   // partials: [{freq: Hz, amp: 0..1}, ...]
   // Returns an SVG path 'd' string.
-  function buildPath(partials, width, height) {
+  // Draw a periodic waveform sampled across the canvas width.
+  // partials: [{freq: Hz, amp: 0..1}, ...]
+  // opts (all optional):
+  //   normalize: bool, default true. If true, the drawn wave is scaled so its
+  //     peak fills ~84% of the canvas height. Used by the multi-partial tools
+  //     so the picture stays sane when many partials are summed. Set to false
+  //     for the sine-maker, where amplitude SHOULD be visually apparent.
+  //   fixedWindowSeconds: number. If set, overrides the default "2 cycles of
+  //     the lowest active partial" with a fixed time window. Used by the
+  //     sine-maker so changing frequency visibly changes cycle density.
+  //   maxCycles: number. If set together with fixedWindowSeconds, caps the
+  //     window so no more than this many cycles render on screen. Prevents
+  //     visual aliasing at very high frequencies (the canvas only has 600
+  //     samples; >300 cycles would alias).
+  // Returns an SVG path 'd' string.
+  function buildPath(partials, width, height, opts) {
+    opts = opts || {};
+    const normalize = opts.normalize !== false;
     const baseY = height / 2;
     const yScale = height * 0.42;  // leaves a small margin top/bottom
 
-    // Find the lowest active partial to set how many cycles we display.
-    // We want roughly 2 cycles of the lowest partial visible.
+    // Find the lowest active partial (used for default time-window choice).
     let lowestFreq = Infinity;
     for (const p of partials) {
       if (p.amp > 0.001 && p.freq < lowestFreq) lowestFreq = p.freq;
     }
-    // If nothing is active, draw a flat line at center.
     if (lowestFreq === Infinity) {
       return `M 0 ${baseY} L ${width} ${baseY}`;
     }
 
-    // Display window: 2 cycles of the lowest active partial.
-    const totalSeconds = 2.0 / lowestFreq;
+    // Decide the time window to display.
+    let totalSeconds;
+    if (opts.fixedWindowSeconds) {
+      totalSeconds = opts.fixedWindowSeconds;
+      // Clamp so we never display more than maxCycles of the highest-freq
+      // partial in the window (avoids visual aliasing at extreme frequencies).
+      if (opts.maxCycles) {
+        let highestFreq = 0;
+        for (const p of partials) {
+          if (p.amp > 0.001 && p.freq > highestFreq) highestFreq = p.freq;
+        }
+        if (highestFreq > 0) {
+          const maxWindow = opts.maxCycles / highestFreq;
+          if (totalSeconds > maxWindow) totalSeconds = maxWindow;
+        }
+      }
+    } else {
+      // Default: 2 cycles of the lowest active partial.
+      totalSeconds = 2.0 / lowestFreq;
+    }
+
     const samples = 600;
     const dt = totalSeconds / samples;
     const dx = width / samples;
@@ -664,13 +698,21 @@
       if (Math.abs(s) > peak) peak = Math.abs(s);
     }
 
-    // Normalize so the peak fits comfortably in the canvas
-    const norm = peak > 0 ? (yScale / peak) : 1;
+    // Decide y scaling.
+    //   Normalized: peak → yScale. The picture always fills the canvas.
+    //   Un-normalized: amplitude 1.0 → yScale. The picture shrinks/grows
+    //   with amplitude, which is what the sine-maker pedagogy needs.
+    let yMul;
+    if (normalize) {
+      yMul = peak > 0 ? (yScale / peak) : 1;
+    } else {
+      yMul = yScale;
+    }
 
     let d = '';
     for (let i = 0; i <= samples; i++) {
       const x = i * dx;
-      const y = baseY - raw[i] * norm;
+      const y = baseY - raw[i] * yMul;
       d += (i === 0 ? 'M ' : ' L ') + x.toFixed(1) + ' ' + y.toFixed(1);
     }
     return d;
@@ -701,8 +743,20 @@
     function updateScope() {
       const f = getFreq();
       const a = getAmp();
-      // For visual: clamp displayed amp to a minimum so a flat line is shown when amp=0
-      path.setAttribute('d', buildPath([{ freq: f, amp: a }], 600, 140));
+      // Sine-maker visual is honest about both axes:
+      //   fixedWindowSeconds = 0.02 means the picture always shows 20 ms of
+      //     time, so changing frequency changes cycle density on screen
+      //     (pedagogy: low freq = wide cycles, high freq = tight cycles).
+      //   maxCycles caps the visible cycles so very high frequencies don't
+      //     visually alias against the 600-sample canvas.
+      //   normalize: false means the displayed peak height tracks the
+      //     amplitude slider directly. Slider at 1.0 fills the canvas;
+      //     slider at 0.5 fills half; slider at 0 is a flat line.
+      path.setAttribute('d', buildPath(
+        [{ freq: f, amp: a }],
+        600, 140,
+        { normalize: false, fixedWindowSeconds: 0.02, maxCycles: 60 }
+      ));
     }
 
     function updateReadouts() {
