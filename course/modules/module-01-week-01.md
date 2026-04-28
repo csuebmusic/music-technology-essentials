@@ -26,7 +26,7 @@ By the end of this single session, students should be able to:
 
 ---
 
-## Session structure (Wed Aug 19, 100 minutes)
+## Session structure (100 minutes)
 
 | Block | Time | Focus |
 |---|---|---|
@@ -69,7 +69,7 @@ None for Week 1. Module 1 is a setup module. The first listening assignment land
 
 ---
 
-## What to bring to Wednesday Aug 26 (Week 2)
+## What to bring starting Wk 2
 
 - Headphones (lab provides, but students may bring their own if they prefer)
 - Notebook or note-taking tool of choice

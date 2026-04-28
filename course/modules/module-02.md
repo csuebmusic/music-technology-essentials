@@ -31,15 +31,15 @@ By the end of this module, students should be able to:
 
 ## Session structure (7 sessions, 700 minutes total)
 
-| Wk | Day | Date | Focus |
-|---|---|---|---|
-| 2 | Mon | Aug 24 | Lecture: Digital audio fundamentals + first listening |
-| 2 | Wed | Aug 26 | Lab Part 1: Interactive digital-audio tool · Part 2: Audacity orientation |
-| 3 | Mon | Aug 31 | Lecture: Editing concepts + envelope listening |
-| 3 | Wed | Sep 2 | Lab: Editing techniques · Project 1 begins |
-| 4 | Wed | Sep 9 | Lab Part 1: Interactive mixing tool (levels/EQ/stereo) · Part 2: Project 1 work *(no Mon Sep 7, Labor Day)* |
-| 5 | Mon | Sep 14 | Lecture: Dynamics + Interactive mixing tool Part 2 (compression/limiting) |
-| 5 | Wed | Sep 16 | **Project 1 final work session + submission** |
+| Wk | Day | Focus |
+|---|---|---|
+| 2 | Mon | Lecture: Digital audio fundamentals + first listening |
+| 2 | Wed | Lab Part 1: Interactive digital-audio tool · Part 2: Audacity orientation |
+| 3 | Mon | Lecture: Editing concepts + envelope listening |
+| 3 | Wed | Lab: Editing techniques · Project 1 begins |
+| 4 | Wed | Lab Part 1: Interactive mixing tool (levels/EQ/stereo) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
+| 5 | Mon | Lecture: Dynamics + Interactive mixing tool Part 2 (compression/limiting) |
+| 5 | Wed | **Project 1 final work session + submission** |
 
 Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each week are in [`ta-notes/module-02.md`](../../ta-notes/module-02.md).
 
@@ -78,7 +78,7 @@ Full project prompt and rubric: [`course/projects/project-01-musique-concrete.ht
 
 Full listening assignment with guided questions: [`course/listening/module-02-listening.html`](../listening/module-02-listening.html)
 
-**Due:** Mon Wk 5 (Sep 14), before class.
+**Due:** Mon Wk 5, before class.
 
 ---
 

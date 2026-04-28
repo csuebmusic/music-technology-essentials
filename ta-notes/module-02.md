@@ -13,13 +13,13 @@ This file is the operational runbook for all seven sessions. Module spec (the "w
 ## Contents
 
 - [Module-wide concerns](#module-wide-concerns)
-- [Session 1 — Mon Wk 2 (Aug 24): Digital audio fundamentals](#session-1--mon-wk-2-aug-24-digital-audio-fundamentals)
-- [Session 2 — Wed Wk 2 (Aug 26): Digital audio explorer + Audacity orientation](#session-2--wed-wk-2-aug-26-digital-audio-explorer--audacity-orientation)
-- [Session 3 — Mon Wk 3 (Aug 31): Editing concepts + envelope listening](#session-3--mon-wk-3-aug-31-editing-concepts--envelope-listening)
-- [Session 4 — Wed Wk 3 (Sep 2): Editing techniques + Project 1 begins](#session-4--wed-wk-3-sep-2-editing-techniques--project-1-begins)
-- [Session 5 — Wed Wk 4 (Sep 9): Mixing tool Part 1 + Project 1 work](#session-5--wed-wk-4-sep-9-mixing-tool-part-1--project-1-work)
-- [Session 6 — Mon Wk 5 (Sep 14): Dynamics + mixing tool Part 2](#session-6--mon-wk-5-sep-14-dynamics--mixing-tool-part-2)
-- [Session 7 — Wed Wk 5 (Sep 16): Project 1 final work session + submission](#session-7--wed-wk-5-sep-16-project-1-final-work-session--submission)
+- [Session 1 — Mon Wk 2: Digital audio fundamentals](#session-1--mon-wk-2-digital-audio-fundamentals)
+- [Session 2 — Wed Wk 2: Digital audio explorer + Audacity orientation](#session-2--wed-wk-2-digital-audio-explorer--audacity-orientation)
+- [Session 3 — Mon Wk 3: Editing concepts + envelope listening](#session-3--mon-wk-3-editing-concepts--envelope-listening)
+- [Session 4 — Wed Wk 3: Editing techniques + Project 1 begins](#session-4--wed-wk-3-editing-techniques--project-1-begins)
+- [Session 5 — Wed Wk 4: Mixing tool Part 1 + Project 1 work](#session-5--wed-wk-4-mixing-tool-part-1--project-1-work)
+- [Session 6 — Mon Wk 5: Dynamics + mixing tool Part 2](#session-6--mon-wk-5-dynamics--mixing-tool-part-2)
+- [Session 7 — Wed Wk 5: Project 1 final work session + submission](#session-7--wed-wk-5-project-1-final-work-session--submission)
 - [End-of-module assessment](#end-of-module-assessment)
 
 ---
@@ -84,7 +84,7 @@ The other pacing risk is **Mon Wk 5** — last new content, students may be deep
 
 ---
 
-## Session 1 — Mon Wk 2 (Aug 24): Digital audio fundamentals
+## Session 1 — Mon Wk 2: Digital audio fundamentals
 
 **100 min · Lecture-style · MB2525**
 
@@ -155,7 +155,7 @@ Pull up the listening assignment ([`course/listening/module-02-listening.html`](
 - Show the YouTube link cards: clicking opens a new tab with the piece
 - Show the four questions
 - Show the submission card: Word or PDF, ~250-350 words, formatting, Chicago or MLA
-- Due Mon Wk 5 (Sep 14), about 3 weeks from now
+- Due Mon Wk 5, about 3 weeks from now
 - This connects directly to Project 1 — they'll be making something in this tradition
 
 Close with a small bridge to Wednesday: "On Wednesday we'll start working in Audacity. Bring your headphones."
@@ -182,7 +182,7 @@ Close with a small bridge to Wednesday: "On Wednesday we'll start working in Aud
 
 ---
 
-## Session 2 — Wed Wk 2 (Aug 26): Digital audio explorer + Audacity orientation
+## Session 2 — Wed Wk 2: Digital audio explorer + Audacity orientation
 
 **100 min · Lab-style · MB2525**
 
@@ -251,7 +251,7 @@ Quick close: "Next Monday we go deeper into editing. Wednesday after that, you s
 
 ---
 
-## Session 3 — Mon Wk 3 (Aug 31): Editing concepts + envelope listening
+## Session 3 — Mon Wk 3: Editing concepts + envelope listening
 
 **100 min · Lecture-style · MB2525**
 
@@ -356,7 +356,7 @@ Wednesday: editing techniques and Project 1 begins.
 
 ---
 
-## Session 4 — Wed Wk 3 (Sep 2): Editing techniques + Project 1 begins
+## Session 4 — Wed Wk 3: Editing techniques + Project 1 begins
 
 **100 min · Lab-style · MB2525**
 
@@ -397,7 +397,7 @@ Pull up the Project 1 prompt on the projector. Walk through it section by sectio
 - **Constraints.** 2 minutes max (90 seconds min). Sample bank only. WAV 44.1/16-bit. Filename `lastname-project01.wav`.
 - **What demonstrating skills means.** Go through the five bullets. These are the rubric items; students should hear them now and remember them.
 - **Process expectations.** Start early. Save versions. Take breaks. Ask for feedback during lab time.
-- **Submission:** Wed Sep 16, two weeks from today. End of class, files uploaded to NAS (private working folder + class listening folder). No live presentation — listening happens asynchronously after, with a short peer-listening response due Mon Sep 21.
+- **Submission:** Wed Wk 5, two weeks from today. End of class, files uploaded to NAS (private working folder + class listening folder). No live presentation — listening happens asynchronously after, with a short peer-listening response due Mon Wk 6.
 - **Rubric.** Five dimensions, 20 points each, 100 total. Late submissions are handled per the syllabus's late policy.
 
 End with: "You'll start working on it today. The rest of class is your time."
@@ -439,11 +439,11 @@ Mention that Audacity is free and they can install it on a personal computer if 
 
 ---
 
-## Session 5 — Wed Wk 4 (Sep 9): Mixing tool Part 1 + Project 1 work
+## Session 5 — Wed Wk 4: Mixing tool Part 1 + Project 1 work
 
 **100 min · Lab-style · MB2525**
 
-(No Mon Wk 4 session — Labor Day, Sep 7. Students have had a full week to work on Project 1 since Wk 3 Wed.)
+(No Mon Wk 4 session — Labor Day. Students have had a full week to work on Project 1 since Wk 3 Wed.)
 
 ### Goal
 
@@ -505,7 +505,7 @@ Quick close. "Mon Wk 5 we add the last mixing concept — dynamics. Then Wed Wk 
 
 ---
 
-## Session 6 — Mon Wk 5 (Sep 14): Dynamics + mixing tool Part 2
+## Session 6 — Mon Wk 5: Dynamics + mixing tool Part 2
 
 **100 min · Lecture-style turning into lab · MB2525**
 
@@ -559,11 +559,11 @@ This is the last session before submission. Anyone whose piece isn't substantial
 
 #### Block 5 — Submission logistics (5 min)
 
-Wed Wk 5 (Sep 16) is the final work session and submission deadline. Walk through what to expect:
+Wed Wk 5 is the final work session and submission deadline. Walk through what to expect:
 - Class is a final work session — no new content, just time to finish
 - Files due to NAS by **end of class**, not start
 - Two locations: their private working folder (`lastname/project-01/`) and the class listening folder (`/music/shared/mus-381-fall-2026/project-01-pieces/`). Both must have the final WAV.
-- A short peer-listening response is due Mon Sep 21 (about classmates' pieces in the listening folder), separate assignment
+- A short peer-listening response is due Mon Wk 6 (about classmates' pieces in the listening folder), separate assignment
 
 Mention the rubric one more time — five dimensions, students should self-assess against it as they finish their work.
 
@@ -586,13 +586,13 @@ The shift from "presentations" to "submission + asynchronous listening" is inten
 
 ---
 
-## Session 7 — Wed Wk 5 (Sep 16): Project 1 final work session + submission
+## Session 7 — Wed Wk 5: Project 1 final work session + submission
 
 **100 min · Lab-style · MB2525**
 
-This is the closing session of Module 2. There is no live presentation. Class time is dedicated to finishing pieces and uploading them to NAS by end of class. Listening to each other's pieces happens asynchronously in the days after, with a short peer-listening response due Mon Sep 21.
+This is the closing session of Module 2. There is no live presentation. Class time is dedicated to finishing pieces and uploading them to NAS by end of class. Listening to each other's pieces happens asynchronously in the days after, with a short peer-listening response due Mon Wk 6.
 
-Why no presentations? Math: 25 students × 3-5 minutes each is longer than class time, and asynchronous listening gives students more careful, repeatable encounters with each other's work. The trade-off is the live "press play" moment, which some pedagogies value highly. We'll partly recover the cohort feeling on Mon Sep 21 with a brief discussion of what students heard.
+Why no presentations? Math: 25 students × 3-5 minutes each is longer than class time, and asynchronous listening gives students more careful, repeatable encounters with each other's work. The trade-off is the live "press play" moment, which some pedagogies value highly. We'll partly recover the cohort feeling on Mon Wk 6 with a brief discussion of what students heard.
 
 ### Goal
 
@@ -617,7 +617,7 @@ Walk through the submission card from the prompt on the projector. Be explicit a
 
 "Drag a copy of your final file to the class folder. Don't move it — copy. Your working folder still gets a copy too."
 
-Mention the peer-listening response due Mon Sep 21. They've gotten an assignment ahead of time so they can plan to listen during the week.
+Mention the peer-listening response due Mon Wk 6. They've gotten an assignment ahead of time so they can plan to listen during the week.
 
 #### Block 2 — Final work time (80 min)
 
@@ -662,14 +662,14 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 Use the rubric in [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class — listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
 
-Late submissions are handled per the syllabus's late policy. Pieces not in the class listening folder by end of class on Wed Sep 16 are late.
+Late submissions are handled per the syllabus's late policy. Pieces not in the class listening folder by end of class on Wed Wk 5 are late.
 
 ### After class
 
 - Confirm every student has a file in the class listening folder. Note the missing ones.
 - For students whose files are only in their private working folder, message them — they need to add to the class folder for the submission to be complete (or you can copy on their behalf, instructor's call).
 - Begin grading. Plan to return scores within a week.
-- The class listening folder is now populated. Listening happens between today and Mon Sep 21, when the peer-listening response is due.
+- The class listening folder is now populated. Listening happens between today and Mon Wk 6, when the peer-listening response is due.
 
 ---
 

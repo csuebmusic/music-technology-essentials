@@ -10,7 +10,7 @@ This same stylesheet is used by readings, listening assignments, and project pro
 
 ## Files
 
-- `01-first-day-setup.html` — Module 1, Wed Aug 19 (first day of class)
+- `01-first-day-setup.html` — Module 1, Wed Wk 1 (first day of class)
 - `02-session-routines.html` — Start-of-session and end-of-session reference card, used every session
 
 ## Distribution

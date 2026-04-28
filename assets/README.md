@@ -65,7 +65,32 @@ If a metadata line is useful immediately under the H1, put it as bold text and k
 
 ### Why no dates anywhere except the syllabus
 
-Dates change every semester. The schedule is one document; if it lives in many places, it has to be updated in many places. Lecture numbers, project numbers, and module thematic labels are stable. Re-running this course in a future semester should require updating only `course-outline.md` and the schedule tables inside module specs, not chrome on every reading and project prompt.
+Dates change every semester. If they appear in many places, they have to be updated in many places. Lecture numbers, project numbers, week numbers, and module thematic labels are all stable across semesters; calendar dates aren't.
+
+**The rule:** calendar dates (`Aug 24`, `Sep 16`, etc.) appear only in `course/syllabus/course-outline.md`. Re-running this course in a future semester should require editing only that file (and Canvas, externally).
+
+**For everything else, use week references.** The conventions are:
+
+- `Day Wk N` for a specific session: `Mon Wk 2`, `Wed Wk 5`. This is the default and matches the existing TA-notes phrasing.
+- `Wk N` when day-of-week doesn't matter: `By Wk 3`, `Starting Wk 2`.
+- Add role-words ("the lab session", "lecture day") only when the *role* is what's being emphasized, not when position alone identifies the session.
+
+Examples:
+
+- "Project 1 is due Wed Wk 5." (was: "Wed Sep 16")
+- "We'll discuss the pieces at the start of class on Mon Wk 6." (was: "Mon Sep 21")
+- "Bank uploaded by Wk 3 Wed." (was: "Wed Sep 2")
+- "(no Mon Wk 4 session — Labor Day)" (was: "Sep 7, Labor Day")
+
+**Exceptions** — places where a date is content, not schedule:
+
+- Historical citations and bibliography: `Schaeffer (1948)`, `Hosken (2nd ed., 2015)`, `June 1981` magazine reference. These describe historical facts and don't change.
+- Doc-revision metadata: `**Last updated:** April 2026` at the top of operational docs. Helps the TA know how stale the doc is.
+- Year labels in timeline diagrams: `1948`, `~2000`, `today (2026)`. Historical landmarks in a diagram about the history of recording.
+- File path embeds: `mus-381-fall-2026/`. The semester is part of the path on the NAS.
+- Filename illustration: `Screenshot 2026-08-19 at 3.21.45 PM.png`. Demonstrating the macOS default screenshot format.
+
+If you're unsure whether a date is schedule (move it) or content (keep it), the test is: would this number need to change next semester? If yes → it's schedule, replace it. If no → it's content, keep it.
 
 ## Writing conventions for student-facing HTML
 

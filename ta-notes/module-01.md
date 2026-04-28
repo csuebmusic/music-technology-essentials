@@ -8,7 +8,7 @@ Plan to circulate constantly. Do not lecture for more than 5 minutes at a stretc
 
 ## Before class — preparation checklist
 
-Do all of this **at least one day in advance** of Aug 19, ideally two:
+Do all of this **at least one day in advance** of the first session, ideally two:
 
 - [ ] Confirm the NAS is running and reachable from every lab machine
 - [ ] Confirm every student has a NAS account and a `lastname/` folder pre-created
@@ -46,7 +46,7 @@ The right pacing: **slow enough that the slowest student keeps up, with side-tas
 
 - Introduce yourself briefly. Say you're a grad student in [program], working with Inés.
 - **Walk them through the highlights of the syllabus.** Don't read it aloud, but do flag the parts that affect their semester:
-  - **Projects.** One per module, four total. Project 1 (Module 2) is a 2-minute musique concrète piece due Wed Sep 16. The midterm (Module 3) is a sample library plus a terminology exam. The final (Module 4) is an Ableton piece due during finals week.
+  - **Projects.** One per module, four total. Project 1 (Module 2) is a 2-minute musique concrète piece due Wed Wk 5. The midterm (Module 3) is a sample library plus a terminology exam. The final (Module 4) is an Ableton piece due during finals week.
   - **Exams.** Midterm and a cumulative final exam during finals week. Tell them when (the calendar in the syllabus has the dates).
   - **Attendance.** This is a hands-on lab course. Most of the work happens in the room, with gear they don't have at home. Missing class is missing the work. Point them to the exact attendance policy in the syllabus.
   - **Late policy.** Spell out where it is in the syllabus and the headline (e.g., "X points per day late, communicate with the instructor in advance for extensions" — read the actual wording so you state it correctly). Don't dwell on it, but make sure they know it exists and where to find it.
@@ -134,7 +134,7 @@ smith-soundpiece-v1.wav
 
 Drill the rules: lowercase, hyphens, no spaces, no special characters. **Tell them why:** different operating systems and different software treat capitalization, spaces, and special characters inconsistently. A file named `My Project (final!).wav` will eventually break something.
 
-**Sync discipline — preview the lesson.** Briefly tell them: *"Starting Wednesday Aug 26, every session will start with you downloading your folder from the NAS, and end with you uploading it back. We'll go through the full routine at the end of class today. The most important rule: always upload before you leave. If you don't, your work is stranded on this computer, and the next time you sit at a different computer you'll be working from an older version."*
+**Sync discipline — preview the lesson.** Briefly tell them: *"Starting next session, every session will start with you downloading your folder from the NAS, and end with you uploading it back. We'll go through the full routine at the end of class today. The most important rule: always upload before you leave. If you don't, your work is stranded on this computer, and the next time you sit at a different computer you'll be working from an older version."*
 
 ### Block 4 — Set up gear and make a recording (35 min) + Exit routine (5 min)
 
@@ -229,7 +229,7 @@ Walk them through:
 8. Quit all apps with `Cmd + Q`
 9. Knobs to zero, headphones away, chair in
 
-Tell them this is a routine they'll do every session for the rest of the semester — about 2 minutes once it's habit. Today it'll take longer because we're walking through it for the first time. **Starting Wednesday Aug 26, every session also begins with downloading from the NAS** (the start-of-session half of Handout 02).
+Tell them this is a routine they'll do every session for the rest of the semester — about 2 minutes once it's habit. Today it'll take longer because we're walking through it for the first time. **Starting next session, every session also begins with downloading from the NAS** (the start-of-session half of Handout 02).
 
 **Verify uploads on the projector.** Once everyone is done, open `/music/students/` on the projector and scroll through. Confirm every student's folder is there with their hello file inside. This is the same "small ritual" as before, but now it confirms upload happened, not just save.
 

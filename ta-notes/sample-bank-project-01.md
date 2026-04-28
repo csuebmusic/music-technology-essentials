@@ -2,7 +2,7 @@
 
 **Location:** `/music/shared/sample-banks/project1/` on the NAS
 **Curated by:** Inés
-**Needed by:** Wed Sep 2 (Wk 3) — students begin Project 1 this day
+**Needed by:** Wed Wk 3 — students begin Project 1 this day
 
 ---
 
@@ -83,7 +83,7 @@ The actual curation is yours. Suggested rough timeline:
 
 - **Before Wk 1** — gather candidate sounds from your existing library, public-domain archives, Freesound (CC0 material), or new field recordings
 - **By Wk 1** — rough cut, organize into the folder structure
-- **By Wk 3 (Wed Sep 2)** — bank uploaded to NAS, README finalized, tested by trying to import a few sounds into Audacity from a lab machine
+- **By Wk 3 Wed** — bank uploaded to NAS, README finalized, tested by trying to import a few sounds into Audacity from a lab machine
 
 ---
 
