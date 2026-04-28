@@ -41,13 +41,43 @@ Aim for ~10–15 minutes of focused student reading per file. The TA spends 90 m
 
 ## Authoring
 
-Use existing readings as templates. Maintain the same structural elements:
+Use existing readings as templates. The header, title block, and footer follow a fixed precedent so the textbook feels consistent across the semester:
 
-- `<header class="handout-header">` with course and meta
-- `<div class="title-block">` with module tag, title, subtitle
-- `<p class="lede">` for opening paragraph
+```html
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module XX · Lecture N</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module XX · [thematic label for the module]</div>
+  <h1>[Title of this reading]</h1>
+  <div class="subtitle">[One sentence describing what's in this reading.]</div>
+</div>
+
+<p class="lede">[One paragraph, lede-sized, framing what's ahead and why it matters.]</p>
+```
+
+And at the bottom:
+
+```html
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module XX · Lecture N</span>
+</footer>
+```
+
+Notes on the precedent:
+
+- The **lecture number** in the header and footer is the lecture's position within its module, counting only Monday lectures (Mondays are lecture; Wednesdays are lab). Module 02 has three Monday lectures over weeks 2-5 (Mon Wk 4 is Labor Day), so they're Lectures 1, 2, 3. Lecture numbering is more durable than dates: the schedule shifts every semester, but lecture order within a module doesn't.
+- The **module tag** is the module's thematic label (what the module is *about*), not a position label. Both readings within a module share the same module tag.
+- The **subtitle** is a one-sentence description of the reading's content. Don't put dates here.
+- The **lede paragraph** is one paragraph at lede size. If you need more than one paragraph of framing, merge them; if you need a follow-up that isn't part of the framing, put it after the first `<hr>` so it visually separates from the lede.
+
+Other structural elements:
+
 - `<h2>` for major sections, `<h3>` for subsections
-- `<div class="callout">` for asides; `.callout.warn` for cautions; `.callout.tip` for friendly tips
+- `<div class="callout">` for asides; `.callout.warn` for cautions
 - `<code>`, `<kbd>`, etc. as in handouts
 
 Visuals can be inline SVG (built in the warm palette) or referenced images. Photos of historical figures or gear come from CC-licensed sources (Wikimedia, etc.) with attribution.
