@@ -49,6 +49,8 @@ The title block's module tag (`<div class="module-tag">`) carries the module's *
 
 The title block's subtitle is a one-sentence description of the document's content. **Subtitles do not contain dates.** Schedules shift each semester; positional labels and content descriptions don't.
 
+The intro paragraph (the first `<p>` after the title block) is **exactly one paragraph at lede size** (`<p class="lede">`). If the intro feels like it wants to be two paragraphs, either merge them into one (sometimes a sentence reorder is enough) or push the second one past the first `<hr>` so it visually belongs to the body, not the intro. Two paragraphs at different sizes back-to-back makes the page look like the second one was an afterthought.
+
 ### Markdown files
 
 Markdown docs (module specs, TA notes) use the H1 to identify themselves:

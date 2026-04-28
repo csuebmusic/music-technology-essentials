@@ -67,12 +67,10 @@ And at the bottom:
 </footer>
 ```
 
-Notes on the precedent:
+Notes specific to readings (the cross-document chrome rules — module-first ordering, dateless subtitles, single-lede intro — are in [`assets/README.md`](../../assets/README.md#document-chrome-convention)):
 
-- The **lecture number** in the header and footer is the lecture's position within its module, counting only Monday lectures (Mondays are lecture; Wednesdays are lab). Module 02 has three Monday lectures over weeks 2-5 (Mon Wk 4 is Labor Day), so they're Lectures 1, 2, 3. Lecture numbering is more durable than dates: the schedule shifts every semester, but lecture order within a module doesn't.
-- The **module tag** is the module's thematic label (what the module is *about*), not a position label. Both readings within a module share the same module tag.
-- The **subtitle** is a one-sentence description of the reading's content. Don't put dates here.
-- The **lede paragraph** is one paragraph at lede size. If you need more than one paragraph of framing, merge them; if you need a follow-up that isn't part of the framing, put it after the first `<hr>` so it visually separates from the lede.
+- **Lecture numbering** counts only Monday lectures within a module (Mondays are lecture; Wednesdays are lab). Module 02 has three Monday lectures over weeks 2-5, so they're Lectures 1, 2, 3. The lecture order is durable; the calendar dates aren't.
+- **Module tag** is the module's thematic label (e.g. `Module 02 · Digital audio, editing & mixing`), shared by every reading in the module.
 
 Other structural elements:
 
