@@ -259,7 +259,7 @@ Quick close: "Next Monday we go deeper into editing. Wednesday after that, you s
 
 Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course — Module 4's synthesis section depends on it.
 
-The reading for today is [`course/readings/module-02-week-03-editing-envelope.html`](../course/readings/module-02-week-03-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and three sine tones (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
+The reading for today is [`course/readings/module-02-week-03-editing-envelope.html`](../course/readings/module-02-week-03-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
@@ -319,7 +319,7 @@ These should feel obvious to students. The "you cut a thing, you put a thing nex
 
 **The pause: time-pitch coupling (15 min).** This is the conceptual hinge. Open the reading on the projector and show the three-sine SVG diagram (source / slow / fast). Talk through what's visible: same waveform, three speeds. The slowed version's cycles are wider; the sped-up version's cycles are narrower. That's why pitch changes — pitch is determined by how often the cycles repeat per second.
 
-Then play the three audio demos in the reading (`tape-source.wav`, `tape-slow.wav`, `tape-fast.wav`). Ask the room: "What's different between the source and the slow version?" Get them to articulate both: it's longer *and* it's lower. Same for fast: shorter *and* higher. The point landing is that these aren't two separate effects; they're the same effect viewed two ways.
+Then play the three audio demos in the reading (`tape-source.wav`, `tape-slow.wav`, `tape-fast.wav`). The audio is a voice recording, not a sine — the diagram uses a sine because cycles are visible at a glance, but the audio uses a voice because the perceptual coupling is dramatic on real material. Students will hear the same words at three speeds: the source, then a "ghostly slowed-down" version, then a "chipmunk" version. Ask the room: "What's different between the source and the slow version?" Get them to articulate both: it's longer *and* it's lower. Same for fast: shorter *and* higher. The point landing is that these aren't two separate effects; they're the same effect viewed two ways.
 
 A brief historical note lands well here: "Schaeffer worked entirely in this world. Every tape recording until about 1990 worked this way. If you wanted longer, you went lower. If you wanted higher, you went shorter. There was no choice."
 

@@ -571,7 +571,7 @@
 
 <p>Speed it up to <em>double-speed</em>, and the opposite happens: it plays in half the time, and every pitch rises by an octave. This isn't a coincidence and it isn't a quirk of tape; it's a consequence of what sound is. A sound's pitch is determined by how often the waveform repeats per second; if you stretch the waveform out in time, each cycle takes longer, and the pitch drops in proportion.</p>
 
-<p>The diagram below shows the same waveform played at three speeds. Notice that the cycles in the slowed version are wider, and the cycles in the sped-up version are narrower. The total length of the sound changes too: the slowed version takes twice as long; the sped-up version takes half as long.</p>
+<p>The diagram below shows a sine wave played at three speeds, because a sine wave's cycles are visible at a glance. Notice that the cycles in the slowed version are wider, and the cycles in the sped-up version are narrower. The total length of the sound changes too: the slowed version takes twice as long; the sped-up version takes half as long.</p>
 
 <figure>
   <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three sine waves showing source, half-speed (longer and lower), and double-speed (shorter and higher)">
@@ -607,32 +607,32 @@
     <text x="420" y="230" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">2 s</text>
     <text x="580" y="230" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">3 s</text>
   </svg>
-  <figcaption>The same waveform played at three speeds. The slowed version takes twice as long and its pitch drops by an octave (220 Hz vs 440 Hz). The sped-up version takes half as long and its pitch rises by an octave (880 Hz vs 440 Hz). Time and pitch shift together.</figcaption>
+  <figcaption>The same waveform played at three speeds. The slowed version takes twice as long and its pitch drops by an octave; the sped-up version takes half as long and its pitch rises by an octave. Time and pitch shift together.</figcaption>
 </figure>
 
-<p>Now press play on each of the three audio examples. The visual showed you what changes geometrically; the audio shows you what changes perceptually.</p>
+<p>Now press play on each of the three audio examples below. The diagram showed the principle on a sine wave because the cycles are visible at a glance; the audio plays a voice recording, where the perceptual change lands hardest. It's the same operation in both cases: sample-rate reinterpretation, exactly what tape did at half or double speed.</p>
 
 <div class="audio-compare">
   <div class="audio-compare-title">Time and pitch coupled (tape physics)</div>
   <div class="audio-row">
     <span class="audio-label">Source
-      <span class="audio-label-sub">440 Hz, 1.5 s</span>
+      <span class="audio-label-sub">1×, 1.5 s</span>
     </span>
     <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/tape-source.wav"></audio>
   </div>
   <div class="audio-row">
     <span class="audio-label">Slow (½×)
-      <span class="audio-label-sub">220 Hz, 3.0 s</span>
+      <span class="audio-label-sub">3.0 s, octave down</span>
     </span>
     <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/tape-slow.wav"></audio>
   </div>
   <div class="audio-row">
     <span class="audio-label">Fast (2×)
-      <span class="audio-label-sub">880 Hz, 0.75 s</span>
+      <span class="audio-label-sub">0.75 s, octave up</span>
     </span>
     <audio controls preload="metadata" src="../../assets/audio/module-02-week-03/tape-fast.wav"></audio>
   </div>
-  <p class="audio-note">All three are sine tones. The slow version is exactly half the frequency and exactly twice the duration of the source; the fast version is exactly double the frequency and exactly half the duration. This is what tape did, and it's what would happen if you simply took the recording and played it back at a different speed.</p>
+  <p class="audio-note">All three are the same voice recording. The slow version is exactly twice the duration of the source and an octave lower; the fast version is exactly half the duration and an octave higher. There's no signal-processing trickery: each version was made by reinterpreting the recording's sample rate, which is mathematically the same operation a tape player performs when you change its playback speed. The only difference between this and a tape machine is that we're doing it digitally.</p>
 </div>
 
 <p>This is the world before signal processing. If you wanted a recording to be longer, you slowed it down, but it also went lower. If you wanted to raise its pitch, you sped it up, but it also got shorter. Schaeffer worked entirely in this world. So did every studio recording made before about 1990.</p>
