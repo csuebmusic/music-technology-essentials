@@ -957,6 +957,13 @@
 
 <p>You don't need to think about most of this most of the time. The point of this reading isn't to make you obsess over numbers. It's so that when something goes wrong, or when you want to make a deliberate aesthetic choice, you have the vocabulary to think clearly about it.</p>
 
+<div class="callout warn">
+  <div class="callout-label">Watch out: importing audio at the wrong sample rate</div>
+  <p>This is one of the most common ways a student project goes wrong. You're working in a 48 kHz Ableton session and you drag in a 44.1 kHz sound file (or the other way around). Most DAWs will notice the mismatch and pop up a <em>resample</em> prompt — that's the safe path. But if you click through it, dismiss it, or use a tool that doesn't ask, the file's samples get played out at the project's rate <em>without any conversion</em>. The result is exactly the tape-physics situation we'll see in Week 3: the file plays back at the wrong speed, and its pitch shifts with it.</p>
+  <p>Between 44.1 and 48 kHz the shift is about a semitone and a half — small enough that you might not catch it, but large enough to put a sample out of tune with the rest of your session. Drop a 44.1 kHz drum loop into a 48 kHz project without resampling and it plays slightly faster and higher than it should; do the reverse and it drags slightly slower and lower. Neither sounds obviously broken on its own. It just doesn't sit right.</p>
+  <p><strong>Resampling</strong> is what fixes this: the DAW computes a new set of samples at the project's rate, so the file keeps its original duration and pitch when played back. Always say yes to the resample prompt, or convert the file beforehand (Audacity's <em>File → Export</em> lets you set the target sample rate). The rule of thumb: <em>match the project's sample rate before audio enters the timeline</em>, not after.</p>
+</div>
+
 <p>A few takeaways:</p>
 
 <ul>
