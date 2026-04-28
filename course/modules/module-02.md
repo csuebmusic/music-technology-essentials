@@ -87,7 +87,7 @@ Full listening assignment with guided questions: [`course/listening/module-02-li
 Built as the module progresses; not all exist yet.
 
 - **Readings** (Mon lectures) in [`course/readings/`](../readings/)
-- **Handouts** (Wed labs) in [`/handouts/`](../../handouts/) — Handout 03 (Audacity orientation) is for Wed Wk 2 Part 2; further per-lab handouts as the module progresses
+- **Handouts** (Wed labs) in [`/handouts/`](../../handouts/) — Handout 03 (Audacity orientation, Wed Wk 2 Part 2) and Handout 04 (Editing techniques + Project 1 begins, Wed Wk 3); further per-lab handouts as the module progresses
 - **Interactive tools** in [`course/tools/`](../tools/):
   - Digital audio explorer (Wed Wk 2 Part 1) — built
   - Mixing tool Part 1 (Wed Wk 4 lab): levels, EQ, stereo

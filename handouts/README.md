@@ -13,6 +13,7 @@ This same stylesheet is used by readings, listening assignments, and project pro
 - `01-first-day-setup.html` — Module 1, Wed Wk 1 (first day of class)
 - `02-session-routines.html` — Start-of-session and end-of-session reference card, used every session
 - `03-audacity-orientation.html` — Module 2, Wed Wk 2, Lab Part 2: students' first Audacity session — open, configure, import, edit, save, export, NAS round-trip
+- `04-editing-techniques.html` — Module 2, Wed Wk 3: walks through the nine editing techniques from the Mon Wk 3 reading (cut, trim, splice, fades, crossfade, loop, reverse, time-stretch, pitch-shift), each with a hands-on exercise on a Project 1 sample. Closes with Project 1 starts: open prompt, browse bank, three-sound starter, save.
 
 ## Distribution
 

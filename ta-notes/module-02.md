@@ -404,82 +404,119 @@ Wednesday: editing techniques and Project 1 begins.
 
 **100 min · Lab-style · MB2525**
 
-This is the pivot session of the module. By the end of class, students should have *started* Project 1: opened the sample bank, listened to enough sounds to pick a few, and made one experimental edit. If they leave without that, they're behind.
+This is the pivot session of the module. By the end of class, students should have *started* Project 1: copied the sample bank locally, created a saved Audacity project, and placed at least three sounds in it. If they leave without that, they're behind.
 
 ### Goal
 
-(1) Students learn hands-on the editing techniques covered conceptually Monday: cuts, fades, splicing, time-stretch, pitch-shift, reversing. (2) Students officially begin Project 1.
+Two halves:
+
+- **Editing techniques walkthrough (~60 min):** every technique from the Mon Wk 3 reading, mapped to its location in Audacity, with a hands-on exercise on a real Project 1 sample. Nine techniques in the reading's order: cut, trim, splice, fades, crossfade, loop, reverse, time-stretch, pitch-shift.
+- **Project 1 begins (~30 min):** open the prompt, browse the bank, pick three sounds, place them in the saved project, save. Students leave with a real Project 1 starting point, not a blank screen.
+
+### Materials
+
+- **Lab handout:** [`handouts/04-editing-techniques.html`](../handouts/04-editing-techniques.html) — covers the full session including setup, all nine techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
+- **Project 1 prompt:** [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html) — open on the projector during the Project-1-begins block.
+- **Sample bank** at NAS `shared/sample-banks/project1/` — must be ready by class start. See [`ta-notes/sample-bank-project-01.md`](sample-bank-project-01.md).
 
 ### Pre-class checklist
 
 - Walk the room (gear baseline)
-- Verify the sample bank is mounted and accessible from every station: `/music/shared/sample-banks/project1/`
-- Verify Audacity opens cleanly on every machine
-- Pull up the Project 1 prompt ([`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html)) on the instructor station
-- Have the lab handout for today open (TBD)
+- **Verify the sample bank is ready and complete on the NAS** at `shared/sample-banks/project1/`. The handout assumes the canonical category folders (`attack-sharp`, `attack-soft`, `sustain-long`, `sustain-short`, `texture-continuous`, `voice-and-language`, `found-objects`, `natural-environment`, `mechanical-electronic`). If the bank is missing or has different folder names, **the handout's exercises won't work**. Confirm before class.
+- Verify Audacity opens cleanly on every machine; verify project format defaults are 44.1 kHz / 16-bit
+- Open the Project 1 prompt on the instructor station
+- Have Handout 04 open in a browser at every student station's desktop
 
 ### Block-by-block
 
-#### Block 1 — Walkthrough of editing techniques (35 min)
+#### Block 1 — Setup (10 min)
 
-Hands-on, follow-along. Each student loads one sound from the sample bank and tries each technique in turn on the projector's instruction. Don't rush.
+Walk students through the handout's "Setup" section together on the projector. Two parts:
 
-- **Cut and rearrange.** Cut a one-second chunk. Paste it somewhere else in the timeline. Listen to the result. *Required habit:* before pasting, check where the cursor is. Pasting at the wrong location is the #1 frustration source.
-- **Fades.** Effect → Fade In / Fade Out. Or use the envelope tool (small triangle handles at edit boundaries). Apply a 50ms fade at every edit boundary you make. Listen to a clip with and without fades — point out the click.
-- **Crossfade.** Effect → Crossfade Tracks (requires two tracks). This is more advanced; demonstrate but don't require mastery today.
-- **Reverse.** Effect → Reverse. Reverse a sound. Listen. "What's different? Which envelope changed?" (The release becomes the attack.)
-- **Time-stretch.** Effect → Change Tempo (preserves pitch) or Effect → Change Speed (changes pitch with tempo). Try both. Discuss why you'd want one vs. the other.
-- **Pitch-shift.** Effect → Change Pitch. Try shifting up an octave, down an octave. Note that extreme shifts produce artifacts.
+- NAS connect, then **copy the entire sample bank** (~40-80 sounds) from `shared/sample-banks/project1/` into the student's local `~/Documents/lastname/project-01/sources/`. The local copy is what they'll work from for the rest of the module. The first time this copy runs it'll take a minute or two depending on bank size.
+- Open Audacity, save an empty project as `lastname-project01.aup3` in `~/Documents/lastname/project-01/`. This is *the* Project 1 file students will keep returning to.
 
-Demonstrate the **save-version habit** at this point: "Save your project as `editing-practice-v1.aup3`. Now do something destructive — apply a heavy effect. Save as `-v2.aup3`. You can always go back to v1." This habit will save students multiple times during Project 1.
+Students who get behind here will fall behind on every technique exercise after, since each one assumes a working local copy of the bank. Don't move to Block 2 until everyone has the bank copied and the project saved.
 
-#### Block 2 — Project 1 launch (20 min)
+#### Block 2 — The nine techniques (60 min)
 
-Pull up the Project 1 prompt on the projector. Walk through it section by section:
+This is the heart of the session. Each technique in the handout has the same shape: one-line recap, where to click in Audacity, hands-on exercise on a sample, "listen for" note. The handout is detailed enough that students could do this on their own; your job is (a) demonstrating each move on the projector so they have a model to mirror, (b) catching when someone's stuck on a UI gotcha (Trim hidden under Remove Special, Reverse hidden under Special, etc.), (c) keeping pace.
 
-- **Read the prompt aloud.** Yes, all of it. They'll skim if you don't.
-- **Constraints.** 2 minutes max (90 seconds min). Sample bank only. WAV 44.1/16-bit. Filename `lastname-project01.wav`.
-- **What demonstrating skills means.** Go through the five bullets. These are the rubric items; students should hear them now and remember them.
-- **Process expectations.** Start early. Save versions. Take breaks. Ask for feedback during lab time.
-- **Submission:** Wed Wk 5, two weeks from today. End of class, files uploaded to NAS (private working folder + class listening folder). No live presentation — listening happens asynchronously after, with a short peer-listening response due Mon Wk 6.
-- **Rubric.** Five dimensions, 20 points each, 100 total. Late submissions are handled per the syllabus's late policy.
+Suggested per-technique pacing (~6 min each, but some are faster):
 
-End with: "You'll start working on it today. The rest of class is your time."
+| # | Technique | Pace target | Note |
+|---|---|---|---|
+| 1 | Cut | 4 min | Fast; students did this in Wed Wk 2 |
+| 2 | Trim | 5 min | Flag the "hidden under Remove Special" gotcha explicitly |
+| 3 | Splice | 8 min | The longest, since it's import-three-sounds + arrange |
+| 4 | Fade in/out | 6 min | The first Effect-menu use; orient to how Effect submenus work |
+| 5 | Crossfade | 7 min | Demoing on the projector helps; the drag-onto-same-track move trips students up |
+| 6 | Loop | 6 min | Two paths (transport-loop vs. paste-in-succession) |
+| 7 | Reverse | 4 min | Fast; the listening payoff is dramatic |
+| 8 | Time-stretch | 6 min | Effect dialog with multiple options; explain Change Tempo vs. Change Speed |
+| 9 | Pitch-shift | 4 min | Fast once they've seen the Pitch and Tempo submenu in #8 |
 
-#### Block 3 — Open work time (40 min)
+Total: ~50 min. The remaining 10 min absorb individual help and the inevitable "my Audacity opened in a weird state" moments.
 
-Students start Project 1. The minimum threshold for "I started" is: opened the sample bank, auditioned at least 5 sounds with intention, picked at least 2-3 to save into their project folder, made at least one experimental edit.
+**Things to call out as you go:**
+
+- **The Effect menu's submenus.** First time students open Effect, they see categories (Fading, Pitch and Tempo, Special, etc.), not individual effects. Show this on the projector at technique 4 (Fades) so they understand the menu structure before they need it again.
+- **"Change Tempo" vs. "Change Speed."** The reading's *time-stretch* (decoupled, modern) is **Change Tempo**. The reading's mention of *tape-physics coupling* (where slowing a sound also lowers its pitch) corresponds to **Change Speed**. Clarify this verbally at technique 8 since it's the only place the two appear together.
+- **Save habits.** Encourage students to keep their technique experiments in a separate scratch project, not in `lastname-project01.aup3`. The Project 1 file should be reserved for actual project work. The handout suggests this; reinforce it.
+
+#### Block 3 — Project 1 begins (~30 min)
+
+Pull up the Project 1 prompt on the projector. Walk through key sections (read constraints aloud, point at the rubric, confirm the Wed Wk 5 deadline). About 5 min of framing.
+
+Then it's open work time. Students follow the handout's "Project 1 begins" section:
+
+1. Open the prompt themselves and read it
+2. Spend ~10 min browsing the bank's category folders, listening to sounds
+3. Pick three sounds (the handout offers a heuristic: short percussive, long continuous, recognizable specific thing)
+4. Open `lastname-project01.aup3`, import the three sounds (one per track), place them in time
+5. Save
+
+The bar for "I started Project 1" is clear: three sounds in their `.aup3`, saved. If a student has that by the end of class, they're on track. If not, they're behind and should be checked in with.
 
 Walk the room. The most useful thing you can do is *ask questions*, not provide answers:
+
 - "What sounds are catching your ear?"
 - "What contrast do you want in the piece?"
 - "Have you tried that backward?"
 
-If a student is stuck on "I don't know what I want to make," that's normal. Suggest they pick one sound that interests them and play with it for 10 minutes — the work clarifies as they make it. Don't let them sit frozen; small movement beats no movement.
+If a student is stuck on "I don't know what I want to make," that's normal. Suggest the handout's heuristic (short percussive + long continuous + specific thing) and let them pick from there. Don't let them sit frozen.
 
-#### Block 4 — Wrap (5 min)
+#### End of session — NAS upload (last 5 min)
 
-Quick close: "Save your work, upload to NAS, log out. Next Wednesday we add mixing concepts. Continue working between now and then — at least one more session, even just an hour at home if you can install Audacity."
-
-Mention that Audacity is free and they can install it on a personal computer if they want; the working session model expects them to use lab time, but extra time on a personal machine is fine and encouraged.
+Final 5 minutes: students follow the handout's end-of-session routine. Save the project (`Cmd+S`), copy `lastname-project01.aup3` (NOT the sources folder, which is already on NAS) to `students/lastname/project-01/` on the NAS, eject NAS, log out.
 
 ### Common confusions
 
-- **"How do I know if my piece is any good?"** It's too early — they're an hour in. Reframe: "Right now you're collecting material and trying things. You'll know it's working when something you made surprises you."
-- **"I'm overwhelmed by the sample bank."** Genuine reaction; the bank has 40-80 sounds. Suggest: pick 3 sounds you find interesting, ignore the rest for now. You can come back.
-- **"Do I have to use the bank?"** Yes. The constraint is part of the assignment — it forces creative work with given material rather than open-ended sound-collection.
-- **"Can I record my own sounds?"** Not for Project 1 (that's Module 3). For Project 1, sample bank only.
+- **"How do I know if my piece is any good?"** It's too early. Reframe: "Right now you're collecting material and trying things. You'll know it's working when something you made surprises you."
+- **"I'm overwhelmed by the sample bank."** Genuine reaction. Suggest the handout's three-bucket heuristic. Browsing 6-8 sounds out of 40-80 is plenty for today.
+- **"Do I have to use the bank?"** Yes. The constraint is part of the assignment.
+- **"Can I record my own sounds?"** Not for Project 1 (that's Module 3). For Project 1, bank only.
+- **Trim looks missing.** Hidden under Remove Special. Flag verbally when you reach technique 2.
+- **Reverse looks missing.** Hidden under Effect → Special. Flag when you reach technique 7.
+- **The sample bank is huge / scrolling Finder is slow.** Once it's copied locally, browsing is much faster than over the network. If a student is browsing the NAS share directly (because they skipped the copy step), they'll experience friction. Catch this and have them complete Block 1 properly.
 
 ### Pacing fallbacks
 
-- **If running long:** Cut Block 1 to the essential moves (cut, fade, reverse). Time-stretch and pitch-shift can be discovered during work time.
-- **If running short:** Pull up a sample piece (one of the Schaeffer or Henry pieces) and analyze a 30-second segment together: "What edits do you hear? What techniques?"
+The session is tight. 100 min for a setup + 9 techniques + Project 1 starter + NAS upload is fully booked. Like Wed Wk 2, students who don't finish in class can finish the technique exercises at home — the handout is self-contained and the bank is on their local machine. What MUST happen in class:
+
+1. The bank must get copied locally (Block 1)
+2. Crossfade and time-stretch must be demonstrated on the projector (these are the trickiest UI moves; students who skip them in class often skip them entirely in their pieces)
+3. Students must leave with `lastname-project01.aup3` containing three sounds, saved to NAS
+
+If running long: skip the in-audio loop variant in technique 6 (the playback-loop demo is enough). Skip the +7 semitone variant in technique 9 (the -12 octave demo is enough).
+
+If running short (rare): give 5-10 more minutes of free Project 1 sketching. More browsing time always helps.
 
 ### After class
 
-- Verify NAS uploads (every student should have at least an `editing-practice-vN.aup3` and the start of a `project-01/` folder)
+- Verify NAS uploads. Every student should have `students/lastname/project-01/lastname-project01.aup3` on the NAS by end of class. Spot-check 3-4 student folders.
 - Walk the room: gear reset, headphone sliders down, machines logged out
-- Note any students who didn't engage — plan to check in next session
+- Note any students whose project file shows zero or one tracks at the end of class. They didn't finish Project 1 setup; check in with them at Wed Wk 4.
 
 ---
 

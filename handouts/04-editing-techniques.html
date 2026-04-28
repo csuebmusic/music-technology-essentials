@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Editing Techniques</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    /* Menu path display: highlights an Audacity menu navigation chain so it
+       reads as a UI instruction rather than as prose. Used for things like
+       "Edit → Remove Special → Trim Audio". */
+    .menu-path {
+      font-family: var(--mono);
+      font-size: 0.9em;
+      background: var(--bg-alt);
+      padding: 0.2em 0.55em;
+      border-radius: 2px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    /* Technique block: each numbered editing technique gets its own card-like
+       container so the recap + menu path + exercise read together. */
+    .technique {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      margin: 1.5rem 0;
+      border-radius: 0 3px 3px 0;
+    }
+    .technique h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .technique .where {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0.5rem 0 0.2rem;
+    }
+    .technique .where-row {
+      margin-bottom: 0.9rem;
+      line-height: 1.7;
+    }
+    .technique .exercise-label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin: 0.9rem 0 0.3rem;
+    }
+    .technique .exercise {
+      margin: 0;
+    }
+    .technique .listen {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-top: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 02 · Lab 2</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 02 · Digital audio, editing &amp; mixing</div>
+  <h1>Editing Techniques</h1>
+  <div class="subtitle">Where each move from Monday lives in Audacity. Then Project 1 begins.</div>
+</div>
+
+<p class="lede">Monday's reading walked you through nine editing moves: cut, trim, splice, fade, crossfade, loop, reverse, time-stretch, pitch-shift. Today's job is to find each one in Audacity and get hands on it using sounds from the Project 1 sample bank. By the end of the session, every technique from the reading will live in your hands as a real button you've clicked, and you'll have started Project 1 with a saved Audacity project containing your first three sounds.</p>
+
+<h2>What we're doing today</h2>
+
+<ol class="steps">
+  <li>Set up: connect to the NAS, copy the Project 1 sample bank into your local working folder, create a Project 1 Audacity project.</li>
+  <li>Walk through nine editing techniques in order. For each: a one-line recap, where to click in Audacity, and a hands-on exercise on a sample.</li>
+  <li>Open the Project 1 prompt. Browse the bank, pick three sounds you find interesting, place them in your project, save.</li>
+  <li>Upload everything to the NAS using the end-of-session routine.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">A note before you start</div>
+  <p>The exercises below ask you to grab specific kinds of sounds from the sample bank (a sharp percussive hit, a long sustained drone, a spoken phrase, etc.). The bank is organized by category, so finding a sound in each category should be quick. <strong>Don't agonize over which sound to grab.</strong> The point of the exercises is to practice the move, not to compose. If the first sound you find roughly fits the description, use it.</p>
+</div>
+
+<hr>
+
+<h2>Setup · 10 minutes</h2>
+
+<h3>Pull the sample bank into your local folder</h3>
+
+<ol class="steps">
+  <li>Connect to the NAS using the routine on your laminated card (<strong>Go → Connect to Server…</strong>, or <kbd>Cmd</kbd> + <kbd>K</kbd>). Sign in if prompted.</li>
+  <li>Navigate to <code>shared/sample-banks/project1/</code>. You'll see folders organized by sound category: <code>attack-sharp</code>, <code>sustain-long</code>, <code>texture-continuous</code>, and so on.</li>
+  <li>In your local working folder at <code>~/Documents/lastname/</code>, make a new folder called <code>project-01</code>. Inside that, make a folder called <code>sources</code>.</li>
+  <li>Copy the entire <code>project1</code> folder from the NAS into your local <code>~/Documents/lastname/project-01/sources/</code>. This may take a minute. The bank has 40 to 80 sounds.</li>
+  <li>Verify the copy finished: open the local <code>sources</code> folder and confirm all the category subfolders are there.</li>
+</ol>
+
+<div class="callout warn">
+  <div class="callout-label">Local-first, NAS as sync</div>
+  <p>You've copied the entire bank locally. You'll work from your local copy for the rest of the project. The NAS bank stays untouched, so anyone else can grab from it cleanly.</p>
+</div>
+
+<h3>Create the Project 1 Audacity project</h3>
+
+<ol class="steps">
+  <li>Open Audacity. Confirm the project format is <strong>44.1 kHz, 16-bit</strong> (the Module 2 standard).</li>
+  <li><strong>File → Save Project As…</strong> Save to <code>~/Documents/lastname/project-01/</code> as <code>lastname-project01.aup3</code>.</li>
+  <li>You now have an empty project saved at the right place. Today's exercises will fill it with experiments.</li>
+</ol>
+
+<hr>
+
+<h2>The nine techniques · about 60 minutes</h2>
+
+<p>Each technique below has the same shape: a one-line recap of what it does, the exact place to find it in Audacity, and a hands-on exercise on a sample from the bank. Work through them in order. Don't skip; the order builds.</p>
+
+<p>For each exercise, <strong>import the sound into your project</strong> (<strong>File → Import → Audio…</strong> or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>) so it appears as a new track. After you've applied the technique and listened, you can either <strong>undo</strong> (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and delete the track, or keep the result if you might use it in your piece. Don't try to make the result a finished thing; just practice the move.</p>
+
+<!-- ============================================================ -->
+<!-- 1. CUT -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>1 · Cut</h3>
+
+  <p>Remove a selected region. The audio on either side closes the gap. Like deleting a phrase from the middle of a sentence.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Edit → Cut</span> · <kbd>Cmd</kbd> + <kbd>X</kbd>
+  </div>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Browse <code>voice-and-language/</code> and find a sound with someone speaking a phrase or sentence (a few words long, at most). Import it. Listen once. Then select a single word in the middle of the phrase (use your ears and the waveform to find the boundaries, drag-select with the I-beam). Press <kbd>Cmd</kbd> + <kbd>X</kbd>. Listen again.</p>
+
+  <p class="listen">Listen for: the cut should sound like the word was never there. The phrase should still feel coherent, just shorter. If you hear a click pop at the cut boundary, that's the edit-boundary problem from Monday's reading; we'll fix it with fades in technique 4.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. TRIM -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>2 · Trim</h3>
+
+  <p>Keep a selected region and remove everything else. The opposite of cut. Useful for isolating a single sound from a longer recording.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Edit → Remove Special → Trim Audio</span> · <kbd>Cmd</kbd> + <kbd>T</kbd>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Trim is hidden</div>
+    <p>Trim is buried under <span class="menu-path">Edit → Remove Special</span>, not directly under Edit. Audacity hides it there because it's a less-frequent move. Now you know.</p>
+  </div>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Browse <code>natural-environment/</code> and find a longer field recording (something with multiple events: birds plus traffic, water plus wind, etc.). Import it. Listen and find one specific event you like (a single bird call, one car passing, one gust of wind). Drag-select just that event. Press <kbd>Cmd</kbd> + <kbd>T</kbd>.</p>
+
+  <p class="listen">Listen for: everything outside your selection is gone. You've isolated one event from a busier recording. This is how musique concrète composers extract usable fragments from raw field recordings.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. SPLICE / ARRANGE -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>3 · Splice and arrange</h3>
+
+  <p>Place sounds next to each other in time. The fundamental musique concrète move: take a fragment of one recording, place a fragment of another after it, and a third after that. The arrangement is the composition.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    There's no single "splice" command. The basic recipe is <span class="menu-path">Edit → Cut</span> a region from one place, then <span class="menu-path">Edit → Paste</span> at the cursor position somewhere else (on the same track or a different one).
+  </div>
+
+  <p>If you want the audio you cut from to <em>not</em> close the gap (so the original timing is preserved), use <span class="menu-path">Edit → Remove Special → Cut and leave gap</span> (<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>X</kbd>) instead of plain Cut.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Pick three different short sounds from three different category folders (for example: one from <code>attack-sharp/</code>, one from <code>found-objects/</code>, one from <code>voice-and-language/</code>). Import each as its own track. In a new track (<strong>Tracks → Add New → Stereo Track</strong>), arrange a short sequence: copy a piece of sound 1, paste it at the start; copy a piece of sound 2, paste it after; copy a piece of sound 3, paste it after that. Aim for a short phrase, maybe 5 to 10 seconds total.</p>
+
+  <p class="listen">Listen for: a sequence of unrelated sounds, played in the order you chose, becomes a phrase with shape. The arrangement gives it meaning. Schaeffer's <em>Études de bruits</em> were built this way, one splice at a time.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. FADE IN / FADE OUT -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>4 · Fade in and fade out</h3>
+
+  <p>A volume ramp at the boundary of an edit. Fade-in starts from silence and ramps up; fade-out is the reverse. Even very short fades (10 to 50 milliseconds) prevent click pops at edit boundaries.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Effect → Fading → Fade In</span><br>
+    <span class="menu-path">Effect → Fading → Fade Out</span>
+  </div>
+
+  <p>The Effect menu groups effects by category. <strong>Fading</strong> is one of the categories; click it to expand. The fade is applied to whatever is currently selected, and its length equals the length of your selection: a 1-second selection makes a 1-second fade, a 50-millisecond selection makes a 50-millisecond fade.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Find a sound from <code>sustain-long/</code> (a drone, a held note, a long bowed sound). Import it. Select the first ~1 second. Apply <span class="menu-path">Effect → Fading → Fade In</span>. Then select the last ~1 second. Apply <span class="menu-path">Effect → Fading → Fade Out</span>. Listen.</p>
+
+  <p class="listen">Listen for: the sound now eases in instead of starting abruptly, and eases out instead of ending hard. Look at the waveform. The first and last seconds taper visibly. This is the move that turns a "broken edit" into a "deliberate edit."</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. CROSSFADE -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>5 · Crossfade</h3>
+
+  <p>The overlap of a fade-out and a fade-in: one sound fades out as another fades in. The seam between two sounds becomes smooth instead of abrupt. Crossfades are how editors make hard cuts disappear.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Effect → Fading → Crossfade Clips</span> (two clips on the same track, overlapping)
+  </div>
+
+  <p>Audacity also has a <span class="menu-path">Crossfade Tracks</span> command for two stacked tracks. For today, we'll use Crossfade Clips, which works on two adjacent clips inside a single track.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Pick two sounds with similar character (for example, two from <code>texture-continuous/</code>: maybe rain and wind, or two different street ambiences). Import both onto the same track. To put them on the same track, drag the second one onto the first track's lane. Position them so they slightly overlap, maybe by half a second. Drag-select across both clips so the overlap is in your selection. Apply <span class="menu-path">Effect → Fading → Crossfade Clips</span>.</p>
+
+  <p class="listen">Listen for: instead of a hard cut from sound 1 to sound 2, you hear them blend through the overlap. The seam disappears. This is one of the most useful moves in your editing toolkit; you'll use it constantly.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. LOOP -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>6 · Loop</h3>
+
+  <p>A region played repeatedly. Useful as a working aid (loop a section while you adjust an effect) or as a compositional move (a tape-loop pattern that becomes the rhythmic backbone of a piece).</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    Two paths, depending on what you want:
+  </div>
+
+  <ul>
+    <li><strong>Looping playback</strong> (the loop is a listening tool, the audio doesn't change): make a selection, then <span class="menu-path">Transport → Looping → Set Loop to Selection</span> (<kbd>Shift</kbd> + <kbd>L</kbd>), then <span class="menu-path">Transport → Looping → Loop on/off</span> (<kbd>L</kbd>) to toggle looping. Press spacebar to play; the selection plays in a loop until you stop.</li>
+    <li><strong>Looping in the audio</strong> (the loop becomes part of the piece): copy a clip (<kbd>Cmd</kbd> + <kbd>C</kbd>), then paste it (<kbd>Cmd</kbd> + <kbd>V</kbd>) several times in succession. Each paste places another copy at the cursor. The loop is now baked into the track.</li>
+  </ul>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Find a short rhythmic-sounding sound from <code>found-objects/</code> or <code>mechanical-electronic/</code> (a tap, a click, a brief mechanical pulse, something under a second). Import it. Try the playback-loop first: select it, set it as the loop, turn looping on, play. Listen for a few cycles, then stop. Now try the in-audio loop: copy the clip, paste it four or five times in succession on the same track. Play the result.</p>
+
+  <p class="listen">Listen for: a single short sound becomes a pulse. Repetition turns a static fragment into something with rhythm and momentum. This is the building block of every loop-based piece in modern music. We'll come back to looping in Module 4 with Ableton, where it's the central organizing idea.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. REVERSE -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>7 · Reverse</h3>
+
+  <p>Play a sound backward. The recording is the same, but its envelope is flipped: the attack becomes the release, and the release becomes the attack. Reverse changes the direction of the sound through time, not its duration or its pitch.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Effect → Special → Reverse</span>
+  </div>
+
+  <p>Reverse lives under the <strong>Special</strong> category in the Effect menu, alongside other one-off transforms.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Find a sound with a clear strike-then-decay shape from <code>attack-sharp/</code> (a struck object, a single piano note, a pluck, a snap). Import it. Listen once. Then select all of it (<kbd>Cmd</kbd> + <kbd>A</kbd>) and apply <span class="menu-path">Effect → Special → Reverse</span>. Listen.</p>
+
+  <p class="listen">Listen for: instead of a sharp hit followed by a fade, you hear the sound rush in and end abruptly. The envelope has flipped end-to-end. Reversed strikes are one of the most recognizable sounds in musique concrète; Schaeffer worked them by physically reversing tape reels, and the resulting "swelling rush" became part of the genre's vocabulary.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 8. TIME-STRETCH -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>8 · Time-stretch</h3>
+
+  <p>Change the duration of a sound without changing its pitch. A modern signal-processing operation that decouples what tape kept coupled.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span>
+  </div>
+
+  <p>Audacity calls this "Change Tempo." A dialog opens; you can change the tempo by a percentage or by entering a new length in seconds. <strong>Don't confuse it with "Change Speed":</strong> Change Speed is the tape-physics version that couples time and pitch (slower means lower-pitched, like slowing tape down). Change Tempo decouples them and is what we want here.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Find a sound from <code>sustain-long/</code> or <code>texture-continuous/</code> (something with at least a few seconds of stable sustain). Import it. Select all of it. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span> In the dialog, set Percent Change to <strong>-50</strong> (which doubles the duration) or to <strong>+100</strong> (which halves it). Click <strong>Apply</strong>. Listen.</p>
+
+  <p class="listen">Listen for: the sound is now twice as long (or half as long), but the pitch is exactly where it was before. The tempo changed, the pitch didn't. Compare this to what would happen if you slowed a tape down: the tape's pitch would drop with the speed. Modern time-stretch decouples them.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 9. PITCH-SHIFT -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>9 · Pitch-shift</h3>
+
+  <p>Change the pitch of a sound without changing its duration. The complement to time-stretch.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Effect → Pitch and Tempo → Change Pitch…</span>
+  </div>
+
+  <p>The dialog lets you specify the change in semitones, percent, or as a from-to musical pitch. Semitones is the most musically intuitive: <strong>+12 semitones is one octave up, -12 is one octave down</strong>.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Use the same kind of long-sustain sound as the previous exercise (or a fresh one). Import. Select all. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Pitch…</span> Set Semitones to <strong>-12</strong> (one octave down). Click <strong>Apply</strong>. Listen. Then undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and try <strong>+7</strong> (a perfect fifth up). Listen again.</p>
+
+  <p class="listen">Listen for: the sound's duration is unchanged, but its pitch is now lower (or higher). Compare to time-stretch: there, the tempo changed and the pitch held. Here, the pitch changes and the tempo holds. These two effects are complementary, and together they let you adjust either dimension of a sound independently of the other.</p>
+</div>
+
+<hr>
+
+<h2>Project 1 begins · about 30 minutes</h2>
+
+<p>You've now touched all nine editing techniques. The rest of the session is for starting Project 1.</p>
+
+<h3>Open the prompt</h3>
+
+<ol class="steps">
+  <li>In your browser, open the Project 1 prompt: <code>course/projects/project-01-musique-concrete.html</code> (also linked in Canvas). Read it now if you haven't.</li>
+  <li>The key facts: <strong>2 minutes maximum, 90 seconds minimum, all sounds from the bank, exported as WAV 44.1/16, due Wed Wk 5 at the end of class.</strong></li>
+</ol>
+
+<h3>Browse the bank</h3>
+
+<p>Spend about 10 minutes browsing the sample bank in your local <code>sources/</code> folder. Open Finder and click into different category folders. Listen to whatever catches your ear (double-click a file in Finder to play it in QuickTime, or drag it into Audacity for a quick listen). The bank is curated to give you variety across envelope categories: sharp attacks, soft attacks, long sustains, continuous textures, voices, found objects, natural environments, mechanical and electronic sources.</p>
+
+<p>You're not committing to anything yet. You're just listening and starting to notice which sounds pull at you.</p>
+
+<div class="callout">
+  <div class="callout-label">A starting heuristic, if you're stuck</div>
+  <p>If nothing is jumping out, try this: pick one sound that's <strong>short and percussive</strong>, one that's <strong>long and continuous</strong>, and one that's <strong>recognizable as a specific thing</strong> (a voice, a bell, a closing door). Three sounds with different envelopes give you a lot of compositional room. You can always swap them out later.</p>
+</div>
+
+<h3>Three sounds, three tracks, save</h3>
+
+<ol class="steps">
+  <li>Pick three sounds from the bank that interest you. They don't have to go together yet.</li>
+  <li>Open your <code>lastname-project01.aup3</code> project (the one you saved during setup; if you have other tracks open from the technique exercises, save those experiments to a different project file first).</li>
+  <li>Import each of the three sounds (<strong>File → Import → Audio…</strong>) so each becomes its own track.</li>
+  <li>Place them in time, however you want. You can stack them so they play simultaneously, line them up so one follows another, or anything in between. There's no right answer right now. Just put them somewhere.</li>
+  <li>Press play and listen. Note what you like and what doesn't work.</li>
+  <li>Save the project (<kbd>Cmd</kbd> + <kbd>S</kbd>).</li>
+</ol>
+
+<p>You now have the start of Project 1. Two minutes of finished music can come from these three sounds, or from very different ones; what matters is that you've started.</p>
+
+<hr>
+
+<h2>End of session · NAS upload</h2>
+
+<ol class="steps">
+  <li>Save the project once more (<kbd>Cmd</kbd> + <kbd>S</kbd>).</li>
+  <li>Connect to the NAS if you've disconnected. Navigate to <code>students/lastname/project-01/</code> (make this folder if it doesn't exist).</li>
+  <li>Copy your <code>lastname-project01.aup3</code> from your local <code>~/Documents/lastname/project-01/</code> folder to the NAS folder. <strong>Don't copy the sources folder; it's already on the NAS.</strong></li>
+  <li>Verify the upload by reopening the NAS folder. Eject the NAS. Log out.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Between now and Friday's lab</div>
+  <p>Spend a little more time browsing the bank from home or anywhere with NAS access. The more familiar you are with what's available, the easier the next two weeks will be. If a particular sound keeps pulling at you, that's worth paying attention to; pieces often start with one sound that won't leave you alone.</p>
+</div>
+
+<hr>
+
+<h2>Quick reference · the nine techniques</h2>
+
+<table>
+  <thead>
+    <tr><th>Technique</th><th>Where in Audacity</th><th>Shortcut</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Cut</td><td>Edit → Cut</td><td><kbd>Cmd</kbd> + <kbd>X</kbd></td></tr>
+    <tr><td>Trim</td><td>Edit → Remove Special → Trim Audio</td><td><kbd>Cmd</kbd> + <kbd>T</kbd></td></tr>
+    <tr><td>Splice</td><td>Edit → Cut + Edit → Paste</td><td><kbd>Cmd</kbd> + <kbd>X</kbd>, <kbd>Cmd</kbd> + <kbd>V</kbd></td></tr>
+    <tr><td>Cut and leave gap</td><td>Edit → Remove Special → Cut and leave gap</td><td><kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>X</kbd></td></tr>
+    <tr><td>Fade in</td><td>Effect → Fading → Fade In</td><td>(none)</td></tr>
+    <tr><td>Fade out</td><td>Effect → Fading → Fade Out</td><td>(none)</td></tr>
+    <tr><td>Crossfade clips</td><td>Effect → Fading → Crossfade Clips</td><td>(none)</td></tr>
+    <tr><td>Loop (playback)</td><td>Transport → Looping → Loop on/off</td><td><kbd>L</kbd></td></tr>
+    <tr><td>Loop (in audio)</td><td>Edit → Copy + Edit → Paste, repeated</td><td><kbd>Cmd</kbd> + <kbd>C</kbd>, <kbd>Cmd</kbd> + <kbd>V</kbd></td></tr>
+    <tr><td>Reverse</td><td>Effect → Special → Reverse</td><td>(none)</td></tr>
+    <tr><td>Time-stretch</td><td>Effect → Pitch and Tempo → Change Tempo</td><td>(none)</td></tr>
+    <tr><td>Pitch-shift</td><td>Effect → Pitch and Tempo → Change Pitch</td><td>(none)</td></tr>
+    <tr><td>Repeat last effect</td><td>Effect → Repeat Last Effect</td><td><kbd>Cmd</kbd> + <kbd>R</kbd></td></tr>
+    <tr><td>Undo</td><td>Edit → Undo</td><td><kbd>Cmd</kbd> + <kbd>Z</kbd></td></tr>
+  </tbody>
+</table>
+
+<p>Most effect commands have no default keyboard shortcut. If you find yourself using one constantly, you can assign one in <strong>Audacity → Settings → Keyboard</strong>.</p>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 02 · Lab 2</span>
+</footer>
+
+</body>
+</html>
