@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Digital Audio Explorer</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* ---- Shared tool chrome ---- */
+    .tool {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .tool-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .tool svg.scope {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: var(--bg);
+      border: 1px solid var(--rule-soft);
+      border-radius: 3px;
+      margin-bottom: 1rem;
+    }
+    .tool-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .play-button {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      padding: 0.55rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      min-width: 5.5rem;
+    }
+    .play-button:hover { background: var(--accent-soft); }
+    .play-button.playing { background: var(--ink); }
+    .reset-button {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      color: var(--ink-soft);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .reset-button:hover { background: var(--bg); color: var(--ink); border-color: var(--ink-soft); }
+
+    .tool-note {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin: 1rem 0 0;
+      line-height: 1.5;
+    }
+
+    /* ---- Slider rows ---- */
+    .slider-row {
+      display: grid;
+      grid-template-columns: 6.5rem 1fr 5rem;
+      align-items: center;
+      gap: 0.5rem 1rem;
+      padding: 0.4rem 0;
+    }
+    .slider-row + .slider-row {
+      border-top: 1px dashed var(--rule-soft);
+    }
+    .slider-label {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink);
+    }
+    .slider-label .label-sub {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      margin-top: 0.1rem;
+    }
+    .slider-input {
+      width: 100%;
+      accent-color: var(--accent);
+      margin: 0;
+    }
+    .slider-readout {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      text-align: right;
+    }
+
+    /* Big freq readout for the sine maker */
+    .big-readout {
+      font-family: var(--mono);
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-right: 1rem;
+    }
+    .big-readout .unit {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      margin-left: 0.25rem;
+    }
+
+    /* ---- Partial controls ---- */
+    .partial-table {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr 5rem 1fr 4rem;
+      align-items: center;
+      gap: 0.4rem 0.75rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .partial-table .head {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-faint);
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .partial-table .partial-num {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+    .partial-table .partial-num span {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      letter-spacing: 0;
+    }
+    .partial-table .freq-readout,
+    .partial-table .amp-readout {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-align: right;
+    }
+    .partial-table input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+      margin: 0;
+    }
+    .partial-table .ratio-display {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+
+    /* ---- TOC at the top ---- */
+    .toc {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 2rem 0;
+      font-size: 0.92rem;
+    }
+    .toc-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .toc li { margin: 0.2rem 0; }
+    .toc a { color: var(--ink); }
+    .toc a:hover { color: var(--accent); }
+
+    @media (max-width: 540px) {
+      .slider-row {
+        grid-template-columns: 5rem 1fr 4rem;
+        gap: 0.25rem 0.5rem;
+      }
+      .partial-table {
+        grid-template-columns: 3.5rem 1fr 4rem 1fr 3rem;
+        gap: 0.3rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 02 · Lab 1 · Part 1</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 02 · Digital audio, editing &amp; mixing</div>
+  <h1>Digital Audio Explorer</h1>
+  <div class="subtitle">Sines, sums, the harmonic series, and timbre — by ear and by hand.</div>
+</div>
+
+<p class="lede">Monday's reading introduced waveforms, frequency, and amplitude as abstract ideas. This lab takes those ideas and lets you hear them. Each tool below adds one new piece of the picture: from a single pure tone, to two or three tones at once, to the harmonic series that builds a "note," to the recipe of partial amplitudes that gives every instrument its specific sound. <strong>Keep your headphones at a moderate volume the whole way through.</strong> Sine tones are loud and fatiguing — start quiet, listen briefly, stop when you're done.</p>
+
+<div class="toc">
+  <div class="toc-title">In this lab</div>
+  <ol>
+    <li><a href="#sec-sine">A single sine</a> — the simplest sound</li>
+    <li><a href="#sec-summer">Summing sines</a> — the building-block idea</li>
+    <li><a href="#sec-harmonic">The harmonic series</a> — when partials cohere into a note</li>
+    <li><a href="#sec-timbre">Timbre</a> — same note, different sound</li>
+  </ol>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: SINE MAKER                                        -->
+<!-- ============================================================ -->
+
+<h2 id="sec-sine">1 · A single sine</h2>
+
+<p>A sine wave is the simplest possible sound: a single frequency, one smooth oscillation, nothing else. It almost never occurs in the natural world — voices, instruments, traffic, water, all of it has a more complicated shape than this. But sine waves are the atoms out of which every other sound is built. Before we sum them, we need to hear one on its own.</p>
+
+<p>The tool below lets you set the <strong>frequency</strong> (how fast it wiggles, heard as pitch) and the <strong>amplitude</strong> (how big the wiggle is, heard as loudness). Press play, then move the sliders. The waveform updates in real time so you can see what you're hearing.</p>
+
+<div class="tool" id="sineTool">
+  <div class="tool-title">Sine Maker</div>
+
+  <svg class="scope" id="sineScope" viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" aria-label="Live waveform of the sine wave">
+    <line x1="0" y1="70" x2="600" y2="70" stroke="var(--rule)" stroke-width="0.8"/>
+    <path id="sinePath" d="" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  </svg>
+
+  <div class="tool-controls">
+    <button id="sinePlay" class="play-button">Play</button>
+    <div class="big-readout"><span id="sineFreqReadout">220</span><span class="unit">Hz</span></div>
+  </div>
+
+  <div class="slider-row">
+    <span class="slider-label">Frequency</span>
+    <input type="range" id="sineFreq" class="slider-input" min="0" max="1000" value="347">
+    <span class="slider-readout" id="sineFreqLabel">220 Hz</span>
+  </div>
+  <div class="slider-row">
+    <span class="slider-label">Amplitude</span>
+    <input type="range" id="sineAmp" class="slider-input" min="0" max="100" value="50">
+    <span class="slider-readout" id="sineAmpLabel">0.50</span>
+  </div>
+
+  <p class="tool-note"><strong>Listen for:</strong> the way pitch and loudness behave as <em>independent</em> dimensions. Move only frequency: pitch changes, loudness doesn't. Move only amplitude: loudness changes, pitch doesn't. Notice that very low frequencies (below ~60 Hz) feel more than they sound, and very high frequencies (above ~12 kHz) get thin and piercing. The slider is logarithmic, like musical pitch — every doubling is one octave.</p>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: SINE SUMMER                                       -->
+<!-- ============================================================ -->
+
+<h2 id="sec-summer">2 · Summing sines</h2>
+
+<p>Real sounds aren't sines. A struck piano string, a sung vowel, a bowed cello, a barking dog — none of these has the smooth, pure shape you just heard. But here's the surprising thing: <strong>every sound, no matter how complex, can be built by adding sine waves together.</strong> This is one of the deepest results in the science of sound, and it's the reason we spent time on sine waves in the first place. Sines are the atoms.</p>
+
+<p>The tool below lets you sum up to <strong>six</strong> sine waves at once. Each one has its own frequency and its own amplitude. The big curve at the top is the actual waveform you're hearing — the sum of whatever sines you've turned up.</p>
+
+<p>Two terms to know going forward:</p>
+<ul>
+  <li>The <strong>fundamental</strong> is the lowest sine in a complex sound. It's usually what you'd identify as the "pitch" of the sound.</li>
+  <li>A <strong>partial</strong> is any one sine in the mix, including the fundamental. A complex tone has a fundamental and some number of additional partials.</li>
+</ul>
+
+<div class="tool" id="summerTool">
+  <div class="tool-title">Sine Summer</div>
+
+  <svg class="scope" id="summerScope" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" aria-label="Live summed waveform">
+    <line x1="0" y1="80" x2="600" y2="80" stroke="var(--rule)" stroke-width="0.8"/>
+    <path id="summerPath" d="" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  </svg>
+
+  <div class="tool-controls">
+    <button id="summerPlay" class="play-button">Play</button>
+    <button id="summerReset" class="reset-button">Reset</button>
+  </div>
+
+  <div class="partial-table" id="summerPartials">
+    <div class="head">Partial</div>
+    <div class="head">Frequency</div>
+    <div class="head" style="text-align:right">Hz</div>
+    <div class="head">Amplitude</div>
+    <div class="head" style="text-align:right">level</div>
+    <!-- Partial rows generated by JS -->
+  </div>
+
+  <p class="tool-note"><strong>Try this:</strong> turn up partial 1 only — that's a pure sine, like the previous tool. Now turn up partial 2 at a random frequency. Hear how the two interact: when their frequencies are close, you'll hear a slow throbbing called <em>beating</em>; when they're far apart, you hear two separate tones. Now turn up a third. With unrelated frequencies, the result sounds like noise or chaos — not like a unified note. <em>That's the puzzle the next section solves.</em></p>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: HARMONIC SERIES                                   -->
+<!-- ============================================================ -->
+
+<h2 id="sec-harmonic">3 · The harmonic series</h2>
+
+<p>You just heard that arbitrary sums of sines don't sound like a coherent note. They sound like a stack of separate tones, or like noise. So how does any real instrument — which is a sum of sines, remember — manage to sound like a single, unified pitch?</p>
+
+<p>The answer is the <strong>harmonic series</strong>. When the partials of a sound sit at <em>integer multiples</em> of the fundamental frequency (1×, 2×, 3×, 4×, 5×, 6×, ...), your ear fuses them together and hears a single note at the fundamental's pitch. The higher partials don't get heard as separate notes; they become part of the character of that one note.</p>
+
+<p>The tool below has the same six partials as before, but the frequencies are now <strong>locked</strong> to harmonic ratios of a fundamental you choose. You only control the amplitudes. Press play with all amplitudes at zero, then turn them up one at a time and listen.</p>
+
+<div class="tool" id="harmonicTool">
+  <div class="tool-title">Harmonic Series</div>
+
+  <svg class="scope" id="harmonicScope" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" aria-label="Live summed waveform of harmonic series">
+    <line x1="0" y1="80" x2="600" y2="80" stroke="var(--rule)" stroke-width="0.8"/>
+    <path id="harmonicPath" d="" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  </svg>
+
+  <div class="tool-controls">
+    <button id="harmonicPlay" class="play-button">Play</button>
+    <button id="harmonicReset" class="reset-button">Reset</button>
+  </div>
+
+  <div class="slider-row">
+    <span class="slider-label">Fundamental</span>
+    <input type="range" id="harmonicFund" class="slider-input" min="80" max="440" value="220">
+    <span class="slider-readout" id="harmonicFundLabel">220 Hz</span>
+  </div>
+
+  <div class="partial-table" id="harmonicPartials">
+    <div class="head">Partial</div>
+    <div class="head" style="grid-column: span 2; text-align: center">Ratio · Frequency</div>
+    <div class="head">Amplitude</div>
+    <div class="head" style="text-align:right">level</div>
+    <!-- Partial rows generated by JS -->
+  </div>
+
+  <p class="tool-note"><strong>Try this:</strong> turn up only partial 1 (the fundamental, 1×). That's the same pure sine you've been hearing. Now add partial 2 (2×, an octave above). Notice how it doesn't sound like a separate note — it just makes the original one richer. Add partial 3 (3×), partial 4 (4×), and so on. The sound grows in character but the perceived pitch stays where it started. <em>That's the harmonic series doing its work: many frequencies, one note.</em></p>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: TIMBRE                                            -->
+<!-- ============================================================ -->
+
+<h2 id="sec-timbre">4 · Timbre</h2>
+
+<p>You just heard that the harmonic series turns six different frequencies into one perceived note. But here's the next question: if a flute and a clarinet play the same note (same fundamental, same harmonic ratios), why do they sound completely different?</p>
+
+<p>The answer is <strong>timbre</strong>: the unique sonic fingerprint of a sound, separate from its pitch and its loudness. Timbre is what lets you tell a violin from a trumpet without seeing them. And the largest single contributor to an instrument's timbre is <em>the recipe of partial amplitudes</em>. Two sounds with the same fundamental and the same harmonic ratios but different relative amplitudes for each partial will sound like two different instruments.</p>
+
+<p>The tool below has the same harmonic series, but it starts with a default mix of partials so you have something to modify. Move the amplitude sliders around and listen.</p>
+
+<div class="tool" id="timbreTool">
+  <div class="tool-title">Timbre</div>
+
+  <svg class="scope" id="timbreScope" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" aria-label="Live summed waveform">
+    <line x1="0" y1="80" x2="600" y2="80" stroke="var(--rule)" stroke-width="0.8"/>
+    <path id="timbrePath" d="" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  </svg>
+
+  <div class="tool-controls">
+    <button id="timbrePlay" class="play-button">Play</button>
+    <button id="timbreReset" class="reset-button">Reset</button>
+  </div>
+
+  <div class="slider-row">
+    <span class="slider-label">Fundamental</span>
+    <input type="range" id="timbreFund" class="slider-input" min="80" max="440" value="220">
+    <span class="slider-readout" id="timbreFundLabel">220 Hz</span>
+  </div>
+
+  <div class="partial-table" id="timbrePartials">
+    <div class="head">Partial</div>
+    <div class="head" style="grid-column: span 2; text-align: center">Ratio · Frequency</div>
+    <div class="head">Amplitude</div>
+    <div class="head" style="text-align:right">level</div>
+    <!-- Partial rows generated by JS -->
+  </div>
+
+  <p class="tool-note"><strong>Try this:</strong> start with the default and just listen. Now silence the fundamental (partial 1) by dragging it to zero. The pitch you hear may stay surprisingly stable — your ear can <em>infer</em> the fundamental from the spacing of the upper partials. Bring it back. Now silence everything except partials 1 and 3 (skip the even ones). The sound takes on a hollow, woody quality reminiscent of a clarinet. Try only odd partials at decreasing amplitude. Try only the lowest two. Try cranking the upper partials. Each combination has its own character. <em>That character is timbre, and you're working in the same dimension that orchestrators, synthesists, and sound designers spend their whole careers in.</em></p>
+</div>
+
+<hr>
+
+<h2>What you've heard</h2>
+
+<p>Four ideas from one chain of demos:</p>
+
+<ol>
+  <li><strong>Sines are atoms.</strong> The simplest sound is a single sine: one frequency, one amplitude. Almost nothing in the world sounds like this, but everything in the world can be built from this.</li>
+  <li><strong>Summing arbitrary sines doesn't make a note.</strong> Pile up sines at random frequencies and you get something that sounds like noise, or like several separate tones — never like a unified pitched sound.</li>
+  <li><strong>The harmonic series is what makes a note.</strong> When partials line up at integer multiples of a fundamental, the ear fuses them. Six different frequencies become one note.</li>
+  <li><strong>Timbre is the recipe.</strong> Same harmonic ratios, different amplitudes, different sound. A clarinet, a flute, a vocal "ahhh," a trumpet — all are recipes of partial amplitudes over a shared harmonic-series scaffold.</li>
+</ol>
+
+<p>You'll hear partials and timbre referenced throughout the rest of the course. When you start mixing in Module 2, the EQ knobs you'll use are tools for selectively boosting or cutting partials. When you reach synthesis in Module 4, building a sound by adding sines is one of the most direct synthesis techniques (it's called <em>additive synthesis</em>) and it works exactly the way these tools work.</p>
+
+<hr>
+
+<h2>Vocabulary</h2>
+
+<dl class="vocab" style="margin-top: 1rem;">
+  <dt>Sine wave</dt>
+  <dd>The simplest possible waveform: a single frequency oscillating smoothly. The atom of sound.</dd>
+
+  <dt>Pure tone</dt>
+  <dd>A sound consisting of a single sine wave. Rare in the world; common in test signals and as a building block.</dd>
+
+  <dt>Complex tone</dt>
+  <dd>A sound made of multiple sine waves added together. Almost every real-world musical sound is a complex tone.</dd>
+
+  <dt>Fundamental</dt>
+  <dd>The lowest partial in a complex tone. Usually what your ear hears as "the pitch" of the sound.</dd>
+
+  <dt>Partial</dt>
+  <dd>Any single sine wave in a complex tone, including the fundamental. A trumpet note has a fundamental and a stack of partials above it.</dd>
+
+  <dt>Harmonic series</dt>
+  <dd>The set of partials at integer multiples of a fundamental: 1×, 2×, 3×, 4×, ... When partials follow this pattern, the ear fuses them into a single perceived note.</dd>
+
+  <dt>Harmonic</dt>
+  <dd>A partial that sits at an integer multiple of the fundamental. (Some non-musical sounds — bells, gongs, drums — have <em>inharmonic</em> partials, which is why they don't have a clear pitch.)</dd>
+
+  <dt>Timbre</dt>
+  <dd>The character of a sound that lets you distinguish two notes of the same pitch and loudness. Largely determined by the relative amplitudes of the partials.</dd>
+
+  <dt>Additive synthesis</dt>
+  <dd>Building sounds by literally adding sine waves together. The technique these tools use, and a real synthesis approach you'll encounter in Module 4.</dd>
+</dl>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 02 · Lab 1 · Part 1</span>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ==================================================================
+  // Shared audio context & utilities
+  // ==================================================================
+
+  let audioCtx = null;
+  function getCtx() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    return audioCtx;
+  }
+
+  // Logarithmic mapping for the sine-maker frequency slider: 0..1000 → 20..20000 Hz
+  function sliderToFreqLog(v) {
+    const minLog = Math.log(20);
+    const maxLog = Math.log(20000);
+    return Math.exp(minLog + (v / 1000) * (maxLog - minLog));
+  }
+  function formatFreq(hz) {
+    if (hz < 1000) return Math.round(hz);
+    return (hz / 1000).toFixed(hz < 10000 ? 2 : 1);
+  }
+  function freqUnit(hz) { return hz < 1000 ? 'Hz' : 'kHz'; }
+
+  // Draw a periodic waveform sampled across the canvas width.
+  // partials: [{freq: Hz, amp: 0..1}, ...]
+  // Returns an SVG path 'd' string.
+  function buildPath(partials, width, height) {
+    const baseY = height / 2;
+    const yScale = height * 0.42;  // leaves a small margin top/bottom
+
+    // Find the lowest active partial to set how many cycles we display.
+    // We want roughly 2 cycles of the lowest partial visible.
+    let lowestFreq = Infinity;
+    for (const p of partials) {
+      if (p.amp > 0.001 && p.freq < lowestFreq) lowestFreq = p.freq;
+    }
+    // If nothing is active, draw a flat line at center.
+    if (lowestFreq === Infinity) {
+      return `M 0 ${baseY} L ${width} ${baseY}`;
+    }
+
+    // Display window: 2 cycles of the lowest active partial.
+    const totalSeconds = 2.0 / lowestFreq;
+    const samples = 600;
+    const dt = totalSeconds / samples;
+    const dx = width / samples;
+
+    // First pass: compute raw values, find peak for normalization
+    const raw = new Array(samples + 1);
+    let peak = 0;
+    for (let i = 0; i <= samples; i++) {
+      const t = i * dt;
+      let s = 0;
+      for (const p of partials) {
+        if (p.amp > 0.001) {
+          s += p.amp * Math.sin(2 * Math.PI * p.freq * t);
+        }
+      }
+      raw[i] = s;
+      if (Math.abs(s) > peak) peak = Math.abs(s);
+    }
+
+    // Normalize so the peak fits comfortably in the canvas
+    const norm = peak > 0 ? (yScale / peak) : 1;
+
+    let d = '';
+    for (let i = 0; i <= samples; i++) {
+      const x = i * dx;
+      const y = baseY - raw[i] * norm;
+      d += (i === 0 ? 'M ' : ' L ') + x.toFixed(1) + ' ' + y.toFixed(1);
+    }
+    return d;
+  }
+
+  // ==================================================================
+  // SECTION 1: Sine Maker
+  // ==================================================================
+
+  (function sineMaker() {
+    const tool = document.getElementById('sineTool');
+    if (!tool) return;
+
+    const playBtn = document.getElementById('sinePlay');
+    const freqSlider = document.getElementById('sineFreq');
+    const ampSlider = document.getElementById('sineAmp');
+    const freqReadout = document.getElementById('sineFreqReadout');
+    const freqLabel = document.getElementById('sineFreqLabel');
+    const ampLabel = document.getElementById('sineAmpLabel');
+    const path = document.getElementById('sinePath');
+
+    let osc = null;
+    let gain = null;
+
+    function getFreq() { return sliderToFreqLog(parseFloat(freqSlider.value)); }
+    function getAmp() { return parseFloat(ampSlider.value) / 100; }
+
+    function updateScope() {
+      const f = getFreq();
+      const a = getAmp();
+      // For visual: clamp displayed amp to a minimum so a flat line is shown when amp=0
+      path.setAttribute('d', buildPath([{ freq: f, amp: a }], 600, 140));
+    }
+
+    function updateReadouts() {
+      const f = getFreq();
+      freqReadout.textContent = formatFreq(f);
+      freqLabel.textContent = formatFreq(f) + ' ' + freqUnit(f);
+      // Update the unit span next to the big readout
+      const unitSpan = tool.querySelector('.big-readout .unit');
+      if (unitSpan) unitSpan.textContent = freqUnit(f);
+      ampLabel.textContent = getAmp().toFixed(2);
+    }
+
+    function applyToOsc() {
+      if (!osc || !gain) return;
+      const ctx = getCtx();
+      // Scale: max amplitude 0.18 to be conservative with sine tones
+      gain.gain.setTargetAtTime(getAmp() * 0.18, ctx.currentTime, 0.02);
+      osc.frequency.setTargetAtTime(getFreq(), ctx.currentTime, 0.01);
+    }
+
+    function start() {
+      const ctx = getCtx();
+      osc = ctx.createOscillator();
+      gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = getFreq();
+      gain.gain.value = 0;
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      gain.gain.linearRampToValueAtTime(getAmp() * 0.18, ctx.currentTime + 0.05);
+      playBtn.textContent = 'Stop';
+      playBtn.classList.add('playing');
+    }
+
+    function stop() {
+      if (!osc || !gain) return;
+      const ctx = getCtx();
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.05);
+      const oscToStop = osc;
+      setTimeout(() => { try { oscToStop.stop(); } catch (e) {} }, 100);
+      osc = null;
+      gain = null;
+      playBtn.textContent = 'Play';
+      playBtn.classList.remove('playing');
+    }
+
+    playBtn.addEventListener('click', () => { osc ? stop() : start(); });
+    freqSlider.addEventListener('input', () => { updateReadouts(); updateScope(); applyToOsc(); });
+    ampSlider.addEventListener('input', () => { updateReadouts(); updateScope(); applyToOsc(); });
+
+    updateReadouts();
+    updateScope();
+  })();
+
+  // ==================================================================
+  // SECTION 2: Sine Summer
+  // ==================================================================
+
+  (function sineSummer() {
+    const tool = document.getElementById('summerTool');
+    if (!tool) return;
+
+    const NUM_PARTIALS = 6;
+    const playBtn = document.getElementById('summerPlay');
+    const resetBtn = document.getElementById('summerReset');
+    const path = document.getElementById('summerPath');
+    const table = document.getElementById('summerPartials');
+
+    // Frequency slider mapping (linear in Hz, 50..1500 across 0..1000)
+    function sliderToFreqLin(v) {
+      return 50 + (v / 1000) * 1450;
+    }
+    function freqToSlider(hz) {
+      return ((hz - 50) / 1450) * 1000;
+    }
+
+    // Initial state: spread across a non-harmonic set so students see/hear the chaos by default after they turn things up
+    const defaultFreqs = [220, 330, 470, 620, 815, 1080];
+
+    const partials = [];
+    for (let i = 0; i < NUM_PARTIALS; i++) {
+      partials.push({
+        freq: defaultFreqs[i],
+        amp: 0,           // start silent so it's their choice to add
+        osc: null,
+        gain: null,
+        freqInput: null,
+        ampInput: null,
+        freqReadout: null,
+        ampReadout: null
+      });
+    }
+
+    // Build partial rows
+    for (let i = 0; i < NUM_PARTIALS; i++) {
+      const p = partials[i];
+
+      const numCell = document.createElement('div');
+      numCell.className = 'partial-num';
+      numCell.innerHTML = (i + 1) + '<span>' + (i === 0 ? 'fundamental' : 'partial') + '</span>';
+      table.appendChild(numCell);
+
+      const freqInput = document.createElement('input');
+      freqInput.type = 'range';
+      freqInput.min = 0;
+      freqInput.max = 1000;
+      freqInput.value = freqToSlider(p.freq);
+      table.appendChild(freqInput);
+
+      const freqReadout = document.createElement('div');
+      freqReadout.className = 'freq-readout';
+      freqReadout.textContent = Math.round(p.freq);
+      table.appendChild(freqReadout);
+
+      const ampInput = document.createElement('input');
+      ampInput.type = 'range';
+      ampInput.min = 0;
+      ampInput.max = 100;
+      ampInput.value = p.amp * 100;
+      table.appendChild(ampInput);
+
+      const ampReadout = document.createElement('div');
+      ampReadout.className = 'amp-readout';
+      ampReadout.textContent = p.amp.toFixed(2);
+      table.appendChild(ampReadout);
+
+      p.freqInput = freqInput;
+      p.ampInput = ampInput;
+      p.freqReadout = freqReadout;
+      p.ampReadout = ampReadout;
+
+      freqInput.addEventListener('input', () => {
+        p.freq = sliderToFreqLin(parseFloat(freqInput.value));
+        freqReadout.textContent = Math.round(p.freq);
+        updateScope();
+        applyToOsc(p);
+      });
+      ampInput.addEventListener('input', () => {
+        p.amp = parseFloat(ampInput.value) / 100;
+        ampReadout.textContent = p.amp.toFixed(2);
+        updateScope();
+        applyToOsc(p);
+      });
+    }
+
+    function updateScope() {
+      path.setAttribute('d', buildPath(partials, 600, 160));
+    }
+
+    // Active-partial count for normalization (so adding more partials doesn't pile up loud)
+    function activeCount() {
+      let n = 0;
+      for (const p of partials) if (p.amp > 0.001) n++;
+      return Math.max(1, n);
+    }
+
+    function applyToOsc(p) {
+      if (!p.osc) return;
+      const ctx = getCtx();
+      // Per-partial gain scales with 1/sqrt(activeCount) to keep loudness perceptually steady
+      const scale = 0.18 / Math.sqrt(activeCount());
+      p.gain.gain.setTargetAtTime(p.amp * scale, ctx.currentTime, 0.02);
+      p.osc.frequency.setTargetAtTime(p.freq, ctx.currentTime, 0.01);
+    }
+
+    function refreshAllGains() {
+      for (const p of partials) applyToOsc(p);
+    }
+
+    let isPlaying = false;
+
+    function start() {
+      const ctx = getCtx();
+      const scale = 0.18 / Math.sqrt(activeCount());
+      for (const p of partials) {
+        p.osc = ctx.createOscillator();
+        p.gain = ctx.createGain();
+        p.osc.type = 'sine';
+        p.osc.frequency.value = p.freq;
+        p.gain.gain.value = 0;
+        p.osc.connect(p.gain);
+        p.gain.connect(ctx.destination);
+        p.osc.start();
+        p.gain.gain.linearRampToValueAtTime(p.amp * scale, ctx.currentTime + 0.05);
+      }
+      isPlaying = true;
+      playBtn.textContent = 'Stop';
+      playBtn.classList.add('playing');
+    }
+
+    function stop() {
+      const ctx = getCtx();
+      for (const p of partials) {
+        if (p.gain) p.gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.05);
+        if (p.osc) {
+          const oscToStop = p.osc;
+          setTimeout(() => { try { oscToStop.stop(); } catch (e) {} }, 100);
+        }
+        p.osc = null;
+        p.gain = null;
+      }
+      isPlaying = false;
+      playBtn.textContent = 'Play';
+      playBtn.classList.remove('playing');
+    }
+
+    // When amp slider changes during playback, recompute all gains so balance stays sane
+    for (const p of partials) {
+      p.ampInput.addEventListener('input', () => {
+        if (isPlaying) refreshAllGains();
+      });
+    }
+
+    playBtn.addEventListener('click', () => { isPlaying ? stop() : start(); });
+    resetBtn.addEventListener('click', () => {
+      for (let i = 0; i < NUM_PARTIALS; i++) {
+        const p = partials[i];
+        p.freq = defaultFreqs[i];
+        p.amp = 0;
+        p.freqInput.value = freqToSlider(p.freq);
+        p.ampInput.value = 0;
+        p.freqReadout.textContent = Math.round(p.freq);
+        p.ampReadout.textContent = p.amp.toFixed(2);
+      }
+      updateScope();
+      if (isPlaying) refreshAllGains();
+    });
+
+    updateScope();
+  })();
+
+  // ==================================================================
+  // SECTION 3: Harmonic Series
+  // ==================================================================
+  // ==================================================================
+  // SECTION 4: Timbre
+  // ==================================================================
+  // Both share the same architecture: locked harmonic frequencies,
+  // user-controlled amplitudes, plus a fundamental slider. Build them
+  // from a shared factory.
+
+  function buildHarmonicTool(opts) {
+    const NUM_PARTIALS = 6;
+    const tool = document.getElementById(opts.toolId);
+    if (!tool) return;
+
+    const playBtn = document.getElementById(opts.playId);
+    const resetBtn = document.getElementById(opts.resetId);
+    const path = document.getElementById(opts.pathId);
+    const table = document.getElementById(opts.tableId);
+    const fundSlider = document.getElementById(opts.fundId);
+    const fundLabel = document.getElementById(opts.fundLabelId);
+
+    let fundamental = parseFloat(fundSlider.value);
+
+    const partials = [];
+    for (let i = 0; i < NUM_PARTIALS; i++) {
+      partials.push({
+        ratio: i + 1,
+        amp: opts.defaultAmps[i],
+        osc: null,
+        gain: null,
+        ampInput: null,
+        ampReadout: null,
+        freqReadout: null
+      });
+    }
+
+    function partialFreq(p) { return fundamental * p.ratio; }
+
+    // Build rows
+    for (let i = 0; i < NUM_PARTIALS; i++) {
+      const p = partials[i];
+
+      const numCell = document.createElement('div');
+      numCell.className = 'partial-num';
+      numCell.innerHTML = (i + 1) + '<span>' + (i === 0 ? 'fundamental' : 'harmonic') + '</span>';
+      table.appendChild(numCell);
+
+      const ratioCell = document.createElement('div');
+      ratioCell.className = 'ratio-display';
+      ratioCell.textContent = p.ratio + '×';
+      table.appendChild(ratioCell);
+
+      const freqReadout = document.createElement('div');
+      freqReadout.className = 'freq-readout';
+      freqReadout.textContent = Math.round(partialFreq(p)) + ' Hz';
+      table.appendChild(freqReadout);
+
+      const ampInput = document.createElement('input');
+      ampInput.type = 'range';
+      ampInput.min = 0;
+      ampInput.max = 100;
+      ampInput.value = p.amp * 100;
+      table.appendChild(ampInput);
+
+      const ampReadout = document.createElement('div');
+      ampReadout.className = 'amp-readout';
+      ampReadout.textContent = p.amp.toFixed(2);
+      table.appendChild(ampReadout);
+
+      p.ampInput = ampInput;
+      p.ampReadout = ampReadout;
+      p.freqReadout = freqReadout;
+
+      ampInput.addEventListener('input', () => {
+        p.amp = parseFloat(ampInput.value) / 100;
+        ampReadout.textContent = p.amp.toFixed(2);
+        updateScope();
+        if (isPlaying) refreshAllGains();
+      });
+    }
+
+    function getPartialsForDraw() {
+      return partials.map(p => ({ freq: partialFreq(p), amp: p.amp }));
+    }
+
+    function updateScope() {
+      path.setAttribute('d', buildPath(getPartialsForDraw(), 600, 160));
+    }
+
+    function activeCount() {
+      let n = 0;
+      for (const p of partials) if (p.amp > 0.001) n++;
+      return Math.max(1, n);
+    }
+
+    function applyToOsc(p) {
+      if (!p.osc) return;
+      const ctx = getCtx();
+      const scale = 0.18 / Math.sqrt(activeCount());
+      p.gain.gain.setTargetAtTime(p.amp * scale, ctx.currentTime, 0.02);
+      p.osc.frequency.setTargetAtTime(partialFreq(p), ctx.currentTime, 0.01);
+    }
+
+    function refreshAllGains() {
+      for (const p of partials) applyToOsc(p);
+    }
+
+    function refreshAllFreqs() {
+      for (const p of partials) {
+        p.freqReadout.textContent = Math.round(partialFreq(p)) + ' Hz';
+        applyToOsc(p);
+      }
+    }
+
+    fundSlider.addEventListener('input', () => {
+      fundamental = parseFloat(fundSlider.value);
+      fundLabel.textContent = Math.round(fundamental) + ' Hz';
+      refreshAllFreqs();
+      updateScope();
+    });
+
+    let isPlaying = false;
+
+    function start() {
+      const ctx = getCtx();
+      const scale = 0.18 / Math.sqrt(activeCount());
+      for (const p of partials) {
+        p.osc = ctx.createOscillator();
+        p.gain = ctx.createGain();
+        p.osc.type = 'sine';
+        p.osc.frequency.value = partialFreq(p);
+        p.gain.gain.value = 0;
+        p.osc.connect(p.gain);
+        p.gain.connect(ctx.destination);
+        p.osc.start();
+        p.gain.gain.linearRampToValueAtTime(p.amp * scale, ctx.currentTime + 0.05);
+      }
+      isPlaying = true;
+      playBtn.textContent = 'Stop';
+      playBtn.classList.add('playing');
+    }
+
+    function stop() {
+      const ctx = getCtx();
+      for (const p of partials) {
+        if (p.gain) p.gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.05);
+        if (p.osc) {
+          const oscToStop = p.osc;
+          setTimeout(() => { try { oscToStop.stop(); } catch (e) {} }, 100);
+        }
+        p.osc = null;
+        p.gain = null;
+      }
+      isPlaying = false;
+      playBtn.textContent = 'Play';
+      playBtn.classList.remove('playing');
+    }
+
+    playBtn.addEventListener('click', () => { isPlaying ? stop() : start(); });
+
+    resetBtn.addEventListener('click', () => {
+      for (let i = 0; i < NUM_PARTIALS; i++) {
+        const p = partials[i];
+        p.amp = opts.defaultAmps[i];
+        p.ampInput.value = p.amp * 100;
+        p.ampReadout.textContent = p.amp.toFixed(2);
+      }
+      fundamental = opts.defaultFundamental;
+      fundSlider.value = opts.defaultFundamental;
+      fundLabel.textContent = Math.round(fundamental) + ' Hz';
+      refreshAllFreqs();
+      updateScope();
+      if (isPlaying) refreshAllGains();
+    });
+
+    fundLabel.textContent = Math.round(fundamental) + ' Hz';
+    updateScope();
+  }
+
+  // Harmonic series tool: starts with all amps at zero (students discover by adding)
+  buildHarmonicTool({
+    toolId: 'harmonicTool',
+    playId: 'harmonicPlay',
+    resetId: 'harmonicReset',
+    pathId: 'harmonicPath',
+    tableId: 'harmonicPartials',
+    fundId: 'harmonicFund',
+    fundLabelId: 'harmonicFundLabel',
+    defaultAmps: [0, 0, 0, 0, 0, 0],
+    defaultFundamental: 220
+  });
+
+  // Timbre tool: starts with a non-trivial sawtooth-ish mix so students have something to modify
+  buildHarmonicTool({
+    toolId: 'timbreTool',
+    playId: 'timbrePlay',
+    resetId: 'timbreReset',
+    pathId: 'timbrePath',
+    tableId: 'timbrePartials',
+    fundId: 'timbreFund',
+    fundLabelId: 'timbreFundLabel',
+    // Sawtooth-shaped amp envelope: 1/n falloff. Yields a rich, identifiable starting timbre.
+    defaultAmps: [1.00, 0.50, 0.33, 0.25, 0.20, 0.17],
+    defaultFundamental: 220
+  });
+
+})();
+</script>
+
+</body>
+</html>

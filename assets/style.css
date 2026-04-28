@@ -255,6 +255,26 @@ th {
 table.shortcut-table td:first-child { width: 38%; }
 table.shortcut-table td:first-child kbd { margin-right: 0.25rem; }
 
+/* --- Vocabulary lists --- */
+/* Used at the bottom of readings and tools for term/definition pairs. */
+
+.vocab dt {
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 1rem;
+  font-size: 0.92rem;
+}
+
+.vocab dd {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+.vocab dd > p:first-child {
+  margin-top: 0;
+}
+
 /* --- Callout boxes --- */
 
 .callout {
