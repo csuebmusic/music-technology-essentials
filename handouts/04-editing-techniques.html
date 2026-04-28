@@ -76,13 +76,13 @@
   <div class="subtitle">Where each move from Monday lives in Audacity. Then Project 1 begins.</div>
 </div>
 
-<p class="lede">Monday's reading walked you through nine editing moves: cut, trim, splice, fade, crossfade, loop, reverse, time-stretch, pitch-shift. Today's job is to find each one in Audacity and get hands on it using sounds from the Project 1 sample bank. By the end of the session, every technique from the reading will live in your hands as a real button you've clicked, and you'll have started Project 1 with a saved Audacity project containing your first three sounds.</p>
+<p class="lede">Monday's reading walked you through nine editing moves: cut, trim, splice, fade, crossfade, loop, reverse, time-stretch, pitch-shift. Today we add a tenth: Change Speed, the older tape-physics version of time and pitch manipulation that's worth experiencing before the modern decoupled versions. Today's job is to find each one in Audacity and get hands on it using sounds from the Project 1 sample bank. By the end of the session, every technique will live in your hands as a real button you've clicked, and you'll have started Project 1 with a saved Audacity project containing your first three sounds.</p>
 
 <h2>What we're doing today</h2>
 
 <ol class="steps">
   <li>Set up: connect to the NAS, copy the Project 1 sample bank into your local working folder, create a Project 1 Audacity project.</li>
-  <li>Walk through nine editing techniques in order. For each: a one-line recap, where to click in Audacity, and a hands-on exercise on a sample.</li>
+  <li>Walk through ten editing techniques in order. For each: a one-line recap, where to click in Audacity, and a hands-on exercise on a sample.</li>
   <li>Open the Project 1 prompt. Browse the bank, pick three sounds you find interesting, place them in your project, save.</li>
   <li>Upload everything to the NAS using the end-of-session routine.</li>
 </ol>
@@ -121,7 +121,56 @@
 
 <hr>
 
-<h2>The nine techniques</h2>
+<h2>Before the techniques: zoom in, find a zero crossing</h2>
+
+<p>One thing to learn before any of the editing moves below: <strong>zoom into the waveform</strong>. Most edits look approximate when you're zoomed all the way out; zoomed in, you can see the actual shape of the wave and place a cut or fade exactly where you mean to.</p>
+
+<p>The other thing to learn together with zooming is the idea of a <strong>zero crossing</strong>. Remember from Mon Wk 2: the y-axis on a waveform is <em>amplitude</em>. The horizontal line through the middle of the track is amplitude zero, where the wave is momentarily silent on its way from positive to negative or back. A <em>zero crossing</em> is any point where the waveform crosses that center line.</p>
+
+<p>Zero crossings matter because of click pops. If you cut a clip in the middle of a wave (where the amplitude is, say, +0.6), the playback hits +0.6 and then jumps instantly to wherever the next clip starts. That instant jump is heard as a click. If you cut at a zero crossing, the amplitude is zero on both sides of the cut, so there's no jump and no click. <strong>The habit: zoom in, find a zero crossing, cut there.</strong></p>
+
+<h3>Zoom commands</h3>
+
+<table>
+  <thead>
+    <tr><th>Action</th><th>Where in Audacity</th><th>Shortcut</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Zoom in</td><td>View → Zoom → Zoom In</td><td><kbd>Cmd</kbd> + <kbd>1</kbd></td></tr>
+    <tr><td>Zoom out</td><td>View → Zoom → Zoom Out</td><td><kbd>Cmd</kbd> + <kbd>3</kbd></td></tr>
+    <tr><td>Zoom to selection</td><td>View → Zoom → Zoom to Selection</td><td><kbd>Cmd</kbd> + <kbd>E</kbd></td></tr>
+    <tr><td>Fit project to width</td><td>View → Track Size → Fit to Width</td><td><kbd>Cmd</kbd> + <kbd>F</kbd></td></tr>
+  </tbody>
+</table>
+
+<p>The most useful pair: <kbd>Cmd</kbd> + <kbd>E</kbd> (zoom to whatever is selected) and <kbd>Cmd</kbd> + <kbd>F</kbd> (zoom back out to see the whole project). You'll bounce between these constantly.</p>
+
+<h3>Snap a selection to zero crossings</h3>
+
+<p>Audacity has a built-in command that <em>moves your selection's edges to the nearest zero crossings automatically</em>. After you make a selection, press <kbd>Z</kbd>. The selection edges shift slightly (often by just a few samples) to land at zero. This is the easiest way to get clean cut boundaries without eyeballing them.</p>
+
+<p>Menu path: <span class="menu-path">Select → At Zero Crossings</span> · <kbd>Z</kbd></p>
+
+<h3>Try it</h3>
+
+<ol class="steps">
+  <li>Import any sound from the bank to practice on.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>F</kbd> to fit the whole sound in the window.</li>
+  <li>Drag-select a region somewhere in the middle of the waveform. Don't worry about where the boundaries land.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>E</kbd> to zoom into your selection. Now you can see individual cycles of the wave.</li>
+  <li>Look at where your selection's left and right edges fall. Are they on the center line, or partway up or down a cycle?</li>
+  <li>Press <kbd>Z</kbd>. Watch the edges move slightly. They're now at zero crossings.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>F</kbd> to zoom back out.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Habit to build</div>
+  <p>Every time you make a selection that you're about to <em>cut</em>, <em>delete</em>, or <em>copy</em>, press <kbd>Z</kbd> first. It takes one keystroke and prevents most click pops. Fades, which we'll cover in technique 4, are the other way to clean up edit boundaries; using both together is even better.</p>
+</div>
+
+<hr>
+
+<h2>The ten techniques</h2>
 
 <p>Each technique below has the same shape: a one-line recap of what it does, the exact place to find it in Audacity, and a hands-on exercise on a sample from the bank. Work through them in order. Don't skip; the order builds.</p>
 
@@ -287,35 +336,57 @@
 </div>
 
 <!-- ============================================================ -->
-<!-- 8. TIME-STRETCH -->
+<!-- 8. CHANGE SPEED (coupled time + pitch, tape physics) -->
 <!-- ============================================================ -->
 
 <div class="technique">
-  <h3>8 · Time-stretch</h3>
+  <h3>8 · Change Speed</h3>
 
-  <p>Change the duration of a sound without changing its pitch. A modern signal-processing operation that decouples what tape kept coupled.</p>
+  <p>Change the duration <em>and</em> pitch of a sound together, the way tape does. Slow it down and the pitch drops; speed it up and the pitch rises. This is the original time-and-pitch move from before digital audio existed.</p>
+
+  <div class="where-row">
+    <div class="where">Where in Audacity</div>
+    <span class="menu-path">Effect → Pitch and Tempo → Change Speed and Pitch…</span>
+  </div>
+
+  <p>This was the only kind of time-and-pitch operation available for most of the twentieth century. If a tape engineer slowed a recording down, the pitch dropped with it; that's just physics. The reading covered the modern decoupled versions (techniques 9 and 10 below), but it's worth doing the coupled version first, because it's the most intuitive starting point and because it sounds different.</p>
+
+  <div class="exercise-label">Exercise</div>
+  <p class="exercise">Find a sound from <code>sustain-long/</code> or <code>texture-continuous/</code> (something with at least a few seconds of stable sustain). Import it. Select all of it. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Speed and Pitch…</span> In the dialog, set Percent Change to <strong>-50</strong> (which both doubles the duration and drops the pitch by roughly an octave). Click <strong>Apply</strong>. Listen. Then undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and try <strong>+100</strong> (which both halves the duration and raises the pitch by roughly an octave). Listen again.</p>
+
+  <p class="listen">Listen for: the duration <em>and</em> pitch both move together, in the same direction. Slower means lower; faster means higher. The two are coupled, exactly the way they would be if you were physically slowing or speeding a tape reel. Hold onto how this sounds. The next two techniques will decouple them, and you'll hear what that decoupling does.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 9. TIME-STRETCH (decoupled, duration only) -->
+<!-- ============================================================ -->
+
+<div class="technique">
+  <h3>9 · Time-stretch</h3>
+
+  <p>Change the duration of a sound <em>without</em> changing its pitch. A modern signal-processing operation that decouples what tape kept coupled.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
     <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span>
   </div>
 
-  <p>Audacity calls this "Change Tempo." A dialog opens; you can change the tempo by a percentage or by entering a new length in seconds. <strong>Don't confuse it with "Change Speed":</strong> Change Speed is the tape-physics version that couples time and pitch (slower means lower-pitched, like slowing tape down). Change Tempo decouples them and is what we want here.</p>
+  <p>Audacity calls this "Change Tempo." A dialog opens; you can change the tempo by a percentage or by entering a new length in seconds. The pitch stays exactly where it was. This is what the previous technique would do <em>if</em> you could somehow disconnect duration from pitch, which is exactly what modern signal processing makes possible.</p>
 
   <div class="exercise-label">Exercise</div>
-  <p class="exercise">Find a sound from <code>sustain-long/</code> or <code>texture-continuous/</code> (something with at least a few seconds of stable sustain). Import it. Select all of it. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span> In the dialog, set Percent Change to <strong>-50</strong> (which doubles the duration) or to <strong>+100</strong> (which halves it). Click <strong>Apply</strong>. Listen.</p>
+  <p class="exercise">Use the same sound you just used for Change Speed (or a fresh long-sustain sound). Import. Select all. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span> Set Percent Change to <strong>-50</strong>. Click <strong>Apply</strong>. Listen.</p>
 
-  <p class="listen">Listen for: the sound is now twice as long (or half as long), but the pitch is exactly where it was before. The tempo changed, the pitch didn't. Compare this to what would happen if you slowed a tape down: the tape's pitch would drop with the speed. Modern time-stretch decouples them.</p>
+  <p class="listen">Listen for: the sound is now twice as long, just like Change Speed at -50%. But the pitch is <em>exactly where it was before</em>, not an octave lower. This is the decoupling. The same time change, with no pitch consequence. That's the thing tape couldn't do.</p>
 </div>
 
 <!-- ============================================================ -->
-<!-- 9. PITCH-SHIFT -->
+<!-- 10. PITCH-SHIFT (decoupled, pitch only) -->
 <!-- ============================================================ -->
 
 <div class="technique">
-  <h3>9 · Pitch-shift</h3>
+  <h3>10 · Pitch-shift</h3>
 
-  <p>Change the pitch of a sound without changing its duration. The complement to time-stretch.</p>
+  <p>Change the pitch of a sound <em>without</em> changing its duration. The complement to time-stretch.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
@@ -325,16 +396,16 @@
   <p>The dialog lets you specify the change in semitones, percent, or as a from-to musical pitch. Semitones is the most musically intuitive: <strong>+12 semitones is one octave up, -12 is one octave down</strong>.</p>
 
   <div class="exercise-label">Exercise</div>
-  <p class="exercise">Use the same kind of long-sustain sound as the previous exercise (or a fresh one). Import. Select all. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Pitch…</span> Set Semitones to <strong>-12</strong> (one octave down). Click <strong>Apply</strong>. Listen. Then undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and try <strong>+7</strong> (a perfect fifth up). Listen again.</p>
+  <p class="exercise">Use the same kind of long-sustain sound. Import. Select all. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Pitch…</span> Set Semitones to <strong>-12</strong> (one octave down). Click <strong>Apply</strong>. Listen. Then undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and try <strong>+7</strong> (a perfect fifth up). Listen again.</p>
 
-  <p class="listen">Listen for: the sound's duration is unchanged, but its pitch is now lower (or higher). Compare to time-stretch: there, the tempo changed and the pitch held. Here, the pitch changes and the tempo holds. These two effects are complementary, and together they let you adjust either dimension of a sound independently of the other.</p>
+  <p class="listen">Listen for: the duration is unchanged, but the pitch has moved. Three operations, three different relationships between time and pitch: Change Speed couples them (both move together), Change Tempo moves time only, Change Pitch moves pitch only. Together these three give you full control over either dimension, the other dimension, or both.</p>
 </div>
 
 <hr>
 
 <h2>Project 1 begins</h2>
 
-<p>You've now touched all nine editing techniques. The rest of the session is for starting Project 1.</p>
+<p>You've now touched all ten editing techniques. The rest of the session is for starting Project 1.</p>
 
 <h3>Open the prompt</h3>
 
@@ -385,7 +456,7 @@
 
 <hr>
 
-<h2>Quick reference · the nine techniques</h2>
+<h2>Quick reference · the ten techniques</h2>
 
 <table>
   <thead>
@@ -402,8 +473,9 @@
     <tr><td>Loop (playback)</td><td>Transport → Looping → Loop on/off</td><td><kbd>L</kbd></td></tr>
     <tr><td>Loop (in audio)</td><td>Edit → Copy + Edit → Paste, repeated</td><td><kbd>Cmd</kbd> + <kbd>C</kbd>, <kbd>Cmd</kbd> + <kbd>V</kbd></td></tr>
     <tr><td>Reverse</td><td>Effect → Special → Reverse</td><td>(none)</td></tr>
-    <tr><td>Time-stretch</td><td>Effect → Pitch and Tempo → Change Tempo</td><td>(none)</td></tr>
-    <tr><td>Pitch-shift</td><td>Effect → Pitch and Tempo → Change Pitch</td><td>(none)</td></tr>
+    <tr><td>Change Speed (couples time + pitch)</td><td>Effect → Pitch and Tempo → Change Speed and Pitch</td><td>(none)</td></tr>
+    <tr><td>Time-stretch (decoupled)</td><td>Effect → Pitch and Tempo → Change Tempo</td><td>(none)</td></tr>
+    <tr><td>Pitch-shift (decoupled)</td><td>Effect → Pitch and Tempo → Change Pitch</td><td>(none)</td></tr>
     <tr><td>Repeat last effect</td><td>Effect → Repeat Last Effect</td><td><kbd>Cmd</kbd> + <kbd>R</kbd></td></tr>
     <tr><td>Undo</td><td>Edit → Undo</td><td><kbd>Cmd</kbd> + <kbd>Z</kbd></td></tr>
   </tbody>

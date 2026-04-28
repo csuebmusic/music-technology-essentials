@@ -429,39 +429,41 @@ Two halves:
 
 ### Block-by-block
 
-#### Block 1 — Setup (10 min)
+#### Block 1 — Setup, zoom, zero crossings (15 min)
 
-Walk students through the handout's "Setup" section together on the projector. Two parts:
+Walk students through the handout's "Setup" and "Before the techniques" sections together on the projector. Three parts:
 
 - NAS connect, then **copy the entire sample bank** (~40-80 sounds) from `shared/sample-banks/project1/` into the student's local `~/Documents/lastname/project-01/sources/`. The local copy is what they'll work from for the rest of the module. The first time this copy runs it'll take a minute or two depending on bank size.
 - Open Audacity, save an empty project as `lastname-project01.aup3` in `~/Documents/lastname/project-01/`. This is *the* Project 1 file students will keep returning to.
+- Walk through the zoom and zero-crossings prelude. Show the Cmd+E (zoom to selection) and Cmd+F (fit to width) pair on the projector. Then make a selection in a sample, press Z, and point out how the edges shift slightly to land on zero crossings. The handout has a "Try it" mini-exercise; students do it on their own machines once they've seen it on the projector. Total prelude time: about 5 min, included in this 15 min block.
 
-Students who get behind here will fall behind on every technique exercise after, since each one assumes a working local copy of the bank. Don't move to Block 2 until everyone has the bank copied and the project saved.
+Students who get behind here will fall behind on every technique exercise after, since each one assumes a working local copy of the bank and the zoom/zero-crossings habit. Don't move to Block 2 until everyone has the bank copied, the project saved, and has tried Z on a selection at least once.
 
-#### Block 2 — The nine techniques (60 min)
+#### Block 2 — The ten techniques (60 min)
 
 This is the heart of the session. Each technique in the handout has the same shape: one-line recap, where to click in Audacity, hands-on exercise on a sample, "listen for" note. The handout is detailed enough that students could do this on their own; your job is (a) demonstrating each move on the projector so they have a model to mirror, (b) catching when someone's stuck on a UI gotcha (Trim hidden under Remove Special, Reverse hidden under Special, etc.), (c) keeping pace.
 
-Suggested per-technique pacing (~6 min each, but some are faster):
+Suggested per-technique pacing (~6 min each on average, with the time/pitch trio sharing exercise momentum):
 
 | # | Technique | Pace target | Note |
 |---|---|---|---|
-| 1 | Cut | 4 min | Fast; students did this in Wed Wk 2 |
+| 1 | Cut | 4 min | Fast; students did this in Wed Wk 2. Reinforce the Z-then-cut habit from Block 1 |
 | 2 | Trim | 5 min | Flag the "hidden under Remove Special" gotcha explicitly |
 | 3 | Splice | 8 min | The longest, since it's import-three-sounds + arrange |
 | 4 | Fade in/out | 6 min | The first Effect-menu use; orient to how Effect submenus work |
 | 5 | Crossfade | 7 min | Demoing on the projector helps; the drag-onto-same-track move trips students up |
 | 6 | Loop | 6 min | Two paths (transport-loop vs. paste-in-succession) |
 | 7 | Reverse | 4 min | Fast; the listening payoff is dramatic |
-| 8 | Time-stretch | 6 min | Effect dialog with multiple options; explain Change Tempo vs. Change Speed |
-| 9 | Pitch-shift | 4 min | Fast once they've seen the Pitch and Tempo submenu in #8 |
+| 8 | Change Speed | 5 min | The coupled tape-physics version. Most intuitive starting point of the time/pitch trio |
+| 9 | Time-stretch | 4 min | Direct A/B with the same sound from #8: same -50%, but pitch holds. Decoupling is audible |
+| 10 | Pitch-shift | 4 min | Completes the trio. Together #8-#10 make the "couple vs. decouple" idea concrete |
 
-Total: ~50 min. The remaining 10 min absorb individual help and the inevitable "my Audacity opened in a weird state" moments.
+Total: ~53 min. The remaining 7 min absorb individual help and inevitable "my Audacity opened in a weird state" moments.
 
 **Things to call out as you go:**
 
 - **The Effect menu's submenus.** First time students open Effect, they see categories (Fading, Pitch and Tempo, Special, etc.), not individual effects. Show this on the projector at technique 4 (Fades) so they understand the menu structure before they need it again.
-- **"Change Tempo" vs. "Change Speed."** The reading's *time-stretch* (decoupled, modern) is **Change Tempo**. The reading's mention of *tape-physics coupling* (where slowing a sound also lowers its pitch) corresponds to **Change Speed**. Clarify this verbally at technique 8 since it's the only place the two appear together.
+- **The time/pitch trio (techniques 8-10).** This is the lab's biggest pedagogical payoff. The handout sequences them to make the coupling/decoupling concrete: Change Speed first (couples both, like tape), then Change Tempo (time only, pitch holds), then Change Pitch (pitch only, time holds). Encourage students to use the *same* source sound for all three and compare directly. The "wait, the pitch didn't drop?" moment when they hear technique 9 after technique 8 is the lesson landing.
 - **Save habits.** Encourage students to keep their technique experiments in a separate scratch project, not in `lastname-project01.aup3`. The Project 1 file should be reserved for actual project work. The handout suggests this; reinforce it.
 
 #### Block 3 — Project 1 begins (~30 min)
@@ -502,15 +504,16 @@ Final 5 minutes: students follow the handout's end-of-session routine. Save the 
 
 ### Pacing fallbacks
 
-The session is tight. 100 min for a setup + 9 techniques + Project 1 starter + NAS upload is fully booked. Like Wed Wk 2, students who don't finish in class can finish the technique exercises at home — the handout is self-contained and the bank is on their local machine. What MUST happen in class:
+The session is tight. 100 min for a setup + zoom prelude + ten techniques + Project 1 starter + NAS upload runs slightly over on paper. Like Wed Wk 2, students who don't finish in class can finish technique exercises at home: the handout is self-contained and the bank is on their local machine. What MUST happen in class:
 
 1. The bank must get copied locally (Block 1)
-2. Crossfade and time-stretch must be demonstrated on the projector (these are the trickiest UI moves; students who skip them in class often skip them entirely in their pieces)
-3. Students must leave with `lastname-project01.aup3` containing three sounds, saved to NAS
+2. The zoom and zero-crossings habit must get a projector demo (Block 1's prelude). Without this, every cut they make for the next two weeks will produce click pops they don't know how to fix
+3. Crossfade and the time/pitch trio (techniques 5 and 8-10) must be demonstrated on the projector (these are the trickiest moves; students who skip them in class often skip them entirely in their pieces)
+4. Students must leave with `lastname-project01.aup3` containing three sounds, saved to NAS
 
-If running long: skip the in-audio loop variant in technique 6 (the playback-loop demo is enough). Skip the +7 semitone variant in technique 9 (the -12 octave demo is enough).
+If running long: skip the in-audio loop variant in technique 6 (the playback-loop demo is enough). Skip the +100 percent variant in technique 8 and the +7 semitone variant in technique 10 (the -50%/-12 demos are enough).
 
-If running short (rare): give 5-10 more minutes of free Project 1 sketching. More browsing time always helps.
+If running short (rare): give more time to free Project 1 sketching. More browsing time always helps.
 
 ### After class
 
