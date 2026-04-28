@@ -259,11 +259,11 @@ Quick close: "Next Monday we go deeper into editing. Wednesday after that, you s
 
 Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course — Module 4's synthesis section depends on it.
 
-The reading for today is [`course/readings/module-02-week-03-editing-envelope.html`](../course/readings/module-02-week-03-editing-envelope.html). It includes 9 audio demos: three contrasting envelope shapes (sharp, sustained, evolving), one source transformed by four edits (truncate, reverse, fade-in), and a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
+The reading for today is [`course/readings/module-02-week-03-editing-envelope.html`](../course/readings/module-02-week-03-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and three sine tones (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
-- Read the Mon Wk 3 reading and listen to all 9 audio demos
+- Read the Mon Wk 3 reading and listen to all 12 audio demos
 - Pull up the listening assignment — students have had it since Monday but most won't have started; nudge them today
 - Pull up Audacity on the instructor machine; you'll do a few short demos
 - Have a few sample sounds queued — ideally with contrasting envelopes (a sharp percussion hit, a sustained string drone, a complex evolving sound). The reading's audio demos are good fallbacks if your sample bank doesn't have variety yet.
@@ -304,7 +304,9 @@ This vocabulary lets students *describe* what they want from a sound, which is t
 
 #### Block 3 — Editing concepts (45 min)
 
-Walk through the vocabulary of editing. For each, demonstrate briefly in Audacity on the projector.
+The reading structures these as: six fairly intuitive moves, then a pause to introduce time-pitch coupling, then time-stretch / pitch-shift as the modern decoupled operations, then reverse last. Use that same arc on the projector.
+
+**The six intuitive moves (15 min).** Walk through and demonstrate briefly in Audacity:
 
 - **Cut.** Removes a selection; the timeline closes the gap.
 - **Trim.** Removes everything *outside* a selection; keeps only the selected region.
@@ -312,11 +314,23 @@ Walk through the vocabulary of editing. For each, demonstrate briefly in Audacit
 - **Fade in / fade out.** Smooth volume ramp at the boundary of an edit. Prevents clicks. Always use them, even just 5-10 ms worth.
 - **Crossfade.** Where two pieces of audio overlap, one fading out as the other fades in. Smooth transitions between regions.
 - **Loop.** Repeating a section. Either as a working aid (looping while listening) or a compositional tool (a tape-loop pattern).
-- **Reverse.** Flips a section in time. The musique concrète tradition leaned hard on this. Demonstrate: a piano note played forward sounds attacking; played backward, it sounds swelling.
-- **Time-stretch.** Make a sound longer or shorter without changing its pitch (or, in older techniques, with the pitch changing as a side effect).
-- **Pitch-shift.** Move a sound up or down in pitch without changing its duration (or, again, with duration shifting as a side effect).
 
-Connect this back to the listening: "Schaeffer didn't have software. He did all of this with razor blades and tape. The principle of *editing as a creative move* is the same; the tools are radically different."
+These should feel obvious to students. The "you cut a thing, you put a thing next to another thing" intuition is fine — that's what the reading sets up. Don't overteach them.
+
+**The pause: time-pitch coupling (15 min).** This is the conceptual hinge. Open the reading on the projector and show the three-sine SVG diagram (source / slow / fast). Talk through what's visible: same waveform, three speeds. The slowed version's cycles are wider; the sped-up version's cycles are narrower. That's why pitch changes — pitch is determined by how often the cycles repeat per second.
+
+Then play the three audio demos in the reading (`tape-source.wav`, `tape-slow.wav`, `tape-fast.wav`). Ask the room: "What's different between the source and the slow version?" Get them to articulate both: it's longer *and* it's lower. Same for fast: shorter *and* higher. The point landing is that these aren't two separate effects; they're the same effect viewed two ways.
+
+A brief historical note lands well here: "Schaeffer worked entirely in this world. Every tape recording until about 1990 worked this way. If you wanted longer, you went lower. If you wanted higher, you went shorter. There was no choice."
+
+**Time-stretch and pitch-shift as the decoupling (10 min).** Now that students know what's *physically* coupled, the modern operations make sense:
+
+- **Time-stretch.** Make a sound longer or shorter *without* changing its pitch. Software analyzes the recording and rebuilds it at the new duration. Demonstrate in Audacity: Effect → Change Tempo (this is Audacity's pitch-preserving time-stretch). Compare to Effect → Change Speed (which is Audacity's tape-style coupled change). The two effects are different operations that look superficially similar — students will mix them up. Be explicit: "Change Tempo keeps pitch. Change Speed changes both, like tape."
+- **Pitch-shift.** Move a sound up or down in pitch *without* changing its duration. Effect → Change Pitch. Demo a few semitones up and down. Note that extreme settings produce artifacts — interesting in their own right, but worth knowing they exist.
+
+**Reverse (5 min).** Save reverse for last. It's a different kind of operation: it's about *direction*, not duration or pitch. Effect → Reverse. Demonstrate: a piano note played forward sounds attacking; played backward, it sounds swelling. Connect back to envelope: "Remember from the envelope vocabulary — the attack is how a sound begins, the release is how it ends. Reverse swaps them."
+
+Close Block 3: "Schaeffer didn't have software. He did all of this with razor blades and tape — except for time-stretch and pitch-shift, which he literally couldn't do because the physics were locked together. The principle of editing as a creative move is the same; the tools are radically different."
 
 #### Block 4 — Envelope-listening exercise (10 min)
 

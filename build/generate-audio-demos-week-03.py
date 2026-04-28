@@ -2,7 +2,7 @@
 Generates audio demo files for the Module 2 Week 3 reading
 on editing concepts and envelope.
 
-Produces (9 files):
+Produces (12 files):
 
   Three contrasting envelopes (Section 1):
   - env-sharp.wav       : sharp attack, no sustain, fast release (woodblock-like)
@@ -18,6 +18,11 @@ Produces (9 files):
   Edit boundary demo (Section 3):
   - seam-hardcut.wav    : two pad sounds joined with no fade (audible click)
   - seam-crossfade.wav  : same two sounds joined with a 200 ms crossfade
+
+  Time-pitch coupling demo (Section 2, before time-stretch / pitch-shift):
+  - tape-source.wav     : 440 Hz sine, 1.5 s (the source / 1x reference)
+  - tape-slow.wav       : 220 Hz sine, 3.0 s (half-speed: longer + lower)
+  - tape-fast.wav       : 880 Hz sine, 0.75 s (double-speed: shorter + higher)
 
 Output: assets/audio/module-02-week-03/
 
@@ -202,6 +207,23 @@ def evolving_texture(duration_sec=4.5, sr=SR, seed=7):
     return output
 
 
+def sine_tone(freq, duration_sec, sr=SR, fade_s=0.005):
+    """
+    Pure sine tone with very short fade-in/fade-out (default 5 ms each)
+    to prevent click pops at the start and end. Used for the tape-coupling
+    demo where the visual is a clean sine and the audible result must be
+    just-the-pitch with no envelope artifacts.
+    """
+    n = int(duration_sec * sr)
+    t = np.arange(n) / sr
+    out = np.sin(2 * np.pi * freq * t).astype(np.float32)
+    fade_n = int(fade_s * sr)
+    if fade_n > 0 and 2 * fade_n < n:
+        out[:fade_n] *= np.linspace(0, 1, fade_n)
+        out[-fade_n:] *= np.linspace(1, 0, fade_n)
+    return out
+
+
 # ----- Editing operations -----
 
 def truncate(audio, duration_s, sr=SR):
@@ -292,6 +314,15 @@ def build():
     write_wav(os.path.join(OUT_DIR, "seam-hardcut.wav"), hard_cut_join(pad_a, pad_b))
     # Crossfade: 200 ms overlap.
     write_wav(os.path.join(OUT_DIR, "seam-crossfade.wav"), crossfade_join(pad_a, pad_b, fade_s=0.2))
+
+    # Section 2: time-pitch coupling demo (the physical tape relationship).
+    # Three sines: source, half-speed (lower + longer), double-speed (higher + shorter).
+    # The visual in the reading shows a single waveform stretched / compressed; these
+    # audio files give the audible counterpart. Peak gain reduced to -6 dBFS because
+    # pure sines are fatiguing.
+    write_wav(os.path.join(OUT_DIR, "tape-source.wav"), sine_tone(440.0, 1.5), peak_dbfs=-6.0)
+    write_wav(os.path.join(OUT_DIR, "tape-slow.wav"),   sine_tone(220.0, 3.0), peak_dbfs=-6.0)
+    write_wav(os.path.join(OUT_DIR, "tape-fast.wav"),   sine_tone(880.0, 0.75), peak_dbfs=-6.0)
 
 
 if __name__ == "__main__":
