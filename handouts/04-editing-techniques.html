@@ -116,8 +116,21 @@
 <ol class="steps">
   <li>Open Audacity. Confirm the project format is <strong>44.1 kHz, 16-bit</strong> (the Module 2 standard).</li>
   <li><strong>File → Save Project As…</strong> Save to <code>~/Documents/lastname/project-01/</code> as <code>lastname-project01.aup3</code>.</li>
-  <li>You now have an empty project saved at the right place. Today's exercises will fill it with experiments.</li>
+  <li>You now have an empty project saved at the right place. <strong>Leave it empty for now.</strong> This is the file you'll fill in during the "Project 1 begins" block at the end of class. Today's technique exercises live somewhere else (next step).</li>
 </ol>
+
+<h3>Create a scratch project for today's exercises</h3>
+
+<ol class="steps">
+  <li><strong>File → New</strong> (or <kbd>Cmd</kbd> + <kbd>N</kbd>) to open a new empty project.</li>
+  <li><strong>File → Save Project As…</strong> Save it to <code>~/Documents/lastname/project-01/</code> as <code>lastname-techniques-scratch.aup3</code>.</li>
+  <li>This is where the ten technique exercises will happen. You can experiment freely, undo, delete tracks, try things twice. The scratch project is throwaway; it lives on your machine and won't be uploaded to the NAS at the end.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Two projects, two purposes</div>
+  <p>Your Project 1 file (<code>lastname-project01.aup3</code>) is the real piece you'll be working on for the next two weeks. Your scratch file (<code>lastname-techniques-scratch.aup3</code>) is for today's hands-on practice. Keep them separate. When the techniques walkthrough is done, you'll close scratch and reopen Project 1 to start the actual piece.</p>
+</div>
 
 <hr>
 
@@ -154,13 +167,13 @@
 <h3>Try it</h3>
 
 <ol class="steps">
-  <li>Import any sound from the bank to practice on.</li>
+  <li>In your scratch project, import any sound from the bank to practice on.</li>
   <li>Press <kbd>Cmd</kbd> + <kbd>F</kbd> to fit the whole sound in the window.</li>
   <li>Drag-select a region somewhere in the middle of the waveform. Don't worry about where the boundaries land.</li>
   <li>Press <kbd>Cmd</kbd> + <kbd>E</kbd> to zoom into your selection. Now you can see individual cycles of the wave.</li>
   <li>Look at where your selection's left and right edges fall. Are they on the center line, or partway up or down a cycle?</li>
   <li>Press <kbd>Z</kbd>. Watch the edges move slightly. They're now at zero crossings.</li>
-  <li>Press <kbd>Cmd</kbd> + <kbd>F</kbd> to zoom back out.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>F</kbd> to zoom back out. Delete the track before moving on (it doesn't need to stay around).</li>
 </ol>
 
 <div class="callout">
@@ -174,7 +187,7 @@
 
 <p>Each technique below has the same shape: a one-line recap of what it does, the exact place to find it in Audacity, and a hands-on exercise on a sample from the bank. Work through them in order. Don't skip; the order builds.</p>
 
-<p>For each exercise, <strong>import the sound into your project</strong> (<strong>File → Import → Audio…</strong> or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>) so it appears as a new track. After you've applied the technique and listened, you can either <strong>undo</strong> (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and delete the track, or keep the result if you might use it in your piece. Don't try to make the result a finished thing; just practice the move.</p>
+<p>For each exercise, <strong>import the sound (or sounds) into your scratch project</strong> (<strong>File → Import → Audio…</strong> or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>) so each appears as a new track. After you've applied the technique and listened, <strong>delete the track(s) before starting the next exercise</strong> (click the track name in the track header, then <strong>Tracks → Remove Tracks</strong>). Keeping the scratch project clean between exercises means commands like <kbd>Cmd</kbd> + <kbd>A</kbd> (select all) will only affect the sound you're currently working on. Don't try to make any one result a finished thing; just practice the move.</p>
 
 <!-- ============================================================ -->
 <!-- 1. CUT -->
@@ -232,13 +245,13 @@
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
-    There's no single "splice" command. The basic recipe is <span class="menu-path">Edit → Cut</span> a region from one place, then <span class="menu-path">Edit → Paste</span> at the cursor position somewhere else (on the same track or a different one).
+    There's no single "splice" command. The basic recipe is to use <span class="menu-path">Edit → Cut</span> on a region from one place, then <span class="menu-path">Edit → Paste</span> at the cursor position somewhere else (on the same track or a different one).
   </div>
 
   <p>If you want the audio you cut from to <em>not</em> close the gap (so the original timing is preserved), use <span class="menu-path">Edit → Remove Special → Cut and leave gap</span> (<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>X</kbd>) instead of plain Cut.</p>
 
   <div class="exercise-label">Exercise</div>
-  <p class="exercise">Pick three different short sounds from three different category folders (for example: one from <code>attack-sharp/</code>, one from <code>found-objects/</code>, one from <code>voice-and-language/</code>). Import each as its own track. In a new track (<strong>Tracks → Add New → Stereo Track</strong>), arrange a short sequence: copy a piece of sound 1, paste it at the start; copy a piece of sound 2, paste it after; copy a piece of sound 3, paste it after that. Aim for a short phrase, maybe 5 to 10 seconds total.</p>
+  <p class="exercise">Pick three different short sounds from three different category folders (for example: one from <code>attack-sharp/</code>, one from <code>found-objects/</code>, one from <code>voice-and-language/</code>). Import each as its own track; these are your source tracks. Then add an empty <strong>arrangement track</strong> below them (<strong>Tracks → Add New → Stereo Track</strong>). This is where you'll assemble the splice. Copy a piece of source 1, paste it into the arrangement track at the start; copy a piece of source 2, paste it into the arrangement track after; copy a piece of source 3, paste it after that. Aim for a short phrase, maybe 5 to 10 seconds total.</p>
 
   <p class="listen">Listen for: a sequence of unrelated sounds, played in the order you chose, becomes a phrase with shape. The arrangement gives it meaning. Schaeffer's <em>Études de bruits</em> were built this way, one splice at a time.</p>
 </div>
@@ -280,7 +293,7 @@
     <span class="menu-path">Effect → Fading → Crossfade Clips</span> (two clips on the same track, overlapping)
   </div>
 
-  <p>Audacity also has a <span class="menu-path">Crossfade Tracks</span> command for two stacked tracks. For today, we'll use Crossfade Clips, which works on two adjacent clips inside a single track.</p>
+  <p>Audacity also has <span class="menu-path">Effect → Fading → Crossfade Tracks</span> for two stacked tracks (one above the other, overlapping in time). For today, we'll use Crossfade Clips, which works on two adjacent clips inside a single track.</p>
 
   <div class="exercise-label">Exercise</div>
   <p class="exercise">Pick two sounds with similar character (for example, two from <code>texture-continuous/</code>: maybe rain and wind, or two different street ambiences). Import both onto the same track. To put them on the same track, drag the second one onto the first track's lane. Position them so they slightly overlap, maybe by half a second. Drag-select across both clips so the overlap is in your selection. Apply <span class="menu-path">Effect → Fading → Crossfade Clips</span>.</p>
@@ -374,7 +387,7 @@
   <p>Audacity calls this "Change Tempo." A dialog opens; you can change the tempo by a percentage or by entering a new length in seconds. The pitch stays exactly where it was. This is what the previous technique would do <em>if</em> you could somehow disconnect duration from pitch, which is exactly what modern signal processing makes possible.</p>
 
   <div class="exercise-label">Exercise</div>
-  <p class="exercise">Use the same sound you just used for Change Speed (or a fresh long-sustain sound). Import. Select all. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span> Set Percent Change to <strong>-50</strong>. Click <strong>Apply</strong>. Listen.</p>
+  <p class="exercise">Use the same sound you just used for Change Speed. Either undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) until the sound is back to its original, or delete the modified track and re-import the sound fresh. Then select all of it and apply <span class="menu-path">Effect → Pitch and Tempo → Change Tempo…</span> Set Percent Change to <strong>-50</strong>. Click <strong>Apply</strong>. Listen.</p>
 
   <p class="listen">Listen for: the sound is now twice as long, just like Change Speed at -50%. But the pitch is <em>exactly where it was before</em>, not an octave lower. This is the decoupling. The same time change, with no pitch consequence. That's the thing tape couldn't do.</p>
 </div>
@@ -396,7 +409,7 @@
   <p>The dialog lets you specify the change in semitones, percent, or as a from-to musical pitch. Semitones is the most musically intuitive: <strong>+12 semitones is one octave up, -12 is one octave down</strong>.</p>
 
   <div class="exercise-label">Exercise</div>
-  <p class="exercise">Use the same kind of long-sustain sound. Import. Select all. Apply <span class="menu-path">Effect → Pitch and Tempo → Change Pitch…</span> Set Semitones to <strong>-12</strong> (one octave down). Click <strong>Apply</strong>. Listen. Then undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and try <strong>+7</strong> (a perfect fifth up). Listen again.</p>
+  <p class="exercise">Use the same kind of long-sustain sound (a fresh import, or undo back to the original). Select all of it and apply <span class="menu-path">Effect → Pitch and Tempo → Change Pitch…</span> Set Semitones to <strong>-12</strong> (one octave down). Click <strong>Apply</strong>. Listen. Then undo (<kbd>Cmd</kbd> + <kbd>Z</kbd>) and try <strong>+7</strong> (a perfect fifth up). Listen again.</p>
 
   <p class="listen">Listen for: the duration is unchanged, but the pitch has moved. Three operations, three different relationships between time and pitch: Change Speed couples them (both move together), Change Tempo moves time only, Change Pitch moves pitch only. Together these three give you full control over either dimension, the other dimension, or both.</p>
 </div>
@@ -429,7 +442,7 @@
 
 <ol class="steps">
   <li>Pick three sounds from the bank that interest you. They don't have to go together yet.</li>
-  <li>Open your <code>lastname-project01.aup3</code> project (the one you saved during setup; if you have other tracks open from the technique exercises, save those experiments to a different project file first).</li>
+  <li>Close your scratch project (<strong>File → Close</strong>; you don't need to save it). Open <code>lastname-project01.aup3</code> (the empty Project 1 file you created during setup).</li>
   <li>Import each of the three sounds (<strong>File → Import → Audio…</strong>) so each becomes its own track.</li>
   <li>Place them in time, however you want. You can stack them so they play simultaneously, line them up so one follows another, or anything in between. There's no right answer right now. Just put them somewhere.</li>
   <li>Press play and listen. Note what you like and what doesn't work.</li>
@@ -445,7 +458,7 @@
 <ol class="steps">
   <li>Save the project once more (<kbd>Cmd</kbd> + <kbd>S</kbd>).</li>
   <li>Connect to the NAS if you've disconnected. Navigate to <code>students/lastname/project-01/</code> (make this folder if it doesn't exist).</li>
-  <li>Copy your <code>lastname-project01.aup3</code> from your local <code>~/Documents/lastname/project-01/</code> folder to the NAS folder. <strong>Don't copy the sources folder; it's already on the NAS.</strong></li>
+  <li>Copy your <code>lastname-project01.aup3</code> from your local <code>~/Documents/lastname/project-01/</code> folder to the NAS folder. <strong>Don't copy the sources folder; it's already on the NAS. Don't copy the scratch project either; it lives only on your local machine.</strong></li>
   <li>Verify the upload by reopening the NAS folder. Eject the NAS. Log out.</li>
 </ol>
 
@@ -456,7 +469,24 @@
 
 <hr>
 
-<h2>Quick reference · the ten techniques</h2>
+<h2>Quick reference</h2>
+
+<h3>Selection and zoom</h3>
+
+<table>
+  <thead>
+    <tr><th>Action</th><th>Where in Audacity</th><th>Shortcut</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Zoom in</td><td>View → Zoom → Zoom In</td><td><kbd>Cmd</kbd> + <kbd>1</kbd></td></tr>
+    <tr><td>Zoom out</td><td>View → Zoom → Zoom Out</td><td><kbd>Cmd</kbd> + <kbd>3</kbd></td></tr>
+    <tr><td>Zoom to selection</td><td>View → Zoom → Zoom to Selection</td><td><kbd>Cmd</kbd> + <kbd>E</kbd></td></tr>
+    <tr><td>Fit project to width</td><td>View → Track Size → Fit to Width</td><td><kbd>Cmd</kbd> + <kbd>F</kbd></td></tr>
+    <tr><td>Snap selection to zero crossings</td><td>Select → At Zero Crossings</td><td><kbd>Z</kbd></td></tr>
+  </tbody>
+</table>
+
+<h3>The ten techniques</h3>
 
 <table>
   <thead>
