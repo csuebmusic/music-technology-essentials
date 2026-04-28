@@ -188,66 +188,110 @@ Close with a small bridge to Wednesday: "On Wednesday we'll start working in Aud
 
 ### Goal
 
-Students hear the conceptual material from Monday made tactile via the digital audio explorer tool, then orient to Audacity: open, navigate, basic transport, basic selection, save a project. Leave with hands on the software and a feeling of "I can move around in this."
+Two halves:
 
-> **Note on the interactive tool:** the digital audio explorer tool is not yet built. This block-by-block plan describes what it should support. Update this section once the tool exists, with specific things to point at within it.
+- **Part 1 (Digital Audio Explorer):** students hear *how complex sounds are built from sines*. The tool walks them from one sine, to summed sines, to the harmonic series, to timbre. By the end they should understand that "real sound is the sum of sines" is literal and physical, not a metaphor, and they should have hands-on intuition for fundamental, partial, and timbre.
+- **Part 2 (Audacity orientation):** students open Audacity for the first time, set the project format to course standard (44.1 kHz / 16-bit), import a sample, make a basic selection-cut-fade, save the project, export a WAV, and complete the NAS round-trip. Leave with hands on the software and the workflow.
+
+### Materials
+
+- **Lab Part 1:** [`course/tools/module-02-week-02-digital-audio-explorer.html`](../course/tools/module-02-week-02-digital-audio-explorer.html)
+- **Lab Part 2:** [`handouts/03-audacity-orientation.html`](../handouts/03-audacity-orientation.html)
 
 ### Pre-class checklist
 
 - Walk the room: gear setup baseline (see Module-wide concerns)
-- Verify Audacity opens cleanly on every machine (test on at least 3 stations)
-- Pull up the digital audio explorer tool on the instructor station
-- Have the lab handout for today open and ready (TBD: lab handout file)
+- Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
+- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short field recording of a struck bell (~15 s), with sharp attack and long decay — see "Asset prep" below for what's expected.
+- Open the explorer tool on the instructor station and confirm sound plays from the projector
+- Open the orientation handout (Handout 03) on the instructor station and on each student station's desktop browser
+- Confirm Handout 02 (Session Routines) is laminated and visible at every station
 
-### Block 1 — Recap and tool intro (15 min)
+### Block 1 — Recap (10 min)
 
-Quick verbal recap of Monday's concepts. Ask 2-3 students to explain in their own words: "What's sample rate?" "What's bit depth?" Let them get it slightly wrong; correct gently. The retrieval practice matters more than precision.
+Quick verbal recap of Monday's reading. Ask 2–3 students to explain, in their own words: "What's sample rate?" "What's bit depth?" "Why 44.1 kHz?" Let them get it slightly wrong; correct gently. The retrieval matters more than precision.
 
-Introduce the digital audio explorer: "This is a small interactive tool that lets you change sample rate and bit depth on a sound and immediately hear what happens. It's the audio examples from Monday's reading, but you control them."
+Then bridge: "Today's lab has two halves. First we're going to take the *idea* of a sine wave from yesterday's reading and pull on it: how do we get from a sine — which sounds artificial — to the kind of sound a flute or a clarinet makes? After that, we'll open Audacity for the first time."
 
-Demo the tool on the projector for 5-7 minutes. Show the controls. Play one or two examples.
+### Block 2 — Digital Audio Explorer (35 min)
 
-### Block 2 — Tool exploration (30 min)
+Project the explorer on the room display. Walk students through it section by section, pausing for hands-on at each step. Pace: 8–10 minutes per section, mostly student exploration with brief framing.
 
-Students work in pairs (one Mac mini per pair). Each pair has 25 minutes to explore the tool and answer 3-4 simple prompts on the lab handout (TBD when tool is built — example prompts: "What sample rate makes the high hat disappear? What bit depth makes the quiet decay disappear?").
+**Section 1 (Sine maker, 5 min).** "This is what one sine sounds like." Demo: play, move the frequency slider through the range, then the amplitude slider. Then: "Move only the frequency. Pitch changes, loudness doesn't. Move only the amplitude. The opposite. These are independent dimensions even though they live in the same sound." Each student tries.
 
-Walk the room. Listen for genuine engagement vs. clicking-through-without-listening. The tool's value is in the *listening*, not in clicking buttons. If a pair is moving too fast, sit down with them: "What did you actually hear when you switched?"
+**Section 2 (Sine summer, 8 min).** Frame: "Real sounds aren't sines. So how do we get from sines to real sounds? The answer is: you add them up." Have each student turn up partial 1 only (verifies they're back to a sine), then partial 2 at a random freq. "What do you hear?" The answer should be: two pitches, or beating if they're close, or just chaos. Let them play. Make sure at least one student hears the beating phenomenon and ask them to describe it. Don't define beating formally yet — it'll come up again in Module 4.
+
+**Section 3 (Harmonic series, 12 min).** This is the heart of the lab. Frame: "We just discovered that random sums of sines don't sound like notes. So why does a flute sound like one note even though it contains many sines? Watch what happens when the sines line up at integer ratios." Have everyone start from all amps at zero, fundamental at 220. Bring up partial 1 (the fundamental). Then partial 2. "What pitch are you hearing now?" Most will say "the same one, just richer." That's the right answer. Add 3, 4, 5, 6 one at a time. The pitch stays put, the timbre fattens. The conceptual punchline: *the ear fuses harmonically related partials into one perceived note*. This is the moment they should leave the section with.
+
+**Section 4 (Timbre, 8 min).** "Same harmonic series, different amplitude balance, different sound." Demo the suggested experiments: silence the fundamental and notice the pitch can stay; silence the even partials and listen for the clarinet-like hollowness; etc. Then give 3 minutes for free exploration: "Can you make a sound that resembles an instrument you know?"
+
+Walk the room throughout. Listen for genuine engagement vs. clicking-without-listening. The tool's value is in the *listening*, not in clicking sliders. If a pair is moving too fast, sit down: "What did you actually hear when you turned that one up?"
 
 ### Block 3 — Audacity orientation (45 min)
 
-Time to hands-on Audacity. Have students close the tool and open Audacity.
+Switch to the Audacity handout (Handout 03). Have students close the explorer and open the handout in a browser. Walk through the seven steps on the projector with students following along on their machines. **Don't move on until everyone is at each step.** This is one of those sessions where pacing to the slowest student is the right thing.
 
-Walk through the following on the projector, with students following along on their machines. Don't move on until everyone is at each step.
+The handout is detailed enough that students could in principle do it on their own. Your job in class is (a) catching the moments where someone misses a step and falls behind, (b) demonstrating each move on the projector so they have a model to mirror, (c) reinforcing the *workflow logic* (NAS-to-local at the start, work locally, local-to-NAS at the end) that the handout encodes.
 
-1. **Window layout.** Tracks panel on the left, transport at the top, time ruler. Audacity is intentionally simple visually.
-2. **Project sample rate.** Bottom-left corner. Set to 44.1 kHz. "This is our Module 2 standard."
-3. **Importing audio.** File → Import → Audio. Have everyone import a sound from `/music/shared/sample-banks/project1/` (the bank should be ready by today). One sound. Any sound.
-4. **Transport: play, stop, loop.** Spacebar plays from the cursor. Shift-spacebar plays in a loop. Practice: "Loop the first second of your sound. Now loop the last second."
-5. **Selection with click and drag.** Click at one point, drag to another. The selection highlights. "Whatever's selected is what gets affected by the next thing you do."
-6. **Selection refinement.** Use the time ruler. Hold Shift and click to extend a selection. Press Z to "snap to zero crossings" — this prevents click-pops at edit boundaries (introduce the concept; we'll use it more on Mon Wk 3).
-7. **Cut, copy, paste.** Standard keyboard shortcuts work. Cut a 2-second selection out of your sound, paste it back in at a different time location. Listen. "What just happened?"
-8. **Saving the project.** File → Save Project. Save as `~/Documents/lastname/audacity-orientation.aup3`. Discuss the difference between saving a project (`.aup3`, editable) and exporting audio (a WAV/MP3 file, the finished product).
-9. **Exiting cleanly.** Close Audacity. Upload the project file to NAS following the Session Routines card.
+Suggested pacing within Block 3:
+
+- **Step 1 (NAS pull, 6 min)** — first contact with the NAS workflow as a real action, not just a card on the wall. Watch for students who try to open `orientation-sample.wav` directly from the NAS rather than copying it locally first.
+- **Step 2 (Open Audacity, set format, 4 min)** — quick.
+- **Step 3 (Interface tour, 5 min)** — point at the named regions on the projector. The annotated screenshot in the handout is a reference; students don't need to memorize it today.
+- **Step 4 (Import + play, 5 min)** — should be quick. Watch for students who try double-clicking the WAV in Finder instead of using File → Import.
+- **Step 5 (Selection, cut, fade, 12 min)** — the heart of Part 2. Demonstrate each move on the projector. Pause after the cut so they can play and *hear* the abrupt ending before doing the fade. The fade transforms the sound from "broken edit" to "deliberate edit" — that contrast is the lesson.
+- **Step 6 (Save + export, 8 min)** — the project-vs-export distinction trips students up. Reinforce: "Save the project to keep working tomorrow. Export the WAV to have something you can submit or share."
+- **Step 7 (NAS upload, 5 min)** — closes the loop on the workflow that opened the session.
 
 ### Block 4 — Wrap and preview (10 min)
 
-Quick close: "Next Monday we go deeper into editing. Wednesday after that, you start Project 1." Mention that the listening assignment is also due Mon Wk 5.
+Quick close: "On Monday we go deeper into editing — the full vocabulary, plus envelope. Then on Wednesday Project 1 begins. The Module 2 listening (Schaeffer + Henry) is due at the start of Mon Wk 5; start it this weekend if you can."
 
 ### Common confusions
 
-- **Cursor vs. selection.** Cursor is a single point in time; selection is a range. Many students try to "cut a section" with just the cursor placed. Demonstrate both, in contrast.
-- **Project file vs. audio file.** `.aup3` is the working document; you can't open it on someone else's computer without the linked data. Audio files (WAV/MP3) are the universal format. Reinforce: "Save the project to keep working; export to share."
-- **Where the file went.** If a student saved to the wrong location, it's still there — show them how to find it. This usually means they hit Save without paying attention to the location field.
+- **The explorer's pitch experience.** Some students will *hear* the harmonic series fusing into one note before others. If a student says "I hear separate notes" when partials 1+2 are on, ask them to bring up partials 3 and 4 too and listen again — the fusion strengthens with more partials. If they still hear separate notes, that's fine; it's a perceptual skill that develops with listening practice.
+- **Cursor vs. selection in Audacity.** Cursor is a single point in time; selection is a range. Many students try to "cut a section" with just the cursor placed. Demonstrate both, in contrast.
+- **Project file vs. audio file.** `.aup3` is the working document; you can't open it without Audacity, and links to the source data must be intact. Audio files (WAV/MP3) are universal. The handout calls this out, but expect to repeat it in person.
+- **NAS-direct editing.** Students will sometimes try to open `orientation-sample.wav` directly from the mounted NAS. Catch this early: always copy to local first.
 
 ### Pacing fallbacks
 
-- **If running long:** Cut Block 4 to 5 minutes; the close can be brief. Don't cut the saving/exiting step in Block 3 — students need that habit established.
-- **If running short:** In Block 3, give them a small free-explore at the end: "Spend 5 minutes trying anything you want with this sound. Cut it up. Reverse it. Slow it down. We'll share what you found."
+- **If running long in Part 1:** trim Section 4 (Timbre) free-exploration time. The first three sections carry the main pedagogical weight; Section 4 can be a 4-minute demo + brief student touch.
+- **If running long in Part 2:** the most cuttable step is Step 7 (NAS upload). It can be done after class with a 30-second reminder ("Don't leave without uploading. The card on your station has the steps.") But better to keep it in if at all possible — first-day NAS upload is the workflow-formation moment.
+- **If running short:** in Part 1 Section 4, give 5–7 minutes of timbre free-exploration ("Try to make a sound that's like a brass instrument, then a woodwind, then something inhuman"). In Part 2 Step 5, give them an extra try-this: "Now reverse the bell. What does the envelope look like?"
+
+### Asset prep — orientation-sample.wav
+
+The Audacity orientation handout assumes a specific sample on the NAS at `shared/module-02/orientation/orientation-sample.wav`:
+
+- **Source:** a single struck bell, gong, glass, or similar percussive object with a long decay
+- **Length:** 12–18 seconds
+- **Format:** WAV, 44.1 kHz, 16-bit, mono or stereo
+- **Pedagogical fit:** clear sharp attack near the start, almost no sustain, long gradual release. The bell is what students cut into and fade in Step 5; its envelope is what visually demonstrates the attack–release shape from the Wk 2 reading.
+
+Inés to record or source. If unavailable, any single sound with a clear attack + long decay works (bowed string note that fades, struck rim, plucked piano string).
+
+### Asset prep — Audacity screenshots for Handout 03
+
+Handout 03 references five screenshots that need capturing on a lab Mac and saved to `assets/images/handouts/`. The handout's `alt` text describes what each screenshot should show:
+
+| Filename | Content |
+|---|---|
+| `audacity-settings.png` | Audacity Audio Settings window with project sample rate 44100 Hz, default sample format 16-bit PCM |
+| `audacity-interface-empty.png` | Empty Audacity main window with numbered annotations 1–9 identifying menu bar, transport, tools, level meters, host/device/rate, timeline, track area, selection toolbar |
+| `audacity-imported.png` | Main window with `orientation-sample.wav` imported, showing the bell waveform (sharp attack + long decay) |
+| `audacity-selection.png` | Same window with a region selected from mid-decay to end of file |
+| `audacity-fade-out.png` | Same window after cut + fade-out, showing the new shorter ending tapering to zero |
+
+The annotation numbers on `audacity-interface-empty.png` should be drawn on top of the screenshot in red or rust; the handout's annotation key reads them in order. Recommended approach: capture the raw screenshot, then annotate with a tool like Skitch or Preview's markup. Keep annotation numbers consistent with the handout's order.
+
+Until the screenshots are captured, the figures render with their `alt` text visible in placeholder boxes — students can still follow the handout, but the boxes look unfinished. Capture before the first time the lab runs.
 
 ### After class
 
 - Walk the room before locking up. Make sure all machines are logged out, headphone sliders down (default position for next session), interface mix knobs reset.
-- Verify NAS uploads happened (spot-check 3-4 student folders).
+- Verify NAS uploads happened (spot-check 3-4 student folders for `lastname-orientation.aup3` and `lastname-orientation.wav`).
+- Note any common confusions for the after-Module retrospective.
 
 ---
 

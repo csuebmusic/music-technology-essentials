@@ -86,12 +86,13 @@ Full listening assignment with guided questions: [`course/listening/module-02-li
 
 Built as the module progresses; not all exist yet.
 
-- Handouts for each Wednesday lab
-- Interactive tools:
-  - Digital audio explorer (Wed Wk 2 lab)
-  - Mixing tool Part 1 (Wed Wk 4 lab) — levels, EQ, stereo
-  - Mixing tool Part 2 (Mon Wk 5 lecture) — dynamics
-- Project 1 prompt and rubric
+- **Readings** (Mon lectures) in [`course/readings/`](../readings/)
+- **Handouts** (Wed labs) in [`/handouts/`](../../handouts/) — Handout 03 (Audacity orientation) is for Wed Wk 2 Part 2; further per-lab handouts as the module progresses
+- **Interactive tools** in [`course/tools/`](../tools/):
+  - Digital audio explorer (Wed Wk 2 Part 1) — built
+  - Mixing tool Part 1 (Wed Wk 4 lab): levels, EQ, stereo
+  - Mixing tool Part 2 (Mon Wk 5 lecture): dynamics
+- **Project 1 prompt and rubric** in [`course/projects/`](../projects/)
 
 ---
 
