@@ -146,7 +146,7 @@
 
 <hr>
 
-<h2>Destructive vs. non-destructive (read this first)</h2>
+<h2>Destructive vs. non-destructive</h2>
 
 <p>The three tools today split cleanly into two categories. Knowing which is which is the most important thing in this lab.</p>
 
@@ -154,9 +154,9 @@
 
 <p>A <strong>destructive</strong> tool changes the audio data permanently. Once you apply it, the samples on disk are different. Undo can revert it during the current session, but once you save and close the project, the change is baked in. There's no going back to "before."</p>
 
-<p>Audacity is the unusual one: most things in Audacity are <strong>destructive</strong>. The Effect menu (every effect: fades, reverse, time-stretch, EQ, compression, all of them) modifies your audio in place. This isn't a bug; it's a deliberate design choice that goes back to the tape-editing tradition: in tape work, every edit is a commitment. Cut a section out, splice in a different one, run it through a filter, and the tape is physically different. Audacity inherits that workflow. It suits musique concrète work especially well, since the genre itself was built on the discipline of committing to edits.</p>
+<p>Audacity is mostly an audio editor, and as such, most things in Audacity are <strong>destructive</strong>. The Effect menu (every effect: fades, reverse, time-stretch, EQ, compression, all of them) modifies your audio in place. That's the point of an audio editor: most audio editors are destructive by design, which goes back to the tape-editing tradition where every edit is a commitment. Cut a section out, splice in a different one, run it through a filter, and the tape is physically different. Audacity inherits that workflow.</p>
 
-<p>The two exceptions in Audacity are the <strong>track gain slider</strong> and the <strong>pan slider</strong> on the Track Control Panel: those are non-destructive sliders applied at playback time. Everything else in the Effect menu is destructive.</p>
+<p>The two non-destructive controls in Audacity that we'll use are the <strong>track gain slider</strong> and the <strong>pan slider</strong> on the Track Control Panel: those work at playback time, so moving them never changes the underlying audio. Audacity does also have a <em>Realtime Effects</em> feature (the small <strong>Effects</strong> button on each track that lets you stack non-destructive plugins), but we're not going to use it in this course. The reason is pedagogical: real DAW plugins (Ableton's, Logic's, Pro Tools') are significantly better than the equivalents in any audio editor. So in this module we lean into Audacity for what it does best (committed, destructive editing), and we'll learn the non-destructive plugin workflow properly when we get to Ableton in Module 4.</p>
 
 <p>What this means for today, and for the rest of your time in Audacity:</p>
 
@@ -185,7 +185,7 @@
 <div class="tool">
   <h3>1 · Track levels</h3>
 
-  <p>The volume of one track relative to the others. The first thing a mixer balances. If a track is too loud, it overwhelms everything else; too quiet, and you don't hear it at all. Most mixing decisions start here. <strong>Non-destructive</strong> (one of the two exceptions in Audacity).</p>
+  <p>The volume of one track relative to the others. The first thing a mixer balances. If a track is too loud, it overwhelms everything else; too quiet, and you don't hear it at all. Most mixing decisions start here. <strong>Non-destructive</strong> in Audacity (a slider applied at playback).</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
@@ -346,7 +346,7 @@
 <div class="tool">
   <h3>2 · Stereo pan</h3>
 
-  <p>The position of a track in the stereo field, from full left to full right. Pan is what gives a mix space and width: instead of every sound stacked on top of each other in the center, sounds occupy different points across the stereo image, the way instruments occupy different points on a stage. <strong>Non-destructive</strong> (the second exception in Audacity).</p>
+  <p>The position of a track in the stereo field, from full left to full right. Pan is what gives a mix space and width: instead of every sound stacked on top of each other in the center, sounds occupy different points across the stereo image, the way instruments occupy different points on a stage. <strong>Non-destructive</strong> in Audacity (a slider applied at playback).</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
@@ -465,7 +465,7 @@
 <div class="tool">
   <h3>3 · EQ (with the Preview habit)</h3>
 
-  <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to sculpt the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity (the norm here, the rule for the rest of the Effect menu, and the reason the Preview habit matters).</p>
+  <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to sculpt the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity, like the rest of the Effect menu, which is the reason the Preview habit matters.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
