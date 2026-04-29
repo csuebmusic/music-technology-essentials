@@ -451,7 +451,7 @@
 </div>
 
 <div class="tool">
-  <h3>3 · EQ (with the Preview habit)</h3>
+  <h3>3 · EQ</h3>
 
   <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to shape the <strong>timbre</strong> of a sound, the color of the sound, the thing we talked about in lecture: the same pitch played on a flute versus a violin has different timbre because the harmonics above the fundamental are distributed differently. Another name for that distribution of frequency content is the <strong>spectrum</strong>. EQ lets you reshape the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity, like the rest of the Effect menu, which is the reason the Preview habit matters.</p>
 
@@ -542,32 +542,32 @@
             fill="#a85c2e" opacity="0.08" />
 
       <!-- Annotations on the curve -->
-      <!-- LOW CUT label -->
+      <!-- LOW CUT: dot at start of curve (80, 270); text raised above curve to clear collision -->
       <g>
-        <circle cx="130" cy="270" r="3" fill="#a85c2e"/>
-        <text x="100" y="245" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="start">low cut</text>
-        <text x="100" y="259" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="start">remove rumble</text>
+        <circle cx="80" cy="270" r="3" fill="#a85c2e"/>
+        <text x="88" y="235" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="start">low cut</text>
+        <text x="88" y="249" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="start">remove rumble</text>
       </g>
 
-      <!-- FLAT MIDS label -->
+      <!-- FLAT MIDS: dot at exact path point (350, 160) -->
       <g>
         <circle cx="350" cy="160" r="3" fill="#a85c2e"/>
         <text x="350" y="145" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">flat at 0 dB</text>
         <text x="350" y="130" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">no change</text>
       </g>
 
-      <!-- BOOST label -->
+      <!-- BOOST: dot at the peak of the bell (465, 119); text centered above and shifted left -->
       <g>
-        <circle cx="480" cy="110" r="3" fill="#a85c2e"/>
-        <text x="525" y="100" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="start">boost at 4 kHz</text>
-        <text x="525" y="114" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="start">add brightness</text>
+        <circle cx="465" cy="119" r="3" fill="#a85c2e"/>
+        <text x="465" y="93" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">boost at 4 kHz</text>
+        <text x="465" y="107" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">add brightness</text>
       </g>
 
-      <!-- HIGH ROLLOFF label -->
+      <!-- HIGH ROLLOFF: dot at end of curve (680, 200) -->
       <g>
-        <circle cx="640" cy="194" r="3" fill="#a85c2e"/>
-        <text x="650" y="220" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="end">high roll-off</text>
-        <text x="650" y="234" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="end">soften the air</text>
+        <circle cx="680" cy="200" r="3" fill="#a85c2e"/>
+        <text x="672" y="225" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="end">high roll-off</text>
+        <text x="672" y="239" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="end">soften the air</text>
       </g>
     </svg>
     <figcaption>A typical EQ curve. Frequency runs left to right (low to high); amplitude runs up and down (boost above the dashed center line, cut below it). The curve traces what the EQ does at every frequency.</figcaption>
