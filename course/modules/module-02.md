@@ -37,7 +37,7 @@ By the end of this module, students should be able to:
 | 2 | Wed | Lab Part 1: Interactive digital-audio tool · Part 2: Audacity orientation |
 | 3 | Mon | Lecture: Editing concepts + envelope listening |
 | 3 | Wed | Lab: Editing techniques · Project 1 begins |
-| 4 | Wed | Lab Part 1: Interactive mixing tool (levels/EQ/stereo) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
+| 4 | Wed | Lab Part 1: Mixing in Audacity (levels, pan, EQ + destructive/non-destructive frame) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
 | 5 | Mon | Lecture: Dynamics + Interactive mixing tool Part 2 (compression/limiting) |
 | 5 | Wed | **Project 1 final work session + submission** |
 
@@ -87,11 +87,11 @@ Full listening assignment with guided questions: [`course/listening/module-02-li
 Built as the module progresses; not all exist yet.
 
 - **Readings** (Mon lectures) in [`course/readings/`](../readings/)
-- **Handouts** (Wed labs) in [`/handouts/`](../../handouts/) — Handout 03 (Audacity orientation, Wed Wk 2 Part 2) and Handout 04 (Editing techniques + Project 1 begins, Wed Wk 3); further per-lab handouts as the module progresses
+- **Handouts** (Wed labs) in [`/handouts/`](../../handouts/) — Handout 03 (Audacity orientation, Wed Wk 2 Part 2), Handout 04 (Editing techniques + Project 1 begins, Wed Wk 3), Handout 05 (Mixing in Audacity, Wed Wk 4); further per-lab handouts as the module progresses
 - **Interactive tools** in [`course/tools/`](../tools/):
   - Digital audio explorer (Wed Wk 2 Part 1) — built
-  - Mixing tool Part 1 (Wed Wk 4 lab): levels, EQ, stereo
-  - Mixing tool Part 2 (Mon Wk 5 lecture): dynamics
+  - Wed Wk 4 lab does *not* use a separate interactive tool; mixing concepts (levels, pan, EQ, destructive vs. non-destructive) are taught directly in Audacity via Handout 05. The handout walks students through the actual tool they'll use in their pieces.
+  - Mon Wk 5 lecture (dynamics): tool design TBD when that session is built
 - **Project 1 prompt and rubric** in [`course/projects/`](../projects/)
 
 ---

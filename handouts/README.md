@@ -14,6 +14,7 @@ This same stylesheet is used by readings, listening assignments, and project pro
 - `02-session-routines.html` — Start-of-session and end-of-session reference card, used every session
 - `03-audacity-orientation.html` — Module 2, Wed Wk 2, Lab Part 2: students' first Audacity session — open, configure, import, edit, save, export, NAS round-trip
 - `04-editing-techniques.html` — Module 2, Wed Wk 3: walks through the nine editing techniques from the Mon Wk 3 reading (cut, trim, splice, fades, crossfade, loop, reverse, time-stretch, pitch-shift), each with a hands-on exercise on a Project 1 sample. Closes with Project 1 starts: open prompt, browse bank, three-sound starter, save.
+- `05-mixing-in-audacity.html` — Module 2, Wed Wk 4: introduces the three mixing tools in Audacity (track levels, stereo pan, Filter Curve EQ) and the destructive vs. non-destructive distinction. Levels and pan exercises happen on the Project 1 file (safe, non-destructive); EQ exercise lives in scratch (destructive, requires Preview habit). Closes with ~60 min of Project 1 work time and a Module 4 forecast about Ableton's plugin-based mixing model.
 
 ## Distribution
 

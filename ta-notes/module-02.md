@@ -17,7 +17,7 @@ This file is the operational runbook for all seven sessions. Module spec (the "w
 - [Session 2 — Wed Wk 2: Digital audio explorer + Audacity orientation](#session-2--wed-wk-2-digital-audio-explorer--audacity-orientation)
 - [Session 3 — Mon Wk 3: Editing concepts + envelope listening](#session-3--mon-wk-3-editing-concepts--envelope-listening)
 - [Session 4 — Wed Wk 3: Editing techniques + Project 1 begins](#session-4--wed-wk-3-editing-techniques--project-1-begins)
-- [Session 5 — Wed Wk 4: Mixing tool Part 1 + Project 1 work](#session-5--wed-wk-4-mixing-tool-part-1--project-1-work)
+- [Session 5 — Wed Wk 4: Mixing in Audacity + Project 1 work](#session-5--wed-wk-4-mixing-in-audacity--project-1-work)
 - [Session 6 — Mon Wk 5: Dynamics + mixing tool Part 2](#session-6--mon-wk-5-dynamics--mixing-tool-part-2)
 - [Session 7 — Wed Wk 5: Project 1 final work session + submission](#session-7--wed-wk-5-project-1-final-work-session--submission)
 - [End-of-module assessment](#end-of-module-assessment)
@@ -524,69 +524,113 @@ If running short (rare): give more time to free Project 1 sketching. More browsi
 
 ---
 
-## Session 5 — Wed Wk 4: Mixing tool Part 1 + Project 1 work
+## Session 5 — Wed Wk 4: Mixing in Audacity + Project 1 work
 
 **100 min · Lab-style · MB2525**
 
-(No Mon Wk 4 session — Labor Day. Students have had a full week to work on Project 1 since Wk 3 Wed.)
+(No Mon Wk 4 session due to Labor Day. Students have had a full week to work on Project 1 since Wk 3 Wed.)
 
 ### Goal
 
-Students learn the first half of mixing concepts — levels, EQ basics, stereo placement — via the mixing tool Part 1, then apply them to Project 1 in progress.
+Two halves:
 
-> **Note on the interactive tool:** the mixing tool Part 1 is not yet built. This plan describes what it should support; update once the tool exists.
+- **Mixing introduction (~35 min):** three new tools in Audacity (track levels, stereo pan, Filter Curve EQ) plus the destructive vs. non-destructive distinction as the central pedagogical frame. Levels and pan are non-destructive sliders on the Track Control Panel; EQ is a destructive effect that requires the Preview-before-Apply habit.
+- **Project 1 work time (~60 min):** real time on their pieces. Project 1 is due next Wednesday (Wk 5).
+
+The session is deliberately compact on the new content because students need work time. Three new tools and one big concept; not more.
+
+### Materials
+
+- **Lab handout:** [`handouts/05-mixing-in-audacity.html`](../handouts/05-mixing-in-audacity.html) — covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
+- **Project 1 prompt:** [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html) — open on the projector during Block 4.
+- **Students' own Project 1 files** from last week's work, plus their scratch files from Wed Wk 3.
 
 ### Pre-class checklist
 
-- Walk the room
-- Pull up the mixing tool Part 1 on the instructor station
-- Take a quick mental inventory: who's where on Project 1? You should have a sense from last week and any work students did between sessions.
+- Walk the room (gear baseline)
+- **Take a quick mental inventory of where students are on Project 1.** From Wed Wk 3 spot-checks plus any work students did between sessions, you should have a rough sense of who's ahead, who's on track, who hasn't engaged. Note who to check in with during Block 4.
+- Open the Project 1 prompt on the instructor station
+- Have Handout 05 open in a browser at every student station's desktop
 
 ### Block-by-block
 
-#### Block 1 — Quick check-in (10 min)
+#### Block 1 — Quick check-in + setup (10 min)
 
-Open: "Show of hands — who's spent at least an hour on Project 1 since last Wednesday?" If most hands are up, great. If most aren't, name it: "You need to be working on this between sessions. Two more sessions before submission."
+Open: "Show of hands, who's spent at least an hour on Project 1 since last Wednesday?" If most hands are up, great. If most aren't, name it: "You need to be working on this between sessions. Two more sessions before submission." Don't moralize, just state the fact.
 
-Quick survey: "What's the hardest thing about it so far?" Listen. Common answers: "I don't know what to make," "my edits sound choppy," "I don't know when to stop." All normal. Acknowledge.
+Quick survey: "What's the hardest thing about it so far?" Listen to a few responses. Common answers: "I don't know what to make," "my edits sound choppy," "I don't know when to stop." All normal. Acknowledge. The mixing tools you're about to teach often help with the second one.
 
-#### Block 2 — Mixing concepts intro (15 min)
+Then have students follow the handout's Setup section: pull the latest Project 1 file from NAS, open both `lastname-project01.aup3` and `lastname-techniques-scratch.aup3`. Both should be open in separate Audacity windows by the time you start Block 2.
 
-Frame mixing: "You've been making editing decisions. Mixing is a different category — it's about how all the elements fit together. Three concepts today: levels, EQ, and stereo placement. Each is something you balance across the elements of your piece."
+#### Block 2 — Levels and pan (10 min)
 
-- **Levels.** How loud is each element relative to others? Aim for peaks around -12 to -6 dBFS, never let anything clip. The "main" element of a moment should be louder than the supporting elements.
-- **EQ.** Different sounds occupy different frequency ranges. If two sounds compete in the same range, neither sounds clear. EQ lets you sculpt frequency content — cutting unwanted parts, occasionally boosting wanted parts.
-- **Stereo placement.** Stereo is wider than mono. Placing different elements at different points across the stereo field gives the piece space to breathe.
+The handout walks through both. On the projector, demonstrate on a simple multi-track sample (or one of your own demo projects):
 
-#### Block 3 — Mixing tool Part 1 (30 min)
+- **Levels.** Show the gain slider on each track's Track Control Panel. Move it while audio plays so students hear the immediate effect. Frame: "This is the most basic mixing tool. The slider doesn't change the audio data; it just adjusts playback. Move it freely."
+- **Pan.** Show the pan slider just below gain. Move it while playing so students hear the stereo movement. Headphones reveal this much more clearly than speakers; ask students to put headphones on for this part.
+- **Master output.** Briefly point out the slider next to the playback meter at the top of the Audacity window. Same idea, applied to the whole project. The handout mentions a limiter coming later (Mon Wk 5), so don't dwell here.
 
-Demonstrate the tool on the projector. Then students work in pairs with the tool for 20 minutes, with 3-4 prompts on the lab handout (TBD when tool is built).
+Then students follow the handout's exercises in their own Project 1 files. Both exercises are non-destructive, so practicing on the real project is safe and gives them immediate progress on their pieces. Walk the room briefly to make sure everyone finds the sliders.
 
-The tool should let students adjust levels, EQ, and stereo placement on a small mix and hear the consequences in real time. The point is to make abstract concepts ("EQ shapes frequency content") into immediate audible experiences ("when I cut this 200 Hz from the bass, the kick comes through clearer").
+#### Block 3 — EQ with Preview (20 min)
 
-#### Block 4 — Apply to Project 1 (40 min)
+This is the pedagogical heart of the session. The single most important concept: **destructive effects in Audacity are permanent once applied; the Preview button is the safety mechanism.**
 
-Students return to their Project 1 in progress and apply mixing concepts. For students who haven't gotten to a stage where mixing applies (still in pure-editing mode), this is also project work time.
+Frame on the projector before opening the dialog: "Levels and pan are sliders. They don't change the audio; they just control playback. EQ is different. When you Apply an EQ, the audio data in your track is permanently modified. Undo works during the session, but once you save and close, the change is baked in. So the discipline is: **Preview before Apply.**"
 
-Walk the room. Listen on their headphones to short excerpts — you can give specific feedback now that there's actual material. Common things to point out:
-- "Your loudest moment is too loud relative to your quietest. Bring the loud ones down."
-- "These two elements are fighting in the same frequency range. Try EQing one of them."
-- "Everything is dead-center in the stereo field. Pan something."
+Then demonstrate the Filter Curve EQ dialog on the projector (Effect → EQ and Filters → Filter Curve EQ):
 
-#### Block 5 — Wrap (5 min)
+- Show the graph: frequency horizontal, gain in dB vertical
+- Click two control points to make a simple curve (cut at ~200 Hz, boost at ~4000 Hz, mirroring the handout's exercise)
+- **Click Preview.** Make sure students hear the difference. This is the moment that matters most.
+- Adjust the curve, Preview again. "I can keep doing this without committing to anything."
+- Then click Apply. "Now it's permanent in this version of the project."
 
-Quick close. "Mon Wk 5 we add the last mixing concept — dynamics. Then Wed Wk 5 is your final work session and submission. Plan your work accordingly."
+Students follow the handout's exercise in their *scratch* projects (not Project 1). The scratch placement is itself a teaching point: you practice destructive effects in scratch precisely because they're destructive. Walk the room and make sure every student previews at least once before applying. If you see a student go straight to Apply without Preview, stop them and have them undo and try again.
+
+The handout's "A look ahead: Module 4 with Ableton" callout previews how this will be different in Ableton (plugins, real-time, non-destructive). Mention this verbally as a way to motivate the discipline: "The reason this matters is that Audacity makes you commit to changes. Ableton won't. Building the Preview habit now means you won't accidentally bake bad EQ into your piece."
+
+#### Block 4 — Project 1 work time (55 min)
+
+The bulk of the session. Students work on their pieces with the new tools in mind. The handout's "Suggested approach for the next hour" gives them a starting framework: apply levels and pan to Project 1, save a versioned copy before any EQ work, keep editing as needed, listen to the whole piece repeatedly.
+
+This is the highest-value time you have for individual mentoring all week. Walk the room. Listen on student headphones to short excerpts; you can give specific, actionable feedback now that there's actual material:
+
+- "Your loudest moment is too loud relative to your quietest. Bring the loud ones down 4 or 5 dB."
+- "These two elements are fighting in the same frequency range. Try cutting some of the low-mids on one of them."
+- "Everything is dead-center in the stereo field. Pan something. Even just 20% L on one track."
+- "The beginning is interesting; the middle loses energy. What if you brought back the opening sound somewhere in the second half?"
+
+For students still in pure-editing mode (no mixing applies yet because they're still assembling), this is also project work time. Don't push them to mix prematurely; their job is to keep building.
+
+For students who haven't engaged: this is your check-in moment. Sit with them. Ask what they have so far. Help them get the next step started.
+
+#### End of session — NAS upload (last 5 min)
+
+Final 5 minutes: students follow the handout's end-of-session routine. Save Project 1 (and any version files), copy `lastname-project01.aup3` (and any -v2, -v3 versions) to `students/lastname/project-01/` on the NAS. **Don't copy the sources folder (already on NAS) or the scratch project (lives only on local).**
 
 ### Common confusions
 
-- **"How do I add EQ in Audacity?"** Effect → Filter Curve EQ (or Graphic EQ). Demonstrate once; students will look up the rest.
-- **"My piece is too quiet / too loud."** Levels question. Show them the gain controls and the master output. Aim for peaks at -6 dBFS, never clipping the master.
-- **"It sounds different on these headphones than on my own."** Real and important. Headphone variation is one reason mixing is hard. Suggest A/B-ing on a second pair before final submission.
+- **"My piece is too quiet / too loud overall."** Levels question. Show the master output slider; that's the simplest fix. If individual track levels are wildly imbalanced, work there instead. Aim for peaks around -6 dBFS on the master, never letting anything clip.
+- **"It sounds different on these headphones than on my own."** Real and important. Headphone variation is a major reason mixing is hard. Suggest A/B-ing on a second pair before final submission.
+- **"I can't find the gain slider."** It's small. Make sure the track is tall enough to see the controls (drag the bottom edge of the track header down to expand). Some students collapse tracks accidentally.
+- **"My EQ Preview sounds different from my Apply."** Shouldn't, with one caveat: if there are envelopes or other effects in the chain, Preview may differ. For Module 2 work this is unlikely; if it comes up, just have them Apply and listen, then Undo if it's wrong.
+- **"Is this enough?"** They're asking about Project 1, not EQ. Reframe: "It's enough when you can listen to it twice in a row and not want to change anything. You're probably not there yet; keep working." Don't certify completion mid-process.
+- **"I want to change my three sounds."** They can. The constraint is the bank, not specific sounds. If a sound isn't working after a week, swap it out. Caveat: don't keep swapping; at some point you commit to what you have and shape it.
 
 ### Pacing fallbacks
 
-- **If running long:** Cut Block 4 work time to 25 minutes. Students will have time on their own and Mon Wk 5.
-- **If running short:** Sit with individual students whose Project 1 is on track and listen with them, giving feedback. Personal mentoring time is high-value when you have it.
+The session has a clear time budget: ~35 min new content, ~60 min work. The new content is the floor, not the ceiling, but Block 4 is the high-value time. Protect it.
+
+If running long on Blocks 2-3 (most likely cause: someone struggles with the EQ dialog): cut the in-class EQ exercise short. Tell students "you have the handout, finish this exercise in scratch on your own time. We're moving to project work." The Preview habit is the most important takeaway; skipping the optional curve adjustments doesn't undermine it.
+
+If running short (rare): use the extra time for one-on-one student check-ins. Pick the 3-4 students you're most concerned about and sit with each for a few minutes. This is a more impactful use of unexpected slack than additional whole-class content.
+
+### After class
+
+- Verify NAS uploads. Every student should have an updated `lastname-project01.aup3` (newer modification date than last week's). Spot-check 3-4 student folders, especially ones for students who seemed disengaged during Block 4.
+- Walk the room: gear reset, headphone sliders down, machines logged out
+- Note any students whose Project 1 file looks identical to last week's (zero progress). These are check-in candidates for Mon Wk 5.
 
 ---
 
