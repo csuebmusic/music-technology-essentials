@@ -117,14 +117,14 @@
   <div class="subtitle">Three new tools: track levels, stereo pan, and EQ. Then back to Project 1.</div>
 </div>
 
-<p class="lede">Today you learn three new tools and then return to Project 1, which is due next Wednesday. The tools are the basics of mixing: <strong>levels</strong> (how loud each track is), <strong>panning</strong> (where each track sits in the stereo field), and <strong>EQ</strong> (which frequencies get emphasized or reduced in a sound). Two of them are simple sliders on each track. The third lives in a dialog and works differently in a way that's important to understand before you use it.</p>
+<p class="lede">Today you learn three new tools and then return to Project 1, which is due next Wednesday. The tools are the basics of mixing: <strong>levels</strong> (how loud each track is), <strong>panning</strong> (where each track sits in the stereo field), and <strong>EQ</strong> (which frequencies get emphasized or reduced in a sound). Two of them are simple sliders on each track. The third lives in a dialog and works differently.</p>
 
 <h2>What we're doing today</h2>
 
 <ol class="steps">
   <li>Open your Project 1 file and your scratch file from last week.</li>
   <li>Learn levels and panning. Practice them <em>on your Project 1 file</em>, since they don't change the underlying audio.</li>
-  <li>Learn EQ with the Preview habit. Practice in the <em>scratch file</em>, since EQ does change the underlying audio.</li>
+  <li>Learn EQ. Practice in the <em>scratch file</em>, since EQ does change the underlying audio.</li>
   <li>Spend the rest of the session working on Project 1.</li>
   <li>Upload everything to the NAS using the end-of-session routine.</li>
 </ol>
@@ -184,7 +184,7 @@
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
-    Each track has a small horizontal slider in its <strong>Track Control Panel</strong> on the left side. Look for a slider with a <strong>−</strong> on one end and a <strong>+</strong> on the other. Drag it left to make the track quieter, right to make it louder. The slider is officially called <strong>Gain</strong> (or sometimes <strong>Volume</strong>) in the Audacity manual.
+    Each track has a small horizontal slider in its <strong>Track Control Panel</strong> on the left side. Look for a slider with a <strong>−</strong> on one end and a <strong>+</strong> on the other. Drag it left to make the track quieter, right to make it louder. The slider is called <strong>Gain</strong> (or sometimes <strong>Volume</strong>).
   </div>
 
   <h4>Gain staging: the two-part habit</h4>
@@ -193,7 +193,7 @@
 
   <ol>
     <li><strong>Nothing peaks.</strong> No track should ever hit 0 dB on the meters. When a signal hits 0, the waveform gets clipped flat at the top, and the audio distorts. Once a track has clipped, the only fix is to lower its gain and play it back again. Keep peaks comfortably below 0, ideally with the loudest moments hitting around <strong>−6 dB</strong>. That gap between your loudest peak and 0 is called <strong>headroom</strong>.</li>
-    <li><strong>Tracks are balanced relative to each other.</strong> Once nothing is clipping, the next question is: do all the elements of your piece sit at appropriate levels relative to each other? The "main" sound of a moment should be loudest; supporting sounds quieter. Every moment of your piece has its own balance.</li>
+    <li><strong>Tracks are balanced relative to each other.</strong> Once nothing is clipping, the next question is: do all the elements of your piece sit at appropriate levels relative to each other? The "main" sound of a moment should be loudest; supporting sounds quieter. As your piece moves through different moments, the balance can shift; the foreground in section A might step back in section B.</li>
   </ol>
 
   <figure class="diagram">
@@ -305,12 +305,12 @@
     <figcaption>Two contrasting mixes shown on level meters. The black tick on each bar marks the loudest peak that track has hit. Below −6 dB shows green; the orange and red zones above −6 indicate signal getting hot or clipping.</figcaption>
   </figure>
 
-  <p>The black tick on each bar in the diagram marks the highest peak that track has reached. In the healthy mix on the left, every tick lands well below −6 dB, in the green zone; the four tracks are also reasonably close to each other, so no element overwhelms or disappears. In the problem mix on the right, T1 has hit clip and is distorting (its bar shows the green/orange/red zones it filled on its way to clipping); T4 is creeping into the orange hot zone; T2 is comfortably in the green; T3 is also in the green but so quiet (−28 dB) that it'll be hard to hear in the mix. The colors on T1 and T4 are showing you which level zones each track <em>passed through</em> on its way to its peak.</p>
+  <p>The black tick on each bar in the diagram marks the highest peak that track has reached. In the healthy mix on the left, every tick lands well below −6 dB, in the green zone; the four tracks are also reasonably close to each other, so no element overwhelms or disappears. In the problem mix on the right, T1 has hit clip and is distorting (its bar fills the green, orange, and red zones because its peak reached all the way to 0); T4 is creeping into the orange hot zone; T2 is comfortably in the green; T3 is also in the green but so quiet (−28 dB) that it'll be hard to hear in the mix. Bars with orange or red show that those tracks have reached into the orange or red zones; an all-green bar means the track's peak stayed safely below −6.</p>
 
   <p>You don't have a single big meter for each track in Audacity (that's a feature of more elaborate DAWs), but you do have the <strong>playback meter at the top of the Audacity window</strong>, which shows the master output. As your piece plays, watch that meter. If it ever turns red at the right edge, something is clipping. Lower the gain on whichever track is the culprit (often the loudest element), play again, check.</p>
 
   <div class="exercise-label">Exercise (in your Project 1 file)</div>
-  <p class="exercise">Two passes through your piece. <strong>First, solo each track and check its levels on its own.</strong> Each track's Track Control Panel has a <strong>Solo</strong> button (next to Mute). Click Solo on track 1, press play, watch the playback meter at the top of the Audacity window, and check whether anywhere in the track the signal hits the red zone or sits too quietly to hear. Adjust that track's gain slider until peaks land below −6. Click Solo off, then Solo on track 2, repeat. Then track 3. This is the gain-staging pass: each track gets checked in isolation so you know nothing is clipping or buried before they all play together.</p>
+  <p class="exercise">Two passes through your piece. <strong>First, solo each track and check its levels on its own.</strong> Each track's Track Control Panel has a <strong>Solo</strong> button (next to Mute). For each track in turn: click Solo on, press play, watch the playback meter at the top of the Audacity window, and check whether anywhere in the track the signal hits the red zone or sits too quietly to hear. Adjust that track's gain slider until peaks land below −6. Click Solo off and move to the next track. This is the gain-staging pass: each track gets checked in isolation so you know nothing is clipping or buried before they all play together.</p>
 
   <p class="exercise"><strong>Second, un-solo everything and play the whole piece.</strong> Now the question is balance: with all tracks playing together, can you hear every element at the relative loudness you want? Which moments push the meter close to red? Which tracks disappear when other things are playing? Move the gain sliders to balance them in context, in small adjustments (3 to 6 dB at a time). Keep adjusting until: (1) nothing peaks anywhere in the piece, and (2) every element you intend to be heard can be heard.</p>
 
@@ -319,11 +319,11 @@
     <p>Soloing each track to check its levels individually is a habit worth building now. It comes back constantly: any time you're working on one track's level, EQ, or anything else, soloing lets you hear what you're actually doing without the other tracks getting in the way. We'll use it again in the EQ exercise; the Filter Curve EQ Preview button does this for you automatically.</p>
   </div>
 
-  <p class="listen">Listen for: small adjustments matter more than large ones. A 3 to 6 dB change is usually enough to bring a track forward or push it back. If you find yourself making 15 dB changes, something else is probably wrong (a clip is too loud at the source, or a track is fighting another track's frequency range, which is an EQ problem we'll get to).</p>
+  <p class="listen">Listen for: small adjustments matter more than large ones. A 3 to 6 dB change is usually enough to bring a track forward or push it back. If you find yourself making 15 dB changes, something else is probably wrong (the source recording may be too loud, or a track is fighting another track's frequency range, which is an EQ problem we'll get to).</p>
 
   <div class="callout">
     <div class="callout-label">Master output</div>
-    <p>The slider next to the playback meter at the top of the Audacity window is the <strong>master output</strong>: it controls how loud the whole project plays back. Like the per-track gain slider, it's non-destructive. Useful when individual tracks are well-balanced but the overall mix feels too loud or too quiet on your headphones. Later in the course we'll add tools to the master output that shape the whole mix together (a limiter, for example), but for now leave it alone unless you need a quick overall adjustment.</p>
+    <p>The slider next to the playback meter at the top of the Audacity window is the <strong>master output</strong>: it controls how loud the whole project plays back. Same idea as gain and pan, applied to the project's master output. Useful when individual tracks are well-balanced but the overall mix feels too loud or too quiet on your headphones. Later in the course we'll add tools to the master output that shape the whole mix together (a limiter, for example), but for now leave it alone unless you need a quick overall adjustment.</p>
   </div>
 </div>
 
@@ -436,7 +436,7 @@
   <p>Pop and electronic mixing has developed conventions over decades about which kinds of sounds belong where. The conventions aren't rules, but they're worth knowing because they encode useful perceptual realities:</p>
 
   <ul>
-    <li><strong>Center (the focal foundation).</strong> Low-frequency content (anything below roughly <strong>150 Hz</strong>) belongs in the center. The reason isn't aesthetic, it's perceptual: your ears can't really localize low frequencies, so panning bass to one side doesn't add stereo width but does cause the speakers to do unequal work, which throws off the mix's balance. The same logic applies to anything you want to be the focal point of a moment: a lead vocal, the kick drum in a beat, the sustained drone that anchors a section. Centering makes a sound feel solid and present.</li>
+    <li><strong>Center (the focal foundation).</strong> Low-frequency content (anything below roughly <strong>150 Hz</strong>) belongs in the center. The reason is perceptual: your ears can't really localize low frequencies, so panning bass to one side doesn't add stereo width but does cause the speakers to do unequal work, which throws off the mix's balance. The same logic applies to anything you want to be the focal point of a moment: a lead vocal, the kick drum in a beat, the sustained drone that anchors a section. Centering makes a sound feel solid and present.</li>
     <li><strong>Slight L/R (around 20 to 40 percent pan).</strong> Supporting elements that you want to feel like they have their own space without disappearing into the background. Hi-hats, supporting percussion, secondary voices, complementary textures.</li>
     <li><strong>Wider (around 50 to 70 percent pan).</strong> Pads, ambient layers, textural material that's there to fill space rather than draw attention. Often these can be panned generously without feeling unbalanced because they're already diffuse in character.</li>
     <li><strong>Hard left or right (90 to 100 percent pan).</strong> Special effects, deliberate spatial gestures, ping-pong-style alternations between channels. Use sparingly; hard pans call attention to themselves.</li>
@@ -445,7 +445,7 @@
   <p>For your Project 1 piece, the rough translation is: <strong>the most foundational or lowest-pitched element of a moment usually wants the center; supporting and textural material can spread out</strong>. You don't have a kick drum and bass guitar to organize, but you do have your own foundation and supporting roles, even in a musique concrète piece.</p>
 
   <div class="exercise-label">Exercise (in your Project 1 file)</div>
-  <p class="exercise">Still in your Project 1 project, listen with headphones (the stereo effect is most obvious on headphones). For each of your tracks, decide what role it plays: is it a foundational element, a supporting one, or a textural one? Then pan accordingly. Try one track at a slight L (around 25%), another at slight R (around 25%), and leave the most foundational one in the center. Press play. Walk around your headphones in your mind: where does each sound seem to come from?</p>
+  <p class="exercise">Put on headphones (the stereo effect is most obvious there). For each of your tracks, decide what role it plays: is it a foundational element, a supporting one, or a textural one? Then pan accordingly. Try one track at a slight L (around 25%), another at slight R (around 25%), and leave the most foundational one in the center. Press play and listen. Where does each sound seem to come from?</p>
 
   <p class="listen">Listen for: the piece now feels wider. Sounds occupy different positions in your headphones rather than all coming from the center. A small pan (20 to 40 percent) is often more effective than a hard pan, because it gives the impression of a real space rather than an artificial split. If something with a lot of low-frequency content suddenly feels lopsided when you pan it, trust that feeling: bring it back to center.</p>
 </div>
@@ -453,7 +453,9 @@
 <div class="tool">
   <h3>3 · EQ</h3>
 
-  <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to shape the <strong>timbre</strong> of a sound, the color of the sound, the thing we talked about in lecture: the same pitch played on a flute versus a violin has different timbre because the harmonics above the fundamental are distributed differently. Another name for that distribution of frequency content is the <strong>spectrum</strong>. EQ lets you reshape the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity, like the rest of the Effect menu, which is the reason the Preview habit matters.</p>
+  <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to shape the <strong>timbre</strong> of a sound, the color of the sound, which we covered in lecture: the same pitch played on a flute versus a violin has different timbre because the harmonics above the fundamental are distributed differently. Another name for that distribution of frequency content is the <strong>spectrum</strong>.</p>
+
+  <p>EQ lets you reshape the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity, like the rest of the Effect menu, which is the reason the Preview habit matters.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
@@ -464,18 +466,18 @@
 
   <figure class="diagram">
     <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="eqcurve-title">
-      <title id="eqcurve-title">A typical EQ curve. Frequency runs along the horizontal axis from 20 Hz on the left to 20,000 Hz on the right. Amplitude in dB runs along the vertical axis. The curve shows a low cut at the left, a roughly flat middle, a gentle boost around 4 kHz, and a roll-off in the highest frequencies.</title>
+      <title id="eqcurve-title">A typical EQ curve. Frequency runs along the horizontal axis from 20 Hz on the left to 20,000 Hz on the right (logarithmic spacing, as in real EQ dialogs). Amplitude in dB runs along the vertical axis. The curve shows a low cut at the left, a roughly flat middle, a gentle boost around 4 kHz, and a roll-off in the highest frequencies.</title>
 
       <!-- Plot area background -->
       <rect x="80" y="40" width="600" height="240" fill="#ede6d6" stroke="#c9bfa8" stroke-width="1"/>
 
-      <!-- Vertical gridlines at decades (log scale: 20, 100, 1k, 10k, 20k) -->
-      <!-- 20 Hz at x=80 (start), 100 at ~x=210, 1k at ~x=380, 10k at ~x=550, 20k at x=680 (end) -->
-      <line x1="210" y1="40" x2="210" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
-      <line x1="295" y1="40" x2="295" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
-      <line x1="380" y1="40" x2="380" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
-      <line x1="465" y1="40" x2="465" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
-      <line x1="550" y1="40" x2="550" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <!-- Vertical gridlines at log-correct positions:
+           20 Hz=80, 100=220, 500=360, 1k=420, 5k=560, 10k=620, 20k=680 -->
+      <line x1="220" y1="40" x2="220" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="360" y1="40" x2="360" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="420" y1="40" x2="420" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="560" y1="40" x2="560" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="620" y1="40" x2="620" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
 
       <!-- Horizontal gridlines at +12, +6, 0, -6, -12 -->
       <!-- 0 dB at y=160 (vertical center). +12 at y=40, +6 at y=100, -6 at y=220, -12 at y=280 -->
@@ -497,70 +499,65 @@
       </g>
       <text x="36" y="160" font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="middle" transform="rotate(-90, 36, 160)">AMPLITUDE (dB)</text>
 
-      <!-- X-axis labels (Hz, log spacing) -->
+      <!-- X-axis labels (Hz, log-spaced) -->
       <g font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="middle">
         <text x="80" y="298">20</text>
-        <text x="210" y="298">100</text>
-        <text x="295" y="298">500</text>
-        <text x="380" y="298">1k</text>
-        <text x="465" y="298">5k</text>
-        <text x="550" y="298">10k</text>
+        <text x="220" y="298">100</text>
+        <text x="360" y="298">500</text>
+        <text x="420" y="298">1k</text>
+        <text x="560" y="298">5k</text>
+        <text x="620" y="298">10k</text>
         <text x="680" y="298">20k</text>
       </g>
       <text x="380" y="320" font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="middle">FREQUENCY (Hz)</text>
 
-      <!-- THE EQ CURVE -->
-      <!-- A representative curve:
-           - Low cut: starts way down at -10 dB at 20 Hz, rises through 100 Hz to flat by ~250 Hz
-           - Flat-ish middle around 0 dB
-           - Bell boost centered at 4 kHz, peak +5 dB
-           - Gentle roll-off above 10 kHz, ending at -3 dB at 20 kHz -->
+      <!-- THE EQ CURVE (re-computed for log-spaced axis):
+           - Low cut: starts at (80, 270) at 20 Hz, rises through 100 Hz (x=220) to flat by ~150 Hz (x=265)
+           - Flat at 0 dB through the mids (x=265 to ~x=460)
+           - Bell boost peaking at 4 kHz (x=540, y=115)
+           - Gentle roll-off above 10 kHz (x=620), ending at (680, 200) at 20 kHz -->
       <path d="M 80 270
-               C 130 270, 180 220, 230 170
-               L 280 162
-               L 350 160
-               L 420 150
-               C 450 110, 480 110, 510 145
-               L 540 158
-               L 580 170
-               C 620 180, 650 195, 680 200"
+               C 140 270, 200 215, 265 165
+               L 360 160
+               L 460 160
+               C 500 110, 580 110, 620 165
+               L 650 180
+               C 670 192, 675 196, 680 200"
             stroke="#a85c2e" stroke-width="2.5" fill="none" />
 
       <!-- Filled area under curve, to make the shape pop -->
       <path d="M 80 270
-               C 130 270, 180 220, 230 170
-               L 280 162
-               L 350 160
-               L 420 150
-               C 450 110, 480 110, 510 145
-               L 540 158
-               L 580 170
-               C 620 180, 650 195, 680 200
+               C 140 270, 200 215, 265 165
+               L 360 160
+               L 460 160
+               C 500 110, 580 110, 620 165
+               L 650 180
+               C 670 192, 675 196, 680 200
                L 680 280
                L 80 280
                Z"
             fill="#a85c2e" opacity="0.08" />
 
       <!-- Annotations on the curve -->
-      <!-- LOW CUT: dot at start of curve (80, 270); text raised above curve to clear collision -->
+      <!-- LOW CUT: dot at curve start (80, 270); text raised above curve to clear collision -->
       <g>
         <circle cx="80" cy="270" r="3" fill="#a85c2e"/>
         <text x="88" y="235" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="start">low cut</text>
         <text x="88" y="249" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="start">remove rumble</text>
       </g>
 
-      <!-- FLAT MIDS: dot at exact path point (350, 160) -->
+      <!-- FLAT MIDS: dot at (360, 160), exactly on the flat segment, sitting on the 0 dB line at 500 Hz -->
       <g>
-        <circle cx="350" cy="160" r="3" fill="#a85c2e"/>
-        <text x="350" y="145" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">flat at 0 dB</text>
-        <text x="350" y="130" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">no change</text>
+        <circle cx="360" cy="160" r="3" fill="#a85c2e"/>
+        <text x="360" y="145" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">flat at 0 dB</text>
+        <text x="360" y="130" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">no change</text>
       </g>
 
-      <!-- BOOST: dot at the peak of the bell (465, 119); text centered above and shifted left -->
+      <!-- BOOST: dot at the peak of the bell at 4 kHz (x=540, y=115); text centered above -->
       <g>
-        <circle cx="465" cy="119" r="3" fill="#a85c2e"/>
-        <text x="465" y="93" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">boost at 4 kHz</text>
-        <text x="465" y="107" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">add brightness</text>
+        <circle cx="540" cy="115" r="3" fill="#a85c2e"/>
+        <text x="540" y="93" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">boost at 4 kHz</text>
+        <text x="540" y="107" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">add brightness</text>
       </g>
 
       <!-- HIGH ROLLOFF: dot at end of curve (680, 200) -->
@@ -570,7 +567,7 @@
         <text x="672" y="239" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="end">soften the air</text>
       </g>
     </svg>
-    <figcaption>A typical EQ curve. Frequency runs left to right (low to high); amplitude runs up and down (boost above the dashed center line, cut below it). The curve traces what the EQ does at every frequency.</figcaption>
+    <figcaption>A typical EQ curve. Frequency runs left to right (low to high) on a log scale, the way real EQ dialogs are laid out; amplitude runs up and down (boost above the dashed center line, cut below it). The curve traces what the EQ does at every frequency.</figcaption>
   </figure>
 
   <p>The dialog opens with a graph just like this: <strong>frequency</strong> on the horizontal axis (low frequencies on the left, high on the right), and <strong>amplitude in dB</strong> on the vertical axis (boost above the center line, cut below it). You draw a curve by clicking on the graph to add control points and dragging them up or down. The curve shows what the EQ will do to each frequency range, exactly as drawn. Where the curve sits at 0 dB, that frequency passes through unchanged. Where it bows up, that frequency gets boosted; where it bows down, that frequency gets cut.</p>
@@ -648,7 +645,7 @@
 <ol class="steps">
   <li><strong>Apply what you just learned to your Project 1 file.</strong> Switch to the Project 1 window. Set track levels and panning so the piece sits the way you want. Both are non-destructive; experiment freely.</li>
   <li><strong>If a sound in your piece would benefit from EQ</strong>, this is a good time to try it. Important: <em>before</em> applying EQ to a sound in your Project 1 file, save a copy of the file first (<strong>File → Save Project As…</strong> save as <code>lastname-project01-v2.aup3</code>). Then if the EQ doesn't work out, you still have the previous version to fall back to.</li>
-  <li><strong>Keep editing.</strong> Mixing decisions often reveal editing problems (a level imbalance might mean a clip is too long, or a click pop you didn't notice before suddenly stands out). Move between editing and mixing as needed.</li>
+  <li><strong>Keep editing.</strong> Mixing decisions often reveal editing problems (a level imbalance might mean a section is too long, or a click pop you didn't notice before suddenly stands out). Move between editing and mixing as needed.</li>
   <li><strong>Listen to the whole piece all the way through, repeatedly.</strong> The most important mixing skill is hearing the whole arc, not just the moment you're working on. After every change, play back the full piece and check that it still works as a whole.</li>
 </ol>
 
