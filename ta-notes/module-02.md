@@ -562,33 +562,43 @@ Quick survey: "What's the hardest thing about it so far?" Listen to a few respon
 
 Then have students follow the handout's Setup section: pull the latest Project 1 file from NAS, open both `lastname-project01.aup3` and `lastname-techniques-scratch.aup3`. Both should be open in separate Audacity windows by the time you start Block 2.
 
-#### Block 2 — Levels and pan (10 min)
+#### Block 2 — The destructive vs. non-destructive frame + Levels & pan (15 min)
 
-The handout walks through both. On the projector, demonstrate on a simple multi-track sample (or one of your own demo projects):
+The handout's "Destructive vs. non-destructive (read this first)" section is the conceptual setup for the entire lab. Walk through it on the projector before demoing any tool (~3-5 min):
 
-- **Levels.** Show the gain slider on each track's Track Control Panel. Move it while audio plays so students hear the immediate effect. Frame: "This is the most basic mixing tool. The slider doesn't change the audio data; it just adjusts playback. Move it freely."
+- **The plain definitions**: non-destructive = sliders applied at playback (move freely, no permanent change); destructive = effect applied to audio data (permanent once Applied).
+- **The honest framing**: "Modern DAWs are mostly non-destructive. Audacity is the unusual one. This isn't a flaw; it's a design choice from the tape-editing tradition. It actually suits musique concrète work — every cut is a commitment, like Schaeffer working with tape."
+- **The two exceptions in Audacity**: gain slider and pan slider on the Track Control Panel. Everything else in the Effect menu is destructive.
+- **What this means for today**: levels and pan exercises happen on Project 1 (safe, non-destructive). EQ exercise happens in scratch (because EQ is destructive). For any destructive effect: Preview before Apply.
+
+Get this frame across before students start touching anything. It's the lens for the rest of the session.
+
+Then move to levels and pan. Demonstrate on a simple multi-track sample (or one of your own demo projects):
+
+- **Levels.** Show the gain slider on each track's Track Control Panel. Move it while audio plays so students hear the immediate effect.
+- **Gain staging.** The handout has a visualization showing two contrasting mixes (healthy vs. needs-work) on level meters. Pull it up on the projector. Walk through the two-part habit explicitly: (1) nothing peaks; (2) tracks are balanced relative to each other. Point at the "needs work" diagram: "This track is clipping. This one is inaudible. This is what we don't want."
 - **Pan.** Show the pan slider just below gain. Move it while playing so students hear the stereo movement. Headphones reveal this much more clearly than speakers; ask students to put headphones on for this part.
+- **The stereo field.** The handout has a top-down diagram showing where different kinds of sounds tend to live (center, slight, wider, hard). Pull it up on the projector. Walk through the "center for foundation/low-frequencies, spread for textures" convention. Note: "These aren't rules; they encode useful perceptual realities. Bass goes center because your ears can't localize bass anyway."
 - **Master output.** Briefly point out the slider next to the playback meter at the top of the Audacity window. Same idea, applied to the whole project. The handout mentions a limiter coming later (Mon Wk 5), so don't dwell here.
 
 Then students follow the handout's exercises in their own Project 1 files. Both exercises are non-destructive, so practicing on the real project is safe and gives them immediate progress on their pieces. Walk the room briefly to make sure everyone finds the sliders.
 
-#### Block 3 — EQ with Preview (20 min)
+#### Block 3 — EQ with Preview (15 min)
 
-This is the pedagogical heart of the session. The single most important concept: **destructive effects in Audacity are permanent once applied; the Preview button is the safety mechanism.**
+The Preview-before-Apply discipline is the pedagogical heart of the session. The destructive vs. non-destructive frame is already established (Block 2), so you don't need to re-explain why — just invoke the rule.
 
-Frame on the projector before opening the dialog: "Levels and pan are sliders. They don't change the audio; they just control playback. EQ is different. When you Apply an EQ, the audio data in your track is permanently modified. Undo works during the session, but once you save and close, the change is baked in. So the discipline is: **Preview before Apply.**"
-
-Then demonstrate the Filter Curve EQ dialog on the projector (Effect → EQ and Filters → Filter Curve EQ):
+Demonstrate the Filter Curve EQ dialog on the projector (Effect → EQ and Filters → Filter Curve EQ):
 
 - Show the graph: frequency horizontal, gain in dB vertical
 - Click two control points to make a simple curve (cut at ~200 Hz, boost at ~4000 Hz, mirroring the handout's exercise)
 - **Click Preview.** Make sure students hear the difference. This is the moment that matters most.
 - Adjust the curve, Preview again. "I can keep doing this without committing to anything."
 - Then click Apply. "Now it's permanent in this version of the project."
+- Press Cmd+Z to undo. "Within this session, undo can revert it. Once I save and close, it's baked in."
 
-Students follow the handout's exercise in their *scratch* projects (not Project 1). The scratch placement is itself a teaching point: you practice destructive effects in scratch precisely because they're destructive. Walk the room and make sure every student previews at least once before applying. If you see a student go straight to Apply without Preview, stop them and have them undo and try again.
+Students follow the handout's exercise in their *scratch* projects (not Project 1). The scratch placement is itself a teaching point — you practice destructive effects in scratch precisely because they're destructive. Walk the room and make sure every student previews at least once before applying. If you see a student go straight to Apply without Preview, stop them and have them undo and try again.
 
-The handout's "A look ahead: Module 4 with Ableton" callout previews how this will be different in Ableton (plugins, real-time, non-destructive). Mention this verbally as a way to motivate the discipline: "The reason this matters is that Audacity makes you commit to changes. Ableton won't. Building the Preview habit now means you won't accidentally bake bad EQ into your piece."
+The handout's brief "A look ahead: Module 4 with Ableton" callout points forward to where EQ will become non-destructive. Mention it verbally as motivation for the current discipline: "The reason Preview matters is that Audacity makes you commit. Ableton won't. Build the habit now so you never bake bad EQ into your piece."
 
 #### Block 4 — Project 1 work time (55 min)
 
