@@ -129,11 +129,6 @@
   <li>Upload everything to the NAS using the end-of-session routine.</li>
 </ol>
 
-<div class="callout">
-  <div class="callout-label">A note before you start</div>
-  <p>Today's three tools split into two categories that work very differently. We'll explain that distinction first, in its own section, because you'll need to think about it as we work through each tool.</p>
-</div>
-
 <hr>
 
 <h2>Setup</h2>
@@ -185,7 +180,7 @@
 <div class="tool">
   <h3>1 · Track levels</h3>
 
-  <p>The volume of one track relative to the others. The first thing a mixer balances. If a track is too loud, it overwhelms everything else; too quiet, and you don't hear it at all. Most mixing decisions start here. <strong>Non-destructive</strong> in Audacity (a slider applied at playback).</p>
+  <p>The volume of one track relative to the others. The first thing a mixer balances. If a track is too loud, it overwhelms everything else; too quiet, and you don't hear it at all. Most mixing decisions start here.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
@@ -203,17 +198,7 @@
 
   <figure class="diagram">
     <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="gainstaging-title">
-      <title id="gainstaging-title">Gain staging: two contrasting mixes shown as level meters. Healthy mix has all tracks peaking around -6 dB. Problem mix has one clipping track, one too quiet, and uneven balance.</title>
-      <defs>
-        <linearGradient id="meter-grad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#a83030"/>
-          <stop offset="12%" stop-color="#a83030"/>
-          <stop offset="13%" stop-color="#c08a2e"/>
-          <stop offset="25%" stop-color="#c08a2e"/>
-          <stop offset="26%" stop-color="#5c8c4e"/>
-          <stop offset="100%" stop-color="#5c8c4e"/>
-        </linearGradient>
-      </defs>
+      <title id="gainstaging-title">Gain staging: two contrasting mixes shown as level meters. Healthy mix has all tracks peaking around -7 to -9 dB, all in the green zone. Problem mix has one clipping track, two underused but balanced tracks, and one creeping into the orange zone.</title>
 
       <!-- Section labels -->
       <text x="160" y="22" font-family="DM Mono, monospace" font-size="13" font-weight="600" fill="#5c8c4e" text-anchor="middle" letter-spacing="1.2">HEALTHY MIX</text>
@@ -247,25 +232,21 @@
       <line x1="80" y1="80" x2="280" y2="80" stroke="#c08a2e" stroke-width="0.5" stroke-dasharray="2 3"/>
       <line x1="80" y1="110" x2="280" y2="110" stroke="#5c8c4e" stroke-width="0.5" stroke-dasharray="2 3"/>
 
-      <!-- 4 healthy tracks - all peaks around -6 to -8 -->
-      <!-- Track 1 peaks at -6 (y=110) -->
-      <rect x="100" y="110" width="32" height="170" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="100" y="50" width="32" height="60" fill="#ede6d6"/>
-      <line x1="100" y1="110" x2="132" y2="110" stroke="#2a2620" stroke-width="2"/>
+      <!-- Healthy tracks: all peaks below -6, so all-green bars -->
+      <!-- Track 1 peaks at -7 (y=120), all green -->
+      <rect x="100" y="120" width="32" height="160" fill="#5c8c4e" opacity="0.9"/>
+      <line x1="100" y1="120" x2="132" y2="120" stroke="#2a2620" stroke-width="2"/>
 
-      <!-- Track 2 peaks at -8 (y=130) -->
-      <rect x="142" y="130" width="32" height="150" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="142" y="50" width="32" height="80" fill="#ede6d6"/>
+      <!-- Track 2 peaks at -8 (y=130), all green -->
+      <rect x="142" y="130" width="32" height="150" fill="#5c8c4e" opacity="0.9"/>
       <line x1="142" y1="130" x2="174" y2="130" stroke="#2a2620" stroke-width="2"/>
 
-      <!-- Track 3 peaks at -7 (y=120) -->
-      <rect x="184" y="120" width="32" height="160" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="184" y="50" width="32" height="70" fill="#ede6d6"/>
-      <line x1="184" y1="120" x2="216" y2="120" stroke="#2a2620" stroke-width="2"/>
+      <!-- Track 3 peaks at -7 (y=120), all green (slight nudge to differ from T1 visually) -->
+      <rect x="184" y="125" width="32" height="155" fill="#5c8c4e" opacity="0.9"/>
+      <line x1="184" y1="125" x2="216" y2="125" stroke="#2a2620" stroke-width="2"/>
 
-      <!-- Track 4 peaks at -9 (y=140) -->
-      <rect x="226" y="140" width="32" height="140" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="226" y="50" width="32" height="90" fill="#ede6d6"/>
+      <!-- Track 4 peaks at -9 (y=140), all green -->
+      <rect x="226" y="140" width="32" height="140" fill="#5c8c4e" opacity="0.9"/>
       <line x1="226" y1="140" x2="258" y2="140" stroke="#2a2620" stroke-width="2"/>
 
       <!-- Track labels (left meter) -->
@@ -277,7 +258,7 @@
       </g>
 
       <!-- Caption (left) -->
-      <text x="180" y="320" font-family="DM Sans, sans-serif" font-size="11" fill="#5c544a" text-anchor="middle" font-style="italic">All peaks land around −6 to −9. Headroom intact.</text>
+      <text x="180" y="320" font-family="DM Sans, sans-serif" font-size="11" fill="#5c544a" text-anchor="middle" font-style="italic">All peaks land below −6. Headroom intact.</text>
 
       <!-- ============= RIGHT METER (NEEDS WORK) ============= -->
       <!-- Reference horizontal lines -->
@@ -285,25 +266,25 @@
       <line x1="460" y1="80" x2="660" y2="80" stroke="#c08a2e" stroke-width="0.5" stroke-dasharray="2 3"/>
       <line x1="460" y1="110" x2="660" y2="110" stroke="#5c8c4e" stroke-width="0.5" stroke-dasharray="2 3"/>
 
-      <!-- Track 1 CLIPS at 0 (y=50). Bar fills entire range. -->
-      <rect x="480" y="50" width="32" height="230" fill="url(#meter-grad)" opacity="0.85"/>
+      <!-- Track 1 CLIPS: green from baseline to -6 (y=110), orange -6 to -3 (y=80), red -3 to 0 (y=50). Whole bar full. -->
+      <rect x="480" y="110" width="32" height="170" fill="#5c8c4e" opacity="0.9"/>
+      <rect x="480" y="80" width="32" height="30" fill="#c08a2e" opacity="0.9"/>
+      <rect x="480" y="50" width="32" height="30" fill="#a83030" opacity="0.9"/>
       <line x1="480" y1="50" x2="512" y2="50" stroke="#a83030" stroke-width="3"/>
       <text x="496" y="42" font-family="DM Mono, monospace" font-size="10" font-weight="700" fill="#a83030" text-anchor="middle">CLIP!</text>
 
-      <!-- Track 2 peaks at -10 (y=150) -->
-      <rect x="522" y="150" width="32" height="130" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="522" y="50" width="32" height="100" fill="#ede6d6"/>
+      <!-- Track 2 peaks at -10 (y=150), all green -->
+      <rect x="522" y="150" width="32" height="130" fill="#5c8c4e" opacity="0.9"/>
       <line x1="522" y1="150" x2="554" y2="150" stroke="#2a2620" stroke-width="2"/>
 
-      <!-- Track 3 way too quiet, peaks at -28 (y=250) -->
-      <rect x="564" y="250" width="32" height="30" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="564" y="50" width="32" height="200" fill="#ede6d6"/>
+      <!-- Track 3 peaks at -28 (y=250), all green -->
+      <rect x="564" y="250" width="32" height="30" fill="#5c8c4e" opacity="0.9"/>
       <line x1="564" y1="250" x2="596" y2="250" stroke="#2a2620" stroke-width="2"/>
       <text x="580" y="245" font-family="DM Mono, monospace" font-size="9" fill="#5c544a" text-anchor="middle">−28</text>
 
-      <!-- Track 4 peaks at -4 (y=90), in the HOT zone -->
-      <rect x="606" y="90" width="32" height="190" fill="url(#meter-grad)" opacity="0.85"/>
-      <rect x="606" y="50" width="32" height="40" fill="#ede6d6"/>
+      <!-- Track 4 peaks at -4 (y=90): green up to -6 (y=110), orange from -6 (y=110) up to peak at -4 (y=90) -->
+      <rect x="606" y="110" width="32" height="170" fill="#5c8c4e" opacity="0.9"/>
+      <rect x="606" y="90" width="32" height="20" fill="#c08a2e" opacity="0.9"/>
       <line x1="606" y1="90" x2="638" y2="90" stroke="#2a2620" stroke-width="2"/>
 
       <!-- Track labels (right meter) -->
@@ -315,21 +296,28 @@
       </g>
 
       <!-- Caption (right) -->
-      <text x="560" y="320" font-family="DM Sans, sans-serif" font-size="11" fill="#5c544a" text-anchor="middle" font-style="italic">T1 distorts. T3 inaudible. Balance is gone.</text>
+      <text x="560" y="320" font-family="DM Sans, sans-serif" font-size="11" fill="#5c544a" text-anchor="middle" font-style="italic">T1 distorts. T4 too hot. T3 quiet, but balance is the issue.</text>
 
       <!-- Baseline -->
       <line x1="80" y1="280" x2="280" y2="280" stroke="#5c544a" stroke-width="1"/>
       <line x1="460" y1="280" x2="660" y2="280" stroke="#5c544a" stroke-width="1"/>
     </svg>
-    <figcaption>Two contrasting mixes shown on level meters. The black tick on each bar marks the loudest peak that track has hit.</figcaption>
+    <figcaption>Two contrasting mixes shown on level meters. The black tick on each bar marks the loudest peak that track has hit. Below −6 dB shows green; the orange and red zones above −6 indicate signal getting hot or clipping.</figcaption>
   </figure>
 
-  <p>The black tick on each bar in the diagram marks the highest peak that track has reached. In the healthy mix on the left, every tick lands in the green zone, around −6 to −9 dB; the four tracks are also reasonably close to each other, so no element overwhelms or disappears. In the problem mix on the right, T1 has hit clip and is distorting; T3 is so quiet it can barely be heard; T4 is creeping into the hot zone; only T2 is roughly where it should be.</p>
+  <p>The black tick on each bar in the diagram marks the highest peak that track has reached. In the healthy mix on the left, every tick lands well below −6 dB, in the green zone; the four tracks are also reasonably close to each other, so no element overwhelms or disappears. In the problem mix on the right, T1 has hit clip and is distorting (its bar shows the green/orange/red zones it filled on its way to clipping); T4 is creeping into the orange hot zone; T2 is comfortably in the green; T3 is also in the green but so quiet (−28 dB) that it'll be hard to hear in the mix. The colors on T1 and T4 are showing you which level zones each track <em>passed through</em> on its way to its peak.</p>
 
   <p>You don't have a single big meter for each track in Audacity (that's a feature of more elaborate DAWs), but you do have the <strong>playback meter at the top of the Audacity window</strong>, which shows the master output. As your piece plays, watch that meter. If it ever turns red at the right edge, something is clipping. Lower the gain on whichever track is the culprit (often the loudest element), play again, check.</p>
 
   <div class="exercise-label">Exercise (in your Project 1 file)</div>
-  <p class="exercise">In your Project 1 project, press play and listen to your piece all the way through, watching the playback meter. Take notes mentally: which moments push the meter close to (or into) red? Which tracks are too quiet to hear clearly? Now move the gain sliders. Bring the loudest track down a few dB; push any too-quiet track up. Play again. Keep adjusting until: (1) nothing peaks anywhere in the piece, and (2) every element you intend to be heard can be heard, at the relative loudness you want.</p>
+  <p class="exercise">Two passes through your piece. <strong>First, solo each track and check its levels on its own.</strong> Each track's Track Control Panel has a <strong>Solo</strong> button (next to Mute). Click Solo on track 1, press play, watch the playback meter at the top of the Audacity window, and check whether anywhere in the track the signal hits the red zone or sits too quietly to hear. Adjust that track's gain slider until peaks land below −6. Click Solo off, then Solo on track 2, repeat. Then track 3. This is the gain-staging pass: each track gets checked in isolation so you know nothing is clipping or buried before they all play together.</p>
+
+  <p class="exercise"><strong>Second, un-solo everything and play the whole piece.</strong> Now the question is balance: with all tracks playing together, can you hear every element at the relative loudness you want? Which moments push the meter close to red? Which tracks disappear when other things are playing? Move the gain sliders to balance them in context, in small adjustments (3 to 6 dB at a time). Keep adjusting until: (1) nothing peaks anywhere in the piece, and (2) every element you intend to be heard can be heard.</p>
+
+  <div class="callout">
+    <div class="callout-label">The solo habit</div>
+    <p>Soloing each track to check its levels individually is a habit worth building now. It comes back constantly: any time you're working on one track's level, EQ, or anything else, soloing lets you hear what you're actually doing without the other tracks getting in the way. We'll use it again in the EQ exercise; the Filter Curve EQ Preview button does this for you automatically.</p>
+  </div>
 
   <p class="listen">Listen for: small adjustments matter more than large ones. A 3 to 6 dB change is usually enough to bring a track forward or push it back. If you find yourself making 15 dB changes, something else is probably wrong (a clip is too loud at the source, or a track is fighting another track's frequency range, which is an EQ problem we'll get to).</p>
 
@@ -346,7 +334,7 @@
 <div class="tool">
   <h3>2 · Stereo pan</h3>
 
-  <p>The position of a track in the stereo field, from full left to full right. Pan is what gives a mix space and width: instead of every sound stacked on top of each other in the center, sounds occupy different points across the stereo image, the way instruments occupy different points on a stage. <strong>Non-destructive</strong> in Audacity (a slider applied at playback).</p>
+  <p>The position of a track in the stereo field, from full left to full right. Pan is what gives a mix space and width: instead of every sound stacked on top of each other in the center, sounds occupy different points across the stereo image, the way instruments occupy different points on a stage.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
@@ -465,25 +453,138 @@
 <div class="tool">
   <h3>3 · EQ (with the Preview habit)</h3>
 
-  <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to sculpt the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity, like the rest of the Effect menu, which is the reason the Preview habit matters.</p>
+  <p>EQ, short for <em>equalization</em>, lets you boost or cut specific frequency ranges in a sound. Think of it as a way to shape the <strong>timbre</strong> of a sound, the color of the sound, the thing we talked about in lecture: the same pitch played on a flute versus a violin has different timbre because the harmonics above the fundamental are distributed differently. Another name for that distribution of frequency content is the <strong>spectrum</strong>. EQ lets you reshape the spectrum: maybe a recording has too much rumble in the low end and you want to reduce it, or a voice sounds dull and you want to brighten the high end. EQ is one of the most-used tools in mixing; it's also one of the easiest to overuse. <strong>Destructive</strong> in Audacity, like the rest of the Effect menu, which is the reason the Preview habit matters.</p>
 
   <div class="where-row">
     <div class="where">Where in Audacity</div>
     <span class="menu-path">Effect → EQ and Filters → Filter Curve EQ…</span>
   </div>
 
-  <p>The dialog opens with a graph: <strong>frequency</strong> on the horizontal axis (low frequencies on the left, high on the right), and <strong>gain in dB</strong> on the vertical axis (boost above the center line, cut below it). You draw a curve by clicking on the graph to add control points and dragging them up or down. The curve shows what the EQ will do to each frequency range.</p>
+  <p>This is the first time you're seeing an EQ. Before opening the dialog, here's what one looks like:</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="eqcurve-title">
+      <title id="eqcurve-title">A typical EQ curve. Frequency runs along the horizontal axis from 20 Hz on the left to 20,000 Hz on the right. Amplitude in dB runs along the vertical axis. The curve shows a low cut at the left, a roughly flat middle, a gentle boost around 4 kHz, and a roll-off in the highest frequencies.</title>
+
+      <!-- Plot area background -->
+      <rect x="80" y="40" width="600" height="240" fill="#ede6d6" stroke="#c9bfa8" stroke-width="1"/>
+
+      <!-- Vertical gridlines at decades (log scale: 20, 100, 1k, 10k, 20k) -->
+      <!-- 20 Hz at x=80 (start), 100 at ~x=210, 1k at ~x=380, 10k at ~x=550, 20k at x=680 (end) -->
+      <line x1="210" y1="40" x2="210" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="295" y1="40" x2="295" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="380" y1="40" x2="380" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="465" y1="40" x2="465" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="550" y1="40" x2="550" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+      <!-- Horizontal gridlines at +12, +6, 0, -6, -12 -->
+      <!-- 0 dB at y=160 (vertical center). +12 at y=40, +6 at y=100, -6 at y=220, -12 at y=280 -->
+      <line x1="80" y1="40" x2="680" y2="40" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="80" y1="100" x2="680" y2="100" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="80" y1="220" x2="680" y2="220" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="80" y1="280" x2="680" y2="280" stroke="#ddd3bd" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+      <!-- 0 dB reference line, slightly stronger -->
+      <line x1="80" y1="160" x2="680" y2="160" stroke="#a85c2e" stroke-width="1" stroke-dasharray="3 3" opacity="0.55"/>
+
+      <!-- Y-axis labels (dB) -->
+      <g font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="end">
+        <text x="73" y="44">+12</text>
+        <text x="73" y="104">+6</text>
+        <text x="73" y="164">0</text>
+        <text x="73" y="224">-6</text>
+        <text x="73" y="284">-12</text>
+      </g>
+      <text x="36" y="160" font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="middle" transform="rotate(-90, 36, 160)">AMPLITUDE (dB)</text>
+
+      <!-- X-axis labels (Hz, log spacing) -->
+      <g font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="middle">
+        <text x="80" y="298">20</text>
+        <text x="210" y="298">100</text>
+        <text x="295" y="298">500</text>
+        <text x="380" y="298">1k</text>
+        <text x="465" y="298">5k</text>
+        <text x="550" y="298">10k</text>
+        <text x="680" y="298">20k</text>
+      </g>
+      <text x="380" y="320" font-family="DM Mono, monospace" font-size="10" fill="#5c544a" text-anchor="middle">FREQUENCY (Hz)</text>
+
+      <!-- THE EQ CURVE -->
+      <!-- A representative curve:
+           - Low cut: starts way down at -10 dB at 20 Hz, rises through 100 Hz to flat by ~250 Hz
+           - Flat-ish middle around 0 dB
+           - Bell boost centered at 4 kHz, peak +5 dB
+           - Gentle roll-off above 10 kHz, ending at -3 dB at 20 kHz -->
+      <path d="M 80 270
+               C 130 270, 180 220, 230 170
+               L 280 162
+               L 350 160
+               L 420 150
+               C 450 110, 480 110, 510 145
+               L 540 158
+               L 580 170
+               C 620 180, 650 195, 680 200"
+            stroke="#a85c2e" stroke-width="2.5" fill="none" />
+
+      <!-- Filled area under curve, to make the shape pop -->
+      <path d="M 80 270
+               C 130 270, 180 220, 230 170
+               L 280 162
+               L 350 160
+               L 420 150
+               C 450 110, 480 110, 510 145
+               L 540 158
+               L 580 170
+               C 620 180, 650 195, 680 200
+               L 680 280
+               L 80 280
+               Z"
+            fill="#a85c2e" opacity="0.08" />
+
+      <!-- Annotations on the curve -->
+      <!-- LOW CUT label -->
+      <g>
+        <circle cx="130" cy="270" r="3" fill="#a85c2e"/>
+        <text x="100" y="245" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="start">low cut</text>
+        <text x="100" y="259" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="start">remove rumble</text>
+      </g>
+
+      <!-- FLAT MIDS label -->
+      <g>
+        <circle cx="350" cy="160" r="3" fill="#a85c2e"/>
+        <text x="350" y="145" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="middle">flat at 0 dB</text>
+        <text x="350" y="130" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="middle">no change</text>
+      </g>
+
+      <!-- BOOST label -->
+      <g>
+        <circle cx="480" cy="110" r="3" fill="#a85c2e"/>
+        <text x="525" y="100" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="start">boost at 4 kHz</text>
+        <text x="525" y="114" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="start">add brightness</text>
+      </g>
+
+      <!-- HIGH ROLLOFF label -->
+      <g>
+        <circle cx="640" cy="194" r="3" fill="#a85c2e"/>
+        <text x="650" y="220" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#2a2620" text-anchor="end">high roll-off</text>
+        <text x="650" y="234" font-family="DM Sans, sans-serif" font-size="10" fill="#5c544a" text-anchor="end">soften the air</text>
+      </g>
+    </svg>
+    <figcaption>A typical EQ curve. Frequency runs left to right (low to high); amplitude runs up and down (boost above the dashed center line, cut below it). The curve traces what the EQ does at every frequency.</figcaption>
+  </figure>
+
+  <p>The dialog opens with a graph just like this: <strong>frequency</strong> on the horizontal axis (low frequencies on the left, high on the right), and <strong>amplitude in dB</strong> on the vertical axis (boost above the center line, cut below it). You draw a curve by clicking on the graph to add control points and dragging them up or down. The curve shows what the EQ will do to each frequency range, exactly as drawn. Where the curve sits at 0 dB, that frequency passes through unchanged. Where it bows up, that frequency gets boosted; where it bows down, that frequency gets cut.</p>
 
   <div class="exercise-label">Exercise (in your scratch project)</div>
-  <p class="exercise"><strong>Switch to your scratch project window</strong> (<code>lastname-techniques-scratch.aup3</code>). Remember: EQ is destructive, so we practice in scratch, not on Project 1. Make sure the scratch window is the active one before you continue.</p>
+  <p class="exercise"><strong>Switch to your scratch project window</strong> (<code>lastname-techniques-scratch.aup3</code>). Make sure the scratch window is the active one before you continue.</p>
 
   <ol class="steps">
     <li>Import a sound from the bank. Pick something with both low and high frequency content; a voice, a field recording, or a sustained instrument from <code>sustain-long/</code> all work well. Avoid pure tones for this exercise.</li>
-    <li>Select the entire sound (<kbd>Cmd</kbd> + <kbd>A</kbd>).</li>
+    <li>Select the entire sound (<kbd>Cmd</kbd> + <kbd>A</kbd>), or click and drag to select a chunk of the audio file.</li>
     <li>Open <span class="menu-path">Effect → EQ and Filters → Filter Curve EQ…</span> The dialog appears, with a flat horizontal line at 0 dB across the graph.</li>
     <li>Click somewhere on the graph around <strong>200 Hz</strong> (the lower-left area) and drag <em>down</em> a few dB. You've created a control point that cuts that frequency range.</li>
     <li>Click somewhere around <strong>4000 Hz</strong> (right of center) and drag <em>up</em> a few dB. You've created a second control point that boosts that range. The curve now bends down on the left and up on the right.</li>
-    <li><strong>Click the Preview button.</strong> Audacity plays the selected audio with the EQ applied, but doesn't modify the file. Listen carefully. The sound should be brighter in the upper-mids and thinner in the lower-mids than the original.</li>
+    <li><strong>Click the Preview button.</strong> Audacity plays the selected audio with the EQ applied, but doesn't modify the file. (Preview also automatically solos the selected track, so you hear just this sound while you're auditioning the curve. That's the same idea as the solo habit from the levels exercise.) Listen carefully. The sound should be brighter in the upper-mids and thinner in the lower-mids than the original.</li>
     <li>Don't like it? Adjust the control points (drag them, or drag them off the graph to delete) and Preview again. Try a few different shapes. Keep previewing until you find a curve you might want to commit to. (Or until you've decided EQ doesn't help this sound, which is also a valid conclusion.)</li>
     <li>When you've heard a curve you like, <strong>then</strong> click <strong>Apply</strong>. The dialog closes and the EQ is now permanently part of the audio. Listen one more time without the dialog open.</li>
     <li>Now press <kbd>Cmd</kbd> + <kbd>Z</kbd> to undo. The audio reverts to its original state. Reapply with a different curve if you want; the point of scratch is that you can experiment freely.</li>
