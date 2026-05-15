@@ -55,4 +55,4 @@ For typical Audacity screen recordings at 1518×1160 source, this lands files at
 
 ## Embedding
 
-In the reading HTML, each clip embeds inside the `.vocab` definition list as a `<figure class="vocab-video">` containing a `<video>` plus a row of speed-control buttons (0.5×, 1×, 2×). The buttons are wired up by a small script at the bottom of the reading. See `course/readings/module-02-week-03-editing-envelope.html` for the canonical pattern.
+In the reading HTML, each clip embeds inside the `.vocab` definition list as a `<figure class="vocab-video">` containing a `<video>` plus a row of speed-control buttons (0.5×, 1×, 2×). The buttons are wired up by a small script at the bottom of the reading. See `module-02-audio-editing-mixing/readings/week-03-editing-envelope.html` for the canonical pattern.

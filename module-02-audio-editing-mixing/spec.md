@@ -63,7 +63,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 
 A 2-minute piece built entirely from source sounds provided on the NAS, demonstrating editing and mixing skills learned in the module.
 
-Full project prompt and rubric: [`course/projects/project-01-musique-concrete.html`](../projects/project-01-musique-concrete.html)
+Full project prompt and rubric: [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html)
 
 **Timeline:**
 - Wk 3 Wed — students begin building
@@ -76,7 +76,7 @@ Full project prompt and rubric: [`course/projects/project-01-musique-concrete.ht
 
 **Module 2 listening:** musique concrète and sound-collage tradition — Pierre Schaeffer (*Étude aux chemins de fer*), Pierre Henry (*Variations pour une porte et un soupir*), and one contemporary example.
 
-Full listening assignment with guided questions: [`course/listening/module-02-listening.html`](../listening/module-02-listening.html)
+Full listening assignment with guided questions: [`listening/historical.html`](./listening/historical.html)
 
 **Due:** Mon Wk 5, before class.
 
@@ -86,13 +86,13 @@ Full listening assignment with guided questions: [`course/listening/module-02-li
 
 Built as the module progresses; not all exist yet.
 
-- **Readings** (Mon lectures) in [`course/readings/`](../readings/)
-- **Handouts** (Wed labs) in [`/handouts/`](../../handouts/) — Handout 03 (Audacity orientation, Wed Wk 2 Part 2), Handout 04 (Editing techniques + Project 1 begins, Wed Wk 3), Handout 05 (Mixing in Audacity, Wed Wk 4); further per-lab handouts as the module progresses
-- **Interactive tools** in [`course/tools/`](../tools/):
+- **Readings** (Mon lectures) in [`readings/`](./readings/)
+- **Handouts** (Wed labs) in [`handouts/`](./handouts/) — Handout 01 (Audacity orientation, Wed Wk 2 Part 2), Handout 02 (Editing techniques + Project 1 begins, Wed Wk 3), Handout 03 (Mixing in Audacity, Wed Wk 4); further per-lab handouts as the module progresses
+- **Interactive tools** in [`tools/`](./tools/):
   - Digital audio explorer (Wed Wk 2 Part 1) — built
-  - Wed Wk 4 lab does *not* use a separate interactive tool; mixing concepts (levels, pan, EQ, destructive vs. non-destructive) are taught directly in Audacity via Handout 05. The handout walks students through the actual tool they'll use in their pieces.
+  - Wed Wk 4 lab does *not* use a separate interactive tool; mixing concepts (levels, pan, EQ, destructive vs. non-destructive) are taught directly in Audacity via Handout 03. The handout walks students through the actual tool they'll use in their pieces.
   - Mon Wk 5 lecture (dynamics): tool design TBD when that session is built
-- **Project 1 prompt and rubric** in [`course/projects/`](../projects/)
+- **Project 1 prompt and rubric** in [`projects/`](./projects/)
 
 ---
 

@@ -6,7 +6,7 @@ The module spans seven sessions. They are not interchangeable. The Mondays are l
 
 Project 1 launches Wed Wk 3 and is due Wed Wk 5. Two and a half weeks. The clock is tight on purpose — students who have a month tend to use the first three weeks avoiding the work.
 
-This file is the operational runbook for all seven sessions. Module spec (the "what") is in [`course/modules/module-02.md`](../course/modules/module-02.md); this file is the "how."
+This file is the operational runbook for all seven sessions. Module spec (the "what") is in [`spec.md`](./spec.md); this file is the "how."
 
 ---
 
@@ -94,10 +94,10 @@ Students leave with conceptual fluency on what digital audio actually is: sample
 
 ### Pre-class checklist
 
-- The reading for today, [`course/readings/module-02-week-02-digital-audio.html`](../course/readings/module-02-week-02-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
+- The reading for today, [`readings/week-02-digital-audio.html`](./readings/week-02-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
 - Pull up the reading on the projector before students arrive. Have the audio comparison blocks ready to play (sample rate, bit depth, anti-alias filter on/off).
 - Make sure speakers in MB2525 are working and at a reasonable volume. The audio examples need to be heard clearly by the room — earbuds won't do.
-- The listening assignment ([`course/listening/module-02-listening.html`](../course/listening/module-02-listening.html)) is due Mon Wk 5. You'll introduce it at the end of class. Have it pulled up.
+- The listening assignment ([`listening/historical.html`](./listening/historical.html)) is due Mon Wk 5. You'll introduce it at the end of class. Have it pulled up.
 
 ### What students walk in knowing
 
@@ -148,7 +148,7 @@ Key beats:
 
 #### Block 4 — Listening assignment + close (15 min)
 
-Pull up the listening assignment ([`course/listening/module-02-listening.html`](../course/listening/module-02-listening.html)) on the projector. Walk through it briefly:
+Pull up the listening assignment ([`listening/historical.html`](./listening/historical.html)) on the projector. Walk through it briefly:
 
 - Three pieces: Schaeffer (1948), Henry (1963), and one contemporary piece they choose
 - Read the "Before you listen" history section *with them* — at least the first paragraph, to establish that these were tape compositions, not digital
@@ -195,8 +195,8 @@ Two halves:
 
 ### Materials
 
-- **Lab Part 1:** [`course/tools/module-02-week-02-digital-audio-explorer.html`](../course/tools/module-02-week-02-digital-audio-explorer.html)
-- **Lab Part 2:** [`handouts/03-audacity-orientation.html`](../handouts/03-audacity-orientation.html)
+- **Lab Part 1:** [`tools/week-02-digital-audio-explorer.html`](./tools/week-02-digital-audio-explorer.html)
+- **Lab Part 2:** [`handouts/01-audacity-orientation.html`](./handouts/01-audacity-orientation.html)
 
 ### Pre-class checklist
 
@@ -204,7 +204,7 @@ Two halves:
 - Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
 - Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short field recording of a struck bell (~15 s), with sharp attack and long decay — see "Asset prep" below for what's expected.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
-- Open the orientation handout (Handout 03) on the instructor station and on each student station's desktop browser
+- Open the orientation handout (Handout 01) on the instructor station and on each student station's desktop browser
 - Confirm Handout 02 (Session Routines) is laminated and visible at every station
 
 ### Block 1 — Recap (10 min)
@@ -229,7 +229,7 @@ Walk the room throughout. Listen for genuine engagement vs. clicking-without-lis
 
 ### Block 3 — Audacity orientation (45 min)
 
-Switch to the Audacity handout (Handout 03). Have students close the explorer and open the handout in a browser. Walk through the seven steps on the projector with students following along on their machines. **Don't move on until everyone is at each step.** This is one of those sessions where pacing to the slowest student is the right thing.
+Switch to the Audacity handout (Handout 01). Have students close the explorer and open the handout in a browser. Walk through the seven steps on the projector with students following along on their machines. **Don't move on until everyone is at each step.** This is one of those sessions where pacing to the slowest student is the right thing.
 
 The handout is detailed enough that students could in principle do it on their own. Your job in class is (a) catching the moments where someone misses a step and falls behind, (b) demonstrating each move on the projector so they have a model to mirror, (c) reinforcing the *workflow logic* (NAS-to-local at the start, work locally, local-to-NAS at the end) that the handout encodes.
 
@@ -271,9 +271,9 @@ The Audacity orientation handout assumes a specific sample on the NAS at `shared
 
 Inés to record or source. If unavailable, any single sound with a clear attack + long decay works (bowed string note that fades, struck rim, plucked piano string).
 
-### Asset prep — Audacity screenshots for Handout 03
+### Asset prep — Audacity screenshots for Handout 01 (Audacity orientation)
 
-Handout 03 references five screenshots that need capturing on a lab Mac and saved to `assets/images/handouts/`. The handout's `alt` text describes what each screenshot should show:
+Handout 01 references five screenshots that need capturing on a lab Mac and saved to `assets/images/handouts/`. The handout's `alt` text describes what each screenshot should show:
 
 | Filename | Content |
 |---|---|
@@ -303,7 +303,7 @@ Until the screenshots are captured, the figures render with their `alt` text vis
 
 Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course — Module 4's synthesis section depends on it.
 
-The reading for today is [`course/readings/module-02-week-03-editing-envelope.html`](../course/readings/module-02-week-03-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
+The reading for today is [`readings/week-03-editing-envelope.html`](./readings/week-03-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
@@ -415,8 +415,8 @@ Two halves:
 
 ### Materials
 
-- **Lab handout:** [`handouts/04-editing-techniques.html`](../handouts/04-editing-techniques.html) — covers the full session including setup, all nine techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
-- **Project 1 prompt:** [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html) — open on the projector during the Project-1-begins block.
+- **Lab handout:** [`handouts/02-editing-techniques.html`](./handouts/02-editing-techniques.html) — covers the full session including setup, all nine techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
+- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during the Project-1-begins block.
 - **Sample bank** at NAS `shared/sample-banks/project1/` — must be ready by class start. See [`ta-notes/sample-bank-project-01.md`](sample-bank-project-01.md).
 
 ### Pre-class checklist
@@ -425,7 +425,7 @@ Two halves:
 - **Verify the sample bank is ready and complete on the NAS** at `shared/sample-banks/project1/`. The handout assumes the canonical category folders (`attack-sharp`, `attack-soft`, `sustain-long`, `sustain-short`, `texture-continuous`, `voice-and-language`, `found-objects`, `natural-environment`, `mechanical-electronic`). If the bank is missing or has different folder names, **the handout's exercises won't work**. Confirm before class.
 - Verify Audacity opens cleanly on every machine; verify project format defaults are 44.1 kHz / 16-bit
 - Open the Project 1 prompt on the instructor station
-- Have Handout 04 open in a browser at every student station's desktop
+- Have Handout 02 open in a browser at every student station's desktop
 
 ### Block-by-block
 
@@ -541,8 +541,8 @@ The session is deliberately compact on the new content because students need wor
 
 ### Materials
 
-- **Lab handout:** [`handouts/05-mixing-in-audacity.html`](../handouts/05-mixing-in-audacity.html) — covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
-- **Project 1 prompt:** [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html) — open on the projector during Block 4.
+- **Lab handout:** [`handouts/03-mixing-in-audacity.html`](./handouts/03-mixing-in-audacity.html) — covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
+- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during Block 4.
 - **Students' own Project 1 files** from last week's work, plus their scratch files from Wed Wk 3.
 
 ### Pre-class checklist
@@ -550,7 +550,7 @@ The session is deliberately compact on the new content because students need wor
 - Walk the room (gear baseline)
 - **Take a quick mental inventory of where students are on Project 1.** From Wed Wk 3 spot-checks plus any work students did between sessions, you should have a rough sense of who's ahead, who's on track, who hasn't engaged. Note who to check in with during Block 4.
 - Open the Project 1 prompt on the instructor station
-- Have Handout 05 open in a browser at every student station's desktop
+- Have Handout 03 open in a browser at every student station's desktop
 
 ### Block-by-block
 
@@ -742,7 +742,7 @@ Every student finishes Project 1 and uploads to both NAS folders by end of class
 - **Verify the class listening folder exists and is writable by students.** Path: `/music/shared/mus-381-fall-2026/project-01-pieces/`. Permissions: students can write (drop their final WAV in), but cannot delete or modify others' files. Test this before class — drop a placeholder file in, then have one student try to add one and try to modify someone else's. If permissions aren't right, escalate to IT before students start uploading.
 - **Spot-check working folders** for 5-6 students. They should have at least a `lastname-project01-vN.aup3` project file by now, and ideally an in-progress export. If a student's working folder is empty or has only one early version, flag them to check in with first thing.
 - Walk the room (gear baseline).
-- Have the project prompt ([`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
+- Have the project prompt ([`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
 
 ### Block-by-block
 
@@ -799,7 +799,7 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 ### Grading
 
-Use the rubric in [`course/projects/project-01-musique-concrete.html`](../course/projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class — listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
+Use the rubric in [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class — listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
 
 Late submissions are handled per the syllabus's late policy. Pieces not in the class listening folder by end of class on Wed Wk 5 are late.
 

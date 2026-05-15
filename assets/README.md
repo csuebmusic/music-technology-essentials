@@ -16,10 +16,13 @@ Every document a student sees in this course shares the same visual system: warm
 
 Documents in subfolders link to the stylesheet via a relative path:
 
-- From `handouts/` → `../assets/style.css`
-- From `course/readings/` → `../../assets/style.css`
-- From `course/projects/` → `../../assets/style.css`
-- From `course/listening/` → `../../assets/style.css`
+All student-facing material lives two levels deep inside a module folder (e.g. `module-02-audio-editing-mixing/readings/foo.html`), so the stylesheet reference is:
+
+- From `module-XX-name/readings/` → `../../assets/style.css`
+- From `module-XX-name/listening/` → `../../assets/style.css`
+- From `module-XX-name/projects/` → `../../assets/style.css`
+- From `module-XX-name/tools/` → `../../assets/style.css`
+- From `module-XX-name/handouts/` → `../../assets/style.css`
 
 ## Document chrome convention
 
@@ -62,13 +65,13 @@ Markdown docs (module specs, TA notes) use the H1 to identify themselves:
 | TA notes for a module | `# TA Notes — Module XX` |
 | Operational TA doc (NAS policy, sample bank prep) | `# [Document title]` (no module reference; these are course-wide) |
 
-If a metadata line is useful immediately under the H1, put it as bold text and keep it dateless. For example: `**Weeks 2–5** (7 sessions)`. Date ranges live in `course/syllabus/course-outline.md` and nowhere else.
+If a metadata line is useful immediately under the H1, put it as bold text and keep it dateless. For example: `**Weeks 2–5** (7 sessions)`. Date ranges live in `syllabus/course-outline.md` and nowhere else.
 
 ### Why no dates anywhere except the syllabus
 
 Dates change every semester. If they appear in many places, they have to be updated in many places. Lecture numbers, project numbers, week numbers, and module thematic labels are all stable across semesters; calendar dates aren't.
 
-**The rule:** calendar dates (`Aug 24`, `Sep 16`, etc.) appear only in `course/syllabus/course-outline.md`. Re-running this course in a future semester should require editing only that file (and Canvas, externally).
+**The rule:** calendar dates (`Aug 24`, `Sep 16`, etc.) appear only in `syllabus/course-outline.md`. Re-running this course in a future semester should require editing only that file (and Canvas, externally).
 
 **For everything else, use week references.** The conventions are:
 

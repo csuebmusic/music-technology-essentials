@@ -2,30 +2,53 @@
 
 Course materials, teaching tools, and TA resources for MUS 381 at CSU East Bay.
 
-This repository is the working hub for an introductory music-technology course taught by Inés Thiebaut (Department of Music, CSU East Bay). It functions as a textbook replacement: course outline, weekly plans, handouts, listening assignments, projects, and interactive browser-based tools all live here.
+This repository is the working hub for an introductory music-technology course taught by Inés Thiebaut (Department of Music, CSU East Bay). It functions as a textbook replacement: syllabus, weekly plans, readings, handouts, listening assignments, projects, and interactive browser-based tools all live here, organized by module.
 
 ## Repository structure
 
-```
-course/
-  syllabus/      Course outline, schedule, learning outcomes
-  modules/       Week-by-week plans and lecture/lab content
-  projects/      Project prompts, rubrics, sample materials
-  listening/     Listening assignments and guided questions
+Everything for a given module lives in that module's folder. To prep a week of teaching, open the relevant module — readings, handouts, listening, projects, tools, spec, and TA notes are all there.
 
-tools/           Interactive browser-based teaching tools (HTML/JS)
-handouts/        Student-facing reference material
-ta-notes/        TA-facing teaching notes, common confusions, pacing
 ```
+syllabus/                            Course outline, schedule, learning outcomes
+module-01-fluency/                   Week 1 — computer & studio fluency
+module-02-audio-editing-mixing/      Weeks 2–5 — Audacity, editing, mixing → Project 1
+module-03-recording/                 Weeks 6–8 — recording & sample library → midterm
+module-04-ableton/                   Weeks 9–15 — Ableton audio + MIDI → final
+ta-notes/                            Cross-module TA policies (e.g. NAS archival)
+assets/                              Shared CSS, audio, images, videos
+build/                               Scripts that generate audio demos and other assets
+```
+
+Each module folder follows a consistent layout:
+
+```
+module-XX-name/
+  spec.md            Module specification (what & why, for Inés / reviewers)
+  ta-notes.md        Teaching notes (how, for the TA)
+  readings/          Student-facing HTML readings
+  listening/         Listening assignments (historical + peer)
+  projects/          Project prompts and project-specific notes
+  tools/             Interactive HTML/JS teaching tools for this module
+  handouts/          Laminated reference cards, lab orientation docs
+```
+
+Not every module uses every subfolder — they're added as needed.
 
 ## Course at a glance
 
-- **Term:** Fall 2026 (15 weeks)
-- **Format:** Mondays = lecture, Wednesdays = lab
+- **Term:** Fall 2026 (15 weeks, 27 class meetings)
+- **Format:** Mondays = lecture, Wednesdays = lab (MB2525)
 - **Modules:** 4 (Computer fluency → Audacity → Recording/sampling → Ableton)
-- **Deliverables:** Project 1 (musique concrète piece), midterm (sample library + exam), final project (open), final exam (cumulative)
+- **Deliverables:** Project 1 (musique concrète piece), midterm (sample library + terminology exam), final project, cumulative final exam
 
-See [`course/syllabus/course-outline.md`](course/syllabus/course-outline.md) for full details.
+See [`syllabus/course-outline.md`](syllabus/course-outline.md) for full details.
+
+## Conventions
+
+- **Student-facing materials** are HTML, using the shared stylesheet at `assets/style.css`.
+- **Specs and TA notes** are Markdown, intended for Inés and the TA.
+- **Audio standards:** Module 2 uses 44.1 kHz / 16-bit (Audacity). Module 4 uses 48 kHz / 32-bit float (Ableton).
+- **File workflow:** Local-first with NAS as sync mechanism — students work in `~/Documents/lastname/`, download from NAS at session start, upload at end.
 
 ## License & use
 

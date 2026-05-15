@@ -64,8 +64,8 @@ None for Week 1. Module 1 is a setup module. The first listening assignment land
 
 ## Student-facing materials
 
-- [`handouts/01-first-day-setup.html`](../../handouts/01-first-day-setup.html) — distributed locally on each lab machine and via Canvas
-- [`handouts/02-session-routines.html`](../../handouts/02-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
+- [`handouts/01-first-day-setup.html`](./handouts/01-first-day-setup.html) — distributed locally on each lab machine and via Canvas
+- [`handouts/02-session-routines.html`](./handouts/02-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
 
 ---
 

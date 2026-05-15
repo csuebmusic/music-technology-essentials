@@ -1,38 +1,32 @@
-# TA Notes
+# TA Notes — Cross-Module Policies
 
-Operational teaching guides for MUS 381 — paired one-to-one with module plans in [`course/modules/`](../course/modules/).
+Operational documents that apply course-wide rather than to a single module.
 
-Each TA notes file is the **runbook** for actually teaching its module. Where the module plan says *what* happens, the TA notes say *how to make it happen*. Opinionated, specific, full of practical asides and troubleshooting.
+**Per-module TA notes live inside each module folder** as `ta-notes.md`:
+- [`../module-01-fluency/ta-notes.md`](../module-01-fluency/ta-notes.md)
+- [`../module-02-audio-editing-mixing/ta-notes.md`](../module-02-audio-editing-mixing/ta-notes.md)
+- (module-03 and module-04 forthcoming)
 
-The TA notes assume the reader has not seen the module plan — they re-state goals briefly and then go straight to facilitation. A grad student TA should be able to teach the module from the TA notes alone.
+## What's in this folder
 
-## File naming
+- [`nas-archival-policy.md`](./nas-archival-policy.md) — what happens to student working files on the lab NAS over time. Defines the active → archive → deleted lifecycle, who runs it, and how students are notified. The TA executes the annual archive transition under the instructor's supervision.
 
-`module-XX.md` — e.g. `module-01.md`. One file per module (not per week within a module — TA notes can cover the whole arc of a module if useful).
+## About per-module TA notes
 
-## Standard sections
+Each module's `ta-notes.md` is the **runbook** for actually teaching that module. Where the module spec says *what* happens, the TA notes say *how to make it happen*. They assume the reader has not memorized the spec — goals are re-stated briefly, then it's straight to facilitation. A grad student TA should be able to teach the module from `ta-notes.md` alone.
 
-Most TA notes files will include some combination of:
+Typical contents:
 
-- **Pre-class preparation checklist** — what needs to happen before students walk in
-- **What students walk in knowing** — assumptions about prior experience
-- **Block-by-block notes** — facilitation detail, demo scripts, what to say, what to point at
-- **Common confusions during each block** — what trips students up, in priority order
-- **Things students will ask** — Q&A
-- **Pacing fallbacks** — what to cut if you're running over, what to add if you're ahead
-- **After-class checklist** — verification, follow-up, what to log
-- **What to assess** — explicit success criteria
+- Pre-class preparation checklist
+- What students walk in knowing
+- Block-by-block notes (demo scripts, what to say, what to point at)
+- Common confusions in priority order
+- Pacing fallbacks (cut if running over; add if running ahead)
+- After-class checklist
+- Assessment criteria
 
-Length-wise, TA notes typically run 3-5x the corresponding module plan. That's expected — operational detail is verbose. Don't compress it; verbosity is what makes the notes usable in the room.
+TA notes typically run 3–5× the length of the module spec — that's expected. Operational detail is verbose, and verbosity is what makes the notes usable in the room.
 
 ## Updating after teaching
 
-TA notes are living documents. After each semester, the TA (or Inés) should update them based on what happened — what confused students, what timing assumptions were wrong, what gear failed. The module plan stays stable; the TA notes evolve.
-
-## Course-wide operational documents
-
-Some files in this folder apply course-wide rather than to a single module:
-
-- [`nas-archival-policy.md`](./nas-archival-policy.md) — what happens to student working files on the lab NAS over time. Defines the active → archive → deleted lifecycle, who runs it, and how students are notified. The TA executes the annual archive transition under the instructor's supervision.
-- [`sample-bank-project-01.md`](./sample-bank-project-01.md) — sourcing and curating the shared sample bank used in Module 2's Project 1. Module-adjacent but lives here because the bank is curated once and reused.
-
+TA notes are living documents. After each semester, the TA (or Inés) updates them based on what happened — what confused students, what timing was off, what gear failed. The spec stays stable; the TA notes evolve.
