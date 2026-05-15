@@ -417,7 +417,7 @@ Two halves:
 
 - **Lab handout:** [`handouts/02-editing-techniques.html`](./handouts/02-editing-techniques.html) — covers the full session including setup, all nine techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
 - **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during the Project-1-begins block.
-- **Sample bank** at NAS `shared/sample-banks/project1/` — must be ready by class start. See [`ta-notes/sample-bank-project-01.md`](sample-bank-project-01.md).
+- **Sample bank** at NAS `shared/sample-banks/project1/` — must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
 
 ### Pre-class checklist
 

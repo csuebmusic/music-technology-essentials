@@ -41,7 +41,7 @@ By the end of this module, students should be able to:
 | 5 | Mon | Lecture: Dynamics + Interactive mixing tool Part 2 (compression/limiting) |
 | 5 | Wed | **Project 1 final work session + submission** |
 
-Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each week are in [`ta-notes/module-02.md`](../../ta-notes/module-02.md).
+Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each week are in [`ta-notes.md`](./ta-notes.md).
 
 ---
 
@@ -98,7 +98,7 @@ Built as the module progresses; not all exist yet.
 
 ## Pre-module preparation (Inés / TA)
 
-- **Sample bank curated and uploaded** to `/music/shared/sample-banks/project1/` before Wed Wk 3 — full scope and curation guidance in [`ta-notes/sample-bank-project-01.md`](../../ta-notes/sample-bank-project-01.md)
+- **Sample bank curated and uploaded** to `/music/shared/sample-banks/project1/` before Wed Wk 3 — full scope and curation guidance in [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md)
 - **Audacity installed and tested** on every lab machine
 - **Interactive tools built and tested** in advance of the sessions that use them
 

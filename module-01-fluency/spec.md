@@ -36,7 +36,7 @@ By the end of this single session, students should be able to:
 | 4 — Set up gear + make a recording | 4:00–4:35 | Full signal chain: mic → interface → QuickTime → local save |
 | 5 — Exit routine | 4:35–4:40 | First upload to NAS; routine that becomes habit all semester |
 
-Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks are in [`ta-notes/module-01.md`](../../ta-notes/module-01.md).
+Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks are in [`ta-notes.md`](./ta-notes.md).
 
 ---
 

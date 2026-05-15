@@ -14,7 +14,7 @@ module-01-fluency/                   Week 1 — computer & studio fluency
 module-02-audio-editing-mixing/      Weeks 2–5 — Audacity, editing, mixing → Project 1
 module-03-recording/                 Weeks 6–8 — recording & sample library → midterm
 module-04-ableton/                   Weeks 9–15 — Ableton audio + MIDI → final
-ta-notes/                            Cross-module TA policies (e.g. NAS archival)
+policies/                            Cross-cutting course policies (e.g. NAS archival)
 assets/                              Shared CSS, audio, images, videos
 build/                               Scripts that generate audio demos and other assets
 ```
