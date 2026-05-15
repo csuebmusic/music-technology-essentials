@@ -140,6 +140,42 @@ the other 9 files.
 The Karplus-Strong source used in the editing demos uses a fixed
 random seed (42), so output is deterministic across runs.
 
+## `generate-audio-demos-week-05.py`
+
+Generates the audio demo files used in the Module 2 Week 5 reading
+(`module-02-audio-editing-mixing/lessons/07-reading-dynamics.html`).
+Thirteen files in total, supporting four pedagogical moments in the
+reading: dynamic range (wide vs. narrow), threshold + ratio (one
+source compressed at three settings), attack + release (a percussion
+loop with four different time-constant settings), and the limiter /
+loudness-wars demo (same mix, progressively crushed).
+
+### What it produces
+
+Output directory: `assets/audio/module-02-week-05/`
+
+- `range-wide.wav`, `range-narrow.wav` — Section 1
+- `tr-source.wav`, `tr-light.wav`, `tr-medium.wav`, `tr-heavy.wav` — Section 2
+- `ar-source.wav`, `ar-fast-attack.wav`, `ar-slow-attack.wav`,
+  `ar-fast-release.wav`, `ar-slow-release.wav` — Section 3
+- `limit-natural.wav`, `limit-light.wav`, `limit-crushed.wav` — Section 4
+
+### Implementation notes
+
+The compressor is a feed-forward digital compressor with a one-pole
+peak detector and a 2 dB soft knee. Gain is computed in the log domain
+and applied as a linear multiplier. Attack and release use exponential
+time constants of the form `exp(-1/(t*sr))`.
+
+Makeup gain is deliberately **not** applied to the compression demos —
+every demo is normalized to a peak of -3 dBFS at write time, so the
+audible squashing reflects actual compression, not the loudness illusion
+of automatic makeup. The exception is the limiter trio, where the three
+files are written without normalization so students can hear the
+loudness-wars effect: peak levels are essentially identical across the
+three, but perceived loudness rises dramatically (and audibly) with the
+compression amount.
+
 ## File naming convention
 
 Build scripts use lowercase with hyphens, matching the rest of the

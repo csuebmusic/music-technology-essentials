@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Dynamics, Compression &amp; Limiting</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Reading-specific styles (mirrors the other Module 02 readings) */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure svg {
+      max-width: 100%;
+      height: auto;
+    }
+    figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.75rem;
+    }
+
+    /* Audio comparison rows (mirrors the layout from week-03) */
+    .audio-compare {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .audio-compare-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .audio-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 0.85rem 0;
+    }
+    .audio-row + .audio-row {
+      border-top: 1px dashed var(--rule);
+      padding-top: 1.1rem;
+    }
+    .audio-label {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+      flex: 0 0 9.5rem;
+    }
+    .audio-label-sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      margin-top: 0.15rem;
+    }
+    .audio-row audio {
+      flex: 1;
+      min-width: 0;
+      height: 36px;
+    }
+    .audio-row audio::-webkit-media-controls-panel {
+      background: var(--bg);
+    }
+    .audio-note {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin: 1rem 0 0;
+      line-height: 1.5;
+    }
+
+    /* Inline term highlight for first-time vocabulary */
+    .term {
+      font-weight: 500;
+    }
+
+    /* Side-by-side waveform comparison */
+    .waveform-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .waveform-pair figure {
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      .waveform-pair {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Callout for the loudness-wars cautionary moment */
+    .callout {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 3px 3px 0;
+    }
+    .callout-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Closing summary */
+    .summary-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0 0;
+    }
+    .summary-box h3 {
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .summary-box ul {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 02 · Lecture 3</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 02 · Digital audio, editing &amp; mixing</div>
+  <h1>Dynamics, compression &amp; limiting</h1>
+  <div class="subtitle">Shaping how loud a sound is, and how loud it <em>seems</em>.</div>
+</div>
+
+<p class="lede">In the Wednesday lab last week you set levels, panned tracks, and balanced sounds in your mix. The remaining tool in the mixing toolbox is <strong>dynamics processing</strong>: changing the relationship between the loud and quiet parts of a sound. Today we look at the two main tools — <em>compression</em> and <em>limiting</em> — what they do, when they help, and how they get misused. This is the last new content of the module. Wednesday is the final work session and submission, and the choices in this reading will shape the last 20% of your piece.</p>
+
+<hr>
+
+<h2>1 · Dynamic range</h2>
+
+<p>The <span class="term">dynamic range</span> of a sound is the difference between its quietest and loudest parts, measured in decibels (dB). A whisper followed by a shout has a wide dynamic range. A car alarm has a narrow one — it's loud, it stays loud, the loud and quiet parts aren't very different.</p>
+
+<p>Pieces of music have dynamic range too. A solo piano recording has a wide range: a soft passage might sit 30 or 40 dB below a loud chord. A modern pop song mastered for radio has a narrow range: from start to finish, everything sits within a few dB of the loudest peak.</p>
+
+<p>Neither is automatically better. Wide dynamic range gives a piece room to breathe, and lets quiet moments feel quiet. Narrow dynamic range gives a piece consistent presence — useful in environments where the listener can't adjust their volume (in a car, on a phone speaker, on a noisy bus).</p>
+
+<p>Listen to the same musical fragment with wide and narrow dynamic range. The peak level is the same in both files (both written with their loudest moment at the same level). What changes is how loud the <em>average</em> sounds, and whether the quiet parts feel quiet:</p>
+
+<figure class="audio-compare">
+  <div class="audio-compare-title">Demo · Dynamic range</div>
+  <div class="audio-row">
+    <span class="audio-label">Wide
+      <span class="audio-label-sub">natural dynamics</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/range-wide.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Narrow
+      <span class="audio-label-sub">heavily compressed</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/range-narrow.wav"></audio>
+  </div>
+  <p class="audio-note">Both files have the same peak level. The narrow version sounds <em>louder on average</em> because the quiet parts have been brought up — but you can hear that it's lost something. The pad and the percussion now sit roughly at the same level, where in the wide version the kicks clearly stand out from the background.</p>
+</figure>
+
+<p>The piece in your Project 1 has some dynamic range, whether you've thought about it or not. Some moments are louder, some are quieter, and that contrast is part of how the piece holds attention. Compression and limiting are the tools you use to change that relationship deliberately.</p>
+
+<hr>
+
+<h2>2 · The compressor: threshold and ratio</h2>
+
+<p>A <span class="term">compressor</span> reduces dynamic range. It does this by attenuating the loud parts of a signal while leaving the quiet parts alone. Two parameters define <em>how much</em> attenuation happens and <em>where</em> it starts: <strong>threshold</strong> and <strong>ratio</strong>.</p>
+
+<p>The <span class="term">threshold</span> is a level (in dB) above which the compressor starts working. Signal below the threshold passes through untouched. Signal above the threshold is reduced.</p>
+
+<p>The <span class="term">ratio</span> determines <em>how much</em> the signal above the threshold is reduced. A ratio of 2:1 means that for every 2 dB the input goes above the threshold, the output only goes up by 1 dB. A ratio of 4:1 means 4 dB in gets 1 dB out. A ratio of 10:1 means 10 dB in gets 1 dB out — the loud signal is barely allowed to get any louder.</p>
+
+<figure>
+  <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Compressor transfer curve diagram showing input level vs output level for ratios 1:1, 2:1, 4:1, and 10:1">
+    <rect width="600" height="380" fill="var(--bg-alt)"/>
+
+    <!-- Plot area: x = 80..540, y = 50..330 -->
+    <!-- x-axis: input in dBFS, -60 to 0 -->
+    <!-- y-axis: output in dBFS, -60 to 0 -->
+
+    <!-- Axes -->
+    <line x1="80" y1="330" x2="540" y2="330" stroke="var(--ink)" stroke-width="1.5"/>
+    <line x1="80" y1="50" x2="80" y2="330" stroke="var(--ink)" stroke-width="1.5"/>
+
+    <!-- Axis labels -->
+    <text x="310" y="360" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)" text-anchor="middle">input level (dB)</text>
+    <text x="30" y="190" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90, 30, 190)">output level (dB)</text>
+
+    <!-- Tick marks: every 10 dB. Plot goes -60 (left/bottom) to 0 (right/top).
+         x: 80 + (60+input)/60 * 460
+         y: 330 - (60+output)/60 * 280
+         For input -60: x=80; input 0: x=540. Per dB: 7.67 px.
+         For output -60: y=330; output 0: y=50. Per dB: 4.67 px. -->
+
+    <!-- x ticks -->
+    <text x="80" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">-60</text>
+    <text x="156.67" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">-50</text>
+    <text x="233.33" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">-40</text>
+    <text x="310" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">-30</text>
+    <text x="386.67" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">-20</text>
+    <text x="463.33" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">-10</text>
+    <text x="540" y="345" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">0</text>
+
+    <!-- y ticks -->
+    <text x="70" y="333" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">-60</text>
+    <text x="70" y="287" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">-50</text>
+    <text x="70" y="240" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">-40</text>
+    <text x="70" y="193" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">-30</text>
+    <text x="70" y="147" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">-20</text>
+    <text x="70" y="100" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">-10</text>
+    <text x="70" y="53" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">0</text>
+
+    <!-- Gridlines at threshold (-20 dB) -->
+    <!-- Vertical at input = -20: x = 386.67 -->
+    <line x1="386.67" y1="50" x2="386.67" y2="330" stroke="var(--ink-soft)" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <text x="386.67" y="42" font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="middle">threshold = -20</text>
+
+    <!-- 1:1 reference line (no compression): from (-60, -60) to (0, 0) = (80,330) to (540,50) -->
+    <line x1="80" y1="330" x2="540" y2="50" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="2,3"/>
+    <text x="545" y="45" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="start">1:1</text>
+
+    <!-- Below threshold, all curves trace the 1:1 line.
+         Above threshold (-20), output = T + (input - T) / ratio
+         For input = 0 (max):
+           ratio 2: output = -20 + 20/2 = -10  -> y at output -10 is 100
+           ratio 4: output = -20 + 20/4 = -15  -> y at output -15 is 123.5
+           ratio 10: output = -20 + 20/10 = -18 -> y at output -18 is 137.5 -->
+
+    <!-- 2:1 curve: 1:1 from (80,330) to (386.67, 143.33), then bends -->
+    <!-- At threshold (-20, -20): (386.67, 143.33). At max (0, -10): (540, 100). -->
+    <polyline points="80,330 386.67,143.33 540,100"
+              fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.45"/>
+    <text x="548" y="100" font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" opacity="0.65">2:1</text>
+
+    <!-- 4:1 curve: bends harder. At (0, -15) -> (540, 123.5) -->
+    <polyline points="80,330 386.67,143.33 540,123.5"
+              fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.7"/>
+    <text x="548" y="123" font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" opacity="0.85">4:1</text>
+
+    <!-- 10:1 curve: nearly flat above threshold. At (0, -18) -> (540, 137.5) -->
+    <polyline points="80,330 386.67,143.33 540,137.5"
+              fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <text x="548" y="138" font-family="DM Mono, monospace" font-size="10" fill="var(--accent)">10:1</text>
+
+    <!-- Annotations: "no compression below threshold" -->
+    <text x="200" y="280" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="var(--ink-soft)" text-anchor="middle">below threshold:</text>
+    <text x="200" y="294" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="var(--ink-soft)" text-anchor="middle">no compression</text>
+
+    <text x="465" y="200" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="var(--ink-soft)" text-anchor="middle">above threshold:</text>
+    <text x="465" y="214" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="var(--ink-soft)" text-anchor="middle">curves flatten</text>
+  </svg>
+  <figcaption>The compressor transfer curve. The diagonal dashed line is no compression (1:1) — output equals input. The three solid lines show what happens at increasing ratios with the threshold fixed at -20 dB. Below the threshold every curve follows the 1:1 line. Above it, higher ratios bend the curve more flat — the loud signal is allowed to get less and less louder.</figcaption>
+</figure>
+
+<p>Listen to the same source through three compression settings. The source is six short percussive hits, with the first, fourth at a peak level (-3 dBFS), the second and fifth quieter (-9 dBFS), and the third and sixth quieter still (-15 dBFS). In each setting, listen for which hits get compressed and which don't:</p>
+
+<figure class="audio-compare">
+  <div class="audio-compare-title">Demo · Threshold and ratio</div>
+  <div class="audio-row">
+    <span class="audio-label">Source
+      <span class="audio-label-sub">no compression</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/tr-source.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Light
+      <span class="audio-label-sub">T = -12, R = 2:1</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/tr-light.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Medium
+      <span class="audio-label-sub">T = -18, R = 4:1</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/tr-medium.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Heavy
+      <span class="audio-label-sub">T = -24, R = 10:1</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/tr-heavy.wav"></audio>
+  </div>
+  <p class="audio-note">In the <em>light</em> setting, only the loudest hits get touched. In <em>medium</em>, the loud and middle hits are both compressed, and the quietest hits are now nearly the same level as the loud ones. In <em>heavy</em>, almost all the dynamic difference between hits is gone — they all sound roughly the same volume. All four files are normalized to the same peak level, so the perceived differences come from how the compression changed the <em>relationship</em> between hits, not from absolute level.</p>
+</figure>
+
+<p>This is the core move of compression. Choose a threshold (where the compressor starts working) and a ratio (how aggressively it works) to reshape the relative loudness of parts of your signal.</p>
+
+<hr>
+
+<h2>3 · Attack and release</h2>
+
+<p>Threshold and ratio describe <em>how much</em> compression happens. But sound is not static — it changes over time, sometimes very fast. Two more parameters control <em>when</em> the compressor engages and disengages: <strong>attack</strong> and <strong>release</strong>.</p>
+
+<p>The <span class="term">attack</span> is how quickly the compressor reacts when the signal crosses the threshold. A fast attack (1–5 ms) clamps down on the signal almost immediately. A slow attack (30–100 ms) lets the first part of a loud transient pass through before kicking in.</p>
+
+<p>The <span class="term">release</span> is how quickly the compressor stops working once the signal drops below the threshold. A fast release (50 ms or less) lets go quickly — useful for sounds with rapid changes, but can sound "pumpy" as the compressor rapidly opens and closes. A slow release (300+ ms) holds the gain reduction for longer, sounding smoother but potentially muting quiet parts that follow loud ones.</p>
+
+<p>Why these matter: the most distinctive parts of many sounds are their transients — the sharp attack of a drum hit, the pluck of a string, the burst at the start of a spoken consonant. A fast attack can squash these transients flat, robbing the sound of its character. A slow attack lets the transient through and only compresses the body of the sound — usually a more natural result.</p>
+
+<figure class="audio-compare">
+  <div class="audio-compare-title">Demo · Attack and release</div>
+  <div class="audio-row">
+    <span class="audio-label">Source
+      <span class="audio-label-sub">percussion, no compression</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/ar-source.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Fast attack
+      <span class="audio-label-sub">1 ms · release 120 ms</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/ar-fast-attack.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Slow attack
+      <span class="audio-label-sub">30 ms · release 120 ms</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/ar-slow-attack.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Fast release
+      <span class="audio-label-sub">attack 5 ms · 50 ms</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/ar-fast-release.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Slow release
+      <span class="audio-label-sub">attack 5 ms · 400 ms</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/ar-slow-release.wav"></audio>
+  </div>
+  <p class="audio-note">All four settings use the same threshold (-18 dB) and ratio (4:1) — only the time constants differ. In <em>fast attack</em>, the transients on each kick are noticeably softened. In <em>slow attack</em>, the transients pop through while the body of each hit is held in check. In <em>fast release</em>, you may hear the compressor "breathing" as it lets go quickly between hits. <em>Slow release</em> holds the gain reduction longer, giving a smoother, more consistent sound at the cost of some recovery time between events.</p>
+</figure>
+
+<p>A useful starting habit: when in doubt, use a medium attack (10–20 ms) and a medium release (100–200 ms). These let transients through, sound natural on most material, and give you something to adjust from. Aggressive settings (very fast attack, very fast release) are powerful but easy to overdo.</p>
+
+<hr>
+
+<h2>4 · Limiting</h2>
+
+<p>A <span class="term">limiter</span> is a compressor with extreme settings: a very high ratio (often 20:1 or higher, effectively infinite) and a hard ceiling that the signal is not allowed to exceed. It is used at the end of a mix to set a maximum level and, often, to push the perceived loudness of the piece up.</p>
+
+<p>A limiter set with a ceiling of -0.3 dBFS will not let any sample exceed that level. Anything that would have gone louder gets clamped down. If you then boost the signal going into the limiter, the loud parts get clamped harder while the quiet parts ride up — and the piece becomes <em>louder on average</em> without ever exceeding the ceiling.</p>
+
+<p>This is useful for delivering finished material to listening contexts that demand consistent level (a class listening folder, an online release, a streaming platform). It is also where the worst habit in modern audio production happens.</p>
+
+<div class="callout">
+  <div class="callout-title">The loudness wars</div>
+  <p>Starting in the 1990s and peaking in the early 2000s, commercial recordings competed to be the loudest. The reasoning was that louder records caught the ear when listeners scanned the radio dial — and that perception became an industry-wide arms race. Engineers pushed limiters harder and harder, crushing peaks to make the music feel louder on the listener's playback system.</p>
+  <p>The cost: lost dynamic range, squashed transients, distortion, listener fatigue. Streaming platforms have since added <em>loudness normalization</em>, which automatically lowers loud tracks to match a target level — meaning the loudness wars now lose you something (dynamic range and clarity) without even gaining the original benefit (sounding louder than the next track).</p>
+  <p>The lesson for this course: limiting is a useful tool. Like every tool, it can be abused. A piece doesn't need to be the loudest possible to feel impactful — usually the opposite.</p>
+</div>
+
+<p>Listen to the same source at three levels of limiting. The peak level is essentially identical across all three files — they all touch the same ceiling. But the <em>average level</em> climbs dramatically, and so does the audible damage:</p>
+
+<figure class="audio-compare">
+  <div class="audio-compare-title">Demo · Limiting and perceived loudness</div>
+  <div class="audio-row">
+    <span class="audio-label">Natural
+      <span class="audio-label-sub">no limiting</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/limit-natural.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Light
+      <span class="audio-label-sub">~3 dB of limiting</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/limit-light.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Crushed
+      <span class="audio-label-sub">~9+ dB of limiting</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/limit-crushed.wav"></audio>
+  </div>
+  <p class="audio-note"><strong>Listen carefully:</strong> the peak meter on all three would read about the same. But the <em>natural</em> version has clear contrast between kicks and quieter moments. The <em>light</em> version is consistently louder on average, with the kicks still audible as accents but slightly tamed. The <em>crushed</em> version is loud everywhere — the kicks have lost their punch, the quiet moments have been pushed up to nearly the same level, and you can hear distortion on the transients. The piece has been made <em>louder</em> by being made <em>worse</em>.</p>
+</figure>
+
+<hr>
+
+<h2>5 · When to use it, when not to</h2>
+
+<p>Compression and limiting are powerful tools that are easy to overuse. A few useful principles:</p>
+
+<ul>
+  <li><strong>Listen with it off first.</strong> If a sound or a mix sounds good without compression, leave it alone. Reach for the compressor when you have a specific problem — a sound that's jumping around in level, a kick that disappears into a wash, a piece whose loud parts overwhelm the quiet ones.</li>
+  <li><strong>Less is usually more.</strong> 1–3 dB of gain reduction is often the right amount. If you find yourself pulling 10 dB of reduction off a sound, ask whether the source itself needs to be different, or whether you should reduce the input level rather than crush the output.</li>
+  <li><strong>Compress for a reason.</strong> "It sounds louder" is not a reason — loudness is something you can get with a fader. The reasons for compression are: to even out an inconsistent performance, to control a sound that fights its way to the front of the mix, to add sustain to a sound by raising its tail, to glue a group of sounds together so they feel like one element. If you can't name what the compressor is doing for you, take it off.</li>
+  <li><strong>Limit only at the end.</strong> A limiter belongs on the master output of a finished piece, set to catch the very loudest peaks. It does not belong on every track. If you find yourself wanting to limit a single sound, you probably want a compressor.</li>
+  <li><strong>Trust your ears, not your eyes.</strong> Meters help, but the question is always how it sounds. A piece with a meter pegged at -3 dBFS that sounds dull is worse than a piece with peaks at -8 dBFS that sounds alive.</li>
+</ul>
+
+<hr>
+
+<h2>6 · Vocabulary for listening</h2>
+
+<p>Compression has a specific sound — or, more accurately, several specific sounds depending on the settings. Building a vocabulary for what compression <em>does</em> to a sound lets you hear when it's helping and when it's hurting. A few terms you'll hear in conversation:</p>
+
+<dl class="vocab">
+  <dt>Pumping</dt>
+  <dd>When the compressor's gain reduction is audible as a rhythmic rise and fall — the music seems to "breathe" in and out at the rate of the compressor's release. Caused by aggressive ratios with fast release times. Sometimes used deliberately as an effect; usually a sign that something is set too aggressive.</dd>
+
+  <dt>Breathing</dt>
+  <dd>A subtler version of pumping, where the noise floor or background of a sound rises and falls audibly as the compressor releases. Especially common on noisy sources.</dd>
+
+  <dt>Squashed</dt>
+  <dd>The transients have been clamped down too far. The sound has lost its punch and feels lifeless. Caused by very fast attack times on transient-rich material.</dd>
+
+  <dt>Glued</dt>
+  <dd>A positive sense: when light compression on a group of sounds makes them feel like a single coherent element rather than separate parts. Often used on a drum bus or a full mix.</dd>
+
+  <dt>Pinned</dt>
+  <dd>The signal is hitting the limiter ceiling continuously, with no headroom and no peaks above the rest. Indicates too much input gain into a limiter — the loudness-wars sound.</dd>
+</dl>
+
+<p>These terms aren't required vocabulary, but they're useful shorthand. The deeper skill is the one underneath: hearing what a compressor is doing to a sound, and knowing whether that's what you wanted.</p>
+
+<hr>
+
+<div class="summary-box">
+  <h3>What to take from this reading</h3>
+  <ul>
+    <li><strong>Dynamic range</strong> is the difference between the loudest and quietest parts of a sound. Compression reduces it; limiting reduces it more, with a hard ceiling.</li>
+    <li><strong>Threshold</strong> sets where the compressor starts working. <strong>Ratio</strong> sets how aggressively. <strong>Attack</strong> sets how quickly the compressor reacts; <strong>release</strong> sets how quickly it lets go.</li>
+    <li><strong>Fast attack</strong> squashes transients. <strong>Slow attack</strong> lets them through. <strong>Fast release</strong> can pump. <strong>Slow release</strong> sounds smooth but can mute quiet moments after loud ones.</li>
+    <li><strong>Limiting</strong> at the end of a mix sets a ceiling. Push it gently. Crushing a piece into the ceiling makes it louder by making it worse.</li>
+    <li>The two most useful habits: compress with a reason, and listen with it off first.</li>
+  </ul>
+</div>
+
+<p class="audio-note" style="margin-top: 2rem">In Monday's class we'll work with the interactive mixing tool to apply compression to sounds from your Project 1 bank, with attention to threshold, ratio, attack, and release. By the end of the session you'll have a draft of Project 1 that's not just edited but <em>mixed</em>, ready for the final work session on Wednesday.</p>
+
+</body>
+</html>

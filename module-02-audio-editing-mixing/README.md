@@ -81,7 +81,7 @@ Full listening assignment with guided questions: [`listening/historical.html`](.
 | 3 | Mon | Session 3 — Lecture: Editing concepts + envelope listening |
 | 3 | Wed | Session 4 — Lab: Editing techniques · Project 1 begins |
 | 4 | Wed | Session 5 — Lab Part 1: Mixing in Audacity (levels, pan, EQ + destructive/non-destructive frame) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
-| 5 | Mon | Session 6 — Lecture: Dynamics + Interactive mixing tool Part 2 (compression/limiting) |
+| 5 | Mon | Session 6 — Lecture: Dynamics (compression, limiting) + interactive dynamics tool |
 | 5 | Wed | Session 7 — **Project 1 final work session + submission** |
 
 Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each session are below.
@@ -716,23 +716,30 @@ If running short (rare): use the extra time for one-on-one student check-ins. Pi
 
 ---
 
-## Session 6 — Mon Wk 5: Dynamics + mixing tool Part 2
+## Session 6 — Mon Wk 5: Dynamics + interactive dynamics tool
 
 **100 min · Lecture-style turning into lab · MB2525**
 
 This is the last new content of the module. After today, Wed Wk 5 is the final work session and submission deadline.
 
-> **Notes:** Listening assignment is **due today**, before class. Spot-check Canvas before class to know who submitted. The mixing tool Part 2 is not yet built; update this plan once it is.
+> **Notes:** Listening assignment is **due today**, before class. Spot-check Canvas before class to know who submitted. There is also a reading and an interactive tool to use today — see materials list below.
 
 ### Goal
 
-Students learn what dynamics processing is (compression, limiting), why and when to use it, and apply Part 2 of the mixing tool. By end of class, they should have a draft of Project 1 that's mixed (not just edited) and approaching final.
+Students learn what dynamics processing is (compression, limiting), why and when to use it, and apply the dynamics tool to sounds from their own Project 1 bank. By end of class, they should have a draft of Project 1 that's mixed (not just edited) and approaching final.
+
+### Materials
+
+- **Reading:** [`lessons/07-reading-dynamics.html`](./lessons/07-reading-dynamics.html) — assigned before class. Covers dynamic range, threshold/ratio, attack/release, limiting and the loudness wars, vocabulary for listening. Has audio demos throughout. **You should read it the day before** so today's lecture lands as discussion and demonstration, not first encounter.
+- **Tool:** [`lessons/08-tool-mixing-dynamics.html`](./lessons/08-tool-mixing-dynamics.html) — compressor with threshold/ratio/attack/release sliders, transfer-curve visualization, waveform + gain-reduction trace, bypass A/B, makeup gain, bring-your-own-WAV (or use built-in demo).
 
 ### Pre-class checklist
 
 - Confirm listening assignment submissions on Canvas (note who's missing — you'll follow up)
-- Pull up the mixing tool Part 2 on the instructor station
+- Open the dynamics tool on the instructor station; test that the demo sound and a WAV upload both work
+- Pull up the reading on the instructor station for reference during the lecture (audio demos in Sections 1–4 are useful to replay during Block 2)
 - Project 1 prompt visible on instructor machine for reference
+- Confirm sample-bank folder is accessible on the NAS — students may want to grab a sound from it for the tool
 
 ### Block-by-block
 
@@ -749,18 +756,46 @@ Don't grade in the moment — just listen, ask follow-ups, let students hear eac
 
 #### Block 2 — Dynamics concepts (25 min)
 
-Define:
-- **Dynamic range** — the difference between the quietest and loudest parts of a piece. A piece with wide dynamic range has subtle details and big peaks; a piece with narrow dynamic range is roughly the same loudness throughout.
-- **Compression** — a tool that reduces dynamic range by attenuating loud parts (or, equivalently, raising quiet parts). Used to "even out" a mix or to add perceived loudness.
-- **Limiting** — extreme compression at the loudest peaks. Used to set a maximum ceiling and prevent clipping while pushing overall loudness up.
+The reading covers the conceptual ground; today's lecture is for landing the ideas in students' ears. Walk through the four section demos in the reading on the projector, in order:
 
-Demonstrate in Audacity: Effect → Compressor. Apply to a sound that has wide dynamics. Listen before and after.
+1. **Dynamic range (wide vs. narrow)** — play both clips back-to-back. Ask the room: "Which one is louder? Which one is *better*?" Most students will say the narrow one is louder; a few will notice the kicks have lost their punch. That's the lesson.
+2. **Threshold + ratio** — play the source, then the three compression settings. Ask which hits get touched at the *light* setting vs. *heavy*. This is the moment to show the transfer-curve diagram in the reading (Section 2) on the projector and walk through how the curve bends.
+3. **Attack and release** — play the source loop, then fast-attack, then slow-attack. The transient difference is audible if you listen for it. This is the place to introduce *transient* as a piece of vocabulary if it hasn't come up yet: the brief sharp peak at the start of a sound (a drum hit, a pluck, the consonant of a spoken word).
+4. **Limiting and the loudness wars** — play natural, light, crushed. Ask: "Which is loudest?" (Crushed.) "Which sounds best?" (Almost always natural.) Land the cautionary message: limiting is useful, easy to overuse, and streaming normalization means crushing for loudness now loses you something without the trade-off paying off.
 
-The pedagogical message: dynamics processing is *powerful and overused*. A little goes a long way. The goal is balance, not maximum loudness. The "loudness wars" of pop music are a cautionary tale, not an aspiration.
+If running short, cut the threshold/ratio demo — students will hear that one in the tool in Block 3. The dynamic-range and limiting demos are the highest-value listening moments and should not be skipped.
 
-#### Block 3 — Mixing tool Part 2 (25 min)
+Brief Audacity tour at the end of Block 2: open `Effect → Compressor`. Show students where the parameters live in Audacity's UI. Note that Audacity's UI uses "threshold," "ratio," "attack time," "release time" — same vocabulary, same parameters. They will recognize what they're looking at.
 
-Demo the tool, then students work in pairs for 15 minutes with prompts (TBD).
+The pedagogical message running through the block: dynamics processing is *powerful and overused*. A little goes a long way. The goal is balance, not maximum loudness.
+
+#### Block 3 — Dynamics tool, hands-on (25 min)
+
+Open the tool on the projector. Spend 5 minutes demoing it with the built-in demo sound:
+- Press Play; let it loop.
+- Drop the threshold gradually — point at the transfer curve bending and at the gain-reduction trace appearing on the waveform.
+- Change ratio from 2:1 to 10:1 at the same threshold — listen and watch.
+- Demo bypass: A/B against the unprocessed source.
+- Demo makeup gain: compensate for the level lost, hear how it changes the perceived loudness without changing the peak.
+
+Then students work in pairs or alone for 15 minutes. They should load a sound from their Project 1 sample bank (or use the demo) and complete these prompts. **Each prompt is a question to answer with their ears, not with parameters they read off the screen.** Have them write their answers in their notebook or scratch file — these aren't submitted, but they should be able to talk about what they found.
+
+1. **Find the threshold of audibility.** Pick a moderate ratio (4:1) and slow your attack/release down (attack 20 ms, release 200 ms). Sweep the threshold from -6 dB downward. At what threshold do you *first hear* the compressor doing something? Write down the number. Then ask: was it the loud parts changing or the quiet parts changing that you noticed first?
+
+2. **Compare 2:1 and 10:1 at the same threshold.** Pick a threshold around -18 dB. Set the ratio to 2:1, listen, then jump to 10:1. What changed? Describe the difference in your own words — not "more compression" but *what does it sound like*. (You might land on words like "squashed," "flatter," "denser.")
+
+3. **Hear the attack.** Pick a sound with sharp transients (a percussive sound from your bank, or the demo). Set threshold -18, ratio 4:1, release 120 ms. Now set attack to 1 ms — listen. Then 30 ms — listen. Which version preserves the transient? Which version sounds more "tame"? Which do you think you'd want for *your* Project 1, and why?
+
+4. **Hear the release.** Same sound, threshold -18, ratio 4:1, attack 5 ms. Set release to 50 ms — listen. Then 400 ms — listen. With the fast release, can you hear the compressor "letting go" between hits? With the slow release, what happens to the quiet moments after a loud one?
+
+5. **A/B with bypass.** Pick a setting you like on a sound you care about. Toggle Bypass on and off while it loops. Is the compressed version actually better, or just louder? Use makeup gain to match the loudness of bypass — now A/B again. Is it still better when the loudness illusion is removed?
+
+The bypass+makeup A/B in #5 is the most important prompt for shaping Project 1 mixing decisions. Many students will discover that a setting they thought was "obviously better" is just louder. That's a real lesson — compression that doesn't survive a loudness-matched A/B usually wasn't doing what they thought it was doing.
+
+Circulate during this block. The common confusions to redirect:
+- *"My waveform doesn't show gain reduction."* — Threshold is probably higher than any peak in the signal. Drop it lower.
+- *"It got quieter when I added compression."* — Yes, because you reduced the loud parts. That's makeup gain's job — bring up to taste.
+- *"Bypass sounds the same."* — Either no compression is happening (threshold too high) or makeup gain is matched and the effect is genuinely subtle. Either is fine, depending.
 
 #### Block 4 — Project 1 work (30 min)
 

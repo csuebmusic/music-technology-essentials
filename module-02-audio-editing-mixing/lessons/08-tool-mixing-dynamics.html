@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Dynamics Tool</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Tool layout */
+    .tool {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.75rem;
+      margin: 2rem 0;
+    }
+    .tool-section + .tool-section {
+      margin-top: 1.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px dashed var(--rule);
+    }
+    .tool-section-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* Source row: file picker + default sound button + filename readout */
+    .source-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+    }
+    .source-row label.file-button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--bg);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 120ms ease;
+    }
+    .source-row label.file-button:hover {
+      background: var(--bg-alt);
+    }
+    .source-row input[type=file] {
+      display: none;
+    }
+    .source-row button.default-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--bg);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 120ms ease;
+    }
+    .source-row button.default-btn:hover {
+      background: var(--bg-alt);
+    }
+    .source-row .source-info {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+    .source-row .source-info strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Controls layout — sliders + readouts in a grid */
+    .controls {
+      display: grid;
+      grid-template-columns: 8rem 1fr 5rem;
+      gap: 0.75rem 1rem;
+      align-items: center;
+    }
+    .control-label {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+    .control-slider {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+    .control-readout {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--ink);
+      text-align: right;
+    }
+    @media (max-width: 600px) {
+      .controls {
+        grid-template-columns: 6.5rem 1fr 4.5rem;
+        gap: 0.5rem 0.75rem;
+      }
+    }
+
+    /* Transport: play/stop, bypass A/B, makeup gain */
+    .transport {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--rule);
+    }
+    .transport button {
+      padding: 0.55rem 1.1rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--bg);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 120ms ease;
+    }
+    .transport button:hover:not(:disabled) {
+      background: var(--bg-alt);
+    }
+    .transport button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .transport button.bypass-active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .transport-info {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Visualizations: two stacked panels */
+    .viz {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 0;
+    }
+    .viz-panel {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1rem;
+    }
+    .viz-panel-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+    }
+    .viz-canvas {
+      width: 100%;
+      height: 180px;
+      display: block;
+    }
+    @media (max-width: 720px) {
+      .viz {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Status / metering line */
+    .meters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+    .meter-item strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Status messages */
+    .status {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 1rem;
+      min-height: 1.2em;
+    }
+    .status.error {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 02 · Tool 2</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 02 · Mixing tool, Part 2</div>
+  <h1>Dynamics: compressor &amp; limiter</h1>
+  <div class="subtitle">Hear what threshold, ratio, attack, and release actually do.</div>
+</div>
+
+<p class="lede">Load a sound from your Project 1 bank — or use the built-in demo — and apply compression with adjustable threshold, ratio, attack, and release. Watch the transfer curve change as you move the sliders. Watch the gain-reduction trace move with the waveform. Toggle the bypass to A/B against the unprocessed source. The point isn't to learn this specific tool; it's to develop ears and intuition for what each parameter does, so that when you use the Audacity compressor (or any other) you know what to listen for.</p>
+
+<hr>
+
+<div class="tool">
+
+  <!-- Source: file picker + default sound -->
+  <div class="tool-section">
+    <div class="tool-section-title">Source</div>
+    <div class="source-row">
+      <label class="file-button" for="source-file">Load a WAV…</label>
+      <input type="file" id="source-file" accept="audio/wav,audio/*">
+      <button class="default-btn" id="default-btn">Use demo sound</button>
+      <span class="source-info" id="source-info">No sound loaded.</span>
+    </div>
+    <p class="status" id="status"></p>
+  </div>
+
+  <!-- Compressor controls -->
+  <div class="tool-section">
+    <div class="tool-section-title">Compressor</div>
+    <div class="controls">
+
+      <span class="control-label">Threshold</span>
+      <input type="range" id="threshold" class="control-slider"
+             min="-60" max="0" step="0.5" value="-18">
+      <span class="control-readout" id="threshold-readout">-18 dB</span>
+
+      <span class="control-label">Ratio</span>
+      <input type="range" id="ratio" class="control-slider"
+             min="1" max="20" step="0.1" value="4">
+      <span class="control-readout" id="ratio-readout">4.0 : 1</span>
+
+      <span class="control-label">Attack</span>
+      <input type="range" id="attack" class="control-slider"
+             min="0" max="100" step="0.5" value="10">
+      <span class="control-readout" id="attack-readout">10 ms</span>
+
+      <span class="control-label">Release</span>
+      <input type="range" id="release" class="control-slider"
+             min="10" max="800" step="5" value="120">
+      <span class="control-readout" id="release-readout">120 ms</span>
+
+      <span class="control-label">Makeup gain</span>
+      <input type="range" id="makeup" class="control-slider"
+             min="0" max="24" step="0.5" value="0">
+      <span class="control-readout" id="makeup-readout">0 dB</span>
+    </div>
+
+    <div class="transport">
+      <button id="play-btn" disabled>Play</button>
+      <button id="stop-btn" disabled>Stop</button>
+      <button id="bypass-btn" disabled>Bypass</button>
+      <span class="transport-info" id="transport-info">Load a sound to begin.</span>
+    </div>
+
+    <div class="meters">
+      <span class="meter-item">Input peak: <strong id="meter-input">— dB</strong></span>
+      <span class="meter-item">Output peak: <strong id="meter-output">— dB</strong></span>
+      <span class="meter-item">Max gain reduction: <strong id="meter-gr">— dB</strong></span>
+    </div>
+  </div>
+
+  <!-- Visualizations -->
+  <div class="tool-section">
+    <div class="tool-section-title">Visualization</div>
+    <div class="viz">
+      <div class="viz-panel">
+        <div class="viz-panel-title">Transfer curve (input → output)</div>
+        <canvas class="viz-canvas" id="transfer-canvas"></canvas>
+      </div>
+      <div class="viz-panel">
+        <div class="viz-panel-title">Waveform &amp; gain reduction</div>
+        <canvas class="viz-canvas" id="waveform-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="audio-note">
+  <strong>How to use it:</strong> Try the demo sound first if you've just opened the page. Press Play; let it loop. Move <em>Threshold</em> down — you'll see the transfer curve bend below threshold and the gain-reduction trace start to move. Try <em>Ratio</em> at 2:1 vs 10:1 to feel the difference between gentle and aggressive. Then try <em>Attack</em> very fast (1 ms) vs slow (40 ms) on percussive material — you'll hear transients get squashed, then released. Toggle <em>Bypass</em> to A/B against the unprocessed source. When you find a setting you like, bring up <em>Makeup gain</em> to compensate for the level you've lost.
+</p>
+
+<hr>
+
+<p class="audio-note" style="font-size:0.85rem;color:var(--ink-soft)">
+  The compressor here is a feed-forward digital compressor with a one-pole peak detector and a 2 dB soft knee — the same algorithm used by most software compressors. The math is exposed in the visualization, but you don't need to know it to use the tool. Trust your ears.
+</p>
+
+<script>
+// =====================================================================
+// DYNAMICS TOOL — compressor with bring-your-own-sound, transfer curve
+// visualization, and waveform + gain-reduction trace.
+// =====================================================================
+//
+// Architecture:
+//
+//   - AudioContext at the system rate (48 kHz typical). Buffer source loops
+//     either a decoded user file or the synthesized demo sound.
+//   - A ScriptProcessorNode is used for the compressor so we can capture
+//     the gain-reduction signal sample-by-sample for the visualization.
+//     (AudioWorklet would be the modern approach, but ScriptProcessor is
+//     enough for a teaching tool and works without a worklet module file.)
+//   - The compressor is implemented inline in the onaudioprocess callback,
+//     mirroring the algorithm in the build script so the tool sounds and
+//     behaves the same way the prerendered demos do.
+//
+// =====================================================================
+
+(function() {
+  'use strict';
+
+  // ---- DOM ----
+  const $ = (id) => document.getElementById(id);
+  const els = {
+    fileInput:        $('source-file'),
+    defaultBtn:       $('default-btn'),
+    sourceInfo:       $('source-info'),
+    status:           $('status'),
+    threshold:        $('threshold'),
+    thresholdRead:    $('threshold-readout'),
+    ratio:            $('ratio'),
+    ratioRead:        $('ratio-readout'),
+    attack:           $('attack'),
+    attackRead:       $('attack-readout'),
+    release:          $('release'),
+    releaseRead:      $('release-readout'),
+    makeup:           $('makeup'),
+    makeupRead:       $('makeup-readout'),
+    playBtn:          $('play-btn'),
+    stopBtn:          $('stop-btn'),
+    bypassBtn:        $('bypass-btn'),
+    transportInfo:    $('transport-info'),
+    meterInput:       $('meter-input'),
+    meterOutput:      $('meter-output'),
+    meterGR:          $('meter-gr'),
+    transferCanvas:   $('transfer-canvas'),
+    waveformCanvas:   $('waveform-canvas'),
+  };
+
+  // ---- State ----
+  let audioCtx       = null;
+  let sourceBuffer   = null;
+  let bufferSource   = null;
+  let scriptNode     = null;
+  let isPlaying      = false;
+  let isBypassed     = false;
+  let envFollower    = 0;   // one-pole peak detector state, persisted across callbacks
+  let displayBuffer  = null; // float mono copy of the current loaded sound, for waveform display
+  // Live meters (updated every audio block, read on rAF)
+  let livePeakIn     = 0;
+  let livePeakOut    = 0;
+  let liveGRMax      = 0;
+  // Rolling buffer for the live waveform/gain-reduction trace (visualized).
+  // We don't draw the live signal in real time — that's expensive and
+  // hard to read with looping material. Instead, we draw the static
+  // waveform of the loaded sound and overlay the *static* gain-reduction
+  // trace computed offline whenever a parameter changes.
+  let staticGRTrace  = null; // Float32Array, gain reduction in dB, one sample per audio sample
+
+  // ---- Parameter readouts ----
+
+  function updateReadouts() {
+    els.thresholdRead.textContent = `${Number(els.threshold.value).toFixed(0)} dB`;
+    els.ratioRead.textContent     = `${Number(els.ratio.value).toFixed(1)} : 1`;
+    els.attackRead.textContent    = `${Number(els.attack.value).toFixed(1)} ms`;
+    els.releaseRead.textContent   = `${Number(els.release.value).toFixed(0)} ms`;
+    els.makeupRead.textContent    = `${Number(els.makeup.value).toFixed(1)} dB`;
+  }
+
+  // ---- The compressor ----
+  //
+  // Same algorithm as build/generate-audio-demos-week-05.py. Feed-forward,
+  // one-pole peak detector on |x|, log-domain gain computer with 2 dB
+  // soft knee, linear-domain multiplier.
+
+  const KNEE_DB = 2.0;
+
+  function compressorCoefs(sampleRate) {
+    const atkMs = Number(els.attack.value);
+    const relMs = Number(els.release.value);
+    return {
+      threshold: Number(els.threshold.value),
+      ratio:     Number(els.ratio.value),
+      aAtk:      Math.exp(-1 / (atkMs * 0.001 * sampleRate)),
+      aRel:      Math.exp(-1 / (relMs * 0.001 * sampleRate)),
+      makeupLin: Math.pow(10, Number(els.makeup.value) / 20),
+    };
+  }
+
+  function gainReductionForLevelDb(levelDb, threshold, ratio) {
+    // Soft-knee gain computer, returns gain reduction in dB (always <= 0)
+    const kneeLo = threshold - KNEE_DB / 2;
+    const kneeHi = threshold + KNEE_DB / 2;
+    if (levelDb <= kneeLo) return 0;
+    if (levelDb >= kneeHi) {
+      return -(levelDb - threshold) * (1 - 1 / ratio);
+    }
+    // In the knee — quadratic interpolation
+    const kneePos = (levelDb - kneeLo) / KNEE_DB;
+    const kneeAmount = kneePos * kneePos;
+    return -(levelDb - threshold) * kneeAmount * (1 - 1 / ratio);
+  }
+
+  // ---- Live audio processing (ScriptProcessor callback) ----
+
+  function processAudio(inBuf, outBuf, coefs) {
+    const n = inBuf.length;
+    let peakIn = 0, peakOut = 0, grMax = 0;
+    let env = envFollower;
+
+    for (let i = 0; i < n; i++) {
+      const x = inBuf[i];
+      const ax = Math.abs(x);
+
+      // One-pole peak detector
+      if (ax > env) env = coefs.aAtk * env + (1 - coefs.aAtk) * ax;
+      else          env = coefs.aRel * env + (1 - coefs.aRel) * ax;
+
+      // Log-domain gain reduction
+      const envDb = 20 * Math.log10(Math.max(env, 1e-12));
+      const grDb  = gainReductionForLevelDb(envDb, coefs.threshold, coefs.ratio);
+      const grLin = Math.pow(10, grDb / 20);
+
+      // Apply gain reduction + makeup
+      const y = x * grLin * coefs.makeupLin;
+      outBuf[i] = y;
+
+      // Track peaks for the meters
+      if (ax > peakIn)  peakIn  = ax;
+      const ay = Math.abs(y);
+      if (ay > peakOut) peakOut = ay;
+      if (-grDb > grMax) grMax = -grDb;
+    }
+
+    envFollower = env;
+
+    // Smooth the meter updates by maxing against decay-toward-zero
+    // (Otherwise the meter readouts flicker too fast to read.)
+    livePeakIn  = Math.max(livePeakIn  * 0.85, peakIn);
+    livePeakOut = Math.max(livePeakOut * 0.85, peakOut);
+    liveGRMax   = Math.max(liveGRMax   * 0.85, grMax);
+  }
+
+  function processBypass(inBuf, outBuf) {
+    let peakIn = 0;
+    for (let i = 0; i < inBuf.length; i++) {
+      const x = inBuf[i];
+      outBuf[i] = x;
+      const ax = Math.abs(x);
+      if (ax > peakIn) peakIn = ax;
+    }
+    livePeakIn  = Math.max(livePeakIn  * 0.85, peakIn);
+    livePeakOut = livePeakOut * 0.85;
+    liveGRMax   = liveGRMax   * 0.85;
+  }
+
+  // ---- Offline compute of the static gain-reduction trace for visualization ----
+
+  function computeStaticGRTrace() {
+    if (!sourceBuffer || !audioCtx) {
+      staticGRTrace = null;
+      return;
+    }
+    const sr = audioCtx.sampleRate;
+    const ch = sourceBuffer.getChannelData(0); // mono mix; visualize channel 0
+    const coefs = compressorCoefs(sr);
+
+    const n = ch.length;
+    staticGRTrace = new Float32Array(n);
+
+    let env = 0;
+    for (let i = 0; i < n; i++) {
+      const ax = Math.abs(ch[i]);
+      if (ax > env) env = coefs.aAtk * env + (1 - coefs.aAtk) * ax;
+      else          env = coefs.aRel * env + (1 - coefs.aRel) * ax;
+      const envDb = 20 * Math.log10(Math.max(env, 1e-12));
+      staticGRTrace[i] = gainReductionForLevelDb(envDb, coefs.threshold, coefs.ratio);
+    }
+  }
+
+  // ---- Visualization ----
+
+  function fitCanvasToCSS(canvas) {
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = canvas.clientWidth;
+    const cssH = canvas.clientHeight;
+    if (canvas.width !== cssW * dpr || canvas.height !== cssH * dpr) {
+      canvas.width  = cssW * dpr;
+      canvas.height = cssH * dpr;
+    }
+    return { dpr, w: canvas.width, h: canvas.height };
+  }
+
+  function cssVar(name) {
+    return getComputedStyle(document.body).getPropertyValue(name).trim() || '#000';
+  }
+
+  // -- Transfer curve: input dB on x, output dB on y. Range: -60 .. 0
+  function drawTransferCurve() {
+    const c = els.transferCanvas;
+    const { w, h, dpr } = fitCanvasToCSS(c);
+    const ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, w, h);
+
+    const padL = 36 * dpr, padR = 12 * dpr, padT = 12 * dpr, padB = 24 * dpr;
+    const plotW = w - padL - padR;
+    const plotH = h - padT - padB;
+
+    const minDb = -60, maxDb = 0;
+    const dbToX = (db) => padL + (db - minDb) / (maxDb - minDb) * plotW;
+    const dbToY = (db) => padT + (maxDb - db) / (maxDb - minDb) * plotH;
+
+    // Grid
+    ctx.strokeStyle = cssVar('--rule');
+    ctx.lineWidth = 0.5 * dpr;
+    ctx.beginPath();
+    for (let db = -60; db <= 0; db += 10) {
+      ctx.moveTo(padL, dbToY(db)); ctx.lineTo(padL + plotW, dbToY(db));
+      ctx.moveTo(dbToX(db), padT); ctx.lineTo(dbToX(db), padT + plotH);
+    }
+    ctx.stroke();
+
+    // Axis labels
+    ctx.fillStyle = cssVar('--ink-soft');
+    ctx.font = `${10 * dpr}px DM Mono, monospace`;
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    [-60, -40, -20, 0].forEach(db => {
+      ctx.fillText(`${db}`, padL - 4 * dpr, dbToY(db));
+    });
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    [-60, -40, -20, 0].forEach(db => {
+      ctx.fillText(`${db}`, dbToX(db), padT + plotH + 4 * dpr);
+    });
+
+    // 1:1 reference line
+    ctx.strokeStyle = cssVar('--ink-soft');
+    ctx.lineWidth = 1 * dpr;
+    ctx.setLineDash([3 * dpr, 4 * dpr]);
+    ctx.beginPath();
+    ctx.moveTo(dbToX(minDb), dbToY(minDb));
+    ctx.lineTo(dbToX(maxDb), dbToY(maxDb));
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // The compressor curve: sweep input dB, compute output dB
+    const threshold = Number(els.threshold.value);
+    const ratio = Number(els.ratio.value);
+    const makeup = Number(els.makeup.value);
+
+    ctx.strokeStyle = cssVar('--accent');
+    ctx.lineWidth = 2 * dpr;
+    ctx.beginPath();
+    for (let i = 0; i <= 200; i++) {
+      const inDb = minDb + (maxDb - minDb) * i / 200;
+      const grDb = gainReductionForLevelDb(inDb, threshold, ratio);
+      const outDb = inDb + grDb + makeup;
+      const x = dbToX(inDb);
+      const y = dbToY(outDb);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Threshold marker
+    const tX = dbToX(threshold);
+    ctx.strokeStyle = cssVar('--accent');
+    ctx.lineWidth = 0.8 * dpr;
+    ctx.setLineDash([2 * dpr, 3 * dpr]);
+    ctx.beginPath();
+    ctx.moveTo(tX, padT); ctx.lineTo(tX, padT + plotH);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // -- Waveform + gain reduction trace
+  function drawWaveform() {
+    const c = els.waveformCanvas;
+    const { w, h, dpr } = fitCanvasToCSS(c);
+    const ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, w, h);
+
+    if (!displayBuffer || !staticGRTrace) {
+      ctx.fillStyle = cssVar('--ink-soft');
+      ctx.font = `${11 * dpr}px DM Mono, monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('Load a sound', w / 2, h / 2);
+      return;
+    }
+
+    const padL = 10 * dpr, padR = 10 * dpr, padT = 10 * dpr, padB = 18 * dpr;
+    const plotW = w - padL - padR;
+    const plotH = h - padT - padB;
+
+    // Downsample the waveform to plotW points using min/max per bucket
+    const n = displayBuffer.length;
+    const samplesPerPx = Math.max(1, Math.floor(n / plotW));
+    const midY = padT + plotH * 0.55; // waveform centered slightly above middle
+
+    // Waveform fill
+    ctx.fillStyle = cssVar('--rule');
+    ctx.beginPath();
+    ctx.moveTo(padL, midY);
+    for (let px = 0; px < plotW; px++) {
+      const i0 = Math.floor(px * n / plotW);
+      const i1 = Math.min(n, Math.floor((px + 1) * n / plotW));
+      let mn = 0, mx = 0;
+      for (let i = i0; i < i1; i++) {
+        const s = displayBuffer[i];
+        if (s < mn) mn = s;
+        if (s > mx) mx = s;
+      }
+      const yMax = midY - mx * plotH * 0.4;
+      ctx.lineTo(padL + px, yMax);
+    }
+    for (let px = plotW - 1; px >= 0; px--) {
+      const i0 = Math.floor(px * n / plotW);
+      const i1 = Math.min(n, Math.floor((px + 1) * n / plotW));
+      let mn = 0, mx = 0;
+      for (let i = i0; i < i1; i++) {
+        const s = displayBuffer[i];
+        if (s < mn) mn = s;
+        if (s > mx) mx = s;
+      }
+      const yMin = midY - mn * plotH * 0.4;
+      ctx.lineTo(padL + px, yMin);
+    }
+    ctx.closePath();
+    ctx.fill();
+
+    // Gain-reduction trace: drawn below the waveform, growing downward
+    // GR scale: 0 dB at midY+plotH*0.05, -24 dB at midY+plotH*0.45
+    const grY0 = midY + plotH * 0.05;
+    const grY24 = padT + plotH;
+    const grRange = 24;
+
+    ctx.strokeStyle = cssVar('--accent');
+    ctx.lineWidth = 1.5 * dpr;
+    ctx.beginPath();
+    for (let px = 0; px < plotW; px++) {
+      const i0 = Math.floor(px * n / plotW);
+      const i1 = Math.min(n, Math.floor((px + 1) * n / plotW));
+      let maxGr = 0;
+      for (let i = i0; i < i1; i++) {
+        const v = -staticGRTrace[i]; // make positive (gain reduction is negative dB)
+        if (v > maxGr) maxGr = v;
+      }
+      const clipped = Math.min(maxGr, grRange);
+      const y = grY0 + (clipped / grRange) * (grY24 - grY0);
+      if (px === 0) ctx.moveTo(padL + px, y);
+      else ctx.lineTo(padL + px, y);
+    }
+    ctx.stroke();
+
+    // 0 dB reference for gain reduction
+    ctx.strokeStyle = cssVar('--ink-soft');
+    ctx.lineWidth = 0.5 * dpr;
+    ctx.setLineDash([2 * dpr, 4 * dpr]);
+    ctx.beginPath();
+    ctx.moveTo(padL, grY0); ctx.lineTo(padL + plotW, grY0);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Labels
+    ctx.fillStyle = cssVar('--ink-soft');
+    ctx.font = `${9 * dpr}px DM Mono, monospace`;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    ctx.fillText('waveform', padL, padT);
+    ctx.fillText('gain reduction (0 to -24 dB)', padL, grY0 + 2 * dpr);
+  }
+
+  function redrawAll() {
+    drawTransferCurve();
+    drawWaveform();
+  }
+
+  // ---- Meter updates ----
+
+  function dbStr(lin) {
+    if (lin <= 1e-6) return '−∞ dB';
+    return `${(20 * Math.log10(lin)).toFixed(1)} dB`;
+  }
+
+  function updateMeters() {
+    els.meterInput.textContent  = dbStr(livePeakIn);
+    els.meterOutput.textContent = dbStr(livePeakOut);
+    els.meterGR.textContent     = liveGRMax > 0.1 ? `−${liveGRMax.toFixed(1)} dB` : '0.0 dB';
+  }
+
+  // ---- AudioContext setup / teardown ----
+
+  function ensureAudioContext() {
+    if (!audioCtx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AC();
+    }
+    return audioCtx;
+  }
+
+  function startPlayback() {
+    if (!sourceBuffer) return;
+    ensureAudioContext();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+
+    stopPlayback(); // clean up any existing source
+
+    bufferSource = audioCtx.createBufferSource();
+    bufferSource.buffer = sourceBuffer;
+    bufferSource.loop = true;
+
+    // ScriptProcessor (works without a worklet file).
+    // 1024 samples is small enough for low latency and big enough to
+    // amortize the per-sample loop overhead.
+    scriptNode = audioCtx.createScriptProcessor(1024, sourceBuffer.numberOfChannels, sourceBuffer.numberOfChannels);
+    scriptNode.onaudioprocess = (e) => {
+      const sr = audioCtx.sampleRate;
+      const coefs = compressorCoefs(sr);
+      for (let ch = 0; ch < e.inputBuffer.numberOfChannels; ch++) {
+        const inBuf = e.inputBuffer.getChannelData(ch);
+        const outBuf = e.outputBuffer.getChannelData(ch);
+        if (isBypassed) processBypass(inBuf, outBuf);
+        else processAudio(inBuf, outBuf, coefs);
+      }
+    };
+
+    envFollower = 0;
+    livePeakIn = livePeakOut = liveGRMax = 0;
+
+    bufferSource.connect(scriptNode).connect(audioCtx.destination);
+    bufferSource.start();
+    isPlaying = true;
+
+    els.playBtn.disabled = true;
+    els.stopBtn.disabled = false;
+    els.bypassBtn.disabled = false;
+    els.transportInfo.textContent = 'Looping. Adjust controls to hear the effect.';
+  }
+
+  function stopPlayback() {
+    if (bufferSource) {
+      try { bufferSource.stop(); } catch (e) { /* already stopped */ }
+      try { bufferSource.disconnect(); } catch (e) {}
+      bufferSource = null;
+    }
+    if (scriptNode) {
+      try { scriptNode.disconnect(); } catch (e) {}
+      scriptNode.onaudioprocess = null;
+      scriptNode = null;
+    }
+    isPlaying = false;
+    livePeakIn = livePeakOut = liveGRMax = 0;
+    els.playBtn.disabled = !sourceBuffer;
+    els.stopBtn.disabled = true;
+    els.bypassBtn.disabled = !sourceBuffer;
+    if (sourceBuffer) els.transportInfo.textContent = 'Stopped. Press Play to start again.';
+  }
+
+  // ---- Source loading ----
+
+  function setSourceBuffer(buffer, label) {
+    sourceBuffer = buffer;
+    // Mix to mono for display (average of channels)
+    const ch0 = buffer.getChannelData(0);
+    if (buffer.numberOfChannels === 1) {
+      displayBuffer = ch0;
+    } else {
+      const n = buffer.length;
+      displayBuffer = new Float32Array(n);
+      for (let c = 0; c < buffer.numberOfChannels; c++) {
+        const cd = buffer.getChannelData(c);
+        for (let i = 0; i < n; i++) displayBuffer[i] += cd[i];
+      }
+      for (let i = 0; i < n; i++) displayBuffer[i] /= buffer.numberOfChannels;
+    }
+
+    const durStr = `${buffer.duration.toFixed(1)} s`;
+    const srStr  = `${buffer.sampleRate} Hz`;
+    const chStr  = buffer.numberOfChannels === 1 ? 'mono' : `${buffer.numberOfChannels} ch`;
+    els.sourceInfo.innerHTML = `<strong>${label}</strong> · ${durStr} · ${srStr} · ${chStr}`;
+
+    els.playBtn.disabled = false;
+    els.transportInfo.textContent = 'Ready. Press Play to begin.';
+    els.status.textContent = '';
+    els.status.classList.remove('error');
+
+    computeStaticGRTrace();
+    redrawAll();
+  }
+
+  function loadDefaultSound() {
+    ensureAudioContext();
+    const sr = audioCtx.sampleRate;
+
+    // Synthesized 4-second percussion loop with varied dynamics.
+    // We build this in-browser so the tool works without external assets.
+    const duration = 4.0;
+    const n = Math.floor(duration * sr);
+    const buf = audioCtx.createBuffer(1, n, sr);
+    const out = buf.getChannelData(0);
+
+    function addKick(startSec, gain) {
+      const start = Math.floor(startSec * sr);
+      const dur = Math.floor(0.35 * sr);
+      let phase = 0;
+      for (let i = 0; i < dur && start + i < n; i++) {
+        const t = i / sr;
+        // Pitch sweep 110 -> 50 Hz over 80 ms
+        const pitch = t < 0.08 ? 110 - (110 - 50) * (t / 0.08) : 50;
+        phase += 2 * Math.PI * pitch / sr;
+        const env = Math.exp(-t * 8);
+        out[start + i] += gain * Math.sin(phase) * env;
+      }
+    }
+
+    function addHit(startSec, freq, gain, durSec) {
+      const start = Math.floor(startSec * sr);
+      const dur = Math.floor(durSec * sr);
+      for (let i = 0; i < dur && start + i < n; i++) {
+        const t = i / sr;
+        const env = i < sr * 0.001 ? i / (sr * 0.001) : Math.exp(-(t - 0.001) * 12);
+        const tone = Math.sin(2 * Math.PI * freq * t) + 0.5 * Math.sin(2 * Math.PI * freq * 2 * t);
+        out[start + i] += gain * tone * env * 0.7;
+      }
+    }
+
+    // 4 beats at 110 bpm = 2.18 s per bar, 4.36 s for 2 bars -> truncated at 4 s
+    const bpm = 110;
+    const beatS = 60 / bpm;
+    for (let bar = 0; bar < 2; bar++) {
+      const t0 = bar * 4 * beatS;
+      addKick(t0 + 0 * beatS, 0.9);
+      addHit (t0 + 1 * beatS, 240, 0.7, 0.25);
+      addKick(t0 + 2 * beatS, 0.9);
+      addHit (t0 + 3 * beatS, 240, 0.7, 0.25);
+    }
+
+    // Normalize to -3 dBFS
+    let peak = 0;
+    for (let i = 0; i < n; i++) {
+      const a = Math.abs(out[i]);
+      if (a > peak) peak = a;
+    }
+    if (peak > 0) {
+      const target = Math.pow(10, -3 / 20);
+      const scale = target / peak;
+      for (let i = 0; i < n; i++) out[i] *= scale;
+    }
+
+    setSourceBuffer(buf, 'Demo (percussion loop)');
+  }
+
+  async function loadFileSound(file) {
+    ensureAudioContext();
+    els.status.textContent = 'Loading…';
+    els.status.classList.remove('error');
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      const buffer = await new Promise((resolve, reject) => {
+        audioCtx.decodeAudioData(arrayBuffer, resolve, reject);
+      });
+      setSourceBuffer(buffer, file.name);
+    } catch (err) {
+      els.status.textContent = `Could not decode "${file.name}". Try a WAV or MP3.`;
+      els.status.classList.add('error');
+      console.error(err);
+    }
+  }
+
+  // ---- Event wiring ----
+
+  function onParamChange() {
+    updateReadouts();
+    computeStaticGRTrace();
+    drawTransferCurve();
+    drawWaveform();
+  }
+
+  ['threshold', 'ratio', 'attack', 'release', 'makeup'].forEach((id) => {
+    els[id].addEventListener('input', onParamChange);
+  });
+
+  els.fileInput.addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (f) loadFileSound(f);
+  });
+
+  els.defaultBtn.addEventListener('click', loadDefaultSound);
+
+  els.playBtn.addEventListener('click', startPlayback);
+  els.stopBtn.addEventListener('click', stopPlayback);
+
+  els.bypassBtn.addEventListener('click', () => {
+    isBypassed = !isBypassed;
+    els.bypassBtn.classList.toggle('bypass-active', isBypassed);
+    els.bypassBtn.textContent = isBypassed ? 'Bypassed' : 'Bypass';
+  });
+
+  // Initial draw of an empty plot + redraw on resize
+  updateReadouts();
+  redrawAll();
+  window.addEventListener('resize', redrawAll);
+
+  // Meter polling loop
+  setInterval(updateMeters, 80);
+})();
+</script>
+
+</body>
+</html>
