@@ -65,13 +65,13 @@ Markdown docs (module specs, TA notes) use the H1 to identify themselves:
 | TA notes for a module | `# TA Notes — Module XX` |
 | Operational TA doc (NAS policy, sample bank prep) | `# [Document title]` (no module reference; these are course-wide) |
 
-If a metadata line is useful immediately under the H1, put it as bold text and keep it dateless. For example: `**Weeks 2–5** (7 sessions)`. Date ranges live in `syllabus/course-outline.md` and nowhere else.
+If a metadata line is useful immediately under the H1, put it as bold text and keep it dateless. For example: `**Weeks 2–5** (7 sessions)`. Date ranges live in `course-outline.md` and nowhere else.
 
 ### Why no dates anywhere except the syllabus
 
 Dates change every semester. If they appear in many places, they have to be updated in many places. Lecture numbers, project numbers, week numbers, and module thematic labels are all stable across semesters; calendar dates aren't.
 
-**The rule:** calendar dates (`Aug 24`, `Sep 16`, etc.) appear only in `syllabus/course-outline.md`. Re-running this course in a future semester should require editing only that file (and Canvas, externally).
+**The rule:** calendar dates (`Aug 24`, `Sep 16`, etc.) appear only in `course-outline.md`. Re-running this course in a future semester should require editing only that file (and Canvas, externally).
 
 **For everything else, use week references.** The conventions are:
 

@@ -9,7 +9,7 @@ This repository is the working hub for an introductory music-technology course t
 Everything for a given module lives in that module's folder. To prep a week of teaching, open the relevant module — readings, handouts, listening, projects, tools, spec, and TA notes are all there.
 
 ```
-syllabus/                            Course outline, schedule, learning outcomes
+course-outline.md                    Full course outline, schedule, learning outcomes
 module-01-fluency/                   Week 1 — computer & studio fluency
 module-02-audio-editing-mixing/      Weeks 2–5 — Audacity, editing, mixing → Project 1
 module-03-recording/                 Weeks 6–8 — recording & sample library → midterm
@@ -41,7 +41,7 @@ Not every module uses every subfolder — they're added as needed.
 - **Modules:** 4 (Computer fluency → Audacity → Recording/sampling → Ableton)
 - **Deliverables:** Project 1 (musique concrète piece), midterm (sample library + terminology exam), final project, cumulative final exam
 
-See [`syllabus/course-outline.md`](syllabus/course-outline.md) for full details.
+See [`course-outline.md`](course-outline.md) for full details.
 
 ## Conventions
 
