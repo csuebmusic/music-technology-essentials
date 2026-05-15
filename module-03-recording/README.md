@@ -6,8 +6,7 @@
 
 ## Planned contents
 
-- `spec.md` — Module specification (to be drafted)
-- `ta-notes.md` — Teaching notes for the TA
+- This `README.md` — to be expanded with the module spec and session-by-session teaching notes
 - `readings/` — Microphone basics, recording chain, file naming and organization
 - `listening/` — Historical listening (recording as compositional act); peer listening on midterm sample libraries
 - `projects/` — Midterm prompt: sample library criteria and rubric

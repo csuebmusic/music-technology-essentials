@@ -23,8 +23,7 @@ Each module folder follows a consistent layout:
 
 ```
 module-XX-name/
-  spec.md            Module specification (what & why, for Inés / reviewers)
-  ta-notes.md        Teaching notes (how, for the TA)
+  README.md          The module itself: purpose, learning outcomes, session-by-session teaching notes
   readings/          Student-facing HTML readings
   listening/         Listening assignments (historical + peer)
   projects/          Project prompts and project-specific notes
