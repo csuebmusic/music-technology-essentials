@@ -166,7 +166,7 @@ Students leave with conceptual fluency on what digital audio actually is: sample
 
 ### Pre-class checklist
 
-- The reading for today, [`readings/week-02-digital-audio.html`](./readings/week-02-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
+- The reading for today, [`lessons/01-reading-digital-audio.html`](./lessons/01-reading-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
 - Pull up the reading on the projector before students arrive. Have the audio comparison blocks ready to play (sample rate, bit depth, anti-alias filter on/off).
 - Make sure speakers in MB2525 are working and at a reasonable volume. The audio examples need to be heard clearly by the room — earbuds won't do.
 - The listening assignment ([`listening/historical.html`](./listening/historical.html)) is due Mon Wk 5. You'll introduce it at the end of class. Have it pulled up.
@@ -267,8 +267,8 @@ Two halves:
 
 ### Materials
 
-- **Lab Part 1:** [`tools/week-02-digital-audio-explorer.html`](./tools/week-02-digital-audio-explorer.html)
-- **Lab Part 2:** [`handouts/01-audacity-orientation.html`](./handouts/01-audacity-orientation.html)
+- **Lab Part 1:** [`lessons/02-tool-digital-audio-explorer.html`](./lessons/02-tool-digital-audio-explorer.html)
+- **Lab Part 2:** [`lessons/03-handout-audacity-orientation.html`](./lessons/03-handout-audacity-orientation.html)
 
 ### Pre-class checklist
 
@@ -375,7 +375,7 @@ Until the screenshots are captured, the figures render with their `alt` text vis
 
 Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course — Module 4's synthesis section depends on it.
 
-The reading for today is [`readings/week-03-editing-envelope.html`](./readings/week-03-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
+The reading for today is [`lessons/04-reading-editing-envelope.html`](./lessons/04-reading-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
@@ -487,7 +487,7 @@ Two halves:
 
 ### Materials
 
-- **Lab handout:** [`handouts/02-editing-techniques.html`](./handouts/02-editing-techniques.html) — covers the full session including setup, all nine techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
+- **Lab handout:** [`lessons/05-handout-editing-techniques.html`](./lessons/05-handout-editing-techniques.html) — covers the full session including setup, all nine techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
 - **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during the Project-1-begins block.
 - **Sample bank** at NAS `shared/sample-banks/project1/` — must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
 
@@ -613,7 +613,7 @@ The session is deliberately compact on the new content because students need wor
 
 ### Materials
 
-- **Lab handout:** [`handouts/03-mixing-in-audacity.html`](./handouts/03-mixing-in-audacity.html) — covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
+- **Lab handout:** [`lessons/06-handout-mixing-in-audacity.html`](./lessons/06-handout-mixing-in-audacity.html) — covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
 - **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during Block 4.
 - **Students' own Project 1 files** from last week's work, plus their scratch files from Wed Wk 3.
 

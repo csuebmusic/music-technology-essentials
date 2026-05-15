@@ -24,11 +24,9 @@ Each module folder follows a consistent layout:
 ```
 module-XX-name/
   README.md          The module itself: purpose, learning outcomes, session-by-session teaching notes
-  readings/          Student-facing HTML readings
+  lessons/           Student-facing material in session order: readings, interactive tools, lab handouts
   listening/         Listening assignments (historical + peer)
   projects/          Project prompts and project-specific notes
-  tools/             Interactive HTML/JS teaching tools for this module
-  handouts/          Laminated reference cards, lab orientation docs
 ```
 
 Not every module uses every subfolder — they're added as needed.

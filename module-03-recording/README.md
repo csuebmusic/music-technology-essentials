@@ -7,11 +7,9 @@
 ## Planned contents
 
 - This `README.md` — to be expanded with the module spec and session-by-session teaching notes
-- `readings/` — Microphone basics, recording chain, file naming and organization
+- `lessons/` — Student-facing material in session order: readings, interactive tools, and lab handouts on microphone basics, recording chain, file naming and organization, gain staging, recording checklist
 - `listening/` — Historical listening (recording as compositional act); peer listening on midterm sample libraries
 - `projects/` — Midterm prompt: sample library criteria and rubric
-- `tools/` — TBD
-- `handouts/` — Mic setup, gain staging, lab recording checklist
 
 ## Anticipated standards
 

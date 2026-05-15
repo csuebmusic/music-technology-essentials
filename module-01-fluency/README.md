@@ -54,8 +54,8 @@ None for Week 1. Module 1 is a setup module. The first listening assignment land
 
 ## Student-facing materials
 
-- [`handouts/01-first-day-setup.html`](./handouts/01-first-day-setup.html) — distributed locally on each lab machine and via Canvas
-- [`handouts/02-session-routines.html`](./handouts/02-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
+- [`lessons/01-handout-first-day-setup.html`](./lessons/01-handout-first-day-setup.html) — distributed locally on each lab machine and via Canvas
+- [`lessons/02-handout-session-routines.html`](./lessons/02-handout-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
 
 ---
 
@@ -67,8 +67,8 @@ Do all of this **at least one day in advance** of the first session, ideally two
 - [ ] Confirm every student has a NAS account and a `lastname/` folder pre-created
 - [ ] Get the list of student last names from the registrar; pre-create folders matching exactly (lowercase, hyphenate any spaces)
 - [ ] Write the NAS server address on the whiteboard before class starts
-- [ ] Place `01-first-day-setup.pdf` (exported from `handouts/01-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
-- [ ] Print `02-session-routines.pdf` (exported from `handouts/02-session-routines.html`) and post it at every station — laminated if possible. This is the reference card students follow at the start and end of every session for the rest of the semester.
+- [ ] Place `01-first-day-setup.pdf` (exported from `lessons/01-handout-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
+- [ ] Print `02-session-routines.pdf` (exported from `lessons/02-handout-session-routines.html`) and post it at every station — laminated if possible. This is the reference card students follow at the start and end of every session for the rest of the semester.
 - [ ] **Wipe local `~/Documents/` on every lab machine** of any leftover student folders from previous semesters. Local folders accumulate over time; clean state every fall and spring.
 - [ ] Walk through every station: confirm USB hub works, audio interface is recognized, mic and XLR cable are at the station, MIDI keyboard is at the station, headphones are at the station with the in-line slider all the way up
 - [ ] Test-record at one station end-to-end (mic → interface → QuickTime → local save → NAS upload) to confirm the full chain works

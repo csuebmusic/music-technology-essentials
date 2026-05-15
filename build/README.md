@@ -5,7 +5,7 @@ Internal scripts that generate assets for the course. Not student-facing.
 ## `generate-audio-demos.py`
 
 Generates the audio demo files used in the Module 2 Week 2 reading
-(`module-02-audio-editing-mixing/readings/week-02-digital-audio.html`). The reading
+(`module-02-audio-editing-mixing/lessons/01-reading-digital-audio.html`). The reading
 references these files in its embedded audio players for the in-text
 sample rate and bit depth demonstrations.
 
@@ -77,7 +77,7 @@ embedded in the reading.
 ## `generate-audio-demos-week-03.py`
 
 Generates the audio demo files used in the Module 2 Week 3 reading
-(`module-02-audio-editing-mixing/readings/week-03-editing-envelope.html`). Twelve
+(`module-02-audio-editing-mixing/lessons/04-reading-editing-envelope.html`). Twelve
 files in total, supporting four pedagogical moments in the reading.
 
 ### What it produces

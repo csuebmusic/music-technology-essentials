@@ -16,13 +16,11 @@ Every document a student sees in this course shares the same visual system: warm
 
 Documents in subfolders link to the stylesheet via a relative path:
 
-All student-facing material lives two levels deep inside a module folder (e.g. `module-02-audio-editing-mixing/readings/foo.html`), so the stylesheet reference is:
+All student-facing material lives two levels deep inside a module folder (e.g. `module-02-audio-editing-mixing/lessons/foo.html`), so the stylesheet reference is:
 
-- From `module-XX-name/readings/` → `../../assets/style.css`
+- From `module-XX-name/lessons/` → `../../assets/style.css`
 - From `module-XX-name/listening/` → `../../assets/style.css`
 - From `module-XX-name/projects/` → `../../assets/style.css`
-- From `module-XX-name/tools/` → `../../assets/style.css`
-- From `module-XX-name/handouts/` → `../../assets/style.css`
 
 ## Document chrome convention
 
