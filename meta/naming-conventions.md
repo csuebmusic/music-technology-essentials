@@ -10,6 +10,19 @@ Lowercase. Hyphens, not spaces. No special characters (no `&`, `!`, `@`, `#`, `$
 
 This is the same convention taught to students on Day 1 (see Module 1's first-day handout). The repo follows the rule students follow.
 
+## Placeholder syntax used in this file
+
+When a pattern uses `XX`, `YY`, or `NN`, those are placeholders for a zero-padded two-digit number that gets substituted at use-time. Examples:
+
+- `module-XX-shortname/` → `module-01-fluency/`, `module-02-audio-editing-mixing/`
+- `module-XX-week-YY/` → `module-02-week-03/`
+- `project-NN-shortname.html` → `project-01-musique-concrete.html`
+- `lastname-projectNN.wav` → `lastname-project01.wav`
+
+Note: `XX` and `NN` are interchangeable as "zero-padded number" placeholders; the letter choice in this file just helps disambiguate when multiple numbers appear in one pattern (e.g. `module-XX-week-YY/` makes it clear which number is the module and which is the week). They're not meaningful tokens to the filesystem.
+
+`[bracketed-words]` are placeholders for arbitrary user-supplied content (a last name, a descriptive shortname, etc.) and are not zero-padded numbers.
+
 ## Folder structure
 
 ### Top level
@@ -128,7 +141,7 @@ The lab NAS uses the same convention for the same reason. Paths that appear in s
 ```
 /music/students/[lastname]/                           Student private folders
 /music/students/[lastname]/project-NN/                Per-project working folders
-/music/shared/sample-banks/project1/                  Project 1 sample bank
+/music/shared/sample-banks/project-01/                Project 1 sample bank
 /music/shared/mus-381-fall-2026/                      Per-semester shared resources
 /music/shared/mus-381-fall-2026/project-NN-pieces/    Class listening folders for each project
 /music/shared/module-XX/[purpose]/                    Module-specific shared assets (e.g. orientation samples)
@@ -143,10 +156,30 @@ The filenames students use when submitting work follow the same lowercase-hyphen
 ```
 lastname-projectNN.wav                  Audio deliverables (e.g. lastname-project01.wav)
 lastname-projectNN-vN.wav               Versioned working copies (lastname-project01-v3.wav)
-lastname-listening-NN.docx              Listening response writeups
-lastname-peer-listening-NN.docx         Peer listening writeups
+lastname-listening-NN.docx              Historical listening writeups (NN = module number)
+lastname-peer-listening-NN.docx         Peer listening writeups (NN = project number being responded to)
 lastname-orientation.wav                Module 1 / 2 orientation deliverables
 lastname-hello.m4a                      Module 1 Day 1 recording
 ```
 
 Project numbers are zero-padded and global (`project01`, `project02`), matching the chrome and project-file conventions. Version numbers are not padded (`v1`, `v2`, `v10`).
+
+### Hyphen rule for project references
+
+The token `project01` in filenames does **not** take an internal hyphen, but the same project referenced as a folder name does:
+
+- Filename: `lastname-project01.wav`
+- Folder name: `project-01/`, `project-01-pieces/`, `sample-banks/project-01/`
+
+Treat the filename's hyphen as the separator between last name and project token; inside the project token, no further hyphen. In folder names, the hyphen reads as a visual break between the word `project` and the number, since folder names tend to be longer and read better with the hyphen.
+
+This means `~/Documents/lastname/project-01/lastname-project01.wav` is the canonical full path for a student's Project 1 working file: hyphenated folder, unhyphenated filename.
+
+### Listening filename NN meaning
+
+The `NN` in listening filenames is overloaded across the two assignment types:
+
+- **Historical listening (one per module):** `NN` = module number (`lastname-listening-02.docx` is the Module 2 historical listening writeup, `lastname-listening-03.docx` will be Module 3, and so on).
+- **Peer listening (tied to a specific project):** `NN` = the project number being responded to (`lastname-peer-listening-01.docx` is the peer listening on Project 1 pieces, the Module 3 midterm peer-listening becomes `lastname-peer-listening-02.docx` if the midterm sample library counts as Project 2 in the global numbering).
+
+The two assignments are different enough (one is per-module, one is per-project) that giving them different placeholder meanings reads more clearly than forcing both onto the same axis.

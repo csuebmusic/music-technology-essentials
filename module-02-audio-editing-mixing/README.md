@@ -90,7 +90,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 
 ## Pre-module preparation (Inés / TA)
 
-- **Sample bank curated and uploaded** to `/music/shared/sample-banks/project1/` before Wed Wk 3; full scope and curation guidance in [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md)
+- **Sample bank curated and uploaded** to `/music/shared/sample-banks/project-01/` before Wed Wk 3; full scope and curation guidance in [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md)
 - **Audacity installed and tested** on every lab machine
 - **Interactive tools built and tested** in advance of the sessions that use them
 
@@ -492,12 +492,12 @@ Two halves:
 
 - **Lab handout:** [`lessons/05-handout-editing-techniques.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/05-handout-editing-techniques.html): covers the full session including setup, all ten techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
 - **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html): open on the projector during the Project-1-begins block.
-- **Sample bank** at NAS `shared/sample-banks/project1/`: must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
+- **Sample bank** at NAS `shared/sample-banks/project-01/`: must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
 
 ### Pre-class checklist
 
 - Walk the room (gear baseline)
-- **Verify the sample bank is ready and complete on the NAS** at `shared/sample-banks/project1/`. The handout assumes the canonical category folders (`attack-sharp`, `attack-soft`, `sustain-long`, `sustain-short`, `texture-continuous`, `voice-and-language`, `found-objects`, `natural-environment`, `mechanical-electronic`). If the bank is missing or has different folder names, **the handout's exercises won't work**. Confirm before class.
+- **Verify the sample bank is ready and complete on the NAS** at `shared/sample-banks/project-01/`. The handout assumes the canonical category folders (`attack-sharp`, `attack-soft`, `sustain-long`, `sustain-short`, `texture-continuous`, `voice-and-language`, `found-objects`, `natural-environment`, `mechanical-electronic`). If the bank is missing or has different folder names, **the handout's exercises won't work**. Confirm before class.
 - Verify Audacity opens cleanly on every machine; verify project format defaults are 44.1 kHz / 16-bit
 - Open the Project 1 prompt on the instructor station
 - Have Handout 02 open in a browser at every student station's desktop
@@ -508,7 +508,7 @@ Two halves:
 
 Walk students through the handout's "Setup" and "Before the techniques" sections together on the projector. Four parts:
 
-- NAS connect, then **copy the entire sample bank** (~40-80 sounds) from `shared/sample-banks/project1/` into the student's local `~/Documents/lastname/project-01/sources/`. The local copy is what they'll work from for the rest of the module. The first time this copy runs it'll take a minute or two depending on bank size.
+- NAS connect, then **copy the entire sample bank** (~40-80 sounds) from `shared/sample-banks/project-01/` into the student's local `~/Documents/lastname/project-01/sources/`. The local copy is what they'll work from for the rest of the module. The first time this copy runs it'll take a minute or two depending on bank size.
 - Open Audacity. Save an empty project as `lastname-project01.aup3` in `~/Documents/lastname/project-01/`. **This is *the* Project 1 file students will keep returning to. It stays empty for now.**
 - File → New, then save as `lastname-techniques-scratch.aup3` in the same folder. **This is where today's technique exercises will happen.** The two-project model is intentional: keeping the Project 1 file untouched until the Project 1 begins block prevents technique-experiment contamination, which was a real risk in earlier drafts of this handout. If students forget which file they're in, look at the title bar; Audacity shows the filename.
 - Walk through the zoom and zero-crossings prelude (in the scratch project). Show the Cmd+E (zoom to selection) and Cmd+F (fit to width) pair on the projector. Then make a selection in a sample, press Z, and point out how the edges shift slightly to land on zero crossings. The handout has a "Try it" mini-exercise; students do it on their own machines once they've seen it on the projector. Total prelude time: about 5 min, included in this 15 min block.

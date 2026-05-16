@@ -1,6 +1,6 @@
 # Project 1 sample bank: preparation notes
 
-**Location:** `/music/shared/sample-banks/project1/` on the NAS
+**Location:** `/music/shared/sample-banks/project-01/` on the NAS
 **Curated by:** Inés
 **Needed by:** Wed Wk 3; students begin Project 1 this day
 
@@ -54,7 +54,7 @@ This isn't a checklist students need to be aware of; it's a curatorial principle
 ## Folder structure
 
 ```
-/music/shared/sample-banks/project1/
+/music/shared/sample-banks/project-01/
   attack-sharp/
   attack-soft/
   sustain-long/
@@ -89,7 +89,7 @@ The actual curation is yours. Suggested rough timeline:
 
 ## NAS access
 
-The bank lives at `/music/shared/sample-banks/project1/`. This is read-only for students; they can browse and copy from it but can't modify it. This needs to be set when the NAS is configured (talk to IT or whoever set up the share).
+The bank lives at `/music/shared/sample-banks/project-01/`. This is read-only for students; they can browse and copy from it but can't modify it. This needs to be set when the NAS is configured (talk to IT or whoever set up the share).
 
 When students need to use a sound, they'll **copy** it from the shared bank into their own `~/Documents/lastname/project-01/sources/` folder. This way the master bank stays clean and students have local copies they can work with destructively.
 

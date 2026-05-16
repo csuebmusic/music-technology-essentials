@@ -108,7 +108,7 @@ The course is structured around four modules, each ending in a real deliverable.
 
 **Listening:** musique concrète and sound collage tradition (Schaeffer, Henry, more recent examples). Module 2 also includes a peer listening assignment after Project 1 submission, where students listen to each other's pieces in the class listening folder and respond briefly.
 
-**Source sounds:** Provided on the NAS (`/music/shared/sample-banks/project1/`). Students download, manipulate, and arrange.
+**Source sounds:** Provided on the NAS (`/music/shared/sample-banks/project-01/`). Students download, manipulate, and arrange.
 
 **Deliverable: Project 1 — Musique concrète**
 - 2 minutes maximum (90 seconds minimum)
@@ -204,7 +204,7 @@ The course is structured around four modules, each ending in a real deliverable.
 
 - **Working files:** Students work locally during sessions in `~/Documents/lastname/` on whichever lab machine they're using. The lab NAS at MB2525 holds the master copy of each student's work. Students download from the NAS at the start of every session and upload at the end.
 - **Sync hygiene:** Local folders on lab machines accumulate across the semester and are wiped between semesters. The NAS is the source of truth.
-- **Submissions:** Audio deliverables (Project 1 piece, midterm sample library, final piece) are submitted to the NAS following the `lastname-projectNN.wav` convention, in both a private working folder and a class listening folder where applicable. Written deliverables (listening responses, peer-listening responses, the final exam) are submitted on Canvas as Word or PDF following the per-assignment submission card.
+- **Submissions:** Audio deliverables (Project 1 piece, midterm sample library, final piece) are submitted to the NAS following the `lastname-project01.wav` convention (zero-padded global project number), in both a private working folder and a class listening folder where applicable. Written deliverables (listening responses, peer-listening responses, the final exam) are submitted on Canvas as Word or PDF following the per-assignment submission card.
 - **Software:** Audacity (free, installed on lab machines) and Ableton Live (lab license).
 - **Hardware:** Each lab station has a Mac mini (mounted behind the monitor), USB hub, audio interface, tabletop microphone, MIDI keyboard, and headphones.
 
