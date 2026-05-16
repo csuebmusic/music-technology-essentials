@@ -302,7 +302,7 @@ Tell them this is a routine they'll do every session for the rest of the semeste
 
 ---
 
-## Things students will ask
+## Common questions
 
 - *"Do I need a Mac at home?"* — No. The lab has everything they need. The NAS keeps your work synced between lab machines.
 - *"Can I use my own headphones?"* — Yes. The lab provides them but personal headphones are fine.
@@ -314,7 +314,7 @@ Tell them this is a routine they'll do every session for the rest of the semeste
 
 ---
 
-## General confusions to watch for
+## Common confusions
 
 These show up across the whole day, not tied to any one block. Block-specific confusions live with their respective blocks above.
 
