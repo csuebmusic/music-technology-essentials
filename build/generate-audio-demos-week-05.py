@@ -566,6 +566,165 @@ def gen_limiter():
     write_wav_no_normalize(os.path.join(OUT_DIR, "limit-crushed.wav"), crushed_out)
 
 
+# ----- Diagram generator: wide-vs-narrow waveform comparison -----
+
+DIAGRAM_DIR = os.path.join(REPO_ROOT, "assets", "images", "module-02-week-05")
+
+
+def _peak_envelope_for_display(audio, n_columns):
+    """Reduce a long audio signal to (min, max) pairs per output column.
+    Mixes stereo to mono for display. Returns two arrays of length n_columns:
+    one for min values, one for max values, each in [-1, 1]."""
+    if audio.ndim == 2:
+        mono = audio.astype(np.float32).mean(axis=1)
+    else:
+        mono = audio.astype(np.float32)
+    n = len(mono)
+    mins = np.zeros(n_columns, dtype=np.float32)
+    maxs = np.zeros(n_columns, dtype=np.float32)
+    for col in range(n_columns):
+        i0 = int(col * n / n_columns)
+        i1 = int((col + 1) * n / n_columns)
+        if i1 > i0:
+            chunk = mono[i0:i1]
+            mins[col] = float(np.min(chunk))
+            maxs[col] = float(np.max(chunk))
+    return mins, maxs
+
+
+def gen_wide_vs_narrow_diagram():
+    """Render an SVG that shows the wide and narrow waveforms stacked, both
+    with the same -3 dBFS ceiling drawn. The point of the figure is the
+    visual contrast: both touch the same ceiling, but narrow fills much
+    more of the space underneath. The reading embeds this image right
+    after the audio comparison in Section 1 to explain why narrow
+    sounds louder despite identical peaks.
+
+    Reads the WAVs that gen_dynamic_range just produced. Must run after
+    gen_dynamic_range.
+    """
+    os.makedirs(DIAGRAM_DIR, exist_ok=True)
+
+    sr_w, wide   = wavfile.read(os.path.join(OUT_DIR, "range-wide.wav"))
+    sr_n, narrow = wavfile.read(os.path.join(OUT_DIR, "range-narrow.wav"))
+    wide_f   = wide.astype(np.float32) / 32768.0
+    narrow_f = narrow.astype(np.float32) / 32768.0
+
+    # SVG layout. Two waveform panels stacked. Each panel has its own
+    # local mid-line and a -3 dBFS ceiling drawn at the same vertical
+    # offset from its mid-line. The same ceiling distance in both panels
+    # is the visual punchline.
+    W = 720
+    H = 360
+    pad_l = 80
+    pad_r = 24
+    pad_t = 18
+    pad_b = 32
+    plot_w = W - pad_l - pad_r
+    panel_h = (H - pad_t - pad_b) // 2 - 14  # leave a gap between panels
+    panel_gap = 28
+
+    panel1_top = pad_t
+    panel2_top = pad_t + panel_h + panel_gap
+
+    n_cols = plot_w  # one column per pixel of plot width
+
+    mins_w, maxs_w = _peak_envelope_for_display(wide_f, n_cols)
+    mins_n, maxs_n = _peak_envelope_for_display(narrow_f, n_cols)
+
+    # The waveform's vertical scale: amplitude 1.0 reaches the panel's
+    # half-height, so a sample at peak (-3 dBFS = 0.708) reaches 70.8% of
+    # the half-height. The "ceiling" line lives at amplitude 0.708 above
+    # and below the centerline of each panel.
+    ceiling_lin = 10 ** (-3.0 / 20)  # ~0.708
+    half = panel_h / 2
+
+    def amp_to_y(panel_top, amp):
+        """amp in [-1, 1] -> y inside the panel, where 0 = centerline."""
+        return panel_top + half - amp * half
+
+    def build_waveform_path(panel_top, mins, maxs):
+        # Filled outline: top edge along maxs, bottom edge along mins (reversed)
+        parts = []
+        # Top edge (max values)
+        for col, v in enumerate(maxs):
+            x = pad_l + col
+            y = amp_to_y(panel_top, v)
+            parts.append(f"{'M' if col == 0 else 'L'} {x:.2f} {y:.2f}")
+        # Bottom edge (min values, drawn right-to-left)
+        for col in range(n_cols - 1, -1, -1):
+            x = pad_l + col
+            y = amp_to_y(panel_top, mins[col])
+            parts.append(f"L {x:.2f} {y:.2f}")
+        parts.append("Z")
+        return " ".join(parts)
+
+    path_w = build_waveform_path(panel1_top, mins_w, maxs_w)
+    path_n = build_waveform_path(panel2_top, mins_n, maxs_n)
+
+    # Ceiling lines (at -3 dBFS, above and below centerline of each panel)
+    def ceiling_pair(panel_top):
+        cy_above = amp_to_y(panel_top, +ceiling_lin)
+        cy_below = amp_to_y(panel_top, -ceiling_lin)
+        return cy_above, cy_below
+
+    c1_up, c1_dn = ceiling_pair(panel1_top)
+    c2_up, c2_dn = ceiling_pair(panel2_top)
+
+    # Center lines for visual reference
+    cx1 = panel1_top + half
+    cx2 = panel2_top + half
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
+     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dBFS peak ceiling marked">
+  <rect width="{W}" height="{H}" fill="var(--bg-alt)"/>
+
+  <!-- Panel labels -->
+  <text x="{pad_l - 12}" y="{panel1_top + half + 4}" text-anchor="end"
+        font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">wide</text>
+  <text x="{pad_l - 12}" y="{panel2_top + half + 4}" text-anchor="end"
+        font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">narrow</text>
+
+  <!-- Ceiling lines at -3 dBFS, drawn in panel 1 -->
+  <line x1="{pad_l}" y1="{c1_up:.2f}" x2="{pad_l + plot_w}" y2="{c1_up:.2f}"
+        stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="{pad_l}" y1="{c1_dn:.2f}" x2="{pad_l + plot_w}" y2="{c1_dn:.2f}"
+        stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <!-- Ceiling lines at -3 dBFS, drawn in panel 2 (SAME vertical offset from center as panel 1) -->
+  <line x1="{pad_l}" y1="{c2_up:.2f}" x2="{pad_l + plot_w}" y2="{c2_up:.2f}"
+        stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="{pad_l}" y1="{c2_dn:.2f}" x2="{pad_l + plot_w}" y2="{c2_dn:.2f}"
+        stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <!-- Center reference lines (thin, subtle) -->
+  <line x1="{pad_l}" y1="{cx1:.2f}" x2="{pad_l + plot_w}" y2="{cx1:.2f}"
+        stroke="var(--ink-soft)" stroke-width="0.4" opacity="0.4"/>
+  <line x1="{pad_l}" y1="{cx2:.2f}" x2="{pad_l + plot_w}" y2="{cx2:.2f}"
+        stroke="var(--ink-soft)" stroke-width="0.4" opacity="0.4"/>
+
+  <!-- Waveform fills -->
+  <path d="{path_w}" fill="var(--ink)" opacity="0.78"/>
+  <path d="{path_n}" fill="var(--ink)" opacity="0.78"/>
+
+  <!-- Ceiling annotation: place INSIDE the plot area, just above the ceiling line, right-aligned -->
+  <text x="{pad_l + plot_w - 6}" y="{c1_up - 4:.2f}"
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+  <text x="{pad_l + plot_w - 6}" y="{c2_up - 4:.2f}"
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+
+  <!-- Time axis (single label centered under bottom panel) -->
+  <text x="{pad_l + plot_w / 2:.2f}" y="{H - 8}"
+        font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">6 seconds →</text>
+</svg>
+"""
+
+    out_path = os.path.join(DIAGRAM_DIR, "wide-vs-narrow.svg")
+    with open(out_path, "w") as f:
+        f.write(svg)
+    print(f"Wrote {out_path}  ({W}x{H} SVG)")
+
+
 # ----- Run everything -----
 
 if __name__ == "__main__":
@@ -577,4 +736,7 @@ if __name__ == "__main__":
     gen_attack_release()
     print()
     gen_limiter()
+    print()
+    gen_wide_vs_narrow_diagram()
     print(f"\nAll demos written to {OUT_DIR}")
+    print(f"Diagrams written to {DIAGRAM_DIR}")

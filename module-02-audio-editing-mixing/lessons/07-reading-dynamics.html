@@ -180,8 +180,47 @@
     </span>
     <audio controls src="../../assets/audio/module-02-week-05/range-narrow.wav"></audio>
   </div>
-  <p class="audio-note">Both files have the same peak level. The narrow version sounds <em>louder on average</em> because the quiet parts have been brought up. But you can hear that it's lost something: the pad and the percussion now sit roughly at the same level, where in the wide version the kicks clearly stand out from the background.</p>
+  <p class="audio-note">Both files have the same peak level. The narrow version sounds <em>louder on average</em> because the quiet parts have been brought up. But you can hear what it's lost: the conga slaps no longer stand clearly above the shaker and clave; everything is closer to the same level than it was in the wide version.</p>
 </figure>
+
+<div class="callout">
+  <div class="callout-title">Wait: both files peak at the same level. How can one be louder?</div>
+  <p>Look at the two waveforms below. Both are stretched to fill the same vertical space, and the dashed line marks <em>exactly the same height</em> in each panel: that's the −3 dBFS peak ceiling. The conga slaps in both versions touch that line. Look how different the spaces between the slaps are.</p>
+
+  <figure style="margin: 1.25rem 0;">
+    <img src="../../assets/images/module-02-week-05/wide-vs-narrow.svg"
+         alt="Two waveforms stacked. Wide on top: tall sharp peaks (the conga slaps) reach the dashed ceiling line, separated by long mostly-empty stretches. Narrow on bottom: the same peaks reach the same ceiling line, but the spaces between them are filled with much more visible signal: the shaker and clave have been pulled up by compression."
+         style="width: 100%; height: auto;">
+  </figure>
+
+  <p>Your peak meter only measures the loudest single moment, which is what the dashed line tracks. But your ears measure something different: how much sound energy is hitting them, averaged over the last few hundred milliseconds. We call this <strong>average level</strong>. The wide version has tall peaks and deep valleys, so its average is low. The narrow version has the same peaks but the valleys are filled in, so its average is much higher.</p>
+
+  <table style="margin: 1rem 0; font-family: var(--mono); font-size: 0.9rem;">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding: 0.4rem 1.5rem 0.4rem 0;"></th>
+        <th style="text-align: left; padding: 0.4rem 1.5rem 0.4rem 0;">Peak level</th>
+        <th style="text-align: left; padding: 0.4rem 0;">Average level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 0.3rem 1.5rem 0.3rem 0;">Wide</td>
+        <td style="padding: 0.3rem 1.5rem 0.3rem 0;">−3 dB</td>
+        <td style="padding: 0.3rem 0;">−24 dB</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.3rem 1.5rem 0.3rem 0;">Narrow</td>
+        <td style="padding: 0.3rem 1.5rem 0.3rem 0;">−3 dB</td>
+        <td style="padding: 0.3rem 0;">−18 dB</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Identical peaks. About 6 dB louder average. Six decibels is a lot: roughly the perceptual difference between a normal conversation and a loud conversation. Your peak meter sees no difference between these two files; your ears hear a huge difference.</p>
+
+  <p>This is the secret behind every "loud master" in commercial music. You don't make a piece louder by pushing the peaks higher; you can't, they're already at the ceiling. You make it louder by pulling the average level up toward the peaks. That's what compression and limiting do.</p>
+</div>
 
 <p>The piece in your Project 1 has some dynamic range, whether you've thought about it or not. Some moments are louder, some are quieter, and that contrast is part of how the piece holds attention. Compression and limiting are the tools you use to change that relationship deliberately.</p>
 
@@ -398,7 +437,7 @@
     </span>
     <audio controls src="../../assets/audio/module-02-week-05/limit-crushed.wav"></audio>
   </div>
-  <p class="audio-note"><strong>Listen carefully:</strong> the peak meter on all three would read about the same. But the <em>natural</em> version has clear contrast between kicks and quieter moments. The <em>light</em> version is consistently louder on average, with the kicks still audible as accents but slightly tamed. The <em>crushed</em> version is loud everywhere: the kicks have lost their punch, the quiet moments have been pushed up to nearly the same level, and you can hear distortion on the transients. The piece has been made <em>louder</em> by being made <em>worse</em>.</p>
+  <p class="audio-note"><strong>Listen carefully:</strong> the peak meter on all three would read about the same. But the <em>natural</em> version has clear contrast between the conga slaps and the quieter shaker and clave underneath them. The <em>light</em> version is consistently louder on average, with the slaps still audible as accents but slightly tamed. The <em>crushed</em> version is loud everywhere: the slaps have lost their punch, the quiet moments have been pushed up to nearly the same level, and you can hear distortion on the transients. The piece has been made <em>louder</em> by being made <em>worse</em>.</p>
 </figure>
 
 <hr>
