@@ -789,7 +789,7 @@ def gen_wide_vs_narrow_diagram():
     cx2 = panel2_top + half
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
-     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dBFS peak ceiling marked">
+     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dB peak ceiling marked">
   <rect width="{W}" height="{H}" fill="var(--bg-alt)"/>
 
   <!-- Panel labels -->
@@ -822,9 +822,9 @@ def gen_wide_vs_narrow_diagram():
 
   <!-- Ceiling annotation: place INSIDE the plot area, just above the ceiling line, right-aligned -->
   <text x="{pad_l + plot_w - 6}" y="{c1_up - 4:.2f}"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dB ceiling</text>
   <text x="{pad_l + plot_w - 6}" y="{c2_up - 4:.2f}"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dB ceiling</text>
 
   <!-- Time axis (single label centered under bottom panel) -->
   <text x="{pad_l + plot_w / 2:.2f}" y="{H - 8}"
@@ -919,7 +919,7 @@ def gen_normalization_diagram():
     cx2 = panel2_top + half
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
-     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dBFS ceiling for reference; quiet sits well below it, normalized touches it.">
+     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dB ceiling for reference; quiet sits well below it, normalized touches it.">
   <rect width="{W}" height="{H}" fill="var(--bg-alt)"/>
 
   <!-- Panel labels -->
@@ -948,9 +948,9 @@ def gen_normalization_diagram():
 
   <!-- Ceiling annotation -->
   <text x="{pad_l + plot_w - 6}" y="{c1_up - 4:.2f}"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dB ceiling</text>
   <text x="{pad_l + plot_w - 6}" y="{c2_up - 4:.2f}"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dB ceiling</text>
 
   <!-- Time axis -->
   <text x="{pad_l + plot_w / 2:.2f}" y="{H - 8}"

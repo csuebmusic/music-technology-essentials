@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360"
-     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dBFS peak ceiling marked">
+     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dB peak ceiling marked">
   <rect width="720" height="360" fill="var(--bg-alt)"/>
 
   <!-- Panel labels -->
@@ -32,9 +32,9 @@
 
   <!-- Ceiling annotation: place INSIDE the plot area, just above the ceiling line, right-aligned -->
   <text x="690" y="34.59"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dB ceiling</text>
   <text x="690" y="203.59"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dB ceiling</text>
 
   <!-- Time axis (single label centered under bottom panel) -->
   <text x="388.00" y="352"

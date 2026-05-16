@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360"
-     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dBFS ceiling for reference; quiet sits well below it, normalized touches it.">
+     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dB ceiling for reference; quiet sits well below it, normalized touches it.">
   <rect width="720" height="360" fill="var(--bg-alt)"/>
 
   <!-- Panel labels -->
@@ -28,9 +28,9 @@
 
   <!-- Ceiling annotation -->
   <text x="690" y="21.67"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dB ceiling</text>
   <text x="690" y="190.67"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dB ceiling</text>
 
   <!-- Time axis -->
   <text x="388.00" y="352"

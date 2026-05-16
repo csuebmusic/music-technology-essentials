@@ -185,11 +185,11 @@
 
 <div class="callout">
   <div class="callout-title">Both files peak at the same level. How can one be louder?</div>
-  <p>Look at the two waveforms below. Both are stretched to fill the same vertical space, and the dashed line marks <em>exactly the same height</em> in each panel: that's the −3 dBFS peak ceiling. The conga slaps in both versions touch that line. Look how different the spaces between the slaps are.</p>
+  <p>Look at the two waveforms below. Both are stretched to fill the same vertical space, and the dashed line marks <em>exactly the same height</em> in each panel: that's the −3 dB peak ceiling. The conga slaps in both versions touch that line. Look how different the spaces between the slaps are.</p>
 
   <figure style="margin: 1.25rem 0;">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360"
-     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dBFS peak ceiling marked">
+     role="img" aria-label="Waveform comparison: wide-dynamic-range version above, narrow-compressed version below, both with the same -3 dB peak ceiling marked">
   <rect width="720" height="360" fill="var(--bg-alt)"/>
 
   <!-- Panel labels -->
@@ -222,9 +222,9 @@
 
   <!-- Ceiling annotation: place INSIDE the plot area, just above the ceiling line, right-aligned -->
   <text x="690" y="34.59"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dB ceiling</text>
   <text x="690" y="203.59"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−3 dB ceiling</text>
 
   <!-- Time axis (single label centered under bottom panel) -->
   <text x="388.00" y="352"
@@ -279,19 +279,19 @@
 
 <p>This makes normalization fundamentally different from what you heard in Section 1. The compressed-and-boosted "narrow" version had its dynamic range squashed: the quiet parts came up more than the loud parts. Normalization can't do that. Normalization is just a scaler. If the loud parts go up by 12 dB, the quiet parts go up by 12 dB. The shape of the signal is preserved.</p>
 
-<p>Listen for the difference. Here's the conga loop at two normalization levels: a quiet version (peak around -18 dBFS, as if it had been recorded with a conservative gain setting) and the same recording normalized to a peak of -1 dBFS:</p>
+<p>Listen for the difference. Here's the conga loop at two normalization levels: a quiet version (peak around -18 dB, as if it had been recorded with a conservative gain setting) and the same recording normalized to a peak of -1 dB:</p>
 
 <figure class="audio-compare">
   <div class="audio-compare-title">Demo · Peak normalization</div>
   <div class="audio-row">
     <span class="audio-label">Quiet
-      <span class="audio-label-sub">peak ~ -18 dBFS</span>
+      <span class="audio-label-sub">peak ~ -18 dB</span>
     </span>
     <audio controls src="../../assets/audio/module-02-week-05/norm-quiet.wav"></audio>
   </div>
   <div class="audio-row">
     <span class="audio-label">Normalized
-      <span class="audio-label-sub">same signal, peak -1 dBFS</span>
+      <span class="audio-label-sub">same signal, peak -1 dB</span>
     </span>
     <audio controls src="../../assets/audio/module-02-week-05/norm-loud.wav"></audio>
   </div>
@@ -300,7 +300,7 @@
 
 <figure style="margin: 1.5rem 0;">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360"
-     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dBFS ceiling for reference; quiet sits well below it, normalized touches it.">
+     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dB ceiling for reference; quiet sits well below it, normalized touches it.">
   <rect width="720" height="360" fill="var(--bg-alt)"/>
 
   <!-- Panel labels -->
@@ -329,15 +329,15 @@
 
   <!-- Ceiling annotation -->
   <text x="690" y="21.67"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dB ceiling</text>
   <text x="690" y="190.67"
-        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dB ceiling</text>
 
   <!-- Time axis -->
   <text x="388.00" y="352"
         font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">6 seconds →</text>
 </svg>
-  <figcaption>The same source loop at two scales. Both panels share the same vertical scale and the same dashed −1 dBFS ceiling line. The quiet version sits well below the ceiling; the normalized version touches it. The pattern of slaps is identical in both: same positions, same relative heights. Normalization is just multiplication.</figcaption>
+  <figcaption>The same source loop at two scales. Both panels share the same vertical scale and the same dashed −1 dB ceiling line. The quiet version sits well below the ceiling; the normalized version touches it. The pattern of slaps is identical in both: same positions, same relative heights. Normalization is just multiplication.</figcaption>
 </figure>
 
 <p>Compare this to the wide/narrow comparison in Section 1. There, both files had identical peak levels but very different shapes. Here, the two files have very different peak levels but identical shapes. Normalization changes the <em>scale</em>. Compression changes the <em>shape</em>.</p>
@@ -376,7 +376,7 @@
 
 <h3>Why and when to normalize</h3>
 
-<p>Normalization is the standardization step in sample preparation. When you record sounds for a sample library, you set your input gain conservatively so nothing clips. That's the right thing to do at the time of recording. But you'll end up with samples at all kinds of different peak levels: this one peaks at -10 dBFS, that one at -16, the loud one at -6. When you later drag these into a session, you'll have to ride the channel fader 10 dB up for one sample and 4 dB down for another, just to get them to a usable working level. That's friction you don't need.</p>
+<p>Normalization is the standardization step in sample preparation. When you record sounds for a sample library, you set your input gain conservatively so nothing clips. That's the right thing to do at the time of recording. But you'll end up with samples at all kinds of different peak levels: this one peaks at -10 dB, that one at -16, the loud one at -6. When you later drag these into a session, you'll have to ride the channel fader 10 dB up for one sample and 4 dB down for another, just to get them to a usable working level. That's friction you don't need.</p>
 
 <p>The solution is to normalize every sample to a consistent target peak before you save it to the library. After normalization, every sample sits at the same predictable peak, and you can work with them without thinking about base level. Quiet sample, loud sample: they all hit your channel at the same height. The mix is now about <em>your decisions</em> about relative loudness, not about which microphone gain you happened to set three weeks ago.</p>
 
@@ -384,11 +384,9 @@
 
 <h3>Headroom and the target level</h3>
 
-<p>Audacity's Normalize defaults to a target of 0 dBFS: the loudest possible level. For sample prep, this is too loud. A normalized sample at 0 dBFS has zero headroom: any additional processing (EQ boost, pitch shift, layering with another sample) can push it past the digital ceiling and clip.</p>
+<p>Audacity's Normalize defaults to a target of 0 dB: the loudest possible level. For sample prep, this is too loud. A normalized sample at 0 dB has zero headroom: any additional processing (EQ boost, pitch shift, layering with another sample) can push it past the digital ceiling and clip.</p>
 
-<p>For sample prep, normalize to <strong>-1 dBFS</strong>. This is common in production: it leaves a small margin so that inter-sample peaks (peaks that exist between sampled values, which can show up as clipping after digital-to-analog conversion) stay safe. You'll see -1 dBFS as the target in a lot of professional sample libraries and in delivery specifications for streaming platforms.</p>
-
-<p>(Module 2 work uses 44.1 kHz / 16-bit. In Module 4 with Ableton, you'll be working at 32-bit float, where the ceiling matters much less because floating-point audio can go above 0 dBFS without clipping. For now, in Audacity, the -1 dBFS rule keeps you safe.)</p>
+<p>For sample prep, normalize to <strong>-1 dB</strong>. This is common in production: it leaves a small margin so that inter-sample peaks (peaks that exist between sampled values, which can show up as clipping after digital-to-analog conversion) stay safe. You'll see -1 dB as the target in a lot of professional sample libraries and in delivery specifications for streaming platforms.</p>
 
 <h3>Normalizing in Audacity</h3>
 
@@ -399,7 +397,7 @@
   <li><strong>Remove DC offset:</strong> leave this checked. DC offset is a small but real problem in some recordings where the waveform is shifted slightly off the zero line; the box fixes it as part of the same operation.</li>
 </ul>
 
-<p>That's it. Apply, save your file. The peak now sits at -1 dBFS regardless of what level it had before.</p>
+<p>That's it. Apply, save your file. The peak now sits at -1 dB regardless of what level it had before.</p>
 
 <h3>A sibling concept: LUFS</h3>
 
@@ -501,7 +499,7 @@
   <figcaption>The compressor transfer curve. The diagonal dashed line is no compression (1:1): output equals input. The three solid lines show what happens at increasing ratios with the threshold fixed at -20 dB. Below the threshold every curve follows the 1:1 line. Above it, higher ratios bend the curve more flat: the loud signal is allowed to get less and less louder.</figcaption>
 </figure>
 
-<p>Listen to the same source through three compression settings. The source is six short percussive hits, with the first, fourth at a peak level (-3 dBFS), the second and fifth quieter (-9 dBFS), and the third and sixth quieter still (-15 dBFS). In each setting, listen for which hits get compressed and which don't:</p>
+<p>Listen to the same source through three compression settings. The source is six short percussive hits, with the first, fourth at a peak level (-3 dB), the second and fifth quieter (-9 dB), and the third and sixth quieter still (-15 dB). In each setting, listen for which hits get compressed and which don't:</p>
 
 <figure class="audio-compare">
   <div class="audio-compare-title">Demo · Threshold and ratio</div>
@@ -589,7 +587,7 @@
 
 <p>A <span class="term">limiter</span> is a compressor with extreme settings: a very high ratio (often 20:1 or higher, effectively infinite) and a hard ceiling that the signal is not allowed to exceed. It is used at the end of a mix to set a maximum level and, often, to push the perceived loudness of the piece up.</p>
 
-<p>A limiter set with a ceiling of -0.3 dBFS will not let any sample exceed that level. Anything that would have gone louder gets clamped down. If you then boost the signal going into the limiter, the loud parts get clamped harder while the quiet parts ride up, and the piece becomes <em>louder on average</em> without ever exceeding the ceiling.</p>
+<p>A limiter set with a ceiling of -0.3 dB will not let any sample exceed that level. Anything that would have gone louder gets clamped down. If you then boost the signal going into the limiter, the loud parts get clamped harder while the quiet parts ride up, and the piece becomes <em>louder on average</em> without ever exceeding the ceiling.</p>
 
 <p>This is useful for delivering finished material to listening contexts that demand consistent level (a class listening folder, an online release, a streaming platform). It is also where the worst habit in modern audio production happens.</p>
 
@@ -636,7 +634,7 @@
   <li><strong>Less is usually more.</strong> 1–3 dB of gain reduction is often the right amount. If you find yourself pulling 10 dB of reduction off a sound, ask whether the source itself needs to be different, or whether you should reduce the input level rather than crush the output.</li>
   <li><strong>Compress for a reason.</strong> "It sounds louder" is not a reason. Loudness is something you can get with a fader. The reasons for compression are: to even out an inconsistent performance, to control a sound that fights its way to the front of the mix, to add sustain to a sound by raising its tail, to glue a group of sounds together so they feel like one element. If you can't name what the compressor is doing for you, take it off.</li>
   <li><strong>Limit only at the end.</strong> A limiter belongs on the master output of a finished piece, set to catch the very loudest peaks. It does not belong on every track. If you find yourself wanting to limit a single sound, you probably want a compressor.</li>
-  <li><strong>Trust your ears, not your eyes.</strong> Meters help, but the question is always how it sounds. A piece with a meter pegged at -3 dBFS that sounds dull is worse than a piece with peaks at -8 dBFS that sounds alive.</li>
+  <li><strong>Trust your ears, not your eyes.</strong> Meters help, but the question is always how it sounds. A piece with a meter pegged at -3 dB that sounds dull is worse than a piece with peaks at -8 dB that sounds alive.</li>
 </ul>
 
 <hr>
