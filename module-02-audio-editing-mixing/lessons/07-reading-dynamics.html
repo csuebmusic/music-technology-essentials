@@ -346,19 +346,19 @@
   <div class="callout-title">If compression changes the shape, does it also change the sound?</div>
   <p>Yes. This is one of the most useful things to know about compression, and it's easy to miss: <strong>changing a signal's shape over time also changes its tone</strong>. When a compressor squashes a transient or thickens a sustained note, it isn't just lowering the loud bits. It is reshaping the waveform from moment to moment, and reshaping a waveform inherently changes what frequencies are present and at what levels. Two files can be at the same loudness and still sound very different.</p>
 
-  <p>Listen for it. Both clips below are at the same loudness (matched by RMS, the closest measurement we have to how loud the ear actually hears something). The first is the conga loop made louder by pure scaling: a normalization step, nothing else. The second is the same loop made louder by compression and limiting: same source, same final loudness, but the shape has been reworked.</p>
+  <p>Listen for it. Both clips below are at the same loudness (matched by RMS, the closest measurement we have to how loud the ear actually hears something). The first is the conga loop made louder by normalization (linear scaling). The second is the same loop made louder by compression and limiting (non-linear wave-shaping).</p>
 
   <figure class="audio-compare">
     <div class="audio-compare-title">Demo · Same loudness, different shape</div>
     <div class="audio-row">
       <span class="audio-label">Scaled
-        <span class="audio-label-sub">normalize only</span>
+        <span class="audio-label-sub">linear scaling</span>
       </span>
       <audio controls src="../../assets/audio/module-02-week-05/timbre-scaled.wav"></audio>
     </div>
     <div class="audio-row">
       <span class="audio-label">Compressed
-        <span class="audio-label-sub">compress + limit, same RMS</span>
+        <span class="audio-label-sub">non-linear wave-shaping</span>
       </span>
       <audio controls src="../../assets/audio/module-02-week-05/timbre-compressed.wav"></audio>
     </div>
