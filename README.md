@@ -17,6 +17,7 @@ module-04-ableton/                   Weeks 9–15 — Ableton audio + MIDI → f
 policies/                            Cross-cutting course policies (e.g. NAS archival)
 assets/                              Shared CSS, audio, images, videos
 build/                               Scripts that generate audio demos and other assets
+meta/                                Internal build-time conventions (not student- or TA-facing)
 ```
 
 Each module folder follows a consistent layout:
@@ -42,9 +43,11 @@ See [`course-outline.md`](course-outline.md) for full details.
 
 ## Conventions
 
-- **Student-facing materials** are HTML, using the shared stylesheet at `assets/style.css`.
-- **Specs and TA notes** are Markdown, intended for Inés and the TA.
-- **Audio standards:** Module 2 uses 44.1 kHz / 16-bit (Audacity). Module 4 uses 48 kHz / 32-bit float (Ableton).
+Build-time conventions (prose rules, document chrome, file naming, dates, visual system) live in [`meta/`](meta/). Anyone working on materials in this repo (Inés, Claude) should consult the relevant file there before drafting; the TA doesn't need to.
+
+The two course-level patterns worth knowing without opening a convention file:
+
+- **Student-facing materials** are HTML, sharing the stylesheet at `assets/style.css`. **Specs and TA notes** are Markdown.
 - **File workflow:** Local-first with NAS as sync mechanism — students work in `~/Documents/lastname/`, download from NAS at session start, upload at end.
 
 ## License & use
