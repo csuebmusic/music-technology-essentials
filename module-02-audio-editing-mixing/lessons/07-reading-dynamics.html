@@ -344,7 +344,7 @@
 
 <div class="callout">
   <div class="callout-title">If compression changes the shape, does it also change the sound?</div>
-  <p>Yes. This is one of the most useful things to know about compression, and it's easy to miss: <strong>changing a signal's shape over time also changes its tone</strong>. When a compressor squashes a transient or thickens a sustained note, it isn't just lowering the loud bits. It is reshaping the waveform from moment to moment, and reshaping a waveform inherently changes what frequencies are present and at what levels. Two files can be at the same loudness and still sound very different.</p>
+  <p>Yes. This is one of the most useful things to know about compression, and it's easy to miss: <strong>changing a signal's shape over time also changes its tone</strong>. When a compressor squashes the sharp start of a hit or thickens a sustained note, it isn't just lowering the loud bits. It is reshaping the waveform from moment to moment, and reshaping a waveform inherently changes what frequencies are present and at what levels. Two files can be at the same loudness and still sound very different.</p>
 
   <p>Listen for it. Both clips below are at the same loudness (matched by RMS, the closest measurement we have to how loud the ear actually hears something). The first is the conga loop made louder by normalization (linear scaling). The second is the same loop made louder by compression and limiting (non-linear wave-shaping).</p>
 
@@ -411,7 +411,9 @@
 
 <h2>3 · The compressor: threshold and ratio</h2>
 
-<p>A <span class="term">compressor</span> reduces dynamic range. It does this by attenuating the loud parts of a signal while leaving the quiet parts alone. Two parameters define <em>how much</em> attenuation happens and <em>where</em> it starts: <strong>threshold</strong> and <strong>ratio</strong>.</p>
+<p>You've now heard what compression does. This section names the four controls that determine <em>how</em> it does it.</p>
+
+<p>A <span class="term">compressor</span> reduces dynamic range. It attenuates the loud parts of a signal while leaving the quiet parts alone, reshaping the waveform from moment to moment (which, as Section 2 showed, also affects tone). Two parameters define <em>how much</em> attenuation happens and <em>where</em> it starts: <strong>threshold</strong> and <strong>ratio</strong>. Two more, which the next section covers, define <em>when</em> the compression engages and disengages.</p>
 
 <p>The <span class="term">threshold</span> is a level (in dB) above which the compressor starts working. Signal below the threshold passes through untouched. Signal above the threshold is reduced.</p>
 
@@ -585,9 +587,9 @@
 
 <h2>5 · Limiting</h2>
 
-<p>A <span class="term">limiter</span> is a compressor with extreme settings: a very high ratio (often 20:1 or higher, effectively infinite) and a hard ceiling that the signal is not allowed to exceed. It is used at the end of a mix to set a maximum level and, often, to push the perceived loudness of the piece up.</p>
+<p>A <span class="term">limiter</span> is a compressor pushed to extremes: a very high ratio (often 20:1 or higher, effectively infinite) and a hard ceiling that the signal is not allowed to exceed. Everything you learned about compression still applies; a limiter is the same tool with the threshold and ratio cranked. It is used at the end of a mix to set a maximum level and, often, to push the perceived loudness of the piece up.</p>
 
-<p>A limiter set with a ceiling of -0.3 dB will not let any sample exceed that level. Anything that would have gone louder gets clamped down. If you then boost the signal going into the limiter, the loud parts get clamped harder while the quiet parts ride up, and the piece becomes <em>louder on average</em> without ever exceeding the ceiling.</p>
+<p>A limiter set with a ceiling of -0.3 dB will not let any sample exceed that level. Anything that would have gone louder gets clamped down. If you then add <strong>input gain</strong> before the limiter (essentially the mirror image of the makeup gain idea from Section 1, applied <em>before</em> the processor instead of after), the loud parts get clamped harder while the quiet parts ride up, and the piece becomes <em>louder on average</em> without ever exceeding the ceiling.</p>
 
 <p>This is useful for delivering finished material to listening contexts that demand consistent level (a class listening folder, an online release, a streaming platform). It is also where the worst habit in modern audio production happens.</p>
 
@@ -632,7 +634,7 @@
 <ul>
   <li><strong>Listen with it off first.</strong> If a sound or a mix sounds good without compression, leave it alone. Reach for the compressor when you have a specific problem: a sound that's jumping around in level, a kick that disappears into a wash, a piece whose loud parts overwhelm the quiet ones.</li>
   <li><strong>Less is usually more.</strong> 1–3 dB of gain reduction is often the right amount. If you find yourself pulling 10 dB of reduction off a sound, ask whether the source itself needs to be different, or whether you should reduce the input level rather than crush the output.</li>
-  <li><strong>Compress for a reason.</strong> "It sounds louder" is not a reason. Loudness is something you can get with a fader. The reasons for compression are: to even out an inconsistent performance, to control a sound that fights its way to the front of the mix, to add sustain to a sound by raising its tail, to glue a group of sounds together so they feel like one element. If you can't name what the compressor is doing for you, take it off.</li>
+  <li><strong>Compress for a reason.</strong> "It sounds louder" is the weakest reason on its own. If a track is just quiet, raise the fader. The reasons compression earns its place are: to even out an inconsistent performance, to control a sound that fights its way to the front of the mix, to add sustain to a sound by raising its tail, to glue a group of sounds together so they feel like one element. Making a piece audibly louder past the ceiling (the Section 1 effect) is a real use too, but it's the use to be most careful with. If you can't name what the compressor is doing for you, take it off.</li>
   <li><strong>Limit only at the end.</strong> A limiter belongs on the master output of a finished piece, set to catch the very loudest peaks. It does not belong on every track. If you find yourself wanting to limit a single sound, you probably want a compressor.</li>
   <li><strong>Trust your ears, not your eyes.</strong> Meters help, but the question is always how it sounds. A piece with a meter pegged at -3 dB that sounds dull is worse than a piece with peaks at -8 dB that sounds alive.</li>
 </ul>
@@ -668,6 +670,9 @@
   <h3>What to take from this reading</h3>
   <ul>
     <li><strong>Dynamic range</strong> is the difference between the loudest and quietest parts of a sound. Compression reduces it; limiting reduces it more, with a hard ceiling.</li>
+    <li><strong>Normalization</strong> is linear scaling: one number applied to every sample so the peak lands at a target. It changes the scale of a sound without changing its shape. The standard tool for sample prep; -1 dB is a safe target.</li>
+    <li><strong>Compression changes shape, not just scale.</strong> That means it changes tone, not just loudness. Every compressor imparts some character to whatever passes through it.</li>
+    <li><strong>Makeup gain</strong> is the boost applied after compression. Compression alone makes a sound quieter; compression with makeup gain is what makes a piece feel louder.</li>
     <li><strong>Threshold</strong> sets where the compressor starts working. <strong>Ratio</strong> sets how aggressively. <strong>Attack</strong> sets how quickly the compressor reacts; <strong>release</strong> sets how quickly it lets go.</li>
     <li><strong>Fast attack</strong> squashes transients. <strong>Slow attack</strong> lets them through. <strong>Fast release</strong> can pump. <strong>Slow release</strong> sounds smooth but can mute quiet moments after loud ones.</li>
     <li><strong>Limiting</strong> at the end of a mix sets a ceiling. Push it gently. Crushing a piece into the ceiling makes it louder by making it worse.</li>
