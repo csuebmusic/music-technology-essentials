@@ -2,22 +2,22 @@
 
 Course materials, teaching tools, and TA resources for MUS 381 at CSU East Bay.
 
-This repository is the working hub for an introductory music-technology course taught by Inés Thiebaut (Department of Music, CSU East Bay). It functions as a textbook replacement: syllabus, weekly plans, readings, handouts, listening assignments, projects, and interactive browser-based tools all live here, organized by module.
+This repository is the working hub for an introductory music-technology course taught by Inés Thiebaut (Department of Music, CSU East Bay). It functions as a textbook replacement: syllabus, weekly plans, readings, handouts, listening assignments, projects, and interactive browser-based tools all live here, organized by module. Student-facing HTML is also served via GitHub Pages at [`csuebmusic.github.io/music-technology-essentials/`](https://csuebmusic.github.io/music-technology-essentials/), which is what students follow links to.
 
 ## Repository structure
 
-Everything for a given module lives in that module's folder. To prep a week of teaching, open the relevant module — readings, handouts, listening, projects, tools, spec, and TA notes are all there.
+Everything for a given module lives in that module's folder. To prep a week of teaching, open the relevant module: readings, handouts, listening, projects, tools, and TA notes are all there.
 
 ```
 course-outline.md                    Full course outline, schedule, learning outcomes
 module-01-fluency/                   Week 1 — computer & studio fluency
 module-02-audio-editing-mixing/      Weeks 2–5 — Audacity, editing, mixing → Project 1
 module-03-recording/                 Weeks 6–8 — recording & sample library → midterm
-module-04-ableton/                   Weeks 9–15 — Ableton audio + MIDI → final
+module-04-ableton/                   Weeks 9–14 — Ableton audio + MIDI → final (Wk 15 revision)
 policies/                            Cross-cutting course policies (e.g. NAS archival)
 assets/                              Shared CSS, audio, images, videos
 build/                               Scripts that generate audio demos and other assets
-meta/                                Internal build-time conventions (not student- or TA-facing)
+meta/                                Internal build-time conventions (Inés + Claude only)
 ```
 
 Each module folder follows a consistent layout:
@@ -26,11 +26,9 @@ Each module folder follows a consistent layout:
 module-XX-name/
   README.md          The module itself: purpose, learning outcomes, session-by-session teaching notes
   lessons/           Student-facing material in session order: readings, interactive tools, lab handouts
-  listening/         Listening assignments (historical + peer)
+  listening/         Listening assignments (historical + peer where applicable)
   projects/          Project prompts and project-specific notes
 ```
-
-Not every module uses every subfolder — they're added as needed.
 
 ## Course at a glance
 
