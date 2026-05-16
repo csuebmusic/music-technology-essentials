@@ -29,6 +29,17 @@ The variable definitions in `assets/style.css`:
 | `--accent-soft` | `#d89169` | Lighter rust for hover states, secondary accents |
 | `--warn-bg` | `#f0e3d2` | Background for warning callouts |
 | `--warn-ink` | `#6b3e1a` | Text for warning callouts |
+| `--meter-good` | `#5c8c4e` | Level-meter green zone: signal safely below ceiling |
+| `--meter-hot` | `#c08a2e` | Level-meter amber zone: signal approaching ceiling |
+| `--meter-clip` | `#a83030` | Level-meter red zone: signal at or over ceiling |
+| `--gr-light` | `#d9b042` | Gain-reduction gradient, light end (small reduction, yellow) |
+| `--gr-heavy` | `#b5552f` | Gain-reduction gradient, heavy end (large reduction, rust) |
+
+### Meter color taxonomy
+
+`--meter-good`, `--meter-hot`, `--meter-clip` are the canonical level-meter triplet. They follow the audio-industry green / amber / red convention but are warmed slightly to sit with the cream palette. Used in both static SVG meter diagrams (e.g. the gain-staging figure in `06-handout-mixing-in-audacity.html`) and live CSS meter widgets (e.g. the input / output / GR meters in the dynamics tool).
+
+`--gr-light` and `--gr-heavy` are the two endpoints of the gain-reduction gradient. CSS gradient interpolation handles the middle; if a sharper transition is needed (e.g. a 3-stop gradient with a deliberate midpoint), `--meter-hot` works as the intermediate color since it sits naturally between yellow and rust.
 
 ## Typography
 

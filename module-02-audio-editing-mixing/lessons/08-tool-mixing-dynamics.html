@@ -225,11 +225,11 @@
       width: 100%;
       background: linear-gradient(
         to right,
-        #5b9c5b 0%,
-        #5b9c5b 65%,
-        #c5a04a 80%,
-        #b5552f 95%,
-        #a13a1a 100%
+        var(--meter-good) 0%,
+        var(--meter-good) 65%,
+        var(--meter-hot) 80%,
+        var(--gr-heavy) 95%,
+        var(--meter-clip) 100%
       );
       /* The actual fill amount is controlled by clip-path, set in JS via
          the --level CSS variable. 0 = empty, 1 = full. */
@@ -245,10 +245,10 @@
          work happening" rather than "danger / clipping." */
       background: linear-gradient(
         to left,
-        #d9b042 0%,
-        #d9b042 40%,
-        #c5853a 70%,
-        #b5552f 100%
+        var(--gr-light) 0%,
+        var(--gr-light) 40%,
+        var(--meter-hot) 70%,
+        var(--gr-heavy) 100%
       );
       clip-path: inset(0 0 0 calc((1 - var(--level, 0)) * 100%));
     }

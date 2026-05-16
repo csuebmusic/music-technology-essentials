@@ -19,6 +19,22 @@
   --warn-bg: #f0e3d2;
   --warn-ink: #6b3e1a;
 
+  /* Level-meter state colors (used in mixing diagrams and live meters).
+     "Good" = signal sitting safely below ceiling, "hot" = approaching
+     ceiling, "clip" = at or over ceiling. Tuned to read clearly against
+     the cream palette while staying recognizable as the audio-industry
+     green/amber/red convention. */
+  --meter-good: #5c8c4e;
+  --meter-hot:  #c08a2e;
+  --meter-clip: #a83030;
+
+  /* Gain-reduction gradient endpoints (used in compressor / dynamics
+     meters). Reads as a separate visual family from the level meters:
+     yellow at low reduction, deepening through orange to rust at heavy
+     reduction. The middle of the gradient is interpolated by CSS. */
+  --gr-light: #d9b042;
+  --gr-heavy: #b5552f;
+
   --serif: 'DM Sans', -apple-system, system-ui, sans-serif;
   --mono: 'DM Mono', 'SF Mono', Menlo, monospace;
 }
