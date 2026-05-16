@@ -259,6 +259,12 @@
   <p>Identical peaks. About 6 dB louder average. Six decibels is a lot: roughly the perceptual difference between a normal conversation and a loud conversation. Your peak meter sees no difference between these two files; your ears hear a huge difference.</p>
 
   <p>This is the secret behind every "loud master" in commercial music. You don't make a piece louder by pushing the peaks higher; you can't, they're already at the ceiling. You make it louder by pulling the average level up toward the peaks. That's what compression and limiting do.</p>
+
+  <p><strong>Two knobs, not one.</strong> Strictly speaking, the narrow version above isn't just compressed: it's <em>compressed and then boosted</em>. Compression by itself reduces the loud parts of a signal, which actually makes the file quieter overall (the loud bits got smaller, the quiet bits didn't change). To get the louder result you just heard, we then boost the whole compressed signal so the peaks come back up to the ceiling.</p>
+
+  <p>This second step is so common that most compressor plugins have a dedicated knob for it, usually labeled <strong>makeup gain</strong> (sometimes "output" or "gain"). It's just a multiplier applied after the compressor does its work. The compressor squashes; makeup gain pulls the squashed version back up.</p>
+
+  <p>You'll meet this in the next lab: the Audacity compressor and the interactive tool in this reading both have a makeup gain control. Sometimes you'll want it; sometimes you won't. Compression <em>without</em> makeup gain is useful when you just want to tame a sound that's too loud, leaving the quiet parts where they are. Compression <em>with</em> makeup gain is what makes a piece feel louder. We combined them here to make the loudness change unmistakable, but they're separable choices in practice.</p>
 </div>
 
 <p>The piece in your Project 1 has some dynamic range, whether you've thought about it or not. Some moments are louder, some are quieter, and that contrast is part of how the piece holds attention. Compression and limiting are the tools you use to change that relationship deliberately.</p>
