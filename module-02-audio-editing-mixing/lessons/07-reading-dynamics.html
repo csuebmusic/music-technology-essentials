@@ -152,7 +152,7 @@
   <div class="subtitle">Shaping how loud a sound is, and how loud it <em>seems</em>.</div>
 </div>
 
-<p class="lede">In the Wednesday lab last week you set levels, panned tracks, and balanced sounds in your mix. The remaining tool in the mixing toolbox is <strong>dynamics processing</strong>: changing the relationship between the loud and quiet parts of a sound. Today we look at the two main tools (<em>compression</em> and <em>limiting</em>), what they do, when they help, and how they get misused. This is the last new content of the module. Wednesday is the final work session and submission, and the choices in this reading will shape the last 20% of your piece.</p>
+<p class="lede">In the Wednesday lab last week you set levels, panned tracks, and balanced sounds in your mix. The remaining tool in the mixing toolbox is <strong>dynamics processing</strong>: changing the relationship between the loud and quiet parts of a sound. Today we look at the three tools that do this work (<em>normalization</em>, <em>compression</em>, and <em>limiting</em>), what each one does, when each helps, and how the powerful ones get misused. This is the last new content of the module. Wednesday is the final work session and submission, and the choices in this reading will shape the last 20% of your piece.</p>
 
 <hr>
 
@@ -164,7 +164,7 @@
 
 <p>Neither is automatically better. Wide dynamic range gives a piece room to breathe, and lets quiet moments feel quiet. Narrow dynamic range gives a piece consistent presence, useful in environments where the listener can't adjust their volume (in a car, on a phone speaker, on a noisy bus).</p>
 
-<p>Listen to the same musical fragment with wide and narrow dynamic range. The peak level is the same in both files (both written with their loudest moment at the same level). What changes is how loud the <em>average</em> sounds, and whether the quiet parts feel quiet:</p>
+<p>Listen to the same musical fragment with wide and narrow dynamic range:</p>
 
 <figure class="audio-compare">
   <div class="audio-compare-title">Demo · Dynamic range</div>
@@ -267,7 +267,7 @@
   <p>You'll meet this in the next lab: the Audacity compressor and the interactive tool in this reading both have a makeup gain control. Sometimes you'll want it; sometimes you won't. Compression <em>without</em> makeup gain is useful when you just want to tame a sound that's too loud, leaving the quiet parts where they are. Compression <em>with</em> makeup gain is what makes a piece feel louder. We combined them here to make the loudness change unmistakable, but they're separable choices in practice.</p>
 </div>
 
-<p>The piece in your Project 1 has some dynamic range, whether you've thought about it or not. Some moments are louder, some are quieter, and that contrast is part of how the piece holds attention. Compression and limiting are the tools you use to change that relationship deliberately.</p>
+<p>The piece in your Project 1 has some dynamic range, whether you've thought about it or not. Some moments are louder, some are quieter, and that contrast is part of how the piece holds attention. Normalization, compression, and limiting are the tools you use to change that relationship deliberately. The next sections introduce them one at a time.</p>
 
 <hr>
 
@@ -501,7 +501,7 @@
   <figcaption>The compressor transfer curve. The diagonal dashed line is no compression (1:1): output equals input. The three solid lines show what happens at increasing ratios with the threshold fixed at -20 dB. Below the threshold every curve follows the 1:1 line. Above it, higher ratios bend the curve more flat: the loud signal is allowed to get less and less louder.</figcaption>
 </figure>
 
-<p>Listen to the same source through three compression settings. The source is six short percussive hits, with the first, fourth at a peak level (-3 dB), the second and fifth quieter (-9 dB), and the third and sixth quieter still (-15 dB). In each setting, listen for which hits get compressed and which don't:</p>
+<p>Listen to the same source through three compression settings. The source is six short percussive hits: the first and fourth at a peak level (-3 dB), the second and fifth quieter (-9 dB), and the third and sixth quieter still (-15 dB). In each setting, listen for which hits get compressed and which don't:</p>
 
 <figure class="audio-compare">
   <div class="audio-compare-title">Demo · Threshold and ratio</div>
@@ -531,8 +531,6 @@
   </div>
   <p class="audio-note">In the <em>light</em> setting, only the loudest hits get touched. In <em>medium</em>, the loud and middle hits are both compressed, and the quietest hits are now nearly the same level as the loud ones. In <em>heavy</em>, almost all the dynamic difference between hits is gone: they all sound roughly the same volume. All four files are normalized to the same peak level, so the perceived differences come from how the compression changed the <em>relationship</em> between hits, not from absolute level.</p>
 </figure>
-
-<p>This is the core move of compression. Choose a threshold (where the compressor starts working) and a ratio (how aggressively it works) to reshape the relative loudness of parts of your signal.</p>
 
 <hr>
 
