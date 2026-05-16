@@ -14893,14 +14893,6 @@ ADYAGAA2ACkAQQAnAEEAGgA+ABIAPAAEADQA8/8iAOj/EgDf/woA0v/v/8//8f/M//H/z//4/87/AgDR
     ctx.moveTo(padL, grY0); ctx.lineTo(padL + plotW, grY0);
     ctx.stroke();
     ctx.setLineDash([]);
-
-    // Labels
-    ctx.fillStyle = cssVar('--ink-soft');
-    ctx.font = `${9 * dpr}px DM Mono, monospace`;
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'top';
-    ctx.fillText('waveform', padL, padT);
-    ctx.fillText('gain reduction (0 to -24 dB)', padL, grY0 + 2 * dpr);
   }
 
   function redrawAll() {
