@@ -275,7 +275,7 @@
 
 <p>Before we get to the compressor, there's a much simpler tool worth knowing: <span class="term">normalization</span>. You'll use it almost every time you prepare a sample to keep, and it's the most common technique for making a quiet recording louder.</p>
 
-<p>Normalizing a sound does exactly one thing: it finds the loudest peak in the file, computes how much to multiply every sample by so that peak lands at a target level (of your choosing), and applies that single multiplier to every sample in the file. That's it. No compression, no time-varying gain, no decision-making about what's loud and what's quiet. The whole signal goes up (or down) by the same amount of dB. The relationship between loud and quiet parts stays exactly the same.</p>
+<p>Normalizing a sound does exactly one thing: it finds the loudest peak in the file, computes how much to multiply every sample by so that peak lands at a target level (of your choosing), and applies that single multiplier to every sample in the file. That's it. The operation is a pure rescaling: one number applied uniformly across the whole file. The whole signal goes up (or down) by the same amount of dB. The relationship between loud and quiet parts stays exactly the same.</p>
 
 <p>This makes normalization fundamentally different from what you heard in Section 1. The compressed-and-boosted "narrow" version had its dynamic range squashed: the quiet parts came up more than the loud parts. Normalization can't do that. Normalization is just a scaler. If the loud parts go up by 12 dB, the quiet parts go up by 12 dB. The shape of the signal is preserved.</p>
 
