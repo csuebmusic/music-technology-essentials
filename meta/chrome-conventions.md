@@ -16,20 +16,34 @@ The header `<span class="meta">` and the matching footer span both contain the r
 
 | Document type | Header / footer right span |
 |---|---|
-| Reading | `Module XX · Lecture N` |
+| Reading (Monday lecture) | `Module XX · Lecture N` |
+| Reading (supplement to a lecture) | `Module XX · Lecture N (supplement)` |
+| Lab handout (paired with a specific lab session) | `Module XX · Lab N` |
+| Generic module-tied handout | `Module XX · Handout N` |
+| Interactive tool | `Module XX · Tool N` |
 | Listening assignment | `Module XX · Listening` |
 | Peer listening assignment | `Module XX · Peer listening` |
 | Project prompt | `Module XX · Project N` |
-| Module-tied handout | `Module XX · Handout N` |
-| Module-agnostic handout | `Lab · Reference card` |
-| Interactive tool | `Module XX · Tool N` |
+| Module-agnostic handout (used all semester) | `Lab · Reference card` |
 
 ### Numbering rules
 
-- **Lecture numbers** count only Monday lectures within a module: Mon Wk 2 is Lecture 1, Mon Wk 3 is Lecture 2, etc.
-- **Project numbers** count globally across the semester: Project 1 (Module 2), Project 2 (Module 3 midterm), and so on.
-- **Handout numbers** count globally across the semester. Handout 1 is the first day setup; Handout 2 is session routines; subsequent handouts continue counting regardless of which module they fall in. The header still tags them with their module if they're module-specific.
-- **Tool numbers** count within the module: the Module 2 digital-audio explorer is Tool 1, the Module 2 dynamics tool is Tool 2.
+All within-module counts reset at the module boundary. Most numbers are within-module; project numbers are the exception (global, since projects build on each other across the semester).
+
+- **Lecture numbers** count Monday lectures within a module. Mon Wk 2 in Module 2 is Lecture 1, Mon Wk 3 is Lecture 2, etc.
+- **Supplement readings** carry the parent lecture's number with `(supplement)` appended. Example: `Lecture 3 (supplement)` for a reading that backs up Lecture 3.
+- **Lab numbers** count Wednesday lab sessions within a module. Module 2 has three lab sessions and three Lab-numbered handouts (Lab 1 → Lab 2 → Lab 3). Used when a module has multiple labs and the number serves as session-navigation help.
+- **Handout numbers** count handouts within a module when the document is module-tied but not paired with a single lab session. Module 1's `Handout 1 · Your First Day` uses this pattern since Module 1 has only one lab session, so a `Lab N` number wouldn't disambiguate anything.
+- **Tool numbers** count interactive tools within a module. Module 2's digital audio explorer is Tool 1; its dynamics tool is Tool 2.
+- **Project numbers** count globally across the semester. Project 1 (Module 2), Project 2 (Module 3 midterm), etc.
+
+### When to choose Lab N vs Handout N for a module-tied handout
+
+If the module has multiple labs (Wednesday sessions) and the handout is the principal document for a specific one of them, use `Lab N`, where N is which lab in the module. This matches Module 2's pattern and helps the TA and students quickly navigate to "the handout for Wednesday two."
+
+If the module has a single lab session, or the handout isn't tied to a specific lab session (e.g. a "general orientation" handout used across multiple weeks of the module), use `Handout N`, where N counts handouts within the module.
+
+The distinction is about whether the number provides session-navigation value. If yes → Lab. If no → Handout.
 
 ### Title block
 
