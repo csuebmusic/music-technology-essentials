@@ -167,14 +167,40 @@ peak detector and a 2 dB soft knee. Gain is computed in the log domain
 and applied as a linear multiplier. Attack and release use exponential
 time constants of the form `exp(-1/(t*sr))`.
 
-Makeup gain is deliberately **not** applied to the compression demos —
-every demo is normalized to a peak of -3 dBFS at write time, so the
-audible squashing reflects actual compression, not the loudness illusion
-of automatic makeup. The exception is the limiter trio, where the three
-files are written without normalization so students can hear the
-loudness-wars effect: peak levels are essentially identical across the
-three, but perceived loudness rises dramatically (and audibly) with the
+Sections 1 and 4 (dynamic-range and limiter demos) use a real
+Ableton-rendered stereo loop as source material: conga slaps at
+maximum velocity, shaker and clave at low velocity. The natural
+dynamic range of the loop (~21 dB crest factor, ~57 dB spread between
+loudest and quietest 100 ms windows) makes the compression-vs-no
+demonstrations land much more clearly than any synthesized source.
+The loop lives at `assets/audio/source/dynamic-loop.wav`. These two
+sections use stereo-linked compression (`compress_stereo`,
+`limit_stereo`): a single sidechain detector reads `max(|L|, |R|)` so
+both channels are reduced equally and the stereo image stays stable.
+
+Sections 2 and 3 use synthesized mono sources, because they need
+precise level control across multiple hits (Section 2's six varied-level
+hits) and precise transient timing (Section 3's percussion loop) that
+are easier to guarantee from code than from a recorded source.
+
+Makeup gain is deliberately **not** applied to the Section 2 and 3
+compression demos — every demo in those sections is normalized to a
+peak of -3 dBFS at write time, so the audible squashing reflects actual
+compression, not the loudness illusion of automatic makeup. The
+dynamic-range pair (Section 1) and the limiter trio (Section 4) are
+written without normalization so students can hear the loudness-wars
+effect: peak levels are matched within each comparison set, but
+perceived loudness rises dramatically (and audibly) with the
 compression amount.
+
+The peak limiter has no lookahead, so fast transients can punch through
+the ceiling by a couple of dB. A final hard-clip pass at the ceiling
+enforces the peak exactly, so the peak meter reads identically across
+files within a comparison set.
+
+The narrow-version boost in `gen_dynamic_range` is calibrated for the
+specific source loop (currently `NARROW_BOOST_DB = 18` for ~6 dB RMS
+gap). If you change the source, sweep this value to recalibrate.
 
 ## File naming convention
 
