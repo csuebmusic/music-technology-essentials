@@ -342,6 +342,36 @@
 
 <p>Compare this to the wide/narrow comparison in Section 1. There, both files had identical peak levels but very different shapes. Here, the two files have very different peak levels but identical shapes. Normalization changes the <em>scale</em>. Compression changes the <em>shape</em>.</p>
 
+<div class="callout">
+  <div class="callout-title">Wait: if compression changes the shape, does it also change the sound?</div>
+  <p>Yes. This is one of the most useful things to know about compression, and it's easy to miss: <strong>changing a signal's shape over time also changes its tone</strong>. When a compressor squashes a transient or thickens a sustained note, it isn't just lowering the loud bits. It is reshaping the waveform from moment to moment, and reshaping a waveform inherently changes what frequencies are present and at what levels. Two files can be at the same loudness and still sound very different.</p>
+
+  <p>Listen for it. Both clips below are at the same loudness (matched by RMS, the closest measurement we have to how loud the ear actually hears something). The first is the conga loop made louder by pure scaling: a normalization step, nothing else. The second is the same loop made louder by compression and limiting: same source, same final loudness, but the shape has been reworked.</p>
+
+  <figure class="audio-compare">
+    <div class="audio-compare-title">Demo · Same loudness, different shape</div>
+    <div class="audio-row">
+      <span class="audio-label">Scaled
+        <span class="audio-label-sub">normalize only</span>
+      </span>
+      <audio controls src="../../assets/audio/module-02-week-05/timbre-scaled.wav"></audio>
+    </div>
+    <div class="audio-row">
+      <span class="audio-label">Compressed
+        <span class="audio-label-sub">compress + limit, same RMS</span>
+      </span>
+      <audio controls src="../../assets/audio/module-02-week-05/timbre-compressed.wav"></audio>
+    </div>
+    <p class="audio-note">The compressed version has more presence in the upper-mids and high frequencies. The slaps feel a little thicker; the shaker and clave feel a little more forward. The two files measure the same loudness but they have a different <em>tone</em>. The compressor reshaped the waveform, and the reshaping pulled in spectral character that the scaled version doesn't have.</p>
+  </figure>
+
+  <p>This is why "dynamics processing" is a slightly deceiving name for the category. Compression and limiting are sold as loudness tools, and they are. They are also <em>color</em> tools. Every compressor imparts some character to whatever passes through it, and different compressors have different characters. A 1970s hardware unit with output transformers, a modern software emulation of that same unit, and a clean digital compressor in Audacity will all do similar math, but they will sound different on the same source.</p>
+
+  <p>This is why professional studios own more than one compressor, and why some software compressors cost hundreds of dollars while others are free. People are paying for the color the compressor brings to the signal, not for the math (the math is in the textbooks). Choosing a compressor for a particular sound is partly about how aggressively it can reduce gain, but it is mostly about <em>which kind of color</em> you want.</p>
+
+  <p>For now, the takeaway is simpler: compression is never purely a loudness tool. It always changes the tone of what you put through it. Sometimes the tone change is what you actually wanted; sometimes it is a side effect you want to minimize. Either way, when you reach for a compressor you are reaching for a tool that does two things at once. Treat it that way.</p>
+</div>
+
 <h3>Why and when to normalize</h3>
 
 <p>Normalization is the standardization step in sample preparation. When you record sounds for a sample library, you set your input gain conservatively so nothing clips. That's the right thing to do at the time of recording. But you'll end up with samples at all kinds of different peak levels: this one peaks at -10 dBFS, that one at -16, the loud one at -6. When you later drag these into a session, you'll have to ride the channel fader 10 dB up for one sample and 4 dB down for another, just to get them to a usable working level. That's friction you don't need.</p>

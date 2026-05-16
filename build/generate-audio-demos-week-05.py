@@ -609,6 +609,76 @@ def gen_normalization():
     write_wav_no_normalize(os.path.join(OUT_DIR, "norm-loud.wav"), loud)
 
 
+def gen_timbre_match():
+    """timbre-scaled.wav and timbre-compressed.wav for the Section 2
+    'shape change = timbre change' info card.
+
+    A loudness-matched A/B between two ways of making the source louder:
+      1. Pure scaling (a normalize step, no shape change)
+      2. Compression + makeup gain (shape change, then scale)
+
+    The two files have the SAME RMS, so the only audible difference is
+    the tone-color the compression imparted to the signal. Students
+    should hear that the compressed version isn't just louder — it
+    sounds different. Slightly thicker, slightly more 'forward,' with
+    altered transient character. The slaps in the compressed version
+    have been reshaped, and reshaping a waveform inherently changes
+    its spectral content moment-to-moment.
+
+    Files produced:
+      - timbre-scaled.wav     : the source, scaled to a target RMS
+      - timbre-compressed.wav : the source, compressed+limited, scaled
+                                to the SAME target RMS
+
+    Note: peak levels will differ across the two files. Loudness-matched
+    A/B by RMS is the pedagogically honest choice here; peak-matched
+    would give students the louder-equals-different impression.
+    """
+    src = load_source_wav(SOURCE_LOOP)
+
+    # First, build the same compressed-and-boosted "narrow" signal as in
+    # gen_dynamic_range so the comparison is honest about what real-world
+    # compression does.
+    compressed = compress_stereo(src, threshold_db=-24, ratio=8,
+                                 attack_ms=3, release_ms=80)
+    compressed = compressed * db_to_lin(NARROW_BOOST_DB)
+    compressed = limit_stereo(compressed, ceiling_db=-3.0,
+                              attack_ms=1, release_ms=50)
+    ceiling_lin = db_to_lin(-3.0)
+    compressed = np.clip(compressed, -ceiling_lin, ceiling_lin)
+
+    # And a normalize-only version of the same source, scaled to peak
+    # -1 dBFS (same as norm-loud.wav).
+    src_peak = float(np.max(np.abs(src)))
+    scaled = src / src_peak * db_to_lin(-1) if src_peak > 0 else src
+
+    # Now: compute both RMS values, pick a target somewhere between, and
+    # scale each file to that target. Picking the LOWER of the two RMS
+    # values as the target keeps both files safely below 0 dBFS after
+    # scaling.
+    def rms(x):
+        m = x.mean(axis=1) if x.ndim == 2 else x
+        return float(np.sqrt(np.mean(m ** 2)))
+
+    rms_comp   = rms(compressed)
+    rms_scaled = rms(scaled)
+    target_rms = min(rms_comp, rms_scaled)
+
+    timbre_scaled     = scaled     * (target_rms / rms_scaled)
+    timbre_compressed = compressed * (target_rms / rms_comp)
+
+    # Safety clip in case the very-fast compressor transients tip over
+    # after rescaling (shouldn't happen given we scaled down, but cheap
+    # insurance).
+    timbre_scaled     = np.clip(timbre_scaled,     -0.999, 0.999)
+    timbre_compressed = np.clip(timbre_compressed, -0.999, 0.999)
+
+    write_wav_no_normalize(os.path.join(OUT_DIR, "timbre-scaled.wav"),
+                           timbre_scaled)
+    write_wav_no_normalize(os.path.join(OUT_DIR, "timbre-compressed.wav"),
+                           timbre_compressed)
+
+
 # ----- Diagram generator: wide-vs-narrow waveform comparison -----
 
 DIAGRAM_DIR = os.path.join(REPO_ROOT, "assets", "images", "module-02-week-05")
@@ -901,6 +971,8 @@ if __name__ == "__main__":
     gen_dynamic_range()
     print()
     gen_normalization()
+    print()
+    gen_timbre_match()
     print()
     gen_threshold_ratio()
     print()
