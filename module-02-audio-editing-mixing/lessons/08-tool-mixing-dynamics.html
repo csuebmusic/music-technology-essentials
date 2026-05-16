@@ -183,84 +183,19 @@
       margin-right: auto;
     }
 
-    /* Bar meters: three rows, each showing a label, a bar, and a numeric readout.
-       Level meters fill left-to-right. Gain-reduction meter fills right-to-left
-       (DAW convention: 'no compression' = empty on the right, 'lots of
-       compression' = bar grows leftward from the right edge). */
+    /* Status / metering line */
     .meters {
       display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
       margin-top: 1rem;
-    }
-    .meter {
-      display: grid;
-      grid-template-columns: 8rem 1fr 4.5rem;
-      align-items: center;
-      gap: 0.75rem;
       font-family: var(--mono);
-      font-size: 0.78rem;
-    }
-    .meter-label {
+      font-size: 0.85rem;
       color: var(--ink-soft);
-      text-align: right;
     }
-    .meter-bar {
-      position: relative;
-      height: 12px;
-      background: var(--bg);
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    /* The fill is a gradient covering the entire bar width. The bar is
-       partly hidden by the parent's overflow: hidden + the fill's right
-       inset; what's visible is the green→yellow→red coloring up to the
-       current level. */
-    .meter-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background: linear-gradient(
-        to right,
-        #5b9c5b 0%,
-        #5b9c5b 65%,
-        #c5a04a 80%,
-        #b5552f 95%,
-        #a13a1a 100%
-      );
-      /* The actual fill amount is controlled by clip-path, set in JS via
-         the --level CSS variable. 0 = empty, 1 = full. */
-      clip-path: inset(0 calc((1 - var(--level, 0)) * 100%) 0 0);
-      transition: clip-path 0.05s linear;
-    }
-    /* Gain-reduction meter: same gradient idea but fills from the right.
-       --level represents how much GR is happening, mapped 0..1. */
-    .meter-fill.gr {
-      background: linear-gradient(
-        to left,
-        #5b9c5b 0%,
-        #5b9c5b 50%,
-        #c5a04a 80%,
-        #b5552f 100%
-      );
-      clip-path: inset(0 0 0 calc((1 - var(--level, 0)) * 100%));
-    }
-    /* A subtle tick at the 0-dB position on level meters (which is the
-       right edge of the bar) is unnecessary — the right edge itself IS
-       the 0 dB position. Color does that work. */
-    .meter-value {
+    .meter-item strong {
       color: var(--ink);
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    @media (max-width: 580px) {
-      .meter {
-        grid-template-columns: 6.5rem 1fr 4rem;
-        gap: 0.5rem;
-      }
+      font-weight: 500;
     }
 
     /* Status messages */
@@ -346,21 +281,9 @@
     </div>
 
     <div class="meters">
-      <div class="meter">
-        <div class="meter-label">Input peak</div>
-        <div class="meter-bar"><div class="meter-fill" id="meter-input-fill"></div></div>
-        <div class="meter-value" id="meter-input-value">−∞ dB</div>
-      </div>
-      <div class="meter">
-        <div class="meter-label">Output peak</div>
-        <div class="meter-bar"><div class="meter-fill" id="meter-output-fill"></div></div>
-        <div class="meter-value" id="meter-output-value">−∞ dB</div>
-      </div>
-      <div class="meter">
-        <div class="meter-label">Gain reduction</div>
-        <div class="meter-bar gr"><div class="meter-fill gr" id="meter-gr-fill"></div></div>
-        <div class="meter-value" id="meter-gr-value">0.0 dB</div>
-      </div>
+      <span class="meter-item">Input peak: <strong id="meter-input">— dB</strong></span>
+      <span class="meter-item">Output peak: <strong id="meter-output">— dB</strong></span>
+      <span class="meter-item">Max gain reduction: <strong id="meter-gr">— dB</strong></span>
     </div>
   </div>
 
@@ -435,12 +358,9 @@
     stopBtn:          $('stop-btn'),
     bypassBtn:        $('bypass-btn'),
     transportInfo:    $('transport-info'),
-    meterInputFill:   $('meter-input-fill'),
-    meterInputValue:  $('meter-input-value'),
-    meterOutputFill:  $('meter-output-fill'),
-    meterOutputValue: $('meter-output-value'),
-    meterGRFill:      $('meter-gr-fill'),
-    meterGRValue:     $('meter-gr-value'),
+    meterInput:       $('meter-input'),
+    meterOutput:      $('meter-output'),
+    meterGR:          $('meter-gr'),
     transferCanvas:   $('transfer-canvas'),
     waveformCanvas:   $('waveform-canvas'),
   };
@@ -791,36 +711,10 @@
     return `${(20 * Math.log10(lin)).toFixed(1)} dB`;
   }
 
-  // Map a linear amplitude (0..1, where 1 means 0 dBFS) to a meter fill
-  // amount (0..1). The meter spans -60 dB to 0 dB. Below -60 dB the bar
-  // is empty; at 0 dB it's full. The mapping is dB-linear (not amplitude-
-  // linear) because that's what matches human loudness perception and
-  // what every DAW meter does.
-  function levelToFill(lin) {
-    if (lin <= 1e-6) return 0;
-    const db = 20 * Math.log10(lin);
-    const t = (db - (-60)) / 60; // -60..0 dB -> 0..1
-    return Math.max(0, Math.min(1, t));
-  }
-
-  // Gain reduction is already expressed as positive dB (e.g. 6 means
-  // 6 dB of reduction). Map 0..20 dB to 0..1 for the fill amount.
-  function grToFill(grDb) {
-    if (grDb <= 0) return 0;
-    return Math.max(0, Math.min(1, grDb / 20));
-  }
-
   function updateMeters() {
-    els.meterInputFill.style.setProperty('--level',  levelToFill(livePeakIn));
-    els.meterInputValue.textContent  = dbStr(livePeakIn);
-
-    els.meterOutputFill.style.setProperty('--level', levelToFill(livePeakOut));
-    els.meterOutputValue.textContent = dbStr(livePeakOut);
-
-    els.meterGRFill.style.setProperty('--level', grToFill(liveGRMax));
-    els.meterGRValue.textContent = liveGRMax > 0.1
-      ? `−${liveGRMax.toFixed(1)} dB`
-      : '0.0 dB';
+    els.meterInput.textContent  = dbStr(livePeakIn);
+    els.meterOutput.textContent = dbStr(livePeakOut);
+    els.meterGR.textContent     = liveGRMax > 0.1 ? `−${liveGRMax.toFixed(1)} dB` : '0.0 dB';
   }
 
   // ---- AudioContext setup / teardown ----
