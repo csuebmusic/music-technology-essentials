@@ -566,6 +566,49 @@ def gen_limiter():
     write_wav_no_normalize(os.path.join(OUT_DIR, "limit-crushed.wav"), crushed_out)
 
 
+def gen_normalization():
+    """norm-quiet.wav and norm-loud.wav for Section 2.
+
+    Same conga/shaker/clave loop as Section 1, scaled to two different
+    peak levels. The pedagogical point is the OPPOSITE of Section 1: in
+    Section 1 the two files have identical peaks and different shapes
+    (compression); here the two files have identical shapes and
+    different peaks (normalization is just a scaler).
+
+    Quiet version: peak -18 dBFS. Simulates a conservative tracking
+    decision — the kind of recording you might make when you don't yet
+    know how loud your loudest moment will be.
+
+    Loud version: same source, normalized to -1 dBFS. This is the exact
+    operation Audacity's Effect > Volume and Compression > Normalize
+    performs: find the peak, compute the scaler that lands it at the
+    target, multiply every sample. No time-varying gain, no compression,
+    no decision-making about what's loud and what's quiet. The whole
+    signal moves by the same amount in dB. The shape is preserved.
+    """
+    src = load_source_wav(SOURCE_LOOP)  # shape (n, 2)
+
+    # First, peak-normalize the source to a known starting point (-3 dBFS)
+    # so the demo doesn't depend on whatever level the source happens to
+    # be tracked at. From that known starting point, scale down to peak
+    # -18 dBFS for the "quiet" demo. Both subsequent files derive from
+    # this scaled starting signal, which guarantees the only difference
+    # between them is a single multiplier.
+    src_peak = float(np.max(np.abs(src)))
+    src_at_minus3 = src / src_peak * db_to_lin(-3) if src_peak > 0 else src
+
+    # Quiet: scale -3 dBFS source down 15 dB more, lands at peak -18 dBFS.
+    # That's the "I set my input gain conservatively while tracking" level.
+    quiet = src_at_minus3 * db_to_lin(-15)
+    write_wav_no_normalize(os.path.join(OUT_DIR, "norm-quiet.wav"), quiet)
+
+    # Loud (normalized): take the quiet version, find its peak, scale to -1 dBFS.
+    # This is verbatim what Audacity's Normalize effect does.
+    quiet_peak = float(np.max(np.abs(quiet)))
+    loud = quiet / quiet_peak * db_to_lin(-1)
+    write_wav_no_normalize(os.path.join(OUT_DIR, "norm-loud.wav"), loud)
+
+
 # ----- Diagram generator: wide-vs-narrow waveform comparison -----
 
 DIAGRAM_DIR = os.path.join(REPO_ROOT, "assets", "images", "module-02-week-05")
@@ -725,11 +768,139 @@ def gen_wide_vs_narrow_diagram():
     print(f"Wrote {out_path}  ({W}x{H} SVG)")
 
 
+def gen_normalization_diagram():
+    """Render an SVG showing quiet and normalized waveforms stacked at the
+    SAME vertical scale, so students see two things:
+
+    1. Different peak levels (quiet sits well below the -1 dBFS ceiling;
+       loud touches it). Both ceilings drawn at -1 dBFS for reference.
+    2. Identical SHAPE — the loud waveform is a scaled-up copy of the
+       quiet one. The pattern of slaps, the gaps, the relative heights
+       of every event: identical.
+
+    This diagram is the visual counterpoint to wide-vs-narrow.svg:
+    where that one shows two waveforms with matched peaks but
+    different shapes (compression reshapes), this one shows two
+    waveforms with matched shapes but different peaks (normalization
+    just scales).
+
+    Reads the WAVs that gen_normalization just produced; must run
+    after it.
+    """
+    os.makedirs(DIAGRAM_DIR, exist_ok=True)
+
+    sr_q, quiet = wavfile.read(os.path.join(OUT_DIR, "norm-quiet.wav"))
+    sr_l, loud  = wavfile.read(os.path.join(OUT_DIR, "norm-loud.wav"))
+    quiet_f = quiet.astype(np.float32) / 32768.0
+    loud_f  = loud.astype(np.float32) / 32768.0
+
+    W = 720
+    H = 360
+    pad_l = 80
+    pad_r = 24
+    pad_t = 18
+    pad_b = 32
+    plot_w = W - pad_l - pad_r
+    panel_h = (H - pad_t - pad_b) // 2 - 14
+    panel_gap = 28
+
+    panel1_top = pad_t
+    panel2_top = pad_t + panel_h + panel_gap
+    n_cols = plot_w
+
+    mins_q, maxs_q = _peak_envelope_for_display(quiet_f, n_cols)
+    mins_l, maxs_l = _peak_envelope_for_display(loud_f,  n_cols)
+
+    # Both panels use the SAME vertical scale: amplitude 1.0 reaches the
+    # panel's half-height. This is critical for the demonstration. If we
+    # auto-scaled each panel to fill its space, the two waveforms would
+    # look identical and the "different peaks" message would be lost.
+    ceiling_lin = 10 ** (-1.0 / 20)  # -1 dBFS = 0.891, the normalization target
+    half = panel_h / 2
+
+    def amp_to_y(panel_top, amp):
+        return panel_top + half - amp * half
+
+    def build_waveform_path(panel_top, mins, maxs):
+        parts = []
+        for col, v in enumerate(maxs):
+            x = pad_l + col
+            y = amp_to_y(panel_top, v)
+            parts.append(f"{'M' if col == 0 else 'L'} {x:.2f} {y:.2f}")
+        for col in range(n_cols - 1, -1, -1):
+            x = pad_l + col
+            y = amp_to_y(panel_top, mins[col])
+            parts.append(f"L {x:.2f} {y:.2f}")
+        parts.append("Z")
+        return " ".join(parts)
+
+    path_q = build_waveform_path(panel1_top, mins_q, maxs_q)
+    path_l = build_waveform_path(panel2_top, mins_l, maxs_l)
+
+    def ceiling_pair(panel_top):
+        cy_above = amp_to_y(panel_top, +ceiling_lin)
+        cy_below = amp_to_y(panel_top, -ceiling_lin)
+        return cy_above, cy_below
+
+    c1_up, c1_dn = ceiling_pair(panel1_top)
+    c2_up, c2_dn = ceiling_pair(panel2_top)
+
+    cx1 = panel1_top + half
+    cx2 = panel2_top + half
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
+     role="img" aria-label="Waveform comparison: quiet recording above, same recording normalized below. Same shape, different scale. Both panels show the -1 dBFS ceiling for reference; quiet sits well below it, normalized touches it.">
+  <rect width="{W}" height="{H}" fill="var(--bg-alt)"/>
+
+  <!-- Panel labels -->
+  <text x="{pad_l - 12}" y="{panel1_top + half + 4}" text-anchor="end"
+        font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">quiet</text>
+  <text x="{pad_l - 12}" y="{panel2_top + half + 4}" text-anchor="end"
+        font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">normalized</text>
+
+  <!-- Ceiling lines at -1 dBFS. Only draw the upper one in each panel; the
+       lower one is symmetric and redundant; cleaner visual. -->
+  <line x1="{pad_l}" y1="{c1_up:.2f}" x2="{pad_l + plot_w}" y2="{c1_up:.2f}"
+        stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <line x1="{pad_l}" y1="{c2_up:.2f}" x2="{pad_l + plot_w}" y2="{c2_up:.2f}"
+        stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <!-- Center reference lines -->
+  <line x1="{pad_l}" y1="{cx1:.2f}" x2="{pad_l + plot_w}" y2="{cx1:.2f}"
+        stroke="var(--ink-soft)" stroke-width="0.4" opacity="0.4"/>
+  <line x1="{pad_l}" y1="{cx2:.2f}" x2="{pad_l + plot_w}" y2="{cx2:.2f}"
+        stroke="var(--ink-soft)" stroke-width="0.4" opacity="0.4"/>
+
+  <!-- Waveform fills -->
+  <path d="{path_q}" fill="var(--ink)" opacity="0.78"/>
+  <path d="{path_l}" fill="var(--ink)" opacity="0.78"/>
+
+  <!-- Ceiling annotation -->
+  <text x="{pad_l + plot_w - 6}" y="{c1_up - 4:.2f}"
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+  <text x="{pad_l + plot_w - 6}" y="{c2_up - 4:.2f}"
+        font-family="DM Mono, monospace" font-size="10" fill="var(--accent)" text-anchor="end">−1 dBFS ceiling</text>
+
+  <!-- Time axis -->
+  <text x="{pad_l + plot_w / 2:.2f}" y="{H - 8}"
+        font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">6 seconds →</text>
+</svg>
+"""
+
+    out_path = os.path.join(DIAGRAM_DIR, "norm-quiet-vs-loud.svg")
+    with open(out_path, "w") as f:
+        f.write(svg)
+    print(f"Wrote {out_path}  ({W}x{H} SVG)")
+
+
 # ----- Run everything -----
 
 if __name__ == "__main__":
     print(f"Generating dynamics demos in {OUT_DIR}\n")
     gen_dynamic_range()
+    print()
+    gen_normalization()
     print()
     gen_threshold_ratio()
     print()
@@ -738,5 +909,6 @@ if __name__ == "__main__":
     gen_limiter()
     print()
     gen_wide_vs_narrow_diagram()
+    gen_normalization_diagram()
     print(f"\nAll demos written to {OUT_DIR}")
     print(f"Diagrams written to {DIAGRAM_DIR}")
