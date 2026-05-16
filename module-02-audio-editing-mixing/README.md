@@ -345,7 +345,7 @@ Inés to record or source. If unavailable, any single sound with a clear attack 
 
 ### Asset prep — Audacity screenshots for Handout 01 (Audacity orientation)
 
-Handout 01 references five screenshots that need capturing on a lab Mac and saved to `assets/images/handouts/`. The handout's `alt` text describes what each screenshot should show:
+Handout 01 references six screenshots that need capturing on a lab Mac and saved to `assets/images/module-02-week-02/`. The handout's `alt` text describes what each screenshot should show:
 
 | Filename | Content |
 |---|---|
@@ -354,6 +354,7 @@ Handout 01 references five screenshots that need capturing on a lab Mac and save
 | `audacity-imported.png` | Main window with `orientation-sample.wav` imported, showing the bell waveform (sharp attack + long decay) |
 | `audacity-selection.png` | Same window with a region selected from mid-decay to end of file |
 | `audacity-fade-out.png` | Same window after cut + fade-out, showing the new shorter ending tapering to zero |
+| `audacity-export.png` | Export Audio dialog: format WAV, sample rate 44100 Hz, encoding Signed 16-bit PCM, filename `lastname-orientation.wav` |
 
 The annotation numbers on `audacity-interface-empty.png` should be drawn on top of the screenshot in red or rust; the handout's annotation key reads them in order. Recommended approach: capture the raw screenshot, then annotate with a tool like Skitch or Preview's markup. Keep annotation numbers consistent with the handout's order.
 
