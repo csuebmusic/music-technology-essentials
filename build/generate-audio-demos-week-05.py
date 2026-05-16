@@ -317,17 +317,49 @@ def limit(audio, ceiling_db=-0.3, attack_ms=2.0, release_ms=80.0, sr=SR):
 # ----- Generators -----
 
 def gen_dynamic_range():
-    """range-wide.wav (full dynamic range) and range-narrow.wav (squashed)."""
-    src = mixed_phrase(duration_sec=6.0)
-    # Wide: just normalize to -3 dBFS like every other demo. Natural dynamics intact.
-    write_wav(os.path.join(OUT_DIR, "range-wide.wav"), src, peak_dbfs=-3.0)
+    """range-wide.wav (full dynamic range) and range-narrow.wav (squashed).
 
-    # Narrow: aggressive compression + limiter for that "wall" sound.
-    # First compress, then limit, then normalize. The lower peaks come up
-    # toward the ceiling, audible as much louder average level.
+    Critical: these two files must be at the same PEAK level but DIFFERENT
+    perceived loudness — same as the limiter trio. The narrow version
+    should sound *louder on average* despite hitting the same ceiling.
+
+    The technique mirrors real-world "loudness compression": compress the
+    source aggressively, then boost the result into a limiter set at the
+    target ceiling. The limiter holds the peak; the boost pulls average
+    level up toward it. A final normalization step here would defeat the
+    purpose by scaling everything back down, so we use
+    write_wav_no_normalize for both files.
+
+    The limiter in this build does not have lookahead, so fast transients
+    can punch through the ceiling by 1–3 dB. A final hard-clip pass at
+    the ceiling enforces the peak exactly. In a real production limiter
+    you'd want true lookahead and inter-sample-peak detection; for a
+    teaching demo where we need the peak meter to read identical, a
+    final clip is the right tradeoff.
+    """
+    src = mixed_phrase(duration_sec=6.0)
+
+    # Wide: scale to peak -3 dBFS, no further processing.
+    wide = src.copy()
+    peak = np.max(np.abs(wide))
+    if peak > 0:
+        wide = wide / peak * db_to_lin(-3)
+    write_wav_no_normalize(os.path.join(OUT_DIR, "range-wide.wav"), wide)
+
+    # Narrow: aggressive compression, then push +15 dB into a limiter at
+    # -3 dBFS, then enforce the ceiling with a hard clip. The compression
+    # squashes the dynamic range; the +15 dB boost pulls the average level
+    # toward the ceiling; the limiter handles the bulk of the transients
+    # musically; the final clip catches the few fast transients the limiter
+    # doesn't catch in time. Peak: exactly -3 dBFS. Average: ~6 dB higher
+    # than wide. That gap is comfortably audible and matches the lesson:
+    # narrow dynamic range sounds louder on average, at the same peak.
     narrow = compress(src, threshold_db=-24, ratio=8, attack_ms=3, release_ms=80)
+    narrow = narrow * db_to_lin(15)
     narrow = limit(narrow, ceiling_db=-3.0, attack_ms=1, release_ms=50)
-    write_wav(os.path.join(OUT_DIR, "range-narrow.wav"), narrow, peak_dbfs=-3.0)
+    ceiling_lin = db_to_lin(-3.0)
+    narrow = np.clip(narrow, -ceiling_lin, ceiling_lin)
+    write_wav_no_normalize(os.path.join(OUT_DIR, "range-narrow.wav"), narrow)
 
 
 def gen_threshold_ratio():
