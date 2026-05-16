@@ -523,23 +523,33 @@ def gen_attack_release():
     src = load_source_wav(SOURCE_AR_LOOP)  # shape (n, 2)
     write_wav(os.path.join(OUT_DIR, "ar-source.wav"), src, peak_dbfs=-3.0)
 
-    # All four use threshold -18 dB, ratio 4:1. Only attack/release differ.
+    # All four use threshold -30 dB, ratio 4:1. Only attack/release differ.
     # Same threshold+ratio in every variant means students can attribute the
     # perceived difference unambiguously to the time constants.
+    #
+    # The threshold is set low enough (-30 dB) that the body of each kick
+    # and snare hit, not just the transient peak, sits above threshold for
+    # most of its duration. This is critical for the slow-attack demo:
+    # with a higher threshold, the body of each hit would drop below
+    # threshold before the slow attack could engage, and the compressor
+    # would never do meaningful work. With this lower threshold, slow
+    # attack lets the leading edge of each hit pass through but compresses
+    # the body, which is the canonical 'slow attack on percussion' result
+    # students should hear.
 
-    fast_atk = compress_stereo(src, threshold_db=-18, ratio=4,
+    fast_atk = compress_stereo(src, threshold_db=-30, ratio=4,
                                attack_ms=1, release_ms=120)
     write_wav(os.path.join(OUT_DIR, "ar-fast-attack.wav"), fast_atk, peak_dbfs=-3.0)
 
-    slow_atk = compress_stereo(src, threshold_db=-18, ratio=4,
+    slow_atk = compress_stereo(src, threshold_db=-30, ratio=4,
                                attack_ms=30, release_ms=120)
     write_wav(os.path.join(OUT_DIR, "ar-slow-attack.wav"), slow_atk, peak_dbfs=-3.0)
 
-    fast_rel = compress_stereo(src, threshold_db=-18, ratio=4,
+    fast_rel = compress_stereo(src, threshold_db=-30, ratio=4,
                                attack_ms=5, release_ms=50)
     write_wav(os.path.join(OUT_DIR, "ar-fast-release.wav"), fast_rel, peak_dbfs=-3.0)
 
-    slow_rel = compress_stereo(src, threshold_db=-18, ratio=4,
+    slow_rel = compress_stereo(src, threshold_db=-30, ratio=4,
                                attack_ms=5, release_ms=400)
     write_wav(os.path.join(OUT_DIR, "ar-slow-release.wav"), slow_rel, peak_dbfs=-3.0)
 
