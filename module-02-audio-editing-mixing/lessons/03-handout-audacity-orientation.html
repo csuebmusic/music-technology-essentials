@@ -79,7 +79,7 @@
 
 <h2>Step 1 · Pull the orientation sample from the NAS</h2>
 
-<p>Today's sample lives on the class NAS in <code>shared/module-02/orientation/</code>. It's a short field recording of a struck bell, about fifteen seconds, with a clear sharp attack followed by a long decay. You'll use it to learn Audacity's basic moves.</p>
+<p>Today's sample lives on the class NAS in <code>shared/module-02/orientation/</code>. It's a short bell-like resonance recorded in stereo, about sixteen seconds long, with a dense ringing body that slowly fades to silence. You'll use it to learn Audacity's basic moves.</p>
 
 <ol class="steps">
   <li>In Finder, click <strong>Go</strong> in the menu bar, then <strong>Connect to Server…</strong> (or hold <kbd>Cmd</kbd> + <kbd>K</kbd>).</li>
@@ -154,42 +154,42 @@
 <ol class="steps">
   <li>From the menu bar, click <strong>File → Import → Audio…</strong> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>).</li>
   <li>Navigate to your local folder at <code>~/Documents/lastname/orientation/</code> and select <code>orientation-sample.wav</code>. Click <strong>Open</strong>.</li>
-  <li>The waveform appears as a horizontal lane in the track area. The big spike near the start is the bell strike; the long taper is the decay.</li>
+  <li>The waveform appears as a stereo track with two lanes (left channel on top, right channel below). The dense ringing body of the sound fills the first half; the second half tapers as the resonance decays toward silence.</li>
   <li>Press <strong>spacebar</strong> to play. Listen. Press <strong>spacebar</strong> again to stop.</li>
 </ol>
 
 <figure class="screenshot">
-  <img src="../../assets/images/module-02-week-02/audacity-imported.png" alt="The Audacity main window with the orientation sample imported. A single track lane shows the waveform: a tall sharp spike at the start representing the bell strike, followed by a long tapering decay across most of the timeline." loading="lazy">
-  <figcaption>The orientation sample imported · waveform shows clear attack + decay</figcaption>
+  <img src="../../assets/images/module-02-week-02/audacity-imported.png" alt="The Audacity main window with orientation-sample.wav imported as a stereo track. Two waveform lanes (left channel on top, right channel below) show a dense ringing body across the first half that gradually tapers toward silence in the second half." loading="lazy">
+  <figcaption>The orientation sample imported · stereo track with a ringing body that decays to silence</figcaption>
 </figure>
 
-<p>Look at the waveform shape. You can see the envelope from Monday's reading right there: the sharp <strong>attack</strong> at the start (a tall vertical spike), the gradual <strong>release</strong> as the bell decays (the long taper). There's almost no <strong>sustain</strong>. Bells go straight from attack into release. The picture is the sound. Make a habit of <em>looking</em> at the waveform as you work; it tells you what you're going to hear before you hear it.</p>
+<p>Look at the waveform shape. You can see the envelope from Monday's reading right there: a sustained <strong>body</strong> with internal swells, then a long <strong>release</strong> as the resonance fades out. The picture is the sound. Make a habit of <em>looking</em> at the waveform as you work; it tells you what you're going to hear before you hear it. Notice also that the two lanes (left and right channels) are similar but not identical: that's what makes this sample stereo rather than mono.</p>
 
 <hr>
 
 <h2>Step 5 · Your first edit: select, cut, fade</h2>
 
-<p>Now make a deliberate edit. The goal: shorten the bell's release so it ends more abruptly. We'll do three small moves (selection, cut, fade-out) and listen to each.</p>
+<p>Now make a deliberate edit. The goal: shorten the sample's decay so it ends sooner. We'll do three small moves (selection, cut, fade-out) and listen to each.</p>
 
 <h3>Make a selection</h3>
 
 <ol class="steps">
   <li>Make sure the <strong>Selection tool</strong> (the I-beam) is active in the Tools toolbar.</li>
-  <li>Click and drag in the waveform from somewhere in the middle of the decay (around 7 seconds in) to the very end of the file. The selected region appears highlighted.</li>
+  <li>Click and drag in the waveform from somewhere in the middle of the decay (around 7 seconds in) to the very end of the file. Drag across the full track height so the selection covers both stereo lanes. The selected region appears highlighted across both channels.</li>
   <li>Press <strong>spacebar</strong>. Audacity plays only the selection. You'll hear just the tail end of the decay.</li>
 </ol>
 
 <figure class="screenshot">
-  <img src="../../assets/images/module-02-week-02/audacity-selection.png" alt="The orientation sample with a region selected from roughly the middle of the decay to the end of the file. The selected region is shown as a highlighted band over that part of the waveform." loading="lazy">
-  <figcaption>A selection from mid-decay to the end</figcaption>
+  <img src="../../assets/images/module-02-week-02/audacity-selection.png" alt="The orientation sample with a region selected from roughly 7 seconds to the end of the file. The selection appears as a highlighted blue band spanning both stereo lanes." loading="lazy">
+  <figcaption>A selection from mid-decay to the end · the highlighted band spans both stereo lanes</figcaption>
 </figure>
 
 <h3>Cut it</h3>
 
 <ol class="steps">
   <li>With the selection still highlighted, press <kbd>Cmd</kbd> + <kbd>X</kbd> (or <strong>Edit → Cut</strong>).</li>
-  <li>The selected region disappears from the track. The bell now ends where you cut.</li>
-  <li>Press <kbd>Cmd</kbd> + <kbd>Home</kbd> to jump to the start, then <strong>spacebar</strong> to play. Listen. The bell now stops abruptly: an unnaturally hard release.</li>
+  <li>The selected region disappears from the track. The sample now ends where you cut.</li>
+  <li>Press <kbd>Cmd</kbd> + <kbd>Home</kbd> to jump to the start, then <strong>spacebar</strong> to play. Listen. The sample now stops abruptly: an unnaturally hard release.</li>
 </ol>
 
 <h3>Soften the new ending with a fade</h3>
@@ -197,14 +197,14 @@
 <p>An abrupt cut at the end of an audio clip usually produces a click pop, because the waveform doesn't end at zero. A short fade-out fixes that and makes the ending more graceful.</p>
 
 <ol class="steps">
-  <li>Click somewhere in the last half-second of audio, then drag a small selection covering the final ~200 milliseconds. (Watch the selection toolbar at the bottom: it shows start and end times to the millisecond.)</li>
+  <li>Click somewhere in the last couple of seconds of audio, then drag a selection covering the final ~2 seconds across both stereo lanes. (Watch the selection toolbar at the bottom: it shows start and end times to the millisecond.)</li>
   <li>From the menu bar, click <strong>Effect → Fading → Fade Out</strong>.</li>
-  <li>The waveform in the selected region now ramps down to silence visually. Play the file again. The cut-off ending now fades cleanly instead of stopping hard.</li>
+  <li>The waveform in the selected region now ramps down to silence visually on both channels. Play the file again. The cut-off ending now fades cleanly instead of stopping hard.</li>
 </ol>
 
 <figure class="screenshot">
-  <img src="../../assets/images/module-02-week-02/audacity-fade-out.png" alt="The bell sample after the cut and fade-out. The decay ends earlier than the original, and the final ~200 milliseconds taper visually to zero." loading="lazy">
-  <figcaption>After cut + fade-out · the new ending tapers to zero</figcaption>
+  <img src="../../assets/images/module-02-week-02/audacity-fade-out.png" alt="The orientation sample after the cut, with a selection over the last ~2 seconds about to receive a fade-out. The file now ends earlier than the original; a fade taper is visible at the right edge of the audio on both stereo lanes." loading="lazy">
+  <figcaption>After the cut, with a fade-out selection over the last seconds · the ending tapers to zero on both channels</figcaption>
 </figure>
 
 <div class="callout">
@@ -237,14 +237,32 @@
 
 <ol class="steps">
   <li><strong>File → Export Audio…</strong> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>).</li>
-  <li>In the export dialog: <strong>Format = WAV</strong>, <strong>Sample Rate = 44100 Hz</strong>, <strong>Encoding = Signed 16-bit PCM</strong>, <strong>Channels = Stereo</strong> (or Mono, to match the source).</li>
-  <li>Save to the same <code>~/Documents/lastname/orientation/</code> folder. Name the file <code>lastname-orientation.wav</code>.</li>
+  <li>The first time you export, Audacity shows a "How would you like to export?" prompt with two options: <strong>Share to audio.com</strong> (a cloud service) and <strong>On your computer</strong> (a local file). You want the file saved locally on your machine. Click <strong>Export to computer</strong>. While you're here, tick <strong>Don't show again</strong> in the bottom-left so this prompt doesn't appear every time you export.</li>
+</ol>
+
+<figure class="screenshot">
+  <img src="../../assets/images/module-02-week-02/audacity-export-prompt.png" alt="The 'How would you like to export?' dialog with two options: Share to audio.com (cloud upload) on the left, and On your computer (local file) on the right. A 'Don't show again' checkbox is in the bottom-left corner." loading="lazy">
+  <figcaption>The export-destination prompt · choose <strong>Export to computer</strong>, tick <strong>Don't show again</strong></figcaption>
+</figure>
+
+<ol class="steps" start="3">
+  <li>The <strong>Export Audio</strong> dialog opens. Fill it in:
+    <ul>
+      <li><strong>File Name:</strong> <code>lastname-orientation.wav</code> (lowercase, with your last name)</li>
+      <li><strong>Folder:</strong> click <strong>Browse…</strong> and pick <code>~/Documents/lastname/orientation/</code></li>
+      <li><strong>Format:</strong> <code>WAV (Microsoft)</code></li>
+      <li><strong>Channels:</strong> <strong>Stereo</strong> (matches the source)</li>
+      <li><strong>Sample Rate:</strong> <code>44100 Hz</code></li>
+      <li><strong>Encoding:</strong> <code>Signed 16-bit PCM</code></li>
+      <li><strong>Export Range:</strong> <code>Entire Project</code></li>
+    </ul>
+  </li>
   <li>Click <strong>Export</strong>. If a metadata dialog appears, you can leave it blank and click <strong>OK</strong>.</li>
 </ol>
 
 <figure class="screenshot">
-  <img src="../../assets/images/module-02-week-02/audacity-export.png" alt="The Audacity Export Audio dialog with WAV selected, sample rate 44100 Hz, encoding Signed 16-bit PCM, and the filename lastname-orientation.wav." loading="lazy">
-  <figcaption>Export Audio · WAV, 44.1 kHz, 16-bit PCM</figcaption>
+  <img src="../../assets/images/module-02-week-02/audacity-export.png" alt="The Audacity Export Audio dialog with File Name lastname-orientation.wav, Format WAV (Microsoft), Channels Stereo, Sample Rate 44100 Hz, Encoding Signed 16-bit PCM, and Export Range Entire Project." loading="lazy">
+  <figcaption>Export Audio · WAV (Microsoft), Stereo, 44.1 kHz, Signed 16-bit PCM</figcaption>
 </figure>
 
 <div class="callout warn">

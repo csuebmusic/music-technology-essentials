@@ -276,7 +276,7 @@ Two halves:
 
 - Walk the room: gear setup baseline (see Module-wide concerns)
 - Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
-- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short field recording of a struck bell (~15 s), with sharp attack and long decay; see "Asset prep" below for what's expected.
+- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short stereo bell-like resonance (~16 s) that decays gradually to silence; see "Asset prep" below for what's expected.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
 - Open the orientation handout (Handout 01) on the instructor station and on each student station's desktop browser
 - Confirm Handout 02 (Session Routines) is laminated and visible at every station
@@ -312,9 +312,9 @@ Suggested pacing within Block 3:
 - **Step 1 (NAS pull, 6 min)**: first contact with the NAS workflow as a real action, not just a card on the wall. Watch for students who try to open `orientation-sample.wav` directly from the NAS rather than copying it locally first.
 - **Step 2 (Open Audacity, set format, 4 min)**: quick.
 - **Step 3 (Interface tour, 5 min)**: point at the named regions on the projector. The annotated screenshot in the handout is a reference; students don't need to memorize it today.
-- **Step 4 (Import + play, 5 min)**: should be quick. Watch for students who try double-clicking the WAV in Finder instead of using File → Import.
+- **Step 4 (Import + play, 4 min)**: should be quick. Watch for students who try double-clicking the WAV in Finder instead of using File → Import.
 - **Step 5 (Selection, cut, fade, 12 min)**: the heart of Part 2. Demonstrate each move on the projector. Pause after the cut so they can play and *hear* the abrupt ending before doing the fade. The fade transforms the sound from "broken edit" to "deliberate edit"; that contrast is the lesson.
-- **Step 6 (Save + export, 8 min)**: the project-vs-export distinction trips students up. Reinforce: "Save the project to keep working tomorrow. Export the WAV to have something you can submit or share."
+- **Step 6 (Save + export, 9 min)**: the project-vs-export distinction trips students up. Reinforce: "Save the project to keep working tomorrow. Export the WAV to have something you can submit or share." On first export, students will see Audacity's new "How would you like to export?" interstitial (Share to audio.com vs. On your computer). Make sure they click <strong>Export to computer</strong> and tick <strong>Don't show again</strong> so the prompt is suppressed on future exports.
 - **Step 7 (NAS upload, 5 min)**: closes the loop on the workflow that opened the session.
 
 ### Block 4: Wrap and preview (10 min)
@@ -327,40 +327,40 @@ Quick close: "On Monday we go deeper into editing: the full vocabulary, plus env
 - **Cursor vs. selection in Audacity.** Cursor is a single point in time; selection is a range. Many students try to "cut a section" with just the cursor placed. Demonstrate both, in contrast.
 - **Project file vs. audio file.** `.aup3` is the working document; you can't open it without Audacity, and links to the source data must be intact. Audio files (WAV/MP3) are universal. The handout calls this out, but expect to repeat it in person.
 - **NAS-direct editing.** Students will sometimes try to open `orientation-sample.wav` directly from the mounted NAS. Catch this early: always copy to local first.
+- **The audio.com export prompt.** Audacity's recent versions show a "How would you like to export?" interstitial on first export, with two big buttons (Share to audio.com vs. On your computer) and a "Don't show again" tick. Students who click the cloud option will upload their file to a third-party service instead of saving locally. Watch for this during Step 6; the handout names it explicitly, but it's worth pointing at on the projector. Tell them to tick "Don't show again" so the prompt is suppressed on future exports.
 
 ### Pacing fallbacks
 
 - **If running long in Part 1:** trim Section 4 (Timbre) free-exploration time. The first three sections carry the main pedagogical weight; Section 4 can be a 4-minute demo + brief student touch.
 - **If running long in Part 2:** the most cuttable step is Step 7 (NAS upload). It can be done after class with a 30-second reminder ("Don't leave without uploading. The card on your station has the steps.") But better to keep it in if at all possible; first-day NAS upload is the workflow-formation moment.
-- **If running short:** in Part 1 Section 4, give 5–7 minutes of timbre free-exploration ("Try to make a sound that's like a brass instrument, then a woodwind, then something inhuman"). In Part 2 Step 5, give them an extra try-this: "Now reverse the bell. What does the envelope look like?"
+- **If running short:** in Part 1 Section 4, give 5–7 minutes of timbre free-exploration ("Try to make a sound that's like a brass instrument, then a woodwind, then something inhuman"). In Part 2 Step 5, give them an extra try-this: "Now reverse the sample. What does the envelope look like? What does the slow fade-out become?"
 
 ### Asset prep: orientation-sample.wav
 
 The Audacity orientation handout assumes a specific sample on the NAS at `shared/module-02/orientation/orientation-sample.wav`:
 
-- **Source:** a single struck bell, gong, glass, or similar percussive object with a long decay
-- **Length:** 12–18 seconds
-- **Format:** WAV, 44.1 kHz, 16-bit, mono or stereo
-- **Pedagogical fit:** clear sharp attack near the start, almost no sustain, long gradual release. The bell is what students cut into and fade in Step 5; its envelope is what visually demonstrates the attack–release shape from the Wk 2 reading.
+- **Source:** a stereo bell-like resonance or sustained ringing texture (the actual file is a recorded bell-like sound, not a single struck bell). A dense ringing body that gradually decays to silence works pedagogically.
+- **Length:** ~16 seconds
+- **Format:** WAV, 44.1 kHz, 16-bit, stereo
+- **Pedagogical fit:** an audible envelope shape that decays gradually across the file's length. Students cut into the decay and fade what remains in Step 5. The waveform's visible taper across both stereo channels makes the editing moves easy to see.
 
-Inés to record or source. If unavailable, any single sound with a clear attack + long decay works (bowed string note that fades, struck rim, plucked piano string).
+Inés has the canonical file. If a substitute is ever needed: any stereo sustained sound with an audible decay (~10–18 s) works (a long bowed note that fades, a struck rim recorded in stereo, a sampler-generated bell-like timbre).
 
 ### Asset prep: Audacity screenshots for Handout 01 (Audacity orientation)
 
-Handout 01 references six screenshots that need capturing on a lab Mac and saved to `assets/images/module-02-week-02/`. The handout's `alt` text describes what each screenshot should show:
+The seven screenshots in `assets/images/module-02-week-02/` are now captured (Inés' Mac, May 2026). For reference, here's what each one shows:
 
 | Filename | Content |
 |---|---|
-| `audacity-settings.png` | Audacity Audio Settings window with project sample rate 44100 Hz, default sample format 16-bit PCM |
-| `audacity-interface-empty.png` | Empty Audacity main window with numbered annotations 1–9 identifying menu bar, transport, tools, level meters, host/device/rate, timeline, track area, selection toolbar |
-| `audacity-imported.png` | Main window with `orientation-sample.wav` imported, showing the bell waveform (sharp attack + long decay) |
-| `audacity-selection.png` | Same window with a region selected from mid-decay to end of file |
-| `audacity-fade-out.png` | Same window after cut + fade-out, showing the new shorter ending tapering to zero |
-| `audacity-export.png` | Export Audio dialog: format WAV, sample rate 44100 Hz, encoding Signed 16-bit PCM, filename `lastname-orientation.wav` |
+| `audacity-settings.png` | Preferences → Audio Settings: Quality section showing Project Sample Rate 44100 Hz, Default Sample Rate 44100 Hz, Default Sample Format 16-bit |
+| `audacity-interface-empty.png` | Empty Audacity main window. Numbered annotations to be added later for the handout's annotation key (see below) |
+| `audacity-imported.png` | Main window with `orientation-sample.wav` imported as a stereo track, showing the ringing-decay waveform across both channels |
+| `audacity-selection.png` | Same window with a region selected from roughly 7s to the end of the file (visible blue highlighted region in the waveform and timeline) |
+| `audacity-fade-out.png` | Same window after the cut + fade-out: file now ends around 7.5s, last ~2.5s shows the visible fade taper |
+| `audacity-export-prompt.png` | The "How would you like to export?" interstitial dialog with two options (Share to audio.com / On your computer) and the "Don't show again" checkbox |
+| `audacity-export.png` | Export Audio dialog: filename `thiebaut-orientation.wav`, format WAV (Microsoft), Stereo, 44100 Hz, Signed 16-bit PCM, Entire Project |
 
-The annotation numbers on `audacity-interface-empty.png` should be drawn on top of the screenshot in red or rust; the handout's annotation key reads them in order. Recommended approach: capture the raw screenshot, then annotate with a tool like Skitch or Preview's markup. Keep annotation numbers consistent with the handout's order.
-
-Until the screenshots are captured, the figures render with their `alt` text visible in placeholder boxes: students can still follow the handout, but the boxes look unfinished. Capture before the first time the lab runs.
+`audacity-interface-empty.png` still needs numbered annotations drawn on top in red/rust corresponding to the handout's annotation key (menu bar, transport, tools, zoom controls, Audio Setup button, level meters, timeline gear, timeline ruler, track area, bottom toolbar, selection toolbar). Recommended approach: open the captured screenshot in Preview's markup or Skitch and add numbered circles. The annotation numbers should match the order in the handout's Step 3.
 
 ### After class
 
