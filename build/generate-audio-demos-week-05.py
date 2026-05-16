@@ -76,6 +76,7 @@ from scipy.signal import butter, sosfilt
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT_DIR = os.path.join(REPO_ROOT, "assets", "audio", "module-02-week-05")
 SOURCE_LOOP = os.path.join(REPO_ROOT, "assets", "audio", "source", "dynamic-loop.wav")
+SOURCE_AR_LOOP = os.path.join(REPO_ROOT, "assets", "audio", "source", "attack-release-loop.wav")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # Calibration constant for the narrow version of the dynamic-range demo.
@@ -500,28 +501,46 @@ def gen_threshold_ratio():
 
 
 def gen_attack_release():
-    """ar-source.wav and four attack/release variants."""
-    src = percussion_loop(bars=2, bpm=110)
+    """ar-source.wav and four attack/release variants.
+
+    Source: kick + snare loop rendered in Ableton
+    (assets/audio/source/attack-release-loop.wav). Stereo, 5.69 s,
+    21 dB crest factor. Kick and snare transients are the ideal
+    material for attack/release demos because their sharp leading
+    edges respond visibly to attack settings, and the gap between
+    hits is long enough that release timing differences land
+    audibly.
+
+    All four variants use the same threshold (-18 dB) and ratio
+    (4:1). The only thing that varies is the attack and release
+    time. Students can attribute the perceived difference
+    unambiguously to the time constants.
+
+    Stereo-linked compression: single sidechain from max(|L|, |R|),
+    same gain reduction applied to both channels, so the stereo
+    image stays stable.
+    """
+    src = load_source_wav(SOURCE_AR_LOOP)  # shape (n, 2)
     write_wav(os.path.join(OUT_DIR, "ar-source.wav"), src, peak_dbfs=-3.0)
 
-    # All four use threshold -18 dB, ratio 4:1 — only attack/release differ.
+    # All four use threshold -18 dB, ratio 4:1. Only attack/release differ.
     # Same threshold+ratio in every variant means students can attribute the
     # perceived difference unambiguously to the time constants.
 
-    fast_atk = compress(src, threshold_db=-18, ratio=4,
-                        attack_ms=1, release_ms=120)
+    fast_atk = compress_stereo(src, threshold_db=-18, ratio=4,
+                               attack_ms=1, release_ms=120)
     write_wav(os.path.join(OUT_DIR, "ar-fast-attack.wav"), fast_atk, peak_dbfs=-3.0)
 
-    slow_atk = compress(src, threshold_db=-18, ratio=4,
-                        attack_ms=30, release_ms=120)
+    slow_atk = compress_stereo(src, threshold_db=-18, ratio=4,
+                               attack_ms=30, release_ms=120)
     write_wav(os.path.join(OUT_DIR, "ar-slow-attack.wav"), slow_atk, peak_dbfs=-3.0)
 
-    fast_rel = compress(src, threshold_db=-18, ratio=4,
-                        attack_ms=5, release_ms=50)
+    fast_rel = compress_stereo(src, threshold_db=-18, ratio=4,
+                               attack_ms=5, release_ms=50)
     write_wav(os.path.join(OUT_DIR, "ar-fast-release.wav"), fast_rel, peak_dbfs=-3.0)
 
-    slow_rel = compress(src, threshold_db=-18, ratio=4,
-                        attack_ms=5, release_ms=400)
+    slow_rel = compress_stereo(src, threshold_db=-18, ratio=4,
+                               attack_ms=5, release_ms=400)
     write_wav(os.path.join(OUT_DIR, "ar-slow-release.wav"), slow_rel, peak_dbfs=-3.0)
 
 
