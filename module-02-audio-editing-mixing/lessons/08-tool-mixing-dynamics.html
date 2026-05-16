@@ -77,7 +77,7 @@
       font-weight: 500;
     }
 
-    /* Controls layout — sliders + readouts in a grid */
+    /* Controls layout: sliders + readouts in a grid */
     .controls {
       display: grid;
       grid-template-columns: 8rem 1fr 5rem;
@@ -253,7 +253,7 @@
       clip-path: inset(0 0 0 calc((1 - var(--level, 0)) * 100%));
     }
     /* A subtle tick at the 0-dB position on level meters (which is the
-       right edge of the bar) is unnecessary — the right edge itself IS
+       right edge of the bar) is unnecessary; the right edge itself IS
        the 0 dB position. Color does that work. */
     .meter-value {
       color: var(--ink);
@@ -14521,7 +14521,7 @@ ADYAGAA2ACkAQQAnAEEAGgA+ABIAPAAEADQA8/8iAOj/EgDf/woA0v/v/8//8f/M//H/z//4/87/AgDR
 
 <script>
 // =====================================================================
-// DYNAMICS TOOL — compressor with bring-your-own-sound, transfer curve
+// DYNAMICS TOOL: compressor with bring-your-own-sound, transfer curve
 // visualization, and waveform + gain-reduction trace.
 // =====================================================================
 //
@@ -14587,7 +14587,7 @@ ADYAGAA2ACkAQQAnAEEAGgA+ABIAPAAEADQA8/8iAOj/EgDf/woA0v/v/8//8f/M//H/z//4/87/AgDR
   let livePeakOut    = 0;
   let liveGRMax      = 0;
   // Rolling buffer for the live waveform/gain-reduction trace (visualized).
-  // We don't draw the live signal in real time — that's expensive and
+  // We don't draw the live signal in real time; that's expensive and
   // hard to read with looping material. Instead, we draw the static
   // waveform of the loaded sound and overlay the *static* gain-reduction
   // trace computed offline whenever a parameter changes.
@@ -14631,7 +14631,7 @@ ADYAGAA2ACkAQQAnAEEAGgA+ABIAPAAEADQA8/8iAOj/EgDf/woA0v/v/8//8f/M//H/z//4/87/AgDR
     if (levelDb >= kneeHi) {
       return -(levelDb - threshold) * (1 - 1 / ratio);
     }
-    // In the knee — quadratic interpolation
+    // In the knee: quadratic interpolation
     const kneePos = (levelDb - kneeLo) / KNEE_DB;
     const kneeAmount = kneePos * kneePos;
     return -(levelDb - threshold) * kneeAmount * (1 - 1 / ratio);

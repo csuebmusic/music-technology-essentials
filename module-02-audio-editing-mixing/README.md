@@ -1,4 +1,4 @@
-# Module 02 — Digital Audio, Editing & Mixing in Audacity
+# Module 02: Digital Audio, Editing & Mixing in Audacity
 
 **Weeks 2–5 · 7 sessions (700 minutes total)**
 
@@ -6,17 +6,17 @@
 
 ## Module purpose
 
-This is the foundation module of the course. Students learn what digital audio actually is, how to manipulate it, and how to shape a balanced mix — all in service of producing their first piece.
+This is the foundation module of the course. Students learn what digital audio actually is, how to manipulate it, and how to shape a balanced mix, all in service of producing their first piece.
 
-Audacity is chosen as the working DAW for this module because it's free, simple, and forces destructive-editing thinking. Students focus on listening and editing without the cognitive load of a full DAW. The musique concrète tradition is the historical and aesthetic anchor — students manipulate existing sound material to create something new.
+Audacity is chosen as the working DAW for this module because it's free, simple, and forces destructive-editing thinking. Students focus on listening and editing without the cognitive load of a full DAW. The musique concrète tradition is the historical and aesthetic anchor: students manipulate existing sound material to create something new.
 
 The arc of the module: understand the medium → orient to the tool → edit → mix → finish a piece.
 
 By the end of Wk 5, students should be able to take a folder of source sounds and produce a deliberately edited, mixed, 2-minute piece. That is not a small jump from Day 1.
 
-The module spans seven sessions. They are not interchangeable. The Mondays are lecture-style (concept introduction, listening, discussion); the Wednesdays are lab-style (hands-on, tools, project work). Students need both rhythms — the Monday sessions give them vocabulary and ear training, the Wednesday sessions give them craft. If you find yourself drifting toward the lab pattern on a Monday, pull back: students who only do the lab work without the conceptual frame produce technically functional but creatively shallow pieces.
+The module spans seven sessions. They are not interchangeable. The Mondays are lecture-style (concept introduction, listening, discussion); the Wednesdays are lab-style (hands-on, tools, project work). Students need both rhythms: the Monday sessions give them vocabulary and ear training, the Wednesday sessions give them craft. If you find yourself drifting toward the lab pattern on a Monday, pull back: students who only do the lab work without the conceptual frame produce technically functional but creatively shallow pieces.
 
-Project 1 launches Wed Wk 3 and is due Wed Wk 5. Two and a half weeks. The clock is tight on purpose — students who have a month tend to use the first three weeks avoiding the work.
+Project 1 launches Wed Wk 3 and is due Wed Wk 5. Two and a half weeks. The clock is tight on purpose: students who have a month tend to use the first three weeks avoiding the work.
 
 ---
 
@@ -24,10 +24,10 @@ Project 1 launches Wed Wk 3 and is due Wed Wk 5. Two and a half weeks. The clock
 
 By the end of this module, students should be able to:
 
-1. Explain digital audio fundamentals — waveform, sample rate, bit depth, file formats — at a conversational level
+1. Explain digital audio fundamentals (waveform, sample rate, bit depth, file formats) at a conversational level
 2. Hear and describe a sound's envelope: attack, sustain, release
 3. Navigate Audacity confidently: import, transport, selection, basic editing
-4. Apply core editing techniques — cuts, fades, time selection, copy/paste, splitting, arranging
+4. Apply core editing techniques: cuts, fades, time selection, copy/paste, splitting, arranging
 5. Make basic mixing decisions: levels, EQ, stereo placement, dynamics
 6. Produce a 2-minute musique concrète–style piece from sourced material that demonstrates editing and mixing fluency
 7. Submit a finished piece for class listening, and engage with classmates' work through asynchronous peer listening
@@ -37,34 +37,34 @@ By the end of this module, students should be able to:
 
 ## Key concepts introduced
 
-- **What digital audio is** — sound represented as a sequence of numerical samples. Sample rate (how often we measure), bit depth (how precisely we measure each sample), file formats (how we store and compress).
-- **The envelope of a sound** — attack, sustain, release. Used here with found sounds (sharp attacks vs. long, no sustain vs. long sustain like running water, no release vs. long release). This vocabulary will reappear throughout the course, especially in Module 4 with synthesis.
-- **Destructive vs. non-destructive editing** — Audacity is destructive (edits change the underlying audio). This is pedagogically useful — students see and hear consequences immediately. Module 4 will introduce non-destructive (clip-based) thinking with Ableton.
-- **Editing techniques** — cuts, fades, time selection, copy/paste, splitting, arranging in time.
-- **Levels and gain staging** — the proper continuation of Module 1's light touch. How loud should each element be relative to the others? The mix bus, headroom, peak vs. RMS.
-- **EQ basics** — frequency ranges, what cutting and boosting actually do, why a mix needs space across the spectrum.
-- **Stereo placement** — pan, width, the difference between mono and stereo material.
-- **Dynamics processing** — compression and limiting. What problems they solve. Light treatment; full treatment in Sound Design.
-- **Musique concrète as a tradition** — Pierre Schaeffer, Pierre Henry, the GRM lineage. Sound treated as material, not as performance of notation.
+- **What digital audio is**: sound represented as a sequence of numerical samples. Sample rate (how often we measure), bit depth (how precisely we measure each sample), file formats (how we store and compress).
+- **The envelope of a sound**: attack, sustain, release. Used here with found sounds (sharp attacks vs. long, no sustain vs. long sustain like running water, no release vs. long release). This vocabulary will reappear throughout the course, especially in Module 4 with synthesis.
+- **Destructive vs. non-destructive editing**: Audacity is destructive (edits change the underlying audio). This is pedagogically useful: students see and hear consequences immediately. Module 4 will introduce non-destructive (clip-based) thinking with Ableton.
+- **Editing techniques**: cuts, fades, time selection, copy/paste, splitting, arranging in time.
+- **Levels and gain staging**: the proper continuation of Module 1's light touch. How loud should each element be relative to the others? The mix bus, headroom, peak vs. RMS.
+- **EQ basics**: frequency ranges, what cutting and boosting actually do, why a mix needs space across the spectrum.
+- **Stereo placement**: pan, width, the difference between mono and stereo material.
+- **Dynamics processing**: compression and limiting. What problems they solve. Light treatment; full treatment in Sound Design.
+- **Musique concrète as a tradition**: Pierre Schaeffer, Pierre Henry, the GRM lineage. Sound treated as material, not as performance of notation.
 
 ---
 
-## Deliverable: Project 1 — Musique concrète
+## Deliverable: Project 1: Musique concrète
 
 A 2-minute piece built entirely from source sounds provided on the NAS, demonstrating editing and mixing skills learned in the module.
 
 Full project prompt and rubric: [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html)
 
 **Timeline:**
-- Wk 3 Wed — students begin building
-- Wk 4 Wed — continue building, apply mixing concepts as they're introduced
-- Wk 5 Wed — final work session + submission, files uploaded to NAS (private working folder + class listening folder)
+- Wk 3 Wed: students begin building
+- Wk 4 Wed: continue building, apply mixing concepts as they're introduced
+- Wk 5 Wed: final work session + submission, files uploaded to NAS (private working folder + class listening folder)
 
 ---
 
 ## Listening assignment
 
-**Module 2 listening:** musique concrète and sound-collage tradition — Pierre Schaeffer (*Étude aux chemins de fer*), Pierre Henry (*Variations pour une porte et un soupir*), and one contemporary example.
+**Module 2 listening:** musique concrète and sound-collage tradition. Pierre Schaeffer (*Étude aux chemins de fer*), Pierre Henry (*Variations pour une porte et un soupir*), and one contemporary example.
 
 Full listening assignment with guided questions: [`listening/historical.html`](./listening/historical.html)
 
@@ -76,13 +76,13 @@ Full listening assignment with guided questions: [`listening/historical.html`](.
 
 | Wk | Day | Focus |
 |---|---|---|
-| 2 | Mon | Session 1 — Lecture: Digital audio fundamentals + first listening |
-| 2 | Wed | Session 2 — Lab Part 1: Interactive digital-audio tool · Part 2: Audacity orientation |
-| 3 | Mon | Session 3 — Lecture: Editing concepts + envelope listening |
-| 3 | Wed | Session 4 — Lab: Editing techniques · Project 1 begins |
-| 4 | Wed | Session 5 — Lab Part 1: Mixing in Audacity (levels, pan, EQ + destructive/non-destructive frame) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
-| 5 | Mon | Session 6 — Lecture: Dynamics (compression, limiting) + interactive dynamics tool |
-| 5 | Wed | Session 7 — **Project 1 final work session + submission** |
+| 2 | Mon | Session 1 · Lecture: Digital audio fundamentals + first listening |
+| 2 | Wed | Session 2 · Lab Part 1: Interactive digital-audio tool · Part 2: Audacity orientation |
+| 3 | Mon | Session 3 · Lecture: Editing concepts + envelope listening |
+| 3 | Wed | Session 4 · Lab: Editing techniques · Project 1 begins |
+| 4 | Wed | Session 5 · Lab Part 1: Mixing in Audacity (levels, pan, EQ + destructive/non-destructive frame) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
+| 5 | Mon | Session 6 · Lecture: Dynamics (compression, limiting) + interactive dynamics tool |
+| 5 | Wed | Session 7 · **Project 1 final work session + submission** |
 
 Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each session are below.
 
@@ -90,7 +90,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 
 ## Pre-module preparation (Inés / TA)
 
-- **Sample bank curated and uploaded** to `/music/shared/sample-banks/project1/` before Wed Wk 3 — full scope and curation guidance in [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md)
+- **Sample bank curated and uploaded** to `/music/shared/sample-banks/project1/` before Wed Wk 3; full scope and curation guidance in [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md)
 - **Audacity installed and tested** on every lab machine
 - **Interactive tools built and tested** in advance of the sessions that use them
 
@@ -101,7 +101,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 ### Recurring confusions to expect across the module
 
 - **"Why does my recording sound thin/loud/quiet?"** Almost always a level-staging issue, an interface direct-monitor mix knob set wrong, or headphones with the in-line slider not all the way up. Train yourself to ask three questions in this order: (1) Is the in-line slider on the headphones up? (2) Is the interface mix knob set correctly (60% direct / 40% USB by default)? (3) Are the levels in Audacity reasonable (peaks around -12 to -6 dBFS, never clipping)?
-- **"My file disappeared."** Almost always means they saved to the wrong location, or saved as a project file (`.aup3`) when they meant to export as WAV, or didn't upload to NAS at session end. Walk them through the local-first / NAS-as-sync workflow again. The Session Routines card (Handout 02) is at every station for this reason — point at it.
+- **"My file disappeared."** Almost always means they saved to the wrong location, or saved as a project file (`.aup3`) when they meant to export as WAV, or didn't upload to NAS at session end. Walk them through the local-first / NAS-as-sync workflow again. The Session Routines card (Handout 02) is at every station for this reason, point at it.
 - **"Audacity crashed."** It will. Audacity's autosave is good but not perfect. Reinforce the version-saving habit (`-v1.aup3`, `-v2.aup3`) early. If a student lost work, the right response is sympathy and a process correction, not panic.
 - **"Why doesn't my edit sound smooth?"** Usually missing fades. The single most useful Audacity habit is to add a small fade-in/fade-out (5-50 ms) on every edit boundary. Click pops at edit points are the audible signature of someone new to editing.
 - **"How do I [thing I've never done]?"** Resist the urge to do it for them. Sit next to them, ask where they are, ask what they've tried. The goal is for them to learn the move, not for you to demonstrate competence.
@@ -116,7 +116,7 @@ Before students arrive, walk the room and verify at every station:
 - Mic in stand, plugged in (XLR), phantom power off unless using a condenser
 - MIDI keyboard plugged in (used in Module 4, but leave it set up consistently)
 
-The interface mix knob (where present) should be at 60% direct / 40% USB by default. Reset it before each session — students will have moved it.
+The interface mix knob (where present) should be at 60% direct / 40% USB by default. Reset it before each session: students will have moved it.
 
 If anything is missing or broken, log it immediately in the lab gear tracker and use the spare. Don't try to teach with broken gear; it derails the session.
 
@@ -125,11 +125,11 @@ If anything is missing or broken, log it immediately in the lab gear tracker and
 Every student opens Audacity for every Module 2 session. The same opening sequence applies:
 
 1. Open Audacity (already in the dock on lab machines)
-2. Set project sample rate to 44.1 kHz (bottom-left of window) — this is the Module 2 standard
+2. Set project sample rate to 44.1 kHz (bottom-left of window). This is the Module 2 standard
 3. Set project to record from the audio interface (top toolbar dropdown, should default correctly but verify)
 4. Open last session's project file from `~/Documents/lastname/` (after the first session)
 
-Demonstrate this once on Wed Wk 2 and reinforce it Mon Wk 3 and Wed Wk 3. By Wk 4, it should be automatic. If a student is fumbling with this in Wk 5, they've been disengaging — check in.
+Demonstrate this once on Wed Wk 2 and reinforce it Mon Wk 3 and Wed Wk 3. By Wk 4, it should be automatic. If a student is fumbling with this in Wk 5, they've been disengaging; check in.
 
 ### Reading the room: when to slow down
 
@@ -143,9 +143,9 @@ When this happens, the right move is almost never to plow through. Stop, ask "wh
 
 ### Pacing across the module
 
-The pacing pressure point in this module is **Wed Wk 3** — Project 1 begins. If students leave that session having opened the sample bank, listened to a few sounds, and made one experimental edit, they're on track. If they leave having only heard a lecture about Audacity and not touched anything creative, you're behind. Plan your Wed Wk 3 with that as the deliverable.
+The pacing pressure point in this module is **Wed Wk 3**: Project 1 begins. If students leave that session having opened the sample bank, listened to a few sounds, and made one experimental edit, they're on track. If they leave having only heard a lecture about Audacity and not touched anything creative, you're behind. Plan your Wed Wk 3 with that as the deliverable.
 
-The other pacing risk is **Mon Wk 5** — last new content, students may be deep in Project 1 and treating it as optional. It isn't. The dynamics content lands in their final mix.
+The other pacing risk is **Mon Wk 5**: last new content, students may be deep in Project 1 and treating it as optional. It isn't. The dynamics content lands in their final mix.
 
 ### When to escalate to Inés
 
@@ -156,7 +156,7 @@ The other pacing risk is **Mon Wk 5** — last new content, students may be deep
 
 ---
 
-## Session 1 — Mon Wk 2: Digital audio fundamentals
+## Session 1: Mon Wk 2: Digital audio fundamentals
 
 **100 min · Lecture-style · MB2525**
 
@@ -168,7 +168,7 @@ Students leave with conceptual fluency on what digital audio actually is: sample
 
 - The reading for today, [`lessons/01-reading-digital-audio.html`](./lessons/01-reading-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
 - Pull up the reading on the projector before students arrive. Have the audio comparison blocks ready to play (sample rate, bit depth, anti-alias filter on/off).
-- Make sure speakers in MB2525 are working and at a reasonable volume. The audio examples need to be heard clearly by the room — earbuds won't do.
+- Make sure speakers in MB2525 are working and at a reasonable volume. The audio examples need to be heard clearly by the room; earbuds won't do.
 - The listening assignment ([`listening/historical.html`](./listening/historical.html)) is due Mon Wk 5. You'll introduce it at the end of class. Have it pulled up.
 
 ### What students walk in knowing
@@ -190,53 +190,53 @@ Treat this as zero-prior-knowledge. The reading does the heavy lifting; your job
 
 ### Block-by-block
 
-#### Block 1 — Setup and welcome (5 min)
+#### Block 1: Setup and welcome (5 min)
 
 Open: "Welcome back. Today is the first real conceptual lecture of the course. We're going to learn what digital audio actually is. Some of this will be familiar from physics or general knowledge, some will be brand new. By the end you'll be able to explain to someone why CDs are 44.1 kHz instead of just any random number."
 
-Have them open the reading on their machines so they can follow along and read the captions on the diagrams. The reading is also their study reference — they'll come back to it.
+Have them open the reading on their machines so they can follow along and read the captions on the diagrams. The reading is also their study reference; they'll come back to it.
 
-#### Block 2 — Sound, sampling, sample rate (40 min)
+#### Block 2: Sound, sampling, sample rate (40 min)
 
-Walk through Sections 1-3 of the reading. Don't read it aloud verbatim — narrate around the diagrams and play the audio examples.
+Walk through Sections 1-3 of the reading. Don't read it aloud verbatim; narrate around the diagrams and play the audio examples.
 
 Key beats:
 - **Sound is continuous, digital is discrete.** This is the central tension. Use the sine wave diagram in the reading. "We need to take a smooth, continuous wave and turn it into a list of numbers. How?"
-- **Sampling.** Use the sampling diagram — the dots ON the wave. "We measure the value of the wave at evenly spaced moments in time."
+- **Sampling.** Use the sampling diagram: the dots ON the wave. "We measure the value of the wave at evenly spaced moments in time."
 - **Sample rate.** "How often do we measure? Forty-four thousand one hundred times per second on a CD. Why that specific number?"
-- **Nyquist.** This is the conceptual peak of the section. The reading explains it with the math; in class, explain it as: "To reproduce a wave, you need at least two samples per cycle — one for the up, one for the down. So the highest frequency you can capture is half your sample rate. CDs target 22 kHz max because human hearing tops out around 20 kHz, and they wanted some headroom."
-- **Play the sample rate audio comparison.** Source / 8k / 4k. After playing each, ask: "What did you hear go away?" Look for "the high frequencies" or "the cymbals" or "the sparkle." If a student says "it sounds muffled," that's correct vocabulary — feed it back.
+- **Nyquist.** This is the conceptual peak of the section. The reading explains it with the math; in class, explain it as: "To reproduce a wave, you need at least two samples per cycle: one for the up, one for the down. So the highest frequency you can capture is half your sample rate. CDs target 22 kHz max because human hearing tops out around 20 kHz, and they wanted some headroom."
+- **Play the sample rate audio comparison.** Source / 8k / 4k. After playing each, ask: "What did you hear go away?" Look for "the high frequencies" or "the cymbals" or "the sparkle." If a student says "it sounds muffled," that's correct vocabulary; feed it back.
 
 Take questions before moving on. Common confusion: students conflate "sample rate" with "bit rate" (which is an MP3 thing they've heard of). Disambiguate: "bit rate is a property of compressed files; sample rate is a property of the audio itself."
 
-#### Block 3 — Bit depth, aliasing, file formats (40 min)
+#### Block 3: Bit depth, aliasing, file formats (40 min)
 
 Walk through Sections 4-6 of the reading.
 
 Key beats:
 - **Bit depth = how precisely we measure each sample.** Use the bit depth diagram (the staircase). "Sample rate is how often, bit depth is how precise."
-- **Dynamic range follows from bit depth.** ~6 dB per bit. 16-bit = ~96 dB of usable range. The bar chart in Section 5 makes this visceral — point at the orchestra column and say "an orchestra at full volume to a whisper-quiet pianissimo is about 80 dB of range. 16-bit fits that. 4-bit doesn't."
-- **Play the bit depth audio comparison.** Source / 8-bit / 4-bit. The 4-bit example goes silent in its tail because the decay falls below the noise floor — point this out.
-- **Aliasing.** This is the trickiest concept in the reading. The wagon-wheel analogy in the reading is the clearest framing. "If you sample too slowly, high frequencies don't disappear cleanly — they show up as fake low frequencies." Play the aliasing audio comparison: source / 8k properly filtered / 8k unfiltered. The unfiltered version sounds "wrong" in a specific way, and that wrongness is aliasing.
+- **Dynamic range follows from bit depth.** ~6 dB per bit. 16-bit = ~96 dB of usable range. The bar chart in Section 5 makes this visceral; point at the orchestra column and say "an orchestra at full volume to a whisper-quiet pianissimo is about 80 dB of range. 16-bit fits that. 4-bit doesn't."
+- **Play the bit depth audio comparison.** Source / 8-bit / 4-bit. The 4-bit example goes silent in its tail because the decay falls below the noise floor; point this out.
+- **Aliasing.** This is the trickiest concept in the reading. The wagon-wheel analogy in the reading is the clearest framing. "If you sample too slowly, high frequencies don't disappear cleanly; they show up as fake low frequencies." Play the aliasing audio comparison: source / 8k properly filtered / 8k unfiltered. The unfiltered version sounds "wrong" in a specific way, and that wrongness is aliasing.
 - **File formats.** WAV (uncompressed, what we use), AIFF (similar, Mac native), MP3 (lossy compression, smaller files, throws information away), FLAC (lossless compression, smaller files but mathematically identical). For Module 2 we work in WAV at 44.1 kHz / 16-bit. That's the assignment standard; later modules will introduce 48 kHz / 32-bit float for Ableton.
 
-#### Block 4 — Listening assignment + close (15 min)
+#### Block 4: Listening assignment + close (15 min)
 
 Pull up the listening assignment ([`listening/historical.html`](./listening/historical.html)) on the projector. Walk through it briefly:
 
 - Three pieces: Schaeffer (1948), Henry (1963), and one contemporary piece they choose
-- Read the "Before you listen" history section *with them* — at least the first paragraph, to establish that these were tape compositions, not digital
+- Read the "Before you listen" history section *with them*: at least the first paragraph, to establish that these were tape compositions, not digital
 - Show the YouTube link cards: clicking opens a new tab with the piece
 - Show the four questions
 - Show the submission card: Word or PDF, ~250-350 words, formatting, Chicago or MLA
 - Due Mon Wk 5, about 3 weeks from now
-- This connects directly to Project 1 — they'll be making something in this tradition
+- This connects directly to Project 1; they'll be making something in this tradition
 
 Close with a small bridge to Wednesday: "On Wednesday we'll start working in Audacity. Bring your headphones."
 
 ### Common questions
 
-**"Why 44.1 specifically?"** Answer: rooted in early CD/video standards involving NTSC video frame rates. The reading covers it. Don't go deeper than the reading does — it's a curiosity, not a load-bearing concept.
+**"Why 44.1 specifically?"** Answer: rooted in early CD/video standards involving NTSC video frame rates. The reading covers it. Don't go deeper than the reading does; it's a curiosity, not a load-bearing concept.
 
 **"Why would anyone use lower sample rates?"** Smaller files, less CPU, certain aesthetic uses (lo-fi). Module 4 will touch on intentional sample-rate manipulation as an effect.
 
@@ -256,7 +256,7 @@ Close with a small bridge to Wednesday: "On Wednesday we'll start working in Aud
 
 ---
 
-## Session 2 — Wed Wk 2: Digital audio explorer + Audacity orientation
+## Session 2: Wed Wk 2: Digital audio explorer + Audacity orientation
 
 **100 min · Lab-style · MB2525**
 
@@ -276,24 +276,24 @@ Two halves:
 
 - Walk the room: gear setup baseline (see Module-wide concerns)
 - Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
-- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short field recording of a struck bell (~15 s), with sharp attack and long decay — see "Asset prep" below for what's expected.
+- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short field recording of a struck bell (~15 s), with sharp attack and long decay; see "Asset prep" below for what's expected.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
 - Open the orientation handout (Handout 01) on the instructor station and on each student station's desktop browser
 - Confirm Handout 02 (Session Routines) is laminated and visible at every station
 
-### Block 1 — Recap (10 min)
+### Block 1: Recap (10 min)
 
 Quick verbal recap of Monday's reading. Ask 2–3 students to explain, in their own words: "What's sample rate?" "What's bit depth?" "Why 44.1 kHz?" Let them get it slightly wrong; correct gently. The retrieval matters more than precision.
 
-Then bridge: "Today's lab has two halves. First we're going to take the *idea* of a sine wave from yesterday's reading and pull on it: how do we get from a sine — which sounds artificial — to the kind of sound a flute or a clarinet makes? After that, we'll open Audacity for the first time."
+Then bridge: "Today's lab has two halves. First we're going to take the *idea* of a sine wave from yesterday's reading and pull on it: how do we get from a sine (which sounds artificial) to the kind of sound a flute or a clarinet makes? After that, we'll open Audacity for the first time."
 
-### Block 2 — Digital Audio Explorer (35 min)
+### Block 2: Digital Audio Explorer (35 min)
 
 Project the explorer on the room display. Walk students through it section by section, pausing for hands-on at each step. Pace: 8–10 minutes per section, mostly student exploration with brief framing.
 
 **Section 1 (Sine maker, 5 min).** "This is what one sine sounds like." Demo: play, move the frequency slider through the range, then the amplitude slider. Then: "Move only the frequency. Pitch changes, loudness doesn't. Move only the amplitude. The opposite. These are independent dimensions even though they live in the same sound." Each student tries.
 
-**Section 2 (Sine summer, 8 min).** Frame: "Real sounds aren't sines. So how do we get from sines to real sounds? The answer is: you add them up." Have each student turn up partial 1 only (verifies they're back to a sine), then partial 2 at a random freq. "What do you hear?" The answer should be: two pitches, or beating if they're close, or just chaos. Let them play. Make sure at least one student hears the beating phenomenon and ask them to describe it. Don't define beating formally yet — it'll come up again in Module 4.
+**Section 2 (Sine summer, 8 min).** Frame: "Real sounds aren't sines. So how do we get from sines to real sounds? The answer is: you add them up." Have each student turn up partial 1 only (verifies they're back to a sine), then partial 2 at a random freq. "What do you hear?" The answer should be: two pitches, or beating if they're close, or just chaos. Let them play. Make sure at least one student hears the beating phenomenon and ask them to describe it. Don't define beating formally yet; it'll come up again in Module 4.
 
 **Section 3 (Harmonic series, 12 min).** This is the heart of the lab. Frame: "We just discovered that random sums of sines don't sound like notes. So why does a flute sound like one note even though it contains many sines? Watch what happens when the sines line up at integer ratios." Have everyone start from all amps at zero, fundamental at 220. Bring up partial 1 (the fundamental). Then partial 2. "What pitch are you hearing now?" Most will say "the same one, just richer." That's the right answer. Add 3, 4, 5, 6 one at a time. The pitch stays put, the timbre fattens. The conceptual punchline: *the ear fuses harmonically related partials into one perceived note*. This is the moment they should leave the section with.
 
@@ -301,7 +301,7 @@ Project the explorer on the room display. Walk students through it section by se
 
 Walk the room throughout. Listen for genuine engagement vs. clicking-without-listening. The tool's value is in the *listening*, not in clicking sliders. If a pair is moving too fast, sit down: "What did you actually hear when you turned that one up?"
 
-### Block 3 — Audacity orientation (45 min)
+### Block 3: Audacity orientation (45 min)
 
 Switch to the Audacity handout (Handout 01). Have students close the explorer and open the handout in a browser. Walk through the seven steps on the projector with students following along on their machines. **Don't move on until everyone is at each step.** This is one of those sessions where pacing to the slowest student is the right thing.
 
@@ -309,21 +309,21 @@ The handout is detailed enough that students could in principle do it on their o
 
 Suggested pacing within Block 3:
 
-- **Step 1 (NAS pull, 6 min)** — first contact with the NAS workflow as a real action, not just a card on the wall. Watch for students who try to open `orientation-sample.wav` directly from the NAS rather than copying it locally first.
-- **Step 2 (Open Audacity, set format, 4 min)** — quick.
-- **Step 3 (Interface tour, 5 min)** — point at the named regions on the projector. The annotated screenshot in the handout is a reference; students don't need to memorize it today.
-- **Step 4 (Import + play, 5 min)** — should be quick. Watch for students who try double-clicking the WAV in Finder instead of using File → Import.
-- **Step 5 (Selection, cut, fade, 12 min)** — the heart of Part 2. Demonstrate each move on the projector. Pause after the cut so they can play and *hear* the abrupt ending before doing the fade. The fade transforms the sound from "broken edit" to "deliberate edit" — that contrast is the lesson.
-- **Step 6 (Save + export, 8 min)** — the project-vs-export distinction trips students up. Reinforce: "Save the project to keep working tomorrow. Export the WAV to have something you can submit or share."
-- **Step 7 (NAS upload, 5 min)** — closes the loop on the workflow that opened the session.
+- **Step 1 (NAS pull, 6 min)**: first contact with the NAS workflow as a real action, not just a card on the wall. Watch for students who try to open `orientation-sample.wav` directly from the NAS rather than copying it locally first.
+- **Step 2 (Open Audacity, set format, 4 min)**: quick.
+- **Step 3 (Interface tour, 5 min)**: point at the named regions on the projector. The annotated screenshot in the handout is a reference; students don't need to memorize it today.
+- **Step 4 (Import + play, 5 min)**: should be quick. Watch for students who try double-clicking the WAV in Finder instead of using File → Import.
+- **Step 5 (Selection, cut, fade, 12 min)**: the heart of Part 2. Demonstrate each move on the projector. Pause after the cut so they can play and *hear* the abrupt ending before doing the fade. The fade transforms the sound from "broken edit" to "deliberate edit"; that contrast is the lesson.
+- **Step 6 (Save + export, 8 min)**: the project-vs-export distinction trips students up. Reinforce: "Save the project to keep working tomorrow. Export the WAV to have something you can submit or share."
+- **Step 7 (NAS upload, 5 min)**: closes the loop on the workflow that opened the session.
 
-### Block 4 — Wrap and preview (10 min)
+### Block 4: Wrap and preview (10 min)
 
-Quick close: "On Monday we go deeper into editing — the full vocabulary, plus envelope. Then on Wednesday Project 1 begins. The Module 2 listening (Schaeffer + Henry) is due at the start of Mon Wk 5; start it this weekend if you can."
+Quick close: "On Monday we go deeper into editing: the full vocabulary, plus envelope. Then on Wednesday Project 1 begins. The Module 2 listening (Schaeffer + Henry) is due at the start of Mon Wk 5; start it this weekend if you can."
 
 ### Common confusions
 
-- **The explorer's pitch experience.** Some students will *hear* the harmonic series fusing into one note before others. If a student says "I hear separate notes" when partials 1+2 are on, ask them to bring up partials 3 and 4 too and listen again — the fusion strengthens with more partials. If they still hear separate notes, that's fine; it's a perceptual skill that develops with listening practice.
+- **The explorer's pitch experience.** Some students will *hear* the harmonic series fusing into one note before others. If a student says "I hear separate notes" when partials 1+2 are on, ask them to bring up partials 3 and 4 too and listen again; the fusion strengthens with more partials. If they still hear separate notes, that's fine; it's a perceptual skill that develops with listening practice.
 - **Cursor vs. selection in Audacity.** Cursor is a single point in time; selection is a range. Many students try to "cut a section" with just the cursor placed. Demonstrate both, in contrast.
 - **Project file vs. audio file.** `.aup3` is the working document; you can't open it without Audacity, and links to the source data must be intact. Audio files (WAV/MP3) are universal. The handout calls this out, but expect to repeat it in person.
 - **NAS-direct editing.** Students will sometimes try to open `orientation-sample.wav` directly from the mounted NAS. Catch this early: always copy to local first.
@@ -331,10 +331,10 @@ Quick close: "On Monday we go deeper into editing — the full vocabulary, plus 
 ### Pacing fallbacks
 
 - **If running long in Part 1:** trim Section 4 (Timbre) free-exploration time. The first three sections carry the main pedagogical weight; Section 4 can be a 4-minute demo + brief student touch.
-- **If running long in Part 2:** the most cuttable step is Step 7 (NAS upload). It can be done after class with a 30-second reminder ("Don't leave without uploading. The card on your station has the steps.") But better to keep it in if at all possible — first-day NAS upload is the workflow-formation moment.
+- **If running long in Part 2:** the most cuttable step is Step 7 (NAS upload). It can be done after class with a 30-second reminder ("Don't leave without uploading. The card on your station has the steps.") But better to keep it in if at all possible; first-day NAS upload is the workflow-formation moment.
 - **If running short:** in Part 1 Section 4, give 5–7 minutes of timbre free-exploration ("Try to make a sound that's like a brass instrument, then a woodwind, then something inhuman"). In Part 2 Step 5, give them an extra try-this: "Now reverse the bell. What does the envelope look like?"
 
-### Asset prep — orientation-sample.wav
+### Asset prep: orientation-sample.wav
 
 The Audacity orientation handout assumes a specific sample on the NAS at `shared/module-02/orientation/orientation-sample.wav`:
 
@@ -345,7 +345,7 @@ The Audacity orientation handout assumes a specific sample on the NAS at `shared
 
 Inés to record or source. If unavailable, any single sound with a clear attack + long decay works (bowed string note that fades, struck rim, plucked piano string).
 
-### Asset prep — Audacity screenshots for Handout 01 (Audacity orientation)
+### Asset prep: Audacity screenshots for Handout 01 (Audacity orientation)
 
 Handout 01 references six screenshots that need capturing on a lab Mac and saved to `assets/images/module-02-week-02/`. The handout's `alt` text describes what each screenshot should show:
 
@@ -360,7 +360,7 @@ Handout 01 references six screenshots that need capturing on a lab Mac and saved
 
 The annotation numbers on `audacity-interface-empty.png` should be drawn on top of the screenshot in red or rust; the handout's annotation key reads them in order. Recommended approach: capture the raw screenshot, then annotate with a tool like Skitch or Preview's markup. Keep annotation numbers consistent with the handout's order.
 
-Until the screenshots are captured, the figures render with their `alt` text visible in placeholder boxes — students can still follow the handout, but the boxes look unfinished. Capture before the first time the lab runs.
+Until the screenshots are captured, the figures render with their `alt` text visible in placeholder boxes: students can still follow the handout, but the boxes look unfinished. Capture before the first time the lab runs.
 
 ### After class
 
@@ -370,50 +370,50 @@ Until the screenshots are captured, the figures render with their `alt` text vis
 
 ---
 
-## Session 3 — Mon Wk 3: Editing concepts + envelope listening
+## Session 3: Mon Wk 3: Editing concepts + envelope listening
 
 **100 min · Lecture-style · MB2525**
 
 ### Goal
 
-Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course — Module 4's synthesis section depends on it.
+Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course; Module 4's synthesis section depends on it.
 
 The reading for today is [`lessons/04-reading-editing-envelope.html`](./lessons/04-reading-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
 - Read the Mon Wk 3 reading and listen to all 12 audio demos
-- Pull up the listening assignment — students have had it since Monday but most won't have started; nudge them today
+- Pull up the listening assignment: students have had it since Monday but most won't have started; nudge them today
 - Pull up Audacity on the instructor machine; you'll do a few short demos
-- Have a few sample sounds queued — ideally with contrasting envelopes (a sharp percussion hit, a sustained string drone, a complex evolving sound). The reading's audio demos are good fallbacks if your sample bank doesn't have variety yet.
+- Have a few sample sounds queued: ideally with contrasting envelopes (a sharp percussion hit, a sustained string drone, a complex evolving sound). The reading's audio demos are good fallbacks if your sample bank doesn't have variety yet.
 
 ### Block-by-block
 
-#### Block 1 — Recap and frame (10 min)
+#### Block 1: Recap and frame (10 min)
 
 Quick recap of Wed Wk 2: students opened Audacity, made a basic edit, saved a project. Today we step back from the tool and talk about *what edits do to sound*.
 
-Open: "We're going to spend today on two related ideas — *what an edit is*, and *what a sound's envelope is*. These are the two vocabularies you need to talk about Project 1."
+Open: "We're going to spend today on two related ideas: *what an edit is*, and *what a sound's envelope is*. These are the two vocabularies you need to talk about Project 1."
 
-#### Block 2 — Envelope (30 min)
+#### Block 2: Envelope (30 min)
 
-Define envelope: "Every sound has a shape over time — how it starts, how it sustains, how it ends. We call that the envelope, and it's one of the things our ears use to identify what a sound is."
+Define envelope: "Every sound has a shape over time: how it starts, how it sustains, how it ends. We call that the envelope, and it's one of the things our ears use to identify what a sound is."
 
 Three components:
-- **Attack** — how a sound begins. Sharp (a snare drum hit) or gradual (a bowed violin note).
-- **Sustain** — what happens during the sound. Steady (an organ note) or evolving (a vocal "ahhh" that wavers).
-- **Release** — how the sound ends. Abrupt (a percussion clap, no tail) or gradual (a piano note decaying after the key is released).
+- **Attack**: how a sound begins. Sharp (a snare drum hit) or gradual (a bowed violin note).
+- **Sustain**: what happens during the sound. Steady (an organ note) or evolving (a vocal "ahhh" that wavers).
+- **Release**: how the sound ends. Abrupt (a percussion clap, no tail) or gradual (a piano note decaying after the key is released).
 
-(Some teachers use ADSR — Attack, Decay, Sustain, Release — distinguishing the initial peak from the steady-state. For Module 2 we keep it to three; Module 4 will introduce the four-stage version with synthesis.)
+(Some teachers use ADSR (Attack, Decay, Sustain, Release), distinguishing the initial peak from the steady-state. For Module 2 we keep it to three; Module 4 will introduce the four-stage version with synthesis.)
 
 Open the reading on the projector and play the three contrasting envelope demos (sharp / sustained / evolving). After each, ask the class: "Describe the envelope. Sharp attack, long sustain, no release? Slow attack, long sustain, gradual release?"
 
 **Then open the envelope explorer in the reading and demonstrate live.** This is the centerpiece of the block. The tool has three sliders (attack, sustain, release) and a play button; the source is a fixed sine tone, only the envelope changes. Drag the sliders to walk through:
 
-- "Watch what happens when I make the attack tiny." Drag attack to its minimum, sustain to zero, release short. Press play. The result is percussive — sounds nothing like a sustained note even though the source is a sine.
+- "Watch what happens when I make the attack tiny." Drag attack to its minimum, sustain to zero, release short. Press play. The result is percussive; it sounds nothing like a sustained note even though the source is a sine.
 - "Now I'll stretch the attack way out." Drag attack to ~1500 ms. Press play. Same source, but it swells in. Completely different character.
 - "What if I take the sustain out entirely?" Drag sustain to zero, attack and release to medium. Press play. The peak of the envelope only exists for an instant.
-- "Now a balanced shape — clear attack, clear body, clear ending." Drag to roughly 200/800/600. Press play.
+- "Now a balanced shape: clear attack, clear body, clear ending." Drag to roughly 200/800/600. Press play.
 
 The pedagogical point: the same source sound becomes radically different sounds based only on its envelope. This is what students will be doing to their source recordings in Project 1, even when they're not thinking about it explicitly.
 
@@ -421,7 +421,7 @@ Then play the listening assignment Schaeffer or Henry pieces (or a short excerpt
 
 This vocabulary lets students *describe* what they want from a sound, which is the prerequisite to *finding* the right sound for a project.
 
-#### Block 3 — Editing concepts (45 min)
+#### Block 3: Editing concepts (45 min)
 
 The reading structures these as: six fairly intuitive moves, then a pause to introduce time-pitch coupling, then time-stretch / pitch-shift as the modern decoupled operations, then reverse last. Use that same arc on the projector.
 
@@ -434,38 +434,38 @@ The reading structures these as: six fairly intuitive moves, then a pause to int
 - **Crossfade.** Where two pieces of audio overlap, one fading out as the other fades in. Smooth transitions between regions.
 - **Loop.** Repeating a section. Either as a working aid (looping while listening) or a compositional tool (a tape-loop pattern).
 
-These should feel obvious to students. The "you cut a thing, you put a thing next to another thing" intuition is fine — that's what the reading sets up. Don't overteach them.
+These should feel obvious to students. The "you cut a thing, you put a thing next to another thing" intuition is fine; that's what the reading sets up. Don't overteach them.
 
-**The pause: time-pitch coupling (15 min).** This is the conceptual hinge. Open the reading on the projector and show the three-sine SVG diagram (source / slow / fast). Talk through what's visible: same waveform, three speeds. The slowed version's cycles are wider; the sped-up version's cycles are narrower. That's why pitch changes — pitch is determined by how often the cycles repeat per second.
+**The pause: time-pitch coupling (15 min).** This is the conceptual hinge. Open the reading on the projector and show the three-sine SVG diagram (source / slow / fast). Talk through what's visible: same waveform, three speeds. The slowed version's cycles are wider; the sped-up version's cycles are narrower. That's why pitch changes; pitch is determined by how often the cycles repeat per second.
 
-Then play the three audio demos in the reading (`tape-source.wav`, `tape-slow.wav`, `tape-fast.wav`). The audio is a voice recording, not a sine — the diagram uses a sine because cycles are visible at a glance, but the audio uses a voice because the perceptual coupling is more obvious on real material. Note the speed factors: the audio uses 0.75× and 1.33× rather than the 0.5× / 2× shown in the diagram. The principle is identical, but a 2× slow of the full recording would run over 11 seconds, which is too long for an A/B comparison; 1.33× keeps it under 8 seconds. Students will hear the same words at three speeds: the source, a slowed-down version (about 5 semitones lower, lower-pitched and noticeably stretched), and a sped-up version (about 5 semitones higher, brighter and faster). Ask the room: "What's different between the source and the slow version?" Get them to articulate both: it's longer *and* it's lower. Same for fast: shorter *and* higher. The point landing is that these aren't two separate effects; they're the same effect viewed two ways.
+Then play the three audio demos in the reading (`tape-source.wav`, `tape-slow.wav`, `tape-fast.wav`). The audio is a voice recording, not a sine; the diagram uses a sine because cycles are visible at a glance, but the audio uses a voice because the perceptual coupling is more obvious on real material. Note the speed factors: the audio uses 0.75× and 1.33× rather than the 0.5× / 2× shown in the diagram. The principle is identical, but a 2× slow of the full recording would run over 11 seconds, which is too long for an A/B comparison; 1.33× keeps it under 8 seconds. Students will hear the same words at three speeds: the source, a slowed-down version (about 5 semitones lower, lower-pitched and noticeably stretched), and a sped-up version (about 5 semitones higher, brighter and faster). Ask the room: "What's different between the source and the slow version?" Get them to articulate both: it's longer *and* it's lower. Same for fast: shorter *and* higher. The point landing is that these aren't two separate effects; they're the same effect viewed two ways.
 
 A brief historical note lands well here: "Schaeffer worked entirely in this world. Every tape recording until about 1990 worked this way. If you wanted longer, you went lower. If you wanted higher, you went shorter. There was no choice."
 
 **Time-stretch and pitch-shift as the decoupling (10 min).** Now that students know what's *physically* coupled, the modern operations make sense:
 
-- **Time-stretch.** Make a sound longer or shorter *without* changing its pitch. Software analyzes the recording and rebuilds it at the new duration. Demonstrate in Audacity: Effect → Change Tempo (this is Audacity's pitch-preserving time-stretch). Compare to Effect → Change Speed (which is Audacity's tape-style coupled change). The two effects are different operations that look superficially similar — students will mix them up. Be explicit: "Change Tempo keeps pitch. Change Speed changes both, like tape."
-- **Pitch-shift.** Move a sound up or down in pitch *without* changing its duration. Effect → Change Pitch. Demo a few semitones up and down. Note that extreme settings produce artifacts — interesting in their own right, but worth knowing they exist.
+- **Time-stretch.** Make a sound longer or shorter *without* changing its pitch. Software analyzes the recording and rebuilds it at the new duration. Demonstrate in Audacity: Effect → Change Tempo (this is Audacity's pitch-preserving time-stretch). Compare to Effect → Change Speed (which is Audacity's tape-style coupled change). The two effects are different operations that look superficially similar: students will mix them up. Be explicit: "Change Tempo keeps pitch. Change Speed changes both, like tape."
+- **Pitch-shift.** Move a sound up or down in pitch *without* changing its duration. Effect → Change Pitch. Demo a few semitones up and down. Note that extreme settings produce artifacts; interesting in their own right, but worth knowing they exist.
 
-**Reverse (5 min).** Save reverse for last. It's a different kind of operation: it's about *direction*, not duration or pitch. Effect → Reverse. Demonstrate: a piano note played forward sounds attacking; played backward, it sounds swelling. Connect back to envelope: "Remember from the envelope vocabulary — the attack is how a sound begins, the release is how it ends. Reverse swaps them."
+**Reverse (5 min).** Save reverse for last. It's a different kind of operation: it's about *direction*, not duration or pitch. Effect → Reverse. Demonstrate: a piano note played forward sounds attacking; played backward, it sounds swelling. Connect back to envelope: "Remember from the envelope vocabulary: the attack is how a sound begins, the release is how it ends. Reverse swaps them."
 
-Close Block 3: "Schaeffer didn't have software. He did all of this with razor blades and tape — except for time-stretch and pitch-shift, which he literally couldn't do because the physics were locked together. The principle of editing as a creative move is the same; the tools are radically different."
+Close Block 3: "Schaeffer didn't have software. He did all of this with razor blades and tape, except for time-stretch and pitch-shift, which he literally couldn't do because the physics were locked together. The principle of editing as a creative move is the same; the tools are radically different."
 
-#### Block 4 — Envelope-listening exercise (10 min)
+#### Block 4: Envelope-listening exercise (10 min)
 
-Quick group exercise. Play 3-4 sounds from the sample bank, one at a time. After each, students describe the envelope in writing — one line per sound. ("Sharp attack, no sustain, no release. Sound: a wood block.")
+Quick group exercise. Play 3-4 sounds from the sample bank, one at a time. After each, students describe the envelope in writing: one line per sound. ("Sharp attack, no sustain, no release. Sound: a wood block.")
 
 This is practice for the kind of careful listening that Project 1 demands.
 
-#### Block 5 — Close + listening reminder (5 min)
+#### Block 5: Close + listening reminder (5 min)
 
-Remind students: listening assignment due in 2 weeks. Recommend they start this week — three pieces is a real listening time investment.
+Remind students: listening assignment due in 2 weeks. Recommend they start this week; three pieces is a real listening time investment.
 
 Wednesday: editing techniques and Project 1 begins.
 
 ### Common confusions
 
-- **Attack vs. transient.** They're related but not synonymous. The attack is the *time-shape* of how the sound starts; the transient is the *sharp acoustic event* that often defines the attack. For Module 2, "attack" is enough — distinguish later if it comes up.
+- **Attack vs. transient.** They're related but not synonymous. The attack is the *time-shape* of how the sound starts; the transient is the *sharp acoustic event* that often defines the attack. For Module 2, "attack" is enough; distinguish later if it comes up.
 - **Editing as cutting vs. arranging.** Some students think of editing as just removing bad parts (the recording-engineer connotation). For musique concrète and Project 1, editing is *also* arranging, repeating, layering, transforming. Reframe explicitly: "We're not just cleaning up; we're making."
 
 ### Pacing fallbacks
@@ -475,7 +475,7 @@ Wednesday: editing techniques and Project 1 begins.
 
 ---
 
-## Session 4 — Wed Wk 3: Editing techniques + Project 1 begins
+## Session 4: Wed Wk 3: Editing techniques + Project 1 begins
 
 **100 min · Lab-style · MB2525**
 
@@ -490,9 +490,9 @@ Two halves:
 
 ### Materials
 
-- **Lab handout:** [`lessons/05-handout-editing-techniques.html`](./lessons/05-handout-editing-techniques.html) — covers the full session including setup, all ten techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
-- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during the Project-1-begins block.
-- **Sample bank** at NAS `shared/sample-banks/project1/` — must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
+- **Lab handout:** [`lessons/05-handout-editing-techniques.html`](./lessons/05-handout-editing-techniques.html): covers the full session including setup, all ten techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
+- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html): open on the projector during the Project-1-begins block.
+- **Sample bank** at NAS `shared/sample-banks/project1/`: must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
 
 ### Pre-class checklist
 
@@ -504,18 +504,18 @@ Two halves:
 
 ### Block-by-block
 
-#### Block 1 — Setup, zoom, zero crossings (15 min)
+#### Block 1: Setup, zoom, zero crossings (15 min)
 
 Walk students through the handout's "Setup" and "Before the techniques" sections together on the projector. Four parts:
 
 - NAS connect, then **copy the entire sample bank** (~40-80 sounds) from `shared/sample-banks/project1/` into the student's local `~/Documents/lastname/project-01/sources/`. The local copy is what they'll work from for the rest of the module. The first time this copy runs it'll take a minute or two depending on bank size.
 - Open Audacity. Save an empty project as `lastname-project01.aup3` in `~/Documents/lastname/project-01/`. **This is *the* Project 1 file students will keep returning to. It stays empty for now.**
-- File → New, then save as `lastname-techniques-scratch.aup3` in the same folder. **This is where today's technique exercises will happen.** The two-project model is intentional: keeping the Project 1 file untouched until the Project 1 begins block prevents technique-experiment contamination, which was a real risk in earlier drafts of this handout. If students forget which file they're in, look at the title bar — Audacity shows the filename.
+- File → New, then save as `lastname-techniques-scratch.aup3` in the same folder. **This is where today's technique exercises will happen.** The two-project model is intentional: keeping the Project 1 file untouched until the Project 1 begins block prevents technique-experiment contamination, which was a real risk in earlier drafts of this handout. If students forget which file they're in, look at the title bar; Audacity shows the filename.
 - Walk through the zoom and zero-crossings prelude (in the scratch project). Show the Cmd+E (zoom to selection) and Cmd+F (fit to width) pair on the projector. Then make a selection in a sample, press Z, and point out how the edges shift slightly to land on zero crossings. The handout has a "Try it" mini-exercise; students do it on their own machines once they've seen it on the projector. Total prelude time: about 5 min, included in this 15 min block.
 
 Students who get behind here will fall behind on every technique exercise after, since each one assumes a working local copy of the bank, both project files saved, and the zoom/zero-crossings habit. Don't move to Block 2 until everyone has the bank copied, both projects saved, and has tried Z on a selection at least once.
 
-#### Block 2 — The ten techniques (60 min)
+#### Block 2: The ten techniques (60 min)
 
 This is the heart of the session. Each technique in the handout has the same shape: one-line recap, where to click in Audacity, hands-on exercise on a sample, "listen for" note. The handout is detailed enough that students could do this on their own; your job is (a) demonstrating each move on the projector so they have a model to mirror, (b) catching when someone's stuck on a UI gotcha (Trim hidden under Remove Special, Reverse hidden under Special, etc.), (c) keeping pace.
 
@@ -542,7 +542,7 @@ Total: ~53 min. The remaining 7 min absorb individual help and inevitable "my Au
 - **The time/pitch trio (techniques 8-10).** This is the lab's biggest pedagogical payoff. The handout sequences them to make the coupling/decoupling concrete: Change Speed first (couples both, like tape), then Change Tempo (time only, pitch holds), then Change Pitch (pitch only, time holds). Encourage students to use the *same* source sound for all three and compare directly. The "wait, the pitch didn't drop?" moment when they hear technique 9 after technique 8 is the lesson landing.
 - **Two projects, two purposes.** Block 1 had students create both `lastname-project01.aup3` (the real piece) and `lastname-techniques-scratch.aup3` (today's experiments). Watch for students who forget and start dropping technique exercises into the Project 1 file. The title bar shows which file is open; if you see a student with multiple tracks in `lastname-project01.aup3` during the techniques walkthrough, redirect them. Easy fix: File → Save Project As to make a copy as scratch, then delete the contents of the Project 1 file.
 
-#### Block 3 — Project 1 begins (~30 min)
+#### Block 3: Project 1 begins (~30 min)
 
 Pull up the Project 1 prompt on the projector. Walk through key sections (read constraints aloud, point at the rubric, confirm the Wed Wk 5 deadline). About 5 min of framing.
 
@@ -564,7 +564,7 @@ Walk the room. The most useful thing you can do is *ask questions*, not provide 
 
 If a student is stuck on "I don't know what I want to make," that's normal. Suggest the handout's heuristic (short percussive + long continuous + specific thing) and let them pick from there. Don't let them sit frozen.
 
-#### End of session — NAS upload (last 5 min)
+#### End of session: NAS upload (last 5 min)
 
 Final 5 minutes: students follow the handout's end-of-session routine. Save the project (`Cmd+S`), copy `lastname-project01.aup3` (NOT the sources folder, which is already on NAS; NOT the scratch project either, which lives only on local) to `students/lastname/project-01/` on the NAS, eject NAS, log out.
 
@@ -599,7 +599,7 @@ If running short (rare): give more time to free Project 1 sketching. More browsi
 
 ---
 
-## Session 5 — Wed Wk 4: Mixing in Audacity + Project 1 work
+## Session 5: Wed Wk 4: Mixing in Audacity + Project 1 work
 
 **100 min · Lab-style · MB2525**
 
@@ -616,8 +616,8 @@ The session is deliberately compact on the new content because students need wor
 
 ### Materials
 
-- **Lab handout:** [`lessons/06-handout-mixing-in-audacity.html`](./lessons/06-handout-mixing-in-audacity.html) — covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
-- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html) — open on the projector during Block 4.
+- **Lab handout:** [`lessons/06-handout-mixing-in-audacity.html`](./lessons/06-handout-mixing-in-audacity.html): covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
+- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html): open on the projector during Block 4.
 - **Students' own Project 1 files** from last week's work, plus their scratch files from Wed Wk 3.
 
 ### Pre-class checklist
@@ -629,7 +629,7 @@ The session is deliberately compact on the new content because students need wor
 
 ### Block-by-block
 
-#### Block 1 — Quick check-in + setup (10 min)
+#### Block 1: Quick check-in + setup (10 min)
 
 Open: "Show of hands, who's spent at least an hour on Project 1 since last Wednesday?" If most hands are up, great. If most aren't, name it: "You need to be working on this between sessions. Two more sessions before submission." Don't moralize, just state the fact.
 
@@ -637,12 +637,12 @@ Quick survey: "What's the hardest thing about it so far?" Listen to a few respon
 
 Then have students follow the handout's Setup section: pull the latest Project 1 file from NAS, open both `lastname-project01.aup3` and `lastname-techniques-scratch.aup3`. Both should be open in separate Audacity windows by the time you start Block 2.
 
-#### Block 2 — The destructive vs. non-destructive frame + Levels & pan (15 min)
+#### Block 2: The destructive vs. non-destructive frame + Levels & pan (15 min)
 
 The handout's "Destructive vs. non-destructive (read this first)" section is the conceptual setup for the entire lab. Walk through it on the projector before demoing any tool (~3-5 min):
 
 - **The plain definitions**: non-destructive = sliders applied at playback (move freely, no permanent change); destructive = effect applied to audio data (permanent once Applied).
-- **The honest framing**: "Modern DAWs are mostly non-destructive. Audacity is the unusual one. This isn't a flaw; it's a design choice from the tape-editing tradition. It actually suits musique concrète work — every cut is a commitment, like Schaeffer working with tape."
+- **The honest framing**: "Modern DAWs are mostly non-destructive. Audacity is the unusual one. This isn't a flaw; it's a design choice from the tape-editing tradition. It actually suits musique concrète work: every cut is a commitment, like Schaeffer working with tape."
 - **The two exceptions in Audacity**: gain slider and pan slider on the Track Control Panel. Everything else in the Effect menu is destructive.
 - **What this means for today**: levels and pan exercises happen on Project 1 (safe, non-destructive). EQ exercise happens in scratch (because EQ is destructive). For any destructive effect: Preview before Apply.
 
@@ -658,9 +658,9 @@ Then move to levels and pan. Demonstrate on a simple multi-track sample (or one 
 
 Then students follow the handout's exercises in their own Project 1 files. Both exercises are non-destructive, so practicing on the real project is safe and gives them immediate progress on their pieces. Walk the room briefly to make sure everyone finds the sliders.
 
-#### Block 3 — EQ with Preview (15 min)
+#### Block 3: EQ with Preview (15 min)
 
-The Preview-before-Apply discipline is the pedagogical heart of the session. The destructive vs. non-destructive frame is already established (Block 2), so you don't need to re-explain why — just invoke the rule.
+The Preview-before-Apply discipline is the pedagogical heart of the session. The destructive vs. non-destructive frame is already established (Block 2), so you don't need to re-explain why; just invoke the rule.
 
 Demonstrate the Filter Curve EQ dialog on the projector (Effect → EQ and Filters → Filter Curve EQ):
 
@@ -671,11 +671,11 @@ Demonstrate the Filter Curve EQ dialog on the projector (Effect → EQ and Filte
 - Then click Apply. "Now it's permanent in this version of the project."
 - Press Cmd+Z to undo. "Within this session, undo can revert it. Once I save and close, it's baked in."
 
-Students follow the handout's exercise in their *scratch* projects (not Project 1). The scratch placement is itself a teaching point — you practice destructive effects in scratch precisely because they're destructive. Walk the room and make sure every student previews at least once before applying. If you see a student go straight to Apply without Preview, stop them and have them undo and try again.
+Students follow the handout's exercise in their *scratch* projects (not Project 1). The scratch placement is itself a teaching point; you practice destructive effects in scratch precisely because they're destructive. Walk the room and make sure every student previews at least once before applying. If you see a student go straight to Apply without Preview, stop them and have them undo and try again.
 
 The handout's brief "A look ahead: Module 4 with Ableton" callout points forward to where EQ will become non-destructive. Mention it verbally as motivation for the current discipline: "The reason Preview matters is that Audacity makes you commit. Ableton won't. Build the habit now so you never bake bad EQ into your piece."
 
-#### Block 4 — Project 1 work time (55 min)
+#### Block 4: Project 1 work time (55 min)
 
 The bulk of the session. Students work on their pieces with the new tools in mind. The handout's "Suggested approach for the next hour" gives them a starting framework: apply levels and pan to Project 1, save a versioned copy before any EQ work, keep editing as needed, listen to the whole piece repeatedly.
 
@@ -690,7 +690,7 @@ For students still in pure-editing mode (no mixing applies yet because they're s
 
 For students who haven't engaged: this is your check-in moment. Sit with them. Ask what they have so far. Help them get the next step started.
 
-#### End of session — NAS upload (last 5 min)
+#### End of session: NAS upload (last 5 min)
 
 Final 5 minutes: students follow the handout's end-of-session routine. Save Project 1 (and any version files), copy `lastname-project01.aup3` (and any -v2, -v3 versions) to `students/lastname/project-01/` on the NAS. **Don't copy the sources folder (already on NAS) or the scratch project (lives only on local).**
 
@@ -719,13 +719,13 @@ If running short (rare): use the extra time for one-on-one student check-ins. Pi
 
 ---
 
-## Session 6 — Mon Wk 5: Dynamics + interactive dynamics tool
+## Session 6: Mon Wk 5: Dynamics + interactive dynamics tool
 
 **100 min · Lecture-style turning into lab · MB2525**
 
 This is the last new content of the module. After today, Wed Wk 5 is the final work session and submission deadline.
 
-> **Notes:** Listening assignment is **due today**, before class. Spot-check Canvas before class to know who submitted. There is also a reading and an interactive tool to use today — see materials list below.
+> **Notes:** Listening assignment is **due today**, before class. Spot-check Canvas before class to know who submitted. There is also a reading and an interactive tool to use today; see materials list below.
 
 ### Goal
 
@@ -733,21 +733,21 @@ Students learn what dynamics processing is (compression, limiting), why and when
 
 ### Materials
 
-- **Reading:** [`lessons/07-reading-dynamics.html`](./lessons/07-reading-dynamics.html) — assigned before class. Covers dynamic range, threshold/ratio, attack/release, limiting and the loudness wars, vocabulary for listening. Has audio demos throughout. **You should read it the day before** so today's lecture lands as discussion and demonstration, not first encounter.
-- **Tool:** [`lessons/08-tool-mixing-dynamics.html`](./lessons/08-tool-mixing-dynamics.html) — compressor with threshold/ratio/attack/release sliders, transfer-curve visualization, waveform + gain-reduction trace, bypass A/B, makeup gain, bring-your-own-WAV (or use built-in demo).
+- **Reading:** [`lessons/07-reading-dynamics.html`](./lessons/07-reading-dynamics.html): assigned before class. Covers dynamic range, threshold/ratio, attack/release, limiting and the loudness wars, vocabulary for listening. Has audio demos throughout. **You should read it the day before** so today's lecture lands as discussion and demonstration, not first encounter.
+- **Tool:** [`lessons/08-tool-mixing-dynamics.html`](./lessons/08-tool-mixing-dynamics.html): compressor with threshold/ratio/attack/release sliders, transfer-curve visualization, waveform + gain-reduction trace, bypass A/B, makeup gain, bring-your-own-WAV (or use built-in demo).
 - **Supplementary reading:** [`lessons/09-reading-audacity-dynamics.html`](./lessons/09-reading-audacity-dynamics.html). Walks through Audacity 3.6's Compressor and Limiter UIs with screenshots, maps each control to the equivalent in the teaching tool, and gives concrete starting-point recipes for the kinds of compression and limiting students will do for Project 1. Assigned for the gap between Mon Wk 5 and Wed Wk 5: students should read it after class and have it open during Wednesday's final work session.
 
 ### Pre-class checklist
 
-- Confirm listening assignment submissions on Canvas (note who's missing — you'll follow up)
+- Confirm listening assignment submissions on Canvas (note who's missing; you'll follow up)
 - Open the dynamics tool on the instructor station; test that the demo sound and a WAV upload both work
 - Pull up the reading on the instructor station for reference during the lecture (audio demos in Sections 1–4 are useful to replay during Block 2)
 - Project 1 prompt visible on instructor machine for reference
-- Confirm sample-bank folder is accessible on the NAS — students may want to grab a sound from it for the tool
+- Confirm sample-bank folder is accessible on the NAS: students may want to grab a sound from it for the tool
 
 ### Block-by-block
 
-#### Block 1 — Listening recap (15 min)
+#### Block 1: Listening recap (15 min)
 
 Most students will have listened. Some will have written. A discussion-style recap is high-value: it lets students hear each other's responses and sharpens everyone's listening.
 
@@ -756,67 +756,67 @@ Pick 2-3 questions from the listening assignment to discuss as a group:
 - "How does a piece made entirely from edits cohere as music?"
 - "What did you choose for piece 3, and why?"
 
-Don't grade in the moment — just listen, ask follow-ups, let students hear each other.
+Don't grade in the moment; just listen, ask follow-ups, let students hear each other.
 
-#### Block 2 — Dynamics concepts (25 min)
+#### Block 2: Dynamics concepts (25 min)
 
 The reading covers the conceptual ground; today's lecture is for landing the ideas in students' ears. Walk through the five section demos in the reading on the projector, in order:
 
-1. **Dynamic range (wide vs. narrow)** — play both clips back-to-back. Ask the room: "Which one is louder? Which one is *better*?" Most students will say the narrow one is louder; a few will notice the slaps have lost their punch. That's the lesson. Pull up the inline waveform diagram in the reading after they answer — both panels touching the same dashed ceiling line is the visual proof. **Then land the "two knobs, not one" beat explicitly:** the narrow version isn't just compressed, it's compressed *and* boosted back up to the ceiling with makeup gain. Compression by itself makes a file quieter (the loud parts got smaller, the quiet parts didn't change); the loudness comes from the second step. This matters because some uses of compression skip makeup gain entirely (just taming peaks), and some lean on it (the loudness-wars effect). The reading covers this in the Section 1 callout but students don't always catch it on the page. Make sure it lands in the room.
-2. **Normalization (quiet vs. normalized)** — play both clips back-to-back. Ask: "Which one is louder?" (Normalized.) "Did anything else change?" (The shape didn't.) The pedagogical move here is to *explicitly contrast with the previous demo*: in wide/narrow, the peak levels matched and the shape was different; in quiet/normalized, the peak levels are different and the shape is identical. Normalization = scale only. Compression = shape change. This is the most important conceptual distinction in the whole lecture; don't rush it.
-3. **Threshold + ratio** — play the source, then the three compression settings. Ask which hits get touched at the *light* setting vs. *heavy*. This is the moment to show the transfer-curve diagram in the reading (Section 3) on the projector and walk through how the curve bends.
-4. **Attack and release** — play the source loop, then fast-attack, then slow-attack. The transient difference is audible if you listen for it. This is the place to introduce *transient* as a piece of vocabulary if it hasn't come up yet: the brief sharp peak at the start of a sound (a drum hit, a pluck, the consonant of a spoken word).
-5. **Limiting and the loudness wars** — play natural, light, crushed. Ask: "Which is loudest?" (Crushed.) "Which sounds best?" (Almost always natural.) Land the cautionary message: limiting is useful, easy to overuse, and streaming normalization means crushing for loudness now loses you something without the trade-off paying off.
+1. **Dynamic range (wide vs. narrow)**: play both clips back-to-back. Ask the room: "Which one is louder? Which one is *better*?" Most students will say the narrow one is louder; a few will notice the slaps have lost their punch. That's the lesson. Pull up the inline waveform diagram in the reading after they answer; both panels touching the same dashed ceiling line is the visual proof. **Then land the "two knobs, not one" beat explicitly:** the narrow version isn't just compressed, it's compressed *and* boosted back up to the ceiling with makeup gain. Compression by itself makes a file quieter (the loud parts got smaller, the quiet parts didn't change); the loudness comes from the second step. This matters because some uses of compression skip makeup gain entirely (just taming peaks), and some lean on it (the loudness-wars effect). The reading covers this in the Section 1 callout but students don't always catch it on the page. Make sure it lands in the room.
+2. **Normalization (quiet vs. normalized)**: play both clips back-to-back. Ask: "Which one is louder?" (Normalized.) "Did anything else change?" (The shape didn't.) The pedagogical move here is to *explicitly contrast with the previous demo*: in wide/narrow, the peak levels matched and the shape was different; in quiet/normalized, the peak levels are different and the shape is identical. Normalization = scale only. Compression = shape change. This is the most important conceptual distinction in the whole lecture; don't rush it.
+3. **Threshold + ratio**: play the source, then the three compression settings. Ask which hits get touched at the *light* setting vs. *heavy*. This is the moment to show the transfer-curve diagram in the reading (Section 3) on the projector and walk through how the curve bends.
+4. **Attack and release**: play the source loop, then fast-attack, then slow-attack. The transient difference is audible if you listen for it. This is the place to introduce *transient* as a piece of vocabulary if it hasn't come up yet: the brief sharp peak at the start of a sound (a drum hit, a pluck, the consonant of a spoken word).
+5. **Limiting and the loudness wars**: play natural, light, crushed. Ask: "Which is loudest?" (Crushed.) "Which sounds best?" (Almost always natural.) Land the cautionary message: limiting is useful, easy to overuse, and streaming normalization means crushing for loudness now loses you something without the trade-off paying off.
 
-If running short, cut the threshold/ratio demo — students will hear that one in the tool in Block 3. The dynamic-range, normalization, and limiting demos are the highest-value listening moments and should not be skipped. The normalization demo in particular forward-references Module 3 (sample library prep) and is the cleanest possible illustration of the "scale vs. shape" distinction.
+If running short, cut the threshold/ratio demo: students will hear that one in the tool in Block 3. The dynamic-range, normalization, and limiting demos are the highest-value listening moments and should not be skipped. The normalization demo in particular forward-references Module 3 (sample library prep) and is the cleanest possible illustration of the "scale vs. shape" distinction.
 
-Brief Audacity tour at the end of Block 2: open `Effect → Compressor`. Show students where the parameters live in Audacity's UI. Note that Audacity's UI uses "threshold," "ratio," "attack time," "release time" — same vocabulary, same parameters. They will recognize what they're looking at.
+Brief Audacity tour at the end of Block 2: open `Effect → Compressor`. Show students where the parameters live in Audacity's UI. Note that Audacity's UI uses "threshold," "ratio," "attack time," "release time": same vocabulary, same parameters. They will recognize what they're looking at.
 
 The pedagogical message running through the block: dynamics processing is *powerful and overused*. A little goes a long way. The goal is balance, not maximum loudness.
 
-#### Block 3 — Dynamics tool, hands-on (25 min)
+#### Block 3: Dynamics tool, hands-on (25 min)
 
 Open the tool on the projector. Spend 5 minutes demoing it with the built-in demo sound:
 - Press Play; let it loop.
-- Drop the threshold gradually — point at the transfer curve bending and at the gain-reduction trace appearing on the waveform.
-- Change ratio from 2:1 to 10:1 at the same threshold — listen and watch.
+- Drop the threshold gradually; point at the transfer curve bending and at the gain-reduction trace appearing on the waveform.
+- Change ratio from 2:1 to 10:1 at the same threshold; listen and watch.
 - Demo bypass: A/B against the unprocessed source.
 - Demo makeup gain: compensate for the level lost, hear how it changes the perceived loudness without changing the peak.
 
-Then students work in pairs or alone for 15 minutes. They should load a sound from their Project 1 sample bank (or use the demo) and complete these prompts. **Each prompt is a question to answer with their ears, not with parameters they read off the screen.** Have them write their answers in their notebook or scratch file — these aren't submitted, but they should be able to talk about what they found.
+Then students work in pairs or alone for 15 minutes. They should load a sound from their Project 1 sample bank (or use the demo) and complete these prompts. **Each prompt is a question to answer with their ears, not with parameters they read off the screen.** Have them write their answers in their notebook or scratch file; these aren't submitted, but they should be able to talk about what they found.
 
 1. **Find the threshold of audibility.** Pick a moderate ratio (4:1) and slow your attack/release down (attack 20 ms, release 200 ms). Sweep the threshold from -6 dB downward. At what threshold do you *first hear* the compressor doing something? Write down the number. Then ask: was it the loud parts changing or the quiet parts changing that you noticed first?
 
-2. **Compare 2:1 and 10:1 at the same threshold.** Pick a threshold around -18 dB. Set the ratio to 2:1, listen, then jump to 10:1. What changed? Describe the difference in your own words — not "more compression" but *what does it sound like*. (You might land on words like "squashed," "flatter," "denser.")
+2. **Compare 2:1 and 10:1 at the same threshold.** Pick a threshold around -18 dB. Set the ratio to 2:1, listen, then jump to 10:1. What changed? Describe the difference in your own words, not "more compression" but *what does it sound like*. (You might land on words like "squashed," "flatter," "denser.")
 
-3. **Hear the attack.** Pick a sound with sharp transients (a percussive sound from your bank, or the demo). Set threshold -18, ratio 4:1, release 120 ms. Now set attack to 1 ms — listen. Then 30 ms — listen. Which version preserves the transient? Which version sounds more "tame"? Which do you think you'd want for *your* Project 1, and why?
+3. **Hear the attack.** Pick a sound with sharp transients (a percussive sound from your bank, or the demo). Set threshold -18, ratio 4:1, release 120 ms. Now set attack to 1 ms; listen. Then 30 ms; listen. Which version preserves the transient? Which version sounds more "tame"? Which do you think you'd want for *your* Project 1, and why?
 
-4. **Hear the release.** Same sound, threshold -18, ratio 4:1, attack 5 ms. Set release to 50 ms — listen. Then 400 ms — listen. With the fast release, can you hear the compressor "letting go" between hits? With the slow release, what happens to the quiet moments after a loud one?
+4. **Hear the release.** Same sound, threshold -18, ratio 4:1, attack 5 ms. Set release to 50 ms; listen. Then 400 ms; listen. With the fast release, can you hear the compressor "letting go" between hits? With the slow release, what happens to the quiet moments after a loud one?
 
-5. **A/B with bypass.** Pick a setting you like on a sound you care about. Toggle Bypass on and off while it loops. Is the compressed version actually better, or just louder? Use makeup gain to match the loudness of bypass — now A/B again. Is it still better when the loudness illusion is removed?
+5. **A/B with bypass.** Pick a setting you like on a sound you care about. Toggle Bypass on and off while it loops. Is the compressed version actually better, or just louder? Use makeup gain to match the loudness of bypass; now A/B again. Is it still better when the loudness illusion is removed?
 
-The bypass+makeup A/B in #5 is the most important prompt for shaping Project 1 mixing decisions. Many students will discover that a setting they thought was "obviously better" is just louder. That's a real lesson — compression that doesn't survive a loudness-matched A/B usually wasn't doing what they thought it was doing.
+The bypass+makeup A/B in #5 is the most important prompt for shaping Project 1 mixing decisions. Many students will discover that a setting they thought was "obviously better" is just louder. That's a real lesson; compression that doesn't survive a loudness-matched A/B usually wasn't doing what they thought it was doing.
 
 Circulate during this block. The common confusions to redirect:
-- *"My waveform doesn't show gain reduction."* — Threshold is probably higher than any peak in the signal. Drop it lower.
-- *"It got quieter when I added compression."* — Yes, because you reduced the loud parts. That's makeup gain's job — bring up to taste.
-- *"Bypass sounds the same."* — Either no compression is happening (threshold too high) or makeup gain is matched and the effect is genuinely subtle. Either is fine, depending.
+- *"My waveform doesn't show gain reduction."* Threshold is probably higher than any peak in the signal. Drop it lower.
+- *"It got quieter when I added compression."* Yes, because you reduced the loud parts. That's makeup gain's job; bring up to taste.
+- *"Bypass sounds the same."* Either no compression is happening (threshold too high) or makeup gain is matched and the effect is genuinely subtle. Either is fine, depending.
 
-#### Block 4 — Project 1 work (30 min)
+#### Block 4: Project 1 work (30 min)
 
 Students apply dynamics (and any earlier mixing concepts) to their pieces. Walk the room.
 
 This is the last session before submission. Anyone whose piece isn't substantially complete needs to make a plan. Sit with them: "What's the gap? What do you need to do tonight, tomorrow, and during Wednesday's work session?"
 
-#### Block 5 — Submission logistics (5 min)
+#### Block 5: Submission logistics (5 min)
 
 Wed Wk 5 is the final work session and submission deadline. Walk through what to expect:
-- Class is a final work session — no new content, just time to finish
+- Class is a final work session: no new content, just time to finish
 - Files due to NAS by **end of class**, not start
 - Two locations: their private working folder (`lastname/project-01/`) and the class listening folder (`/music/shared/mus-381-fall-2026/project-01-pieces/`). Both must have the final WAV.
 - A short peer-listening response is due Mon Wk 6 (about classmates' pieces in the listening folder), separate assignment
 
-Mention the rubric one more time — five dimensions, students should self-assess against it as they finish their work.
+Mention the rubric one more time: five dimensions, students should self-assess against it as they finish their work.
 
 The shift from "presentations" to "submission + asynchronous listening" is intentional: the math doesn't work for 25 students at 3-5 minutes each, and asynchronous listening gives students more thoughtful encounters with each other's pieces. Don't apologize for the change; frame it as the design.
 
@@ -829,7 +829,7 @@ The shift from "presentations" to "submission + asynchronous listening" is inten
 ### Pacing fallbacks
 
 - **If running long:** Cut Block 4 work time. Students will have until Wednesday.
-- **If running short:** Listen to a few student pieces in progress on speakers (with permission). Live feedback. This is risky but high-value when it works — only do it if students are comfortable.
+- **If running short:** Listen to a few student pieces in progress on speakers (with permission). Live feedback. This is risky but high-value when it works; only do it if students are comfortable.
 
 ### After class
 
@@ -837,7 +837,7 @@ The shift from "presentations" to "submission + asynchronous listening" is inten
 
 ---
 
-## Session 7 — Wed Wk 5: Project 1 final work session + submission
+## Session 7: Wed Wk 5: Project 1 final work session + submission
 
 **100 min · Lab-style · MB2525**
 
@@ -851,14 +851,14 @@ Every student finishes Project 1 and uploads to both NAS folders by end of class
 
 ### Pre-class checklist
 
-- **Verify the class listening folder exists and is writable by students.** Path: `/music/shared/mus-381-fall-2026/project-01-pieces/`. Permissions: students can write (drop their final WAV in), but cannot delete or modify others' files. Test this before class — drop a placeholder file in, then have one student try to add one and try to modify someone else's. If permissions aren't right, escalate to IT before students start uploading.
+- **Verify the class listening folder exists and is writable by students.** Path: `/music/shared/mus-381-fall-2026/project-01-pieces/`. Permissions: students can write (drop their final WAV in), but cannot delete or modify others' files. Test this before class: drop a placeholder file in, then have one student try to add one and try to modify someone else's. If permissions aren't right, escalate to IT before students start uploading.
 - **Spot-check working folders** for 5-6 students. They should have at least a `lastname-project01-vN.aup3` project file by now, and ideally an in-progress export. If a student's working folder is empty or has only one early version, flag them to check in with first thing.
 - Walk the room (gear baseline).
 - Have the project prompt ([`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
 
 ### Block-by-block
 
-#### Block 1 — Open and frame (5 min)
+#### Block 1: Open and frame (5 min)
 
 Open: "Today is your final work session for Project 1. By end of class, your final WAV is uploaded to two places. After today, you'll listen to each other's pieces in the class listening folder, and a short response is due Monday."
 
@@ -866,19 +866,19 @@ Walk through the submission card from the prompt on the projector. Be explicit a
 1. Your private working folder: `lastname/project-01/lastname-project01.wav`
 2. The class listening folder: `/music/shared/mus-381-fall-2026/project-01-pieces/lastname-project01.wav`
 
-"Drag a copy of your final file to the class folder. Don't move it — copy. Your working folder still gets a copy too."
+"Drag a copy of your final file to the class folder. Don't move it, copy. Your working folder still gets a copy too."
 
 Mention the peer-listening response due Mon Wk 6. They've gotten an assignment ahead of time so they can plan to listen during the week.
 
-#### Block 2 — Final work time (80 min)
+#### Block 2: Final work time (80 min)
 
-Students work. Walk the room. This is the most one-on-one time you'll have with the cohort all module — use it.
+Students work. Walk the room. This is the most one-on-one time you'll have with the cohort all module; use it.
 
 Triage what students need:
 
-- **Students nearly done:** check their export. WAV at 44.1/16-bit? Right filename? Right length (90 seconds to 2 minutes)? Listen to the last 30 seconds with them — endings often reveal whether the piece is actually finished. If yes, walk them through the upload to the class folder.
+- **Students nearly done:** check their export. WAV at 44.1/16-bit? Right filename? Right length (90 seconds to 2 minutes)? Listen to the last 30 seconds with them; endings often reveal whether the piece is actually finished. If yes, walk them through the upload to the class folder.
 - **Students mid-mix:** sit with them, listen for 30-60 seconds on their headphones, give one specific suggestion. Don't try to fix everything; pick the highest-leverage thing.
-- **Students still editing:** check whether they're going to make the deadline. If their piece is 30 seconds and they have an hour left, that's a real problem — talk through what's achievable in the time. It's better to submit a 90-second piece they're proud of than a 2-minute piece that runs out of steam.
+- **Students still editing:** check whether they're going to make the deadline. If their piece is 30 seconds and they have an hour left, that's a real problem; talk through what's achievable in the time. It's better to submit a 90-second piece they're proud of than a 2-minute piece that runs out of steam.
 - **Students who are stuck or panicking:** sit. Listen. Ask what's hard. Sometimes the unblock is small ("I don't know how to fade out the end") and sometimes it's bigger ("I hate everything I made"). Either way, the response is calm presence and small concrete next steps.
 
 About 30 minutes before the end of class, give a verbal time check: "30 minutes left. If you haven't started exporting yet, start now."
@@ -887,21 +887,21 @@ About 10 minutes before the end: "10 minutes. Final export, name check, upload t
 
 About 2 minutes before: "Make sure your file is in both folders before you leave. If you're stuck on upload, flag me now."
 
-#### Block 3 — Confirm uploads + bridge to Module 3 (15 min)
+#### Block 3: Confirm uploads + bridge to Module 3 (15 min)
 
-Walk the room while students are wrapping up. Verify visually that files are landing in the class folder — refresh the folder on the instructor machine and watch files appear.
+Walk the room while students are wrapping up. Verify visually that files are landing in the class folder; refresh the folder on the instructor machine and watch files appear.
 
 Quick close to the room:
 
-"You did something hard. You took a constraint and a folder of sounds and made a piece. The first piece is the hardest. Listen to each other's work this week — Monday we'll talk briefly about what you heard, and your peer-listening response is due then.
+"You did something hard. You took a constraint and a folder of sounds and made a piece. The first piece is the hardest. Listen to each other's work this week. Monday we'll talk briefly about what you heard, and your peer-listening response is due then.
 
 Module 3 starts Monday. We move from manipulating someone else's sounds to recording your own. Bring curiosity."
 
 ### Common situations
 
-**A student's piece isn't done.** Their submission is what's in the class folder at end of class. If they upload a 60-second draft, that's their submission. The late policy in the syllabus applies if they upload after class ends. Don't allow informal extensions during class — be consistent. Real extensions go through the instructor in advance.
+**A student's piece isn't done.** Their submission is what's in the class folder at end of class. If they upload a 60-second draft, that's their submission. The late policy in the syllabus applies if they upload after class ends. Don't allow informal extensions during class; be consistent. Real extensions go through the instructor in advance.
 
-**A student didn't upload to the class folder, only their working folder.** Catch this before they leave. The class folder is part of the submission — the rubric explicitly mentions both folders. Walk them through the copy.
+**A student didn't upload to the class folder, only their working folder.** Catch this before they leave. The class folder is part of the submission; the rubric explicitly mentions both folders. Walk them through the copy.
 
 **A student is absent.** Their submission is whatever's in the class folder by end of class. If nothing's there by end of class, the late policy in the syllabus applies. Note absences for instructor follow-up.
 
@@ -911,14 +911,14 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 ### Grading
 
-Use the rubric in [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class — listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
+Use the rubric in [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class: listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
 
 Late submissions are handled per the syllabus's late policy. Pieces not in the class listening folder by end of class on Wed Wk 5 are late.
 
 ### After class
 
 - Confirm every student has a file in the class listening folder. Note the missing ones.
-- For students whose files are only in their private working folder, message them — they need to add to the class folder for the submission to be complete (or you can copy on their behalf, instructor's call).
+- For students whose files are only in their private working folder, message them; they need to add to the class folder for the submission to be complete (or you can copy on their behalf, instructor's call).
 - Begin grading. Plan to return scores within a week.
 - The class listening folder is now populated. Listening happens between today and Mon Wk 6, when the peer-listening response is due.
 
@@ -932,7 +932,7 @@ Students at the end of Module 2 should be able to:
 
 1. Explain digital audio fundamentals at a conversational level (sample rate, bit depth, file formats)
 2. Describe a sound's envelope and use the vocabulary fluently
-3. Navigate Audacity confidently — open, transport, select, edit, export
+3. Navigate Audacity confidently: open, transport, select, edit, export
 4. Apply core editing techniques (cuts, fades, splicing, reverse, time-stretch, pitch-shift)
 5. Make basic mixing decisions (levels, EQ, stereo placement, dynamics)
 6. Produce a 2-minute piece from sourced material that demonstrates the above
@@ -952,12 +952,12 @@ If many students show the same pattern, it points back to the module rather than
 
 Module 02 readings make several "we'll come back to this" promises. Track them so they don't go stale:
 
-- **Mon Wk 2 reading, section 5 (SNR / dynamic range):** "That principle (record with headroom, commit later) is one of the most important practices in audio. We'll return to it in Module 3." — Module 3 covers recording, so the mic-gain / input-level discussion is the place to deliver this. Make sure recording-with-margin shows up explicitly in the Module 3 recording session.
-- **Mon Wk 2 reading, section 7 (warning callout):** points students forward to "the tape-physics situation we'll see in Week 3." — delivered by Mon Wk 3 reading's time-pitch coupling section. (Already in place.)
-- **Mon Wk 3 reading (synthesis vocab note + Reverse vocab):** "Module 4 will introduce ADSR when we get into synthesis with Ableton." — Module 4 spec needs to introduce ADSR explicitly when synthesis comes online.
-- **Mon Wk 3 reading (Loop entry):** "Looping is far more central in DAWs built around it; we'll come back to it in Module 4 with Ableton." — Module 4 needs to handle looping as a first-class concept once we move into Ableton.
-- **Mon Wk 5 reading, section 2 (Normalizing — "Why and when to normalize"):** "You'll do this in Module 3 when you build your midterm sample library." — Module 3's sample-prep session needs to teach peak normalization to -1 dB as the standardization step, using the language from the Mon Wk 5 reading (one number applied uniformly; scale not shape).
-- **Mon Wk 5 reading, section 2 (LUFS sibling concept):** "LUFS becomes important when you're finishing a full piece for delivery, which you'll meet later in your studies." — This is the one knowingly-vague pointer in Module 02. The course as currently designed doesn't return to LUFS. If Module 4's final-mix workflow ends up touching streaming-delivery considerations, this is the place to honor the pointer; otherwise the framing in the reading is honest enough that it can stand on its own as a "for awareness" mention.
+- **Mon Wk 2 reading, section 5 (SNR / dynamic range):** "That principle (record with headroom, commit later) is one of the most important practices in audio. We'll return to it in Module 3." Module 3 covers recording, so the mic-gain / input-level discussion is the place to deliver this. Make sure recording-with-margin shows up explicitly in the Module 3 recording session.
+- **Mon Wk 2 reading, section 7 (warning callout):** points students forward to "the tape-physics situation we'll see in Week 3." Delivered by Mon Wk 3 reading's time-pitch coupling section. (Already in place.)
+- **Mon Wk 3 reading (synthesis vocab note + Reverse vocab):** "Module 4 will introduce ADSR when we get into synthesis with Ableton." Module 4 spec needs to introduce ADSR explicitly when synthesis comes online.
+- **Mon Wk 3 reading (Loop entry):** "Looping is far more central in DAWs built around it; we'll come back to it in Module 4 with Ableton." Module 4 needs to handle looping as a first-class concept once we move into Ableton.
+- **Mon Wk 5 reading, section 2 (Normalizing, "Why and when to normalize"):** "You'll do this in Module 3 when you build your midterm sample library." Module 3's sample-prep session needs to teach peak normalization to -1 dB as the standardization step, using the language from the Mon Wk 5 reading (one number applied uniformly; scale not shape).
+- **Mon Wk 5 reading, section 2 (LUFS sibling concept):** "LUFS becomes important when you're finishing a full piece for delivery, which you'll meet later in your studies." This is the one knowingly-vague pointer in Module 02. The course as currently designed doesn't return to LUFS. If Module 4's final-mix workflow ends up touching streaming-delivery considerations, this is the place to honor the pointer; otherwise the framing in the reading is honest enough that it can stand on its own as a "for awareness" mention.
 
 When drafting Module 3 and Module 4 specs, scan this list and make sure each promise is covered. If a promise stops being relevant, edit the original reading rather than leave a dangling pointer.
 
@@ -967,7 +967,7 @@ After Module 2 ends, write a short retrospective (1 page, in this file or a sepa
 - What went well
 - What didn't
 - What you'd change for next year
-- Pacing notes — where time was tight, where time was loose
+- Pacing notes: where time was tight, where time was loose
 - Student questions that surprised you
 
 This becomes the basis for revising the module README for the next time the course runs.
