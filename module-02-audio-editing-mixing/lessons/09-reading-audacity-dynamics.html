@@ -159,7 +159,7 @@
 
 <figure>
   <img src="../../assets/images/module-02-week-05/audacity-compressor.png" alt="Audacity 3.6 Compressor effect window with the compression curve graph at the top and parameter sliders below.">
-  <figcaption>Audacity 3.6 Compressor.</figcaption>
+  <figcaption>Audacity 3.6 Compressor. The values shown are just example settings; the layout and control names are what matters here.</figcaption>
 </figure>
 
 <p>The window has three regions. The big graph at the top is the <strong>compression curve</strong>, which is the same thing as the transfer curve in the teaching tool: it shows input level along one axis and output level along the other, and it bends below threshold to show how the compressor will reshape the signal. The sliders in the middle (<span class="ctrl">Threshold</span>, <span class="ctrl">Make-up gain</span>, <span class="ctrl">Knee width</span>, <span class="ctrl">Ratio</span>) determine the shape of that curve. The sliders at the bottom (<span class="ctrl">Lookahead</span>, <span class="ctrl">Attack</span>, <span class="ctrl">Release</span>) determine the <em>timing</em> of how the compressor reaches and releases that shape. Audacity calls these timing controls the <strong>smoothing</strong> parameters.</p>
@@ -235,7 +235,7 @@
 
 <figure>
   <img src="../../assets/images/module-02-week-05/audacity-limiter.png" alt="Audacity 3.6 Limiter effect window, with a compression curve graph and parameter sliders.">
-  <figcaption>Audacity 3.6 Limiter.</figcaption>
+  <figcaption>Audacity 3.6 Limiter. Notice how similar this is to the Compressor; the differences are Ratio and Attack, which are absent.</figcaption>
 </figure>
 
 <p>The window looks almost identical to the Compressor. Audacity is being honest about a real relationship: the limiter <em>is</em> a compressor, just one with a few specific design choices baked in. Specifically, the limiter has no <span class="ctrl">Ratio</span> control (it's effectively infinity; nothing crosses the ceiling), and no <span class="ctrl">Attack</span> control (limiters use <span class="ctrl">Lookahead</span> to anticipate peaks instead). Every other control means the same thing it did in the compressor.</p>
