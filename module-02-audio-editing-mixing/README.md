@@ -53,7 +53,7 @@ By the end of this module, students should be able to:
 
 A 2-minute piece built entirely from source sounds provided on the NAS, demonstrating editing and mixing skills learned in the module.
 
-Full project prompt and rubric: [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html)
+Full project prompt and rubric: [`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html)
 
 **Timeline:**
 - Wk 3 Wed: students begin building
@@ -66,7 +66,7 @@ Full project prompt and rubric: [`projects/project-01-musique-concrete.html`](./
 
 **Module 2 listening:** musique concrète and sound-collage tradition. Pierre Schaeffer (*Étude aux chemins de fer*), Pierre Henry (*Variations pour une porte et un soupir*), and one contemporary example.
 
-Full listening assignment with guided questions: [`listening/historical.html`](./listening/historical.html)
+Full listening assignment with guided questions: [`listening/historical.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/listening/historical.html)
 
 **Due:** Mon Wk 5, before class.
 
@@ -166,10 +166,10 @@ Students leave with conceptual fluency on what digital audio actually is: sample
 
 ### Pre-class checklist
 
-- The reading for today, [`lessons/01-reading-digital-audio.html`](./lessons/01-reading-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
+- The reading for today, [`lessons/01-reading-digital-audio.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/01-reading-digital-audio.html), is the spine of the lecture. **Read it before class.** If you've internalized it, you can teach it conversationally; if not, you'll end up reading slides.
 - Pull up the reading on the projector before students arrive. Have the audio comparison blocks ready to play (sample rate, bit depth, anti-alias filter on/off).
 - Make sure speakers in MB2525 are working and at a reasonable volume. The audio examples need to be heard clearly by the room; earbuds won't do.
-- The listening assignment ([`listening/historical.html`](./listening/historical.html)) is due Mon Wk 5. You'll introduce it at the end of class. Have it pulled up.
+- The listening assignment ([`listening/historical.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/listening/historical.html)) is due Mon Wk 5. You'll introduce it at the end of class. Have it pulled up.
 
 ### What students walk in knowing
 
@@ -222,7 +222,7 @@ Key beats:
 
 #### Block 4: Listening assignment + close (15 min)
 
-Pull up the listening assignment ([`listening/historical.html`](./listening/historical.html)) on the projector. Walk through it briefly:
+Pull up the listening assignment ([`listening/historical.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/listening/historical.html)) on the projector. Walk through it briefly:
 
 - Three pieces: Schaeffer (1948), Henry (1963), and one contemporary piece they choose
 - Read the "Before you listen" history section *with them*: at least the first paragraph, to establish that these were tape compositions, not digital
@@ -269,8 +269,8 @@ Two halves:
 
 ### Materials
 
-- **Lab Part 1:** [`lessons/02-tool-digital-audio-explorer.html`](./lessons/02-tool-digital-audio-explorer.html)
-- **Lab Part 2:** [`lessons/03-handout-audacity-orientation.html`](./lessons/03-handout-audacity-orientation.html)
+- **Lab Part 1:** [`lessons/02-tool-digital-audio-explorer.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/02-tool-digital-audio-explorer.html)
+- **Lab Part 2:** [`lessons/03-handout-audacity-orientation.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/03-handout-audacity-orientation.html)
 
 ### Pre-class checklist
 
@@ -378,7 +378,7 @@ The seven screenshots in `assets/images/module-02-week-02/` are now captured (In
 
 Students leave with the conceptual vocabulary for *editing* (cuts, fades, time placement, looping, reversing, time-stretch, pitch-shift) and for *envelope* (attack, sustain, release). The envelope vocabulary in particular will be load-bearing for the rest of the course; Module 4's synthesis section depends on it.
 
-The reading for today is [`lessons/04-reading-editing-envelope.html`](./lessons/04-reading-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
+The reading for today is [`lessons/04-reading-editing-envelope.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/04-reading-editing-envelope.html). It includes 12 audio demos: three contrasting envelope shapes (sharp, sustained, evolving); one source transformed by four edits (truncate, reverse, fade-in); a hard-cut vs. crossfade comparison demonstrating click pops at edit boundaries; and a voice recording at three speeds (source, slow, fast) demonstrating the tape-style time-pitch coupling. Read it before class. The audio demos are central to how the concepts land, so listen on headphones if you've never gone through them.
 
 ### Pre-class checklist
 
@@ -490,8 +490,8 @@ Two halves:
 
 ### Materials
 
-- **Lab handout:** [`lessons/05-handout-editing-techniques.html`](./lessons/05-handout-editing-techniques.html): covers the full session including setup, all ten techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
-- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html): open on the projector during the Project-1-begins block.
+- **Lab handout:** [`lessons/05-handout-editing-techniques.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/05-handout-editing-techniques.html): covers the full session including setup, all ten techniques with menu paths and exercises, the Project 1 starter, and the end-of-session NAS routine. The handout is the script; this TA-notes block is for pacing, common confusions, and judgment calls.
+- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html): open on the projector during the Project-1-begins block.
 - **Sample bank** at NAS `shared/sample-banks/project1/`: must be ready by class start. See [`projects/project-01-sample-bank-notes.md`](./projects/project-01-sample-bank-notes.md).
 
 ### Pre-class checklist
@@ -616,8 +616,8 @@ The session is deliberately compact on the new content because students need wor
 
 ### Materials
 
-- **Lab handout:** [`lessons/06-handout-mixing-in-audacity.html`](./lessons/06-handout-mixing-in-audacity.html): covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
-- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html): open on the projector during Block 4.
+- **Lab handout:** [`lessons/06-handout-mixing-in-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/06-handout-mixing-in-audacity.html): covers the full session including setup, the three mixing tools with hands-on exercises, the destructive vs. non-destructive comparison table, the Module 4 Ableton forecast, the Project 1 work block, and the end-of-session NAS routine.
+- **Project 1 prompt:** [`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html): open on the projector during Block 4.
 - **Students' own Project 1 files** from last week's work, plus their scratch files from Wed Wk 3.
 
 ### Pre-class checklist
@@ -733,9 +733,9 @@ Students learn what dynamics processing is (compression, limiting), why and when
 
 ### Materials
 
-- **Reading:** [`lessons/07-reading-dynamics.html`](./lessons/07-reading-dynamics.html): assigned before class. Covers dynamic range, threshold/ratio, attack/release, limiting and the loudness wars, vocabulary for listening. Has audio demos throughout. **You should read it the day before** so today's lecture lands as discussion and demonstration, not first encounter.
-- **Tool:** [`lessons/08-tool-mixing-dynamics.html`](./lessons/08-tool-mixing-dynamics.html): compressor with threshold/ratio/attack/release sliders, transfer-curve visualization, waveform + gain-reduction trace, bypass A/B, makeup gain, bring-your-own-WAV (or use built-in demo).
-- **Supplementary reading:** [`lessons/09-reading-audacity-dynamics.html`](./lessons/09-reading-audacity-dynamics.html). Walks through Audacity 3.6's Compressor and Limiter UIs with screenshots, maps each control to the equivalent in the teaching tool, and gives concrete starting-point recipes for the kinds of compression and limiting students will do for Project 1. Assigned for the gap between Mon Wk 5 and Wed Wk 5: students should read it after class and have it open during Wednesday's final work session.
+- **Reading:** [`lessons/07-reading-dynamics.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/07-reading-dynamics.html): assigned before class. Covers dynamic range, threshold/ratio, attack/release, limiting and the loudness wars, vocabulary for listening. Has audio demos throughout. **You should read it the day before** so today's lecture lands as discussion and demonstration, not first encounter.
+- **Tool:** [`lessons/08-tool-mixing-dynamics.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/08-tool-mixing-dynamics.html): compressor with threshold/ratio/attack/release sliders, transfer-curve visualization, waveform + gain-reduction trace, bypass A/B, makeup gain, bring-your-own-WAV (or use built-in demo).
+- **Supplementary reading:** [`lessons/09-reading-audacity-dynamics.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/09-reading-audacity-dynamics.html). Walks through Audacity 3.6's Compressor and Limiter UIs with screenshots, maps each control to the equivalent in the teaching tool, and gives concrete starting-point recipes for the kinds of compression and limiting students will do for Project 1. Assigned for the gap between Mon Wk 5 and Wed Wk 5: students should read it after class and have it open during Wednesday's final work session.
 
 ### Pre-class checklist
 
@@ -854,7 +854,7 @@ Every student finishes Project 1 and uploads to both NAS folders by end of class
 - **Verify the class listening folder exists and is writable by students.** Path: `/music/shared/mus-381-fall-2026/project-01-pieces/`. Permissions: students can write (drop their final WAV in), but cannot delete or modify others' files. Test this before class: drop a placeholder file in, then have one student try to add one and try to modify someone else's. If permissions aren't right, escalate to IT before students start uploading.
 - **Spot-check working folders** for 5-6 students. They should have at least a `lastname-project01-vN.aup3` project file by now, and ideally an in-progress export. If a student's working folder is empty or has only one early version, flag them to check in with first thing.
 - Walk the room (gear baseline).
-- Have the project prompt ([`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
+- Have the project prompt ([`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
 
 ### Block-by-block
 
@@ -911,7 +911,7 @@ Module 3 starts Monday. We move from manipulating someone else's sounds to recor
 
 ### Grading
 
-Use the rubric in [`projects/project-01-musique-concrete.html`](./projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class: listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
+Use the rubric in [`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html). Five dimensions, 20 points each. Grade after class: listen to each piece on good headphones in a quiet space, not in the chaos of submission day.
 
 Late submissions are handled per the syllabus's late policy. Pieces not in the class listening folder by end of class on Wed Wk 5 are late.
 

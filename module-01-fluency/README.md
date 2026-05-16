@@ -54,8 +54,8 @@ None for Week 1. Module 1 is a setup module. The first listening assignment land
 
 ## Student-facing materials
 
-- [`lessons/01-handout-first-day-setup.html`](./lessons/01-handout-first-day-setup.html) — distributed locally on each lab machine and via Canvas
-- [`lessons/02-handout-session-routines.html`](./lessons/02-handout-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
+- [`lessons/01-handout-first-day-setup.html`](https://csuebmusic.github.io/music-technology-essentials/module-01-fluency/lessons/01-handout-first-day-setup.html) — distributed locally on each lab machine and via Canvas
+- [`lessons/02-handout-session-routines.html`](https://csuebmusic.github.io/music-technology-essentials/module-01-fluency/lessons/02-handout-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
 
 ---
 
