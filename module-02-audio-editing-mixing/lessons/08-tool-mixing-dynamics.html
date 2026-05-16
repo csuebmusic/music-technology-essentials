@@ -239,11 +239,15 @@
     /* Gain-reduction meter: same gradient idea but fills from the right.
        --level represents how much GR is happening, mapped 0..1. */
     .meter-fill.gr {
+      /* Yellow-to-orange gradient, growing toward rust at heavy gain
+         reduction. Distinguishes the GR meter from the level meters
+         (which use green/yellow/red) and reads naturally as "compression
+         work happening" rather than "danger / clipping." */
       background: linear-gradient(
         to left,
-        #5b9c5b 0%,
-        #5b9c5b 50%,
-        #c5a04a 80%,
+        #d9b042 0%,
+        #d9b042 40%,
+        #c5853a 70%,
         #b5552f 100%
       );
       clip-path: inset(0 0 0 calc((1 - var(--level, 0)) * 100%));
