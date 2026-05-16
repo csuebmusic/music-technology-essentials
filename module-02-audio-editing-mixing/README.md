@@ -174,7 +174,8 @@ Students leave with conceptual fluency on what digital audio actually is: sample
 ### What students walk in knowing
 
 From Module 1 (Wk 1 Wed, six days ago):
-- They've recorded a short audio file with a microphone and saved it
+- They've recorded a short audio file with a microphone in QuickTime and saved it locally
+- They've done a light first pass at gain staging (Module 1 calls the move out by name and promises a deeper return in Module 3)
 - They know `~/Documents/lastname/` and the NAS workflow
 - They know the basic gear in the room (interface, mic, headphones)
 
@@ -183,6 +184,7 @@ What they do **not** know:
 - Vocabulary like sample rate, bit depth, Nyquist, aliasing
 - File formats (most know "MP3" exists; few have heard of WAV)
 - Anything about musique concrète or Schaeffer/Henry
+- Audacity (they used QuickTime in Module 1; Wed Wk 2 is their first DAW)
 
 Treat this as zero-prior-knowledge. The reading does the heavy lifting; your job in class is to walk through it with them, play the audio examples loudly, and stop for questions.
 
@@ -760,7 +762,7 @@ Don't grade in the moment — just listen, ask follow-ups, let students hear eac
 
 The reading covers the conceptual ground; today's lecture is for landing the ideas in students' ears. Walk through the five section demos in the reading on the projector, in order:
 
-1. **Dynamic range (wide vs. narrow)** — play both clips back-to-back. Ask the room: "Which one is louder? Which one is *better*?" Most students will say the narrow one is louder; a few will notice the slaps have lost their punch. That's the lesson. Pull up the inline waveform diagram in the reading after they answer — both panels touching the same dashed ceiling line is the visual proof.
+1. **Dynamic range (wide vs. narrow)** — play both clips back-to-back. Ask the room: "Which one is louder? Which one is *better*?" Most students will say the narrow one is louder; a few will notice the slaps have lost their punch. That's the lesson. Pull up the inline waveform diagram in the reading after they answer — both panels touching the same dashed ceiling line is the visual proof. **Then land the "two knobs, not one" beat explicitly:** the narrow version isn't just compressed, it's compressed *and* boosted back up to the ceiling with makeup gain. Compression by itself makes a file quieter (the loud parts got smaller, the quiet parts didn't change); the loudness comes from the second step. This matters because some uses of compression skip makeup gain entirely (just taming peaks), and some lean on it (the loudness-wars effect). The reading covers this in the Section 1 callout but students don't always catch it on the page. Make sure it lands in the room.
 2. **Normalization (quiet vs. normalized)** — play both clips back-to-back. Ask: "Which one is louder?" (Normalized.) "Did anything else change?" (The shape didn't.) The pedagogical move here is to *explicitly contrast with the previous demo*: in wide/narrow, the peak levels matched and the shape was different; in quiet/normalized, the peak levels are different and the shape is identical. Normalization = scale only. Compression = shape change. This is the most important conceptual distinction in the whole lecture; don't rush it.
 3. **Threshold + ratio** — play the source, then the three compression settings. Ask which hits get touched at the *light* setting vs. *heavy*. This is the moment to show the transfer-curve diagram in the reading (Section 3) on the projector and walk through how the curve bends.
 4. **Attack and release** — play the source loop, then fast-attack, then slow-attack. The transient difference is audible if you listen for it. This is the place to introduce *transient* as a piece of vocabulary if it hasn't come up yet: the brief sharp peak at the start of a sound (a drum hit, a pluck, the consonant of a spoken word).
@@ -944,6 +946,7 @@ If many students show the same pattern, it points back to the module rather than
 - **Pieces clip or are wildly uneven in level** → mixing levels (Wed Wk 4) didn't land. Reinforce in Module 3 recording sessions.
 - **Pieces have audible click pops at edit boundaries** → fade habit (Wed Wk 3) didn't stick. Make fades part of every Module 3 demo.
 - **Students can't describe their own pieces** → vocabulary (envelope, edit techniques) didn't transfer. Add description exercises to Module 3 listening.
+- **Pieces sound crushed, flat, or fatiguing across the cohort** → dynamics processing (Mon Wk 5) didn't land. The "compress with a reason" and "listen with it off first" habits are the corrective. Reinforce in Module 4 Ableton mixing, where the same tools become non-destructive and the temptation to over-process is higher.
 
 ### Forward promises to deliver in later modules
 
@@ -953,6 +956,8 @@ Module 02 readings make several "we'll come back to this" promises. Track them s
 - **Mon Wk 2 reading, section 7 (warning callout):** points students forward to "the tape-physics situation we'll see in Week 3." — delivered by Mon Wk 3 reading's time-pitch coupling section. (Already in place.)
 - **Mon Wk 3 reading (synthesis vocab note + Reverse vocab):** "Module 4 will introduce ADSR when we get into synthesis with Ableton." — Module 4 spec needs to introduce ADSR explicitly when synthesis comes online.
 - **Mon Wk 3 reading (Loop entry):** "Looping is far more central in DAWs built around it; we'll come back to it in Module 4 with Ableton." — Module 4 needs to handle looping as a first-class concept once we move into Ableton.
+- **Mon Wk 5 reading, section 2 (Normalizing — "Why and when to normalize"):** "You'll do this in Module 3 when you build your midterm sample library." — Module 3's sample-prep session needs to teach peak normalization to -1 dB as the standardization step, using the language from the Mon Wk 5 reading (one number applied uniformly; scale not shape).
+- **Mon Wk 5 reading, section 2 (LUFS sibling concept):** "LUFS becomes important when you're finishing a full piece for delivery, which you'll meet later in your studies." — This is the one knowingly-vague pointer in Module 02. The course as currently designed doesn't return to LUFS. If Module 4's final-mix workflow ends up touching streaming-delivery considerations, this is the place to honor the pointer; otherwise the framing in the reading is honest enough that it can stand on its own as a "for awareness" mention.
 
 When drafting Module 3 and Module 4 specs, scan this list and make sure each promise is covered. If a promise stops being relevant, edit the original reading rather than leave a dangling pointer.
 
