@@ -150,7 +150,7 @@
     /* Visualizations: two stacked panels */
     .viz {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1.25rem;
       margin-top: 0;
     }
@@ -170,13 +170,17 @@
     }
     .viz-canvas {
       width: 100%;
-      height: 180px;
+      height: 260px;
       display: block;
     }
-    @media (max-width: 720px) {
-      .viz {
-        grid-template-columns: 1fr;
-      }
+    /* Transfer curve plot is naturally square (input dB on x, output dB on y).
+       Keep it from stretching to absurd width on wide screens by capping it
+       and centering it in its panel. The waveform stays full-width since
+       waveforms ARE naturally wide. */
+    #transfer-canvas {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Status / metering line */
@@ -813,12 +817,36 @@
     redrawAll();
   }
 
-  function loadDefaultSound() {
+  async function loadDefaultSound() {
     ensureAudioContext();
-    const sr = audioCtx.sampleRate;
 
-    // Synthesized 4-second percussion loop with varied dynamics.
-    // We build this in-browser so the tool works without external assets.
+    // The demo source is the same conga/shaker/clave loop used by the
+    // dynamics reading (Sections 1 and 2). Loading from disk rather than
+    // synthesizing in-browser means students hear the same material here
+    // that they heard in the reading, which makes the bridge from
+    // 'listening' to 'doing' tighter.
+    els.status.textContent = 'Loading demo…';
+    els.status.classList.remove('error');
+
+    try {
+      const response = await fetch('../../assets/audio/source/dynamic-loop.wav');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const arrayBuffer = await response.arrayBuffer();
+      const buffer = await new Promise((resolve, reject) => {
+        audioCtx.decodeAudioData(arrayBuffer, resolve, reject);
+      });
+      setSourceBuffer(buffer, 'Demo (conga, shaker, clave)');
+      return;
+    } catch (err) {
+      // Fetch failed (most likely because the page was opened via file://
+      // rather than served over HTTP). Fall back to the synthesized loop
+      // below so the tool still works for someone opening the page
+      // directly from disk.
+      console.warn('Could not load demo file, falling back to synthesis:', err);
+    }
+
+    // Fallback: synthesize a 4-second percussion loop in-browser.
+    const sr = audioCtx.sampleRate;
     const duration = 4.0;
     const n = Math.floor(duration * sr);
     const buf = audioCtx.createBuffer(1, n, sr);
@@ -872,7 +900,7 @@
       for (let i = 0; i < n; i++) out[i] *= scale;
     }
 
-    setSourceBuffer(buf, 'Demo (percussion loop)');
+    setSourceBuffer(buf, 'Demo (percussion loop, synthesized fallback)');
   }
 
   async function loadFileSound(file) {
