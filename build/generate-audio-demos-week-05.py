@@ -595,6 +595,30 @@ def gen_limiter():
     write_wav_no_normalize(os.path.join(OUT_DIR, "limit-crushed.wav"), crushed_out)
 
 
+def gen_tool_demo():
+    """dynamic-tool-demo.wav: the demo sound played by the interactive
+    mixing-dynamics tool (lessons/08-tool-mixing-dynamics.html).
+
+    Same conga/shaker/clave loop as the reading's Section 1 dynamic-range
+    demo, normalized to peak -3 dBFS. The tool embeds this file as base64
+    inside the HTML so it works when opened from file://. Re-running this
+    generator updates the WAV on disk, but the embedded base64 in the HTML
+    is what the tool actually plays. Re-embed by running the embed step
+    documented in build/README.md (or just by hand: read the WAV, base64-
+    encode it, paste into the placeholder in the tool's <script> block).
+    """
+    src = load_source_wav(SOURCE_LOOP)  # shape (n, 2)
+
+    # Normalize to peak -3 dB. The tool's transfer curve maxes out at 0 dB
+    # input; the -3 dB peak leaves headroom for makeup gain inside the tool
+    # without immediately clipping.
+    peak = float(np.max(np.abs(src)))
+    if peak > 0:
+        src = src / peak * db_to_lin(-3)
+
+    write_wav_no_normalize(os.path.join(OUT_DIR, "dynamic-tool-demo.wav"), src)
+
+
 def gen_normalization():
     """norm-quiet.wav and norm-loud.wav for Section 2.
 
@@ -1008,6 +1032,8 @@ if __name__ == "__main__":
     gen_attack_release()
     print()
     gen_limiter()
+    print()
+    gen_tool_demo()
     print()
     gen_wide_vs_narrow_diagram()
     gen_normalization_diagram()
