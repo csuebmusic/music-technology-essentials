@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Compression &amp; Limiting in Audacity</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Reading-specific styles (mirrors 07-reading-dynamics.html for visual consistency) */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+    }
+    figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.75rem;
+    }
+
+    /* Inline term highlight for first-time vocabulary */
+    .term {
+      font-weight: 500;
+    }
+
+    /* Control-name styling: when we refer to a specific Audacity UI label */
+    .ctrl {
+      font-family: var(--mono);
+      font-size: 0.92em;
+      background: var(--bg-alt);
+      padding: 0.05em 0.4em;
+      border-radius: 2px;
+      color: var(--ink);
+    }
+
+    /* Menu path styling: Effect > Volume and Compression > Compressor */
+    .menu {
+      font-family: var(--mono);
+      font-size: 0.9em;
+      color: var(--ink);
+    }
+
+    /* Recipe / starting-point box for concrete suggested settings */
+    .recipe {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 3px 3px 0;
+    }
+    .recipe-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .recipe table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5rem 0;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+    }
+    .recipe td {
+      padding: 0.35rem 0.75rem 0.35rem 0;
+      vertical-align: top;
+    }
+    .recipe td:first-child {
+      color: var(--ink-soft);
+      width: 40%;
+      white-space: nowrap;
+    }
+    .recipe td:last-child {
+      color: var(--ink);
+    }
+    .recipe p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Callout (matches 07-reading-dynamics) */
+    .callout {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 3px 3px 0;
+    }
+    .callout-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Closing summary */
+    .summary-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0 0;
+    }
+    .summary-box h3 {
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .summary-box ul {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 02 · Lecture 3 (supplement)</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 02 · Digital audio, editing &amp; mixing</div>
+  <h1>Compression &amp; limiting in Audacity</h1>
+  <div class="subtitle">From the tool's sliders to the menus you'll actually use.</div>
+</div>
+
+<p class="lede">You've worked with a teaching tool that lets you move a compressor's parameters and hear what happens. This reading walks through the same parameters in Audacity itself: where the menus are, what each control is called, what's different from the tool, and what settings to start from when you're compressing or limiting sounds for Project 1. Compression and limiting are the last two effects you'll apply before exporting your final piece. Read this once now, and once again with Audacity open before Wednesday's work session.</p>
+
+<hr>
+
+<h2>The two effects, and where to find them</h2>
+
+<p>Audacity 3.6 groups its dynamics processors under <span class="menu">Effect &rarr; Volume and Compression</span>. Two of the items in that submenu matter for this module: <strong>Compressor</strong> and <strong>Limiter</strong>. Both effects share the same processing engine internally, which is why their interfaces look almost identical. Once you know one, you mostly know the other.</p>
+
+<p>You'll also see <strong>Legacy Compressor</strong> and <strong>Legacy Limiter</strong> further down the same submenu. These are the older versions that shipped with Audacity 3.5 and earlier. They still work, but the controls are laid out differently and most of the documentation online assumes the new versions. Stick with the non-legacy Compressor and Limiter for this course.</p>
+
+<hr>
+
+<h2>1 &middot; The Compressor</h2>
+
+<p>Open a track that has some range to it (a recorded vocal line, a varied percussion loop, anything where the loud parts and quiet parts are noticeably different) and go to <span class="menu">Effect &rarr; Volume and Compression &rarr; Compressor</span>. You'll see a window like this:</p>
+
+<figure>
+  <img src="../../assets/images/module-02-week-05/audacity-compressor.png" alt="Audacity 3.6 Compressor effect window with the compression curve graph at the top and parameter sliders below.">
+  <figcaption>Audacity 3.6 Compressor.</figcaption>
+</figure>
+
+<p>The window has three regions. The big graph at the top is the <strong>compression curve</strong>, which is the same thing as the transfer curve in the teaching tool: it shows input level along one axis and output level along the other, and it bends below threshold to show how the compressor will reshape the signal. The sliders in the middle (<span class="ctrl">Threshold</span>, <span class="ctrl">Make-up gain</span>, <span class="ctrl">Knee width</span>, <span class="ctrl">Ratio</span>) determine the shape of that curve. The sliders at the bottom (<span class="ctrl">Lookahead</span>, <span class="ctrl">Attack</span>, <span class="ctrl">Release</span>) determine the <em>timing</em> of how the compressor reaches and releases that shape. Audacity calls these timing controls the <strong>smoothing</strong> parameters.</p>
+
+<h3>The controls</h3>
+
+<p><span class="ctrl">Threshold</span> is the level above which the compressor starts to engage. Identical to the tool. Set in dB, with 0 dB being the digital ceiling and lower numbers being quieter.</p>
+
+<p><span class="ctrl">Ratio</span> is how aggressively the compressor reduces signal above the threshold. Same as the tool. A 4:1 ratio means that for every 4 dB the input goes above threshold, the output rises by only 1 dB.</p>
+
+<p><span class="ctrl">Make-up gain</span> is the boost applied to the whole signal after compression. The tool calls this the same thing. It exists because compression reduces the loud parts and therefore makes the file quieter overall; make-up gain restores the level. Use it when you want the compressed result to feel as loud as (or louder than) the source. Skip it (set it to 0) when you just want to tame peaks without making the overall result louder.</p>
+
+<p><span class="ctrl">Knee width</span> is the one new control in this section that didn't appear in the teaching tool. It controls how <em>abruptly</em> the compressor engages right at the threshold. At a knee width of 0 dB (a "hard knee"), the compressor is doing nothing one dB below threshold and is fully engaged at the ratio one dB above; the transition is a sharp corner. At a wider knee (say, 6 or 12 dB), the compressor starts gradually engaging a few dB <em>before</em> threshold and reaches the full ratio a few dB <em>after</em>, smoothing the corner into a rounded transition. A wider knee sounds gentler and is harder to hear engaging. A narrower knee is more obvious and assertive. For most musical work, a knee width between 3 and 6 dB sounds natural. For aggressive limiting-style compression on transients, 0 (hard knee) is the right choice.</p>
+
+<p><span class="ctrl">Attack</span> is how fast the compressor engages once the signal crosses the threshold. Same as the tool. Short attack catches transients (kick hits, snare cracks, consonants) and rounds them off; longer attack lets transients pass through and only compresses the body of each hit.</p>
+
+<p><span class="ctrl">Release</span> is how fast the compressor lets go after the signal drops below the threshold. Same as the tool. Short release recovers between events and can produce audible "pumping" on rhythmic material. Long release holds gain reduction across multiple events for a smoother overall feel.</p>
+
+<p><span class="ctrl">Lookahead</span> is the other control that's new compared to the tool. It tells the compressor to peek ahead in the signal by some milliseconds, so it can start engaging <em>before</em> a loud peak actually arrives, rather than reacting to the peak after the fact. In practice, lookahead does some of the same work as attack: it lets the compressor catch a transient cleanly without smashing it. The difference is that attack causes a small "overshoot" (the peak briefly passes through before the compressor catches up), while lookahead anticipates the peak and prevents the overshoot at the cost of adding a small amount of latency. Audacity compensates for this latency automatically, so you don't have to think about it. A lookahead of 1 to 5 ms is a sensible starting point for catching transients; longer values are for special creative effects.</p>
+
+<h3>What the compression curve graph shows</h3>
+
+<p>The graph updates live as you move <span class="ctrl">Threshold</span>, <span class="ctrl">Ratio</span>, <span class="ctrl">Make-up gain</span>, and <span class="ctrl">Knee width</span>. It doesn't show <span class="ctrl">Attack</span>, <span class="ctrl">Release</span>, or <span class="ctrl">Lookahead</span>, because those are time-varying and a static graph can't show them. The curve is essentially the same picture as the transfer curve in our teaching tool, only rotated so input runs along the <em>top</em> axis rather than the bottom and output runs along the <em>right</em> axis rather than the left.</p>
+
+<h3>Realtime use, and the live graph</h3>
+
+<p>Audacity lets you apply the compressor in two ways. The first is the traditional way: open the effect, set the parameters, click <span class="ctrl">Apply</span>, and the change is rendered to the audio. The second is <strong>realtime use</strong>, where the compressor is loaded onto a track's effects stack and processes the signal during playback without rendering anything. In realtime use, the graph at the top of the window grows extra elements: a live trace showing the current input level, the current output level, and the actual gain reduction the compressor is applying. This makes the realtime mode much more informative than the static apply-and-listen mode, and is the recommended way to dial in settings while you can hear them.</p>
+
+<div class="callout">
+  <div class="callout-title">A note on knee width</div>
+  <p>Knee width is one of those parameters where you can spend an hour A/B-ing settings and only feel a small difference. Don't worry about it. Set it to 3 or 6 dB and forget it. Knee width matters most when the threshold is sitting right around the average level of the signal (which is when the compressor is opening and closing many times per second), and matters less when the threshold is set well above the average level (which is the case for most compression-as-loudness-management work). If a setting sounds harsh or obvious, try widening the knee; if it sounds invisible when you want it to be doing work, try narrowing it.</p>
+</div>
+
+<h3>Starting points for the compressor</h3>
+
+<p>The presets shipped with Audacity are a fast way to hear what different settings feel like, accessible through the <span class="ctrl">Presets &amp; settings</span> button. Voice presets are good for spoken word; <em>Beefy Master</em> and <em>Deep Dive Master</em> are good for a finished mix. Try a few and see what they're doing. For starting from scratch on Project 1 material, the recipes below are reliable starting points. Tweak by ear.</p>
+
+<div class="recipe">
+  <div class="recipe-title">Recipe · Taming a sound that's too jumpy in level</div>
+  <p>Use this when one sound in your bank has loud peaks that stick out of the mix while its average level is too quiet. The goal is to bring the peaks down so you can pull the whole sound up to a useful working level without the peaks clipping.</p>
+  <table>
+    <tr><td>Threshold</td><td>−18 dB</td></tr>
+    <tr><td>Ratio</td><td>4:1</td></tr>
+    <tr><td>Knee width</td><td>3 dB</td></tr>
+    <tr><td>Attack</td><td>10 ms</td></tr>
+    <tr><td>Release</td><td>120 ms</td></tr>
+    <tr><td>Lookahead</td><td>2 ms</td></tr>
+    <tr><td>Make-up gain</td><td>0 dB to start; bring up if needed after</td></tr>
+  </table>
+  <p>Play the sound. The peaks should be reduced by a few dB. If they're not reduced enough, drop the threshold lower (toward -24 dB). If too much, raise it (toward -12 dB). Once the peaks are tamed, normalize the result to -1 dB peak as a separate step (or use make-up gain to roughly the same effect).</p>
+</div>
+
+<div class="recipe">
+  <div class="recipe-title">Recipe · Adding punch to a percussive sound</div>
+  <p>Use this when a kick or snare sample has the right energy but feels flat in the mix. A slow attack lets the transient pass through while the body of the hit gets compressed, which makes the transient feel comparatively bigger.</p>
+  <table>
+    <tr><td>Threshold</td><td>−24 dB</td></tr>
+    <tr><td>Ratio</td><td>6:1</td></tr>
+    <tr><td>Knee width</td><td>0 dB (hard knee)</td></tr>
+    <tr><td>Attack</td><td>30 ms (slow)</td></tr>
+    <tr><td>Release</td><td>80 ms</td></tr>
+    <tr><td>Lookahead</td><td>0 ms (don't let it anticipate)</td></tr>
+    <tr><td>Make-up gain</td><td>3 to 6 dB</td></tr>
+  </table>
+  <p>The slow attack is the key parameter here. Don't shorten it. Lookahead at 0 is intentional: if it were higher, it would anticipate the transient and start compressing before the strike, which is exactly the effect we're trying to avoid.</p>
+</div>
+
+<hr>
+
+<h2>2 &middot; The Limiter</h2>
+
+<p>Open <span class="menu">Effect &rarr; Volume and Compression &rarr; Limiter</span>:</p>
+
+<figure>
+  <img src="../../assets/images/module-02-week-05/audacity-limiter.png" alt="Audacity 3.6 Limiter effect window, with a compression curve graph and parameter sliders.">
+  <figcaption>Audacity 3.6 Limiter.</figcaption>
+</figure>
+
+<p>The window looks almost identical to the Compressor. Audacity is being honest about a real relationship: the limiter <em>is</em> a compressor, just one with a few specific design choices baked in. Specifically, the limiter has no <span class="ctrl">Ratio</span> control (it's effectively infinity; nothing crosses the ceiling), and no <span class="ctrl">Attack</span> control (limiters use <span class="ctrl">Lookahead</span> to anticipate peaks instead). Every other control means the same thing it did in the compressor.</p>
+
+<h3>The controls</h3>
+
+<p><span class="ctrl">Threshold</span> is the level above which limiting engages. With infinite ratio, this is also (effectively) the ceiling: signals above threshold get pulled down so they don't cross. Identical concept to the compressor.</p>
+
+<p><span class="ctrl">Make-up target</span> is the limiter's version of make-up gain, but it's named differently for a reason. In the compressor, make-up gain is "add this many dB to the output after compression." In the limiter, the make-up target is the maximum output level: "after limiting, the loudest point should sit at this dB value." The practical difference is small in most cases, but the naming is more informative for a limiter, where the output ceiling is the whole point. Setting <span class="ctrl">Make-up target</span> to -1 dB means "after limiting, my peaks will sit at -1 dB and nothing will go above that."</p>
+
+<p><span class="ctrl">Knee width</span>, <span class="ctrl">Lookahead</span>, and <span class="ctrl">Release</span> work the same way they do in the compressor. Lookahead matters more in the limiter than it does in the compressor, because the whole point of a limiter is to never let peaks through. A lookahead of 5 to 10 ms is typical for a final-mix limiter, which is enough for the limiter to "see" most musical peaks before they arrive and engage gracefully.</p>
+
+<h3>Limiting as the final step</h3>
+
+<p>The standard use of a limiter is at the very end of your signal chain. You've compressed individual sounds, you've mixed them together, you've set your levels, and now you want to maximize loudness without letting anything clip. The limiter sits at the end of that chain. Run it on your full mix, set the threshold a few dB below 0, set <span class="ctrl">Make-up target</span> to -1 dB, leave the smoothing parameters in their defaults, and listen.</p>
+
+<p>The more aggressively you compress and limit, the less dynamic range your final mix will have (the loud parts and quiet parts will be closer in level). This is sometimes what you want (a wall of sound, a high-energy mix) and sometimes not what you want (a piece that breathes). Listen for it.</p>
+
+<h3>Starting points for the limiter</h3>
+
+<div class="recipe">
+  <div class="recipe-title">Recipe · Final-mix limiter for Project 1</div>
+  <p>Apply this to your finished mix as the last effect before exporting. The goal is to bring the overall level up to a useful loudness without letting any peaks cross 0 dB.</p>
+  <table>
+    <tr><td>Threshold</td><td>−6 dB</td></tr>
+    <tr><td>Make-up target</td><td>−1 dB</td></tr>
+    <tr><td>Knee width</td><td>3 dB</td></tr>
+    <tr><td>Lookahead</td><td>5 ms</td></tr>
+    <tr><td>Release</td><td>100 ms</td></tr>
+  </table>
+  <p>Watch the compression-curve graph. If the limiter is doing more than about 4 to 6 dB of gain reduction on the peaks, you're probably over-compressing the mix at this stage and would do better to pull individual tracks down rather than ride the limiter harder. The limiter is for last-mile work, not for fixing a mix that's structurally too loud.</p>
+</div>
+
+<div class="recipe">
+  <div class="recipe-title">Recipe · Safety limiter for an individual sample</div>
+  <p>Use this when a sample has the occasional sharp peak that you want to catch without changing the rest of the signal's character. Different goal from the final-mix limiter: this is about preventing distortion on a single problematic hit, not raising the average level.</p>
+  <table>
+    <tr><td>Threshold</td><td>−3 dB</td></tr>
+    <tr><td>Make-up target</td><td>−1 dB</td></tr>
+    <tr><td>Knee width</td><td>0 dB (hard)</td></tr>
+    <tr><td>Lookahead</td><td>3 ms</td></tr>
+    <tr><td>Release</td><td>50 ms</td></tr>
+  </table>
+  <p>Most of the signal will sit below threshold and pass through unchanged. Only the occasional peak gets touched.</p>
+</div>
+
+<hr>
+
+<h2>3 &middot; A workflow for Project 1</h2>
+
+<p>The order you apply these effects matters. Doing them out of order leads to mixes that feel either over-cooked or under-baked. The pattern below is the conventional sequence for finishing a piece in Audacity.</p>
+
+<p><strong>Step 1: Prepare individual sounds.</strong> For each significant sample in your bank, decide whether it benefits from compression. A sample that's already well-behaved (consistent level, no big peaks) probably doesn't need it. A sample with wild dynamics, an unwanted transient, or a flat middle that you'd like to feel punchier almost certainly does. Apply the compressor to the individual sample, save the processed result, and use that version in your mix. Don't compress everything just because you can.</p>
+
+<p><strong>Step 2: Set levels and mix.</strong> This is the work you did in last Wednesday's lab. Track-level volume, panning, and balance. Compression at this stage isn't usually appropriate; you're making big-picture decisions about which sounds should be louder than which, and a compressor changing the levels live makes that harder to judge.</p>
+
+<p><strong>Step 3: Apply a limiter to the final mix.</strong> Once the mix sounds right, export it to a fresh track or duplicate the project, and apply the limiter as the very last effect. This is where you bring the overall level up to a polished, ready-to-share loudness. Use the recipe above as a starting point.</p>
+
+<p><strong>Step 4: Listen on different systems.</strong> What sounds good on headphones may sound different on laptop speakers or in a car. Limiting in particular can sound very different on a small speaker, where the lack of dynamic range can read as "loud and exciting" or "fatiguing," depending on the material. If you can, listen on at least two playback systems before deciding the master is done.</p>
+
+<div class="callout">
+  <div class="callout-title">When the limiter sounds wrong</div>
+  <p>If your limited mix sounds "smaller" than the unlimited one, you've probably pushed the threshold too low. Pull it back up. If the limited mix sounds distorted or harsh, increase the lookahead and lengthen the release. If you can hear the limiter "pumping" (the whole mix audibly ducks down and recovers in time with the loud parts), the threshold is too low or the release is too short. A well-set limiter should be nearly invisible: the mix should sound like itself, just louder.</p>
+</div>
+
+<hr>
+
+<div class="summary-box">
+  <h3>The short version</h3>
+  <ul>
+    <li>Audacity 3.6's compressor and limiter share the same engine. The compressor has Ratio and Attack; the limiter has neither (its ratio is infinity, and it uses Lookahead instead of Attack).</li>
+    <li>Threshold, Make-up gain (or Make-up target), Knee width, Attack, Release, and Lookahead are the parameters you'll touch. Of these, Knee width and Lookahead are the two that didn't appear in the teaching tool; the rest you already know.</li>
+    <li>Compress individual sounds first, mix second, limit last. Don't compress for its own sake; compress when you have a problem you're trying to solve.</li>
+    <li>For a final-mix limiter, threshold around -6 dB, make-up target -1 dB, 5 ms lookahead, 100 ms release is a reasonable starting point. Tune by ear.</li>
+    <li>The presets in both effects are worth browsing. They give you a starting point in the right neighborhood for many common situations.</li>
+  </ul>
+</div>
+
+</body>
+</html>
