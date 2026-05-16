@@ -271,7 +271,73 @@
 
 <hr>
 
-<h2>2 · The compressor: threshold and ratio</h2>
+<h2>2 · Normalizing</h2>
+
+<p>Before we get to the compressor, there's a much simpler tool worth knowing: <span class="term">normalization</span>. You'll use it almost every time you prepare a sample to keep, and it's the most common reason to make a quiet recording louder.</p>
+
+<p>Normalizing a sound does exactly one thing: it finds the loudest peak in the file, computes how much to multiply every sample by so that peak lands at a target level, and applies that single multiplier to every sample in the file. That's it. No compression, no time-varying gain, no decision-making about what's loud and what's quiet. The whole signal goes up (or down) by the same amount of dB. The relationship between loud and quiet parts stays exactly the same.</p>
+
+<p>This makes normalization fundamentally different from what you heard in Section 1. The compressed-and-boosted "narrow" version had its dynamic range squashed: the quiet parts came up more than the loud parts. Normalization can't do that. Normalization is just a scaler. If the loud parts go up by 12 dB, the quiet parts go up by 12 dB. The shape of the signal is preserved.</p>
+
+<p>Listen for the difference. Here's the conga loop at two normalization levels: a quiet version (peak around -18 dBFS, as if it had been recorded with a conservative gain setting) and the same recording normalized to a peak of -1 dBFS:</p>
+
+<figure class="audio-compare">
+  <div class="audio-compare-title">Demo · Peak normalization</div>
+  <div class="audio-row">
+    <span class="audio-label">Quiet
+      <span class="audio-label-sub">peak ~ -18 dBFS</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/norm-quiet.wav"></audio>
+  </div>
+  <div class="audio-row">
+    <span class="audio-label">Normalized
+      <span class="audio-label-sub">same signal, peak -1 dBFS</span>
+    </span>
+    <audio controls src="../../assets/audio/module-02-week-05/norm-loud.wav"></audio>
+  </div>
+  <p class="audio-note">The normalized version is louder. That's the only difference. The conga slaps are still louder than the shaker and clave by the same amount; the dynamic range is identical; the shape is identical. This is what "the whole signal scaled by one number" actually sounds like.</p>
+</figure>
+
+<p>Compare this to the wide/narrow comparison in Section 1. There, both files had identical peak levels but very different shapes. Here, the two files have very different peak levels but identical shapes. Normalization changes the <em>scale</em>. Compression changes the <em>shape</em>.</p>
+
+<h3>Why and when to normalize</h3>
+
+<p>Normalization is the standardization step in sample preparation. When you record sounds for a sample library, you set your input gain conservatively so nothing clips. That's the right thing to do at the time of recording. But you'll end up with samples at all kinds of different peak levels: this one peaks at -10 dBFS, that one at -16, the loud one at -6. When you later drag these into a session, you'll have to ride the channel fader 10 dB up for one sample and 4 dB down for another, just to get them to a usable working level. That's friction you don't need.</p>
+
+<p>The solution is to normalize every sample to a consistent target peak before you save it to the library. After normalization, every sample sits at the same predictable peak, and you can work with them without thinking about base level. Quiet sample, loud sample: they all hit your channel at the same height. The mix is now about <em>your decisions</em> about relative loudness, not about which microphone gain you happened to set three weeks ago.</p>
+
+<p>You'll do this in Module 3 when you build your midterm sample library.</p>
+
+<h3>Headroom and the target level</h3>
+
+<p>Audacity's Normalize defaults to a target of 0 dBFS: the loudest possible level. For sample prep, this is too loud. A normalized sample at 0 dBFS has zero headroom: any additional processing (EQ boost, pitch shift, layering with another sample) can push it past the digital ceiling and clip.</p>
+
+<p>For sample prep, normalize to <strong>-1 dBFS</strong>. This is common in production: it leaves a small margin so that inter-sample peaks (peaks that exist between sampled values, which can show up as clipping after digital-to-analog conversion) stay safe. You'll see -1 dBFS as the target in a lot of professional sample libraries and in delivery specifications for streaming platforms.</p>
+
+<p>(Module 2 work uses 44.1 kHz / 16-bit. In Module 4 with Ableton, you'll be working at 32-bit float, where the ceiling matters much less because floating-point audio can go above 0 dBFS without clipping. For now, in Audacity, the -1 dBFS rule keeps you safe.)</p>
+
+<h3>Normalizing in Audacity</h3>
+
+<p>The menu path is <code>Effect → Volume and Compression → Normalize</code>. Two settings to know:</p>
+
+<ul>
+  <li><strong>Normalize peak amplitude to:</strong> set this to <code>-1.0</code> dB.</li>
+  <li><strong>Remove DC offset:</strong> leave this checked. DC offset is a small but real problem in some recordings where the waveform is shifted slightly off the zero line; the box fixes it as part of the same operation.</li>
+</ul>
+
+<p>That's it. Apply, save your file. The peak now sits at -1 dBFS regardless of what level it had before.</p>
+
+<h3>A sibling concept: LUFS</h3>
+
+<p>If you look around the audio world, you'll see references to <span class="term">loudness normalization</span> or <strong>LUFS</strong> (Loudness Units relative to Full Scale). This is a different kind of normalization that targets perceived <em>loudness</em> rather than peak level. Streaming platforms like Spotify, Apple Music, and YouTube use it to play all tracks at roughly the same apparent volume, regardless of how each was mastered.</p>
+
+<p>LUFS measurement uses the same idea you learned in Section 1: integrate the signal's energy over time to get something close to how loud the human ear hears it, then scale the whole file so that measured loudness hits a target (typically -14 LUFS for streaming). It's why a loudly-mastered track and a quietly-mastered track sound about the same volume on Spotify, even though their peak levels can be very different.</p>
+
+<p>For sample prep in this course we'll stick with peak normalization, because we're standardizing individual sounds, not pieces. LUFS becomes important when you're finishing a full piece for delivery, which you'll meet later in your studies. For now, just know the term exists.</p>
+
+<hr>
+
+<h2>3 · The compressor: threshold and ratio</h2>
 
 <p>A <span class="term">compressor</span> reduces dynamic range. It does this by attenuating the loud parts of a signal while leaving the quiet parts alone. Two parameters define <em>how much</em> attenuation happens and <em>where</em> it starts: <strong>threshold</strong> and <strong>ratio</strong>.</p>
 
@@ -396,7 +462,7 @@
 
 <hr>
 
-<h2>3 · Attack and release</h2>
+<h2>4 · Attack and release</h2>
 
 <p>Threshold and ratio describe <em>how much</em> compression happens. But sound is not static. It changes over time, sometimes very fast. Two more parameters control <em>when</em> the compressor engages and disengages: <strong>attack</strong> and <strong>release</strong>.</p>
 
@@ -445,7 +511,7 @@
 
 <hr>
 
-<h2>4 · Limiting</h2>
+<h2>5 · Limiting</h2>
 
 <p>A <span class="term">limiter</span> is a compressor with extreme settings: a very high ratio (often 20:1 or higher, effectively infinite) and a hard ceiling that the signal is not allowed to exceed. It is used at the end of a mix to set a maximum level and, often, to push the perceived loudness of the piece up.</p>
 
@@ -487,7 +553,7 @@
 
 <hr>
 
-<h2>5 · When to use it, when not to</h2>
+<h2>6 · When to use it, when not to</h2>
 
 <p>Compression and limiting are powerful tools that are easy to overuse. A few useful principles:</p>
 
@@ -501,7 +567,7 @@
 
 <hr>
 
-<h2>6 · Vocabulary for listening</h2>
+<h2>7 · Vocabulary for listening</h2>
 
 <p>Compression has a specific sound, or, more accurately, several specific sounds depending on the settings. Building a vocabulary for what compression <em>does</em> to a sound lets you hear when it's helping and when it's hurting. A few terms you'll hear in conversation:</p>
 
