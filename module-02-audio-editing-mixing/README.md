@@ -353,14 +353,31 @@ The seven screenshots in `assets/images/module-02-week-02/` are now captured (In
 | Filename | Content |
 |---|---|
 | `audacity-settings.png` | Preferences → Audio Settings: Quality section showing Project Sample Rate 44100 Hz, Default Sample Rate 44100 Hz, Default Sample Format 16-bit |
-| `audacity-interface-empty.png` | Empty Audacity main window. Numbered annotations to be added later for the handout's annotation key (see below) |
+| `audacity-interface-empty.png` | Empty Audacity main window. Numbered annotations are drawn as an SVG overlay in the handout, not on the image itself; see "Annotation overlay" below |
 | `audacity-imported.png` | Main window with `orientation-sample.wav` imported as a stereo track, showing the ringing-decay waveform across both channels |
 | `audacity-selection.png` | Same window with a region selected from roughly 7s to the end of the file (visible blue highlighted region in the waveform and timeline) |
 | `audacity-fade-out.png` | Same window after the cut + fade-out: file now ends around 7.5s, last ~2.5s shows the visible fade taper |
 | `audacity-export-prompt.png` | The "How would you like to export?" interstitial dialog with two options (Share to audio.com / On your computer) and the "Don't show again" checkbox |
 | `audacity-export.png` | Export Audio dialog: filename `thiebaut-orientation.wav`, format WAV (Microsoft), Stereo, 44100 Hz, Signed 16-bit PCM, Entire Project |
 
-`audacity-interface-empty.png` still needs numbered annotations drawn on top in red/rust corresponding to the handout's annotation key (menu bar, transport, tools, zoom controls, Audio Setup button, level meters, timeline gear, timeline ruler, track area, bottom toolbar, selection toolbar). Recommended approach: open the captured screenshot in Preview's markup or Skitch and add numbered circles. The annotation numbers should match the order in the handout's Step 3.
+### Annotation overlay for `audacity-interface-empty.png`
+
+The screenshot ships unannotated; the eight numbered markers in the handout's Step 3 are drawn as an inline SVG overlay positioned on top of the `<img>`, not painted into the PNG. Coordinates use the source pixel dimensions (2440 × 1322) via `viewBox`, so the overlay scales with the image at any rendered size.
+
+This keeps the markers theme-aware (they use `var(--accent)` so they match the rust palette automatically) and easy to adjust: editing positions, adding or removing markers, or rewording the key is a one-line change in the HTML, not a re-export from an image editor.
+
+If the screenshot itself is ever re-captured at a different resolution or framing, update the SVG `viewBox` to the new pixel dimensions and re-check the marker coordinates against the new layout. The markers are placed at:
+
+- 1. Menu bar — leader up to "Audacity" application name
+- 2. Transport toolbar — leader up to the play/stop button cluster
+- 3. Tools toolbar — leader up to the selection I-beam tool
+- 4. Recording & playback level meters — leader up to the meters at right
+- 5. Audio Setup dropdown — leader up to the dropdown button
+- 6. Timeline ruler — leader up to the ruler
+- 7. Empty track area — no leader, marker sits in the middle of the area itself
+- 8. Selection toolbar — leader down to the Selection block at the bottom
+
+Note that the empty Audacity window does not display the project sample rate anywhere visible (the project rate setting now lives inside the Audio Setup dropdown, not in the main window's status bar). The annotation key reflects this; there is no separate "project rate" marker.
 
 ### After class
 
