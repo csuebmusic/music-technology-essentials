@@ -17,7 +17,7 @@ The arc of the module: understand the recording chain → record into Audacity �
 Two principles thread through the module:
 
 1. **Signal flow is a sequence of decisions.** Sound becomes signal becomes recording becomes sample becomes library. At every stage, something is chosen: which mic, which signal type, which cable, which input, which interface, which prep step, which destination folder. Students should be able to look at any setup (a stage, a studio, a phone propped against a doorframe) and name the flow from acoustic source to stored file. The basic recording chain is the most common version of this flow; the Wk 7 expansion (instrument and line signals, DI boxes, preamps) and the Wk 8 mixer lecture (live vs. studio routing) widen the frame.
-2. **A sample is not a recording.** A recording is what comes out of the mic; a sample is what goes into the library. Turning one into the other is its own discipline, and it spans both the tracking stage and the prep stage. While recording: leave headroom (peaks around -12 to -6 dBFS) so there are decisions left to make. After recording: denoise, trim, normalize, name, and file. The headroom habit delivers on the Module 2 promise (Mon Wk 2 reading, §5); the normalize step delivers on the "scale not shape" promise (Mon Wk 5 reading, §2). Neither step is optional; both are what make a usable library possible.
+2. **A sample is not a recording.** A recording is what comes out of the mic; a sample is what goes into the library. Turning one into the other is its own discipline, and it spans both the tracking stage and the prep stage. While recording: leave headroom (peaks around -12 to -6 dBFS) so there are decisions left to make. After recording: denoise, trim, normalize, name, and file. Neither step is optional; both are what make a usable library possible.
 
 By the end of Wk 8, students should have a working library of their own recordings, prepped to a consistent standard, organized in a documented folder structure, ready to use as raw material in Module 4 (Ableton).
 
@@ -48,8 +48,8 @@ By the end of this module, students should be able to:
 - **Signal types:** mic level (small, needs preamp), instrument level (medium, from a guitar or bass pickup), line level (large, from a synth or interface output). Each one wants a different input.
 - **Cables:** XLR (balanced, three-conductor, carries mic-level and line-level signals; what's at every station for the dynamic mic). TS (unbalanced, two-conductor, carries instrument-level signals; what plugs into a guitar). TRS (three-conductor, carries balanced line-level or stereo, depending on context).
 - **Signal modifiers:** the DI box (instrument level → mic level, balanced) and the hardware preamp (mic level → line level, with character). Where they sit in the chain and why.
-- **Recording with headroom:** peaks around -12 to -6 dBFS while tracking. The reason: leaving room to make decisions in editing, not committing to a level you can't undo. This delivers on the Module 2 promise (Mon Wk 2 reading, §5).
-- **The sample prep pipeline:** a three-step standardization process applied to every raw recording before it enters the library. (1) Denoise using a captured silence sample; (2) trim silence at start and end; (3) peak-normalize to a consistent ceiling. The pipeline turns a recording into a sample. This delivers on the Module 2 promise (Mon Wk 5 reading, §2): "scale, not shape."
+- **Recording with headroom:** peaks around -12 to -6 dBFS while tracking. The reason: leaving room to make decisions in editing, not committing to a level you can't undo.
+- **The sample prep pipeline:** a three-step standardization process applied to every raw recording before it enters the library. (1) Denoise using a captured silence sample; (2) trim silence at start and end; (3) peak-normalize to a consistent ceiling. The pipeline turns a recording into a sample.
 - **Library organization:** folder structure, naming conventions, an internal README. The library is a usable resource, not a pile of files. Students who can find a sound in their library will use their library; students who can't, won't.
 - **The mixer (introduction):** the central routing surface in both live sound and studio recording. Channel strips, faders, auxes, busses. Students don't need to operate one yet; they need to understand what it is and why it's the shape it is.
 - **Auxes and busses:** what they route in a live context (monitor sends to performers' floor wedges) vs. a studio context (headphone mixes for performers being recorded). The same mechanism, two different uses.
@@ -87,7 +87,7 @@ Full exam and answer key: [`projects/terminology-exam.md`](./projects/terminolog
 
 Full listening assignment with guided questions: [`listening/historical.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/listening/historical.html) *(to be written)*
 
-**Due:** Mon Wk 8, before class. (Pacing rationale: gives students the field-recording listening vocabulary before the mixer / live-vs-studio session, and before the midterm.)
+**Due:** Mon Wk 8, before class.
 
 **Peer listening:** Module 3 also includes a peer-listening assignment, where students browse and listen to each other's sample libraries after midterm submission and respond briefly. The format differs from Module 2's peer listening: students are listening to *libraries* (collections of curated sounds) rather than *finished pieces*, so the prompts orient toward what's in the libraries and what the listener would do with it.
 
@@ -207,7 +207,7 @@ Students go through the full record-and-prep pipeline end-to-end, using paper as
 
 1. **Denoise.** Select the initial silence in the file to capture a noise profile, then apply Noise Reduction (Effect → Noise Reduction → Get Noise Profile → re-select the whole clip → Effect → Noise Reduction → OK with default values).
 2. **Trim.** Cut silence at the start and end of the sound. The silence-at-start was for denoising; once denoise is done, it goes.
-3. **Normalize.** Apply Audacity's Normalize effect with peak target at -1 dBFS. This is the "scale, not shape" move from the Module 2 dynamics reading.
+3. **Normalize.** Apply Audacity's Normalize effect with peak target at -1 dBFS.
 
 **Export:** each prepped sample exported as a WAV from the project (File → Export → Export as WAV), saved into the library folder following the naming convention established in this session.
 
@@ -245,7 +245,7 @@ The handout walks students through: opening Audacity, setting input to the audio
 
 A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on iPhone (Voice Memos) and Android (default Voice Recorder or recommended alternative). Holding the phone, distance from source, wind/handling noise, file format and how to get the file off the phone.
 
-Filename to be decided: likely `lessons/03-handout-recording-on-phone.html`. Whether this is `Handout N` or `Reference card` in the chrome depends on whether we treat it as Module-3-specific or as a semester-long reference. Bias toward `Module 03 · Handout N` since the framing is "we just did interface recording in lab; here's the parallel for outside class."
+Filename to be decided: likely `lessons/03-handout-recording-on-phone.html`. Open question: whether the chrome reads `Module 03 · Handout N` (module-specific) or `Lab · Reference card` (semester-long reference).
 
 ### Block-by-block
 
@@ -255,7 +255,7 @@ Filename to be decided: likely `lessons/03-handout-recording-on-phone.html`. Whe
 
 - **Verify every station has silence-before-sound habits before recording.** This is the most easily-missed step and it makes or breaks the denoise.
 - **Headroom target: -12 to -6 dBFS peaks.** Don't let students push to -3 or above "to be loud."
-- **Don't normalize as a substitute for tracking levels right.** Normalize is for standardizing across already-good recordings, not for rescuing too-quiet ones. The Module 2 dynamics reading already framed this; the lab reinforces it.
+- **Don't normalize as a substitute for tracking levels right.** Normalize is for standardizing across already-good recordings, not for rescuing too-quiet ones.
 - **The library folder structure is the load-bearing artifact of this session.** If students leave with four good samples but no organized folder, they leave without the actual skill. Make sure the folder is set up and the README started before they go.
 
 ---
@@ -292,7 +292,7 @@ Builds on Session 1. The basic chain was mic-level → XLR → interface. Now we
 
 ### Open questions for when we draft
 
-- This reading is wide. Worth deciding whether it's one reading or split into two (signals + cables as one; mics + modifiers as another). My instinct is one reading with clear section breaks, since the framing is "all the other things you might meet in the chain."
+- This reading is wide. Open question: one reading or split into two (signals + cables as one; mics + modifiers as another).
 - How much condenser-mic detail? Likely: what makes them different, when you'd reach for one, phantom power as a thing to know. Not: large-vs-small diaphragm distinctions, frequency-response curves, etc.
 
 ### Block-by-block
