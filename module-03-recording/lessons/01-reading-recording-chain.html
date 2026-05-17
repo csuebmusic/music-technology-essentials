@@ -141,7 +141,7 @@
   <div class="subtitle">Signal flow from microphone to DAW.</div>
 </div>
 
-<p class="lede">Up to now, the sounds you've worked with have been handed to you. Starting this week, you make your own. To do that, you have to understand what's happening between the air in front of a microphone and the file on your computer. This reading walks the path one stage at a time, with the four pieces of equipment you'll find at every lab station: a dynamic microphone, an XLR cable, an audio interface, and a computer running Audacity. Wednesday you'll plug them in for real.</p>
+<p class="lede">Up to now, the sounds you've worked with have been handed to you. Starting this week, you make your own. To do that, you have to understand what's happening between the air in front of a microphone and the file on your computer. This reading walks the path one stage at a time, with the four pieces of equipment you'll find at every lab station: a dynamic microphone, an XLR cable, an audio interface, and a computer. Wednesday you'll plug them in for real.</p>
 
 <hr>
 
@@ -153,7 +153,7 @@
 
 <figure>
   <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the basic recording chain: dynamic mic to XLR cable to audio interface to USB cable to computer running Audacity.">
+       role="img" aria-label="Diagram of the basic recording chain: dynamic mic to XLR cable to audio interface to USB cable to computer.">
     <defs>
       <marker id="arrowhead-xlr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
         <polygon points="0 0, 10 3, 0 6" fill="var(--cable-xlr)"/>
@@ -219,16 +219,16 @@
           font-family="DM Mono, monospace" font-size="9"
           fill="var(--cable-usb)">carries digital data</text>
 
-    <!-- Stage 3: Computer / Audacity (device) -->
+    <!-- Stage 3: Computer (device) -->
     <g>
       <rect x="540" y="70" width="160" height="80" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
       <text x="620" y="100" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Computer</text>
       <text x="620" y="118" text-anchor="middle"
-            font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">(Audacity)</text>
+            font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">audio input</text>
       <text x="620" y="135" text-anchor="middle"
-            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">store as file</text>
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">software reads it</text>
     </g>
     <text x="620" y="190" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">digital</text>
@@ -236,7 +236,7 @@
   <figcaption>The basic recording chain. Three devices (mic, interface, computer), connected by two cables (XLR, USB).</figcaption>
 </figure>
 
-<p>Read the diagram left to right and you can see what's happening at each transition. A sound in the air vibrates the microphone, and the microphone produces a small electrical signal (this is what we'll call <strong>mic level</strong>, and it matters more than it sounds like it should). That signal travels down an XLR cable to an audio interface. The interface does two jobs: it amplifies the small mic-level signal up to something the computer can work with, and it converts that analog electrical signal into a stream of numbers (digital audio, the topic of all of Module 2). Those numbers travel over a USB cable to the computer, where Audacity stores them as a file.</p>
+<p>Read the diagram left to right and you can see what's happening at each transition. A sound in the air vibrates the microphone, and the microphone produces a small electrical signal (this is what we'll call <strong>mic level</strong>, and it matters more than it sounds like it should). That signal travels down an XLR cable to an audio interface. The interface does two jobs: it amplifies the small mic-level signal up to something the computer can work with, and it converts that analog electrical signal into a stream of numbers (digital audio, the topic of all of Module 2). Those numbers travel over a USB cable to the computer's audio input, where any recording program can read from them.</p>
 
 <p>The five stages alternate: <em>device, cable, device, cable, device</em>. The devices do the work of converting and processing the signal; the cables carry the signal from one device to the next. Each cable type has a job that matches the kind of signal it carries: XLR for mic-level analog audio, USB for digital data.</p>
 
@@ -546,7 +546,7 @@
 <ol>
   <li><strong>Amplify the mic signal.</strong> The preamp boosts mic level up to line level. The gain knob controls how much amplification.</li>
   <li><strong>Convert analog to digital.</strong> The <strong>analog-to-digital converter</strong> (ADC) samples the now-amplified signal many thousands of times per second. Module 2 covered this in detail.</li>
-  <li><strong>Send the data to the computer.</strong> Over a USB cable, the stream of numbers travels to Audacity, which stores it in a file.</li>
+  <li><strong>Send the data to the computer.</strong> Over a USB cable, the stream of numbers arrives at the computer's audio input. From there, any program that listens to that input can read it: Audacity (what you'll use this week), QuickTime (the recorder you used on Day 1), Ableton (where Module 4 lives), or the system's own recorder. The interface delivers the signal to the computer; the software you choose decides what to do with it.</li>
 </ol>
 
 <p>The interface also runs the reverse path for playback: it takes digital audio coming from the computer, converts it back to analog through a <strong>digital-to-analog converter</strong> (DAC), and sends it out to your headphones or speakers. But for this reading we're focused on the recording direction.</p>
@@ -713,7 +713,7 @@
   <dd>The path that sound takes from acoustic source to stored file. Every recording setup has one. The basic recording chain is the most common version of it.</dd>
 
   <dt>Recording chain</dt>
-  <dd>The specific signal flow used at every lab station: a dynamic mic and a computer (running Audacity), connected through an audio interface, with an XLR cable between mic and interface and a USB cable between interface and computer.</dd>
+  <dd>The specific signal flow used at every lab station: a dynamic mic and a computer, connected through an audio interface, with an XLR cable between mic and interface and a USB cable between interface and computer.</dd>
 
   <dt>Transducer</dt>
   <dd>A device that converts one kind of energy into another. A microphone converts acoustic energy (air pressure) into electrical energy (voltage). A speaker does the reverse.</dd>
