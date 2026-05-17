@@ -544,7 +544,7 @@
 <p>The audio interface is the box on your desk that the mic cable plugs into, and the box that connects to the computer over a USB cable. It's where the signal stops being analog (continuous electrical voltage) and starts being digital (a stream of numbers). The interface has three jobs, in order:</p>
 
 <ol>
-  <li><strong>Amplify the mic signal.</strong> The preamp boosts mic level up to line level. The gain knob controls how much amplification.</li>
+  <li><strong>Amplify the mic signal.</strong> The preamp boosts mic level up to line level. The gain knob controls how much amplification. (If you've already glanced at the Behringer's input label, "Mic/Line 1," that's not a typo: the input accepts either a mic-level signal that needs preamp boost, or a line-level signal that's already at line level and just passes through. We'll come back to what "line level" means as a signal type in Week 7.)</li>
   <li><strong>Convert analog to digital.</strong> The <strong>analog-to-digital converter</strong> (ADC) samples the now-amplified signal many thousands of times per second. Module 2 covered this in detail.</li>
   <li><strong>Send the data to the computer.</strong> Over a USB cable, the stream of numbers arrives at the computer's audio input. From there, any program that listens to that input can read it: Audacity (what you'll use this week), QuickTime (the recorder you used on Day 1), Ableton (where Module 4 lives), or the system's own recorder. The interface delivers the signal to the computer; the software you choose decides what to do with it.</li>
 </ol>
@@ -570,15 +570,20 @@
   <div class="photo-attribution">Source: Sweetwater product listings (manufactured by PreSonus and Behringer)</div>
 </figure>
 
-<p>Look at both interfaces and you'll find the same set of controls, even though they're positioned and labeled differently:</p>
+<p>Look at both interfaces and you'll find the same set of controls, even though they're positioned, labeled, and counted differently:</p>
 
 <ul>
-  <li>A <strong>mic input</strong>. On both interfaces, the leftmost connector is a combo jack that accepts an XLR plug. The PreSonus has two of them (so it can record from two mics at once); the Behringer has one.</li>
-  <li>A <strong>gain knob</strong> for each input. On the PreSonus, these sit on the front panel: silver knobs marked with a -10 to +30 dB scale. On the Behringer, the gain knobs are on the <em>top</em> of the unit, not the front (a layout choice, not a missing feature).</li>
-  <li>A <strong>clip indicator</strong> next to each input. On the PreSonus, a small red LED labeled "Clip" lights up when the gain is set too high and the signal is hitting the digital ceiling. On the Behringer, the same job is done by a "Clip" LED above the corresponding "Sig" LED (which lights up when the input sees any signal at all).</li>
-  <li>A <strong>phantom power control</strong>. On the PreSonus, a red "48V" button on the front, with a red light when it's on. On the Behringer, the switch is on the back (labeled +48V), with an LED on the front to indicate when it's on. Phantom power supplies the voltage that condenser mics need to operate. Dynamic mics ignore it, so leaving it on for a dynamic mic causes no harm; you can leave it off entirely for the work in Wednesday's lab.</li>
-  <li>A <strong>direct monitor</strong> control. On the Behringer, this is a square button labeled "Direct Monitor" that toggles direct monitoring on or off. On the PreSonus, it's a Mixer knob that blends the live input signal with the playback signal coming from the computer. Same idea (hearing yourself in the headphones in real time), two different implementations. We'll come back to this in section 7.</li>
-  <li>A <strong>headphone output</strong>. Both interfaces have a 1/4" headphone jack on the front. The PreSonus has a dedicated Phones level knob; the Behringer doesn't (it uses one combined level control).</li>
+  <li><strong>Inputs.</strong> Both interfaces have at least one <em>combo jack</em> on the left side: a connector that physically accepts either an XLR plug (for a mic) or a 1/4" plug (for a higher-level signal). The PreSonus has two combo jacks, both labeled <strong>Mic/Inst</strong>, meaning each one can take a mic or an instrument. The Behringer has one combo jack labeled <strong>Mic/Line 1</strong> (mic or line-level signal) and, next to it, a dedicated 1/4" jack labeled <strong>Inst 2</strong> for instruments only. We won't use the instrument or line inputs this week (Wednesday's lab plugs an XLR mic into the leftmost input on either interface), but next week we'll talk about what "mic," "line," and "instrument" mean as distinct signal types, and these labels will start to make full sense.</li>
+
+  <li><strong>Gain knob</strong> for each input. The gain knob is the preamp control: it sets how much the mic-level signal gets amplified before the ADC sees it. On the PreSonus, two silver knobs sit on the front panel, one per channel, each marked <strong>1</strong> or <strong>2</strong>, with <strong>Inst</strong> and <strong>Mic</strong> labels around the knob and a numeric scale from <strong>-10</strong> to <strong>+30 dB</strong>. The Inst/Mic labels are rough guideposts for where each signal type typically lands; for a mic recording you'll usually end up somewhere in the lower part of the range. On the Behringer, the gain knobs are on the <em>top</em> of the unit, not the front: <strong>Mic/Line Gain 1</strong> for the combo jack and <strong>Inst Gain 2</strong> for the instrument jack.</li>
+
+  <li><strong>Clip indicator</strong> for each input. The clip indicator is a red LED that lights up when the signal coming through the preamp exceeds the digital ceiling, the point at which clipping begins. On the PreSonus, the LED is integrated into the gain knob: a red dot labeled <strong>Clip</strong> just to the right of each gain knob lights up when that input is hitting its limit. On the Behringer, each input has a pair of stacked LEDs to the right of the jack: <strong>Sig</strong> (lights up when the input is receiving any signal at all) and <strong>Clip</strong> (lights up when the signal is clipping). Same diagnostic in two layouts.</li>
+
+  <li><strong>Phantom power.</strong> Phantom power is a +48 V DC current that travels up the XLR cable to power a condenser mic's electronics (we'll meet condensers in Week 7; the dynamic mics you'll use this week don't need it and ignore it). On the PreSonus, the control is a red front-panel button labeled <strong>48V</strong>, with a red light when it's on. On the Behringer, the switch is on the back (labeled <strong>+48V</strong>, with off/on positions), and a small <strong>+48V</strong> indicator on the front lights up when it's active. For Wednesday's lab you can leave it off; it does no harm if it's already on, since dynamic mics don't respond to it.</li>
+
+  <li><strong>Direct monitor control.</strong> The two interfaces handle this differently in a way worth understanding now. The Behringer has a square button labeled <strong>Direct Monitor</strong>: pressed in, the interface routes the incoming mic signal directly to the headphones with no latency; released, the headphones hear only what's coming back from the computer (with a small round-trip delay). It's a binary switch. The PreSonus has a knob labeled <strong>Mixer</strong> with <strong>Inputs</strong> on one side and <strong>Playback</strong> on the other: it sets a continuous blend between the two, so you can dial in any ratio of live-from-the-mic to back-from-the-computer in your headphones. Section 7 explains why direct monitoring exists; for now, register that the same need ("hear the mic without latency") gets solved with a switch on one interface and a continuous blend on the other.</li>
+
+  <li><strong>Headphone output.</strong> Both interfaces have a 1/4" headphone jack on the front. The PreSonus has a dedicated <strong>Phones</strong> knob next to its main output knob, so headphone volume is controlled independently of the outputs that go to speakers or other gear. On the Behringer, headphone level is controlled by the <strong>Output</strong> knob on top of the unit, which also controls the level going to the rear outputs; one knob controls both destinations.</li>
 </ul>
 
 <div class="callout">
@@ -591,7 +596,7 @@
   </figure>
 </div>
 
-<p>The back of an interface holds the connections that don't need to be reached during a recording session: the USB cable to the computer, the output jacks that feed studio monitors or other gear, and (depending on the model) MIDI ports, line-level inputs, or the phantom power switch.</p>
+<p>The back of an interface holds the connections that don't need to be reached during a recording session: the USB cable to the computer, the output jacks that feed studio monitors or other gear, and (depending on the model) MIDI ports or the phantom power switch.</p>
 
 <figure class="compare">
   <div class="compare-row">
@@ -609,9 +614,7 @@
   <figcaption>Two backs, again similar but not identical</figcaption>
 </figure>
 
-<p>Both backs have a USB-B port (where the cable that goes to the computer plugs in) and a Kensington security slot. After that they diverge. The PreSonus has two TRS output jacks (the same kind of jack a 1/4" cable plugs into) for connecting to studio monitors, plus a pair of MIDI ports for controllers and synthesizers. The Behringer uses RCA jacks (the round, plastic-rimmed connectors common on consumer audio gear) for its outputs, has no MIDI, and houses the +48V phantom power switch back here instead of on the front.</p>
-
-<p>One detail about that instrument input. Both interfaces have a separate input specifically for instruments: on the Behringer it's labeled "Inst 2," on the PreSonus it's the second combo jack switched to its "Inst" mode by the gain knob. That input is set up for the higher signal level that comes out of an electric guitar or bass. You won't use it this week, but it's there for next week, when the full vocabulary of signal types lands.</p>
+<p>Both backs have a USB-B port (where the cable that goes to the computer plugs in) and a Kensington security slot. After that they diverge. The PreSonus has two <strong>TRS</strong> output jacks (the same kind of jack a 1/4" cable plugs into, balanced like the XLR cable in section 4) for connecting to studio monitors, plus a pair of MIDI ports for controllers and synthesizers. The Behringer uses <strong>RCA</strong> jacks (the round, plastic-rimmed connectors common on consumer audio gear; unbalanced, meaning they don't have the noise-rejecting trick the XLR and TRS cables use) for its outputs, has no MIDI, and houses the +48V phantom power switch back here instead of on the front. For short cable runs between an interface and a pair of speakers a few feet away, the unbalanced connection is fine; for longer runs, balanced is the more reliable choice.</p>
 
 <hr>
 
