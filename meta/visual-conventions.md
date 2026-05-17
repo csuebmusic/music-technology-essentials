@@ -69,6 +69,8 @@ Screenshots of software (Audacity, etc.) and photographs are loaded as `<img>` w
 
 Photo attributions, when present, go inside the figure as a small italic line under the figcaption (see Module 2 listening for examples). The attribution uses `--ink-faint` and the `.photo-attribution` class.
 
+When a screenshot needs numbered annotations, the markers are drawn directly onto the PNG (orange filled circles with white numbers, placed on the region they identify, no leader lines). The HTML includes the legend below the figure in a `.annotation-key` block, with numbers matching the markers on the image. The canonical example is `audacity-interface-empty.png` in `assets/images/module-02-week-02/`. If the screenshot is ever re-captured, the new version needs fresh annotations drawn on in the same style.
+
 ## Per-module audio format standards
 
 Each module has a default audio format that students use throughout. The standard is introduced in the module's first reading and reinforced consistently in handouts and project prompts.
