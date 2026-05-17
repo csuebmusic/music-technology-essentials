@@ -64,94 +64,98 @@
 
 <p>Every recording setup has a <strong>signal flow</strong>. That's a fancy phrase for a simple idea: sound starts somewhere (a voice, a guitar, a slammed door, a crumbling sheet of paper) and ends up stored somewhere (a file on a hard drive). Between those two endpoints, the sound passes through equipment. Each piece of equipment has a job, and each piece is a choice. A different mic, a different cable, a different interface, and you get a different recording, even if the source is identical.</p>
 
-<p>The signal flow you'll use most often this semester, and the one every station in MB2525 is set up to support, is what we'll call the <strong>basic recording chain</strong>. It has four stages:</p>
+<p>The signal flow you'll use most often this semester, and the one every station in MB2525 is set up to support, is what we'll call the <strong>basic recording chain</strong>. It has five stages: three devices, connected by two cables.</p>
 
 <figure>
-  <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Diagram of the basic recording chain: dynamic mic to XLR cable to audio interface to USB cable to computer running Audacity.">
     <defs>
-      <marker id="arrowhead-1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-        <polygon points="0 0, 10 3, 0 6" fill="var(--accent)"/>
+      <marker id="arrowhead-xlr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="var(--cable-xlr)"/>
+      </marker>
+      <marker id="arrowhead-usb" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="var(--cable-usb)"/>
       </marker>
     </defs>
 
-    <!-- Stage 1: Mic -->
+    <!-- Top label: SIGNAL FLOW -->
+    <text x="360" y="22" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
+          fill="var(--accent)">BASIC RECORDING CHAIN</text>
+
+    <!-- Stage 1: Dynamic mic (device) -->
     <g>
-      <rect x="20" y="60" width="140" height="80" rx="4"
+      <rect x="20" y="70" width="120" height="80" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="90" y="95" text-anchor="middle"
-            font-family="var(--sans)" font-size="14" font-weight="600" fill="var(--ink)">Dynamic mic</text>
-      <text x="90" y="115" text-anchor="middle"
-            font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">acoustic → electrical</text>
+      <text x="80" y="105" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Dynamic mic</text>
+      <text x="80" y="125" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">transducer</text>
     </g>
+    <text x="80" y="190" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">acoustic →</text>
+    <text x="80" y="203" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">analog electrical</text>
 
-    <!-- Arrow 1 -->
-    <line x1="165" y1="100" x2="200" y2="100"
-          stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-1)"/>
-    <text x="182" y="92" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">mic level</text>
+    <!-- Cable 1: XLR (between mic and interface) -->
+    <!-- The line itself runs through the cable region -->
+    <line x1="142" y1="110" x2="263" y2="110"
+          stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#arrowhead-xlr)"/>
+    <!-- Cable label above the line -->
+    <text x="202" y="92" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" font-weight="500"
+          fill="var(--cable-xlr)">XLR cable</text>
+    <!-- Cable sub-label below the line -->
+    <text x="202" y="128" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9"
+          fill="var(--cable-xlr)">carries mic level</text>
 
-    <!-- Stage 2: Cable -->
+    <!-- Stage 2: Audio interface (device) -->
     <g>
-      <rect x="205" y="60" width="140" height="80" rx="4"
+      <rect x="265" y="70" width="150" height="80" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="275" y="95" text-anchor="middle"
-            font-family="var(--sans)" font-size="14" font-weight="600" fill="var(--ink)">XLR cable</text>
-      <text x="275" y="115" text-anchor="middle"
-            font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">balanced, protected</text>
+      <text x="340" y="105" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Audio interface</text>
+      <text x="340" y="125" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">amplify, digitize</text>
     </g>
+    <text x="340" y="190" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">analog electrical →</text>
+    <text x="340" y="203" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">digital data</text>
 
-    <!-- Arrow 2 -->
-    <line x1="350" y1="100" x2="385" y2="100"
-          stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-1)"/>
-    <text x="367" y="92" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">mic level</text>
+    <!-- Cable 2: USB (between interface and computer) -->
+    <line x1="417" y1="110" x2="538" y2="110"
+          stroke="var(--cable-usb)" stroke-width="2.5" marker-end="url(#arrowhead-usb)"/>
+    <text x="477" y="92" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" font-weight="500"
+          fill="var(--cable-usb)">USB cable</text>
+    <text x="477" y="128" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9"
+          fill="var(--cable-usb)">carries digital data</text>
 
-    <!-- Stage 3: Interface -->
+    <!-- Stage 3: Computer / Audacity (device) -->
     <g>
-      <rect x="390" y="60" width="140" height="80" rx="4"
+      <rect x="540" y="70" width="160" height="80" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="460" y="95" text-anchor="middle"
-            font-family="var(--sans)" font-size="14" font-weight="600" fill="var(--ink)">Audio interface</text>
-      <text x="460" y="115" text-anchor="middle"
-            font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">amplify, digitize</text>
+      <text x="620" y="100" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Computer</text>
+      <text x="620" y="118" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">(Audacity)</text>
+      <text x="620" y="135" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">store as file</text>
     </g>
-
-    <!-- Arrow 3 -->
-    <line x1="535" y1="100" x2="570" y2="100"
-          stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-1)"/>
-    <text x="552" y="92" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">USB</text>
-
-    <!-- Stage 4: DAW -->
-    <g>
-      <rect x="575" y="60" width="125" height="80" rx="4"
-            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="637" y="95" text-anchor="middle"
-            font-family="var(--sans)" font-size="14" font-weight="600" fill="var(--ink)">Audacity</text>
-      <text x="637" y="115" text-anchor="middle"
-            font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">store as file</text>
-    </g>
-
-    <!-- Labels above and below -->
-    <text x="360" y="30" text-anchor="middle"
-          font-family="var(--mono)" font-size="11" text-transform="uppercase"
-          letter-spacing="0.1em" fill="var(--accent)">SIGNAL FLOW</text>
-
-    <text x="90" y="175" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">acoustic</text>
-    <text x="275" y="175" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">analog electrical</text>
-    <text x="460" y="175" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">analog → digital</text>
-    <text x="637" y="175" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">digital</text>
+    <text x="620" y="190" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">digital</text>
   </svg>
-  <figcaption>The basic recording chain. Four stages, three transitions.</figcaption>
+  <figcaption>The basic recording chain. Three devices (mic, interface, computer), connected by two cables (XLR, USB). The color of each cable in this diagram matches the color used for that cable type everywhere else in the course.</figcaption>
 </figure>
 
-<p>Read the diagram left to right and you can see what's happening at each transition. A sound in the air vibrates the microphone, and the microphone produces a small electrical signal (this is what we'll call <strong>mic level</strong>, and it matters more than it sounds like it should). That signal travels down an XLR cable to an audio interface. The interface does two jobs: it amplifies the small mic-level signal up to something the computer can work with, and it converts that analog electrical signal into a stream of numbers (digital audio, the topic of all of Module 2). Those numbers travel over USB to Audacity, which stores them as a file on the computer.</p>
+<p>Read the diagram left to right and you can see what's happening at each transition. A sound in the air vibrates the microphone, and the microphone produces a small electrical signal (this is what we'll call <strong>mic level</strong>, and it matters more than it sounds like it should). That signal travels down an XLR cable to an audio interface. The interface does two jobs: it amplifies the small mic-level signal up to something the computer can work with, and it converts that analog electrical signal into a stream of numbers (digital audio, the topic of all of Module 2). Those numbers travel over a USB cable to the computer, where Audacity stores them as a file.</p>
 
-<p>Each of the next four sections takes one stage and looks at it more closely. Once you've read all four, the diagram above should feel less like a sequence of mystery boxes and more like a list of decisions you understand. When you sit down at a station Wednesday, you'll be operating every stage of this chain. The reading is what makes that operation make sense.</p>
+<p>The five stages alternate: <em>device, cable, device, cable, device</em>. The devices do the work of converting and processing the signal; the cables carry the signal from one device to the next. Each cable type has a job that matches the kind of signal it carries (XLR for mic-level analog audio; USB for digital data), and a color in this diagram that you'll see again every time that cable appears in a course visual.</p>
+
+<p>Each of the next sections takes one stage and looks at it more closely. Once you've read all the sections, the diagram above should feel less like a sequence of mystery boxes and more like a list of decisions you understand. When you sit down at a station Wednesday, you'll be operating every stage of this chain. The reading is what makes that operation make sense.</p>
 
 <hr>
 
@@ -332,12 +336,12 @@
 
 <h2>5 · The audio interface</h2>
 
-<p>The audio interface is the box on your desk that the mic cable plugs into, and the box that connects to the computer over USB. It's where the signal stops being analog (continuous electrical voltage) and starts being digital (a stream of numbers). The interface has three jobs, in order:</p>
+<p>The audio interface is the box on your desk that the mic cable plugs into, and the box that connects to the computer over a USB cable. It's where the signal stops being analog (continuous electrical voltage) and starts being digital (a stream of numbers). The interface has three jobs, in order:</p>
 
 <ol>
   <li><strong>Amplify the mic signal.</strong> The preamp boosts mic level up to line level. The gain trim knob on the front controls how much amplification.</li>
   <li><strong>Convert analog to digital.</strong> The <strong>analog-to-digital converter</strong> (ADC) samples the now-amplified signal many thousands of times per second. Module 2 covered this in detail: 44.1 kHz of samples, 16 bits of resolution per sample. The ADC is what makes that happen.</li>
-  <li><strong>Send the data to the computer.</strong> Over USB, the stream of numbers travels to Audacity, which stores it in a file.</li>
+  <li><strong>Send the data to the computer.</strong> Over a USB cable, the stream of numbers travels to Audacity, which stores it in a file.</li>
 </ol>
 
 <p>The interface also runs the reverse path for playback: it takes digital audio coming from the computer, converts it back to analog through a <strong>digital-to-analog converter</strong> (DAC), and sends it out to your headphones or speakers. But for this reading we're focused on the recording direction.</p>
@@ -521,7 +525,7 @@
   <dd>The path that sound takes from acoustic source to stored file. Every recording setup has one. The basic recording chain is the most common version of it.</dd>
 
   <dt>Recording chain</dt>
-  <dd>The specific signal flow used at every lab station: dynamic mic → mic-level signal → XLR cable → audio interface → DAW.</dd>
+  <dd>The specific signal flow used at every lab station: a dynamic mic and a computer (running Audacity), connected through an audio interface, with an XLR cable between mic and interface and a USB cable between interface and computer.</dd>
 
   <dt>Transducer</dt>
   <dd>A device that converts one kind of energy into another. A microphone converts acoustic energy (air pressure) into electrical energy (voltage). A speaker does the reverse.</dd>
@@ -550,8 +554,11 @@
   <dt>Balanced cable</dt>
   <dd>A cable design that carries two opposite-polarity copies of the signal, so noise picked up along the run lands identically on both wires and cancels when the receiver subtracts one from the other. XLR is the most common balanced cable type.</dd>
 
+  <dt>USB cable</dt>
+  <dd>The cable that carries digital data between the audio interface and the computer. Doesn't carry audio in the analog sense; carries the stream of numbers the ADC produces.</dd>
+
   <dt>Audio interface</dt>
-  <dd>The hardware box that plugs into the computer over USB and handles the conversion between analog audio and digital audio. Houses the preamp, the ADC, and the DAC.</dd>
+  <dd>The hardware box that plugs into the computer over a USB cable and handles the conversion between analog audio and digital audio. Houses the preamp, the ADC, and the DAC.</dd>
 
   <dt>ADC</dt>
   <dd>Analog-to-digital converter. The circuit inside the interface that turns an analog electrical signal into a stream of digital samples. Module 2 covered the sample-rate and bit-depth choices that shape what the ADC produces.</dd>
