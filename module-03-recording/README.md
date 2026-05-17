@@ -14,11 +14,10 @@ The deliverable is the library itself, the curated and organized collection of s
 
 The arc of the module: understand the recording chain → record into Audacity → expand the chain (other signal types, other mics, signal modifiers) → understand the live-vs-studio context (mixers, auxes, busses) → submit the library.
 
-Three principles thread through the module:
+Two principles thread through the module:
 
-1. **Record with headroom.** Module 2 promised this in the Mon Wk 2 reading; Module 3 is where it gets delivered. Peaks around -12 to -6 dBFS while recording, room to commit later in editing.
-2. **The recording chain is a sequence of decisions.** Mic, signal type, cable, interface. Each link is a choice, and each one has consequences. Students should be able to look at a setup and name the chain.
-3. **A sample is not a recording.** A recording is what comes out of the mic; a sample is what goes into the library. The difference is the prep step (denoise, trim, normalize), and the prep step is non-negotiable.
+1. **Signal flow is a sequence of decisions.** Sound becomes signal becomes recording becomes sample becomes library. At every stage, something is chosen: which mic, which signal type, which cable, which input, which interface, which prep step, which destination folder. Students should be able to look at any setup (a stage, a studio, a phone propped against a doorframe) and name the flow from acoustic source to stored file. The basic recording chain is the most common version of this flow; the Wk 7 expansion (instrument and line signals, DI boxes, preamps) and the Wk 8 mixer lecture (live vs. studio routing) widen the frame.
+2. **A sample is not a recording.** A recording is what comes out of the mic; a sample is what goes into the library. Turning one into the other is its own discipline, and it spans both the tracking stage and the prep stage. While recording: leave headroom (peaks around -12 to -6 dBFS) so there are decisions left to make. After recording: denoise, trim, normalize, name, and file. The headroom habit delivers on the Module 2 promise (Mon Wk 2 reading, §5); the normalize step delivers on the "scale not shape" promise (Mon Wk 5 reading, §2). Neither step is optional; both are what make a usable library possible.
 
 By the end of Wk 8, students should have a working library of their own recordings, prepped to a consistent standard, organized in a documented folder structure, ready to use as raw material in Module 4 (Ableton).
 
