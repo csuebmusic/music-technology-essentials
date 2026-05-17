@@ -143,22 +143,26 @@ random seed (42), so output is deterministic across runs.
 ## `generate-audio-demos-week-05.py`
 
 Generates the audio demo files used in the Module 2 Week 5 reading
-(`module-02-audio-editing-mixing/lessons/07-reading-dynamics.html`).
-Thirteen files in total, supporting four pedagogical moments in the
-reading: dynamic range (wide vs. narrow), threshold + ratio (one
-source compressed at three settings), attack + release (a percussion
-loop with four different time-constant settings), and the limiter /
-loudness-wars demo (same mix, progressively crushed).
+(`module-02-audio-editing-mixing/lessons/07-reading-dynamics.html`)
+and the source for the dynamics tool's embedded demo
+(`module-02-audio-editing-mixing/lessons/08-tool-mixing-dynamics.html`).
+Nineteen files in total, supporting the four main pedagogical moments
+in the reading (dynamic range, threshold + ratio, attack + release,
+limiting / loudness-wars) plus three smaller supplements (normalization
+contrast, timbre A/B, dynamics-tool demo source).
 
 ### What it produces
 
 Output directory: `assets/audio/module-02-week-05/`
 
-- `range-wide.wav`, `range-narrow.wav` — Section 1
-- `tr-source.wav`, `tr-light.wav`, `tr-medium.wav`, `tr-heavy.wav` — Section 2
+- `range-wide.wav`, `range-narrow.wav` — Section 1 (dynamic range)
+- `tr-source.wav`, `tr-light.wav`, `tr-medium.wav`, `tr-heavy.wav` — Section 2 (threshold + ratio)
 - `ar-source.wav`, `ar-fast-attack.wav`, `ar-slow-attack.wav`,
-  `ar-fast-release.wav`, `ar-slow-release.wav` — Section 3
-- `limit-natural.wav`, `limit-light.wav`, `limit-crushed.wav` — Section 4
+  `ar-fast-release.wav`, `ar-slow-release.wav` — Section 3 (attack + release)
+- `limit-natural.wav`, `limit-light.wav`, `limit-crushed.wav` — Section 4 (limiting / loudness wars)
+- `norm-quiet.wav`, `norm-loud.wav` — Section 2 supplement (normalization contrast: same shape, different peak; pairs with the wide/narrow demo to land the "scale vs. shape" distinction)
+- `timbre-scaled.wav`, `timbre-compressed.wav` — Section 2 supplement (timbre A/B at matched loudness: a scaled-only vs. compressed-then-makeup version, both peak-matched, so students can hear how compression changes the *sound* once the loudness illusion is removed)
+- `dynamic-tool-demo.wav` — source audio for the dynamics tool's built-in demo button (`08-tool-mixing-dynamics.html`). The tool embeds this file as base64 inside the HTML; see `embed-tool-demo.py` below for the re-embed step.
 
 ### Implementation notes
 
@@ -201,6 +205,36 @@ files within a comparison set.
 The narrow-version boost in `gen_dynamic_range` is calibrated for the
 specific source loop (currently `NARROW_BOOST_DB = 18` for ~6 dB RMS
 gap). If you change the source, sweep this value to recalibrate.
+
+## `embed-tool-demo.py`
+
+Re-embeds the dynamics tool's demo audio as base64 inside
+`module-02-audio-editing-mixing/lessons/08-tool-mixing-dynamics.html`.
+Run this after regenerating `dynamic-tool-demo.wav` if the embedded
+copy should reflect the new audio.
+
+### Why the tool has an embedded copy
+
+Browsers block `fetch()` across origins under the `file://` protocol,
+so fetching a sibling WAV from the tool's HTML fails when the page is
+opened by double-clicking. Embedding the WAV inside the HTML sidesteps
+that entirely. The trade-off is the HTML file grows from ~30 KB to
+~1.4 MB, which is fine for a teaching tool loaded once per session.
+
+The script reads the canonical WAV from
+`assets/audio/module-02-week-05/dynamic-tool-demo.wav`, base64-encodes
+it, and replaces the contents of the
+`<script type="application/octet-stream" id="demo-audio-b64">` block
+inside the tool HTML with the fresh data. No other parts of the tool
+are touched.
+
+### Re-running
+
+```
+python3 build/embed-tool-demo.py
+```
+
+Standard library only — no extra dependencies. Idempotent.
 
 ## File naming convention
 
