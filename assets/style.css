@@ -35,6 +35,16 @@
   --gr-light: #d9b042;
   --gr-heavy: #b5552f;
 
+  /* Cable colors (used in signal-flow diagrams across Module 3 and
+     anywhere else cable runs are visualized). Each cable type gets its
+     own desaturated hue, distinct from --accent (devices) and from
+     each other. Used as stroke color on the cable segment, and as
+     fill on the cable info box. */
+  --cable-xlr:  #3a6b7a;  /* mic-level, balanced; teal-slate */
+  --cable-usb:  #525a5e;  /* digital data; neutral graphite */
+  --cable-ts:   #a8862e;  /* instrument-level, unbalanced; warm ochre */
+  --cable-trs:  #6b5e8c;  /* balanced line / stereo; muted plum */
+
   --serif: 'DM Sans', -apple-system, system-ui, sans-serif;
   --mono: 'DM Mono', 'SF Mono', Menlo, monospace;
 }
