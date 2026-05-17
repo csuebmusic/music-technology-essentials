@@ -11,14 +11,6 @@
     figure.screenshot {
       margin: 1.5rem 0 2rem;
     }
-    /* For annotated screenshots: the image and the SVG overlay both live inside
-       this wrapper, which establishes the positioning context. The SVG is sized
-       and positioned to lie exactly on top of the image, with pointer-events
-       disabled so right-click / save-image still works on the underlying picture. */
-    figure.screenshot .annotated {
-      position: relative;
-      line-height: 0; /* removes the descender gap below the inline img */
-    }
     figure.screenshot img {
       display: block;
       width: 100%;
@@ -26,14 +18,6 @@
       border: 1px solid var(--rule);
       border-radius: 3px;
       background: var(--bg-alt);
-    }
-    figure.screenshot .annotated svg.overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
     }
     figure.screenshot figcaption {
       font-family: var(--mono);
@@ -45,7 +29,7 @@
       text-align: left;
     }
     /* Annotation key sits below the screenshot, referencing the numbered
-       markers drawn over the image. */
+       markers drawn on the image. */
     figure.screenshot .annotation-key {
       font-family: var(--mono);
       font-size: 0.85rem;
@@ -142,72 +126,7 @@
 <p>Before you import anything, take a minute to learn the names of the things on screen. You don't need to memorize all of these, just be able to find them when the instruction says "click the play button" or "use the selection tool."</p>
 
 <figure class="screenshot">
-  <div class="annotated">
-    <img src="../../assets/images/module-02-week-02/audacity-interface-empty.png" alt="The empty Audacity main window. Numbered markers point to the menu bar, transport toolbar, tools toolbar, recording and playback level meters, Audio Setup dropdown, timeline ruler, empty track area, and selection toolbar." loading="lazy">
-    <svg class="overlay" viewBox="0 0 2440 1322" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-      <!-- Marker style: filled rust circle (radius 32 in source coords) with
-           white DM Mono number centered inside. Each marker sits in the empty
-           track area or the title-bar margin, with a short leader line ending
-           in an arrowhead pointing to the region it identifies. Keeping the
-           leaders short and (mostly) vertical avoids covering UI elements
-           and avoids the diagonal-crossing clutter of a callout-margin layout. -->
-      <defs>
-        <marker id="leader-arrow" viewBox="0 0 12 12" refX="9" refY="6"
-                markerWidth="12" markerHeight="12" orient="auto">
-          <path d="M 0 0 L 12 6 L 0 12 Z" fill="var(--accent)"/>
-        </marker>
-      </defs>
-      <g stroke="var(--accent)" stroke-width="4" fill="none">
-        <!-- 1: Menu bar — leader points up to just below the menu strip, in the title bar area -->
-        <line x1="120" y1="346" x2="120" y2="55" marker-end="url(#leader-arrow)"/>
-        <!-- 2: Transport toolbar — leader tip lands above the toolbar buttons, in the title bar area -->
-        <line x1="330" y1="346" x2="330" y2="95" marker-end="url(#leader-arrow)"/>
-        <!-- 3: Tools toolbar — leader tip lands above the tools cluster, slightly left -->
-        <line x1="555" y1="346" x2="520" y2="95" marker-end="url(#leader-arrow)"/>
-        <!-- 5: Audio Setup — leader tip lands above the dropdown button, in the title bar area -->
-        <line x1="1380" y1="346" x2="1380" y2="95" marker-end="url(#leader-arrow)"/>
-        <!-- 4: Level meters — leader tip lands above the meters, in the title bar area -->
-        <line x1="1820" y1="346" x2="1820" y2="95" marker-end="url(#leader-arrow)"/>
-        <!-- 6: Timeline ruler — leader points up to the ruler itself -->
-        <line x1="1020" y1="346" x2="1020" y2="300" marker-end="url(#leader-arrow)"/>
-        <!-- 8: Selection toolbar — leader points DOWN to the selection block -->
-        <line x1="1490" y1="1054" x2="1490" y2="1170" marker-end="url(#leader-arrow)"/>
-      </g>
-      <g font-family="DM Mono, monospace" font-size="42" font-weight="500" text-anchor="middle">
-        <!-- 1: Menu bar -->
-        <circle cx="120" cy="380" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="120" y="396" fill="var(--bg)">1</text>
-
-        <!-- 2: Transport toolbar -->
-        <circle cx="330" cy="380" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="330" y="396" fill="var(--bg)">2</text>
-
-        <!-- 3: Tools toolbar (selection / envelope / draw / multi-tool cluster) -->
-        <circle cx="555" cy="380" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="555" y="396" fill="var(--bg)">3</text>
-
-        <!-- 4: Level meters (recording on top, playback below) -->
-        <circle cx="1820" cy="380" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="1820" y="396" fill="var(--bg)">4</text>
-
-        <!-- 5: Audio Setup dropdown -->
-        <circle cx="1380" cy="380" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="1380" y="396" fill="var(--bg)">5</text>
-
-        <!-- 6: Timeline ruler -->
-        <circle cx="1020" cy="380" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="1020" y="396" fill="var(--bg)">6</text>
-
-        <!-- 7: Empty track area (no leader; the area itself is the location) -->
-        <circle cx="1220" cy="750" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="1220" y="766" fill="var(--bg)">7</text>
-
-        <!-- 8: Selection toolbar (bottom) -->
-        <circle cx="1490" cy="1020" r="32" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
-        <text x="1490" y="1036" fill="var(--bg)">8</text>
-      </g>
-    </svg>
-  </div>
+  <img src="../../assets/images/module-02-week-02/audacity-interface-empty.png" alt="The empty Audacity main window with eight numbered orange markers identifying the menu bar, transport toolbar, tools toolbar, level meters, Audio Setup dropdown, timeline ruler, empty track area, and selection toolbar." loading="lazy">
   <figcaption>Audacity main window · empty project</figcaption>
   <div class="annotation-key">
     <strong>1.</strong> Menu bar (File, Edit, Select, View, Transport, Tracks, Generate, Effect, Analyze, Tools, Help)<br>
