@@ -485,7 +485,7 @@ This is the pivot session of the module. By the end of class, students should ha
 
 Two halves:
 
-- **Editing techniques walkthrough (~60 min):** every technique from the Mon Wk 3 reading, mapped to its location in Audacity, with a hands-on exercise on a real Project 1 sample. Nine techniques in the reading's order: cut, trim, splice, fades, crossfade, loop, reverse, time-stretch, pitch-shift.
+- **Editing techniques walkthrough (~60 min):** every technique from the Mon Wk 3 reading, mapped to its location in Audacity, with a hands-on exercise on a real Project 1 sample. Ten techniques: the nine from the reading (cut, trim, splice, fades, crossfade, loop, reverse, time-stretch, pitch-shift), plus Change Speed (the tape-physics coupled version, added in-lab to make the coupling/decoupling concrete).
 - **Project 1 begins (~30 min):** open the prompt, browse the bank, pick three sounds, place them in the saved project, save. Students leave with a real Project 1 starting point, not a blank screen.
 
 ### Materials
@@ -959,7 +959,7 @@ Module 02 readings make several "we'll come back to this" promises. Track them s
 - **Mon Wk 5 reading, section 2 (Normalizing, "Why and when to normalize"):** "You'll do this in Module 3 when you build your midterm sample library." Module 3's sample-prep session needs to teach peak normalization to -1 dB as the standardization step, using the language from the Mon Wk 5 reading (one number applied uniformly; scale not shape).
 - **Mon Wk 5 reading, section 2 (LUFS sibling concept):** "LUFS becomes important when you're finishing a full piece for delivery, which you'll meet later in your studies." This is the one knowingly-vague pointer in Module 02. The course as currently designed doesn't return to LUFS. If Module 4's final-mix workflow ends up touching streaming-delivery considerations, this is the place to honor the pointer; otherwise the framing in the reading is honest enough that it can stand on its own as a "for awareness" mention.
 
-When drafting Module 3 and Module 4 specs, scan this list and make sure each promise is covered. If a promise stops being relevant, edit the original reading rather than leave a dangling pointer.
+When drafting Module 3 and Module 4 READMEs, scan this list and make sure each promise is covered. If a promise stops being relevant, edit the original reading rather than leave a dangling pointer.
 
 ### What gets logged
 
