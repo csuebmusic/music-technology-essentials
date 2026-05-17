@@ -544,91 +544,74 @@
 <p>The audio interface is the box on your desk that the mic cable plugs into, and the box that connects to the computer over a USB cable. It's where the signal stops being analog (continuous electrical voltage) and starts being digital (a stream of numbers). The interface has three jobs, in order:</p>
 
 <ol>
-  <li><strong>Amplify the mic signal.</strong> The preamp boosts mic level up to line level. The gain trim knob on the front controls how much amplification.</li>
+  <li><strong>Amplify the mic signal.</strong> The preamp boosts mic level up to line level. The gain knob on the front controls how much amplification.</li>
   <li><strong>Convert analog to digital.</strong> The <strong>analog-to-digital converter</strong> (ADC) samples the now-amplified signal many thousands of times per second. Module 2 covered this in detail: 44.1 kHz of samples, 16 bits of resolution per sample. The ADC is what makes that happen.</li>
   <li><strong>Send the data to the computer.</strong> Over a USB cable, the stream of numbers travels to Audacity, which stores it in a file.</li>
 </ol>
 
 <p>The interface also runs the reverse path for playback: it takes digital audio coming from the computer, converts it back to analog through a <strong>digital-to-analog converter</strong> (DAC), and sends it out to your headphones or speakers. But for this reading we're focused on the recording direction.</p>
 
-<figure>
-  <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-    <!-- Interface body -->
-    <rect x="20" y="40" width="560" height="160" rx="6"
-          fill="var(--bg-alt)" stroke="var(--ink-soft)" stroke-width="1.5"/>
+<p>The stations in MB2525 are equipped with two different interface models: the <strong>PreSonus AudioBox USB 96</strong> at some stations, the <strong>Behringer U-Phoria UM2</strong> at others. They're built around the same idea but they don't look the same, and that's worth a moment of attention. Different interfaces lay out their controls differently. The features themselves are universal; the physical layout is the manufacturer's choice. Once you can find the universal features on any interface, you can sit down at any station.</p>
 
-    <!-- Input jack (left) -->
-    <circle cx="80" cy="120" r="22" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
-    <circle cx="80" cy="120" r="10" fill="var(--rule)"/>
-    <text x="80" y="170" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">input 1</text>
-    <text x="80" y="183" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">(XLR)</text>
-
-    <!-- Gain trim knob -->
-    <circle cx="180" cy="120" r="28" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
-    <line x1="180" y1="120" x2="180" y2="100" stroke="var(--accent)" stroke-width="3"/>
-    <!-- Tick marks around -->
-    <line x1="180" y1="92" x2="180" y2="86" stroke="var(--ink-soft)" stroke-width="1"/>
-    <line x1="158" y1="120" x2="152" y2="120" stroke="var(--ink-soft)" stroke-width="1"/>
-    <line x1="202" y1="120" x2="208" y2="120" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="180" y="170" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">gain</text>
-    <text x="180" y="183" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">trim</text>
-
-    <!-- Level meter (LEDs) -->
-    <g>
-      <rect x="240" y="90" width="80" height="60" rx="2"
-            fill="var(--bg)" stroke="var(--ink-soft)" stroke-width="1"/>
-      <!-- Stack of small bars -->
-      <rect x="250" y="100" width="60" height="4" fill="var(--accent)" opacity="0.4"/>
-      <rect x="250" y="108" width="60" height="4" fill="var(--accent)" opacity="0.6"/>
-      <rect x="250" y="116" width="60" height="4" fill="var(--accent)" opacity="0.8"/>
-      <rect x="250" y="124" width="60" height="4" fill="var(--accent)"/>
-      <rect x="250" y="132" width="60" height="4" fill="var(--rule)"/>
-      <rect x="250" y="140" width="60" height="4" fill="var(--rule)"/>
-      <text x="280" y="170" text-anchor="middle"
-            font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">level meter</text>
-    </g>
-
-    <!-- Monitor mix knob -->
-    <circle cx="370" cy="120" r="28" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
-    <line x1="370" y1="120" x2="385" y2="105" stroke="var(--accent)" stroke-width="3"/>
-    <line x1="348" y1="120" x2="342" y2="120" stroke="var(--ink-soft)" stroke-width="1"/>
-    <line x1="392" y1="120" x2="398" y2="120" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="370" y="170" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">monitor</text>
-    <text x="370" y="183" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">mix</text>
-
-    <!-- Headphone output -->
-    <circle cx="460" cy="120" r="18" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
-    <circle cx="460" cy="120" r="8" fill="var(--rule)"/>
-    <text x="460" y="170" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">phones</text>
-
-    <!-- USB icon on right -->
-    <g>
-      <rect x="520" y="100" width="40" height="40" rx="3"
-            fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="540" y="125" text-anchor="middle"
-            font-family="var(--mono)" font-size="9" fill="var(--accent)">USB</text>
-      <text x="540" y="170" text-anchor="middle"
-            font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">to computer</text>
-    </g>
-
-    <!-- Top label -->
-    <text x="300" y="25" text-anchor="middle"
-          font-family="var(--mono)" font-size="11" letter-spacing="0.1em"
-          fill="var(--accent)">AUDIO INTERFACE (FRONT)</text>
-  </svg>
-  <figcaption>The controls on a typical audio interface. Yours may look different in the details, but every interface you'll meet has these five elements somewhere: an input, a gain trim, a level meter, a monitor mix knob, and a headphone output.</figcaption>
+<figure class="compare">
+  <div class="compare-row">
+    <div class="compare-item">
+      <img src="../../assets/images/module-03-week-06/presonus-audiobox-usb96-front.png"
+           alt="Front panel of the PreSonus AudioBox USB 96. Left side: two combo XLR/TRS inputs labeled Mic/Inst 1 and Mic/Inst 2. Middle: a red 48V phantom power button with red indicator light, and two gain knobs, one for each input, labeled with Inst and Mic positions and a -10 to +30 dB scale, each with a clip indicator LED. Right side: a Mixer blend knob (Inputs to Playback), a Main output knob, a power LED, a headphone output, and a phones level knob.">
+      <div class="compare-label">PreSonus AudioBox USB 96</div>
+    </div>
+    <div class="compare-item">
+      <img src="../../assets/images/module-03-week-06/behringer-um2-front.png"
+           alt="Front panel of the Behringer U-Phoria UM2. Left side: a combo XLR/TRS input labeled Mic/Line 1 with Clip and Sig LEDs. Middle: a 1/4 inch instrument input labeled Inst 2 with its own Clip and Sig LEDs, and a square Direct Monitor button. Right side: a Power LED with a +48V indicator below it, and a headphone output. Note: the gain knobs for this interface are on the top of the unit, not the front.">
+      <div class="compare-label">Behringer U-Phoria UM2</div>
+    </div>
+  </div>
+  <figcaption>Two interfaces, two layouts</figcaption>
+  <div class="photo-attribution">Source: Sweetwater product listings (manufactured by PreSonus and Behringer)</div>
 </figure>
 
-<p>The exact interface model at each lab station varies, but the front-panel controls are the same in essence everywhere. You'll see an <strong>input</strong> (where the XLR plugs in), a <strong>gain trim knob</strong> (sets how loud the mic comes through), a <strong>level meter</strong> (shows you how strong the amplified signal is), a <strong>monitor mix knob</strong> (controls what you hear in your headphones while recording, covered in section 7), and a <strong>headphone output</strong> (where you plug your headphones in).</p>
+<p>Look at both interfaces and you'll find the same set of controls, even though they're positioned and labeled differently:</p>
 
-<p>One detail worth knowing: most interfaces have a separate input specifically for instruments (often labeled "Hi-Z" or "Inst"). That input is set up for the higher signal level that comes out of an electric guitar or bass. You won't use it this week, but you'll meet it again in Week 7.</p>
+<ul>
+  <li>A <strong>mic input</strong>. On both interfaces, the leftmost connector is a combo jack that accepts an XLR plug. The PreSonus has two of them (so it can record from two mics at once); the Behringer has one.</li>
+  <li>A <strong>gain knob</strong> for each input. On the PreSonus, these sit on the front panel: silver knobs marked with a -10 to +30 dB scale. On the Behringer, the gain knobs are on the <em>top</em> of the unit, not the front (a layout choice, not a missing feature).</li>
+  <li>A <strong>clip indicator</strong> next to each input. On the PreSonus, a small red LED labeled "Clip" lights up when the gain is set too high and the signal is hitting the digital ceiling. On the Behringer, the same job is done by a "Clip" LED above the corresponding "Sig" LED (which lights up when the input sees any signal at all).</li>
+  <li>A <strong>phantom power control</strong>. On the PreSonus, a red "48V" button on the front, with a red light when it's on. On the Behringer, the switch is on the back (labeled +48V), with an LED on the front to indicate when it's on. Phantom power supplies the voltage that condenser mics need to operate. Dynamic mics ignore it, so leaving it on for a dynamic mic causes no harm; you can leave it off entirely for the work in Wednesday's lab.</li>
+  <li>A <strong>direct monitor</strong> control. On the Behringer, this is a square button labeled "Direct Monitor" that toggles direct monitoring on or off. On the PreSonus, it's a Mixer knob that blends the live input signal with the playback signal coming from the computer. Same idea (hearing yourself in the headphones in real time), two different implementations. We'll come back to this in section 7.</li>
+  <li>A <strong>headphone output</strong>. Both interfaces have a 1/4" headphone jack on the front. The PreSonus has a dedicated Phones level knob; the Behringer doesn't (it uses one combined level control).</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-label">If you're at a Behringer station</div>
+  <p>The Behringer's gain knobs are on the top of the unit, behind the front panel. There are three: <strong>Mic/Line Gain 1</strong>, <strong>Inst Gain 2</strong>, and <strong>Output</strong>. The first two control how much amplification each input gets (this is what the section 6 discussion of setting the gain refers to). The Output knob controls the level going to your headphones and speakers.</p>
+  <figure>
+    <img src="../../assets/images/module-03-week-06/behringer-um2-top.png"
+         alt="Top view of the Behringer U-Phoria UM2 showing three knobs labeled, left to right: Mic/Line Gain 1, Inst Gain 2, and Output."
+         style="max-width: 100%; height: auto;">
+  </figure>
+</div>
+
+<p>The back of an interface holds the connections that don't need to be reached during a recording session: the USB cable to the computer, the output jacks that feed studio monitors or other gear, and (depending on the model) MIDI ports, line-level inputs, or the phantom power switch.</p>
+
+<figure class="compare">
+  <div class="compare-row">
+    <div class="compare-item">
+      <img src="../../assets/images/module-03-week-06/presonus-audiobox-usb96-back.png"
+           alt="Back panel of the PreSonus AudioBox USB 96. From left to right: USB-B port, two MIDI DIN connectors labeled In and Out, two 1/4 inch TRS Main Out jacks labeled L and R, a Kensington security slot, and a 1/4 inch Phones output.">
+      <div class="compare-label">PreSonus back</div>
+    </div>
+    <div class="compare-item">
+      <img src="../../assets/images/module-03-week-06/behringer-um2-back.png"
+           alt="Back panel of the Behringer U-Phoria UM2. From left to right: two RCA output jacks labeled 2 (R) and 1 (L), a USB-B port, a Kensington security slot, and a +48V phantom power switch with off and on positions.">
+      <div class="compare-label">Behringer back</div>
+    </div>
+  </div>
+  <figcaption>Two backs, again similar but not identical</figcaption>
+</figure>
+
+<p>Both backs have a USB-B port (where the cable that goes to the computer plugs in) and a Kensington security slot. After that they diverge. The PreSonus has two TRS output jacks (the same kind of jack a 1/4" cable plugs into) for connecting to studio monitors, plus a pair of MIDI ports for controllers and synthesizers. The Behringer uses RCA jacks (the round, plastic-rimmed connectors common on consumer audio gear) for its outputs, has no MIDI, and houses the +48V phantom power switch back here instead of on the front.</p>
+
+<p>One detail about that instrument input. Both interfaces have a separate input specifically for instruments: on the Behringer it's labeled "Inst 2," on the PreSonus it's the second combo jack switched to its "Inst" mode by the gain knob. That input is set up for the higher signal level that comes out of an electric guitar or bass. You won't use it this week, but it's there for next week, when the full vocabulary of signal types lands.</p>
 
 <hr>
 
