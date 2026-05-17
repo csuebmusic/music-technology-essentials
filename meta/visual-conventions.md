@@ -34,12 +34,29 @@ The variable definitions in `assets/style.css`:
 | `--meter-clip` | `#a83030` | Level-meter red zone: signal at or over ceiling |
 | `--gr-light` | `#d9b042` | Gain-reduction gradient, light end (small reduction, yellow) |
 | `--gr-heavy` | `#b5552f` | Gain-reduction gradient, heavy end (large reduction, rust) |
+| `--cable-xlr` | `#3a6b7a` | XLR cable, mic-level balanced; teal-slate |
+| `--cable-usb` | `#525a5e` | USB cable, digital data; neutral graphite |
+| `--cable-ts` | `#a8862e` | TS cable, instrument-level unbalanced; warm ochre |
+| `--cable-trs` | `#6b5e8c` | TRS cable, balanced line / stereo; muted plum |
 
 ### Meter color taxonomy
 
 `--meter-good`, `--meter-hot`, `--meter-clip` are the canonical level-meter triplet. They follow the audio-industry green / amber / red convention but are warmed slightly to sit with the cream palette. Used in both static SVG meter diagrams (e.g. the gain-staging figure in `06-handout-mixing-in-audacity.html`) and live CSS meter widgets (e.g. the input / output / GR meters in the dynamics tool).
 
 `--gr-light` and `--gr-heavy` are the two endpoints of the gain-reduction gradient. CSS gradient interpolation handles the middle; if a sharper transition is needed (e.g. a 3-stop gradient with a deliberate midpoint), `--meter-hot` works as the intermediate color since it sits naturally between yellow and rust.
+
+### Cable color taxonomy
+
+Each cable type used in the course gets a distinct desaturated hue, kept separate from `--accent` (reserved for devices) and from each other. The convention is consistent everywhere a cable appears in a diagram, so a student who learns "XLR is teal" in the Wk 6 Mon reading can recognize XLR by color in the Wk 7 Mon expansion, the Wk 8 Mon mixer diagram, and any later signal-flow visual.
+
+| Variable | Cable | Carries | Where it first appears |
+|---|---|---|---|
+| `--cable-xlr` | XLR | Mic-level (or line-level), balanced, three-conductor | Module 3 Wk 6 Mon reading (basic recording chain) |
+| `--cable-usb` | USB | Digital data | Module 3 Wk 6 Mon reading (interface to computer) |
+| `--cable-ts` | TS | Instrument-level, unbalanced, two-conductor | Module 3 Wk 7 Mon reading (widening the flow) |
+| `--cable-trs` | TRS | Balanced line / unbalanced stereo, three-conductor | Module 3 Wk 7 Mon reading |
+
+If a new cable type is needed later (optical, MIDI, etc.), add a `--cable-*` variable here first, then use the name everywhere.
 
 ## Typography
 
@@ -62,6 +79,22 @@ SVG conventions:
 - Use `var(--ink)`, `var(--accent)`, etc., for stroke and fill colors, never hex
 - Use `DM Mono, monospace` for any text inside the SVG (this is the convention; the variable doesn't resolve inside SVG `font-family` attributes in some browsers, so the literal stack is fine)
 - `viewBox` rather than fixed width/height so diagrams scale
+
+### Signal-flow diagrams
+
+Signal-flow diagrams show how audio moves through equipment: from a source, through cables and devices, to a destination. They appear throughout Module 3 (basic recording chain, widened flow, mixer routing) and need to read consistently across readings.
+
+The visual hierarchy distinguishes **devices** from **cables**:
+
+- **Devices** (mic, audio interface, computer, mixer, etc.) are drawn as rounded rectangles outlined in `--accent`, filled with `--bg-alt`. Equal size where possible. They're the nodes of the flow.
+- **Cables** (XLR, USB, TS, TRS) are drawn as smaller, lower-weight labeled segments connecting two devices. Stroked in the cable's color from the `--cable-*` family. Each cable gets a small inline label (e.g. "XLR", "USB") in DM Mono, positioned above or below the segment, colored to match the cable.
+- **Direction** is shown with an arrowhead at the receiving-device end of each cable segment, in the cable's color.
+
+The device-cable-device-cable-device chain reads visually as anchor-line-anchor-line-anchor, with color doing the work of distinguishing cable types at a glance.
+
+A separate inline label above the whole diagram, in `--accent` DM Mono caps with letter-spacing, names what the diagram is (`BASIC RECORDING CHAIN`, `SIGNAL FLOW`, etc.). Beneath each device, an `--ink-soft` DM Mono caption names what category of signal is leaving that device (`acoustic`, `analog electrical`, `digital`).
+
+The canonical example is the chain diagram in `module-03-recording/lessons/01-reading-recording-chain.html`, section 1.
 
 ## Images and screenshots
 
