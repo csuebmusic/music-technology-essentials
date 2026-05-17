@@ -1,4 +1,4 @@
-# Module 02: Digital Audio, Editing & Mixing in Audacity
+# Module 02 — Digital Audio, Editing & Mixing in Audacity
 
 **Weeks 2–5 · 7 sessions (700 minutes total)**
 
@@ -77,11 +77,11 @@ Full listening assignment with guided questions: [`listening/historical.html`](h
 | Wk | Day | Focus |
 |---|---|---|
 | 2 | Mon | Session 1 · Lecture: Digital audio fundamentals + first listening |
-| 2 | Wed | Session 2 · Lab Part 1: Interactive digital-audio tool · Part 2: Audacity orientation |
+| 2 | Wed | Session 2 · Lab: digital-audio explorer (Tool 1) + Audacity orientation (Lab 1) |
 | 3 | Mon | Session 3 · Lecture: Editing concepts + envelope listening |
-| 3 | Wed | Session 4 · Lab: Editing techniques · Project 1 begins |
-| 4 | Wed | Session 5 · Lab Part 1: Mixing in Audacity (levels, pan, EQ + destructive/non-destructive frame) · Part 2: Project 1 work *(no Mon Wk 4, Labor Day)* |
-| 5 | Mon | Session 6 · Lecture: Dynamics (compression, limiting) + interactive dynamics tool |
+| 3 | Wed | Session 4 · Lab: Editing techniques (Lab 2) · Project 1 begins |
+| 4 | Wed | Session 5 · Lab: Mixing in Audacity (Lab 3) — levels, pan, EQ + destructive/non-destructive frame — then Project 1 work time *(no Mon Wk 4, Labor Day)* |
+| 5 | Mon | Session 6 · Lecture: Dynamics (compression, limiting) + dynamics tool (Tool 2) |
 | 5 | Wed | Session 7 · **Project 1 final work session + submission** |
 
 Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each session are below.
@@ -101,7 +101,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 ### Recurring confusions to expect across the module
 
 - **"Why does my recording sound thin/loud/quiet?"** Almost always a level-staging issue, an interface direct-monitor mix knob set wrong, or headphones with the in-line slider not all the way up. Train yourself to ask three questions in this order: (1) Is the in-line slider on the headphones up? (2) Is the interface mix knob set correctly (60% direct / 40% USB by default)? (3) Are the levels in Audacity reasonable (peaks around -12 to -6 dBFS, never clipping)?
-- **"My file disappeared."** Almost always means they saved to the wrong location, or saved as a project file (`.aup3`) when they meant to export as WAV, or didn't upload to NAS at session end. Walk them through the local-first / NAS-as-sync workflow again. The Session Routines card (Handout 02) is at every station for this reason, point at it.
+- **"My file disappeared."** Almost always means they saved to the wrong location, or saved as a project file (`.aup3`) when they meant to export as WAV, or didn't upload to NAS at session end. Walk them through the local-first / NAS-as-sync workflow again. The Session Routines reference card is at every station for this reason, point at it.
 - **"Audacity crashed."** It will. Audacity's autosave is good but not perfect. Reinforce the version-saving habit (`-v1.aup3`, `-v2.aup3`) early. If a student lost work, the right response is sympathy and a process correction, not panic.
 - **"Why doesn't my edit sound smooth?"** Usually missing fades. The single most useful Audacity habit is to add a small fade-in/fade-out (5-50 ms) on every edit boundary. Click pops at edit points are the audible signature of someone new to editing.
 - **"How do I [thing I've never done]?"** Resist the urge to do it for them. Sit next to them, ask where they are, ask what they've tried. The goal is for them to learn the move, not for you to demonstrate competence.
@@ -269,8 +269,8 @@ Two halves:
 
 ### Materials
 
-- **Lab Part 1:** [`lessons/02-tool-digital-audio-explorer.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/02-tool-digital-audio-explorer.html)
-- **Lab Part 2:** [`lessons/03-handout-audacity-orientation.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/03-handout-audacity-orientation.html)
+- **Tool 1 (digital audio explorer):** [`lessons/02-tool-digital-audio-explorer.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/02-tool-digital-audio-explorer.html) — used in Part 1 of the session
+- **Lab 1 (Audacity orientation handout):** [`lessons/03-handout-audacity-orientation.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/lessons/03-handout-audacity-orientation.html) — used in Part 2 of the session
 
 ### Pre-class checklist
 
@@ -278,8 +278,8 @@ Two halves:
 - Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
 - Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short stereo bell-like resonance (~16 s) that decays gradually to silence; see "Asset prep" below for what's expected.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
-- Open the orientation handout (Handout 01) on the instructor station and on each student station's desktop browser
-- Confirm Handout 02 (Session Routines) is laminated and visible at every station
+- Open the orientation handout (the Lab 1 handout, `03-handout-audacity-orientation.html`) on the instructor station and on each student station's desktop browser
+- Confirm the Session Routines reference card is laminated and visible at every station
 
 ### Block 1: Recap (10 min)
 
@@ -303,7 +303,7 @@ Walk the room throughout. Listen for genuine engagement vs. clicking-without-lis
 
 ### Block 3: Audacity orientation (45 min)
 
-Switch to the Audacity handout (Handout 01). Have students close the explorer and open the handout in a browser. Walk through the seven steps on the projector with students following along on their machines. **Don't move on until everyone is at each step.** This is one of those sessions where pacing to the slowest student is the right thing.
+Switch to the Audacity orientation handout (the Lab 1 handout). Have students close the explorer and open the handout in a browser. Walk through the seven steps on the projector with students following along on their machines. **Don't move on until everyone is at each step.** This is one of those sessions where pacing to the slowest student is the right thing.
 
 The handout is detailed enough that students could in principle do it on their own. Your job in class is (a) catching the moments where someone misses a step and falls behind, (b) demonstrating each move on the projector so they have a model to mirror, (c) reinforcing the *workflow logic* (NAS-to-local at the start, work locally, local-to-NAS at the end) that the handout encodes.
 
@@ -346,7 +346,7 @@ The Audacity orientation handout assumes a specific sample on the NAS at `shared
 
 Inés has the canonical file. If a substitute is ever needed: any stereo sustained sound with an audible decay (~10–18 s) works (a long bowed note that fades, a struck rim recorded in stereo, a sampler-generated bell-like timbre).
 
-### Asset prep: Audacity screenshots for Handout 01 (Audacity orientation)
+### Asset prep: Audacity screenshots for the Lab 1 handout (Audacity orientation)
 
 The seven screenshots in `assets/images/module-02-week-02/` are now captured (Inés' Mac, May 2026). For reference, here's what each one shows:
 
@@ -500,7 +500,7 @@ Two halves:
 - **Verify the sample bank is ready and complete on the NAS** at `shared/sample-banks/project-01/`. The handout assumes the canonical category folders (`attack-sharp`, `attack-soft`, `sustain-long`, `sustain-short`, `texture-continuous`, `voice-and-language`, `found-objects`, `natural-environment`, `mechanical-electronic`). If the bank is missing or has different folder names, **the handout's exercises won't work**. Confirm before class.
 - Verify Audacity opens cleanly on every machine; verify project format defaults are 44.1 kHz / 16-bit
 - Open the Project 1 prompt on the instructor station
-- Have Handout 02 open in a browser at every student station's desktop
+- Have the Lab 2 handout (`05-handout-editing-techniques.html`) open in a browser at every student station's desktop
 
 ### Block-by-block
 
@@ -625,7 +625,7 @@ The session is deliberately compact on the new content because students need wor
 - Walk the room (gear baseline)
 - **Take a quick mental inventory of where students are on Project 1.** From Wed Wk 3 spot-checks plus any work students did between sessions, you should have a rough sense of who's ahead, who's on track, who hasn't engaged. Note who to check in with during Block 4.
 - Open the Project 1 prompt on the instructor station
-- Have Handout 03 open in a browser at every student station's desktop
+- Have the Lab 3 handout (`06-handout-mixing-in-audacity.html`) open in a browser at every student station's desktop
 
 ### Block-by-block
 
