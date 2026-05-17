@@ -102,7 +102,11 @@ Screenshots of software (Audacity, etc.) and photographs are loaded as `<img>` w
 
 Photo attributions, when present, go inside the figure as a small italic line under the figcaption (see Module 2 listening for examples). The attribution uses `--ink-faint` and the `.photo-attribution` class.
 
-When a screenshot needs numbered annotations, the markers are drawn directly onto the PNG (orange filled circles with white numbers, placed on the region they identify, no leader lines). The HTML includes the legend below the figure in a `.annotation-key` block, with numbers matching the markers on the image. The canonical example is `audacity-interface-empty.png` in `assets/images/module-02-week-02/`. If the screenshot is ever re-captured, the new version needs fresh annotations drawn on in the same style.
+When a figure needs numbered annotations, the HTML pattern is the same regardless of source: a `<figure class="annotated">` (or `figure.screenshot` for software screenshots specifically) containing the image, a brief `<figcaption>`, and an `.annotation-key` block below the image listing the numbered items.
+
+For screenshots that the course produces in-house (e.g. an Audacity capture taken from a lab machine), the markers drawn directly onto the PNG follow a fixed style: orange filled circles with white numbers, placed on the region they identify, no leader lines. The canonical example is `audacity-interface-empty.png` in `assets/images/module-02-week-02/`. If the screenshot is ever re-captured, the new version needs fresh annotations drawn on in the same style.
+
+For figures that come from outside sources (e.g. a third-party cross-section diagram of a microphone, a manufacturer-produced schematic), the markers on the image stay in whatever style the source uses; only the `.annotation-key` block beneath is rewritten in the course voice. A canonical example is `dynamic-microphone-cross-section.png` in `assets/images/module-03-week-06/`.
 
 ## Per-module audio format standards
 
