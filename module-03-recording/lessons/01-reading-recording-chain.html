@@ -397,11 +397,11 @@
     <text x="110" y="270" text-anchor="middle"
           font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">wire B: inverted signal + same noise</text>
 
-    <!-- Arrow + label "interface subtracts" -->
-    <text x="280" y="115" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--accent)">interface subtracts</text>
-    <text x="280" y="130" text-anchor="middle"
-          font-family="var(--mono)" font-size="10" fill="var(--accent)">B from A</text>
+    <!-- Arrow + label "interface flips B and sums" -->
+    <text x="280" y="108" text-anchor="middle"
+          font-family="var(--mono)" font-size="10" fill="var(--accent)">interface flips B,</text>
+    <text x="280" y="123" text-anchor="middle"
+          font-family="var(--mono)" font-size="10" fill="var(--accent)">then sums A + B</text>
     <line x1="215" y1="140" x2="345" y2="140"
           stroke="var(--accent)" stroke-width="1.5"/>
     <polygon points="345 140, 338 136, 338 144" fill="var(--accent)"/>
@@ -417,7 +417,7 @@
           font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">result: signal doubled, noise cancelled</text>
 
   </svg>
-  <figcaption>The trick of a balanced cable. Noise picked up along the run lands on both wires the same way; the interface subtracts one wire from the other; whatever was identical (the noise) cancels, and whatever was opposite (the signal) doubles.</figcaption>
+  <figcaption>The trick of a balanced cable. Noise picked up along the run lands on both wires the same way; the interface flips wire B upside down and sums it with wire A; the signal (flipped twice, so now in phase) doubles, and the noise (flipped once, so now out of phase) cancels.</figcaption>
 </figure>
 
 <p>When the cable picks up interference along its run (electromagnetic noise from a fluorescent light fixture overhead, say), the interference lands on <em>both</em> wires equally, in the same direction. So at the far end of the cable, the interface sees:</p>
@@ -427,7 +427,7 @@
   <li>Wire B: <em>inverted</em> signal + the same noise</li>
 </ul>
 
-<p>The interface subtracts wire B from wire A. Whatever was identical between the two wires (the noise) cancels out and becomes zero. Whatever was opposite between the two wires (the signal, one copy flipped, one copy not) doubles. Noise gone, signal twice as strong. This is what people mean when they call XLR cables <strong>balanced</strong>.</p>
+<p>At the receiving end, the interface flips wire B upside down and sums the two wires together. The signal doubles. The noise cancels. Noise gone, signal twice as strong. This is what people mean when they call XLR cables <strong>balanced</strong>.</p>
 
 <div class="pause">
   <div class="pause-label">Pause</div>
@@ -527,7 +527,7 @@
     </svg>
     <figcaption>Two identical waves sum to a doubled wave; a wave and its upside-down copy sum to silence.</figcaption>
   </figure>
-  <p>A balanced cable is built around this principle. The noise on both wires is identical (in phase), so subtracting one wire from the other cancels the noise. The signal on the two wires is opposite (out of phase), so subtracting one wire from the other doubles the signal. The cable engineers a situation where the noise cancels itself out, and the signal reinforces itself, all from the same mathematical operation. Phase is what lets that work.</p>
+  <p>A balanced cable engineers this principle to its advantage. When the interface flips wire B upside down before summing the two wires, two things happen at once. The signal, which had been carried as two opposite copies (out of phase), now lands as two matching copies (in phase) and sums to double. The noise, which had been carried identically on both wires (in phase), now lands as two opposite copies (out of phase) and sums to silence. The same flip-and-sum does both jobs, because phase is what tells the math which case it's in.</p>
 </div>
 
 <p>The practical upshot is that XLR cables can run long distances (50, 100 feet or more) carrying small mic-level signals without picking up audible noise. For a course like this one, where cables stay short, the protection isn't strictly necessary. But this is how every professional audio environment is wired, and it's the reason the XLR connector and the dynamic-mic setup are so reliable.</p>
@@ -769,7 +769,7 @@
   <dd>The standard cable for mic-level audio. Three-conductor, balanced. Carries the signal as two opposite-polarity copies, which lets the interface cancel out picked-up noise at the far end.</dd>
 
   <dt>Balanced cable</dt>
-  <dd>A cable design that carries two opposite-polarity copies of the signal, so noise picked up along the run lands identically on both wires and cancels when the receiver subtracts one from the other. XLR is the most common balanced cable type.</dd>
+  <dd>A cable design that carries two opposite-polarity copies of the signal. At the receiving end, one copy is flipped upside down and summed with the other: the signal (now in phase) doubles, the noise (now out of phase) cancels. XLR is the most common balanced cable type.</dd>
 
   <dt>Phase</dt>
   <dd>The position of a signal in its cycle of going up and down. Two copies of a signal that move together (both going up at the same time, both going down at the same time) are <em>in phase</em>. Two copies where one is flipped upside down relative to the other (one going up while the other is going down) are <em>out of phase</em>. When out-of-phase copies are summed, they cancel; this is the principle a balanced cable uses to reject noise.</dd>
