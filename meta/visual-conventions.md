@@ -108,6 +108,20 @@ For screenshots that the course produces in-house (e.g. an Audacity capture take
 
 For figures that come from outside sources (e.g. a third-party cross-section diagram of a microphone, a manufacturer-produced schematic), the markers on the image stay in whatever style the source uses; only the `.annotation-key` block beneath is rewritten in the course voice. A canonical example is `dynamic-microphone-cross-section.png` in `assets/images/module-03-week-06/`.
 
+## Callout and pause blocks
+
+Two block types interrupt the main prose flow with framed content. They look different on purpose because they do different jobs.
+
+**`.callout`** — a small framed aside for operational notes: lab heads-ups, "don't yank the cable," brief reminders. Tight padding, left border in `--accent`. A `.callout-label` in DM Mono caps names the kind of interruption (e.g. `LAB NOTE`, `WEDNESDAY: DON'T YANK THE CABLE`). Short. Doesn't take more than a few sentences.
+
+**`.pause`** — a longer aside that interrupts the main flow to explain a deeper principle. Dashed border on all sides, more generous padding, full background tint. A `.pause-label` in DM Mono caps reads `PAUSE`. Inside, an `<h4>` titles what's being explained, followed by paragraphs, optionally a figure. Used when the prose has just made a claim that depends on a principle worth taking a moment to ground (e.g. the balanced-cable cancellation depends on how waveforms sum, so a pause box explains phase summation before the prose moves on).
+
+The visual cue:
+- Callout = "heads-up, then keep reading"
+- Pause = "stop, learn this, then resume"
+
+The canonical pause example is the phase-summation explainer in `module-03-recording/lessons/01-reading-recording-chain.html`, section 4.
+
 ## Per-module audio format standards
 
 Each module has a default audio format that students use throughout. The standard is introduced in the module's first reading and reinforced consistently in handouts and project prompts.
