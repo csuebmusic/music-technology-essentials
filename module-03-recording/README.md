@@ -12,7 +12,7 @@ Module 2 taught students to manipulate sound that was handed to them. Module 3 t
 
 The deliverable is the library itself, the curated and organized collection of sounds students will draw from for the rest of the semester (and beyond). The midterm is two parts: the library submission, and a terminology exam covering Modules 1 through 3.
 
-The arc of the module: understand the recording chain → record into Audacity → expand the chain (other signal types, other mics, signal modifiers) → understand the live-vs-studio context (mixers, auxes, busses) → submit the library.
+The arc of the module: trace the basic flow from mic to DAW → record into Audacity → widen the flow (other signal types, other mics, signal modifiers) → see how a mixer routes multiple flows at once (live vs. studio) → submit the library.
 
 Two principles thread through the module:
 
@@ -27,32 +27,34 @@ By the end of Wk 8, students should have a working library of their own recordin
 
 By the end of this module, students should be able to:
 
-1. Name the components of the basic recording chain (mic, signal, cable, interface) and describe what each one does
-2. Distinguish dynamic, condenser, and (briefly) ribbon microphones, and know when to reach for each
-3. Distinguish mic-level, instrument-level, and line-level signals, and match each to the correct input on an interface
-4. Identify XLR, TS, and TRS cables and know what each carries
-5. Set up a recording session in Audacity from cold: select input, set gain, monitor, record with headroom
-6. Prepare a recorded sample for use: denoise, trim, normalize to a consistent standard
-7. Organize a sample library with a documented folder structure, consistent naming, and a README
-8. Record audio on a phone (iPhone or Android) at a quality suitable for adding to the library
-9. Describe the difference between a live-sound mixer and a recording session: what auxes and busses do in each context
-10. Pass a cumulative terminology exam covering vocabulary from Modules 1 through 3
+1. Describe signal flow from acoustic source to stored file, naming the components at each stage
+2. Name the components of the basic recording chain (dynamic mic, mic-level signal, XLR cable, audio interface) as the most common version of that flow
+3. Distinguish dynamic, condenser, and (briefly) ribbon microphones, and know when to reach for each
+4. Distinguish mic-level, instrument-level, and line-level signals, and match each to the correct input on an interface
+5. Identify XLR, TS, and TRS cables and know what each carries
+6. Set up a recording session in Audacity from cold: select input, set gain, monitor, record with headroom
+7. Prepare a recorded sample for use: denoise, trim, normalize to a consistent standard
+8. Organize a sample library with a documented folder structure, consistent naming, and a README
+9. Record audio on a phone (iPhone or Android) at a quality suitable for adding to the library
+10. Describe how a mixer routes multiple signal flows at once, and what auxes and busses do in live-sound vs. studio-recording contexts
+11. Pass a cumulative terminology exam covering vocabulary from Modules 1 through 3
 
 ---
 
 ## Key concepts introduced
 
-- **The recording chain:** mic → signal → cable → interface → DAW. Each link is a discrete component with a job. Students should be able to point at any link and name what it does.
+- **Signal flow:** the path sound takes from acoustic source to stored file. Mic → signal → cable → input → interface → DAW is the most common version of it, but every recording setup has one (a phone recording has a shorter flow; a live show with a mixer has a wider one). Students should be able to point at any setup and trace the flow.
+- **The basic recording chain:** dynamic mic → mic-level signal → XLR cable → audio interface → DAW. The default flow at every lab station, and the first one students learn to name.
 - **Transducer types:** dynamic mics (moving-coil, what's at every station; rugged, no power needed, common); condenser mics (more sensitive, more detail, need phantom power); ribbon mics (mentioned for completeness, not used in the lab).
 - **Polar patterns:** at a beginner level. Cardioid is what students will mostly meet at the lab. Omni and figure-8 introduced for vocabulary.
 - **Signal types:** mic level (small, needs preamp), instrument level (medium, from a guitar or bass pickup), line level (large, from a synth or interface output). Each one wants a different input.
 - **Cables:** XLR (balanced, three-conductor, carries mic-level and line-level signals; what's at every station for the dynamic mic). TS (unbalanced, two-conductor, carries instrument-level signals; what plugs into a guitar). TRS (three-conductor, carries balanced line-level or stereo, depending on context).
-- **Signal modifiers:** the DI box (instrument level → mic level, balanced) and the hardware preamp (mic level → line level, with character). Where they sit in the chain and why.
+- **Signal modifiers:** the DI box (instrument level → mic level, balanced) and the hardware preamp (mic level → line level, with character). Where they sit in the flow and why.
 - **Recording with headroom:** peaks around -12 to -6 dBFS while tracking. The reason: leaving room to make decisions in editing, not committing to a level you can't undo.
 - **The sample prep pipeline:** a three-step standardization process applied to every raw recording before it enters the library. (1) Denoise using a captured silence sample; (2) trim silence at start and end; (3) peak-normalize to a consistent ceiling. The pipeline turns a recording into a sample.
 - **Library organization:** folder structure, naming conventions, an internal README. The library is a usable resource, not a pile of files. Students who can find a sound in their library will use their library; students who can't, won't.
-- **The mixer (introduction):** the central routing surface in both live sound and studio recording. Channel strips, faders, auxes, busses. Students don't need to operate one yet; they need to understand what it is and why it's the shape it is.
-- **Auxes and busses:** what they route in a live context (monitor sends to performers' floor wedges) vs. a studio context (headphone mixes for performers being recorded). The same mechanism, two different uses.
+- **The mixer (introduction):** the place where many signal flows converge, split, and route to different destinations. Channel strips, faders, auxes, busses. Students don't need to operate one yet; they need to understand what it is and why it's the shape it is.
+- **Auxes and busses:** routing tools that work the same way on the mixer; what's different is what they feed. In a live context, auxes feed monitor wedges so performers can hear themselves. In a studio, the same auxes feed headphone mixes for performers being recorded. The mechanism is the same; the destination is different.
 
 ---
 
@@ -103,7 +105,7 @@ Peer listening assignment: [`listening/peer-midterm.html`](https://csuebmusic.gi
 |---|---|---|
 | 6 | Mon | Session 1 · Lecture: The basic recording chain. Dynamic mic, mic-level signal, XLR cable, audio interface. End-to-end ADC flow with the most common components. |
 | 6 | Wed | Session 2 · Lab: Recording into Audacity (Lab 1). Project setup, four paper recordings (crumble slow/fast, rip slow/fast), three-step sample prep pipeline (denoise / trim / normalize), library folder set up, naming convention established. Phone-recording reference card distributed. |
-| 7 | Mon | Session 3 · Lecture: Expanding the chain. Instrument-level and line-level signals. TS and TRS cables. Condenser mics and other transducer types. Signal modifiers: DI boxes and hardware preamps. |
+| 7 | Mon | Session 3 · Lecture: Widening the flow. Instrument-level and line-level signals. TS and TRS cables. Condenser mics and other transducer types. Signal modifiers: DI boxes and hardware preamps. |
 | 7 | Wed | Session 4 · Lab: Phone recording → Audacity (Lab 2). Importing phone recordings into Audacity, prepping them through the same pipeline. Worktime on the library. |
 | 8 | Mon | Session 5 · Lecture: The mixer. Live sound vs. recording session walkthrough using a fictional band as the running example. Auxes, busses, monitor sends, headphone mixes. |
 | 8 | Wed | Session 6 · **Midterm: library submission + terminology exam.** |
@@ -161,7 +163,7 @@ Same as Module 2.
 
 ### Roadmap
 
-The basic ADC flow with the most common components a student will encounter: **dynamic mic → mic-level signal → XLR cable → audio interface**. Each link in the chain gets a section.
+Names the umbrella concept (signal flow: the path from acoustic source to stored file) and then drills into the basic recording chain as the most common version of it: **dynamic mic → mic-level signal → XLR cable → audio interface**. Each stage of the chain gets a section.
 
 This is the spine reading of the module. Everything else (the Wed Wk 6 lab, the Wk 7 Mon expansion, the Wk 8 Mon mixer lecture) builds on it. Students should walk out able to draw the four-box diagram on a napkin.
 
@@ -171,12 +173,13 @@ This is the spine reading of the module. Everything else (the Wed Wk 6 lab, the 
 
 ### Connection to Module 1
 
-Module 1 introduced the lab interface and showed students how to plug things in. This lecture re-frames what they already touched as a **chain of decisions**, not just a list of objects. The vocabulary lands now because they have hands-on context from Module 2.
+Module 1 introduced the lab interface and showed students how to plug things in. This lecture re-frames what they already touched as a **signal flow with named stages**, not just a list of objects. The vocabulary lands now because they have hands-on context from Module 2.
 
 ### Open questions for when we draft
 
+- Filename: `01-reading-recording-chain.html` (what the reading is mostly about) or `01-reading-signal-flow.html` (what the reading opens with as umbrella)? Probably the former, with the umbrella concept landed in the subtitle and opening section.
 - How much polar-pattern detail goes in this reading? (Probably just cardioid mentioned by name, with a single diagram. The fuller polar-pattern treatment can land in the Wk 7 reading or in a separate diagram.)
-- Inline SVG diagram of the chain itself (four boxes, labeled connections) is the visual anchor for the reading. Worth building before the prose.
+- Inline SVG diagram of the flow itself (four boxes, labeled connections, with the umbrella name above and the chain-specific labels below) is the visual anchor for the reading. Worth building before the prose.
 
 ### Block-by-block
 
@@ -260,13 +263,13 @@ Filename to be decided: likely `lessons/03-handout-recording-on-phone.html`. Ope
 
 ---
 
-## Session 3 · Mon Wk 7: Expanding the chain
+## Session 3 · Mon Wk 7: Widening the flow
 
 **100 min · Lecture-style · MB2525**
 
 ### Roadmap
 
-Builds on Session 1. The basic chain was mic-level → XLR → interface. Now we open up the other links.
+Builds on Session 1. The basic flow used a dynamic mic, mic-level signal, XLR cable, and the standard interface input. Now we widen the frame to the other signal types, cables, mics, and modifiers students will meet outside that default setup.
 
 **Other signal types:**
 - **Instrument level** — what comes out of a guitar or bass pickup. Higher than mic level, lower than line level. Wants a dedicated instrument input (the "Hi-Z" input on most interfaces) or a DI box.
@@ -341,7 +344,7 @@ Walks through the phone → computer → Audacity → prep → library flow, wit
 
 ### Roadmap
 
-Introduces the mixer as the central routing surface in audio work. The pedagogical move: walk through **the same fictional band in two scenarios** (live performance and studio session) to surface what's the same and what's different.
+Introduces the mixer as the place where many signal flows converge, split, and route to different destinations. Up to now students have thought about one flow at a time (one mic, one signal, one input). A mixer is what handles five or ten or twenty flows at once. The pedagogical move: walk through **the same fictional band in two scenarios** (live performance and studio session) to surface what's the same and what's different.
 
 **The fictional band:** to be sketched. Working assumption: 4–5 piece. Vocals, guitar, bass, drums, maybe keys. Each instrument has known mic-and-signal requirements that connect back to Wk 6 Mon and Wk 7 Mon.
 
@@ -415,7 +418,8 @@ Vocabulary and concepts on the exam should include:
 - Levels: dBFS, headroom, clipping, peak vs. RMS (Module 2)
 - EQ, compression, limiting (Module 2)
 - Stereo placement: pan, mono vs. stereo (Module 2)
-- The recording chain: mic, signal, cable, interface (Module 3)
+- Signal flow: tracing the path from acoustic source to stored file (Module 3)
+- The basic recording chain: mic, signal, cable, interface (Module 3)
 - Transducer types: dynamic, condenser, ribbon (Module 3)
 - Polar patterns: omni, cardioid, figure-8 (Module 3)
 - Signal types: mic, instrument, line (Module 3)
@@ -438,11 +442,11 @@ Vocabulary and concepts on the exam should include:
 
 Students at the end of Module 3 should be able to:
 
-1. Set up a recording session from cold and capture a clean recording
-2. Move a phone recording through the prep pipeline into their library
-3. Navigate their own library and find a sound by category or by name
-4. Explain the recording chain at a conversational level
-5. Distinguish signal types and cables
+1. Trace the signal flow at any setup they meet, from acoustic source to stored file
+2. Set up a recording session from cold and capture a clean recording
+3. Move a phone recording through the prep pipeline into their library
+4. Navigate their own library and find a sound by category or by name
+5. Distinguish signal types, cables, and transducer types
 6. Describe what auxes and busses do in two different contexts
 7. Pass the cumulative terminology exam
 
@@ -453,7 +457,7 @@ Students at the end of Module 3 should be able to:
 - Libraries with no README or with a one-line README → the organization lesson didn't land; reinforce in Module 4 with an explicit "find a sound from your library" exercise
 - Libraries where every file peaks at 0 dBFS → normalization is being applied as a "make it loud" step rather than a standardization; the "scale not shape" framing from Module 2 needs another pass
 - Libraries where files have noticeable click pops at the cuts → trim step is being done sloppily, fades aren't being added at trim points; reinforce the fade habit explicitly
-- Students who can't name the chain on the terminology exam → the chain reading from Wk 6 Mon didn't stick; rethink whether the diagram in the reading is doing enough
+- Students who can't trace signal flow on the terminology exam → the Wk 6 Mon reading didn't stick; rethink whether the flow diagram is doing enough
 
 ### Forward promises to deliver in later modules
 
