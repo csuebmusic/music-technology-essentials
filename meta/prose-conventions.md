@@ -45,6 +45,21 @@ If the bullets read as full sentences flowing into each other, they're a paragra
 
 If a claim genuinely needs qualification, say what the qualification is. "Most of the time" is honest; "essentially" is decoration.
 
+### No announcement or justification sentences
+
+Sentences that announce what's coming, justify why something is worth understanding, or congratulate the prose for being clear are filler. They don't carry content of their own; they describe content the next sentence is about to carry. Cut them and let the next sentence do its job.
+
+Common shapes to watch for:
+- "Here's the design." / "Here's how it works." / "Here's the idea."
+- "Those three conductors do something clever, and it's worth understanding because..."
+- "The reading is what makes that operation make sense."
+- "Spec sheets are not decoration."
+- "The cardioid pattern is doing real work for you."
+
+If a sentence's content boils down to "what follows is interesting" or "what just happened is meaningful," delete it. Trust the reader to find the next paragraph on their own.
+
+The same rule applies to *internal* prose (READMEs, TA notes, this file) when it surfaces as cross-reference justification. "This delivers on the Module 2 forward promise" is announcement of significance; the content is doing the delivering whether or not Claude announces it.
+
 ### Beginner-friendly first
 
 Define every technical term the first time it appears, then use it consistently. The first mention is where the term earns its place; after that you can rely on it.
@@ -71,6 +86,8 @@ Before publishing a student-facing HTML doc, scan for:
 - Sequences of "no X, no Y, no Z" or "not X, not Y" sentences
 - Bullet lists where each bullet is a complete sentence flowing into the next
 - The words "essentially," "basically," "in some sense," "it's worth noting"
+- Sentences that announce content rather than carry it ("Here's the design," "what follows is...," "this is worth understanding because...")
+- Sentences that justify or congratulate the prose ("the X is doing real work for you," "the Y is not decoration")
 - Technical terms used before they were defined
 
 Each one is fixable in seconds; the cumulative effect on the page is substantial.
