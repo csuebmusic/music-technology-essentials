@@ -248,7 +248,7 @@ Ten numbered steps from cold start to NAS upload: configure Audacity for mono re
 
 ### Phone-recording reference card
 
-A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on iPhone (Voice Memos) and Android (default Voice Recorder or recommended alternative). Holding the phone, distance from source, wind/handling noise, file format and how to get the file off the phone.
+A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on a phone (iPhone or Android) using **Dolby On**, a free cross-platform app that can export the kind of WAV file Audacity opens directly. The card covers app install, three settings to set once (Lossless audio on, Noise Reduction off, Countdown off), the recording technique short-list (airplane mode, set the phone down, distance, level indicator, wind), getting the file from phone to Mac (AirDrop for iPhone, several paths for Android), and a "what records well" starter list.
 
 Filename: `lessons/03-handout-recording-on-phone.html`. The card isn't module-tied; students keep using it every week onward as they add phone-recorded sounds to their library.
 
@@ -260,7 +260,7 @@ Filename: `lessons/03-handout-recording-on-phone.html`. The card isn't module-ti
 - Confirm Audacity has the **Noise Removal and Repair** menu accessible (`Effect → Noise Removal and Repair → Noise Reduction…`). Standard in Audacity 3.x; verify on 3 stations during walk-through.
 - Test-record on the instructor station: confirm the level meter goes live when clicked, the gain knob produces visible meter response, the headphones produce live monitoring (set the monitor blend toward Inputs first).
 - Open the Wed Wk 6 lab handout on the projector and on each student station's desktop browser.
-- Phone-recording reference cards (Handout 03, the parallel reference card document) stacked at the front of the room. Hand out at end of session.
+- Phone-recording reference cards stacked at the front of the room. Hand out at end of session.
 - Session Routines reference card posted and visible at every station (same as every Wednesday).
 
 ### Block-by-block
