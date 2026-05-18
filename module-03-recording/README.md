@@ -248,7 +248,7 @@ Ten numbered steps from cold start to NAS upload: configure Audacity for mono re
 
 ### Phone-recording reference card
 
-A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on a phone using a dedicated field-recording app, one for each platform. iPhone students use **Lossless Field Recorder** by edson engineering (free); Android students use **Field Recorder** by Pfitzinger Voice Design ($5.95 on Google Play). Both export 48 kHz / 24-bit WAV; both expose actual controls (mic selection, pickup pattern, sample rate) instead of applying automatic "make it sound good" processing. The card walks through setup on each platform, recording technique (airplane mode, set the phone down, distance, level meter, wind), and a "what records well" starter list. Getting the recordings off the phone and into Audacity lives on a separate card (built next; introduced in Wed Wk 7's lab).
+A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on a phone using a dedicated field-recording app, one for each platform. iPhone students use **Lossless Field Recorder** by edson engineering (free); Android students use **Field Recorder** by Pfitzinger Voice Design ($5.95 on Google Play). Both export 48 kHz / 24-bit WAV; both expose actual controls (mic selection, pickup pattern, sample rate) instead of applying automatic "make it sound good" processing. The card walks through setup on each platform, recording technique (airplane mode, set the phone down, distance, level meter, wind), and a "what records well" starter list. The card stops at the point where students have made a recording they're happy with; getting recordings off the phone, into Audacity, and through the prep pipeline is the work of Wed Wk 7's Lab 2.
 
 Filename: `lessons/03-handout-recording-on-phone.html`. The card isn't module-tied; students keep using it every week onward as they add phone-recorded sounds to their library.
 
@@ -421,10 +421,11 @@ Two halves.
 
 **First half: getting phone recordings into Audacity and through the prep pipeline.**
 
-- Transferring files from phone to computer (AirDrop for iPhone; USB or Files app for Android; alternatives like a quick cloud upload)
-- File formats from phones: iPhone Voice Memos produce M4A; Android default depends on app. Both need to be imported into Audacity.
-- Importing into Audacity (File → Import → Audio, or drag-and-drop)
-- Running the same three-step prep pipeline (denoise, trim, normalize) on the phone recording
+- Transferring files from phone to computer: AirDrop from Lossless Field Recorder on iPhone (open the recording, share icon, AirDrop to Mac); on Android, the Pfitzinger app's file list plus the share sheet (Drive, USB via Android File Transfer, email)
+- File format: both apps produce 48 kHz / 24-bit WAV. Audacity opens them directly with no conversion step. This is the payoff of using dedicated field-recording apps instead of the phone's default voice recorder
+- Importing into Audacity (drag-and-drop, or File → Import → Audio)
+- **Resampling** to the project's 44.1 kHz / 16-bit standard. This is the teaching moment of the lab: sample rate conversion is a routine operation in recording, why we care about matching project rate, what changes (or doesn't) when you resample. Use Tracks → Resample (or the equivalent in the student's Audacity version) to bring the imported clip down to 44.1 kHz
+- Running the same three-step prep pipeline (denoise, trim, normalize) on the resampled clip
 - Exporting as 44.1 kHz / 16-bit WAV to the library
 
 **Second half: worktime on the library.**
