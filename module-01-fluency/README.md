@@ -25,7 +25,7 @@ By the end of this single session, students should be able to:
 5. Set the three knobs on an audio interface (gain, main, headphone) in the correct order, starting from zero
 6. Use a software level meter to set mic gain at a usable level
 7. Record a short audio clip through the full signal chain and save it locally
-8. Run through the Day 1 end-of-session routine: upload local folder to NAS, eject NAS, sign out of browser accounts, quit apps, leave the station clean. Recognize that from Mon Wk 2 onward, end-of-session also includes gear teardown (unplug, stow) per the Session Routines card.
+8. Run through the full end-of-session routine: upload local folder to NAS, eject NAS, sign out of browser accounts, quit apps, knobs to zero, unplug gear, return everything to the lab's gear storage, leave the station clean
 9. Articulate the local-first / NAS-as-sync workflow that the course will use all semester
 
 ---
@@ -98,10 +98,10 @@ The right pacing: **slow enough that the slowest student keeps up, with side-tas
 | Block | Time | Focus |
 |---|---|---|
 | 1 — Welcome & framing | 3:00–3:10 | Course overview, the room, where things live |
-| 2 — Mac & Finder fundamentals | 3:10–3:40 | Finder, files, folders, screenshots, naming preview |
-| 3 — Set up folders + connect to NAS | 3:40–4:00 | Local-first / NAS-as-sync workflow established |
-| 4 — Set up gear + make a recording | 4:00–4:35 | Full signal chain: mic → interface → QuickTime → local save |
-| 5 — Exit routine | 4:35–4:40 | First upload to NAS; routine that becomes habit all semester |
+| 2 — Mac & Finder fundamentals | 3:10–3:35 | Finder, files, folders, screenshots, naming preview |
+| 3 — Set up folders + connect to NAS | 3:35–3:55 | Local-first / NAS-as-sync workflow established |
+| 4 — Set up gear + make a recording | 3:55–4:30 | Full signal chain: mic → interface → QuickTime → local save |
+| 5 — Exit routine | 4:30–4:40 | First full end-of-session: upload to NAS, sign out, stow gear |
 
 ### Block 1 — Welcome (10 min)
 
@@ -117,7 +117,7 @@ The right pacing: **slow enough that the slowest student keeps up, with side-tas
 
 Aim for the syllabus walkthrough to take about 3 minutes. The point is to flag and locate, not to lecture. Students who want details have Canvas; what they need from you in class is *I know where this lives and that I'm responsible for it*.
 
-### Block 2 — Mac & Finder (30 min)
+### Block 2 — Mac & Finder (25 min)
 
 This is the longest single block. Pace it carefully.
 
@@ -197,13 +197,13 @@ Drill the rules: lowercase, hyphens, no spaces, no special characters. **Tell th
 
 **Sync discipline — preview the lesson.** Briefly tell them: *"Starting next session, every session will start with you downloading your folder from the NAS, and end with you uploading it back. We'll go through the full routine at the end of class today. The most important rule: always upload before you leave. If you don't, your work is stranded on this computer, and the next time you sit at a different computer you'll be working from an older version."*
 
-### Block 4 — Set up gear and make a recording (35 min) + Exit routine (5 min)
+### Block 4 — Set up gear and make a recording (35 min) + Exit routine (10 min)
 
 This is the day's main event. Students plug in their full signal chain, set their levels, and produce one successful recording, then run the exit routine to upload to the NAS for the first time. The pedagogical arc is one continuous activity ending with the upload.
 
 The lab has different audio interfaces and MIDI keyboards across stations, all connecting through a USB hub on each desk. The Mac mini itself is mounted behind the monitor and students never see or touch it. Teach categories, not specific models.
 
-**Time-keeping note.** Reserve the last 5 minutes for the exit routine; that leaves 35 minutes for the gear+recording portion. This is tight for what it covers. Demo each step on the projector, then circulate while students do it themselves. Don't move to the next step until most of the room is caught up.
+**Time-keeping note.** Reserve the last 10 minutes for the exit routine; that leaves 35 minutes for the gear+recording portion. This is tight for what it covers. Demo each step on the projector, then circulate while students do it themselves. Don't move to the next step until most of the room is caught up.
 
 #### Step-by-step facilitation
 
@@ -276,7 +276,7 @@ If a student's file isn't there in their local folder:
 - Don't single them out publicly. Quietly help them after class or in office hours.
 - Most often the issue is they saved to Desktop or Downloads. Walk them through Recents in Finder to find the file, then drag it into `~/Documents/lastname/week-01/`.
 
-**Teach the exit routine — last 5 minutes of class.** Before dismissing, walk students through the end-of-session routine on the projector. They have a printed copy at every station (the **Session Routines** reference card) and a version inside today's reading, but verbal reinforcement on Day 1 sets the habit. This is the moment students upload their work to the NAS for the first time.
+**Teach the exit routine — last 10 minutes of class.** Before dismissing, walk students through the end-of-session routine on the projector. They have a printed copy at every station (the **Session Routines** reference card) and a version inside today's reading, but verbal reinforcement on Day 1 sets the habit. This is the first time they'll run the routine end-to-end, including the gear teardown.
 
 Walk them through:
 
@@ -288,11 +288,12 @@ Walk them through:
 6. Eject the NAS from Finder's sidebar
 7. Sign out of any browser accounts (Canvas, Google, etc.); quit the browser
 8. Quit all apps with `Cmd + Q`
-9. Turn the audio interface knobs (gain, main / output, headphone) back to zero.
-10. Leave the gear plugged in at the station: the interface, the mic, the MIDI keyboard, and the headphones all stay as they are. Today only — we set the gear out, and the room gets reset for Art before Mon Wk 2.
-11. Chair in.
+9. Turn the audio interface knobs (gain, main / output, headphone) back to zero
+10. Unplug: headphones from the interface, the interface's USB from the hub, the mic's XLR from both ends, the MIDI keyboard's USB from the hub. Coil cables loosely without kinks
+11. Return everything to the lab's gear storage: interface, mic, MIDI keyboard, headphones, XLR cable
+12. Chair in
 
-Tell them this is a routine they'll do every session for the rest of the semester. Today is the abbreviated Day-1 version (about 3 minutes once it's habit). **Starting Mon Wk 2 the full routine kicks in**, with two changes: (a) every session starts with gear setup and a NAS download from the lab's gear storage and personal folder respectively, and (b) every session ends with gear teardown (unplug, stow back into the lab's gear storage) on top of the NAS upload. The full pattern is on the Session Routines card; this Day-1 walkthrough is the half they'll do every time, plus the gear teardown they don't do today.
+Tell them this is the same routine they'll do every session for the rest of the semester. Today it'll take a few extra minutes because it's the first time; once habit, it's about 5 minutes total. The Session Routines card at every station summarizes the same steps for daily reference.
 
 **Verify uploads on the projector.** Once everyone is done, open `/music/students/` on the projector and scroll through. Confirm every student's folder is there with their hello file inside. This is the same "small ritual" as before, but now it confirms upload happened, not just save.
 
@@ -331,7 +332,7 @@ These show up across the whole day, not tied to any one block. Block-specific co
 
 ## Pacing fallbacks
 
-The day's clock is genuinely tight: Welcome 10 + Mac/Finder 30 + Folders/NAS 20 + Gear/recording 35 + Exit routine 5 = 100 min. That assumes Block 4 holds at 35 min for the gear and recording portion, with the last 5 min of class reserved for the exit routine. If gear setup or gain staging runs long, the exit routine is non-negotiable — cut something inside Block 4 instead.
+The day's clock is genuinely tight: Welcome 10 + Mac/Finder 25 + Folders/NAS 20 + Gear/recording 35 + Exit routine 10 = 100 min. That assumes Block 4 holds at 35 min for the gear and recording portion, with the last 10 min of class reserved for the exit routine. If gear setup or gain staging runs long, the exit routine is non-negotiable — cut something inside Block 4 instead.
 
 If you're behind:
 
