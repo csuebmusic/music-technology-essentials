@@ -24,55 +24,6 @@
       margin-top: 0.75rem;
     }
 
-    /* Vocabulary video demos: a short Audacity screen recording showing
-       the operation, with playback-speed controls below. */
-    .vocab-video {
-      margin: 0.75rem 0 1.25rem 0;
-      max-width: 480px;
-    }
-    .vocab-video video {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: var(--bg-alt);
-      border: 1px solid var(--rule);
-      border-radius: 3px;
-    }
-    .vocab-video-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.4rem;
-      font-family: var(--mono);
-      font-size: 0.78rem;
-    }
-    .vocab-video-controls .speed-label {
-      color: var(--ink-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-right: 0.25rem;
-    }
-    .vocab-video-controls .speed-btn {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      background: transparent;
-      color: var(--ink-soft);
-      border: 1px solid var(--rule);
-      padding: 0.2rem 0.55rem;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: background 0.12s, color 0.12s, border-color 0.12s;
-    }
-    .vocab-video-controls .speed-btn:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-    .vocab-video-controls .speed-btn.active {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
-    }
-
     /* Audio comparison block: a labeled group of audio players */
     .audio-compare {
       background: var(--bg-alt);
@@ -606,7 +557,7 @@
   <dt>Cut</dt>
   <dd>
     <p>Remove a selected region. The audio on either side of the cut closes the gap. Like deleting a phrase from the middle of a sentence.</p>
-    <figure class="vocab-video">
+    <figure class="vocab-video vocab-video--narrow">
       <video controls preload="metadata" muted playsinline>
         <source src="../../assets/videos/module-02-week-03/cut.mp4" type="video/mp4">
       </video>
@@ -622,7 +573,7 @@
   <dt>Trim</dt>
   <dd>
     <p>Keep a selected region and remove everything else. The opposite of cut. Useful for isolating a single sound from a longer recording.</p>
-    <figure class="vocab-video">
+    <figure class="vocab-video vocab-video--narrow">
       <video controls preload="metadata" muted playsinline>
         <source src="../../assets/videos/module-02-week-03/trim.mp4" type="video/mp4">
       </video>
@@ -638,7 +589,7 @@
   <dt>Splice / arrange</dt>
   <dd>
     <p>Place sounds next to each other in time. The fundamental musique concrète move: take a fragment of one recording, place a fragment of another after it, and a third after that. The arrangement is the composition.</p>
-    <figure class="vocab-video">
+    <figure class="vocab-video vocab-video--narrow">
       <video controls preload="metadata" muted playsinline>
         <source src="../../assets/videos/module-02-week-03/splice.mp4" type="video/mp4">
       </video>
@@ -654,7 +605,7 @@
   <dt>Fade in / fade out</dt>
   <dd>
     <p>A volume ramp at the boundary of an edit. A fade-in starts from silence and ramps up to full volume over some short duration; a fade-out is the reverse. Even very short fades (10 to 50 milliseconds) prevent click pops at edit boundaries. Use fades on every edit.</p>
-    <figure class="vocab-video">
+    <figure class="vocab-video vocab-video--narrow">
       <video controls preload="metadata" muted playsinline>
         <source src="../../assets/videos/module-02-week-03/fades.mp4" type="video/mp4">
       </video>
@@ -670,7 +621,7 @@
   <dt>Crossfade</dt>
   <dd>
     <p>The overlap of a fade-out and a fade-in: one sound fades out as another fades in. The seam between two sounds becomes smooth instead of abrupt. Crossfades are how editors make hard cuts disappear.</p>
-    <figure class="vocab-video">
+    <figure class="vocab-video vocab-video--narrow">
       <video controls preload="metadata" muted playsinline>
         <source src="../../assets/videos/module-02-week-03/crossfade.mp4" type="video/mp4">
       </video>
@@ -691,7 +642,7 @@
   <dt>Reverse</dt>
   <dd>
     <p>Play a sound backward. The recording is the same, but its envelope is flipped: the attack becomes the release, and the release becomes the attack. A piano note played backward swells in instead of striking; a struck cymbal played backward sounds like a swelling rush of air. Reverse changes the direction of the sound through time, not its duration or its pitch. It's one of the iconic moves of musique concrète: Schaeffer didn't have software, so he played tape backward by physically reversing the reel, and the resulting sounds became part of the language of the genre.</p>
-    <figure class="vocab-video">
+    <figure class="vocab-video vocab-video--narrow">
       <video controls preload="metadata" muted playsinline>
         <source src="../../assets/videos/module-02-week-03/reverse.mp4" type="video/mp4">
       </video>

@@ -430,6 +430,84 @@ figure.form-diagram figcaption {
   line-height: 1.5;
 }
 
+/* --- Vocabulary / walkthrough videos --- */
+/* Short Audacity screen recordings embedded inline in readings and lab
+   handouts. Default width fills the content column (good for UI
+   walkthroughs that show the whole Audacity window). Use the
+   .vocab-video--narrow modifier for the smaller annotation-alongside
+   look that Module 2's editing-vocabulary demos use. */
+
+figure.vocab-video {
+  margin: 0.75rem 0 1.25rem 0;
+  max-width: 100%;
+}
+
+figure.vocab-video.vocab-video--narrow {
+  max-width: 480px;
+}
+
+figure.vocab-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+
+figure.vocab-video figcaption {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Speed-control row beneath a vocab-video. Used in Module 2's editing
+   demos where slowing the playback rate helps students see exactly
+   what changed in the waveform. */
+
+.vocab-video-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+.vocab-video-controls .speed-label {
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.25rem;
+}
+
+.vocab-video-controls .speed-btn {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.vocab-video-controls .speed-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.vocab-video-controls .speed-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
 /* --- Rules and dividers --- */
 
 hr {
