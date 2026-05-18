@@ -344,7 +344,7 @@
 
 <p>First, <strong>weak signals are vulnerable to noise</strong>. Any electrical interference picked up between the mic and the interface (from power cables, fluorescent lights, computer monitors, radio) adds to the signal you actually want. If the interference is loud relative to your mic signal, you've recorded the interference as well as the source. This is why mic cables are built the way they are, and it's the topic of the next section.</p>
 
-<p>Second, <strong>weak signals need amplification before they're useful</strong>. The interface contains a circuit called a <em>preamplifier</em>, or <strong>preamp</strong>, whose only job is to take that small mic-level voltage and boost it up to a much larger signal called <em>line level</em>. (Line level is the signal level your computer expects, and the level most other audio gear runs at internally.) The knob on the front of the interface that you'll turn to set how loud a mic comes through, called the <strong>gain trim</strong>, is the front-panel control for that preamp.</p>
+<p>Second, <strong>weak signals need amplification before they're useful</strong>. The interface contains a circuit called a <em>preamplifier</em>, or <strong>preamp</strong>, whose only job is to take that small mic-level voltage and boost it up to a much larger signal called <em>line level</em>. (Line level is the signal level your computer expects, and the level most other audio gear runs at internally.) The knob you'll turn to set how loud a mic comes through, called the <strong>gain</strong>, is the control for that preamp.</p>
 
 <div class="callout">
   <div class="callout-label">A note on the term "level"</div>
@@ -557,7 +557,7 @@
   <div class="compare-row">
     <div class="compare-item">
       <img src="../../assets/images/module-03-week-06/presonus-audiobox-usb96-front.png"
-           alt="Front panel of the PreSonus AudioBox USB 96. Left side: two combo XLR/TRS inputs labeled Mic/Inst 1 and Mic/Inst 2. Middle: a red 48V phantom power button with red indicator light, and two gain knobs, one for each input, labeled with Inst and Mic positions and a -10 to +30 dB scale, each with a clip indicator LED. Right side: a Mixer blend knob (Inputs to Playback), a Main output knob, a power LED, a headphone output, and a phones level knob.">
+           alt="Front panel of the PreSonus AudioBox USB 96. Left side: two combo XLR/TRS inputs labeled 1 and 2, with a shared Mic/Inst type label between them. Middle: a red 48V phantom power button with red indicator light, and two gain knobs, one per input, each labeled with Inst and Mic positions and a -10 to +30 dB scale, each with a clip indicator LED. Right side: a Mixer blend knob (Inputs to Playback), a Main output knob, a power LED, a headphone output, and a phones level knob.">
       <div class="compare-label">PreSonus AudioBox USB 96</div>
     </div>
     <div class="compare-item">
@@ -635,7 +635,7 @@
 
   <li><strong>Onboard DSP.</strong> Some higher-end interfaces include their own processors (the Apollo line and the SSL 2+ are two examples) that run audio effects (compressors, EQs, reverbs, even amp simulations) directly on the interface, before the signal ever reaches the computer. This is how you get plug-in effects with near-zero latency. The lab interfaces have none of this; any processing has to happen inside Audacity or Ableton after the fact.</li>
 
-  <li><strong>Digital I/O and expansion.</strong> Look at the back of a $1,000 interface and you'll see connectors the lab interfaces don't have: <strong>ADAT</strong> (an 8-channel optical digital connection for adding eight more preamps via an external preamp box), <strong>S/PDIF</strong> (a stereo digital connection for routing audio digitally between gear), <strong>AES/EBU</strong> (the professional version of S/PDIF, carried over XLR cables), <strong>MADI</strong> (64 channels of audio over a single cable, used in large studios), and <strong>word clock</strong> (a timing reference that keeps multiple digital devices sample-accurate together). These are the connections that let an interface scale up beyond its built-in channel count, by connecting to other digital gear.</li>
+  <li><strong>Digital I/O and expansion.</strong> Look at the back of a $1,000 interface and you'll see connectors the lab interfaces don't have: <strong>ADAT</strong> (an 8-channel optical digital connection for adding eight more preamps via an external preamp box), <strong>S/PDIF</strong> (a stereo digital connection for routing audio digitally between gear), <strong>AES/EBU</strong> (the professional version of S/PDIF, carried over XLR cables), <strong>MADI</strong> (up to 64 channels of audio over a single cable, used in large studios), and <strong>word clock</strong> (a timing reference that keeps multiple digital devices sample-accurate together). These are the connections that let an interface scale up beyond its built-in channel count, by connecting to other digital gear.</li>
 </ul>
 
 <p>The two interfaces in MB2525 are entry-level by deliberate design. A 2-in / 2-out interface, a few hundred dollars cheaper than the next tier up, is exactly enough for the work this course covers: one source recorded at a time, prepped into a sample library, used in compositional work in Audacity (Module 3) and Ableton (Module 4). The features that justify a $500 or $1,000 or $5,000 interface are real, but they answer questions the lab interfaces don't need to answer. Once you can read a spec sheet (the manufacturer's, or a retailer's like Sweetwater's), you can match an interface to a workflow rather than pricing alone.</p>
@@ -679,10 +679,10 @@
   <dd>The standard signal level that audio gear uses internally, and that your computer expects. Much larger than mic level. The preamp's job is to lift mic level up to line level.</dd>
 
   <dt>Preamp (preamplifier)</dt>
-  <dd>The circuit inside an audio interface that boosts mic-level signals up to line level. The gain trim knob is the front-panel control for it.</dd>
+  <dd>The circuit inside an audio interface that boosts mic-level signals up to line level. The gain knob is the control for it.</dd>
 
-  <dt>Gain trim</dt>
-  <dd>The knob on an audio interface that sets how much the preamp amplifies the incoming mic signal. The single most important control for getting a clean recording.</dd>
+  <dt>Gain</dt>
+  <dd>The knob on an audio interface that sets how much the preamp amplifies the incoming signal. The single most important control for getting a clean recording.</dd>
 
   <dt>XLR cable</dt>
   <dd>The standard cable for mic-level audio. Three-conductor, balanced. Carries the signal as two opposite-polarity copies, which lets the interface cancel out picked-up noise at the far end.</dd>
@@ -709,10 +709,10 @@
   <dd>The harsh distortion that happens when a signal exceeds the digital ceiling (0 dBFS, the maximum a digital signal can represent). Unrecoverable in editing. The clip indicator on an audio interface lights up when this is happening.</dd>
 
   <dt>Direct monitoring</dt>
-  <dd>An audio-interface feature that routes the incoming signal straight to the headphone output without going through the computer. Avoids the small but distracting delay of round-tripping through the DAW.</dd>
+  <dd>An audio-interface feature that routes the incoming signal straight to the headphone output without going through the computer. Avoids the small but distracting delay of round-tripping the signal through the recording software.</dd>
 
   <dt>Monitor mix</dt>
-  <dd>The knob on an audio interface that blends the live input signal with the computer playback in your headphones. Turn it toward "input" when you want to hear what the mic is picking up; toward "playback" when you want to hear what's already in the DAW.</dd>
+  <dd>The knob on an audio interface that blends the live input signal with the computer playback in your headphones. Turn it toward "input" when you want to hear what the mic is picking up; toward "playback" when you want to hear what's already in the recording software.</dd>
 
   <dt>Latency</dt>
   <dd>The round-trip delay between a sound entering an interface and coming back out of the headphones after a trip through the computer. Measured in milliseconds. Direct monitoring avoids it by routing the live signal around the computer entirely. Faster connection protocols (Thunderbolt, USB-C) lower it; older USB 2.0 interfaces have more of it.</dd>
