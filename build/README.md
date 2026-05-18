@@ -1,10 +1,6 @@
-# Build scripts and page templates
+# Build scripts
 
-Internal scripts that generate assets for the course (audio demos, SVG diagrams), plus skeletal HTML page templates. Not student-facing.
-
-## Page templates
-
-See [`templates/`](./templates/README.md) for HTML skeletons used as starting points for new readings, tools, and lab handouts. Each template embodies the chrome and **Today's gear** callout conventions in `meta/chrome-conventions.md`.
+Internal scripts that generate assets for the course. Not student-facing.
 
 ## `generate-audio-demos.py`
 

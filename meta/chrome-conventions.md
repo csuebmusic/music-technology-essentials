@@ -89,7 +89,7 @@ Files that don't get the callout:
 - The Day 1 reading (`01-reading-first-day-setup.html`), since it teaches the take-out cycle from scratch with its own walkthrough
 - Listening pages and project prompts (consulted at home, across sessions; gear context is the day's lab handout, not these files)
 
-Once the callout is present, the body prose should not redundantly list the gear. A lab handout's "Before you start" callout can carry pedagogical context (first-time framing, what's new about today's session), but should not re-list interface/headphones/mic. Templates for new pages live in `build/templates/`.
+Once the callout is present, the body prose should not redundantly list the gear. A lab handout's "Before you start" callout can carry pedagogical context (first-time framing, what's new about today's session), but should not re-list interface/headphones/mic. Templates for new pages live in `meta/templates/`.
 
 ## Markdown files (internal)
 

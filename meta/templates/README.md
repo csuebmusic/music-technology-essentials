@@ -1,6 +1,6 @@
 # Page templates
 
-Skeletal HTML files that embody the conventions in `meta/`. Copy one of these as the starting point for a new page.
+Skeletal HTML files that embody the conventions in this folder. Copy one of these as the starting point for a new page.
 
 | Template | Used for | Today's gear callout |
 |---|---|---|
