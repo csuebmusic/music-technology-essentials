@@ -277,7 +277,7 @@ Two halves:
 
 - Walk the room and lab's gear storage: gear storage baseline (see Module-wide concerns)
 - Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
-- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short stereo bell-like resonance (~16 s) that decays gradually to silence; see "Asset prep" below for what's expected.
+- Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run; escalate to Inés.** It's a short (~16 s) stereo bell-like resonance that decays gradually to silence; students cut into the decay and fade what remains in Step 5 of the handout.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
 - Open the orientation handout (the Lab 1 handout, `03-handout-audacity-orientation.html`) on the instructor station and on each student station's desktop browser
 - Confirm the Session Routines reference card is laminated and visible at every station
@@ -335,37 +335,6 @@ Quick close: "On Monday we go deeper into editing: the full vocabulary, plus env
 - **If running long in Part 1:** trim Section 4 (Timbre) free-exploration time. The first three sections carry the main pedagogical weight; Section 4 can be a 4-minute demo + brief student touch.
 - **If running long in Part 2:** the most cuttable step is Step 7 (NAS upload). It can be done after class with a 30-second reminder ("Don't leave without uploading. The card on your station has the steps.") But better to keep it in if at all possible; first-day NAS upload is the workflow-formation moment.
 - **If running short:** in Part 1 Section 4, give 5–7 minutes of timbre free-exploration ("Try to make a sound that's like a brass instrument, then a woodwind, then something inhuman"). In Part 2 Step 5, give them an extra try-this: "Now reverse the sample. What does the envelope look like? What does the slow fade-out become?"
-
-### Asset prep: orientation-sample.wav
-
-The Audacity orientation handout assumes a specific sample on the NAS at `shared/module-02/orientation/orientation-sample.wav`:
-
-- **Source:** a stereo bell-like resonance or sustained ringing texture (the actual file is a recorded bell-like sound, not a single struck bell). A dense ringing body that gradually decays to silence works pedagogically.
-- **Length:** ~16 seconds
-- **Format:** WAV, 44.1 kHz, 16-bit, stereo
-- **Pedagogical fit:** an audible envelope shape that decays gradually across the file's length. Students cut into the decay and fade what remains in Step 5. The waveform's visible taper across both stereo channels makes the editing moves easy to see.
-
-Inés has the canonical file. If a substitute is ever needed: any stereo sustained sound with an audible decay (~10–18 s) works (a long bowed note that fades, a struck rim recorded in stereo, a sampler-generated bell-like timbre).
-
-### Asset prep: Audacity screenshots for the Lab 1 handout (Audacity orientation)
-
-The seven screenshots in `assets/images/module-02-week-02/` are now captured (Inés' Mac, May 2026). For reference, here's what each one shows:
-
-| Filename | Content |
-|---|---|
-| `audacity-settings.png` | Preferences → Audio Settings: Quality section showing Project Sample Rate 44100 Hz, Default Sample Rate 44100 Hz, Default Sample Format 16-bit |
-| `audacity-interface-empty.png` | Empty Audacity main window with eight numbered orange markers placed directly on the regions identified in Step 3's annotation key (menu bar, transport, tools, level meters, Audio Setup, ruler, track area, selection toolbar) |
-| `audacity-imported.png` | Main window with `orientation-sample.wav` imported as a stereo track, showing the ringing-decay waveform across both channels |
-| `audacity-selection.png` | Same window with a region selected from roughly 7s to the end of the file (visible blue highlighted region in the waveform and timeline) |
-| `audacity-fade-out.png` | Same window after the cut + fade-out: file now ends around 7.5s, last ~2.5s shows the visible fade taper |
-| `audacity-export-prompt.png` | The "How would you like to export?" interstitial dialog with two options (Share to audio.com / On your computer) and the "Don't show again" checkbox |
-| `audacity-export.png` | Export Audio dialog: filename `thiebaut-orientation.wav`, format WAV (Microsoft), Stereo, 44100 Hz, Signed 16-bit PCM, Entire Project |
-
-### About the annotations on `audacity-interface-empty.png`
-
-The eight numbered markers are baked into the PNG itself (orange filled circles with white numbers, placed directly on the regions they identify). The handout's annotation key below the figure provides the legend. If the screenshot is ever re-captured, the new version will need fresh annotations drawn on; the numbering should match the order in the handout's Step 3 key.
-
-Note that the empty Audacity window does not display the project sample rate anywhere visible. In Audacity 3.6 the project rate lives inside the Audio Setup dropdown, not in the main window's status bar. The annotation key reflects this; marker 5 (Audio Setup) describes the dropdown as the home for host, device, channel, and project-rate settings.
 
 ### After class
 
