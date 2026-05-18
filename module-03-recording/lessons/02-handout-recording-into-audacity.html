@@ -475,11 +475,13 @@
   <div class="callout-label">Don't forget the fades</div>
   <p>A hard trim almost always cuts the waveform mid-cycle, which produces an audible click at the start or end of the file. Smooth it out with a short fade at each end of the clip:</p>
   <ol>
+    <li>Zoom into the start of the clip with <kbd>Cmd</kbd> + <kbd>1</kbd> (or <kbd>Cmd</kbd> + <kbd>E</kbd> after selecting near the edge). 50 ms is too small to select cleanly at the default zoom level; you need to be zoomed in enough to see individual cycles of the wave.</li>
     <li>Select about <strong>50 milliseconds</strong> at the start of the clip (click-and-drag with the I-beam).</li>
     <li>Apply <span class="menu-path">Effect → Fading → Fade In</span>.</li>
-    <li>Select about 50 ms at the end of the clip and apply <span class="menu-path">Effect → Fading → Fade Out</span>.</li>
+    <li>Zoom back out with <kbd>Cmd</kbd> + <kbd>F</kbd> (zoom to fit the whole project).</li>
+    <li>Repeat at the end of the clip: zoom in, select about 50 ms, apply <span class="menu-path">Effect → Fading → Fade Out</span>, zoom back out.</li>
   </ol>
-  <p>These are the same Fade In and Fade Out moves you learned in Module 2.</p>
+  <p>The Fade In / Fade Out commands and the <kbd>Cmd</kbd> + <kbd>E</kbd> ↔ <kbd>Cmd</kbd> + <kbd>F</kbd> zoom pair are all from Module 2; you've used them before.</p>
 </div>
 
 <p><strong>3. Normalize.</strong></p>
@@ -625,27 +627,11 @@ NOTES
 
 <hr>
 
-<h2>What you should leave with</h2>
+<h2>Recording on your phone</h2>
 
-<p>By the end of this session, in your sample library on the NAS:</p>
+<p>Between now and the next lab, you can grow your library by recording sounds on your phone whenever something catches your ear. The phone-recording reference card walks through the basics: which app to use, mic distance, getting the file off the device. Next lab we'll cover how to import a phone recording into Audacity and run it through the same prep pipeline you used today.</p>
 
-<ol>
-  <li>A <code>sample-library/</code> folder with a <code>paper/</code> subfolder, an <code>audacity-projects/</code> subfolder, and a <code>README.txt</code> at the root.</li>
-  <li>Four prepped samples in <code>paper/</code>, each mono, 44.1 kHz, 16-bit WAV, named per the convention.</li>
-  <li>One Audacity project file in <code>audacity-projects/</code> with the noise-profile clip and the four prepped sound clips.</li>
-  <li>A README that names what's in the library and how it's organized.</li>
-</ol>
-
-<p>And in your head:</p>
-
-<ol>
-  <li>How to set gain on the interface using Audacity's input meter.</li>
-  <li>What the -12 to -6 dBFS headroom target looks like and why it's there.</li>
-  <li>The three-step prep pipeline: denoise, trim, normalize.</li>
-  <li>That a recording becomes a sample by going through the pipeline.</li>
-</ol>
-
-<p>Before you leave, pick up the <strong>phone-recording reference card</strong> from the front of the room. From this week on, you can grow your library outside class by recording sounds on your phone and bringing them in to prep. The card walks through how.</p>
+<p>The card is at the front of the room. Pick one up before you leave: <a href="03-handout-recording-on-phone.html">Recording on your phone (reference card)</a>.</p>
 
 <hr>
 
@@ -663,6 +649,8 @@ NOTES
     <tr><td>Skip to start</td><td><kbd>Cmd</kbd> + <kbd>Home</kbd></td></tr>
     <tr><td>Select a clip</td><td>Double-click inside the clip</td></tr>
     <tr><td>Select a region within a clip</td><td>Click-and-drag with the I-beam</td></tr>
+    <tr><td>Zoom in / out</td><td><kbd>Cmd</kbd> + <kbd>1</kbd> / <kbd>Cmd</kbd> + <kbd>3</kbd></td></tr>
+    <tr><td>Zoom to selection / fit whole project</td><td><kbd>Cmd</kbd> + <kbd>E</kbd> / <kbd>Cmd</kbd> + <kbd>F</kbd></td></tr>
     <tr><td>Noise Reduction</td><td><span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span></td></tr>
     <tr><td>Trim Audio</td><td><span class="menu-path">Edit → Remove Special → Trim Audio</span> · <kbd>Cmd</kbd> + <kbd>T</kbd></td></tr>
     <tr><td>Normalize</td><td><span class="menu-path">Effect → Volume and Compression → Normalize…</span></td></tr>
