@@ -119,7 +119,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 *To be expanded.*
 
 - **Paper supplies:** scrap paper (not too thick, not too thin) at every station for Wed Wk 6 recordings. Quantity: enough for each student to have 4 sheets, plus extras
-- **Every station's recording gear in storage and inventoried:** dynamic mic, XLR cable, audio interface, headphones. Quick visual check that nothing is missing before the start of Wk 6. The mic stand can stay at the station or live in storage with the mic, whichever the lab's storage layout makes easier.
+- **Every station's recording gear in storage and inventoried:** dynamic mic, mic stand, XLR cable, audio interface, headphones. Quick visual check that nothing is missing before the start of Wk 6.
 - **Sample library template ready:** a folder structure students will mirror, ideally available as a downloadable starter on the NAS
 - **Lecture demo materials:** physical examples of XLR, TS, TRS cables (Wk 6 Mon and Wk 7 Mon); a condenser mic and a DI box to hold up in the Wk 7 Mon lecture
 - **Fictional band sketch (Wk 8 Mon):** 4–5 piece band, defined instruments and stage positions, so the live-vs-studio walkthrough is concrete. Worth writing out in advance so the lecture doesn't drift
