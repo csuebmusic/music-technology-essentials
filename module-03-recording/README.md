@@ -119,7 +119,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 *To be expanded.*
 
 - **Paper supplies:** scrap paper (not too thick, not too thin) at every station for Wed Wk 6 recordings. Quantity: enough for each student to have 4 sheets, plus extras
-- **Every station's recording chain verified:** dynamic mic in stand, XLR connected, interface gain trim at a sane starting position, headphones connected with in-line slider checked
+- **Every station's recording gear in storage and inventoried:** dynamic mic, XLR cable, audio interface, headphones. Quick visual check that nothing is missing before the start of Wk 6. The mic stand can stay at the station or live in storage with the mic, whichever the lab's storage layout makes easier.
 - **Sample library template ready:** a folder structure students will mirror, ideally available as a downloadable starter on the NAS
 - **Lecture demo materials:** physical examples of XLR, TS, TRS cables (Wk 6 Mon and Wk 7 Mon); a condenser mic and a DI box to hold up in the Wk 7 Mon lecture
 - **Fictional band sketch (Wk 8 Mon):** 4–5 piece band, defined instruments and stage positions, so the live-vs-studio walkthrough is concrete. Worth writing out in advance so the lecture doesn't drift
@@ -255,7 +255,7 @@ Filename: `lessons/03-handout-recording-on-phone.html`. Chrome reads `Lab · Ref
 ### Pre-class checklist
 
 - Walk the room: gear setup baseline (see Module-wide concerns above) plus the recording-specific extras.
-- At every station: dynamic mic in stand, XLR connected to input 1, interface powered (USB to the Mac), headphones plugged into the interface's front jack, in-line slider checked.
+- At every station's storage: dynamic mic, XLR cable, audio interface, headphones present and intact. Students will pull these out per the Session Routines card; the TA's job is to confirm nothing is missing before the room fills.
 - Scrap paper at every station: 4 sheets per student plus 2-3 extras for the test-recording step in Step 2 of the handout. Standard 8.5×11 printer paper works well (not cardstock, not tissue).
 - Confirm Audacity has the **Noise Removal and Repair** menu accessible (`Effect → Noise Removal and Repair → Noise Reduction…`). Standard in Audacity 3.x; verify on 3 stations during walk-through.
 - Test-record on the instructor station: confirm the level meter goes live when clicked, the gain knob produces visible meter response, the headphones produce live monitoring (set the monitor blend toward Inputs first).
@@ -275,6 +275,8 @@ The session runs 100 min. Pacing target:
 | 4. Library folder and prep | 30 min | Steps 7–8 | Folder structure, prep pipeline four times |
 | 5. Export and NAS upload | 15 min | Steps 9–10 | Mono WAV export, README, end-of-session NAS upload |
 | 6. Wrap and phone card | 5 min | — | Hand out phone reference card, preview Mon Wk 7 |
+
+The 100-min budget assumes students arrive on time and complete the start-of-session routine before Block 1 starts. Today's routine is the first session where the mic and XLR cable enter the gear list, so it runs a bit longer than usual; allow 8–10 minutes rather than the usual 5. Demo the mic-and-XLR setup on the instructor station at the front of the class as students arrive so the lab handout's Before-you-start callout gets a visual reinforcement. The 4-stage chain diagram from Monday's reading is the mental model: students should be able to point at their own setup and name each piece.
 
 **Block 1 · Setup and gain (20 min, Steps 1–2).** Walk through Step 1 on the projector with students mirroring on their stations. The Audio Setup dropdown is the new territory: students saw it labeled in Wk 2's interface tour as marker 5, but they didn't open it then. Today they open it and configure four things (Host, Playback Device, Recording Device, Recording Channels). The Recording Channels → **1 (Mono)** setting is the easiest to miss; if a student records to a stereo track with a mono input, the mic shows up on the left channel and silence on the right. Audible only if you balance hard, but the file is wrong.
 
