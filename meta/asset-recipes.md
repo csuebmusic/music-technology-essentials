@@ -60,14 +60,10 @@ Note that the empty Audacity window does not display the project sample rate any
 
 **Used in:** Lab 1 (`module-03-recording/lessons/02-handout-recording-into-audacity.html`)
 
-**Status:** to be captured from a lab Mac with the standard Audacity 3.x install, over the summer.
+**Status:** captured (Inés's Mac, May 2026). If re-capture is needed, the table below documents what each screenshot shows.
 
 | Filename | Content |
 |---|---|
-| `audacity-audio-setup.png` | Audio Setup dropdown with the interface selected as Recording Device and Playback Device, and 1 (Mono) selected for Recording Channels |
-| `audacity-meter-target.png` | Recording level meter in live monitoring mode, with peaks visibly landing in the -12 to -6 dBFS target band |
 | `audacity-five-clips.png` | One mono track holding five clips in sequence: flat noise-profile clip first, then the four paper-sound clips of varying duration and amplitude |
 | `audacity-noise-reduction-profile.png` | The Noise Reduction dialog in its Step 1 state, with the Get Noise Profile button at the top |
 | `audacity-noise-reduction-apply.png` | The Noise Reduction dialog in its Step 2 state, with three sliders set to defaults (12 / 6.00 / 3) and OK at the bottom |
-
-Filenames in the handout are already correct; the images just need to exist at those paths. Until then, browsers show broken-image icons but the prose and SVG diagram carry the lab on their own.
