@@ -29,25 +29,19 @@
 
 <p>Open the app once after installing and accept the microphone permission when it asks. That's the install done.</p>
 
-<p>Two notes on what Dolby On is and isn't. It's a <em>recording</em> app with built-in <em>editing</em> tools (Styles, EQ, Boost, Noise Reduction). For this class you only use the recording side; the editing tools belong to Dolby's "make it sound polished for social media" workflow, which is the opposite of what a sample library wants. The next section turns the editing tools off so you get a clean capture.</p>
+<p>Two notes on what Dolby On is and isn't. It's a <em>recording</em> app with built-in <em>editing</em> tools (Styles, Noise Reduction, EQ, Boost). For this class you only use the recording side; the editing tools belong to Dolby's "make it sound polished for social media" workflow, which is the opposite of what a sample library wants. The recording technique section below explains what to ignore in the editor after each take.</p>
 
 <hr>
 
 <h2>2 · One-time setup</h2>
 
-<p>Three settings to set once. They live under the Settings screen in the app (gear icon). Set them on your first session and never again.</p>
+<p>One setting matters: <strong>Lossless audio</strong>. Open the Settings screen in Dolby On (gear icon), turn Lossless audio on, and you're done. Set it once and never again.</p>
 
-<h3>Turn on Lossless audio</h3>
+<p>Without it, Dolby On exports compressed .m4a files that Audacity can't open without extra setup. With it on, you get .wav files that Audacity opens directly. You'll see a small <strong>Lossless</strong> badge above the record button on the home screen, which is how you know it's active.</p>
 
-<p>Settings → <strong>Lossless audio</strong> → on. Without this, Dolby On exports compressed .m4a files that Audacity can't open without extra setup. With it on, you get .wav files that Audacity opens directly. You'll see a small <strong>Lossless</strong> badge above the record button when this is active, which confirms it's on.</p>
+<p>One optional setting: <strong>Countdown</strong>. By default the app counts down 3-2-1 before each recording starts. The countdown is there to feed Dolby's noise-reduction editing tool, which you won't be using (next section explains why). If the wait bothers you, turn Countdown off in Settings. Either way works.</p>
 
-<h3>Turn off Noise Reduction</h3>
-
-<p>Settings → <strong>Noise Reduction</strong> → off. Dolby On's noise reduction is automatic and aggressive, tuned for live music with crowd noise or amp buzz. The denoise step you learned in lab is gentler and uses a captured noise profile of <em>your specific room</em>, which produces better results on raw recordings. Skip Dolby's pass; let Audacity do the work in lab.</p>
-
-<h3>Turn off the Countdown</h3>
-
-<p>Settings → <strong>Countdown</strong> → off. The three-second countdown exists to feed the noise-reduction system; with noise reduction off, it's just extra waiting before each take.</p>
+<p>Everything else in the Settings screen can be left at its defaults.</p>
 
 <hr>
 
@@ -77,7 +71,7 @@
 
 <div class="callout warn">
   <div class="callout-label">Don't apply Sound Tools</div>
-  <p>After you stop recording, Dolby On opens an editor with <strong>Styles</strong>, <strong>Bass</strong>, <strong>Treble</strong>, <strong>Boost</strong>, and other effect controls. Leave all of them alone. Your sample library starts from raw recordings, prepped deliberately in Audacity. Applying Dolby's effects on the phone bakes choices into the file that you can't undo later.</p>
+  <p>After you stop recording, Dolby On opens an editor with <strong>Styles</strong>, <strong>Noise Reduction</strong>, <strong>Bass</strong>, <strong>Treble</strong>, <strong>Boost</strong>, and other effect controls. Leave all of them alone. Your sample library starts from raw recordings, prepped deliberately in Audacity using a noise profile from your specific room and the three-step pipeline you learned in lab. Applying Dolby's effects on the phone bakes choices into the file that you can't undo later, and Dolby's noise reduction in particular is automatic and aggressive in ways that often hurt non-music sources (paper, water, mechanical sounds) more than they help.</p>
 </div>
 
 <hr>
