@@ -63,7 +63,7 @@ Every student-facing HTML document that students use during a lab session opens 
 
 This callout exists because the gear list used to drift inside the body prose of every handout. Centralizing it at the top of each file gives it one place per session, easy to update, easy to skip past once internalized.
 
-Three variants, by file type and module:
+Three gear tiers, mapped across file type and module:
 
 | File type | Gear list |
 |---|---|

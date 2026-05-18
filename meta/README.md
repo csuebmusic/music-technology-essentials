@@ -11,6 +11,7 @@ Internal build-time conventions for this repo. Codifies the decisions that keep 
 - [`naming-conventions.md`](./naming-conventions.md) — file and folder names: lowercase-hyphen rules, zero-padding, module / lesson / asset paths
 - [`date-conventions.md`](./date-conventions.md) — where calendar dates live, where week references go, and the content-vs-schedule test
 - [`visual-conventions.md`](./visual-conventions.md) — palette, fonts, CSS variables, SVG inlining rule, per-module audio format standards
+- [`asset-recipes.md`](./asset-recipes.md) — per-asset specs (audio samples, screenshots): what each asset is, what it sounds like or shows, how to recreate or substitute
 - [`templates/`](./templates/README.md) — skeletal HTML files (one per page type: reading, tool, Module 2 / 3 / 4 lab handout) that embody the conventions above. Copy one of these as the starting point for a new page
 
 ## How to use this folder while building
@@ -18,7 +19,7 @@ Internal build-time conventions for this repo. Codifies the decisions that keep 
 Before drafting anything student-facing, scan the relevant convention file. The files are short and topic-focused so the relevant one is fast to find. For new pages, start from the matching template in `templates/` rather than from scratch.
 
 - Drafting a reading or handout → `prose-conventions.md`, `chrome-conventions.md`, `visual-conventions.md`, plus the matching template in `templates/`
-- Adding new lessons or assets → `naming-conventions.md`
+- Adding new lessons or assets → `naming-conventions.md`, plus `asset-recipes.md` if the asset is hand-produced (recorded audio, captured screenshot, photographed gear)
 - Writing TA notes or module READMEs → `chrome-conventions.md` (for the H1 line), `date-conventions.md`
 - Anything that involves a date → `date-conventions.md`
 
