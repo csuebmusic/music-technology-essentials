@@ -292,22 +292,22 @@
 <p>To dial it in:</p>
 
 <ol class="steps">
-  <li>Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) A small menu appears with two items: <strong>Disable Silent Monitoring</strong> and <strong>Options…</strong>. Click <strong>Disable Silent Monitoring</strong>. The meter switches into <strong>live monitoring</strong> mode and starts showing levels coming in from the mic even though you're not recording yet.</li>
+  <li>Turn on live monitoring so the meter shows levels before you start recording. Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) A small menu appears with two items: <strong>Enable Silent Monitoring</strong> and <strong>Options…</strong>. Click <strong>Enable Silent Monitoring</strong>. The meter goes live: it shows the signal coming in from the mic in real time, even though you're not recording yet. (The "silent" in the name means the audio isn't routed to your headphones from Audacity, only displayed on the meter; you'll still hear the mic through the interface's direct monitor, set in the next step.)</li>
   <li>Make a sound at the loudness you'll be aiming for. For the paper sounds, that means a sample crumble or a quick test rip at roughly the speed and intensity you'll use for the real take. Grab a small piece of scrap paper from the stack at your station for this; don't burn through the four sheets you'll need for the actual recordings.</li>
   <li>Watch the meter. If the peaks sit below -12, turn the gain knob on the interface clockwise (up) a quarter-turn and try again. If the peaks hit the red zone or trip the interface's clip indicator, turn the gain counter-clockwise (down).</li>
   <li>Repeat until the loudest peaks land in the -12 to -6 band consistently. Don't chase a single peak; you're aiming for where the loud moments settle, not the absolute maximum of any one try.</li>
 </ol>
 
 <div class="callout">
-  <div class="callout-label">Silent monitoring is the default</div>
-  <p>Audacity ships with the input meter in <em>silent monitoring</em> mode, where the meter only shows levels while the project is actually recording. Disabling silent monitoring is what makes the meter live the whole time, which is what you need to dial in the gain knob before you press record.</p>
+  <div class="callout-label">Why the monitoring step exists</div>
+  <p>Audacity's default is to keep the input meter dark unless the project is actively recording. To set the gain you need to see live levels <em>before</em> you press record, which is what Enable Silent Monitoring does. Once it's on, the menu item flips to <strong>Disable Silent Monitoring</strong> (so you can turn it back off if you ever need to). For setting gain, leave it on.</p>
 </div>
 
 <figure class="vocab-video">
   <video controls preload="metadata" muted playsinline>
     <source src="../../assets/videos/module-03-week-06/meter-monitoring.mp4" type="video/mp4">
   </video>
-  <figcaption>Live monitoring · once silent monitoring is disabled, the meter shows incoming levels in real time</figcaption>
+  <figcaption>Live monitoring on · clicking Enable Silent Monitoring switches the meter from dark to live, showing the mic's signal before you press record</figcaption>
 </figure>
 
 <div class="callout warn">
@@ -658,7 +658,7 @@ NOTES
   <tbody>
     <tr><td>Audio interface settings</td><td>Audio Setup dropdown (top toolbar)</td></tr>
     <tr><td>Add mono track</td><td><span class="menu-path">Tracks → Add New → Mono Track</span></td></tr>
-    <tr><td>Live monitor meter</td><td>Click the recording level meter (top right), then <strong>Disable Silent Monitoring</strong></td></tr>
+    <tr><td>Live monitor meter</td><td>Click the recording level meter (top right), then <strong>Enable Silent Monitoring</strong></td></tr>
     <tr><td>Record / Stop</td><td><kbd>R</kbd> / <kbd>Space</kbd></td></tr>
     <tr><td>Skip to start</td><td><kbd>Cmd</kbd> + <kbd>Home</kbd></td></tr>
     <tr><td>Select a clip</td><td>Double-click inside the clip</td></tr>
