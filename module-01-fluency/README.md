@@ -288,7 +288,9 @@ Walk them through:
 6. Eject the NAS from Finder's sidebar
 7. Sign out of any browser accounts (Canvas, Google, etc.); quit the browser
 8. Quit all apps with `Cmd + Q`
-9. Knobs to zero. Place the headphones on the desk next to the interface; leave the mic, the interface, and the rest of the gear at the station — today only, we set it out and we'll stow it. Chair in.
+9. Turn the audio interface knobs (gain, main / output, headphone) back to zero.
+10. Leave the gear plugged in at the station: the interface, the mic, the MIDI keyboard, and the headphones all stay as they are. Today only — we set the gear out, and the room gets reset for Art before Mon Wk 2.
+11. Chair in.
 
 Tell them this is a routine they'll do every session for the rest of the semester. Today is the abbreviated Day-1 version (about 3 minutes once it's habit). **Starting Mon Wk 2 the full routine kicks in**, with two changes: (a) every session starts with gear setup and a NAS download from the lab's gear storage and personal folder respectively, and (b) every session ends with gear teardown (unplug, stow back into the lab's gear storage) on top of the NAS upload. The full pattern is on the Session Routines card; this Day-1 walkthrough is the half they'll do every time, plus the gear teardown they don't do today.
 
