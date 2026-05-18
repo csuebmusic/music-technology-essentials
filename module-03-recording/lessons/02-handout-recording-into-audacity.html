@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Recording into Audacity</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Screenshot frame: same pattern as Handout 01 (Audacity Orientation). */
+    figure.screenshot {
+      margin: 1.5rem 0 2rem;
+    }
+    figure.screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--bg-alt);
+    }
+    figure.screenshot figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.6rem;
+      text-align: left;
+    }
+    figure.screenshot .annotation-key {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-alt);
+      border-left: 2px solid var(--rule);
+    }
+    figure.screenshot .annotation-key strong {
+      color: var(--accent);
+    }
+
+    /* Diagram frame: same pattern as Handout 06 (Mixing in Audacity). */
+    figure.diagram {
+      margin: 1.5rem 0 2rem;
+    }
+    figure.diagram svg {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    figure.diagram figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    /* Menu path: matches Handout 02 / Handout 06 (Editing / Mixing). */
+    .menu-path {
+      font-family: var(--mono);
+      font-size: 0.9em;
+      background: var(--bg-alt);
+      padding: 0.2em 0.55em;
+      border-radius: 2px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    /* Sample card: each of the four paper sounds gets a small framed
+       block listing its filename. Used in the export step so students
+       can check off as they go. */
+    .sample-list {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+    }
+    .sample-list ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .sample-list ol li {
+      padding: 0.25rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 03 · Lab 1</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 03 · Recording, sample prep &amp; library building</div>
+  <h1>Recording into Audacity</h1>
+  <div class="subtitle">Capture four sounds, prep them into samples, start your library.</div>
+</div>
+
+<p class="lede">Monday's reading walked you through the basic recording chain on paper. Today you plug it in. By the end of this session you'll have set up Audacity for recording, dialed in a clean level on the interface, captured four short recordings (paper crumble at two speeds, paper rip at two speeds), prepped each one into a usable sample, and organized the lot into a folder structure that's the start of a sample library you'll grow for the rest of the semester. The work today is the foundation for every recording session that follows.</p>
+
+<h2>What we're doing today</h2>
+
+<ol class="steps">
+  <li>Configure Audacity for recording: project format, recording device, mono track.</li>
+  <li>Set the gain knob on the interface using Audacity's input meter. Aim for peaks at <strong>-12 to -6 dBFS</strong>.</li>
+  <li>Set the monitor blend so you can hear yourself while recording.</li>
+  <li>Do a test recording. Listen back. Adjust if needed.</li>
+  <li>Capture a short noise-profile clip (room tone) for the denoise step later.</li>
+  <li>Record the four paper sounds.</li>
+  <li>Set up your sample library folder.</li>
+  <li>Prep each recording through the three-step pipeline: <strong>denoise → trim → normalize</strong>.</li>
+  <li>Export each prepped sample as a WAV.</li>
+  <li>Write the library README. Upload everything to the NAS.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Before you start</div>
+  <p>Pull the laminated <strong>Session Routines</strong> card to the front of your station. You're doing the start-of-session routine before Step 1: pull anything you need from the NAS into your local folder, sign into the Mac with your class account, plug in your headphones.</p>
+  <p>The dynamic mic at your station is already in the stand and connected to input 1 on the interface via the XLR cable. Don't unplug anything. If something looks wrong, raise your hand.</p>
+</div>
+
+<hr>
+
+<h2>Step 1 · Configure Audacity for recording</h2>
+
+<p>Open Audacity. The settings you put in place during the orientation lab (project sample rate 44.1 kHz, default sample format 16-bit PCM) are still there: those are course standards and they apply to every project you make this semester. Today you add the recording-specific settings on top.</p>
+
+<h3>Select the audio interface as your recording device</h3>
+
+<ol class="steps">
+  <li>At the top of the Audacity window, find the <strong>Audio Setup</strong> button (marker 5 on the empty-project tour from your orientation lab).</li>
+  <li>Click it. A dropdown opens with several sections: <strong>Host</strong>, <strong>Playback Device</strong>, <strong>Recording Device</strong>, <strong>Recording Channels</strong>.</li>
+  <li>Under <strong>Recording Device</strong>, choose the audio interface at your station (it will be listed by model name: <strong>USB Audio CODEC</strong>, <strong>PreSonus AudioBox USB 96</strong>, or <strong>U-PHORIA UM2</strong> depending on which interface you're at).</li>
+  <li>Under <strong>Recording Channels</strong>, choose <strong>1 (Mono)</strong>. The dynamic mic on input 1 is a single source, so you want a single-channel recording. Stereo recording is for setups with two mics; today is one mic, one channel.</li>
+  <li>Under <strong>Playback Device</strong>, the interface should already be selected (so playback goes out the interface's headphone jack into your headphones). If it isn't, select it now.</li>
+</ol>
+
+<figure class="screenshot">
+  <!-- TODO: capture Audio Setup dropdown with USB Audio CODEC selected as recording device, 1 (Mono) selected as recording channels. -->
+  <img src="../../assets/images/module-03-week-06/audacity-audio-setup.png" alt="The Audacity Audio Setup dropdown showing the audio interface selected as both the Recording Device and the Playback Device, and 1 (Mono) selected for Recording Channels." loading="lazy">
+  <figcaption>Audio Setup · interface selected for record and playback, 1 (Mono) for recording channels</figcaption>
+</figure>
+
+<h3>Add a mono recording track</h3>
+
+<ol class="steps">
+  <li>From the menu bar, click <strong>Tracks → Add New → Mono Track</strong>.</li>
+  <li>An empty mono track appears in the project. This is where your recording will land.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Why mono?</div>
+  <p>A dynamic mic plugged into one input on the interface is a mono source: one signal, one stream of numbers, one channel. Recording it to a mono track stores it correctly (one channel of audio) and produces a file that's half the size of an unnecessary stereo version. Stereo is for setups with two mics or a stereo source; today is one mic.</p>
+</div>
+
+<hr>
+
+<h2>Step 2 · Set the gain on the interface</h2>
+
+<p>The gain knob on the audio interface controls how much the preamp amplifies the mic-level signal before the ADC converts it to digital. You met it in Monday's reading. Today you set it. The target you're aiming for: when you make the loudest version of the sound you're about to record, the peaks on Audacity's input meter land in the <strong>-12 to -6 dBFS</strong> band. That's the window; anything outside it means you need to adjust.</p>
+
+<figure class="diagram">
+  <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Vertical level meter from -60 to 0 dBFS with a green safe zone, an amber target zone from -12 to -6 dBFS, and a red ceiling zone above -6 to 0 dBFS. A label points to the target zone as the band to aim for.">
+
+    <!-- Title above the meter -->
+    <text x="260" y="20" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
+          fill="var(--accent)">RECORDING LEVEL TARGET</text>
+
+    <!-- Meter outline (vertical bar) -->
+    <rect x="180" y="50" width="60" height="200"
+          fill="var(--bg-alt)" stroke="var(--ink-soft)" stroke-width="1.2"/>
+
+    <!-- Green safe zone: from -60 (y=250) up to -12 (y=90) -->
+    <!-- Map: -60 dBFS = y 250, 0 dBFS = y 50. 200px tall over 60 dB range -->
+    <!-- -12 dBFS = y 50 + (200 * 12/60) = y 90 -->
+    <!-- -6 dBFS = y 50 + (200 * 6/60) = y 70 -->
+    <rect x="180" y="90" width="60" height="160" fill="var(--meter-good)" opacity="0.55"/>
+
+    <!-- Amber target zone: -12 to -6 -->
+    <rect x="180" y="70" width="60" height="20" fill="var(--meter-hot)" opacity="0.85"/>
+
+    <!-- Red ceiling zone: -6 to 0 -->
+    <rect x="180" y="50" width="60" height="20" fill="var(--meter-clip)" opacity="0.85"/>
+
+    <!-- Scale ticks and labels on the right side of the meter -->
+    <!-- 0 dBFS at y 50 -->
+    <line x1="240" y1="50" x2="252" y2="50" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="54" font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">0 dBFS</text>
+    <!-- -6 dBFS at y 70 -->
+    <line x1="240" y1="70" x2="252" y2="70" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="74" font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">-6</text>
+    <!-- -12 dBFS at y 90 -->
+    <line x1="240" y1="90" x2="252" y2="90" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="94" font-family="DM Mono, monospace" font-size="11" fill="var(--ink)">-12</text>
+    <!-- -24 dBFS at y 130 -->
+    <line x1="240" y1="130" x2="252" y2="130" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="134" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">-24</text>
+    <!-- -36 dBFS at y 170 -->
+    <line x1="240" y1="170" x2="252" y2="170" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="174" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">-36</text>
+    <!-- -48 dBFS at y 210 -->
+    <line x1="240" y1="210" x2="252" y2="210" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="214" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">-48</text>
+    <!-- -60 dBFS at y 250 -->
+    <line x1="240" y1="250" x2="252" y2="250" stroke="var(--ink-soft)" stroke-width="1"/>
+    <text x="258" y="254" font-family="DM Mono, monospace" font-size="11" fill="var(--ink-soft)">-60</text>
+
+    <!-- Left-side zone labels: one label per zone, centered vertically -->
+    <text x="170" y="64" text-anchor="end"
+          font-family="DM Mono, monospace" font-size="11" fill="var(--meter-clip)" font-weight="500">CEILING</text>
+    <text x="170" y="84" text-anchor="end"
+          font-family="DM Mono, monospace" font-size="11" fill="var(--meter-hot)" font-weight="500">TARGET</text>
+    <text x="170" y="174" text-anchor="end"
+          font-family="DM Mono, monospace" font-size="11" fill="var(--meter-good)" font-weight="500">SAFE</text>
+
+    <!-- Arrow pointing to target band, with note -->
+    <path d="M 360 80 L 305 80" stroke="var(--ink)" stroke-width="1.2" fill="none"
+          marker-end="url(#arrow-target)"/>
+    <defs>
+      <marker id="arrow-target" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink)"/>
+      </marker>
+    </defs>
+    <text x="365" y="76" font-family="DM Sans, sans-serif" font-size="12" fill="var(--ink)">
+      peaks of the loudest sound
+    </text>
+    <text x="365" y="90" font-family="DM Sans, sans-serif" font-size="12" fill="var(--ink)">
+      should land here
+    </text>
+  </svg>
+  <figcaption>The headroom target band on Audacity's input meter</figcaption>
+</figure>
+
+<p>Three bands matter:</p>
+
+<ul>
+  <li><strong>Safe (below -12 dBFS):</strong> the signal is below the target. The recording will be quiet and you'll need to amplify it later, which also amplifies the room noise. Turn the gain up.</li>
+  <li><strong>Target (-12 to -6 dBFS):</strong> the peaks of your loudest sound sit here. You have <strong>headroom</strong> (room between your loudest moment and the digital ceiling), and the signal is well above the noise floor. This is where you want to be.</li>
+  <li><strong>Ceiling (-6 to 0 dBFS):</strong> the signal is approaching the ceiling and you're close to clipping. If the clip light on the interface flashes, you've already crossed it. Turn the gain down.</li>
+</ul>
+
+<p>To dial it in:</p>
+
+<ol class="steps">
+  <li>Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) The meter switches into <strong>monitoring</strong> mode and shows live levels even though you're not recording yet.</li>
+  <li>Make a sound at the loudness you'll be aiming for. For the paper sounds, that means a sample crumble or a quick test rip at roughly the speed and intensity you'll use for the real take. Grab a small piece of scrap paper from the stack at your station for this; don't burn through the four sheets you'll need for the actual recordings.</li>
+  <li>Watch the meter. If the peaks sit below -12, turn the gain knob on the interface clockwise (up) a quarter-turn and try again. If the peaks hit the red zone or trip the interface's clip indicator, turn the gain counter-clockwise (down).</li>
+  <li>Repeat until the loudest peaks land in the -12 to -6 band consistently. Don't chase a single peak; you're aiming for where the loud moments settle, not the absolute maximum of any one try.</li>
+</ol>
+
+<figure class="screenshot">
+  <!-- TODO: capture Audacity recording meter during monitoring with peaks visible in the -12 to -6 band. Arrange so peaks are clearly in the target zone. -->
+  <img src="../../assets/images/module-03-week-06/audacity-meter-target.png" alt="Audacity's recording level meter showing live monitoring with peaks landing between -12 and -6 dBFS, the target band." loading="lazy">
+  <figcaption>The recording meter showing peaks in the target band</figcaption>
+</figure>
+
+<div class="callout warn">
+  <div class="callout-label">Don't normalize to fix a quiet recording</div>
+  <p>You might be tempted to undershoot the gain ("better safe than clipping") and plan to fix it in editing. Don't. A signal recorded too quietly carries less information than one recorded at the right level, and when you amplify it after the fact you amplify the room noise along with the sound. Set the gain right at the source. Normalize, in the prep step later, is for standardizing across already-good recordings, not for rescuing too-quiet ones.</p>
+</div>
+
+<hr>
+
+<h2>Step 3 · Set the monitor blend</h2>
+
+<p>You need to hear yourself through the headphones while you're recording. The interface's monitor blend control decides what you hear: the live signal coming straight from the mic (no latency), the signal coming back from the computer (a few milliseconds late), or a mix of both.</p>
+
+<p>Today you want to hear the mic directly, with little or no playback from the computer.</p>
+
+<ul>
+  <li><strong>On a PreSonus AudioBox USB 96:</strong> turn the <strong>Mixer</strong> knob (between the two gain knobs and the main output) toward <strong>Inputs</strong>. Not all the way; about three-quarters of the way toward Inputs is a good starting point. You'll hear yourself in the headphones immediately.</li>
+  <li><strong>On a Behringer U-Phoria UM2:</strong> press the <strong>Direct Monitor</strong> button in (the square button next to the input jacks). The button stays depressed. You're now hearing the live input.</li>
+  <li><strong>If you can't hear yourself at all:</strong> check the headphone volume knob on the interface, then check the in-line slider on the headphone cable, then check the monitor blend is set as above. The headphones plug into the front of the interface, not the computer.</li>
+</ul>
+
+<p>Speak into the mic. You should hear yourself in the headphones with no perceptible delay. If you hear a noticeable echo or stutter, the monitor blend is set toward Playback rather than Inputs; adjust it.</p>
+
+<hr>
+
+<h2>Step 4 · Do a test recording</h2>
+
+<p>Before you commit to the four real recordings, do one practice take to confirm the chain is working end to end.</p>
+
+<ol class="steps">
+  <li>Make sure the empty mono track from Step 1 is in the project. If it isn't, add one (<strong>Tracks → Add New → Mono Track</strong>).</li>
+  <li>Click the red <strong>Record</strong> button in the transport toolbar (or press <kbd>R</kbd>).</li>
+  <li>Wait one second, then speak a short phrase ("test recording, one, two, three").</li>
+  <li>Click <strong>Stop</strong> (or press <kbd>Space</kbd>).</li>
+  <li>A waveform appears on the mono track. Click <strong>Skip to Start</strong> (<kbd>Cmd</kbd> + <kbd>Home</kbd>), then <strong>Play</strong> (<kbd>Space</kbd>). Listen.</li>
+</ol>
+
+<p>Three things to check as you listen:</p>
+
+<ul>
+  <li><strong>Volume.</strong> The recording should be clearly audible. If it's silent or very quiet, the gain may be too low (back to Step 2), or the recording device may not be set right (back to Step 1).</li>
+  <li><strong>Cleanliness.</strong> The sound should be clean, with no crackling or harshness. If you hear distortion, the gain is too high. Turn it down (Step 2) and try again.</li>
+  <li><strong>Background.</strong> A faint room hiss is normal; a strong hum usually means the XLR cable is loose at one end. Push the cable in firmly at the mic and at the interface.</li>
+</ul>
+
+<p>When the test sounds clean, delete the test clip. Click the <strong>X</strong> in the track header (or select the track and press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> to remove the track) and add a fresh mono track. You want the project to start clean.</p>
+
+<hr>
+
+<h2>Step 5 · Capture a noise-profile clip</h2>
+
+<p>Every room has a noise floor: the small constant level of background sound from the ventilation, the computers, the building. You can't hear it most of the time because your ears tune it out, but a microphone catches it, and a quiet recording will pick it up alongside the sound you actually want. Audacity has a <strong>Noise Reduction</strong> effect that can subtract it back out, but to use it the effect needs to see a clean sample of just the noise, with no other sound mixed in. That sample is called a <strong>noise profile</strong>, and you're going to record it now.</p>
+
+<ol class="steps">
+  <li>Stand still and quiet at your station. Don't touch the mic, the cable, or the table.</li>
+  <li>Click <strong>Record</strong>.</li>
+  <li>Wait <strong>10 seconds</strong>. Stay quiet. Don't move. Let the room speak.</li>
+  <li>Click <strong>Stop</strong>.</li>
+</ol>
+
+<p>You now have a 10-second clip of pure room tone on your track. This is your noise-profile clip. The waveform looks almost flat: just the small wiggles of the room noise itself, with no other content. Leave it where it is; you'll use it during the prep step.</p>
+
+<div class="callout">
+  <div class="callout-label">Why a separate clip and not the start of each recording?</div>
+  <p>You could capture the noise profile at the start of every recording. Recording it once as its own clip is cleaner: you have one definitive sample of room tone, you set the noise profile from it once, then apply Noise Reduction to each of the four sound clips. Less to remember during recording, less to trim during prep.</p>
+</div>
+
+<hr>
+
+<h2>Step 6 · Record the four paper sounds</h2>
+
+<p>Pick up a sheet of paper from the stack at your station. You're going to record four short sounds, each as its own clip on the same mono track.</p>
+
+<p>The four recordings, in order:</p>
+
+<ol class="steps">
+  <li><strong>Paper crumble, slow.</strong> Take the sheet of paper. Crumble it slowly into a ball over about 8 to 10 seconds. Let the small individual crackles and creases be audible.</li>
+  <li><strong>Paper crumble, fast.</strong> Take a new sheet. Crumble it as quickly as you can, in about 2 to 3 seconds. A burst of sound rather than a gradual one.</li>
+  <li><strong>Paper rip, slow.</strong> Take a new sheet. Rip it slowly down the middle over about 6 to 8 seconds. Let the tearing be audible the whole way through.</li>
+  <li><strong>Paper rip, fast.</strong> Take a new sheet. Rip it as fast as you can, in one quick motion.</li>
+</ol>
+
+<p>For each recording:</p>
+
+<ol class="steps">
+  <li>Hold the paper about 15 to 20 centimeters in front of the mic (a hand's width away). Not closer; if you get too close, the proximity effect will exaggerate the lows and the sound will feel boomy.</li>
+  <li>Click <strong>Record</strong>.</li>
+  <li>Wait one full second of silence, then make the sound.</li>
+  <li>After the sound ends, wait one full second more, then click <strong>Stop</strong>.</li>
+</ol>
+
+<p>The one-second buffer at each end gives you room to trim cleanly in the prep step. If you cut the silence too tight at the recording stage, you risk clipping off the very beginning or end of the sound itself.</p>
+
+<p>Between recordings, listen back. Click on the clip you just made, press <kbd>Space</kbd>, hear it. If a recording didn't capture what you wanted, click the clip's <strong>X</strong> to delete it, and try that one again. Don't move on until each recording sounds like what you intended.</p>
+
+<figure class="screenshot">
+  <!-- TODO: capture the Audacity project with one mono track containing five clips in sequence: noise profile, paper crumble slow, paper crumble fast, paper rip slow, paper rip fast. -->
+  <img src="../../assets/images/module-03-week-06/audacity-five-clips.png" alt="An Audacity project with one mono track holding five recorded clips in sequence: a flat noise-profile clip, then four paper-sound clips of varying duration and amplitude." loading="lazy">
+  <figcaption>Five clips on one mono track · noise profile, then the four paper sounds</figcaption>
+</figure>
+
+<div class="callout">
+  <div class="callout-label">Save your work</div>
+  <p>Before going further, save the Audacity project. <strong>File → Save Project As…</strong>, navigate to <code>~/Documents/lastname/</code> for now, name it <code>sample-library.aup3</code>, click <strong>Save</strong>. (You'll move the project into the library folder in Step 7.) From this point on, save every few minutes with <kbd>Cmd</kbd> + <kbd>S</kbd>.</p>
+</div>
+
+<hr>
+
+<h2>Step 7 · Set up your sample library folder</h2>
+
+<p>The folder you build now is the home for every sample you record this semester. Build it carefully; you'll be living in it for the rest of the course.</p>
+
+<ol class="steps">
+  <li>In Finder, navigate to your local working folder: <code>~/Documents/lastname/</code>. (If you don't have a folder there yet, make one with your lowercase last name.)</li>
+  <li>Inside that folder, create a new folder named <strong>sample-library</strong>. Lowercase, hyphenated. This is the library's root.</li>
+  <li>Inside <code>sample-library/</code>, create a folder named <strong>paper</strong>. This is the first category folder; you'll add more categories (metal, water, voice, etc.) as you record more sounds in later weeks.</li>
+  <li>Inside <code>sample-library/</code>, also create a folder named <strong>audacity-projects</strong>. This is where the working Audacity project file lives. Keeping it separate from the prepped samples means you can browse <code>paper/</code> as a flat list of finished sounds without your <code>.aup3</code> file cluttering the view.</li>
+  <li>Move your <code>sample-library.aup3</code> file (from Step 6) into <code>sample-library/audacity-projects/</code>. Use Finder to drag it.</li>
+</ol>
+
+<p>Your folder should now look like this:</p>
+
+<pre><code>~/Documents/lastname/
+  sample-library/
+    paper/                    &lt;-- empty for now; samples land here in Step 9
+    audacity-projects/
+      sample-library.aup3
+</code></pre>
+
+<div class="callout warn">
+  <div class="callout-label">Audacity may have lost track of the project file</div>
+  <p>When you move an Audacity project (the <code>.aup3</code> file) while it's open, Audacity can get confused about its current save location. After moving the file in Finder, close the project in Audacity (<strong>File → Close Project</strong>), then re-open it from the new location (<strong>File → Open…</strong>, navigate to <code>sample-library/audacity-projects/sample-library.aup3</code>). From here on, <kbd>Cmd</kbd> + <kbd>S</kbd> saves to the right place.</p>
+</div>
+
+<hr>
+
+<h2>Step 8 · Run the prep pipeline on each recording</h2>
+
+<p>You have five clips on one track: a noise-profile clip first, then the four paper sounds. The prep pipeline turns each of the four sound clips into a <strong>sample</strong>: a clean, standardized file ready to live in the library and be used in later projects. The pipeline has three steps, applied in order: <strong>denoise → trim → normalize</strong>.</p>
+
+<p>You'll go through it four times, once per sound. The noise-profile clip itself doesn't get prepped; it's a tool, not a sample.</p>
+
+<h3>Set the noise profile (once)</h3>
+
+<p>Before the first denoise, Audacity needs to learn what the room noise sounds like. You only do this once; the noise profile stays in memory until you change it or close the program.</p>
+
+<ol class="steps">
+  <li>Click somewhere inside the noise-profile clip (the first, flat-looking clip on the track). Then use <kbd>Cmd</kbd> + <kbd>A</kbd> if needed, or click-and-drag to select most of the clip's length. You want a clean stretch of just room tone, no other sound.</li>
+  <li>Open <span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span></li>
+  <li>The Noise Reduction dialog opens. Click the <strong>Get Noise Profile</strong> button.</li>
+  <li>The dialog closes immediately. Audacity has captured the noise profile and is now ready to apply the reduction to other clips.</li>
+</ol>
+
+<figure class="screenshot">
+  <!-- TODO: capture the Noise Reduction dialog open, with the Get Noise Profile button highlighted (step 1 phase). -->
+  <img src="../../assets/images/module-03-week-06/audacity-noise-reduction-profile.png" alt="The Audacity Noise Reduction dialog in its Step 1 state, with the Get Noise Profile button visible at the top." loading="lazy">
+  <figcaption>Step 1 of the Noise Reduction dialog · the Get Noise Profile button</figcaption>
+</figure>
+
+<h3>For each of the four sound clips</h3>
+
+<p>Now apply the three pipeline steps to each paper-sound clip in turn. Start with <strong>paper crumble, slow</strong> (the second clip on the track).</p>
+
+<p><strong>1. Denoise.</strong></p>
+
+<ol class="steps">
+  <li>Click somewhere inside the clip. Then press <kbd>Cmd</kbd> + <kbd>A</kbd> to select that clip's full extent (Audacity's "select all" defaults to the current clip when there's one selected).</li>
+  <li>If <kbd>Cmd</kbd> + <kbd>A</kbd> selects more than the one clip (it can grab the whole track depending on settings), click-and-drag with the selection tool to select just this clip from start to end instead.</li>
+  <li>Open <span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span></li>
+  <li>The dialog opens with three sliders: <strong>Noise reduction (dB)</strong>, <strong>Sensitivity</strong>, <strong>Frequency smoothing (bands)</strong>. Leave them at their defaults (<strong>12, 6.00, 3</strong>).</li>
+  <li>Click <strong>OK</strong>. Audacity processes the clip and subtracts the noise profile from it. The clip's waveform may look slightly thinner near the silent portions; the body of the sound should look mostly unchanged.</li>
+</ol>
+
+<figure class="screenshot">
+  <!-- TODO: capture the Noise Reduction dialog in its Step 2 state, showing the three sliders at defaults (12 / 6.00 / 3) and the OK button. -->
+  <img src="../../assets/images/module-03-week-06/audacity-noise-reduction-apply.png" alt="The Audacity Noise Reduction dialog in its Step 2 state, with three sliders set to defaults: Noise reduction 12 dB, Sensitivity 6.00, Frequency smoothing 3 bands. The OK button is at the bottom." loading="lazy">
+  <figcaption>Step 2 of the Noise Reduction dialog · defaults are fine</figcaption>
+</figure>
+
+<p><strong>2. Trim.</strong></p>
+
+<ol class="steps">
+  <li>The clip still has the one-second silence buffer at the start and end. Trim them away now: the buffer was there for headroom during recording; the finished sample shouldn't carry empty silence at either end.</li>
+  <li>With the selection tool active (the I-beam), click-and-drag to select the silence at the start of the clip (from the very beginning to just before the sound starts).</li>
+  <li>Press <kbd>Delete</kbd> (or use <span class="menu-path">Edit → Delete</span>).</li>
+  <li>Repeat at the end: select the trailing silence after the sound ends, press <kbd>Delete</kbd>.</li>
+  <li>Apply a short fade at each end to avoid clicks: select about 50 milliseconds at the start of the clip and apply <span class="menu-path">Effect → Fading → Fade In</span>. Repeat at the end with <span class="menu-path">Effect → Fading → Fade Out</span>.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Why fade at the trim points</div>
+  <p>When you cut a waveform mid-cycle (which a hard trim almost always does), the file goes from "audio" to "silence" instantly at that one sample. That sudden jump produces an audible click at the start or end of the file. A 50-ms fade smooths the jump out and the file plays cleanly.</p>
+</div>
+
+<p><strong>3. Normalize.</strong></p>
+
+<ol class="steps">
+  <li>Select the trimmed clip in its entirety (click inside it, then <kbd>Cmd</kbd> + <kbd>A</kbd>, or click-and-drag from start to end).</li>
+  <li>Open <span class="menu-path">Effect → Volume and Compression → Normalize…</span></li>
+  <li>In the dialog, set <strong>Normalize peak amplitude to</strong>: <strong>-1.0 dB</strong>.</li>
+  <li>Make sure <strong>Remove DC offset</strong> is checked. Leave <strong>Normalize stereo channels independently</strong> as is (it has no effect on a mono file).</li>
+  <li>Click <strong>OK</strong>. Audacity scales the clip's amplitude so the loudest sample sits at -1 dBFS. The waveform expands vertically; quiet bits stay quiet relative to loud bits.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Normalize scales, it doesn't shape</div>
+  <p>Normalize is a single multiplication applied to every sample. It doesn't change the shape of the sound; it changes its size. A quiet sample stays quiet relative to a loud sample within the same clip. What changes is where the loudest peak sits: at -1 dBFS, every sample in your library, ready to be combined with others without one of them dominating the mix.</p>
+</div>
+
+<p>That's one full pipeline run. The clip is now denoised, trimmed, and normalized. Repeat for the other three sounds (<strong>paper crumble fast</strong>, <strong>paper rip slow</strong>, <strong>paper rip fast</strong>): denoise, trim, fade, normalize. Listen to each after you finish to confirm it sounds right.</p>
+
+<hr>
+
+<h2>Step 9 · Export each sample as a WAV</h2>
+
+<p>Now you have four prepped clips. Time to export each one as a standalone WAV file into the <code>paper/</code> folder of your library.</p>
+
+<p>Audacity exports the whole project by default, which would give you one big file with all four sounds in it. You want four separate files, one per sound. The pattern: <strong>select</strong> a clip first, then export, with the export range set to the current selection.</p>
+
+<p>For each of the four samples:</p>
+
+<ol class="steps">
+  <li>Click somewhere inside the clip, then <kbd>Cmd</kbd> + <kbd>A</kbd> to select the whole clip. (Or click-and-drag from start to end.)</li>
+  <li>From the menu bar: <span class="menu-path">File → Export Audio…</span></li>
+  <li>The Export Audio dialog opens. Fill it in:
+    <ul>
+      <li><strong>File Name:</strong> the sample's name following the convention below</li>
+      <li><strong>Folder:</strong> click <strong>Browse…</strong> and pick <code>~/Documents/lastname/sample-library/paper/</code></li>
+      <li><strong>Format:</strong> <code>WAV (Microsoft)</code></li>
+      <li><strong>Channels:</strong> <strong>Mono</strong></li>
+      <li><strong>Sample Rate:</strong> <code>44100 Hz</code></li>
+      <li><strong>Encoding:</strong> <code>Signed 16-bit PCM</code></li>
+      <li><strong>Export Range:</strong> <strong>Current selection</strong> (this is what limits the export to just the clip you selected; if it's set to <strong>Entire Project</strong> you'll get all four sounds in one file)</li>
+    </ul>
+  </li>
+  <li>Click <strong>Export</strong>. If a metadata dialog appears, leave it blank and click <strong>OK</strong>.</li>
+</ol>
+
+<h3>Sample filenames</h3>
+
+<p>The naming convention for samples this semester:</p>
+
+<pre><code>[category]-[descriptor]-[variant].wav</code></pre>
+
+<p>Lowercase, hyphens between words, no spaces, no special characters. For today's four sounds:</p>
+
+<div class="sample-list">
+  <ol>
+    <li>paper-crumble-slow.wav</li>
+    <li>paper-crumble-fast.wav</li>
+    <li>paper-rip-slow.wav</li>
+    <li>paper-rip-fast.wav</li>
+  </ol>
+</div>
+
+<p>The category is <strong>paper</strong>: this matches the folder name, which makes the path itself readable (<code>paper/paper-crumble-slow.wav</code>). The descriptor names what the sound is (a crumble, a rip). The variant distinguishes two takes of the same descriptor (slow vs fast).</p>
+
+<p>After all four exports, open the <code>paper/</code> folder in Finder. You should see exactly these four files:</p>
+
+<figure>
+  <pre><code>~/Documents/lastname/sample-library/paper/
+  paper-crumble-fast.wav
+  paper-crumble-slow.wav
+  paper-rip-fast.wav
+  paper-rip-slow.wav</code></pre>
+</figure>
+
+<p>Save the Audacity project one more time (<kbd>Cmd</kbd> + <kbd>S</kbd>) so the prepped state is preserved alongside the exported WAVs.</p>
+
+<hr>
+
+<h2>Step 10 · Write the library README, upload to NAS</h2>
+
+<p>A library without a README is a pile of files. A README is the document at the root of the library that explains what's in it, how it's organized, and how to find things. You write the first version today and update it every time you add to the library.</p>
+
+<ol class="steps">
+  <li>Open <strong>TextEdit</strong> (in the Applications folder or via Spotlight).</li>
+  <li>From the menu bar: <span class="menu-path">Format → Make Plain Text</span> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>). The document is now a plain-text file, not a styled document.</li>
+  <li>Paste in the template below and fill in the bracketed parts.</li>
+  <li>Save as <code>README.txt</code> in <code>~/Documents/lastname/sample-library/</code>.</li>
+</ol>
+
+<pre><code>SAMPLE LIBRARY · [your name]
+MUS 381 · Fall 2026
+
+Started: Wed Wk 6, [date]
+Last updated: [today's date]
+
+ORGANIZATION
+
+Samples are organized in category folders at the root of the library:
+  paper/      Paper sounds (crumbles, rips)
+
+Filename convention:
+  [category]-[descriptor]-[variant].wav
+  e.g. paper-crumble-slow.wav
+
+All samples are mono, 44.1 kHz, 16-bit WAV.
+All samples are prepped: denoised, trimmed, normalized to -1 dBFS.
+
+CONTENTS
+
+paper/  (4 samples)
+  paper-crumble-slow.wav    Slow crumble of a sheet of paper, ~8 sec
+  paper-crumble-fast.wav    Fast crumble, ~2 sec burst
+  paper-rip-slow.wav        Slow tearing, ~7 sec
+  paper-rip-fast.wav        Fast tearing, one motion
+
+NOTES
+
+[anything you want to remember about today's session, e.g.
+ "the slow crumble took two tries; the first one was too fast"
+ or "interesting how different the two rip speeds feel"]
+</code></pre>
+
+<div class="callout">
+  <div class="callout-label">The README is for future-you</div>
+  <p>The library will grow to dozens of sounds by the end of the semester. By the time you're picking samples for the final project in Module 4, you won't remember what every recording sounds like just from its filename. The README is the document you write to your future self so future-you can find what current-you recorded.</p>
+</div>
+
+<h3>End-of-session NAS upload</h3>
+
+<p>Now do the end-of-session routine on the laminated card. The version below mirrors what's on the card; if anything differs, follow the card.</p>
+
+<ol class="steps">
+  <li>In Finder, mount the NAS if it isn't already (<span class="menu-path">Go → Connect to Server…</span>, <code>smb://mus381-nas.local</code>).</li>
+  <li>Navigate to <code>students/lastname/</code>.</li>
+  <li>Drag your entire <code>sample-library/</code> folder from <code>~/Documents/lastname/</code> to <code>students/lastname/</code> on the NAS. Wait for the copy to finish.</li>
+  <li>Verify everything copied by opening <code>students/lastname/sample-library/paper/</code> on the NAS and confirming all four WAVs are there.</li>
+  <li>Close Audacity (<span class="menu-path">File → Quit</span>) and TextEdit.</li>
+  <li>Eject the NAS: in Finder's sidebar, click the eject icon next to the NAS name.</li>
+  <li>Log out of the Mac: <span class="menu-path">Apple menu → Log Out</span>.</li>
+</ol>
+
+<p>Your library now lives in two places: your local folder for today, and the NAS as the master copy. Next session you'll pull it back down to whichever lab machine you sit at, and continue.</p>
+
+<hr>
+
+<h2>What you should leave with</h2>
+
+<p>By the end of this session, in your sample library on the NAS:</p>
+
+<ol>
+  <li>A <code>sample-library/</code> folder with a <code>paper/</code> subfolder, an <code>audacity-projects/</code> subfolder, and a <code>README.txt</code> at the root.</li>
+  <li>Four prepped samples in <code>paper/</code>, each mono, 44.1 kHz, 16-bit WAV, named per the convention.</li>
+  <li>One Audacity project file in <code>audacity-projects/</code> with the noise-profile clip and the four prepped sound clips.</li>
+  <li>A README that names what's in the library and how it's organized.</li>
+</ol>
+
+<p>And in your head:</p>
+
+<ol>
+  <li>How to set gain on the interface using Audacity's input meter.</li>
+  <li>What the -12 to -6 dBFS headroom target looks like and why it's there.</li>
+  <li>The three-step prep pipeline: denoise, trim, normalize.</li>
+  <li>That a recording becomes a sample by going through the pipeline.</li>
+</ol>
+
+<p>Before you leave, pick up the <strong>phone-recording reference card</strong> from the front of the room. From this week on, you can grow your library outside class by recording sounds on your phone and bringing them in to prep. The card walks through how.</p>
+
+<hr>
+
+<h2>Quick reference</h2>
+
+<table class="shortcut-table">
+  <thead>
+    <tr><th>Action</th><th>Where</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Audio interface settings</td><td>Audio Setup dropdown (top toolbar)</td></tr>
+    <tr><td>Add mono track</td><td><span class="menu-path">Tracks → Add New → Mono Track</span></td></tr>
+    <tr><td>Live monitor meter</td><td>Click the recording level meter (top right)</td></tr>
+    <tr><td>Record / Stop</td><td><kbd>R</kbd> / <kbd>Space</kbd></td></tr>
+    <tr><td>Skip to start</td><td><kbd>Cmd</kbd> + <kbd>Home</kbd></td></tr>
+    <tr><td>Select all in clip</td><td><kbd>Cmd</kbd> + <kbd>A</kbd></td></tr>
+    <tr><td>Delete selection</td><td><kbd>Delete</kbd></td></tr>
+    <tr><td>Noise Reduction</td><td><span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span></td></tr>
+    <tr><td>Normalize</td><td><span class="menu-path">Effect → Volume and Compression → Normalize…</span></td></tr>
+    <tr><td>Fade In / Fade Out</td><td><span class="menu-path">Effect → Fading → Fade In / Fade Out</span></td></tr>
+    <tr><td>Export selected audio</td><td><span class="menu-path">File → Export Audio…</span> · <strong>Export Range: Current selection</strong></td></tr>
+    <tr><td>Save project</td><td><kbd>Cmd</kbd> + <kbd>S</kbd></td></tr>
+  </tbody>
+</table>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 03 · Lab 1</span>
+</footer>
+
+</body>
+</html>
