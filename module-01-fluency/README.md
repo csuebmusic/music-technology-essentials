@@ -25,7 +25,7 @@ By the end of this single session, students should be able to:
 5. Set the three knobs on an audio interface (gain, main, headphone) in the correct order, starting from zero
 6. Use a software level meter to set mic gain at a usable level
 7. Record a short audio clip through the full signal chain and save it locally
-8. Run through the end-of-session routine: upload local folder to NAS, eject NAS, sign out of browser accounts, quit apps, leave the station clean
+8. Run through the Day 1 end-of-session routine: upload local folder to NAS, eject NAS, sign out of browser accounts, quit apps, leave the station clean. Recognize that from Mon Wk 2 onward, end-of-session also includes gear teardown (unplug, stow) per the Session Routines card.
 9. Articulate the local-first / NAS-as-sync workflow that the course will use all semester
 
 ---
@@ -214,7 +214,7 @@ The lab has different audio interfaces and MIDI keyboards across stations, all c
 - *Microphone:* "This is a tabletop mic. It plugs into the audio interface using an XLR cable — the thick three-pin one."
 - *MIDI keyboard:* "This sends note information to the computer. It doesn't make sound on its own — it's a controller. The sound comes from software."
 
-**Knobs to zero first.** Before anything else, have students turn all three interface knobs (gain, main, headphone) all the way down. *Say why:* "If something is set wrong, you can get a sudden loud sound when you plug in. Starting at zero protects your ears and the gear. This is something you'll do for the rest of your life if you keep working with audio."
+**Knobs to zero first.** Before anything else, have students turn all three interface knobs (gain, main, headphone) all the way down. *Say why:* "If something is set wrong, you can get a sudden loud sound when you plug in. Starting at zero protects your ears and the gear. Build the habit now: knobs to zero before any plugging in or out, every time, in this class and anywhere else you touch audio gear."
 
 **Plug everything in (in this order):**
 
@@ -276,7 +276,7 @@ If a student's file isn't there in their local folder:
 - Don't single them out publicly. Quietly help them after class or in office hours.
 - Most often the issue is they saved to Desktop or Downloads. Walk them through Recents in Finder to find the file, then drag it into `~/Documents/lastname/week-01/`.
 
-**Teach the exit routine — last 5 minutes of class.** Before dismissing, walk students through the end-of-session routine on the projector. They have a printed copy at every station (Handout 02 — Session Routines) and a version in the Day 1 handout, but verbal reinforcement on Day 1 sets the habit. This is the moment students upload their work to the NAS for the first time.
+**Teach the exit routine — last 5 minutes of class.** Before dismissing, walk students through the end-of-session routine on the projector. They have a printed copy at every station (the **Session Routines** reference card) and a version inside today's reading, but verbal reinforcement on Day 1 sets the habit. This is the moment students upload their work to the NAS for the first time.
 
 Walk them through:
 
@@ -288,9 +288,9 @@ Walk them through:
 6. Eject the NAS from Finder's sidebar
 7. Sign out of any browser accounts (Canvas, Google, etc.); quit the browser
 8. Quit all apps with `Cmd + Q`
-9. Knobs to zero, headphones away, chair in
+9. Knobs to zero. Place the headphones on the desk next to the interface; leave the mic, the interface, and the rest of the gear at the station — today only, we set it out and we'll stow it. Chair in.
 
-Tell them this is a routine they'll do every session for the rest of the semester — about 2 minutes once it's habit. Today it'll take longer because we're walking through it for the first time. **Starting next session, every session also begins with downloading from the NAS** (the start-of-session half of Handout 02).
+Tell them this is a routine they'll do every session for the rest of the semester. Today is the abbreviated Day-1 version (about 3 minutes once it's habit). **Starting Mon Wk 2 the full routine kicks in**, with two changes: (a) every session starts with gear setup and a NAS download from the lab's gear storage and personal folder respectively, and (b) every session ends with gear teardown (unplug, stow back into the lab's gear storage) on top of the NAS upload. The full pattern is on the Session Routines card; this Day-1 walkthrough is the half they'll do every time, plus the gear teardown they don't do today.
 
 **Verify uploads on the projector.** Once everyone is done, open `/music/students/` on the projector and scroll through. Confirm every student's folder is there with their hello file inside. This is the same "small ritual" as before, but now it confirms upload happened, not just save.
 
