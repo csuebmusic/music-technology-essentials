@@ -91,6 +91,29 @@ Files that don't get the callout:
 
 Once the callout is present, the body prose should not redundantly list the gear. A lab handout's "Before you start" callout can carry pedagogical context (first-time framing, what's new about today's session), but should not re-list interface/headphones/mic. Templates for new pages live in `meta/templates/`.
 
+### End of session callout
+
+Readings and interactive tools close with a small **End of session** callout, placed at the very end of the body content, immediately before the `<footer>`. It mirrors the Today's gear callout at the top: a structural cue students see at the moment they're about to tab away from the page.
+
+The callout exists because the readings and tools don't otherwise carry an end-of-session prompt. Without it, a Monday-reading student can close the tab and walk out without doing the NAS upload and gear teardown. The card at the station carries the canonical routine; this callout is the salience cue that points back to it.
+
+The callout markup is always the same:
+
+```html
+<div class="callout">
+  <div class="callout-label">End of session</div>
+  <p>Before leaving the station, run the end-of-session routine on the <strong>Session Routines</strong> card. NAS upload first, gear teardown second.</p>
+</div>
+```
+
+Files that get this callout:
+- Readings (Mon lectures)
+- Interactive tools
+
+Files that don't:
+- Lab handouts (Wed): they already carry an `<h2>End of session</h2>` block with the session-specific "what to upload today" steps plus the same "continue with the rest of the card's routine" tail. That block does the same job in heading-and-prose form; adding the callout would double up.
+- The Session Routines card itself, the Day 1 reading, listening pages, and project prompts: same exception list as Today's gear, for the same reasons.
+
 ## Markdown files (internal)
 
 Markdown docs (module specs, TA notes, this folder) use the H1 to identify themselves:

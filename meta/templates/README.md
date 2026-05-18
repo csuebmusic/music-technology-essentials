@@ -10,7 +10,7 @@ Skeletal HTML files that embody the conventions in this folder. Copy one of thes
 | `handout-module-03.html` | Wed-lab handouts in Module 3 | audio interface, headphones, dynamic mic (with stand and XLR cable) |
 | `handout-module-04.html` | Wed-lab handouts in Module 4 | audio interface, headphones, MIDI keyboard |
 
-Each template includes the right module-tag, header/footer chrome, title block, lede slot, **Today's gear** callout matching the file type's gear tier, and (for handouts) an `End of session` skeleton that points at the routines card.
+Each template includes the right module-tag, header/footer chrome, title block, lede slot, and **Today's gear** callout matching the file type's gear tier. Readings and tools also include an **End of session** callout placed just before the footer; handouts use an `<h2>End of session</h2>` block instead, with session-specific upload steps.
 
 ## What to fill in
 
