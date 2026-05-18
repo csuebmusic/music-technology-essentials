@@ -344,7 +344,7 @@
 
 <p>First, <strong>weak signals are vulnerable to noise</strong>. Any electrical interference picked up between the mic and the interface (from power cables, fluorescent lights, computer monitors, radio) adds to the signal you actually want. If the interference is loud relative to your mic signal, you've recorded the interference as well as the source. This is why mic cables are built the way they are, and it's the topic of the next section.</p>
 
-<p>Second, <strong>weak signals need amplification before they're useful</strong>. The interface contains a circuit called a <em>preamplifier</em>, or <strong>preamp</strong>, whose only job is to take that small mic-level voltage and boost it up to a much larger signal called <em>line level</em>. (Line level is the signal level your computer expects, and the level most other audio gear runs at internally.) The knob on the front of the interface that you'll turn to set how loud a mic comes through, called the <strong>gain trim</strong>, is the front-panel control for that preamp. We'll come back to it in section 6.</p>
+<p>Second, <strong>weak signals need amplification before they're useful</strong>. The interface contains a circuit called a <em>preamplifier</em>, or <strong>preamp</strong>, whose only job is to take that small mic-level voltage and boost it up to a much larger signal called <em>line level</em>. (Line level is the signal level your computer expects, and the level most other audio gear runs at internally.) The knob on the front of the interface that you'll turn to set how loud a mic comes through, called the <strong>gain trim</strong>, is the front-panel control for that preamp.</p>
 
 <div class="callout">
   <div class="callout-label">A note on the term "level"</div>
@@ -581,14 +581,14 @@
 
   <li><strong>Phantom power.</strong> Phantom power is a +48 V DC current that travels up the XLR cable to power a condenser mic's electronics (we'll meet condensers in Week 7; the dynamic mics you'll use this week don't need it and ignore it). On the PreSonus, the control is a red front-panel button labeled <strong>48V</strong>, with a red light when it's on. On the Behringer, the switch is on the back (labeled <strong>+48V</strong>, with off/on positions), and a small <strong>+48V</strong> indicator on the front lights up when it's active. For Wednesday's lab you can leave it off; it does no harm if it's already on, since dynamic mics don't respond to it.</li>
 
-  <li><strong>Direct monitor control.</strong> The two interfaces handle this differently in a way worth understanding now. The Behringer has a square button labeled <strong>Direct Monitor</strong>: pressed in, the interface routes the incoming signal directly to the headphones with no latency; released, the headphones hear only what's coming back from the computer (with a small round-trip delay). It's a binary switch. The PreSonus has a knob labeled <strong>Mixer</strong> with <strong>Inputs</strong> on one side and <strong>Playback</strong> on the other: it sets a continuous blend between the two, so you can dial in any ratio of live-from-the-mic to back-from-the-computer in your headphones. Section 7 explains why direct monitoring exists; for now, register that the same need ("hear the mic without latency") gets solved with a switch on one interface and a continuous blend on the other.</li>
+  <li><strong>Direct monitor control.</strong> The two interfaces handle this differently in a way worth understanding now. The Behringer has a square button labeled <strong>Direct Monitor</strong>: pressed in, the interface routes the incoming signal directly to the headphones with no latency; released, the headphones hear only what's coming back from the computer (with a small round-trip delay). It's a binary switch. The PreSonus has a knob labeled <strong>Mixer</strong> with <strong>Inputs</strong> on one side and <strong>Playback</strong> on the other: it sets a continuous blend between the two, so you can dial in any ratio of live-from-the-mic to back-from-the-computer in your headphones. The same need (hearing the mic without latency, instead of waiting for it to round-trip through the computer) gets solved with a switch on one interface and a continuous blend on the other.</li>
 
   <li><strong>Headphone output.</strong> Both interfaces have a 1/4" headphone jack on the front. The PreSonus has a dedicated <strong>Phones</strong> knob next to its main output knob, so headphone volume is controlled independently of the outputs that go to speakers or other gear. On the Behringer, headphone level is controlled by the <strong>Output</strong> knob on top of the unit, which also controls the level going to the rear outputs; one knob controls both destinations.</li>
 </ul>
 
 <div class="callout">
   <div class="callout-label">If you're at a Behringer station</div>
-  <p>The Behringer's gain knobs are on the top of the unit, behind the front panel. There are three: <strong>Mic/Line Gain 1</strong>, <strong>Inst Gain 2</strong>, and <strong>Output</strong>. The first two control how much amplification each input gets (this is what the section 6 discussion of setting the gain refers to). The Output knob controls the level going to your headphones and speakers.</p>
+  <p>The Behringer's gain knobs are on the top of the unit, behind the front panel. There are three: <strong>Mic/Line Gain 1</strong>, <strong>Inst Gain 2</strong>, and <strong>Output</strong>. The first two control how much amplification each input gets. The Output knob controls the level going to your headphones and speakers.</p>
   <figure>
     <img src="../../assets/images/module-03-week-06/behringer-um2-top.png"
          alt="Top view of the Behringer U-Phoria UM2 showing three knobs labeled, left to right: Mic/Line Gain 1, Inst Gain 2, and Output."
@@ -615,97 +615,6 @@
 </figure>
 
 <p>Both backs have a USB-B port (where the cable that goes to the computer plugs in) and a Kensington security slot. After that they diverge. The PreSonus has two <strong>TRS</strong> output jacks (the same kind of jack a 1/4" cable plugs into, balanced like the XLR cable in section 4) for connecting to studio monitors, plus a pair of MIDI ports for controllers and synthesizers. The Behringer uses <strong>RCA</strong> jacks (the round, plastic-rimmed connectors common on consumer audio gear; unbalanced, meaning they don't have the noise-rejecting trick the XLR and TRS cables use) for its outputs, has no MIDI, and houses the +48V phantom power switch back here instead of on the front.</p>
-
-<hr>
-
-<h2>6 · Setting the gain</h2>
-
-<p>The gain trim is the single most important control to understand operationally. It sets how much the preamp amplifies your mic signal before the ADC turns it into digital audio. Too little, and your recording is buried in the noise floor (the faint electrical hiss that's present in any audio system). Too much, and the signal exceeds what the ADC can represent, and you get <strong>clipping</strong>: harsh distortion that can't be undone. The goal is the sweet spot in between, with enough margin that an unexpected loud moment doesn't push you over the top.</p>
-
-<p>This margin has a name: <strong>headroom</strong>. We met it briefly in Module 2 when we talked about leaving room for processing. Now it gets a specific working definition for tracking.</p>
-
-<p>When you record, watch the level meter (on the interface, or on the Audacity track, or both). You're aiming for the loudest peaks of your signal to land somewhere in the range of <strong>-12 dBFS to -6 dBFS</strong>. That's quite a bit below the maximum (0 dBFS). It leaves a healthy 6 to 12 decibels of headroom for surprises, and it gives you flexibility later in editing: you can always make a quiet recording louder by processing; you can never recover a clipped one.</p>
-
-<figure>
-  <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-    <!-- Meter -->
-    <rect x="60" y="40" width="60" height="120" rx="3"
-          fill="var(--bg-alt)" stroke="var(--ink-soft)" stroke-width="1"/>
-
-    <!-- Scale to the right of meter -->
-    <line x1="120" y1="40" x2="125" y2="40" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="135" y="44" font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">0 dBFS</text>
-    <line x1="120" y1="64" x2="125" y2="64" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="135" y="68" font-family="var(--mono)" font-size="11" fill="var(--accent)" font-weight="600">-6 dBFS</text>
-    <line x1="120" y1="88" x2="125" y2="88" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="135" y="92" font-family="var(--mono)" font-size="11" fill="var(--accent)" font-weight="600">-12 dBFS</text>
-    <line x1="120" y1="120" x2="125" y2="120" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="135" y="124" font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">-24 dBFS</text>
-    <line x1="120" y1="160" x2="125" y2="160" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="135" y="164" font-family="var(--mono)" font-size="11" fill="var(--ink-soft)">-∞</text>
-
-    <!-- Clipping zone (top, red-ish using accent at full opacity but small) -->
-    <rect x="61" y="41" width="58" height="22" fill="var(--accent)" opacity="0.25"/>
-    <text x="245" y="55" font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">CLIPPING: avoid</text>
-
-    <!-- Target zone (-12 to -6) -->
-    <rect x="61" y="65" width="58" height="22" fill="var(--accent)" opacity="0.7"/>
-    <text x="245" y="80" font-family="var(--mono)" font-size="10" fill="var(--accent)" font-weight="600">TARGET: peaks land here</text>
-
-    <!-- Fill below target (signal "body") -->
-    <rect x="61" y="88" width="58" height="60" fill="var(--accent)" opacity="0.35"/>
-    <text x="245" y="125" font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">most of the signal lives here</text>
-
-    <!-- Right-side note -->
-    <text x="360" y="100" font-family="var(--sans)" font-size="12" fill="var(--ink)">
-      Aim peaks at -12 to -6 dBFS.
-    </text>
-    <text x="360" y="120" font-family="var(--sans)" font-size="12" fill="var(--ink)">
-      Plenty of headroom above.
-    </text>
-    <text x="360" y="140" font-family="var(--sans)" font-size="12" fill="var(--ink)">
-      Plenty of resolution below.
-    </text>
-  </svg>
-  <figcaption>The target recording level. Loud peaks should land in the marked band; the rest of the signal sits below.</figcaption>
-</figure>
-
-<p>Setting the gain in practice goes like this. Plug the mic in, put on your headphones, and ask the source (a person, an instrument, a paper to crumble) to make sound at the loudest level you expect to record. Turn the gain trim slowly upward while watching the meter. When the loudest peaks of the sound reach the -12 to -6 dBFS range, stop. That's your setting. Make a test recording, listen back, and verify there's no clipping anywhere.</p>
-
-<p>If the loudest peaks are nowhere close to -12 dBFS even with the gain trim cranked, the source is too quiet for the mic or you're too far from it; close the distance or move the mic. If the peaks are slamming into the top of the meter even with the gain trim low, the source is louder than you thought; back off the trim or move the mic away from the source.</p>
-
-<div class="callout">
-  <div class="callout-label">Why peaks below 0</div>
-  <p>Digital audio has a hard ceiling. Any signal that tries to exceed 0 dBFS gets chopped off, producing the harsh, crackly distortion called clipping. Unlike analog overload (which can sound musical), digital clipping always sounds bad, and it's not recoverable in editing. The headroom target of -12 to -6 dBFS is conservative on purpose: it leaves you room to be surprised.</p>
-</div>
-
-<hr>
-
-<h2>7 · Monitoring while you record</h2>
-
-<p>Headphones serve two purposes during recording. They let you <em>verify what you're capturing</em> (so you can tell if the mic is picking up an unwanted refrigerator hum, or if the source needs to move closer). And they prevent the sound from your speakers from leaking back into the mic and re-recording itself.</p>
-
-<p>The complication is timing. When you sing or play into a mic while wearing headphones, you want to hear yourself in those headphones <em>at the same moment</em> you're making the sound. But there's a path delay: the sound goes from your mouth into the mic, through the cable, into the interface, through USB to the computer, into Audacity, back out over USB, back through the interface, and out to your headphones. That round trip takes a small amount of time (a few milliseconds), and it's enough to be distracting.</p>
-
-<p>Interfaces solve this with a feature called <strong>direct monitoring</strong>. The interface routes the mic signal straight to the headphone output without going through the computer, so you hear yourself in real time. The <strong>monitor mix</strong> knob on the front of the interface controls how much of the live mic signal you hear vs. how much of the computer playback. Turn it all the way to one side and you hear only your mic. Turn it all the way to the other and you hear only the computer's playback. Set somewhere in the middle and you hear both blended together.</p>
-
-<p>For Wednesday's recording task, you'll want the monitor mix set to favor the live input, so you can hear what the mic is picking up while you make the sound. You won't be playing along to anything from the computer, so you don't need much (or any) of the playback side. Volume in your headphones is controlled by the headphone knob on the interface; loudness inside the headphone itself can also be controlled by the in-line slider on the cable.</p>
-
-<hr>
-
-<h2>8 · What this means for Wednesday</h2>
-
-<p>Wednesday's lab puts everything from this reading into practice. You'll plug a dynamic mic into your interface with an XLR cable, set the gain to hit the headroom target, monitor through your headphones, and record four sounds: a piece of paper crumbled slowly, the same paper crumbled fast, a piece of paper torn slowly, the same paper torn fast. Four short recordings, all into the same Audacity project.</p>
-
-<p>Two habits to bring into the lab:</p>
-
-<p>First, <strong>leave a second of silence at the start of each recording, before the sound begins</strong>. Click record, wait, then make the sound. That silence isn't dead time. It captures the room's noise floor (the faint background hiss that's always present), which we'll use in the next step of the lab to remove unwanted noise from each recording. Without that silence, the denoising step won't work.</p>
-
-<p>Second, <strong>aim for headroom</strong>. Set your gain so that the loudest crumble or rip peaks at -12 to -6 dBFS, not at -3, not at 0. Recordings that are slightly quiet can be made louder later. Recordings that clipped cannot be saved.</p>
-
-<p>After the four recordings are captured, you'll prep each one (denoise, trim the silence, normalize to a consistent level) and save them into a new folder on your computer called your <em>sample library</em>. That library is the home of every sound you'll record for the rest of the semester. Wednesday's four sounds are the first deposits in it. By the end of Week 8, you'll have between fifteen and twenty-five prepped sounds in it, and that library becomes the raw material for everything in Module 4.</p>
-
-<p>Bring your headphones. We'll see you in MB2525.</p>
 
 <hr>
 
@@ -772,17 +681,11 @@
   <dt>DAC</dt>
   <dd>Digital-to-analog converter. The reverse circuit: turns digital audio coming from the computer back into an analog signal for playback over headphones or speakers.</dd>
 
-  <dt>Headroom</dt>
-  <dd>The margin between your loudest recorded peaks and the digital ceiling (0 dBFS). Aim for peaks at -12 to -6 dBFS while recording. Leaves room for surprises and for processing.</dd>
-
   <dt>Clipping</dt>
-  <dd>The harsh distortion that happens when a signal exceeds 0 dBFS. Unrecoverable in editing. The reason headroom matters.</dd>
-
-  <dt>dBFS</dt>
-  <dd>Decibels relative to full scale. The unit for measuring digital audio level. 0 dBFS is the maximum; everything below it is negative. Module 2's dynamics reading goes into more detail.</dd>
+  <dd>The harsh distortion that happens when a signal exceeds the digital ceiling (0 dBFS, the maximum a digital signal can represent). Unrecoverable in editing. The clip indicator on an audio interface lights up when this is happening.</dd>
 
   <dt>Direct monitoring</dt>
-  <dd>An audio-interface feature that routes the incoming mic signal straight to the headphone output without going through the computer. Avoids the small but distracting delay of round-tripping through the DAW.</dd>
+  <dd>An audio-interface feature that routes the incoming signal straight to the headphone output without going through the computer. Avoids the small but distracting delay of round-tripping through the DAW.</dd>
 
   <dt>Monitor mix</dt>
   <dd>The knob on an audio interface that blends the live input signal with the computer playback in your headphones. Turn it toward "input" when you want to hear what the mic is picking up; toward "playback" when you want to hear what's already in the DAW.</dd>
@@ -799,8 +702,6 @@
   <li>The Wikipedia article on the XLR connector has a good cutaway diagram and a brief history of why audio settled on this connector design.</li>
   <li>If you want a deeper look at preamps, audio interfaces, and the analog-to-digital conversion process, the Sound on Sound magazine archive (free online) has decades of accessible articles. Search for "gain staging" or "preamp basics" as starting points.</li>
 </ul>
-
-<p>Wednesday's lab handout will be on every station; you don't need to print anything. Come with headphones and an idea of what your paper sounds like. See you in MB2525.</p>
 
 <footer class="handout-footer">
   <span>MUS 381 · CSU East Bay</span>
