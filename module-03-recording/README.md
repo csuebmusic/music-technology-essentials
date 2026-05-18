@@ -248,7 +248,7 @@ Ten numbered steps from cold start to NAS upload: configure Audacity for mono re
 
 ### Phone-recording reference card
 
-A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on a phone (iPhone or Android) using **Dolby On**, a free cross-platform app that can export the kind of WAV file Audacity opens directly. The card covers app install, three settings to set once (Lossless audio on, Noise Reduction off, Countdown off), the recording technique short-list (airplane mode, set the phone down, distance, level indicator, wind), getting the file from phone to Mac (AirDrop for iPhone, several paths for Android), and a "what records well" starter list.
+A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on a phone using a dedicated field-recording app, one for each platform. iPhone students use **Lossless Field Recorder** by edson engineering (free); Android students use **Field Recorder** by Pfitzinger Voice Design ($5.95 on Google Play). Both export WAV that Audacity opens directly; both expose actual controls (mic selection, pickup pattern, sample rate, bit depth) instead of applying automatic "make it sound good" processing. The card walks through setup on each platform, recording technique (airplane mode, set the phone down, distance, level meter, wind), file transfer to Mac, the import-and-resample step that Wed Wk 7's lab teaches in depth, and a "what records well" starter list.
 
 Filename: `lessons/03-handout-recording-on-phone.html`. The card isn't module-tied; students keep using it every week onward as they add phone-recorded sounds to their library.
 

@@ -19,29 +19,65 @@
   <div class="subtitle">How to capture sounds away from the lab and bring them home in a format that works.</div>
 </div>
 
-<p class="lede">Your library doesn't have to stop at the lab door. With one free app installed on your phone and a few settings set once, you can record anything that catches your ear: a kettle boiling, a bike chain ticking, footsteps in a stairwell, a friend's voice, a door that sticks. This card walks through the app, the settings, the recording technique, and how to get the file from your phone into Audacity-ready WAV format. The lab on Wednesday of Wk 7 covers the prep pipeline; this card covers everything that happens before that.</p>
+<p class="lede">Your library doesn't have to stop at the lab door. With the right app on your phone and a few settings set once, you can record anything that catches your ear: a kettle boiling, a bike chain ticking, footsteps in a stairwell, a friend's voice, a door that sticks. This card walks through the app to install, the settings to set, the recording technique that separates a usable take from an unusable one, and how to get the file off the phone and into Audacity. The lab on Wednesday of Wk 7 covers the prep pipeline that follows.</p>
 
 <hr>
 
-<h2>1 · The app: Dolby On</h2>
+<h2>1 · The app for your phone</h2>
 
-<p>Install <strong>Dolby On</strong> from the App Store (iPhone) or Google Play (Android). It's free, works the same way on both platforms, and is one of the few free apps that can export the kind of WAV file Audacity opens without any conversion step.</p>
+<p>The course recommends two apps, one for each platform. Both are built specifically for field recording, both export WAV files Audacity opens directly, and both give you actual control over how the recording is made instead of applying automatic "make it sound good" processing.</p>
 
-<p>Open the app once after installing and accept the microphone permission when it asks. That's the install done.</p>
+<h3>iPhone</h3>
 
-<p>Two notes on what Dolby On is and isn't. It's a <em>recording</em> app with built-in <em>editing</em> tools (Styles, Noise Reduction, EQ, Boost). For this class you only use the recording side; the editing tools belong to Dolby's "make it sound polished for social media" workflow, which is the opposite of what a sample library wants. The recording technique section below explains what to ignore in the editor after each take.</p>
+<p><strong>Lossless Field Recorder</strong> by edson engineering. Free on the App Store: <a href="https://apps.apple.com/us/app/lossless-field-recorder/id1644208446">apps.apple.com/us/app/lossless-field-recorder/id1644208446</a>. Requires iOS 15 or later.</p>
+
+<h3>Android</h3>
+
+<p><strong>Field Recorder</strong> by Pfitzinger Voice Design. $5.95 on Google Play: <a href="https://play.google.com/store/apps/details?id=de.pfitzinger.rec">play.google.com/store/apps/details?id=de.pfitzinger.rec</a>. Single-developer app, maintained for over a decade, built around the idea that you should control what your microphone captures rather than letting the manufacturer's defaults decide for you.</p>
+
+<p>Install whichever one matches your phone, accept the microphone permission when the app asks, and move to setup.</p>
 
 <hr>
 
-<h2>2 · One-time setup</h2>
+<h2>2 · Setup, by platform</h2>
 
-<p>One setting matters: <strong>Lossless audio</strong>. Open the Settings screen in Dolby On (gear icon), turn Lossless audio on, and you're done. Set it once and never again.</p>
+<h3>iPhone (Lossless Field Recorder)</h3>
 
-<p>Without it, Dolby On exports compressed .m4a files that Audacity can't open without extra setup. With it on, you get .wav files that Audacity opens directly. You'll see a small <strong>Lossless</strong> badge above the record button on the home screen, which is how you know it's active.</p>
+<p>The app has no separate Settings screen. Tap the microphone icon on the main screen to open the three choices that shape every recording: <strong>mic mode</strong>, <strong>frequency mode</strong>, and <strong>pickup pattern</strong>.</p>
 
-<p>One optional setting: <strong>Countdown</strong>. By default the app counts down 3-2-1 before each recording starts. The countdown is there to feed Dolby's noise-reduction editing tool, which you won't be using (next section explains why). If the wait bothers you, turn Countdown off in Settings. Either way works.</p>
+<p><strong>Mic mode</strong> picks which of the iPhone's three built-in microphones to record from. Modern iPhones have a bottom mic (next to the charging port), a front mic (in the notch or Dynamic Island at the top of the screen), and a back mic (next to the rear cameras). Each one faces a different direction:</p>
 
-<p>Everything else in the Settings screen can be left at its defaults.</p>
+<ul>
+  <li><strong>Bottom</strong> is the iPhone's main mic, the same one used for phone calls. It's the most predictable and the cleanest signal for general sound capture. Start here when you're not sure.</li>
+  <li><strong>Front</strong> faces the same direction as the screen, so it picks up whatever's in front of you when you're looking at the phone. Good for sounds you're examining up close, or when the phone is sitting screen-up.</li>
+  <li><strong>Back</strong> faces the same direction as the rear cameras. Good when you can point the camera at the source: a faucet across the kitchen, a door opening, a person on the other side of a table. Also good for surface sounds: lay the phone face-down on the surface itself, the back mic is then pointing right at it.</li>
+</ul>
+
+<p><strong>Frequency mode</strong> sets the sample rate. Choose <strong>48 kHz</strong>. It's the standard rate for digital audio recording and the native rate for most phone hardware. (96 kHz is technically higher resolution but produces much larger files for no audible benefit on a phone mic.)</p>
+
+<p><strong>Pickup pattern</strong> sets how the mic responds to direction. The available options depend on which mic mode you picked:</p>
+
+<ul>
+  <li>With <strong>bottom</strong>, only <strong>omni</strong> is available. The bottom mic is a single physical microphone with no directional shaping.</li>
+  <li>With <strong>front</strong>, you get <strong>omni</strong>, <strong>cardioid</strong>, or <strong>stereo</strong>. Omni picks up from all directions equally. Cardioid focuses on what's in front of the mic and rejects sound from behind. Stereo combines multiple iPhone mics to create a left/right image.</li>
+  <li>With <strong>back</strong>, you get <strong>omni</strong>, <strong>subcardioid</strong>, or <strong>stereo</strong>. Subcardioid is like cardioid but less directional, picking up some sound from the sides.</li>
+</ul>
+
+<p>For most sounds, start with <strong>omni</strong>. Omni is the most forgiving and the most honest: it captures what the mic actually hears. Try <strong>cardioid</strong> or <strong>subcardioid</strong> when you want to reject room noise or other sounds coming from behind the mic. Try <strong>stereo</strong> for ambient recordings where left/right separation matters (a hallway, a courtyard, anywhere the spatial feel is part of the recording).</p>
+
+<p>The app also lets you pick bit depth in the same mic menu. Choose <strong>24-bit</strong>. It gives you more headroom for later editing without making files unreasonably large.</p>
+
+<h3>Android (Field Recorder)</h3>
+
+<p>This app has more knobs than the iPhone one, and it's worth the setup time. Two things to set:</p>
+
+<p><strong>Input configuration.</strong> The switch labeled <strong>In:MicA</strong> at the top of the display cycles through several input configurations: <strong>In:MicA</strong> through <strong>In:MicE</strong>, plus <strong>In:Raw</strong>. These don't just pick a microphone; they pick how Android pre-processes the signal before sending it to the app. Most configurations apply manufacturer-chosen processing (automatic gain control, noise suppression, echo cancellation). <strong>In:Raw</strong> turns that pre-processing off and gives you the rawest possible signal, which is what you want.</p>
+
+<p>However, <strong>In:Raw</strong> sometimes disables stereo on certain phones, and on a few phones it doesn't work at all. The practical first step is to check the <strong>Factory</strong> menu (tap "Factory" in the display) for a preset uploaded by someone with your phone model: cloud presets are listed by manufacturer and model, and a matching one will already have the right input configuration figured out. If no matching preset exists, set the input to <strong>In:Raw</strong> and test it by tapping the pause button to enter record-ready mode and watching the level meters respond as you tap near the phone. If the meters work, you're good. If they don't, cycle through <strong>In:MicA</strong> to <strong>In:MicE</strong> until you find one that does.</p>
+
+<p><strong>Sample rate and bit depth.</strong> Open <strong>Settings → Rec</strong>. Set sample rate to <strong>48 kHz</strong> (the standard digital rate). Turn on <strong>24 bit file write</strong> if your phone supports it (Android 6 and later do). This gives you 48 kHz / 24-bit WAV files, which matches what the iPhone app produces.</p>
+
+<p>Once you have a configuration that works, save it as a preset: tap the preset name in the display, then <strong>Save</strong>, and give it a name you'll recognize. Field Recorder loads your last-used preset on every restart, so this is a one-time setup.</p>
 
 <hr>
 
@@ -49,57 +85,48 @@
 
 <p>A short list of habits that separate a recording you can use from one you can't.</p>
 
-<h3>Airplane mode on, or Do Not Disturb</h3>
+<h3>Airplane mode on</h3>
 
-<p>A text message mid-take ruins the recording. Toggle airplane mode (or a Focus mode that silences notifications) before you start. Turn it back on when you're done.</p>
+<p>Two reasons. First, a text message or phone call mid-take ruins the recording. Second, on some phones the radio signals from cellular and Wi-Fi can leak into the audio hardware as a faint clicking or buzzing. Airplane mode kills both problems at once. Toggle it on before you start, off when you're done.</p>
 
 <h3>Set the phone down</h3>
 
-<p>Your hand on the phone produces handling noise louder than most of the sounds you'll want to record. Place the phone on a stable surface, prop it against something, or wedge it between two objects. If you have to hold it, hold the case as still as you can and keep your fingers away from the mic openings at the bottom edge (and sometimes the top edge, depending on your model).</p>
+<p>Your hand on the phone produces handling noise louder than most of the sounds you'll want to record. Place the phone on a stable surface, prop it against something, or wedge it between two objects. If you have to hold it, hold the case as still as you can and keep your fingers away from the mic openings.</p>
 
 <h3>Distance shapes the recording</h3>
 
 <p>Close (a few inches from the source) captures fine detail and lets the sound dominate over the room. Far (a few feet) captures the room around the source, with the source as one element inside it. Neither is right or wrong; they're different recordings of the same event. When you're not sure, take both and pick later.</p>
 
-<h3>Watch the level indicator</h3>
+<h3>Watch the level meter</h3>
 
-<p>Dolby On shows a level indicator in the top-left corner of the record screen. If it turns red, the signal is overloading the mic and the recording will distort. Move the phone farther from the source until the indicator stops going red. The same headroom logic from lab applies: you want room to make decisions later, not a recording locked at the loudest the mic can produce.</p>
+<p>Both apps show a real-time level meter while you're in record-ready mode and during recording. Watch the peak indicator. If it consistently hits the top of the meter (or a red clip indicator lights up), the signal is too loud and the recording will distort. Move the phone farther from the source. You want the peaks landing somewhere in the upper third of the meter, not pinned at the top: room to make decisions later, not a recording locked at the loudest the mic can produce.</p>
 
 <h3>Wind kills outdoor recordings</h3>
 
-<p>Phone mics have no wind protection. If there's any breeze, you'll get a low rumbling whoosh that drowns out everything else. The cheap fix: cup your hand loosely around the bottom edge of the phone (where the mic is) to break the airflow. The better fix: record from a position that puts a wall, your body, or a piece of furniture between the wind and the phone.</p>
-
-<div class="callout warn">
-  <div class="callout-label">Don't apply Sound Tools</div>
-  <p>After you stop recording, Dolby On opens an editor with <strong>Styles</strong>, <strong>Noise Reduction</strong>, <strong>Bass</strong>, <strong>Treble</strong>, <strong>Boost</strong>, and other effect controls. Leave all of them alone. Your sample library starts from raw recordings, prepped deliberately in Audacity using a noise profile from your specific room and the three-step pipeline you learned in lab. Applying Dolby's effects on the phone bakes choices into the file that you can't undo later, and Dolby's noise reduction in particular is automatic and aggressive in ways that often hurt non-music sources (paper, water, mechanical sounds) more than they help.</p>
-</div>
+<p>Phone mics have no wind protection. If there's any breeze, you'll get a low rumbling whoosh that drowns out everything else. The cheap fix: cup your hand loosely around the mic opening to break the airflow. The better fix: record from a position that puts a wall, your body, or a piece of furniture between the wind and the phone.</p>
 
 <hr>
 
 <h2>4 · Getting the file off the phone</h2>
 
-<p>The fastest path depends on which phone you have.</p>
-
 <h3>iPhone → Mac via AirDrop</h3>
 
 <ol class="steps">
-  <li>Open Dolby On's Library and tap the track you want to send.</li>
-  <li>Tap the share icon (three dots, or the share symbol depending on app version).</li>
-  <li>Choose <strong>Export Lossless</strong>. (If you don't see this option, your track wasn't recorded with Lossless audio turned on. Re-record after enabling it in Settings.)</li>
-  <li>From the share sheet, choose <strong>AirDrop</strong> and pick your Mac.</li>
-  <li>On your Mac, the file lands in your <code>Downloads</code> folder as a <code>.wav</code>.</li>
+  <li>Open Lossless Field Recorder's recording list.</li>
+  <li>Tap the recording you want to send.</li>
+  <li>Tap the share icon and choose <strong>AirDrop</strong>.</li>
+  <li>Pick your Mac from the AirDrop list. The file lands in your <code>Downloads</code> folder as a <code>.wav</code>.</li>
 </ol>
 
-<h3>Android → Mac (a few options)</h3>
+<h3>Android → Mac</h3>
 
 <ol class="steps">
-  <li>Open Dolby On's Library and tap the track you want to send.</li>
-  <li>Tap the three-dot share icon.</li>
-  <li>Choose <strong>Share Audio</strong> → <strong>Save Audio</strong> to write the WAV to a folder on your phone, or use one of the share options to send directly.</li>
-  <li>Move the file to your Mac by whatever path works for you:
+  <li>In Field Recorder, tap the filename shown in the display to open the file list.</li>
+  <li>Long-press or tap the file you want to send (the exact gesture depends on your phone).</li>
+  <li>Use the Android share sheet to send the file by your preferred path:
     <ul>
       <li>Upload to Google Drive on the phone, then download from the Drive website on your Mac.</li>
-      <li>Plug the phone into the Mac with a USB cable and copy the file across using the Android File Transfer app.</li>
+      <li>Plug the phone into the Mac with a USB cable and copy the file using the Android File Transfer app.</li>
       <li>Email the file to yourself.</li>
     </ul>
   </li>
@@ -109,15 +136,15 @@
 
 <h2>5 · Into Audacity</h2>
 
-<p>Once the WAV is on your Mac, drag it onto the Audacity window (or use <strong>File → Import → Audio</strong>). The file opens directly: no conversion step, no extra libraries to install.</p>
+<p>Drag the WAV onto the Audacity window (or use <strong>File → Import → Audio</strong>). The file opens directly: no conversion step, no extra libraries.</p>
 
-<p>Dolby On may export at a different sample rate than the course's standard 44.1 kHz. If Audacity asks about sample rate on import, accept the default for now. The Wed Wk 7 lab covers what to do about sample rate differences when you fold a phone recording into your library.</p>
+<p>Your phone recording is at 48 kHz / 24-bit. Your Audacity project for the sample library is at 44.1 kHz / 16-bit (the Module 2 standard). Audacity will tell you about the mismatch on import. <strong>Resampling the imported recording to match the project rate is part of the prep pipeline.</strong> The Wed Wk 7 lab walks through the right way to do it, why you do it, and what gets lost or doesn't when you resample. Don't worry about it before then; just import and proceed.</p>
 
 <hr>
 
 <h2>6 · What's next</h2>
 
-<p>You can grow your library between now and the Wed Wk 7 lab by recording anything that catches your ear and saving the WAV files somewhere you can find them. The prep step (denoise, trim, normalize, name, file) waits for lab time, when you can sit at a station, use headphones, and apply the pipeline deliberately.</p>
+<p>You can grow your library between now and the Wed Wk 7 lab by recording anything that catches your ear and saving the WAV files somewhere you can find them. The prep step (resample, denoise, trim, normalize, name, file) waits for lab time, when you can sit at a station, use headphones, and apply the pipeline deliberately.</p>
 
 <p>Some things that record well on a phone, to get you started:</p>
 
