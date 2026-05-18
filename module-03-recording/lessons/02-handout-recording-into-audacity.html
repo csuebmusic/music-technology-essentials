@@ -182,10 +182,11 @@
   <li>Under <strong>Playback Device</strong>, the interface should already be selected (so playback goes out the interface's headphone jack into your headphones). If it isn't, select it now.</li>
 </ol>
 
-<figure class="screenshot">
-  <!-- TODO: capture Audio Setup dropdown with USB Audio CODEC selected as recording device, 1 (Mono) selected as recording channels. -->
-  <img src="../../assets/images/module-03-week-06/audacity-audio-setup.png" alt="The Audacity Audio Setup dropdown showing the audio interface selected as both the Recording Device and the Playback Device, and 1 (Mono) selected for Recording Channels." loading="lazy">
-  <figcaption>Audio Setup · interface selected for record and playback, 1 (Mono) for recording channels</figcaption>
+<figure class="vocab-video">
+  <video controls preload="metadata" muted playsinline>
+    <source src="../../assets/videos/module-03-week-06/audio-setup-dropdown.mp4" type="video/mp4">
+  </video>
+  <figcaption>Audio Setup walkthrough · the dropdown opens to reveal Host, Playback Device, Recording Device, Recording Channels, and Audio Settings; each device row expands into a submenu with the options for that setting</figcaption>
 </figure>
 
 <h3>Add a mono recording track</h3>
@@ -291,16 +292,22 @@
 <p>To dial it in:</p>
 
 <ol class="steps">
-  <li>Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) The meter switches into <strong>monitoring</strong> mode and shows live levels even though you're not recording yet.</li>
+  <li>Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) A small menu appears with two items: <strong>Disable Silent Monitoring</strong> and <strong>Options…</strong>. Click <strong>Disable Silent Monitoring</strong>. The meter switches into <strong>live monitoring</strong> mode and starts showing levels coming in from the mic even though you're not recording yet.</li>
   <li>Make a sound at the loudness you'll be aiming for. For the paper sounds, that means a sample crumble or a quick test rip at roughly the speed and intensity you'll use for the real take. Grab a small piece of scrap paper from the stack at your station for this; don't burn through the four sheets you'll need for the actual recordings.</li>
   <li>Watch the meter. If the peaks sit below -12, turn the gain knob on the interface clockwise (up) a quarter-turn and try again. If the peaks hit the red zone or trip the interface's clip indicator, turn the gain counter-clockwise (down).</li>
   <li>Repeat until the loudest peaks land in the -12 to -6 band consistently. Don't chase a single peak; you're aiming for where the loud moments settle, not the absolute maximum of any one try.</li>
 </ol>
 
-<figure class="screenshot">
-  <!-- TODO: capture Audacity recording meter during monitoring with peaks visible in the -12 to -6 band. Arrange so peaks are clearly in the target zone. -->
-  <img src="../../assets/images/module-03-week-06/audacity-meter-target.png" alt="Audacity's recording level meter showing live monitoring with peaks landing between -12 and -6 dBFS, the target band." loading="lazy">
-  <figcaption>The recording meter showing peaks in the target band</figcaption>
+<div class="callout">
+  <div class="callout-label">Silent monitoring is the default</div>
+  <p>Audacity ships with the input meter in <em>silent monitoring</em> mode, where the meter only shows levels while the project is actually recording. Disabling silent monitoring is what makes the meter live the whole time, which is what you need to dial in the gain knob before you press record.</p>
+</div>
+
+<figure class="vocab-video">
+  <video controls preload="metadata" muted playsinline>
+    <source src="../../assets/videos/module-03-week-06/meter-monitoring.mp4" type="video/mp4">
+  </video>
+  <figcaption>Live monitoring · once silent monitoring is disabled, the meter shows incoming levels in real time</figcaption>
 </figure>
 
 <div class="callout warn">
@@ -337,6 +344,13 @@
   <li>Click <strong>Stop</strong> (or press <kbd>Space</kbd>).</li>
   <li>A waveform appears on the mono track. Click <strong>Skip to Start</strong> (<kbd>Cmd</kbd> + <kbd>Home</kbd>), then <strong>Play</strong> (<kbd>Space</kbd>). Listen.</li>
 </ol>
+
+<figure class="vocab-video">
+  <video controls preload="metadata" muted playsinline>
+    <source src="../../assets/videos/module-03-week-06/test-recording.mp4" type="video/mp4">
+  </video>
+  <figcaption>Test recording end to end · press record, capture a short phrase, stop, play back</figcaption>
+</figure>
 
 <p>Three things to check as you listen:</p>
 
@@ -644,7 +658,7 @@ NOTES
   <tbody>
     <tr><td>Audio interface settings</td><td>Audio Setup dropdown (top toolbar)</td></tr>
     <tr><td>Add mono track</td><td><span class="menu-path">Tracks → Add New → Mono Track</span></td></tr>
-    <tr><td>Live monitor meter</td><td>Click the recording level meter (top right)</td></tr>
+    <tr><td>Live monitor meter</td><td>Click the recording level meter (top right), then <strong>Disable Silent Monitoring</strong></td></tr>
     <tr><td>Record / Stop</td><td><kbd>R</kbd> / <kbd>Space</kbd></td></tr>
     <tr><td>Skip to start</td><td><kbd>Cmd</kbd> + <kbd>Home</kbd></td></tr>
     <tr><td>Select a clip</td><td>Double-click inside the clip</td></tr>
