@@ -202,27 +202,27 @@ Students go through the full record-and-prep pipeline end-to-end, using paper as
 3. Paper rip, slow
 4. Paper rip, fast
 
-**Critical detail:** each recording must include a small amount of **silence at the start** before the sound begins. The silence is what the denoise step uses as its noise profile. If they don't record the silence, they can't denoise properly. Reinforce this *before* they start recording, not after.
+**Critical detail:** the project opens with a dedicated **noise-profile clip** (10 seconds of room tone, recorded once at the start of the session) before any of the four sounds. The noise profile is what the denoise step uses; capturing it as its own clip is cleaner than tucking silence at the start of every recording, and easier to teach. The four sound clips each carry a one-second silence buffer at start and end, but those are for clean trimming, not for noise capture. Reinforce the noise-profile-first pattern *before* recording starts, not after.
 
 **After recording:** students set up their sample library folder, with the Audacity project living inside it. The folder is the future home of every sample they record this semester.
 
-**Three-step sample prep pipeline:** applied to each of the four sounds.
+**Three-step sample prep pipeline:** applied to each of the four sounds, after the noise profile has been captured once from the dedicated noise-profile clip.
 
-1. **Denoise.** Select the initial silence in the file to capture a noise profile, then apply Noise Reduction (Effect → Noise Reduction → Get Noise Profile → re-select the whole clip → Effect → Noise Reduction → OK with default values).
-2. **Trim.** Cut silence at the start and end of the sound. The silence-at-start was for denoising; once denoise is done, it goes.
-3. **Normalize.** Apply Audacity's Normalize effect with peak target at -1 dBFS.
+1. **Denoise.** Select the sound clip in its entirety, then `Effect → Noise Removal and Repair → Noise Reduction…`, leave the three sliders at their defaults (12 / 6.00 / 3), click OK. (The noise profile itself is captured once at the top of the session by selecting the noise-profile clip and clicking Get Noise Profile.)
+2. **Trim and fade.** Delete the silence at the start and end of the clip. Apply a 50-ms Fade In at the new start and a 50-ms Fade Out at the new end to avoid click pops at the trim boundaries.
+3. **Normalize.** `Effect → Volume and Compression → Normalize…`, peak target -1.0 dBFS, Remove DC offset checked.
 
-**Export:** each prepped sample exported as a WAV from the project (File → Export → Export as WAV), saved into the library folder following the naming convention established in this session.
+**Export:** each prepped sample exported as a mono WAV from the project (select the clip, then `File → Export Audio…` with Export Range set to **Current selection**). Saved into `sample-library/paper/` following the naming convention.
 
-**Naming convention for samples:** to be finalized in [`meta/naming-conventions.md`](../meta/naming-conventions.md) before this session. Working proposal:
+**Naming convention for samples** (canonical, mirrors the lab handout):
 
 ```
 [category]-[descriptor]-[variant].wav
 ```
 
-Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no spaces, no special characters (matches the repo-wide rule).
+Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no spaces, no special characters (matches the repo-wide rule). To be folded into [`meta/naming-conventions.md`](../meta/naming-conventions.md) as the sample-filename pattern.
 
-**Library folder structure for the session:** also to be finalized. Working proposal:
+**Library folder structure** (canonical):
 
 ```
 ~/Documents/lastname/sample-library/
@@ -236,19 +236,21 @@ Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no
   README.txt            <- student writes; what's in the library, how it's organized
 ```
 
+The library lives at `~/Documents/lastname/sample-library/` on the local machine and at `students/lastname/sample-library/` on the NAS. The Wk 6 lab handout includes a README template students fill in by hand; the template names the organization and lists the samples.
+
 End-of-session: upload library folder to NAS following the standard session-end routine.
 
 ### Handout
 
-[`lessons/02-handout-recording-into-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/02-handout-recording-into-audacity.html) *(to be written; this is Lab 1)*
+[`lessons/02-handout-recording-into-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/02-handout-recording-into-audacity.html) — Lab 1
 
-The handout walks students through: opening Audacity, setting input to the audio interface, setting gain trim, monitor blend, doing a test recording, listening back, recording the four sounds, the prep pipeline, exporting, organizing into the library folder.
+Ten numbered steps from cold start to NAS upload: configure Audacity for mono recording, set gain on the interface against the -12 to -6 dBFS target, set monitor blend, test recording, capture the noise-profile clip, record the four paper sounds, set up the sample-library folder, run the prep pipeline on each clip, export each as a WAV, write the library README, NAS upload. Includes one inline SVG diagram (the headroom target band on a vertical meter) and six screenshot slots (flagged with HTML comments, ready alt text and figcaptions) to be captured from the lab over the summer.
 
 ### Phone-recording reference card
 
 A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on iPhone (Voice Memos) and Android (default Voice Recorder or recommended alternative). Holding the phone, distance from source, wind/handling noise, file format and how to get the file off the phone.
 
-Filename to be decided: likely `lessons/03-handout-recording-on-phone.html`. Open question: whether the chrome reads `Module 03 · Handout N` (module-specific) or `Lab · Reference card` (semester-long reference).
+Filename: `lessons/03-handout-recording-on-phone.html`. Chrome reads `Lab · Reference card` since the card is module-agnostic and reused all semester (every week onward, students may add phone-recorded sounds to their library). Per the chrome conventions in [`meta/chrome-conventions.md`](../meta/chrome-conventions.md).
 
 ### Block-by-block
 
@@ -256,7 +258,7 @@ Filename to be decided: likely `lessons/03-handout-recording-on-phone.html`. Ope
 
 ### Critical reminders for the TA
 
-- **Verify every station has silence-before-sound habits before recording.** This is the most easily-missed step and it makes or breaks the denoise.
+- **Noise-profile clip first.** Before students record any of the four paper sounds, they need a 10-second clip of pure room tone at the top of the project. Walk the room during Step 5 of the handout (the noise-profile capture); a student who skips this won't be able to denoise. The clip should look almost flat in the waveform display, with no audible content.
 - **Headroom target: -12 to -6 dBFS peaks.** Don't let students push to -3 or above "to be loud."
 - **Don't normalize as a substitute for tracking levels right.** Normalize is for standardizing across already-good recordings, not for rescuing too-quiet ones.
 - **The library folder structure is the load-bearing artifact of this session.** If students leave with four good samples but no organized folder, they leave without the actual skill. Make sure the folder is set up and the README started before they go.
