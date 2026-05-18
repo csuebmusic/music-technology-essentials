@@ -220,7 +220,7 @@ Students go through the full record-and-prep pipeline end-to-end, using paper as
 [category]-[descriptor]-[variant].wav
 ```
 
-Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no spaces, no special characters (matches the repo-wide rule). Codified in [`meta/naming-conventions.md`](../meta/naming-conventions.md) under "Sample library files."
+Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no spaces, no special characters (matches the repo-wide rule).
 
 **Library folder structure** (canonical):
 
@@ -244,13 +244,13 @@ End-of-session: upload library folder to NAS following the standard session-end 
 
 [`lessons/02-handout-recording-into-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/02-handout-recording-into-audacity.html) — Lab 1
 
-Ten numbered steps from cold start to NAS upload: configure Audacity for mono recording, set gain on the interface against the -12 to -6 dBFS target, set monitor blend, test recording, capture the noise-profile clip, record the four paper sounds, set up the sample-library folder, run the prep pipeline on each clip, export each as a WAV, write the library README, NAS upload. Includes one inline SVG diagram (the headroom target band on a vertical meter) and five screenshot slots (flagged with HTML comments, ready alt text and figcaptions) to be captured from the lab over the summer.
+Ten numbered steps from cold start to NAS upload: configure Audacity for mono recording, set gain on the interface against the -12 to -6 dBFS target, set monitor blend, test recording, capture the noise-profile clip, record the four paper sounds, set up the sample-library folder, run the prep pipeline on each clip, export each as a WAV, write the library README, NAS upload. Includes an inline SVG diagram of the headroom target band and five Audacity screenshots at the moments students are most likely to drift.
 
 ### Phone-recording reference card
 
 A separate parallel handout, distributed at the end of this session for students to use **outside class**: how to record audio on iPhone (Voice Memos) and Android (default Voice Recorder or recommended alternative). Holding the phone, distance from source, wind/handling noise, file format and how to get the file off the phone.
 
-Filename: `lessons/03-handout-recording-on-phone.html`. Chrome reads `Lab · Reference card` since the card is module-agnostic and reused all semester (every week onward, students may add phone-recorded sounds to their library). Per the chrome conventions in [`meta/chrome-conventions.md`](../meta/chrome-conventions.md).
+Filename: `lessons/03-handout-recording-on-phone.html`. The card isn't module-tied; students keep using it every week onward as they add phone-recorded sounds to their library.
 
 ### Pre-class checklist
 
@@ -349,23 +349,9 @@ Reminder to do the laminated end-of-session routine before leaving the station: 
 - **Running short.** Add a fifth recording: students invent an interesting paper sound (e.g., paper sliding against itself, paper folded sharply, paper crinkled in slow motion). They name it themselves following the convention. This makes the naming convention a real decision rather than a recipe.
 - **One station's interface fails partway through.** Pair the student with a working-station neighbor; they share the interface for the recording portion and split the prep work between two stations. Note the failed interface for end-of-session diagnosis.
 
-### Asset prep: paper supplies
+### Paper supplies
 
 Standard 8.5×11 printer paper. About 5 sheets per student (4 for recordings, 1+ for test-crumble during gain setup). Ream of 500 covers many semesters. Avoid cardstock (the crackle is harsh and unrepresentative) and tissue paper (tears too quietly to register clearly through a dynamic mic).
-
-### Asset prep: screenshots for the lab handout
-
-Five screenshot slots in the handout are flagged with HTML comments. To be captured from a lab Mac with the standard Audacity 3.x install, over the summer:
-
-| Filename | Content |
-|---|---|
-| `audacity-audio-setup.png` | Audio Setup dropdown with the interface selected as Recording Device and Playback Device, and 1 (Mono) selected for Recording Channels |
-| `audacity-meter-target.png` | Recording level meter in live monitoring mode, with peaks visibly landing in the -12 to -6 dBFS target band |
-| `audacity-five-clips.png` | One mono track holding five clips in sequence: flat noise-profile clip first, then the four paper-sound clips of varying duration and amplitude |
-| `audacity-noise-reduction-profile.png` | The Noise Reduction dialog in its Step 1 state, with the Get Noise Profile button at the top |
-| `audacity-noise-reduction-apply.png` | The Noise Reduction dialog in its Step 2 state, with three sliders set to defaults (12 / 6.00 / 3) and OK at the bottom |
-
-All to be saved as PNGs in `assets/images/module-03-week-06/`. Filenames in the handout are already correct; the images just need to exist at those paths. Until then, browsers show broken-image icons but the prose and SVG diagram carry the lab on their own.
 
 ### Critical reminders for the TA
 
