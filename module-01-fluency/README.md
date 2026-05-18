@@ -54,7 +54,7 @@ None for Week 1. Module 1 is a setup module. The first listening assignment land
 
 ## Student-facing materials
 
-- [`lessons/01-handout-first-day-setup.html`](https://csuebmusic.github.io/music-technology-essentials/module-01-fluency/lessons/01-handout-first-day-setup.html) — distributed locally on each lab machine and via Canvas
+- [`lessons/01-reading-first-day-setup.html`](https://csuebmusic.github.io/music-technology-essentials/module-01-fluency/lessons/01-reading-first-day-setup.html) — distributed locally on each lab machine and via Canvas
 - [`lessons/02-handout-session-routines.html`](https://csuebmusic.github.io/music-technology-essentials/module-01-fluency/lessons/02-handout-session-routines.html) — printed and posted at every station; used at the start and end of every session for the rest of the semester
 
 ---
@@ -67,7 +67,7 @@ Do all of this **at least one day in advance** of the first session, ideally two
 - [ ] Confirm every student has a NAS account and a `lastname/` folder pre-created
 - [ ] Get the list of student last names from the registrar; pre-create folders matching exactly (lowercase, hyphenate any spaces)
 - [ ] Write the NAS server address on the whiteboard before class starts
-- [ ] Place `01-first-day-setup.pdf` (exported from `lessons/01-handout-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
+- [ ] Place `01-first-day-setup.pdf` (exported from `lessons/01-reading-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
 - [ ] Print `02-session-routines.pdf` (exported from `lessons/02-handout-session-routines.html`) and post it at every station — laminated if possible. This is the reference card students follow at the start and end of every session for the rest of the semester.
 - [ ] **Wipe local `~/Documents/` on every lab machine** of any leftover student folders from previous semesters. Local folders accumulate over time; clean state every fall and spring.
 - [ ] Walk through every station: confirm USB hub works, audio interface is recognized, mic and XLR cable are at the station, MIDI keyboard is at the station, headphones are at the station with the in-line slider all the way up
@@ -137,7 +137,7 @@ That whole sequence in five minutes teaches: Finder, screenshots, Desktop locati
 
 **Common confusion:** Students don't understand that "Documents," "Desktop," and "Downloads" are folders just like any other folder. Show them the same locations from inside Finder's sidebar — it's the same thing as the Desktop they see behind their windows.
 
-**Practical exercise — local handout:** Have students find `01-first-day-setup.pdf` in `/Users/Shared/Downloads/` and open it. This proves they can navigate Finder. (You pre-loaded this earlier.)
+**Practical exercise — local reading:** Have students find `01-first-day-setup.pdf` in `/Users/Shared/Downloads/` and open it. This proves they can navigate Finder. (You pre-loaded this earlier.)
 
 ### Block 3 — Set up folders and connect to the NAS (20 min)
 

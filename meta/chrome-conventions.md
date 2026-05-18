@@ -33,7 +33,7 @@ All within-module counts reset at the module boundary. Most numbers are within-m
 - **Lecture numbers** count Monday lectures within a module. Mon Wk 2 in Module 2 is Lecture 1, Mon Wk 3 is Lecture 2, etc.
 - **Supplement readings** carry the parent lecture's number with `(supplement)` appended. Example: `Lecture 3 (supplement)` for a reading that backs up Lecture 3.
 - **Lab numbers** count Wednesday lab sessions within a module. Module 2 has three lab sessions and three Lab-numbered handouts (Lab 1 → Lab 2 → Lab 3). Used when a module has multiple labs and the number serves as session-navigation help.
-- **Handout numbers** count handouts within a module when the document is module-tied but not paired with a single lab session. Module 1's `Handout 1 · Your First Day` uses this pattern since Module 1 has only one lab session, so a `Lab N` number wouldn't disambiguate anything.
+- **Handout numbers** count handouts within a module when the document is module-tied but not paired with a single lab session. Used when a module has multiple module-wide handouts and the number serves as a within-module disambiguator. No document currently uses this pattern; the slot is reserved for future module-tied handouts that aren't paired with a specific Wednesday lab. (Module 1's `Your First Day` document was previously chromed `Handout 1` and has since been reclassified as `Lecture 1`, since the Mon Wk 1 session is a lecture-style reading even though it's also operationally guided.)
 - **Tool numbers** count interactive tools within a module. Module 2's digital audio explorer is Tool 1; its dynamics tool is Tool 2.
 - **Project numbers** count globally across the semester. Project 1 (Module 2), Project 2 (Module 3 midterm), etc.
 
@@ -41,7 +41,7 @@ All within-module counts reset at the module boundary. Most numbers are within-m
 
 If the module has multiple labs (Wednesday sessions) and the handout is the principal document for a specific one of them, use `Lab N`, where N is which lab in the module. This matches Module 2's pattern and helps the TA and students quickly navigate to "the handout for Wednesday two."
 
-If the module has a single lab session, or the handout isn't tied to a specific lab session (e.g. a "general orientation" handout used across multiple weeks of the module), use `Handout N`, where N counts handouts within the module.
+If the handout isn't tied to a specific lab session (e.g. a "general orientation" handout used across multiple weeks of the module), use `Handout N`, where N counts handouts within the module.
 
 The distinction is about whether the number provides session-navigation value. If yes → Lab. If no → Handout.
 
