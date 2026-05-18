@@ -261,7 +261,7 @@ Filename: `lessons/03-handout-recording-on-phone.html`. The card isn't module-ti
 - Test-record on the instructor station: confirm the level meter goes live when clicked, the gain knob produces visible meter response, the headphones produce live monitoring (set the monitor blend toward Inputs first).
 - Open the Wed Wk 6 lab handout on the projector and on each student station's desktop browser.
 - Phone-recording reference cards (Handout 03, the parallel reference card document) stacked at the front of the room. Hand out at end of session.
-- Session Routines reference card laminated and visible at every station (same as every Wednesday).
+- Session Routines reference card posted and visible at every station (same as every Wednesday).
 
 ### Block-by-block
 
@@ -326,7 +326,7 @@ Then end-of-session NAS upload (same routine as every Wednesday). Drag `sample-l
 
 **Block 6 · Wrap and phone card (5 min).** Quick close. Hand out the phone-recording reference card on the way out the door. Frame: "From this week on, you can grow your library on your own time using your phone. The card walks through the iPhone and Android setup. Next session we'll talk about other signal types — instrument level, line level, condenser mics, DI boxes — and what cables go with them."
 
-Reminder to do the laminated end-of-session routine before leaving the station: log out, eject NAS, headphones placed on the holder.
+Reminder to do the end-of-session routine on the card before leaving the station: log out, eject NAS, headphones placed on the holder.
 
 ### Common confusions
 

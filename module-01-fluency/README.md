@@ -68,7 +68,7 @@ Do all of this **at least one day in advance** of the first session, ideally two
 - [ ] Get the list of student last names from the registrar; pre-create folders matching exactly (lowercase, hyphenate any spaces)
 - [ ] Write the NAS server address on the whiteboard before class starts
 - [ ] Place `01-first-day-setup.pdf` (exported from `lessons/01-reading-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
-- [ ] Print `02-session-routines.pdf` (exported from `lessons/02-handout-session-routines.html`) and post it at every station — laminated if possible. This is the reference card students follow at the start and end of every session for the rest of the semester.
+- [ ] Print `02-session-routines.pdf` (exported from `lessons/02-handout-session-routines.html`) and post it at every station. This is the reference card students follow at the start and end of every session for the rest of the semester.
 - [ ] **Wipe local `~/Documents/` on every lab machine** of any leftover student folders from previous semesters. Local folders accumulate over time; clean state every fall and spring.
 - [ ] Walk through every station: confirm the USB hub is connected to the Mac mini behind the monitor and has open ports
 - [ ] Walk through the lab's gear storage: inventory enough sets for the class — one audio interface, one pair of headphones, one dynamic mic, one mic stand, one XLR cable per student (or per pair, depending on enrollment). Confirm each audio interface is recognized when test-connected. Confirm headphones have the in-line slider all the way up

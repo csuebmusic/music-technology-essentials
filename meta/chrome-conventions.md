@@ -80,7 +80,7 @@ The callout markup is always the same:
 ```html
 <div class="callout">
   <div class="callout-label">Today's gear</div>
-  <p>Take from the lab's gear storage: <strong>[gear list]</strong>. Plug in and run through the start-of-session steps on the laminated <strong>Session Routines</strong> card before continuing here.</p>
+  <p>Take from the lab's gear storage: <strong>[gear list]</strong>. Plug in and run through the start-of-session steps on the <strong>Session Routines</strong> card before continuing here.</p>
 </div>
 ```
 

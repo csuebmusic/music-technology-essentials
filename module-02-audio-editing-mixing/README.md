@@ -280,7 +280,7 @@ Two halves:
 - Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run; escalate to Inés.** It's a short (~16 s) stereo bell-like resonance that decays gradually to silence; students cut into the decay and fade what remains in Step 5 of the handout.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
 - Open the orientation handout (the Lab 1 handout, `03-handout-audacity-orientation.html`) on the instructor station and on each student station's desktop browser
-- Confirm the Session Routines reference card is laminated and visible at every station
+- Confirm the Session Routines reference card is posted and visible at every station
 
 ### Block 1: Recap (10 min)
 
