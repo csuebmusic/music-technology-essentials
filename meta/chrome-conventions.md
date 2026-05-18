@@ -57,6 +57,40 @@ The intro paragraph (the first `<p>` after the title block) is **exactly one par
 
 If the intro feels like it wants to be two paragraphs, either merge them into one (sometimes a sentence reorder is enough) or push the second one past the first `<hr>` so it visually belongs to the body, not the intro. Two paragraphs at different sizes back-to-back makes the page look like the second one was an afterthought.
 
+### Today's gear callout
+
+Every student-facing HTML document that students use during a lab session opens with a **Today's gear** callout, placed immediately after the lede paragraph and before the first `<h2>` or `<hr>`. The callout names what students need to take from the lab's gear storage for today's session.
+
+This callout exists because the gear list used to drift inside the body prose of every handout. Centralizing it at the top of each file gives it one place per session, easy to update, easy to skip past once internalized.
+
+Three variants, by file type and module:
+
+| File type | Gear list |
+|---|---|
+| Reading (Mon lecture) | audio interface, headphones |
+| Interactive tool | audio interface, headphones |
+| Module 2 lab handout | audio interface, headphones |
+| Module 3 lab handout | audio interface, headphones, dynamic mic (with stand and XLR cable) |
+| Module 4 lab handout | audio interface, headphones, MIDI keyboard |
+
+The Module 3 recording-lab variant uses the inline "(with stand and XLR cable)" parenthetical rather than listing the stand and cable as separate items, since the mic-stand-cable triplet is a unit (you can't use any one of them without the other two).
+
+The callout markup is always the same:
+
+```html
+<div class="callout">
+  <div class="callout-label">Today's gear</div>
+  <p>Take from the lab's gear storage: <strong>[gear list]</strong>. Plug in and run through the start-of-session steps on the laminated <strong>Session Routines</strong> card before continuing here.</p>
+</div>
+```
+
+Files that don't get the callout:
+- The Session Routines card itself (it's the card the callout references)
+- The Day 1 reading (`01-reading-first-day-setup.html`), since it teaches the take-out cycle from scratch with its own walkthrough
+- Listening pages and project prompts (consulted at home, across sessions; gear context is the day's lab handout, not these files)
+
+Once the callout is present, the body prose should not redundantly list the gear. A lab handout's "Before you start" callout can carry pedagogical context (first-time framing, what's new about today's session), but should not re-list interface/headphones/mic. Templates for new pages live in `build/templates/`.
+
 ## Markdown files (internal)
 
 Markdown docs (module specs, TA notes, this folder) use the H1 to identify themselves:
