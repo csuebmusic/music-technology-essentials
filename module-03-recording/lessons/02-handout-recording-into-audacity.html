@@ -127,15 +127,15 @@
 </ol>
 
 <div class="callout">
-  <div class="callout-label">Mic setup</div>
-  <p>Set the mic in its stand, plug one end of the XLR cable into the mic, and plug the other end into <strong>input 1</strong> of the interface. The four-stage chain you read about Monday (mic → XLR → interface → computer) is now physically in front of you. If anything looks wrong or won't plug in cleanly, raise your hand before forcing anything.</p>
+  <div class="callout-label">First time with the mic</div>
+  <p>The four-stage chain you read about Monday (mic → XLR → interface → computer) is now physically in front of you. If anything looks wrong, or a cable won't plug in cleanly, raise your hand before forcing anything.</p>
 </div>
 
 <hr>
 
 <h2>Step 1 · Set up your sample library folder</h2>
 
-<p>Build the folder now, before you open Audacity. This is the home for every sample you record this semester; you'll be living in it for the rest of the course, so set it up carefully and once.</p>
+<p>Build the folder now, before you open Audacity. This is the home for every sample you record this semester; you'll be living in it for the rest of the course, so take a minute to get the structure right.</p>
 
 <ol class="steps">
   <li>In Finder, navigate to your local working folder: <code>~/Documents/lastname/</code>. (If you don't have a folder there yet, make one with your lowercase last name.)</li>
@@ -177,7 +177,7 @@
 <ol class="steps">
   <li>At the top of the Audacity window, find the <strong>Audio Setup</strong> button (marker 5 on the empty-project tour from your orientation lab).</li>
   <li>Click it. A dropdown opens with several sections: <strong>Host</strong>, <strong>Playback Device</strong>, <strong>Recording Device</strong>, <strong>Recording Channels</strong>.</li>
-  <li>Under <strong>Recording Device</strong>, choose the audio interface at your station (it will be listed by model name: <strong>USB Audio CODEC</strong>, <strong>PreSonus AudioBox USB 96</strong>, or <strong>U-PHORIA UM2</strong> depending on which interface you're at).</li>
+  <li>Under <strong>Recording Device</strong>, choose your audio interface (it will be listed by model name: <strong>USB Audio CODEC</strong>, <strong>PreSonus AudioBox USB 96</strong>, or <strong>U-PHORIA UM2</strong> depending on which interface you took from storage).</li>
   <li>Under <strong>Recording Channels</strong>, choose <strong>1 (Mono)</strong>. The dynamic mic on input 1 is a single source, so you want a single-channel recording. Stereo recording is for setups with two mics; today is one mic, one channel.</li>
   <li>Under <strong>Playback Device</strong>, the interface should already be selected (so playback goes out the interface's headphone jack into your headphones). If it isn't, select it now.</li>
 </ol>
@@ -292,7 +292,7 @@
 <p>To dial it in:</p>
 
 <ol class="steps">
-  <li>Turn on live monitoring so the meter shows levels before you start recording. Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) A small menu appears with two items: <strong>Enable Silent Monitoring</strong> and <strong>Options…</strong>. Click <strong>Enable Silent Monitoring</strong>. The meter goes live: it shows the signal coming in from the mic in real time, even though you're not recording yet. (The "silent" in the name means the audio isn't routed to your headphones from Audacity, only displayed on the meter; you'll still hear the mic through the interface's direct monitor, set in the next step.)</li>
+  <li>Turn on live monitoring so the meter shows levels before you start recording. Click Audacity's <strong>recording level meter</strong> at the top of the window. (It's the meter on the right side of the top toolbar, with a small mic icon.) A small menu appears with two items: <strong>Enable Silent Monitoring</strong> and <strong>Options…</strong>. Click <strong>Enable Silent Monitoring</strong>. The meter goes live: it shows the signal coming in from the mic in real time, even though you're not recording yet. (The "silent" in the name means the audio isn't routed through Audacity to your headphones, only displayed on the meter; you'll still hear the mic through the interface's monitor blend, set in the next step.)</li>
   <li>Make a sound at the loudness you'll be aiming for. For the paper sounds, that means a sample crumble or a quick test rip at roughly the speed and intensity you'll use for the real take. Grab a small piece of scrap paper from the stack at your station for this; don't burn through the four sheets you'll need for the actual recordings.</li>
   <li>Watch the meter. If the peaks sit below -12, turn the gain knob on the interface clockwise (up) a quarter-turn and try again. If the peaks hit the red zone or trip the interface's clip indicator, turn the gain counter-clockwise (down).</li>
   <li>Repeat until the loudest peaks land in the -12 to -6 band consistently. Don't chase a single peak; you're aiming for where the loud moments settle, not the absolute maximum of any one try.</li>
@@ -494,7 +494,7 @@
 
 <div class="callout">
   <div class="callout-label">Normalize scales, it doesn't shape</div>
-  <p>Normalize is a single multiplication applied to every sample. It doesn't change the shape of the sound; it changes its size. A quiet sample stays quiet relative to a loud sample within the same clip. What changes is where the loudest peak sits: at -1 dBFS, every sample in your library, ready to be combined with others without one of them dominating the mix.</p>
+  <p>Normalize is a single multiplication applied to every sample. It doesn't change the shape of the sound; it changes its size. A quiet sample stays quiet relative to a loud sample within the same clip. What changes is where the loudest peak sits. Every sample in your library will end up normalized to the same -1 dBFS ceiling, which means you can combine them later without one dominating the mix.</p>
 </div>
 
 <p>That's one full pipeline run. The clip is now denoised, trimmed (with fades at both ends), and normalized. Repeat for the other three sounds (<strong>paper crumble fast</strong>, <strong>paper rip slow</strong>, <strong>paper rip fast</strong>). Listen to each after you finish to confirm it sounds right.</p>
@@ -613,7 +613,7 @@ NOTES
 <p>The laminated card has the full end-of-session routine. The steps below are the lab-specific part (what to upload) that fold into the card's NAS-upload phase.</p>
 
 <ol class="steps">
-  <li>Run the start of the card's NAS-upload phase (reconnect to the NAS if you've disconnected; <span class="menu-path">Go → Connect to Server…</span>, <code>smb://mus381-nas.local</code>).</li>
+  <li>Run the start of the card's NAS-upload phase (reconnect to the NAS if you've disconnected; <kbd>Cmd</kbd> + <kbd>K</kbd> in Finder, enter the server address from the whiteboard, sign in).</li>
   <li>Navigate to <code>students/lastname/</code>.</li>
   <li>Drag your entire <code>sample-library/</code> folder from <code>~/Documents/lastname/</code> to <code>students/lastname/</code> on the NAS. Wait for the copy to finish.</li>
   <li>Verify everything copied by opening <code>students/lastname/sample-library/paper/</code> on the NAS and confirming all four WAVs are there.</li>
