@@ -106,26 +106,6 @@
     .callout p:last-child {
       margin-bottom: 0;
     }
-
-    /* Closing summary */
-    .summary-box {
-      background: var(--bg-alt);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 1.5rem 1.75rem;
-      margin: 2.5rem 0 0;
-    }
-    .summary-box h3 {
-      margin-top: 0;
-      font-family: var(--mono);
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-    }
-    .summary-box ul {
-      margin-bottom: 0;
-    }
   </style>
 </head>
 <body>
@@ -308,17 +288,6 @@
 </div>
 
 <hr>
-
-<div class="summary-box">
-  <h3>The short version</h3>
-  <ul>
-    <li>Audacity 3.6's compressor and limiter share the same engine. The compressor has Ratio and Attack; the limiter has neither (its ratio is infinity, and it uses Lookahead instead of Attack).</li>
-    <li>Threshold, Make-up gain (or Make-up target), Knee width, Attack, Release, and Lookahead are the parameters you'll touch. Of these, Knee width and Lookahead are the two that didn't appear in the teaching tool; the rest you already know.</li>
-    <li>Compress individual sounds first, mix second, limit last. Don't compress for its own sake; compress when you have a problem you're trying to solve.</li>
-    <li>For a final-mix limiter, threshold around -6 dB, make-up target -1 dB, 5 ms lookahead, 100 ms release is a reasonable starting point. Tune by ear.</li>
-    <li>The presets in both effects are worth browsing. They give you a starting point in the right neighborhood for many common situations.</li>
-  </ul>
-</div>
 
 <footer class="handout-footer">
   <span>MUS 381 · CSU East Bay</span>
