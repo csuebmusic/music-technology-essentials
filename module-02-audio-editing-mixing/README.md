@@ -106,17 +106,18 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 - **"Why doesn't my edit sound smooth?"** Usually missing fades. The single most useful Audacity habit is to add a small fade-in/fade-out (5-50 ms) on every edit boundary. Click pops at edit points are the audible signature of someone new to editing.
 - **"How do I [thing I've never done]?"** Resist the urge to do it for them. Sit next to them, ask where they are, ask what they've tried. The goal is for them to learn the move, not for you to demonstrate competence.
 
-### Gear setup baseline (every Wednesday)
+### Gear storage baseline (before each week)
 
-Before students arrive, walk the room and verify at every station:
+Before students arrive on the first session of each week, walk the room and verify at every station:
 - Mac mini powered on, monitor working
-- USB hub connected
-- Audio interface plugged in, USB connected, power LED on
-- Headphones plugged into the interface, in-line slider checked (it tends to drift down)
-- Mic in stand, plugged in (XLR), phantom power off unless using a condenser
-- MIDI keyboard plugged in (used in Module 4, but leave it set up consistently)
+- USB hub connected to the Mac, with open ports
 
-The interface mix knob (where present) should be at 60% direct / 40% USB by default. Reset it before each session: students will have moved it.
+Walk through the lab's gear storage and verify the Module 2 gear (one set per student or pair, depending on enrollment) is inventoried and intact:
+- Audio interfaces present, USB cables present, power LEDs lighting when test-connected
+- Headphones present, with the in-line slider checked (it tends to drift down)
+- The interface's mix knob (where present) at 60% direct / 40% USB. Reset it after class each week; students will have moved it
+
+Module 2 does not use the mic or the MIDI keyboard. Those gear sets stay in storage; we'll start using them in Module 3 (mic) and Module 4 (MIDI keyboard).
 
 If anything is missing or broken, log it immediately in the lab gear tracker and use the spare. Don't try to teach with broken gear; it derails the session.
 
@@ -274,7 +275,7 @@ Two halves:
 
 ### Pre-class checklist
 
-- Walk the room: gear setup baseline (see Module-wide concerns)
+- Walk the room and lab's gear storage: gear storage baseline (see Module-wide concerns)
 - Verify Audacity opens cleanly on every machine (test on at least 3 stations); confirm project sample rate defaults to 44100 Hz, 16-bit format
 - Confirm `orientation-sample.wav` is on the NAS at `shared/module-02/orientation/`. **If it's not there, the lab can't run.** This is a short stereo bell-like resonance (~16 s) that decays gradually to silence; see "Asset prep" below for what's expected.
 - Open the explorer tool on the instructor station and confirm sound plays from the projector
@@ -368,7 +369,7 @@ Note that the empty Audacity window does not display the project sample rate any
 
 ### After class
 
-- Walk the room before locking up. Make sure all machines are logged out, headphone sliders down (default position for next session), interface mix knobs reset.
+- Walk the room before locking up. Make sure all machines are logged out and all gear is back in the lab's gear storage. Spot-check that headphone sliders are down and interface mix knobs are reset to 60% direct / 40% USB (the next-session default).
 - Verify NAS uploads happened (spot-check 3-4 student folders for `lastname-orientation.aup3` and `lastname-orientation.wav`).
 - Note any common confusions for the after-Module retrospective.
 
@@ -500,7 +501,7 @@ Two halves:
 
 ### Pre-class checklist
 
-- Walk the room (gear baseline)
+- Walk the room and lab's gear storage (gear storage baseline)
 - **Verify the sample bank is ready and complete on the NAS** at `shared/sample-banks/project-01/`. The handout assumes the canonical category folders (`attack-sharp`, `attack-soft`, `sustain-long`, `sustain-short`, `texture-continuous`, `voice-and-language`, `found-objects`, `natural-environment`, `mechanical-electronic`). If the bank is missing or has different folder names, **the handout's exercises won't work**. Confirm before class.
 - Verify Audacity opens cleanly on every machine; verify project format defaults are 44.1 kHz / 16-bit
 - Open the Project 1 prompt on the instructor station
@@ -598,7 +599,7 @@ If running short (rare): give more time to free Project 1 sketching. More browsi
 ### After class
 
 - Verify NAS uploads. Every student should have `students/lastname/project-01/lastname-project01.aup3` on the NAS by end of class. Spot-check 3-4 student folders.
-- Walk the room: gear reset, headphone sliders down, machines logged out
+- Walk the room before locking up: all gear back in the lab's gear storage, machines logged out. Spot-check that headphone sliders are down and interface mix knobs are reset to 60% direct / 40% USB.
 - Note any students whose project file shows zero or one tracks at the end of class. They didn't finish Project 1 setup; check in with them at Wed Wk 4.
 
 ---
@@ -626,7 +627,7 @@ The session is deliberately compact on the new content because students need wor
 
 ### Pre-class checklist
 
-- Walk the room (gear baseline)
+- Walk the room and lab's gear storage (gear storage baseline)
 - **Take a quick mental inventory of where students are on Project 1.** From Wed Wk 3 spot-checks plus any work students did between sessions, you should have a rough sense of who's ahead, who's on track, who hasn't engaged. Note who to check in with during Block 4.
 - Open the Project 1 prompt on the instructor station
 - Have the Lab 3 handout (`06-handout-mixing-in-audacity.html`) open in a browser at every student station's desktop
@@ -718,7 +719,7 @@ If running short (rare): use the extra time for one-on-one student check-ins. Pi
 ### After class
 
 - Verify NAS uploads. Every student should have an updated `lastname-project01.aup3` (newer modification date than last week's). Spot-check 3-4 student folders, especially ones for students who seemed disengaged during Block 4.
-- Walk the room: gear reset, headphone sliders down, machines logged out
+- Walk the room before locking up: all gear back in the lab's gear storage, machines logged out. Spot-check that headphone sliders are down and interface mix knobs are reset to 60% direct / 40% USB.
 - Note any students whose Project 1 file looks identical to last week's (zero progress). These are check-in candidates for Mon Wk 5.
 
 ---
@@ -857,7 +858,7 @@ Every student finishes Project 1 and uploads to both NAS folders by end of class
 
 - **Verify the class listening folder exists and is writable by students.** Path: `/music/shared/mus-381-fall-2026/project-01-pieces/`. Permissions: students can write (drop their final WAV in), but cannot delete or modify others' files. Test this before class: drop a placeholder file in, then have one student try to add one and try to modify someone else's. If permissions aren't right, escalate to IT before students start uploading.
 - **Spot-check working folders** for 5-6 students. They should have at least a `lastname-project01-vN.aup3` project file by now, and ideally an in-progress export. If a student's working folder is empty or has only one early version, flag them to check in with first thing.
-- Walk the room (gear baseline).
+- Walk the room and lab's gear storage (gear storage baseline).
 - Have the project prompt ([`projects/project-01-musique-concrete.html`](https://csuebmusic.github.io/music-technology-essentials/module-02-audio-editing-mixing/projects/project-01-musique-concrete.html)) open on the instructor machine. Specifically the Submission section.
 
 ### Block-by-block

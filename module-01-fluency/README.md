@@ -72,7 +72,7 @@ Do all of this **at least one day in advance** of the first session, ideally two
 - [ ] **Wipe local `~/Documents/` on every lab machine** of any leftover student folders from previous semesters. Local folders accumulate over time; clean state every fall and spring.
 - [ ] Walk through every station: confirm the USB hub is connected to the Mac mini behind the monitor and has open ports
 - [ ] Walk through the lab's gear storage: inventory enough sets for the class — one audio interface, one pair of headphones, one dynamic mic, one mic stand, one XLR cable per student (or per pair, depending on enrollment). Confirm each audio interface is recognized when test-connected. Confirm headphones have the in-line slider all the way up
-- [ ] Test-record at one station end-to-end (mic → interface → QuickTime → local save → NAS upload) to confirm the full chain works
+- [ ] Test-record end-to-end (take a gear set from storage, plug in at one station, test: mic → interface → QuickTime → local save → NAS upload, then stow the gear back) to confirm the full chain works
 - [ ] Walk through the entire session yourself end-to-end on a lab machine the day before, as if you were a student. Time yourself. This will surface every broken thing.
 - [ ] Have a backup plan if the NAS is down: students save locally only, you collect their work via USB drive at the end. **Do not cancel the session over a network issue.**
 - [ ] Have at least one spare hub, one spare XLR cable, and one spare set of headphones available in case something fails during class
