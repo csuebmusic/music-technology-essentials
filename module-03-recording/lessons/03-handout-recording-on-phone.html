@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Recording on Your Phone</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Lab · Reference card</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Lab reference · Phone recording</div>
+  <h1>Recording on Your Phone</h1>
+  <div class="subtitle">How to capture sounds away from the lab and bring them home in a format that works.</div>
+</div>
+
+<p class="lede">Your library doesn't have to stop at the lab door. With one free app installed on your phone and a few settings set once, you can record anything that catches your ear: a kettle boiling, a bike chain ticking, footsteps in a stairwell, a friend's voice, a door that sticks. This card walks through the app, the settings, the recording technique, and how to get the file from your phone into Audacity-ready WAV format. The lab on Wednesday of Wk 7 covers the prep pipeline; this card covers everything that happens before that.</p>
+
+<hr>
+
+<h2>1 · The app: Dolby On</h2>
+
+<p>Install <strong>Dolby On</strong> from the App Store (iPhone) or Google Play (Android). It's free, works the same way on both platforms, and is one of the few free apps that can export the kind of WAV file Audacity opens without any conversion step.</p>
+
+<p>Open the app once after installing and accept the microphone permission when it asks. That's the install done.</p>
+
+<p>Two notes on what Dolby On is and isn't. It's a <em>recording</em> app with built-in <em>editing</em> tools (Styles, EQ, Boost, Noise Reduction). For this class you only use the recording side; the editing tools belong to Dolby's "make it sound polished for social media" workflow, which is the opposite of what a sample library wants. The next section turns the editing tools off so you get a clean capture.</p>
+
+<hr>
+
+<h2>2 · One-time setup</h2>
+
+<p>Three settings to set once. They live under the Settings screen in the app (gear icon). Set them on your first session and never again.</p>
+
+<h3>Turn on Lossless audio</h3>
+
+<p>Settings → <strong>Lossless audio</strong> → on. Without this, Dolby On exports compressed .m4a files that Audacity can't open without extra setup. With it on, you get .wav files that Audacity opens directly. You'll see a small <strong>Lossless</strong> badge above the record button when this is active, which confirms it's on.</p>
+
+<h3>Turn off Noise Reduction</h3>
+
+<p>Settings → <strong>Noise Reduction</strong> → off. Dolby On's noise reduction is automatic and aggressive, tuned for live music with crowd noise or amp buzz. The denoise step you learned in lab is gentler and uses a captured noise profile of <em>your specific room</em>, which produces better results on raw recordings. Skip Dolby's pass; let Audacity do the work in lab.</p>
+
+<h3>Turn off the Countdown</h3>
+
+<p>Settings → <strong>Countdown</strong> → off. The three-second countdown exists to feed the noise-reduction system; with noise reduction off, it's just extra waiting before each take.</p>
+
+<hr>
+
+<h2>3 · The take</h2>
+
+<p>A short list of habits that separate a recording you can use from one you can't.</p>
+
+<h3>Airplane mode on, or Do Not Disturb</h3>
+
+<p>A text message mid-take ruins the recording. Toggle airplane mode (or a Focus mode that silences notifications) before you start. Turn it back on when you're done.</p>
+
+<h3>Set the phone down</h3>
+
+<p>Your hand on the phone produces handling noise louder than most of the sounds you'll want to record. Place the phone on a stable surface, prop it against something, or wedge it between two objects. If you have to hold it, hold the case as still as you can and keep your fingers away from the mic openings at the bottom edge (and sometimes the top edge, depending on your model).</p>
+
+<h3>Distance shapes the recording</h3>
+
+<p>Close (a few inches from the source) captures fine detail and lets the sound dominate over the room. Far (a few feet) captures the room around the source, with the source as one element inside it. Neither is right or wrong; they're different recordings of the same event. When you're not sure, take both and pick later.</p>
+
+<h3>Watch the level indicator</h3>
+
+<p>Dolby On shows a level indicator in the top-left corner of the record screen. If it turns red, the signal is overloading the mic and the recording will distort. Move the phone farther from the source until the indicator stops going red. The same headroom logic from lab applies: you want room to make decisions later, not a recording locked at the loudest the mic can produce.</p>
+
+<h3>Wind kills outdoor recordings</h3>
+
+<p>Phone mics have no wind protection. If there's any breeze, you'll get a low rumbling whoosh that drowns out everything else. The cheap fix: cup your hand loosely around the bottom edge of the phone (where the mic is) to break the airflow. The better fix: record from a position that puts a wall, your body, or a piece of furniture between the wind and the phone.</p>
+
+<div class="callout warn">
+  <div class="callout-label">Don't apply Sound Tools</div>
+  <p>After you stop recording, Dolby On opens an editor with <strong>Styles</strong>, <strong>Bass</strong>, <strong>Treble</strong>, <strong>Boost</strong>, and other effect controls. Leave all of them alone. Your sample library starts from raw recordings, prepped deliberately in Audacity. Applying Dolby's effects on the phone bakes choices into the file that you can't undo later.</p>
+</div>
+
+<hr>
+
+<h2>4 · Getting the file off the phone</h2>
+
+<p>The fastest path depends on which phone you have.</p>
+
+<h3>iPhone → Mac via AirDrop</h3>
+
+<ol class="steps">
+  <li>Open Dolby On's Library and tap the track you want to send.</li>
+  <li>Tap the share icon (three dots, or the share symbol depending on app version).</li>
+  <li>Choose <strong>Export Lossless</strong>. (If you don't see this option, your track wasn't recorded with Lossless audio turned on. Re-record after enabling it in Settings.)</li>
+  <li>From the share sheet, choose <strong>AirDrop</strong> and pick your Mac.</li>
+  <li>On your Mac, the file lands in your <code>Downloads</code> folder as a <code>.wav</code>.</li>
+</ol>
+
+<h3>Android → Mac (a few options)</h3>
+
+<ol class="steps">
+  <li>Open Dolby On's Library and tap the track you want to send.</li>
+  <li>Tap the three-dot share icon.</li>
+  <li>Choose <strong>Share Audio</strong> → <strong>Save Audio</strong> to write the WAV to a folder on your phone, or use one of the share options to send directly.</li>
+  <li>Move the file to your Mac by whatever path works for you:
+    <ul>
+      <li>Upload to Google Drive on the phone, then download from the Drive website on your Mac.</li>
+      <li>Plug the phone into the Mac with a USB cable and copy the file across using the Android File Transfer app.</li>
+      <li>Email the file to yourself.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr>
+
+<h2>5 · Into Audacity</h2>
+
+<p>Once the WAV is on your Mac, drag it onto the Audacity window (or use <strong>File → Import → Audio</strong>). The file opens directly: no conversion step, no extra libraries to install.</p>
+
+<p>Dolby On may export at a different sample rate than the course's standard 44.1 kHz. If Audacity asks about sample rate on import, accept the default for now. The Wed Wk 7 lab covers what to do about sample rate differences when you fold a phone recording into your library.</p>
+
+<hr>
+
+<h2>6 · What's next</h2>
+
+<p>You can grow your library between now and the Wed Wk 7 lab by recording anything that catches your ear and saving the WAV files somewhere you can find them. The prep step (denoise, trim, normalize, name, file) waits for lab time, when you can sit at a station, use headphones, and apply the pipeline deliberately.</p>
+
+<p>Some things that record well on a phone, to get you started:</p>
+
+<ul>
+  <li>Small mechanical sounds: zippers, latches, hinges, switches, keys, locks</li>
+  <li>Domestic sounds: a kettle, water running, ice in a glass, a fridge cycling, a fan</li>
+  <li>Object-on-object sounds: pebbles in a jar, a wooden spoon on a pot, a coin on a table</li>
+  <li>Body sounds: footsteps on different surfaces, a hand brushing fabric, a clap in a stairwell</li>
+  <li>Found environments: an elevator, a hallway, a courtyard at dusk, a parking garage</li>
+</ul>
+
+<p>The point of the library is to give you raw material to work with later. A sound that seems boring in the moment may turn out to be exactly what a piece needs three weeks from now. Record more than you think you'll use.</p>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Lab · Reference card</span>
+</footer>
+
+</body>
+</html>
