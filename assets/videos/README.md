@@ -1,6 +1,6 @@
 # Videos
 
-Short Audacity screen recordings used as inline demos inside readings. Each clip shows a single editing operation performed on a real waveform, so students see in their own DAW exactly what the term means.
+Short Audacity screen recordings used as inline demos inside readings and lab handouts. Each clip shows a single operation in the DAW so students see in their own copy exactly what a term, control, or workflow looks like.
 
 ## Directory layout
 
@@ -13,10 +13,16 @@ videos/
 │   ├── fades.mp4
 │   ├── crossfade.mp4
 │   └── reverse.mp4
+├── module-03-week-06/    Recording lab (Lab 1)
+│   ├── audio-setup-dropdown.mp4    Audio Setup menu walkthrough (Step 2)
+│   ├── meter-monitoring.mp4        Live input meter once silent monitoring is disabled (Step 3)
+│   └── test-recording.mp4          End-to-end record / stop / playback (Step 5)
 └── …
 ```
 
-The editing-vocabulary set has six videos. The *loop* term doesn't get a video because Audacity's looping is split between a playback-only feature and the manual copy-paste-in-succession workaround. Both are covered in the prose definition with a forward pointer to Module 4 (Ableton), where looping is a first-class compositional tool.
+The editing-vocabulary set in Module 2 has six videos. The *loop* term doesn't get a video because Audacity's looping is split between a playback-only feature and the manual copy-paste-in-succession workaround. Both are covered in the prose definition with a forward pointer to Module 4 (Ableton), where looping is a first-class compositional tool.
+
+The Module 3 set is the recording lab's three UI-walkthrough clips. They differ from the editing-vocabulary clips: those show *operations on a waveform*, these show *UI navigation and live signal*. Same encoding, same embedding pattern; the recording specs below still apply with a couple of natural relaxations (no shared source audio, no rigid 5-to-12-second budget for a long end-to-end demo).
 
 ## Recording specs
 
