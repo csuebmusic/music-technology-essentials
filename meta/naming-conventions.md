@@ -141,6 +141,7 @@ The lab NAS uses the same convention for the same reason. Paths that appear in s
 ```
 /music/students/[lastname]/                           Student private folders
 /music/students/[lastname]/project-NN/                Per-project working folders
+/music/students/[lastname]/sample-library/            Per-student sample library (Module 3 onward)
 /music/shared/sample-banks/project-01/                Project 1 sample bank
 /music/shared/mus-381-fall-2026/                      Per-semester shared resources
 /music/shared/mus-381-fall-2026/project-NN-pieces/    Class listening folders for each project
@@ -148,6 +149,41 @@ The lab NAS uses the same convention for the same reason. Paths that appear in s
 ```
 
 The `mus-381-fall-YYYY/` prefix is the only place a semester date appears in a path. Every other path is semester-stable.
+
+## Sample library files
+
+Starting in Module 3 Wk 6, every student builds and maintains a personal sample library on the NAS at `students/[lastname]/sample-library/`. Filenames inside the library follow a category-descriptor-variant pattern:
+
+```
+[category]-[descriptor]-[variant].wav
+```
+
+- **category** — the high-level kind of sound; matches the folder it lives in. Examples: `paper`, `metal`, `water`, `voice`, `field`.
+- **descriptor** — what the sound is, in a word or two. Examples: `crumble`, `rip`, `clang`, `drip`, `hum`.
+- **variant** — what distinguishes this take from sibling takes of the same descriptor. Examples: `slow`, `fast`, `close`, `far`, `dry`, `wet`.
+
+Lowercase, hyphens between words, no spaces, no special characters. Same base rule as everywhere in the repo.
+
+Worked examples:
+
+```
+sample-library/
+  paper/
+    paper-crumble-slow.wav            Module 3 Wk 6 starter library
+    paper-crumble-fast.wav
+    paper-rip-slow.wav
+    paper-rip-fast.wav
+  metal/
+    metal-pan-strike-soft.wav         Hypothetical Wk 7 additions
+    metal-pan-strike-hard.wav
+    metal-wire-scrape-slow.wav
+```
+
+The variant slot is optional when there's only one take of a descriptor (`metal-fork-drop.wav` is fine if there's no sibling); add it when sibling variants exist. If a student records a third or fourth variant of a descriptor and the slow/fast axis runs out, use a noun-shaped variant instead (`paper-crumble-slow.wav`, `paper-crumble-fast.wav`, `paper-crumble-corner.wav`, `paper-crumble-edge.wav`). The rule isn't a fixed taxonomy; it's a discipline of meaningful distinctions.
+
+The category is also the folder. `paper-crumble-slow.wav` lives in `paper/`. The redundancy is intentional: the file is identifiable on its own (without the folder context) and the folder is browsable on its own (without renaming files when reorganizing).
+
+All samples in the library are mono, 44.1 kHz, 16-bit WAV, prepped through the denoise / trim / normalize pipeline (see the Module 3 Wk 6 lab handout).
 
 ## Student submission filenames
 

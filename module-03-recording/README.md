@@ -220,7 +220,7 @@ Students go through the full record-and-prep pipeline end-to-end, using paper as
 [category]-[descriptor]-[variant].wav
 ```
 
-Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no spaces, no special characters (matches the repo-wide rule). To be folded into [`meta/naming-conventions.md`](../meta/naming-conventions.md) as the sample-filename pattern.
+Examples: `paper-crumble-slow.wav`, `paper-rip-fast.wav`. Lowercase, hyphens, no spaces, no special characters (matches the repo-wide rule). Codified in [`meta/naming-conventions.md`](../meta/naming-conventions.md) under "Sample library files."
 
 **Library folder structure** (canonical):
 
