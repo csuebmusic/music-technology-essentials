@@ -21,7 +21,7 @@ By the end of this single session, students should be able to:
 1. Locate, open, and navigate Finder; understand file paths, folders, and basic keyboard shortcuts
 2. Set up a local working folder at `~/Documents/lastname/` and connect to the lab NAS
 3. Save files using the course naming convention (lowercase, hyphens, no spaces, no special characters)
-4. Identify each piece of gear at their station (USB hub, audio interface, mic, MIDI keyboard, headphones) and connect them correctly
+4. Identify the gear used today (USB hub, audio interface, mic, headphones, XLR cable) and connect them correctly
 5. Set the three knobs on an audio interface (gain, main, headphone) in the correct order, starting from zero
 6. Use a software level meter to set mic gain at a usable level
 7. Record a short audio clip through the full signal chain and save it locally
@@ -70,7 +70,8 @@ Do all of this **at least one day in advance** of the first session, ideally two
 - [ ] Place `01-first-day-setup.pdf` (exported from `lessons/01-reading-first-day-setup.html`) into `/Users/Shared/Downloads/` on every lab machine
 - [ ] Print `02-session-routines.pdf` (exported from `lessons/02-handout-session-routines.html`) and post it at every station — laminated if possible. This is the reference card students follow at the start and end of every session for the rest of the semester.
 - [ ] **Wipe local `~/Documents/` on every lab machine** of any leftover student folders from previous semesters. Local folders accumulate over time; clean state every fall and spring.
-- [ ] Walk through every station: confirm USB hub works, audio interface is recognized, mic and XLR cable are at the station, MIDI keyboard is at the station, headphones are at the station with the in-line slider all the way up
+- [ ] Walk through every station: confirm the USB hub is connected to the Mac mini behind the monitor and has open ports
+- [ ] Walk through the lab's gear storage: inventory enough sets for the class — one audio interface, one pair of headphones, one dynamic mic, one mic stand, one XLR cable per student (or per pair, depending on enrollment). Confirm each audio interface is recognized when test-connected. Confirm headphones have the in-line slider all the way up
 - [ ] Test-record at one station end-to-end (mic → interface → QuickTime → local save → NAS upload) to confirm the full chain works
 - [ ] Walk through the entire session yourself end-to-end on a lab machine the day before, as if you were a student. Time yourself. This will surface every broken thing.
 - [ ] Have a backup plan if the NAS is down: students save locally only, you collect their work via USB drive at the end. **Do not cancel the session over a network issue.**
@@ -85,7 +86,6 @@ Assume:
 - Most have **never used a Mac** in any meaningful way
 - Most have **never connected to a file server**
 - Most do not know what an **audio interface** is
-- Most have **not seen a MIDI keyboard** before
 - Some have used GarageBand or Audacity casually; very few have used a real DAW
 - A small number will be quite advanced relative to the rest — they'll be bored if you go too slow, but they're useful as peer helpers
 
@@ -199,20 +199,22 @@ Drill the rules: lowercase, hyphens, no spaces, no special characters. **Tell th
 
 ### Block 4 — Set up gear and make a recording (35 min) + Exit routine (10 min)
 
-This is the day's main event. Students plug in their full signal chain, set their levels, and produce one successful recording, then run the exit routine to upload to the NAS for the first time. The pedagogical arc is one continuous activity ending with the upload.
+This is the day's main event. Students take gear from the lab's gear storage, plug in their full signal chain, set their levels, and produce one successful recording, then run the exit routine to upload to the NAS and stow the gear back. The pedagogical arc is one continuous activity from storage to upload.
 
-The lab has different audio interfaces and MIDI keyboards across stations, all connecting through a USB hub on each desk. The Mac mini itself is mounted behind the monitor and students never see or touch it. Teach categories, not specific models.
+The lab has different audio interface models (and different MIDI keyboard models later in the semester) in storage; the audio interfaces don't all look identical or have the same knob layout. The USB hub at each station is permanently connected to the Mac mini behind the monitor. Teach categories, not specific models.
 
-**Time-keeping note.** Reserve the last 10 minutes for the exit routine; that leaves 35 minutes for the gear+recording portion. This is tight for what it covers. Demo each step on the projector, then circulate while students do it themselves. Don't move to the next step until most of the room is caught up.
+**Time-keeping note.** Reserve the last 10 minutes for the exit routine; that leaves 35 minutes for everything from gear take-out through the recording. Rough internal budget: 5 min for take-out and back to stations, 25 min for plug-in through recording, 5 min slack for the things that always run over. Demo each step on the projector, then circulate while students do it themselves. Don't move to the next step until most of the room is caught up.
 
 #### Step-by-step facilitation
 
-**Show the gear.** Hold up each piece and say what it does in one sentence:
+**Take gear from the lab's gear storage.** This is the first time students do this part of the routine. Lead them to the storage area as a group; have each student take out one set: an audio interface, a pair of headphones, a dynamic mic with its stand, and an XLR cable. Walk back to stations together. Set the gear on the desk, no plugging in yet.
 
-- *USB hub:* "Everything plugs into this. It's already connected to the computer behind your monitor. Don't unplug the hub itself."
+**Show the gear.** Once everyone's back at their stations, hold up each piece and say what it does in one sentence:
+
+- *USB hub:* "Everything plugs into this. It's already at your station, connected to the computer behind your monitor. Don't unplug the hub itself, only the cables that go into it."
 - *Audio interface:* "This converts analog audio (sound from a microphone, or sound to your headphones) into digital audio that the computer can work with, and back."
-- *Microphone:* "This is a tabletop mic. It plugs into the audio interface using an XLR cable — the thick three-pin one."
-- *MIDI keyboard:* "This sends note information to the computer. It doesn't make sound on its own — it's a controller. The sound comes from software."
+- *Microphone:* "This is a tabletop dynamic mic. It plugs into the audio interface using an XLR cable — the thick three-pin one."
+- *Headphones:* "These go into the audio interface, never directly into the computer. The Mac's headphone jack is behind the monitor and you'd have to reach back there; the interface has a jack on the front or side."
 
 **Knobs to zero first.** Before anything else, have students turn all three interface knobs (gain, main, headphone) all the way down. *Say why:* "If something is set wrong, you can get a sudden loud sound when you plug in. Starting at zero protects your ears and the gear. Build the habit now: knobs to zero before any plugging in or out, every time, in this class and anywhere else you touch audio gear."
 
@@ -220,8 +222,7 @@ The lab has different audio interfaces and MIDI keyboards across stations, all c
 
 1. Audio interface → USB hub
 2. Mic → audio interface front-panel input (XLR)
-3. MIDI keyboard → USB hub
-4. Headphones → headphone jack on the audio interface
+3. Headphones → headphone jack on the audio interface
 
 **The headphone slider gotcha.** The lab headphones have an in-line volume slider on the cable. Have students slide it all the way up *before* putting headphones on. This is a real Day 1 trap — students think the gear is broken when actually the slider is at zero. Calling it out early saves 10 minutes of confusion.
 
@@ -289,8 +290,8 @@ Walk them through:
 7. Sign out of any browser accounts (Canvas, Google, etc.); quit the browser
 8. Quit all apps with `Cmd + Q`
 9. Turn the audio interface knobs (gain, main / output, headphone) back to zero
-10. Unplug: headphones from the interface, the interface's USB from the hub, the mic's XLR from both ends, the MIDI keyboard's USB from the hub. Coil cables loosely without kinks
-11. Return everything to the lab's gear storage: interface, mic, MIDI keyboard, headphones, XLR cable
+10. Unplug: headphones from the interface, the interface's USB from the hub, the mic's XLR from both ends. Coil cables loosely without kinks
+11. Return everything to the lab's gear storage: interface, headphones, mic, mic stand, XLR cable
 12. Chair in
 
 Tell them this is the same routine they'll do every session for the rest of the semester. Today it'll take a few extra minutes because it's the first time; once habit, it's about 5 minutes total. The Session Routines card at every station summarizes the same steps for daily reference.
