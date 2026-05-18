@@ -16,10 +16,10 @@
 <div class="title-block">
   <div class="module-tag">Lab reference · Phone recording</div>
   <h1>Recording on Your Phone</h1>
-  <div class="subtitle">How to capture sounds away from the lab and bring them home in a format that works.</div>
+  <div class="subtitle">How to capture sounds on your phone in a format we can use later.</div>
 </div>
 
-<p class="lede">Your library doesn't have to stop at the lab door. With the right app on your phone and a few settings set once, you can record anything that catches your ear: a kettle boiling, a bike chain ticking, footsteps in a stairwell, a friend's voice, a door that sticks. This card walks through the app to install, the settings to set, the recording technique that separates a usable take from an unusable one, and how to get the file off the phone and into Audacity. The lab on Wednesday of Wk 7 covers the prep pipeline that follows.</p>
+<p class="lede">Your library doesn't have to stop at the lab door. With the right app on your phone and a few settings set once, you can record anything that catches your ear: a kettle boiling, a bike chain ticking, footsteps in a stairwell, a friend's voice, a door that sticks. This card walks through the app to install, the settings to set, and the recording technique that separates a usable take from an unusable one. Getting the recordings off the phone and into Audacity is its own short workflow, covered on a separate card.</p>
 
 <hr>
 
@@ -53,7 +53,7 @@
   <li><strong>Back</strong> faces the same direction as the rear cameras. Good when you can point the camera at the source: a faucet across the kitchen, a door opening, a person on the other side of a table. Also good for surface sounds: lay the phone face-down on the surface itself, the back mic is then pointing right at it.</li>
 </ul>
 
-<p><strong>Frequency mode</strong> sets the sample rate. Choose <strong>48 kHz</strong>. It's the standard rate for digital audio recording and the native rate for most phone hardware. (96 kHz is technically higher resolution but produces much larger files for no audible benefit on a phone mic.)</p>
+<p><strong>Frequency mode</strong> sets the sample rate. Choose <strong>48 kHz</strong>. It's the standard rate for digital audio recording and the native rate for most phone hardware. (96 kHz is technically higher resolution but produces much larger files for no audible benefit on a phone mic.) The app records at <strong>24-bit</strong> depth automatically; you don't pick it. So every recording you make is 48 kHz / 24-bit WAV. This is different from the Module 2 Audacity project standard of 44.1 kHz / 16-bit, which means imported phone recordings need a sample-rate conversion (resampling) before they fit into the library. Wed Wk 7's lab walks through that step. Resampling is a normal, routine operation in recording work; it's not a sign anything went wrong.</p>
 
 <p><strong>Pickup pattern</strong> sets how the mic responds to direction. The available options depend on which mic mode you picked:</p>
 
@@ -63,13 +63,23 @@
   <li>With <strong>back</strong>, you get <strong>omni</strong>, <strong>subcardioid</strong>, or <strong>stereo</strong>. Subcardioid is like cardioid but less directional, picking up some sound from the sides.</li>
 </ul>
 
-<p>For most sounds, start with <strong>omni</strong>. Omni is the most forgiving and the most honest: it captures what the mic actually hears. Try <strong>cardioid</strong> or <strong>subcardioid</strong> when you want to reject room noise or other sounds coming from behind the mic. Try <strong>stereo</strong> for ambient recordings where left/right separation matters (a hallway, a courtyard, anywhere the spatial feel is part of the recording).</p>
+<div class="callout">
+  <div class="callout-label">Polar patterns, a quick recap</div>
+  <p>Monday's lecture introduced cardioid as one pattern out of a larger family. The image below shows the most common ones. Each shape is the mic's sensitivity to sound coming from different directions: the front of the mic is at the top of each shape, and the further the shape extends in any direction, the more strongly the mic picks up sound from there.</p>
+  <figure>
+    <img src="../../assets/images/module-03-week-06/polar-patterns-overview.png"
+         alt="Six microphone polar patterns shown as 3D balloon shapes around microphone icons. Cardioid: heart-shaped, full in front, narrow at sides, near-zero behind. Super-cardioid: tighter front lobe than cardioid, small rear lobe. Hyper-cardioid: even tighter front lobe, larger rear lobe. Bi-directional (figure-8): equal pickup front and back, near-zero at the sides; labeled 'noise cancelling.' Omni: a sphere, equal pickup in all directions. Shotgun: long narrow tube of pickup directly in front, small side and rear lobes."
+         style="max-width: 100%; height: auto;">
+    <figcaption>Common polar patterns. The course meets the rest of these in next Monday's lecture.</figcaption>
+  </figure>
+  <p>The iPhone app's pickup-pattern menu names match these shapes: <strong>omni</strong> is the sphere, <strong>cardioid</strong> is the heart, <strong>subcardioid</strong> sits between omni and cardioid. <strong>Stereo</strong> isn't on this chart; it's the app combining multiple iPhone mics to produce a left-right image rather than a single pattern.</p>
+</div>
 
-<p>The app also lets you pick bit depth in the same mic menu. Choose <strong>24-bit</strong>. It gives you more headroom for later editing without making files unreasonably large.</p>
+<p>For most sounds, start with <strong>omni</strong>. Omni is the most forgiving and the most honest: it captures what the mic actually hears. Try <strong>cardioid</strong> or <strong>subcardioid</strong> when you want to reject room noise or other sounds coming from behind the mic. Try <strong>stereo</strong> for ambient recordings where left/right separation matters (a hallway, a courtyard, anywhere the spatial feel is part of the recording).</p>
 
 <h3>Android (Field Recorder)</h3>
 
-<p>This app has more knobs than the iPhone one, and it's worth the setup time. Two things to set:</p>
+<p>Two things to set:</p>
 
 <p><strong>Input configuration.</strong> The switch labeled <strong>In:MicA</strong> at the top of the display cycles through several input configurations: <strong>In:MicA</strong> through <strong>In:MicE</strong>, plus <strong>In:Raw</strong>. These don't just pick a microphone; they pick how Android pre-processes the signal before sending it to the app. Most configurations apply manufacturer-chosen processing (automatic gain control, noise suppression, echo cancellation). <strong>In:Raw</strong> turns that pre-processing off and gives you the rawest possible signal, which is what you want.</p>
 
@@ -107,44 +117,9 @@
 
 <hr>
 
-<h2>4 · Getting the file off the phone</h2>
+<h2>4 · What's next</h2>
 
-<h3>iPhone → Mac via AirDrop</h3>
-
-<ol class="steps">
-  <li>Open Lossless Field Recorder's recording list.</li>
-  <li>Tap the recording you want to send.</li>
-  <li>Tap the share icon and choose <strong>AirDrop</strong>.</li>
-  <li>Pick your Mac from the AirDrop list. The file lands in your <code>Downloads</code> folder as a <code>.wav</code>.</li>
-</ol>
-
-<h3>Android → Mac</h3>
-
-<ol class="steps">
-  <li>In Field Recorder, tap the filename shown in the display to open the file list.</li>
-  <li>Long-press or tap the file you want to send (the exact gesture depends on your phone).</li>
-  <li>Use the Android share sheet to send the file by your preferred path:
-    <ul>
-      <li>Upload to Google Drive on the phone, then download from the Drive website on your Mac.</li>
-      <li>Plug the phone into the Mac with a USB cable and copy the file using the Android File Transfer app.</li>
-      <li>Email the file to yourself.</li>
-    </ul>
-  </li>
-</ol>
-
-<hr>
-
-<h2>5 · Into Audacity</h2>
-
-<p>Drag the WAV onto the Audacity window (or use <strong>File → Import → Audio</strong>). The file opens directly: no conversion step, no extra libraries.</p>
-
-<p>Your phone recording is at 48 kHz / 24-bit. Your Audacity project for the sample library is at 44.1 kHz / 16-bit (the Module 2 standard). Audacity will tell you about the mismatch on import. <strong>Resampling the imported recording to match the project rate is part of the prep pipeline.</strong> The Wed Wk 7 lab walks through the right way to do it, why you do it, and what gets lost or doesn't when you resample. Don't worry about it before then; just import and proceed.</p>
-
-<hr>
-
-<h2>6 · What's next</h2>
-
-<p>You can grow your library between now and the Wed Wk 7 lab by recording anything that catches your ear and saving the WAV files somewhere you can find them. The prep step (resample, denoise, trim, normalize, name, file) waits for lab time, when you can sit at a station, use headphones, and apply the pipeline deliberately.</p>
+<p>You can grow your library between now and the Wed Wk 7 lab by recording anything that catches your ear and keeping them in the app (we will work on transferring them over to Audacity next week).</p>
 
 <p>Some things that record well on a phone, to get you started:</p>
 
