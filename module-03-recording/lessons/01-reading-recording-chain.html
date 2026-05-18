@@ -618,6 +618,30 @@
 
 <hr>
 
+<h2>6 · Why audio interfaces vary so much in price</h2>
+
+<p>The PreSonus AudioBox USB 96 and the Behringer U-Phoria UM2 both retail for about $100. Look at Sweetwater's audio interface catalog, though, and the price range runs from around $50 at the bottom to over $7,000 at the top. Hosken's <em>Introduction to Music Technology</em> calls out the same range: from a few hundred dollars for a simple interface to about $1,000 for a midrange unit to over $10,000 for a high-end studio system. What changes across that range?</p>
+
+<p>The honest answer first: more expensive doesn't automatically mean better-sounding for what you're doing. Hosken puts it well: "price is often some sort of indicator of quality, though it is as uneven an indicator for audio interfaces as it is for cars or refrigerators." A $100 interface from a reputable manufacturer can produce recordings indistinguishable from a $1,000 one for many situations. What expensive interfaces buy you is some combination of more inputs and outputs, higher-quality components, additional features for specific workflows, and (sometimes) brand cachet. Several dimensions of variation cluster together as price climbs.</p>
+
+<ul>
+  <li><strong>Channel count (I/O).</strong> The biggest single driver. Both lab interfaces are 2-in / 2-out: two inputs come in, two outputs go out. If you want to record a four-piece band live (drums alone might want six or eight mics), you need an interface with at least that many simultaneous inputs and preamps. Step up to mid-range and you'll see 4-in / 4-out, 8-in / 8-out, and (in flagship units) 18-in / 20-out or higher. Most of the price climb from $100 to $500 is paying for more channels.</li>
+
+  <li><strong>Preamp count and character.</strong> Each mic input needs its own preamp circuit, so more inputs means more preamps; that's part of the channel-count story. Beyond count, some interfaces are designed around a particular preamp <em>sound</em>: the warmth of a vintage tube preamp, the punch of a 1970s console, the transparency of a modern boutique design. Universal Audio's Apollo line, Solid State Logic's SSL series, and Neve's interfaces all sell partly on the strength of their preamp character. For the technical work in this course, the standard solid-state preamps in the lab interfaces are completely fine; preamp character becomes a creative tool once you're recording the kinds of musical sources where its color makes a perceptible difference.</li>
+
+  <li><strong>Conversion quality (ADC/DAC).</strong> Module 2 introduced bit depth and sample rate. The lab interfaces run 24-bit at up to 96 kHz, which is solidly standard. Higher-end interfaces push further: 32-bit float, sample rates up to 192 kHz or 384 kHz, with converters designed for wider dynamic range (the gap between the quietest detail the converter can resolve and the loudest signal it can handle without clipping) and lower self-noise. The gain from a $2,000 converter over a $100 one is real but small, and audible mainly on sources that are themselves very quiet and very dynamic (a solo voice in a treated room, an unaccompanied acoustic instrument).</li>
+
+  <li><strong>Connectivity and latency.</strong> Latency is the round-trip delay we met in section 5: how long it takes a signal to leave the mic, reach the computer, and come back to the headphones. Faster connection protocols and better-engineered drivers cut that delay. The lab interfaces use USB 2.0 (the slower, older USB), which is fine for the work we'll do because direct monitoring sidesteps the latency problem entirely. Mid-range interfaces often use USB-C; high-end interfaces use Thunderbolt (much faster, much lower latency) or PCIe (the interface installs directly inside the computer). Below about 5 milliseconds of round-trip latency, you can monitor through the computer with plug-in effects running in real time without it feeling lagged. That's a workflow the lab interfaces don't enable, and a real reason to spend more.</li>
+
+  <li><strong>Onboard DSP.</strong> Some higher-end interfaces include their own processors (the Apollo line and the SSL 2+ are two examples) that run audio effects (compressors, EQs, reverbs, even amp simulations) directly on the interface, before the signal ever reaches the computer. This is how you get plug-in effects with near-zero latency. The lab interfaces have none of this; any processing has to happen inside Audacity or Ableton after the fact.</li>
+
+  <li><strong>Digital I/O and expansion.</strong> Look at the back of a $1,000 interface and you'll see connectors the lab interfaces don't have: <strong>ADAT</strong> (an 8-channel optical digital connection for adding eight more preamps via an external preamp box), <strong>S/PDIF</strong> (a stereo digital connection for routing audio digitally between gear), <strong>AES/EBU</strong> (the professional version of S/PDIF, carried over XLR cables), <strong>MADI</strong> (64 channels of audio over a single cable, used in large studios), and <strong>word clock</strong> (a timing reference that keeps multiple digital devices sample-accurate together). These are the connections that let an interface scale up beyond its built-in channel count, by connecting to other digital gear.</li>
+</ul>
+
+<p>The two interfaces in MB2525 are entry-level by deliberate design. A 2-in / 2-out interface, a few hundred dollars cheaper than the next tier up, is exactly enough for the work this course covers: one source recorded at a time, prepped into a sample library, used in compositional work in Audacity (Module 3) and Ableton (Module 4). The features that justify a $500 or $1,000 or $5,000 interface are real, but they answer questions the lab interfaces don't need to answer. Once you can read a spec sheet (the manufacturer's, or a retailer's like Sweetwater's), you can match an interface to a workflow rather than pricing alone.</p>
+
+<hr>
+
 <h2>Vocabulary</h2>
 
 <dl class="vocab">
@@ -689,6 +713,15 @@
 
   <dt>Monitor mix</dt>
   <dd>The knob on an audio interface that blends the live input signal with the computer playback in your headphones. Turn it toward "input" when you want to hear what the mic is picking up; toward "playback" when you want to hear what's already in the DAW.</dd>
+
+  <dt>Latency</dt>
+  <dd>The round-trip delay between a sound entering an interface and coming back out of the headphones after a trip through the computer. Measured in milliseconds. Direct monitoring avoids it by routing the live signal around the computer entirely. Faster connection protocols (Thunderbolt, USB-C) lower it; older USB 2.0 interfaces have more of it.</dd>
+
+  <dt>DSP</dt>
+  <dd>Digital signal processing. The audio computations a computer (or a dedicated processor inside an interface) performs on a digital signal: EQ, compression, reverb, modeling, etc. Higher-end interfaces include onboard DSP that runs effects without taxing the computer.</dd>
+
+  <dt>Digital I/O</dt>
+  <dd>Inputs and outputs that carry audio as a digital signal rather than as an analog voltage. Common types: ADAT (8 channels of optical audio over a single cable), S/PDIF (2 channels of digital audio over RCA or optical), AES/EBU (the professional version of S/PDIF over XLR), MADI (up to 64 channels over a single cable). Higher-end interfaces include digital I/O for expanding their channel count by connecting to other digital gear.</dd>
 </dl>
 
 <hr>
@@ -701,6 +734,7 @@
   <li>Shure (the company that makes the SM57 and SM58) has a series of short, plain-spoken videos on their YouTube channel called "Shure Educational." The episodes on "How a Dynamic Microphone Works" and "Balanced vs. Unbalanced Audio" cover the same ground as this reading with animation.</li>
   <li>The Wikipedia article on the XLR connector has a good cutaway diagram and a brief history of why audio settled on this connector design.</li>
   <li>If you want a deeper look at preamps, audio interfaces, and the analog-to-digital conversion process, the Sound on Sound magazine archive (free online) has decades of accessible articles. Search for "gain staging" or "preamp basics" as starting points.</li>
+  <li>Sweetwater's InSync articles (sweetwater.com/insync) are the most accessible reference for understanding what's on the market. "Choosing the Best USB Audio Interface on Any Budget" and the annual "Best USB Audio Interfaces" roundup walk through specific units in each tier, with the kind of plain-language explanations that translate spec-sheet jargon into what it actually means for a recording workflow.</li>
 </ul>
 
 <footer class="handout-footer">
