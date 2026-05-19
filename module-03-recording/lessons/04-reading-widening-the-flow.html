@@ -537,6 +537,13 @@
 
 <p>"DI" stands for <strong>direct injection</strong>, or sometimes just <strong>direct input</strong>. A DI box takes an unbalanced instrument-level signal (the kind that comes out of a guitar) and outputs a balanced mic-level signal (the kind a mic input expects). It does two jobs at once: it lowers the signal level, and it converts unbalanced to balanced.</p>
 
+<figure>
+  <img src="../../assets/images/module-03-week-07/radial-prodi-di-box.jpg"
+       alt="A Radial Pro DI box, a small green metal box with the labels PRO DI and PASSIVE DIRECT BOX printed on top. The front edge has a 1/4 inch INPUT jack, a -15 dB PAD switch, and a 1/4 inch THRU jack. The side panel is labeled LOW-Z OUT 600 ohm, indicating where the XLR output sits."
+       loading="lazy">
+  <figcaption>A Radial Pro DI, one of the most common passive DI boxes in live and studio use. The guitar plugs into the 1/4" INPUT on the front; the balanced mic-level XLR output sits on the side. The THRU jack passes the unbalanced signal along to a guitar amp at the same time, which lets you record direct and amp the signal simultaneously.</figcaption>
+</figure>
+
 <p>The use case: imagine a band playing live in a venue with a long stage. The guitarist's amp is at the back of the stage; the mixing console is at the back of the venue, fifty feet away. The guitarist wants to send a signal from their guitar (or from a pedal output) all the way to the mixer. Running a TS cable that distance would be a noise disaster: an unbalanced cable that long picks up enough electromagnetic interference to drown the signal. The solution: plug the guitar into a DI box at the stage end, run a long XLR cable from the DI's output to the mixer, and let the balanced cable reject the noise along the way. At the mixer, the signal enters a mic input as if it had come from a microphone.</p>
 
 <p>The studio use case is similar. If you want to record a bass guitar directly into a mic input on a mixer that has no instrument-level inputs of its own, plug the bass into a DI, plug the DI into the mic input, and you've matched the signal to what the input wants. Many DI boxes are <strong>passive</strong> (no power needed, the level change comes from a transformer inside) and some are <strong>active</strong> (powered, often by phantom power from the mic input it feeds, with extra circuitry that handles the impedance change more gracefully).</p>
@@ -544,6 +551,12 @@
 <h3>5.2 · The hardware preamp</h3>
 
 <p>A <strong>preamp</strong> takes a mic-level signal and amplifies it to line level. You already know that audio interfaces have built-in preamps on their mic inputs (that's what the gain knob controls). A <strong>hardware preamp</strong> is the same circuit, but as a standalone box rather than part of an interface, often built with specific design choices that give the amplification a distinctive sound. Two kinds of distinctiveness show up.</p>
+
+<figure>
+  <img src="../../assets/images/module-03-week-07/rme-quadmic-preamp.jpg"
+       alt="An RME QuadMic four-channel hardware preamp, shown from the front and the back. The front panel has four identical channel strips, each with a +48V phantom power button, Lo Cut button, Phase button, a large gain knob ranging from +6 to +60 dB, and Sig and Clip LEDs. The back panel shows four combo XLR jacks labeled Microphone / Line Inputs on the right and four 1/4 inch Line Level Outputs on the left, plus a power input.">
+  <figcaption>An RME QuadMic four-channel hardware preamp, front and back. Each channel has its own gain knob, +48V switch, and signal indicators on the front. The back makes the preamp's job visible: mic-level XLR signals come in on the right, line-level outputs leave on TRS jacks on the left. A standalone preamp like this is what you add when you want more channels than your interface offers, or when you want a particular preamp's sound on the way to the recorder.</figcaption>
+</figure>
 
 <p>The first is technical: a high-quality outboard preamp can be quieter (lower self-noise) and more transparent than the budget preamps in a $100 audio interface. For very quiet sources recorded with sensitive condenser mics, the difference can be audible.</p>
 
