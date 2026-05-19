@@ -566,110 +566,152 @@
 
 <h3>5.3 · The widened chain</h3>
 
-<p>With these pieces in hand, the basic recording chain from Lecture 1 can adapt to almost any source. The diagram below shows three flows side by side: a mic recording (the basic chain you already know), a guitar recording through the interface's instrument input (no DI needed), and a guitar recording through a DI box into a mic input (the situation that arises when the gear at hand doesn't have an instrument input). All three end at the same place (an audio interface, then a computer); they differ in how the signal gets there.</p>
+<p>With these pieces in hand, the basic recording chain from Lecture 1 can adapt to almost any source. The diagram below shows four flows ending at the same audio interface: a mic recording (the basic chain you already know), a mic recording through a hardware preamp into a line input (where the preamp does the amplification instead of the interface), a guitar recording through the interface's instrument input (no DI needed), and a guitar recording through a DI box into a mic input (the situation that arises when the gear at hand doesn't have an instrument input). All four end at the same place; they differ in how the signal gets there.</p>
 
 <figure>
-  <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Three parallel signal flows ending at an audio interface. Top flow: a dynamic mic connects to the interface via an XLR cable carrying mic level. Middle flow: a guitar connects to the interface's instrument input via a TS cable carrying instrument level. Bottom flow: a guitar connects to a DI box via a TS cable, then the DI box connects to the interface's mic input via an XLR cable carrying mic level.">
+  <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Four parallel signal flows ending at one audio interface on the right. Top flow: a dynamic mic connects to the interface via an XLR cable carrying mic level. Second flow: a dynamic mic connects to a hardware preamp via XLR mic level, then the preamp connects to the interface via a TRS cable carrying balanced line level. Third flow: a guitar connects to the interface's Hi-Z instrument input via a TS cable carrying instrument level. Fourth flow: a guitar connects to a DI box via TS instrument level, then the DI box connects to the interface via an XLR cable carrying mic level.">
 
     <defs>
-      <marker id="arrowhead-xlr-2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <marker id="ah-xlr-w" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
         <polygon points="0 0, 10 3, 0 6" fill="var(--cable-xlr)"/>
       </marker>
-      <marker id="arrowhead-ts-2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <marker id="ah-ts-w" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
         <polygon points="0 0, 10 3, 0 6" fill="var(--cable-ts)"/>
+      </marker>
+      <marker id="ah-trs-w" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="var(--cable-trs)"/>
       </marker>
     </defs>
 
     <text x="360" y="22" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
-          fill="var(--accent)">THREE PATHS INTO ONE INTERFACE</text>
+          fill="var(--accent)">FOUR PATHS INTO ONE INTERFACE</text>
 
-    <!-- Audio interface (shared destination) -->
+    <!-- Audio interface (shared destination on the right, spanning all four rows) -->
     <g>
-      <rect x="540" y="160" width="150" height="80" rx="4"
+      <rect x="540" y="60" width="150" height="380" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="615" y="195" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Audio interface</text>
-      <text x="615" y="215" text-anchor="middle"
+      <text x="615" y="240" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Audio</text>
+      <text x="615" y="258" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">interface</text>
+      <text x="615" y="278" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">amplify, digitize</text>
     </g>
 
-    <!-- Flow 1: Mic -->
+    <!-- ROW 1: Mic direct to mic input (y center 95) -->
     <g>
-      <rect x="40" y="60" width="120" height="60" rx="4"
+      <rect x="20" y="65" width="110" height="60" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="100" y="88" text-anchor="middle"
+      <text x="75" y="92" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Dynamic mic</text>
-      <text x="100" y="106" text-anchor="middle"
+      <text x="75" y="110" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">mic level</text>
 
-      <line x1="162" y1="90" x2="538" y2="180"
-            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#arrowhead-xlr-2)"/>
-      <text x="340" y="115" text-anchor="middle"
+      <line x1="132" y1="95" x2="538" y2="95"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-xlr-w)"/>
+      <text x="335" y="82" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="11"
             fill="var(--cable-xlr)">XLR · mic level</text>
-      <text x="340" y="130" text-anchor="middle"
+      <text x="335" y="115" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="9"
             fill="var(--cable-xlr)">→ mic input</text>
     </g>
 
-    <!-- Flow 2: Guitar direct to instrument input -->
+    <!-- ROW 2: Mic through hardware preamp to line input (y center 185) -->
     <g>
-      <rect x="40" y="170" width="120" height="60" rx="4"
+      <rect x="20" y="155" width="110" height="60" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="100" y="198" text-anchor="middle"
+      <text x="75" y="182" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Dynamic mic</text>
+      <text x="75" y="200" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">mic level</text>
+
+      <!-- XLR from mic to preamp -->
+      <line x1="132" y1="185" x2="298" y2="185"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-xlr-w)"/>
+      <text x="215" y="172" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10"
+            fill="var(--cable-xlr)">XLR · mic level</text>
+
+      <!-- Hardware preamp box -->
+      <rect x="300" y="155" width="110" height="60" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="355" y="180" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Hardware</text>
+      <text x="355" y="196" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">preamp</text>
+      <text x="355" y="210" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">mic → line</text>
+
+      <!-- TRS from preamp to interface line input -->
+      <line x1="412" y1="185" x2="538" y2="185"
+            stroke="var(--cable-trs)" stroke-width="2.5" marker-end="url(#ah-trs-w)"/>
+      <text x="475" y="172" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10"
+            fill="var(--cable-trs)">TRS · line level</text>
+      <text x="475" y="205" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9"
+            fill="var(--cable-trs)">→ line input</text>
+    </g>
+
+    <!-- ROW 3: Guitar direct to instrument input (y center 275) -->
+    <g>
+      <rect x="20" y="245" width="110" height="60" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="75" y="272" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Guitar</text>
-      <text x="100" y="216" text-anchor="middle"
+      <text x="75" y="290" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">instrument level</text>
 
-      <line x1="162" y1="200" x2="538" y2="200"
-            stroke="var(--cable-ts)" stroke-width="2.5" marker-end="url(#arrowhead-ts-2)"/>
-      <text x="350" y="190" text-anchor="middle"
+      <line x1="132" y1="275" x2="538" y2="275"
+            stroke="var(--cable-ts)" stroke-width="2.5" marker-end="url(#ah-ts-w)"/>
+      <text x="335" y="262" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="11"
             fill="var(--cable-ts)">TS · instrument level</text>
-      <text x="350" y="215" text-anchor="middle"
+      <text x="335" y="295" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="9"
             fill="var(--cable-ts)">→ Hi-Z (instrument) input</text>
     </g>
 
-    <!-- Flow 3: Guitar through DI to mic input -->
+    <!-- ROW 4: Guitar through DI to mic input (y center 365) -->
     <g>
-      <rect x="40" y="280" width="120" height="60" rx="4"
+      <rect x="20" y="335" width="110" height="60" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="100" y="308" text-anchor="middle"
+      <text x="75" y="362" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Guitar</text>
-      <text x="100" y="326" text-anchor="middle"
+      <text x="75" y="380" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">instrument level</text>
 
-      <!-- TS to DI -->
-      <line x1="162" y1="310" x2="298" y2="310"
-            stroke="var(--cable-ts)" stroke-width="2.5" marker-end="url(#arrowhead-ts-2)"/>
-      <text x="230" y="300" text-anchor="middle"
+      <!-- TS from guitar to DI -->
+      <line x1="132" y1="365" x2="298" y2="365"
+            stroke="var(--cable-ts)" stroke-width="2.5" marker-end="url(#ah-ts-w)"/>
+      <text x="215" y="352" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10"
-            fill="var(--cable-ts)">TS · instrument</text>
+            fill="var(--cable-ts)">TS · instrument level</text>
 
       <!-- DI box -->
-      <rect x="300" y="280" width="90" height="60" rx="4"
+      <rect x="300" y="335" width="110" height="60" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="345" y="308" text-anchor="middle"
+      <text x="355" y="368" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">DI box</text>
-      <text x="345" y="326" text-anchor="middle"
+      <text x="355" y="386" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">inst → mic, balance</text>
 
-      <!-- XLR from DI to interface -->
-      <line x1="392" y1="310" x2="538" y2="225"
-            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#arrowhead-xlr-2)"/>
-      <text x="465" y="290" text-anchor="middle"
+      <!-- XLR from DI to interface mic input -->
+      <line x1="412" y1="365" x2="538" y2="365"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-xlr-w)"/>
+      <text x="475" y="352" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10"
             fill="var(--cable-xlr)">XLR · mic level</text>
-      <text x="465" y="305" text-anchor="middle"
+      <text x="475" y="385" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="9"
             fill="var(--cable-xlr)">→ mic input</text>
     </g>
 
   </svg>
-  <figcaption>The same destination, three ways to get there. Each cable's color names what level it carries (teal = mic, ochre = instrument).</figcaption>
+  <figcaption>The same destination, four ways to get there. Each cable's color names what level it carries: teal = mic, ochre = instrument, plum = balanced line.</figcaption>
 </figure>
 
 <p>What the diagram makes visible: the chain is a sequence of matching steps. At every boundary between two devices, the signal level on the cable matches the input expecting it. When a source produces a signal at the wrong level for the input you have, a signal modifier closes the gap. The DI box is one specific case (instrument level becomes balanced mic level); a hardware preamp is another (mic level becomes line level). Both are tools for making the chain fit together when it otherwise wouldn't.</p>
