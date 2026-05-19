@@ -62,6 +62,65 @@
     .pause p { margin: 0.5rem 0; }
     .pause p:last-child { margin-bottom: 0; }
     .pause figure { margin: 1rem 0; }
+
+    /* Annotated image: numbered markers on a raster image with a key below */
+    figure.annotated img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--rule);
+    }
+    figure.annotated .annotation-key {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-alt);
+      border-left: 2px solid var(--rule);
+      text-align: left;
+    }
+    figure.annotated .annotation-key strong {
+      color: var(--accent);
+    }
+
+    /* Side-by-side figures: two images in a comparison row */
+    figure.compare {
+      margin: 2rem 0;
+    }
+    figure.compare .compare-row {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    figure.compare .compare-item {
+      flex: 1 1 280px;
+      min-width: 0;
+      text-align: center;
+    }
+    figure.compare .compare-item img {
+      max-width: 100%;
+      height: auto;
+    }
+    figure.compare .compare-item .compare-label {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Photo attribution for third-party images */
+    figure .photo-attribution {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--ink-faint);
+      margin-top: 0.4rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -171,6 +230,13 @@
 <p>A line input doesn't need much amplification, because the signal is already strong. The preamp behind a line input applies far less gain than the one behind a mic input. The lab interfaces don't have dedicated line inputs, but they can accept a line-level signal on the 1/4" side of a combo jack (the Behringer is explicit about it, with its input 1 labeled <strong>Mic/Line 1</strong>). Larger interfaces with more channels often dedicate certain inputs to line level only.</p>
 
 <p>There are two flavors of line level worth knowing about. <strong>Consumer line level</strong> (called -10 dBV, the spec a CD player or a typical home stereo uses) sits at around 0.3 volts. <strong>Professional line level</strong> (called +4 dBu, used in studio gear and pro mixers) sits at around 1.2 volts, four times stronger. Plug a consumer-line source into a pro-line input and the signal is quieter than the input expects; plug a pro-line source into a consumer-line input and the signal is too hot. The lab interfaces handle both, but mismatched line levels are a common source of "why is this signal so quiet" (or so loud) in mixed-gear setups.</p>
+
+<figure>
+  <img src="../../assets/images/module-03-week-07/rca-pinout.jpg"
+       alt="A pair of RCA connectors, red and white, with labels showing red as right channel, white as left channel, and the outer shell of each connector as ground."
+       loading="lazy">
+  <figcaption>RCA cables, the consumer-line-level connector you'll find on home stereos and older consumer audio gear. Red = right, white = left, outer shell = ground.</figcaption>
+</figure>
 
 <hr>
 
@@ -297,9 +363,23 @@
 
 <p>XLR also carries balanced line-level signals between professional audio gear. The cable is the same; the signal level changes. The output of a studio preamp going into the input of a mixing console travels over XLR at line level. The output of a microphone going into the input of an interface travels over XLR at mic level. Same cable, different signal, decided by what's plugged in at each end.</p>
 
+<figure>
+  <img src="../../assets/images/module-03-week-07/xlr-pinout.jpg"
+       alt="A pair of XLR connectors, female on the left and male on the right, with the three internal conductors traced and labeled: ground, signal positive, and signal negative."
+       loading="lazy">
+  <figcaption>An XLR cable with its three conductors traced. The two signal wires carry opposite-polarity copies of the audio; the ground completes the circuit and shields the cable from interference.</figcaption>
+</figure>
+
 <h3>2.2 · TS</h3>
 
 <p>A <strong>TS cable</strong> ends in a quarter-inch plug with two metal sections separated by a single insulating ring: the <strong>tip</strong> (T) and the <strong>sleeve</strong> (S). Inside the cable there are two conductors: one for the signal, one for the ground and shield. This is the standard guitar cable, the kind that plugs a guitar into an amplifier or into the Hi-Z input on an audio interface.</p>
+
+<figure>
+  <img src="../../assets/images/module-03-week-07/ts-pinout.jpg"
+       alt="A quarter-inch TS plug with the two sections labeled: Tip and Sleeve."
+       loading="lazy">
+  <figcaption>A quarter-inch TS plug. Two sections separated by a single ring of insulation: the tip carries the signal, the sleeve carries the ground.</figcaption>
+</figure>
 
 <p>TS is <strong>unbalanced</strong>. There's only one copy of the signal traveling down the cable, with the ground returning the current. The balanced-cable trick from Lecture 1 (two opposite-polarity copies, summed at the far end so noise cancels) can't happen here because there's only one copy. Any electromagnetic noise the cable picks up along its run goes straight into the signal. This is why guitar cables work best when they're short, and why running a 50-foot guitar cable across a room full of stage lights produces a noticeable hum.</p>
 
@@ -309,9 +389,23 @@
 
 <p>A <strong>TRS cable</strong> ends in a quarter-inch plug that looks like a TS plug with one extra ring: the <strong>tip</strong> (T), <strong>ring</strong> (R), and <strong>sleeve</strong> (S). Three sections, three conductors inside. That third conductor opens up two different uses depending on what the gear at each end expects.</p>
 
+<figure>
+  <img src="../../assets/images/module-03-week-07/trs-pinout.jpg"
+       alt="A quarter-inch TRS plug with the three sections labeled: Tip, Ring, and Sleeve."
+       loading="lazy">
+  <figcaption>A quarter-inch TRS plug. The extra ring between tip and sleeve adds a third conductor, which is what makes the cable's two different uses possible.</figcaption>
+</figure>
+
 <p>Used <strong>balanced</strong>, the three conductors carry the same noise-rejection trick as an XLR: signal, inverted signal, ground. At the receiving end, the inverted copy is flipped and summed with the original; noise picked up along the cable cancels. This is how a TRS cable carries balanced line-level signals between professional gear. The PreSonus AudioBox's Main Out jacks are TRS for exactly this reason: balanced line-level output to studio monitors. (Take a look at the back of the lab's PreSonus and you'll see them.)</p>
 
 <p>Used <strong>unbalanced</strong>, the three conductors carry a stereo signal: left, right, and ground. This is how headphones work. A pair of headphones has two speakers (one for each ear), each needing its own signal, plus a shared ground. The TRS plug at the end of a headphone cable carries left on the tip, right on the ring, and ground on the sleeve.</p>
+
+<figure>
+  <img src="../../assets/images/module-03-week-07/trs-stereo-pinout.jpg"
+       alt="A TRS quarter-inch plug connected to a pair of over-ear headphones, with three colored wires traced from the plug to the headphones: left channel on the tip, right channel on the ring, and ground on the sleeve."
+       loading="lazy">
+  <figcaption>TRS carrying unbalanced stereo to a pair of headphones. Same cable, same plug, but now the three conductors are left, right, and ground rather than balanced signal and ground.</figcaption>
+</figure>
 
 <p>Same physical cable, two different jobs. Which one is happening depends entirely on what's plugged in at each end. A TRS cable between a mixer's balanced output and a studio monitor's balanced input is carrying balanced mono. A TRS cable between an interface's headphone jack and a pair of headphones is carrying unbalanced stereo. The gear decides.</p>
 
@@ -329,6 +423,20 @@
 <h3>3.1 · The condenser microphone</h3>
 
 <p>Inside a condenser mic, instead of a coil-and-magnet assembly, there are two thin metal plates held very close together, with one of them free to move. Sound waves push the movable plate back and forth, changing the distance between the two plates. The mic measures that changing distance as a changing electrical capacitance, and turns it into an output signal. The full electrical principle isn't important here; what matters is the consequence.</p>
+
+<figure class="annotated">
+  <img src="../../assets/images/module-03-week-07/condenser-microphone-cross-section.webp"
+       alt="Cross-section of a condenser microphone with six numbered red arrows: an arrow approaching from the left showing the incoming sound wave, arrows pointing to two thin vertical plates at the front of the mic (the backplate and the movable diaphragm), an arrow pointing to a capacitor symbol that represents the two plates electrically, an arrow pointing to a resistor symbol that represents the impedance-converter circuit, and an arrow exiting to the right showing the output wire leaving the mic.">
+  <figcaption>The working parts of a condenser microphone</figcaption>
+  <div class="annotation-key">
+    <strong>1.</strong> Acoustic energy (the incoming sound wave)<br>
+    <strong>2.</strong> Backplate (the fixed metal plate at the rear of the capsule)<br>
+    <strong>3.</strong> Diaphragm (the movable metal plate, facing the sound)<br>
+    <strong>4.</strong> Capacitor (the two plates represented as their electrical circuit equivalent)<br>
+    <strong>5.</strong> Impedance-converter circuit (the active electronics that turn the tiny capacitance changes into a usable signal; this is what phantom power runs)<br>
+    <strong>6.</strong> Output wires (the signal leaving the mic on its way to the XLR cable)
+  </div>
+</figure>
 
 <p>Because the movable plate has no coil attached to it, it's far lighter than a dynamic mic's diaphragm. A lighter plate responds more readily to quiet sounds and to fast detail (the high-frequency transients in a hi-hat hit, the breath at the start of a sung consonant, the air around a soft acoustic guitar). Condensers capture those details with a clarity that dynamics smooth over. This is why condensers are the standard studio mic for vocals, acoustic guitar, piano, drum overheads, and anything where you want the recording to feel detailed and present.</p>
 
@@ -353,85 +461,24 @@
 
 <h2>4 · Polar patterns beyond cardioid</h2>
 
-<p>The dynamic mics in the lab are <strong>cardioid</strong>: most sensitive in front, less sensitive at the sides, almost deaf to sound coming from directly behind. That's one polar pattern. Many microphones, especially condensers, can switch between several patterns, and three are common enough to know by name: cardioid, omnidirectional, and figure-8.</p>
+<p>The dynamic mics in the lab are <strong>cardioid</strong>: most sensitive in front, less sensitive at the sides, almost deaf to sound coming from directly behind. That's one polar pattern. Many microphones, especially condensers, can switch between several patterns. Three are common enough to know by name: cardioid, omnidirectional, and figure-8 (sometimes called bi-directional). A handful of other patterns show up as variants of these three.</p>
 
 <figure>
-  <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Three polar patterns side by side. Cardioid on the left, a heart shape full at the front, narrowing at the sides, pinched to zero at the back. Omnidirectional in the middle, a perfect circle the same distance in every direction. Figure-8 on the right, two equal lobes front and back, with the sides pinched to zero.">
-
-    <text x="350" y="22" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
-          fill="var(--accent)">THREE POLAR PATTERNS</text>
-
-    <!-- Cardioid -->
-    <g transform="translate(115, 120)">
-      <circle cx="0" cy="0" r="60" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <circle cx="0" cy="0" r="40" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <circle cx="0" cy="0" r="20" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <!-- Cardioid curve: heart shape, mic facing down (0° at bottom) -->
-      <path d="M 0 55 C 40 55, 55 30, 55 0
-               C 55 -25, 35 -45, 10 -50
-               C 0 -52, -10 -52, -10 -50
-               C -35 -45, -55 -25, -55 0
-               C -55 30, -40 55, 0 55 Z"
-            fill="var(--accent)" fill-opacity="0.12"
-            stroke="var(--accent)" stroke-width="1.5"/>
-      <!-- Center dot for mic position -->
-      <circle cx="0" cy="0" r="2.5" fill="var(--accent)"/>
-      <text x="0" y="90" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600"
-            fill="var(--ink)">cardioid</text>
-    </g>
-
-    <!-- Omnidirectional -->
-    <g transform="translate(350, 120)">
-      <circle cx="0" cy="0" r="60" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <circle cx="0" cy="0" r="40" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <circle cx="0" cy="0" r="20" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <!-- Omni: circle -->
-      <circle cx="0" cy="0" r="50"
-              fill="var(--accent)" fill-opacity="0.12"
-              stroke="var(--accent)" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="2.5" fill="var(--accent)"/>
-      <text x="0" y="90" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600"
-            fill="var(--ink)">omnidirectional</text>
-    </g>
-
-    <!-- Figure-8 -->
-    <g transform="translate(585, 120)">
-      <circle cx="0" cy="0" r="60" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <circle cx="0" cy="0" r="40" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <circle cx="0" cy="0" r="20" fill="none" stroke="var(--rule-soft)" stroke-width="0.6"/>
-      <!-- Figure-8: two circles touching at center, front and back -->
-      <circle cx="0" cy="25" r="25"
-              fill="var(--accent)" fill-opacity="0.12"
-              stroke="var(--accent)" stroke-width="1.5"/>
-      <circle cx="0" cy="-25" r="25"
-              fill="var(--accent)" fill-opacity="0.12"
-              stroke="var(--accent)" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="2.5" fill="var(--accent)"/>
-      <text x="0" y="90" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600"
-            fill="var(--ink)">figure-8</text>
-    </g>
-
-    <!-- Front-of-mic indicator -->
-    <text x="350" y="200" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
-      0° (front of mic) at bottom of each chart
-    </text>
-  </svg>
-  <figcaption>Three patterns at a glance. Each shape shows what the mic picks up from each direction around it; the mic sits at the center dot, facing down.</figcaption>
+  <img src="../../assets/images/module-03-week-07/typical-microphone-polar-patterns.png"
+       alt="A chart of six common microphone polar patterns drawn around microphone bodies. Top row: cardioid (a heart shape, full in front), super-cardioid (a tighter heart shape with a small rear lobe), and hyper-cardioid (an even tighter heart shape with a larger rear lobe). Bottom row: bi-directional (two equal lobes front and back, labeled Noise Cancelling), omni (a sphere around the mic), and shot-gun (a long narrow lobe pointing forward)."
+       loading="lazy">
+  <figcaption>Six common polar patterns. The three you'll meet most often are cardioid, omnidirectional, and bi-directional (figure-8). The other three are variants you'll encounter on specific mics for specific jobs.</figcaption>
 </figure>
 
 <p><strong>Cardioid</strong> rejects what's behind it and emphasizes what's in front. The dominant pattern for live work, where you want the mic to pick up the source and not the room (or the monitor speaker pointed at the performer). The pattern most dynamic mics are stuck with, and the pattern most condensers default to.</p>
 
-<p><strong>Omnidirectional</strong> picks up equally from every direction. A circle. The mic doesn't favor any one direction over another; it captures the whole space around it. Useful when you want the room to be part of the recording (an orchestra at a respectful distance, a piano in a hall, an ambience track for a sound design library) or when the source moves around (a conversation between two people across a table, where pointing the mic at one of them would lose the other).</p>
+<p><strong>Omnidirectional</strong> picks up equally from every direction. A sphere around the mic. The mic doesn't favor any one direction over another; it captures the whole space around it. Useful when you want the room to be part of the recording (an orchestra at a respectful distance, a piano in a hall, an ambience track for a sound design library) or when the source moves around (a conversation between two people across a table, where pointing the mic at one of them would lose the other).</p>
 
-<p><strong>Figure-8</strong> picks up equally from front and back, but rejects sound from the sides. Two equal lobes. Useful for capturing two sources facing each other across a mic (a duet, an interview), or for stereo mic'ing techniques that combine a cardioid and a figure-8 to capture a wide image of a single source.</p>
+<p><strong>Figure-8</strong> (also called bi-directional) picks up equally from front and back, but rejects sound from the sides. Two equal lobes. Useful for capturing two sources facing each other across a mic (a duet, an interview), or for stereo mic'ing techniques that combine a cardioid and a figure-8 to capture a wide image of a single source.</p>
 
-<p>Most condensers labeled "multi-pattern" let you switch between these three (and sometimes a few intermediate ones) using a small switch on the mic body. The polar-pattern choice is a creative decision about what to include and what to exclude. It belongs to the same family of decisions as choosing the mic itself or choosing where to place it.</p>
+<p>The other three patterns in the chart are variants. <strong>Super-cardioid</strong> and <strong>hyper-cardioid</strong> are tighter, more directional versions of cardioid that trade a little rejection at the back for tighter focus at the front; they're common on stage mics that need extra isolation. <strong>Shotgun</strong> is the most directional of all, a narrow forward lobe that's standard in film and television production for picking up dialogue from a distance. You'll meet them mostly in specialized contexts.</p>
+
+<p>Most condensers labeled "multi-pattern" let you switch between cardioid, omni, and figure-8 (and sometimes a few intermediate ones) using a small switch on the mic body. The polar-pattern choice is a creative decision about what to include and what to exclude. It belongs to the same family of decisions as choosing the mic itself or choosing where to place it.</p>
 
 <hr>
 
@@ -620,7 +667,10 @@
   <dd>A polar pattern that picks up sound equally from every direction. Useful when the room is part of the recording or when the source moves around the mic.</dd>
 
   <dt>Figure-8</dt>
-  <dd>A polar pattern that picks up equally from front and back but rejects the sides. Useful for capturing two sources facing each other across a mic, or as one half of a stereo mic'ing technique.</dd>
+  <dd>A polar pattern that picks up equally from front and back but rejects the sides. Also called <strong>bi-directional</strong>. Useful for capturing two sources facing each other across a mic, or as one half of a stereo mic'ing technique.</dd>
+
+  <dt>Super-cardioid, hyper-cardioid, shotgun</dt>
+  <dd>Three variants of the cardioid pattern that trade rejection at the rear for tighter focus at the front. Super- and hyper-cardioid are common on stage mics that need extra isolation from monitors and bleed; shotgun is the most directional, used to pick up dialogue at a distance in film and television production.</dd>
 
   <dt>DI box</dt>
   <dd>A signal modifier (short for "direct injection") that takes an unbalanced instrument-level signal and outputs a balanced mic-level signal. Lets you plug a guitar into a mic input, and lets you send an instrument signal long distances without picking up noise. Passive DIs use a transformer; active DIs are powered (sometimes by phantom power from the input they feed).</dd>
