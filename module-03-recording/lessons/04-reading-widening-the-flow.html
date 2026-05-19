@@ -415,6 +415,12 @@
 
 <p>Same physical cable, two different jobs. Which one is happening depends entirely on what's plugged in at each end. A TRS cable between a mixer's balanced output and a studio monitor's balanced input is carrying balanced mono. A TRS cable between an interface's headphone jack and a pair of headphones is carrying unbalanced stereo. The gear decides.</p>
 
+<div class="callout">
+  <div class="callout-label">A word on mono and stereo</div>
+  <p>A <strong>mono</strong> signal is one channel of audio: one stream of sound, one waveform. A <strong>stereo</strong> signal is two channels, conventionally called left and right, played back through two speakers (or the two sides of a pair of headphones) to give the listener a sense of where sounds are positioned in space. Stereo is two complete audio signals traveling alongside each other, not a single signal split in two.</p>
+  <p>That's why a single TRS cable can carry balanced mono or unbalanced stereo, but never both at once. Three conductors, two ways to spend them: in balanced mono they're (signal+, signal-, ground), one channel with an inverted copy that cancels noise at the receiver; in unbalanced stereo they're (left, right, ground), two channels with no spare conductor for the noise-canceling copy of either one. Balancing requires a copy of the signal; stereo requires a second signal. The cable doesn't have room for both. To send stereo with the noise rejection of balanced, you run <em>two</em> cables, one balanced mono for the left channel and one balanced mono for the right. (This is why the PreSonus has two separate TRS Main Out jacks labeled L and R rather than one stereo jack: each one is a balanced mono output, and together they make a balanced stereo pair.)</p>
+</div>
+
 <h3>2.4 · RCA</h3>
 
 <p>An <strong>RCA cable</strong> ends in a small round plug with a center pin and an outer metal sleeve, designed to push straight into a matching jack rather than locking the way XLR does. RCA cables are <strong>unbalanced</strong> (no noise-rejection trick) and carry one channel of audio per plug. For stereo, you use two of them, conventionally color-coded: <strong>red</strong> for the right channel, <strong>white</strong> (or black) for the left.</p>
@@ -427,8 +433,6 @@
 </figure>
 
 <p>RCA is the standard connector on consumer audio gear: home stereos, CD players, turntables, older DVD players, the back of a TV. It carries <strong>consumer line level</strong> (-10 dBV, the lower of the two line-level flavors from section 1.3). Studios sometimes use RCA too, mostly for connecting consumer-grade source equipment (a turntable into a phono preamp, say) into a professional setup, with the understanding that the level will be lower than pro-line gear expects.</p>
-
-<p>One more place RCA shows up: <strong>S/PDIF digital audio</strong>. The same RCA plug, usually colored orange, sometimes carries a digital stereo signal instead of an analog one. The cable is physically interchangeable with an analog RCA, but what's flowing through it is a stream of digital data, not an audio voltage. The receiving device decides what to do with it based on the input it's plugged into. Same shape, different signal, decided by the gear at each end. (You saw this same pattern with TRS in section 2.3 and with XLR carrying mic or line in section 2.1.)</p>
 
 <div class="callout">
   <div class="callout-label">Too many cables?</div>
@@ -669,13 +673,19 @@
   <dd>A quarter-inch cable with three conductors and a connector that has a tip, a ring, and a sleeve separated by two insulating rings. Can carry balanced line-level (one signal, noise-rejecting) or unbalanced stereo (two signals plus ground). What it's doing depends on what's plugged in at each end. Headphone cables are TRS carrying stereo; pro studio interconnects are TRS carrying balanced mono.</dd>
 
   <dt>RCA cable</dt>
-  <dd>An unbalanced cable with a push-on connector that has a center pin and an outer sleeve. Carries one channel of audio per plug, so stereo uses two (red = right, white or black = left). The standard connector on consumer audio gear; carries consumer line level (-10 dBV). The same plug sometimes carries S/PDIF digital audio instead of analog, conventionally colored orange.</dd>
+  <dd>An unbalanced cable with a push-on connector that has a center pin and an outer sleeve. Carries one channel of audio per plug, so stereo uses two (red = right, white or black = left). The standard connector on consumer audio gear; carries consumer line level (-10 dBV).</dd>
 
   <dt>Balanced cable</dt>
   <dd>A cable that carries two opposite-polarity copies of the signal so the receiving end can cancel out picked-up noise. XLR is always balanced; TRS is balanced when used for mono interconnects; TS is never balanced.</dd>
 
   <dt>Unbalanced cable</dt>
   <dd>A cable that carries a single copy of the signal plus a ground return. Simpler and cheaper than balanced, but vulnerable to noise picked up along the cable's run. TS, RCA, and TRS-used-as-stereo are all unbalanced.</dd>
+
+  <dt>Mono</dt>
+  <dd>A signal made of one audio channel. One waveform, one stream of sound. The signal a single mic produces is mono. A signal sent over a balanced TRS or XLR cable between pro gear is mono (the second conductor is an inverted copy of the same channel, not a different one).</dd>
+
+  <dt>Stereo</dt>
+  <dd>A signal made of two audio channels, conventionally called left and right, played back through two speakers (or the two sides of a pair of headphones) to give the listener a sense of where sounds are positioned in space. Two complete audio signals traveling alongside each other, not one signal split in two. A TRS cable carrying stereo is unbalanced because the cable's three conductors are spent on left, right, and ground, with none left over for the noise-canceling inverted copy.</dd>
 
   <dt>Condenser microphone</dt>
   <dd>A mic that uses two close-spaced metal plates instead of a coil and magnet. The plate spacing changes when sound hits the diaphragm, and the mic measures that change as a changing capacitance. More sensitive to detail and high frequencies than a dynamic. Needs phantom power.</dd>
