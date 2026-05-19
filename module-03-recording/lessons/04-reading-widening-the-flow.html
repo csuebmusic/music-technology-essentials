@@ -77,7 +77,7 @@
   <div class="subtitle">Other signal types, other cables, other mics, plus the boxes that connect them.</div>
 </div>
 
-<p class="lede">Last week we walked the basic recording chain: a dynamic mic, an XLR cable, an audio interface, a computer. That chain works because every stage matches the one before it. Plug in a guitar instead of a mic and the chain comes apart, because a guitar produces a different kind of signal that wants a different cable and a different input. This reading widens the frame to the other signal types, cables, and mics you'll meet in the wild, plus two small boxes that exist to make incompatible stages fit together: the DI box and the hardware preamp. By the end you should be able to walk into any setup, name what's flowing where, and explain why each piece is doing what it's doing.</p>
+<p class="lede">Last week we walked the basic recording chain: a dynamic mic, an XLR cable, an audio interface, a computer. That chain works because every stage matches the one before it. This reading widens the frame to the other signal types, cables, and mics you'll meet in the wild, plus two small boxes that exist to make incompatible stages fit together: the DI box and the hardware preamp.</p>
 
 <div class="callout">
   <div class="callout-label">Today's gear</div>
@@ -88,13 +88,13 @@
 
 <h2>1 · The three signal levels</h2>
 
-<p>The first thing that changes when you swap one source for another is the size of the electrical signal coming out of it. A dynamic microphone produces a tiny voltage. A guitar pickup produces a larger one. A synthesizer produces a larger one still. These are three different <strong>signal levels</strong>, and the names for them are <strong>mic level</strong>, <strong>instrument level</strong>, and <strong>line level</strong>.</p>
+<p>The first thing that changes when you swap one source for another is the strength of the electrical signal coming out of it. A dynamic microphone produces a tiny voltage. An electric guitar produces a stronger one. A synthesizer produces a stronger one still. These are three different <strong>signal levels</strong>, and the names for them are <strong>mic level</strong>, <strong>instrument level</strong>, and <strong>line level</strong>.</p>
 
 <p>The reason this matters is that every input on every piece of audio gear is designed for one signal level. An input designed for mic level expects a tiny signal and amplifies it heavily. Plug a line-level signal into that input and the amplification overloads, distorts, and clips. Plug a mic-level signal into a line input and the signal is so far below what the input expects that it disappears into the noise floor. The levels have to match.</p>
 
 <figure>
   <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Three vertical bars showing the relative sizes of mic-level, instrument-level, and line-level signals. Mic level is a short bar labeled with millivolts. Instrument level is a medium bar labeled with tens of millivolts. Line level is a tall bar labeled with around one volt. Beneath each bar, a small caption names a typical source: dynamic mic, guitar pickup, synthesizer output.">
+       role="img" aria-label="Three vertical bars showing the relative strengths of mic-level, instrument-level, and line-level signals. Mic level is a short bar labeled with millivolts. Instrument level is a medium bar labeled with tens of millivolts. Line level is a tall bar labeled with around one volt. Beneath each bar, a small caption names a typical source: all mics, electric guitar, synthesizer.">
     <defs>
       <pattern id="levelgrid" width="40" height="20" patternUnits="userSpaceOnUse">
         <path d="M 40 0 L 0 0 0 20" fill="none" stroke="var(--rule-soft)" stroke-width="0.5"/>
@@ -118,9 +118,7 @@
     <text x="150" y="195" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">mic level</text>
     <text x="150" y="222" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">dynamic mic</text>
-    <text x="150" y="237" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(condenser, ribbon)</text>
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">all mics</text>
 
     <!-- Instrument-level bar -->
     <rect x="300" y="125" width="100" height="75" fill="var(--bg-alt)"
@@ -132,9 +130,7 @@
     <text x="350" y="182" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">level</text>
     <text x="350" y="222" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">guitar pickup</text>
-    <text x="350" y="237" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(bass, some keys)</text>
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">ex. electric guitar</text>
 
     <!-- Line-level bar -->
     <rect x="500" y="55" width="100" height="145" fill="var(--bg-alt)"
@@ -144,23 +140,21 @@
     <text x="550" y="125" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">line level</text>
     <text x="550" y="222" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">synthesizer</text>
-    <text x="550" y="237" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(mixer, interface out)</text>
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">ex. synthesizer</text>
 
   </svg>
-  <figcaption>Three signal levels, drawn roughly to scale. A line-level signal is around a thousand times larger than a mic-level signal.</figcaption>
+  <figcaption>Three signal levels, drawn roughly to scale. A line-level signal is around a thousand times stronger than a mic-level signal.</figcaption>
 </figure>
 
-<p>The numbers above are rough. Mic level is around a millivolt (one one-thousandth of a volt), instrument level is around a hundred millivolts, and line level is around a volt. The exact figures depend on the source, but the gap between them is the point: a line-level signal is roughly a thousand times larger than a mic-level signal. That's a big enough gap that the input circuits handling each level have to be built differently.</p>
+<p>The numbers above are estimates. Mic level is around a millivolt (one one-thousandth of a volt), instrument level is around a hundred millivolts, and line level is around a volt. The exact figures depend on the source, but the gap between them is the point: a line-level signal is roughly a thousand times stronger than a mic-level signal. That's a big enough gap that the input circuits handling each level have to be built differently.</p>
 
 <h3>1.1 · Mic level</h3>
 
-<p>What comes out of any microphone. The signal is small because the energy producing it (sound waves vibrating a diaphragm) is small. A mic-level signal has to be amplified by a <strong>preamp</strong> before it can be used or recorded. Every audio interface has built-in preamps on its mic inputs. The XLR jack on the front of the PreSonus or the Behringer is a mic input, and turning the gain knob is what controls how much that preamp amplifies the signal.</p>
+<p>What comes out of any microphone. The signal is weak because the energy producing it (sound waves vibrating a diaphragm) is small. A mic-level signal has to be amplified by a <strong>preamp</strong> before it can be used or recorded. Every audio interface has built-in preamps on its mic inputs. The XLR jack on the front of the PreSonus or the Behringer is a mic input, and turning the gain knob is what controls how much that preamp amplifies the signal.</p>
 
 <h3>1.2 · Instrument level</h3>
 
-<p>What comes out of an electric guitar or bass pickup. A pickup is a small coil of wire wound around a magnet; the steel strings vibrate inside the magnetic field and induce a current in the coil. That mechanism produces a signal that's larger than a mic puts out but smaller than a typical line-level source. An instrument-level signal also has high <strong>impedance</strong>, which is an electrical property that affects how the signal travels through a cable and what kind of input it wants. A high-impedance signal plugged into a low-impedance input (like a line input) loses its high frequencies and sounds dull.</p>
+<p>What comes out of an electric guitar or bass pickup. A pickup is a small coil of wire wound around a magnet; the steel strings vibrate inside the magnetic field and induce a current in the coil. That mechanism produces a signal that's stronger than a mic puts out but weaker than a typical line-level source. An instrument-level signal also has high <strong>impedance</strong>, which is an electrical property that affects how the signal travels through a cable and what kind of input it wants. A high-impedance signal plugged into a low-impedance input (like a line input) loses its high frequencies and sounds dull.</p>
 
 <p>Most audio interfaces have a dedicated instrument input for this reason, often marked <strong>Hi-Z</strong> (for "high impedance") or labeled with a little guitar icon. On the front of the PreSonus AudioBox USB 96, the second input has a switch that toggles between mic and instrument modes. On the Behringer U-Phoria UM2, the second input has a similar Mic/Line/Inst selector. When the switch is in the instrument position, the preamp circuit changes to match what a guitar wants.</p>
 
@@ -168,9 +162,9 @@
 
 <p>What comes out of a synthesizer, a mixer's main outputs, a CD player's outputs, an audio interface's outputs, or any device whose job is to send audio onward to another device. Line level is the standard interchange format of professional audio: every piece of audio gear with outputs sends at line level, and every piece with inputs designed to receive from other gear expects line level.</p>
 
-<p>A line input doesn't need much amplification, because the signal is already large. The preamp behind a line input applies far less gain than the one behind a mic input. Some interfaces have dedicated line inputs (the lab interfaces don't, but the Mic/Line switches on each combo input handle this when set to Line). Larger interfaces with more channels often dedicate certain inputs to line level only.</p>
+<p>A line input doesn't need much amplification, because the signal is already strong. The preamp behind a line input applies far less gain than the one behind a mic input. Some interfaces have dedicated line inputs (the lab interfaces don't, but the Mic/Line switches on each combo input handle this when set to Line). Larger interfaces with more channels often dedicate certain inputs to line level only.</p>
 
-<p>There are two flavors of line level worth knowing about. <strong>Consumer line level</strong> (called -10 dBV, the spec a CD player or a typical home stereo uses) sits at around 0.3 volts. <strong>Professional line level</strong> (called +4 dBu, used in studio gear and pro mixers) sits at around 1.2 volts, four times larger. Plug a consumer-line source into a pro-line input and the signal is quieter than the input expects; plug a pro-line source into a consumer-line input and the signal is too hot. The lab interfaces handle both, but mismatched line levels are a common source of "why is this signal so quiet" (or so loud) in mixed-gear setups.</p>
+<p>There are two flavors of line level worth knowing about. <strong>Consumer line level</strong> (called -10 dBV, the spec a CD player or a typical home stereo uses) sits at around 0.3 volts. <strong>Professional line level</strong> (called +4 dBu, used in studio gear and pro mixers) sits at around 1.2 volts, four times stronger. Plug a consumer-line source into a pro-line input and the signal is quieter than the input expects; plug a pro-line source into a consumer-line input and the signal is too hot. The lab interfaces handle both, but mismatched line levels are a common source of "why is this signal so quiet" (or so loud) in mixed-gear setups.</p>
 
 <hr>
 
@@ -293,7 +287,7 @@
 
 <h3>2.1 · XLR (recap)</h3>
 
-<p>The XLR cable from Lecture 1 carries mic-level signals from microphones to interface inputs. Three pins, three conductors inside, balanced: two opposite-polarity copies of the signal and a ground. The balanced design lets the receiving end cancel out any electromagnetic noise picked up along the cable's run, which is why XLR works well for the small mic-level signals where any added noise would be obvious.</p>
+<p>The XLR cable from Lecture 1 carries mic-level signals from microphones to interface inputs. Three pins, three conductors inside, balanced: two opposite-polarity copies of the signal and a ground. The balanced design lets the receiving end cancel out any electromagnetic noise picked up along the cable's run, which is why XLR works well for the weak mic-level signals where any added noise would be obvious.</p>
 
 <p>XLR also carries balanced line-level signals between professional audio gear. The cable is the same; the signal level changes. The output of a studio preamp going into the input of a mixing console travels over XLR at line level. The output of a microphone going into the input of an interface travels over XLR at mic level. Same cable, different signal, decided by what's plugged in at each end.</p>
 
@@ -303,7 +297,7 @@
 
 <p>TS is <strong>unbalanced</strong>. There's only one copy of the signal traveling down the cable, with the ground returning the current. The balanced-cable trick from Lecture 1 (two opposite-polarity copies, summed at the far end so noise cancels) can't happen here because there's only one copy. Any electromagnetic noise the cable picks up along its run goes straight into the signal. This is why guitar cables work best when they're short, and why running a 50-foot guitar cable across a room full of stage lights produces a noticeable hum.</p>
 
-<p>The good news: instrument-level signals are large enough (around 100 millivolts) that a little picked-up noise stays small relative to the signal. The noise floor of an unbalanced cable carrying an instrument-level signal is usually fine. The same cable carrying a mic-level signal would have an unacceptable signal-to-noise ratio, which is part of why mics use balanced XLR.</p>
+<p>The good news: instrument-level signals are strong enough (around 100 millivolts) that a little picked-up noise stays small relative to the signal. The noise floor of an unbalanced cable carrying an instrument-level signal is usually fine. The same cable carrying a mic-level signal would have an unacceptable signal-to-noise ratio, which is part of why mics use balanced XLR.</p>
 
 <h3>2.3 · TRS</h3>
 
@@ -575,16 +569,16 @@
 
 <dl class="vocab">
   <dt>Signal level</dt>
-  <dd>The size of the electrical signal a device produces or expects. Three levels matter in audio work: mic level (smallest, around 1 millivolt), instrument level (around 100 millivolts), and line level (largest, around 1 volt). Every input is designed for one level; mismatched levels produce noise, distortion, or silence.</dd>
+  <dd>The strength of the electrical signal a device produces or expects. Three levels matter in audio work: mic level (weakest, around 1 millivolt), instrument level (around 100 millivolts), and line level (strongest, around 1 volt). Every input is designed for one level; mismatched levels produce noise, distortion, or silence.</dd>
 
   <dt>Mic level</dt>
-  <dd>The signal level produced by any microphone. Small, around 1 millivolt. Needs a preamp before it can be used or recorded. Travels on XLR cables, balanced.</dd>
+  <dd>The signal level produced by any microphone. Weak, around 1 millivolt. Needs a preamp before it can be used or recorded. Travels on XLR cables, balanced.</dd>
 
   <dt>Instrument level</dt>
-  <dd>The signal level produced by electric guitar and bass pickups. Larger than mic level, smaller than line level, around 100 millivolts. Also high-impedance, which is why it wants a dedicated Hi-Z input. Travels on TS cables, unbalanced.</dd>
+  <dd>The signal level produced by electric guitar and bass pickups. Stronger than mic level, weaker than line level, around 100 millivolts. Also high-impedance, which is why it wants a dedicated Hi-Z input. Travels on TS cables, unbalanced.</dd>
 
   <dt>Line level</dt>
-  <dd>The signal level produced by synthesizers, mixers, audio-interface outputs, and most pieces of audio gear designed to send signal onward. Large, around 1 volt. Travels on TRS cables (balanced) or RCA cables (unbalanced consumer); also on XLR (balanced professional). Has two conventional flavors: consumer (-10 dBV, around 0.3 V) and professional (+4 dBu, around 1.2 V).</dd>
+  <dd>The signal level produced by synthesizers, mixers, audio-interface outputs, and most pieces of audio gear designed to send signal onward. Strong, around 1 volt. Travels on TRS cables (balanced) or RCA cables (unbalanced consumer); also on XLR (balanced professional). Has two conventional flavors: consumer (-10 dBV, around 0.3 V) and professional (+4 dBu, around 1.2 V).</dd>
 
   <dt>Impedance</dt>
   <dd>An electrical property of an input or output that affects how a signal travels and how it sounds. High-impedance signals (like a guitar pickup) want high-impedance inputs (the Hi-Z input on an interface). Plugging a high-impedance signal into a low-impedance input loses the high frequencies. A DI box converts high-impedance instrument level to low-impedance mic level.</dd>
