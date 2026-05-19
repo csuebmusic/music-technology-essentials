@@ -89,45 +89,6 @@
     figure.annotated .annotation-key strong {
       color: var(--accent);
     }
-
-    /* Side-by-side figures: two images in a comparison row */
-    figure.compare {
-      margin: 2rem 0;
-    }
-    figure.compare .compare-row {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    figure.compare .compare-item {
-      flex: 1 1 280px;
-      min-width: 0;
-      text-align: center;
-    }
-    figure.compare .compare-item img {
-      max-width: 100%;
-      height: auto;
-    }
-    figure.compare .compare-item .compare-label {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-top: 0.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    /* Photo attribution for third-party images */
-    figure .photo-attribution {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      font-style: italic;
-      color: var(--ink-faint);
-      margin-top: 0.4rem;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
@@ -354,7 +315,7 @@
     </g>
 
   </svg>
-  <figcaption>The three balanced-family cables (XLR and the two quarter-inch types) at a glance, with their connector ends and the number of conductors inside. RCA (covered in 2.4) uses a different connector tradition.</figcaption>
+  <figcaption>Three of the four cables at a glance, with their connector ends and the number of conductors inside. RCA (covered in 2.4) uses a different connector tradition and isn't drawn here.</figcaption>
 </figure>
 
 <h3>2.1 · XLR (recap)</h3>
@@ -487,7 +448,7 @@
 
 <p>Ribbons have a warm, smooth, slightly darker character that engineers reach for on certain sources: brass instruments, guitar amplifiers, voiceover work. They're also fragile: a strong blast of air (a kick drum up close, someone speaking into the mic from a few inches away, a careless drop) can stretch the ribbon and ruin the mic. You won't use ribbons in this course, but they're worth knowing as the third common transducer type so the vocabulary is complete.</p>
 
-<h3>3.3 · Choosing between transducer types</h3>
+<h3>3.3 · Choosing between mic types</h3>
 
 <figure>
   <img src="../../assets/images/module-03-week-07/three-mic-types-comparison.jpg"
@@ -772,7 +733,7 @@
   <dd>A small DC voltage (conventionally +48 volts) sent up an XLR cable from an interface or mixer to power a condenser mic. The +48V switch on an audio interface turns it on or off. Turn it on when using a condenser; off when using a dynamic (or any other mic that doesn't need it).</dd>
 
   <dt>Polar pattern</dt>
-  <dd>The shape of a microphone's sensitivity to sound from different directions. Three common patterns: cardioid (front), omnidirectional (all directions equally), figure-8 (front and back equally, rejecting the sides). Many condenser mics have a switch that selects between patterns.</dd>
+  <dd>The shape of a microphone's sensitivity to sound from different directions. Three patterns are foundational: cardioid (front), omnidirectional (all directions equally), and figure-8 (front and back equally, rejecting the sides). Super-cardioid, hyper-cardioid, and shotgun are variants. Many condenser mics have a switch that selects between patterns.</dd>
 
   <dt>Omnidirectional</dt>
   <dd>A polar pattern that picks up sound equally from every direction. Useful when the room is part of the recording or when the source moves around the mic.</dd>
