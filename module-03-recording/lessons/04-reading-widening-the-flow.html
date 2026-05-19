@@ -15,6 +15,18 @@
       max-width: 100%;
       height: auto;
     }
+    /* Default photo size: connector close-ups and similar product shots
+       look right around hand-size, not full prose-width. */
+    figure img {
+      max-width: 380px;
+      width: 100%;
+      height: auto;
+    }
+    /* Opt-in larger size for annotated diagrams and charts with text
+       labels that need room to read clearly. */
+    figure.diagram img {
+      max-width: 560px;
+    }
     figcaption {
       font-family: var(--mono);
       font-size: 0.78rem;
@@ -424,7 +436,7 @@
 
 <p>Inside a condenser mic, instead of a coil-and-magnet assembly, there are two thin metal plates held very close together, with one of them free to move. Sound waves push the movable plate back and forth, changing the distance between the two plates. The mic measures that changing distance as a changing electrical capacitance, and turns it into an output signal. The full electrical principle isn't important here; what matters is the consequence.</p>
 
-<figure class="annotated">
+<figure class="annotated diagram">
   <img src="../../assets/images/module-03-week-07/condenser-microphone-cross-section.webp"
        alt="Cross-section of a condenser microphone with six numbered red arrows: an arrow approaching from the left showing the incoming sound wave, arrows pointing to two thin vertical plates at the front of the mic (the backplate and the movable diaphragm), an arrow pointing to a capacitor symbol that represents the two plates electrically, an arrow pointing to a resistor symbol that represents the impedance-converter circuit, and an arrow exiting to the right showing the output wire leaving the mic.">
   <figcaption>The working parts of a condenser microphone</figcaption>
@@ -463,7 +475,7 @@
 
 <p>The dynamic mics in the lab are <strong>cardioid</strong>: most sensitive in front, less sensitive at the sides, almost deaf to sound coming from directly behind. That's one polar pattern. Many microphones, especially condensers, can switch between several patterns. Three are common enough to know by name: cardioid, omnidirectional, and figure-8 (sometimes called bi-directional). A handful of other patterns show up as variants of these three.</p>
 
-<figure>
+<figure class="diagram">
   <img src="../../assets/images/module-03-week-07/typical-microphone-polar-patterns.png"
        alt="A chart of six common microphone polar patterns drawn around microphone bodies. Top row: cardioid (a heart shape, full in front), super-cardioid (a tighter heart shape with a small rear lobe), and hyper-cardioid (an even tighter heart shape with a larger rear lobe). Bottom row: bi-directional (two equal lobes front and back, labeled Noise Cancelling), omni (a sphere around the mic), and shot-gun (a long narrow lobe pointing forward)."
        loading="lazy">
