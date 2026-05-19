@@ -238,18 +238,11 @@
 
 <p>There are two flavors of line level worth knowing about. <strong>Consumer line level</strong> (called -10 dBV, the spec a CD player or a typical home stereo uses) sits at around 0.3 volts. <strong>Professional line level</strong> (called +4 dBu, used in studio gear and pro mixers) sits at around 1.2 volts, four times stronger. Plug a consumer-line source into a pro-line input and the signal is quieter than the input expects; plug a pro-line source into a consumer-line input and the signal is too hot. The lab interfaces handle both, but mismatched line levels are a common source of "why is this signal so quiet" (or so loud) in mixed-gear setups.</p>
 
-<figure>
-  <img src="../../assets/images/module-03-week-07/rca-pinout.jpg"
-       alt="A pair of RCA connectors, red and white, with labels showing red as right channel, white as left channel, and the outer shell of each connector as ground."
-       loading="lazy">
-  <figcaption>RCA cables, the consumer-line-level connector you'll find on home stereos and older consumer audio gear. Red = right, white = left, outer shell = ground.</figcaption>
-</figure>
-
 <hr>
 
 <h2>2 · Cables for each level</h2>
 
-<p>Each signal level has a cable type that conventionally carries it. The cable carries the signal between devices, but it also tells you something about what kind of signal to expect: a cable type is a strong hint about what's flowing through it.</p>
+<p>Four cable types cover almost everything you'll meet in audio work: XLR for mic and balanced line, TS for instrument, TRS for balanced line or unbalanced stereo, and RCA for consumer-line connections. The cable carries the signal between devices, but it also tells you something about what kind of signal to expect: a cable type is a strong hint about what's flowing through it.</p>
 
 <figure>
   <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +250,7 @@
 
     <text x="350" y="22" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
-          fill="var(--accent)">THREE COMMON CABLE TYPES</text>
+          fill="var(--accent)">XLR, TS, AND TRS AT A GLANCE</text>
 
     <!-- XLR -->
     <g>
@@ -361,7 +354,7 @@
     </g>
 
   </svg>
-  <figcaption>The three cable types you'll meet most often, with their connector ends and the number of conductors inside.</figcaption>
+  <figcaption>The three balanced-family cables (XLR and the two quarter-inch types) at a glance, with their connector ends and the number of conductors inside. RCA (covered in 2.4) uses a different connector tradition.</figcaption>
 </figure>
 
 <h3>2.1 · XLR (recap)</h3>
@@ -426,6 +419,21 @@
   <div class="callout-label">A practical consequence</div>
   <p>You can plug a TS cable into a TRS jack and it will mostly work, because the TS plug shorts the ring to the sleeve. The connection becomes unbalanced (no noise rejection), but the signal flows. Plug a TRS cable into a TS jack and the same thing happens in reverse. This is why you can grab almost any quarter-inch cable in the lab and get audio out of it. What you can't do is plug an XLR cable into a quarter-inch jack, or vice versa: the connector shapes are physically incompatible.</p>
 </div>
+
+<h3>2.4 · RCA</h3>
+
+<p>An <strong>RCA cable</strong> ends in a small round plug with a center pin and an outer metal sleeve, designed to push straight into a matching jack rather than locking the way XLR does. RCA cables are <strong>unbalanced</strong> (no noise-rejection trick) and carry one channel of audio per plug. For stereo, you use two of them, conventionally color-coded: <strong>red</strong> for the right channel, <strong>white</strong> (or black) for the left.</p>
+
+<figure>
+  <img src="../../assets/images/module-03-week-07/rca-pinout.jpg"
+       alt="A pair of RCA connectors, red and white, with labels showing red as right channel, white as left channel, and the outer shell of each connector as ground."
+       loading="lazy">
+  <figcaption>A stereo pair of RCA connectors. Red = right channel, white = left channel, the outer metal sleeve on each plug = ground.</figcaption>
+</figure>
+
+<p>RCA is the standard connector on consumer audio gear: home stereos, CD players, turntables, older DVD players, the back of a TV. It carries <strong>consumer line level</strong> (-10 dBV, the lower of the two line-level flavors from section 1.3). Studios sometimes use RCA too, mostly for connecting consumer-grade source equipment (a turntable into a phono preamp, say) into a professional setup, with the understanding that the level will be lower than pro-line gear expects.</p>
+
+<p>One more place RCA shows up: <strong>S/PDIF digital audio</strong>. The same RCA plug, usually colored orange, sometimes carries a digital stereo signal instead of an analog one. The cable is physically interchangeable with an analog RCA, but what's flowing through it is a stream of digital data, not an audio voltage. The receiving device decides what to do with it based on the input it's plugged into. Same shape, different signal, decided by the gear at each end. (You saw this same pattern with TRS in section 2.3 and with XLR carrying mic or line in section 2.1.)</p>
 
 <hr>
 
@@ -658,11 +666,14 @@
   <dt>TRS cable</dt>
   <dd>A quarter-inch cable with three conductors and a connector that has a tip, a ring, and a sleeve separated by two insulating rings. Can carry balanced line-level (one signal, noise-rejecting) or unbalanced stereo (two signals plus ground). What it's doing depends on what's plugged in at each end. Headphone cables are TRS carrying stereo; pro studio interconnects are TRS carrying balanced mono.</dd>
 
+  <dt>RCA cable</dt>
+  <dd>An unbalanced cable with a push-on connector that has a center pin and an outer sleeve. Carries one channel of audio per plug, so stereo uses two (red = right, white or black = left). The standard connector on consumer audio gear; carries consumer line level (-10 dBV). The same plug sometimes carries S/PDIF digital audio instead of analog, conventionally colored orange.</dd>
+
   <dt>Balanced cable</dt>
   <dd>A cable that carries two opposite-polarity copies of the signal so the receiving end can cancel out picked-up noise. XLR is always balanced; TRS is balanced when used for mono interconnects; TS is never balanced.</dd>
 
   <dt>Unbalanced cable</dt>
-  <dd>A cable that carries a single copy of the signal plus a ground return. Simpler and cheaper than balanced, but vulnerable to noise picked up along the cable's run. TS is unbalanced; TRS is unbalanced when used to carry stereo audio (each conductor is a single channel, with no opposite-polarity copy).</dd>
+  <dd>A cable that carries a single copy of the signal plus a ground return. Simpler and cheaper than balanced, but vulnerable to noise picked up along the cable's run. TS, RCA, and TRS-used-as-stereo are all unbalanced.</dd>
 
   <dt>Condenser microphone</dt>
   <dd>A mic that uses two close-spaced metal plates instead of a coil and magnet. The plate spacing changes when sound hits the diaphragm, and the mic measures that change as a changing capacitance. More sensitive to detail and high frequencies than a dynamic. Needs phantom power.</dd>
