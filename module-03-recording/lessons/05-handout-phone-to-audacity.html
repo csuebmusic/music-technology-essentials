@@ -132,7 +132,7 @@
 
 <p>Sample rate is how many measurements per second the recording stores. A 48 kHz file holds 48,000 measurements for every second of sound; a 44.1 kHz file holds 44,100. The samples themselves are just numbers. The rate is the instruction that says how fast to read those numbers back out.</p>
 
-<p>That instruction can be changed in two ways. You can <strong>relabel</strong> the track: tell Audacity to read the same numbers at a different speed. Or you can <strong>recalculate</strong> the track: ask Audacity to figure out what those same sounds would look like if they'd been stored at the new rate, and write new numbers to match. Relabeling is faster (Audacity just changes a setting) but the sound changes audibly. Recalculating is slower (Audacity runs a math operation across the whole track) and the sound is preserved.</p>
+<p>That instruction can be changed in two ways. You can <strong>reinterpret</strong> the track: tell Audacity to read the same numbers at a different speed. Or you can <strong>recalculate</strong> the track: ask Audacity to figure out what those same sounds would look like if they'd been stored at the new rate, and write new numbers to match. Reinterpreting is faster (Audacity just changes a setting) but the sound changes audibly. Recalculating is slower (Audacity runs a math operation across the whole track) and the sound is preserved.</p>
 
 <h3>Try it: change the rate in the Audio Track Dropdown Menu</h3>
 
@@ -146,14 +146,14 @@
   <li>Press <strong>spacebar</strong> again to stop. Press <kbd>Cmd</kbd> + <kbd>Z</kbd> to undo the rate change. The track returns to 48000 Hz and the waveform snaps back to its original length.</li>
 </ol>
 
-<p>What just happened: changing the rate in the dropdown menu didn't recalculate the audio. It changed the label that tells Audacity how fast to read the samples. Reading 48,000 measurements per second at the playback rate of 22,050 meant each second of recording took roughly twice as long to play out, and every sound in it dropped in pitch by the same factor. The numbers on disk never changed; only the speed at which Audacity walked through them.</p>
+<p>What just happened: changing the rate in the dropdown menu didn't recalculate the audio. It changed the rate setting Audacity uses to read the samples back. Reading 48,000 measurements per second at the playback rate of 22,050 meant each second of recording took roughly twice as long to play out, and every sound in it dropped in pitch by the same factor. The numbers on disk never changed; only the speed at which Audacity walked through them.</p>
 
 <p>This is what sample rate <em>is</em>: a pacing instruction, attached to a stream of numbers. The two get used together. Decouple them by force and you hear what each one contributes.</p>
 
 <div class="callout">
-  <div class="callout-label">When relabeling is the move you actually want</div>
+  <div class="callout-label">When reinterpreting is the move you actually want</div>
   <p>Forcing a rate change without recalculation is a tape-style speed-and-pitch shift. The sound goes faster and higher, or slower and lower, in a single fixed ratio. Composers reach for this on purpose all the time (the move that turns a footstep into a stomp, or a voice into a creature) and you'll meet it again as a deliberate technique.</p>
-  <p>The catch: you have to know which operation you're invoking. Not every DAW resamples imported audio automatically; some load the file at its native rate and play it at the project rate, which is the same speed-and-pitch shift you just heard, applied silently to everything that comes in. This is a common source of trouble with downloaded loops, especially drum loops. A 44.1 kHz break dragged into a 48 kHz project plays back faster and higher than it was recorded, and a producer who doesn't check the file's sample rate against the project's may spend an hour wondering why their drums feel slightly off. Look at the rate of every file you import. If it matches the project, you're done. If it doesn't, decide on purpose: resample (preserve the sound) or relabel (use the shift musically).</p>
+  <p>The catch: you have to know which operation you're invoking. Not every DAW resamples imported audio automatically; some load the file at its native rate and play it at the project rate, which is the same speed-and-pitch shift you just heard, applied silently to everything that comes in. This is a common source of trouble with downloaded loops, especially drum loops. A 44.1 kHz break dragged into a 48 kHz project plays back faster and higher than it was recorded, and a producer who doesn't check the file's sample rate against the project's may spend an hour wondering why their drums feel slightly off. Look at the rate of every file you import. If it matches the project, you're done. If it doesn't, decide on purpose: resample (preserve the sound) or reinterpret (use the shift musically).</p>
 </div>
 
 <h3>Resample the imported track</h3>
@@ -171,7 +171,7 @@
   <div class="callout-label">Two operations, one menu name</div>
   <p>The two operations live in two different places:</p>
   <ul>
-    <li><strong>Audio Track Dropdown Menu → Rate → [pick a rate]</strong> changes the label. Same samples, new speed of playback. Pitch and length both shift.</li>
+    <li><strong>Audio Track Dropdown Menu → Rate → [pick a rate]</strong> changes the rate setting on the track. Same samples, new speed of playback. Pitch and length both shift.</li>
     <li><strong>Tracks → Resample…</strong> changes the samples. New samples at the new rate. Pitch and length preserved.</li>
   </ul>
   <p>The rule of thumb: if you want the sound to come along intact, use Resample. If you want the sound to bend, use the dropdown menu. The library standardizes on 44.1 kHz, so for prepping samples the answer is always Resample.</p>
