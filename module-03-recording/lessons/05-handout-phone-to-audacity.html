@@ -71,7 +71,7 @@
   <li>Get a phone recording off the phone and onto the lab Mac.</li>
   <li>Pull your library down from the NAS and open a fresh Audacity project for today's work.</li>
   <li>Import the phone recording into Audacity.</li>
-  <li>Resample it from <strong>48 kHz</strong> down to your project's <strong>44.1 kHz</strong>.</li>
+  <li>Experiment with the track's rate to feel what sample rate is, then resample properly from <strong>48 kHz</strong> down to your project's <strong>44.1 kHz</strong>.</li>
   <li>Run the prep pipeline: <strong>denoise → trim → normalize</strong>.</li>
   <li>Export the prepped sample to a new category folder in your library.</li>
   <li>Worktime: repeat for more phone recordings, record new sounds in the lab, grow the library.</li>
@@ -126,32 +126,59 @@
 
 <h2>Step 4 · Resample to 44.1 kHz</h2>
 
-<p>The phone recorded at 48 kHz. Your project is at 44.1 kHz. To use the recording in this project (and to keep your library consistent), the two rates need to match. The operation that converts a recording from one sample rate to another is called <strong>resampling</strong>.</p>
+<p>The phone recorded at 48 kHz. Your project is at 44.1 kHz. To use the recording in this project (and to keep your library consistent), the two rates need to match. There are <strong>two different operations</strong> in Audacity that look like they change a track's sample rate. They produce very different results. Today's lab introduces both, because the difference between them is the clearest demonstration of what sample rate actually <em>is</em>.</p>
 
-<h3>What resampling does</h3>
+<h3>What sample rate is, and what changing it can mean</h3>
 
-<p>Sample rate is how many measurements the recording stores per second of sound. 48,000 measurements per second is a slightly denser representation than 44,100 per second; both are well above the threshold that captures everything in human hearing. Resampling recalculates the audio at the new rate: Audacity reads the 48 kHz data, runs a math operation that figures out what the same sound would look like at 44.1 kHz, and replaces the track with the recalculated version. The sound stays the same length; the pitch stays the same; what changes is the underlying number of measurements per second.</p>
+<p>Sample rate is how many measurements per second the recording stores. A 48 kHz file holds 48,000 measurements for every second of sound; a 44.1 kHz file holds 44,100. The samples themselves are just numbers. The rate is the instruction that says how fast to read those numbers back out.</p>
 
-<p>Resampling is a normal part of recording work. Anytime two devices were running at different sample rates, you need to resample one to match the other. The reason your library standardizes on 44.1 kHz is so that everything in it can be combined and used together without these conversions happening repeatedly down the line.</p>
+<p>That instruction can be changed in two ways. You can <strong>relabel</strong> the track: tell Audacity to read the same numbers at a different speed. Or you can <strong>recalculate</strong> the track: ask Audacity to figure out what those same sounds would look like if they'd been stored at the new rate, and write new numbers to match. Relabeling is faster (Audacity just changes a setting) but the sound changes audibly. Recalculating is slower (Audacity runs a math operation across the whole track) and the sound is preserved.</p>
+
+<h3>Try it: change the rate in the Audio Track Dropdown Menu</h3>
+
+<p>Before doing the resample for real, do a quick experiment to feel the difference.</p>
+
+<ol class="steps">
+  <li>Open the Audio Track Dropdown Menu (three dots <strong>…</strong> next to the track name) and hover over <strong>Rate</strong>. Confirm <strong>48000</strong> is currently checked.</li>
+  <li>Press <strong>spacebar</strong> to play a few seconds of the recording. Listen, look at the waveform's length on the timeline. Then stop.</li>
+  <li>Open the dropdown again, hover over <strong>Rate</strong>, and click <strong>22050</strong> (about half of 44100). The waveform on the timeline visibly stretches out: the same numbers, read at half the speed, now take twice as long.</li>
+  <li>Press <strong>spacebar</strong>. The recording plays back slower and at a lower pitch.</li>
+  <li>Press <strong>spacebar</strong> again to stop. Press <kbd>Cmd</kbd> + <kbd>Z</kbd> to undo the rate change. The track returns to 48000 Hz and the waveform snaps back to its original length.</li>
+</ol>
+
+<p>What just happened: changing the rate in the dropdown menu didn't recalculate the audio. It changed the label that tells Audacity how fast to read the samples. Reading 48,000 measurements per second at the playback rate of 22,050 meant each second of recording took roughly twice as long to play out, and every sound in it dropped in pitch by the same factor. The numbers on disk never changed; only the speed at which Audacity walked through them.</p>
+
+<p>This is what sample rate <em>is</em>: a pacing instruction, attached to a stream of numbers. The two get used together. Decouple them by force and you hear what each one contributes.</p>
+
+<div class="callout">
+  <div class="callout-label">When relabeling is the move you actually want</div>
+  <p>Forcing a rate change without recalculation is a tape-style speed-and-pitch shift. The sound goes faster and higher, or slower and lower, in a single fixed ratio. Composers reach for this on purpose all the time (the move that turns a footstep into a stomp, or a voice into a creature) and you'll meet it again as a deliberate technique. Today it's an experiment: you used it to feel what sample rate does, not to change your sample.</p>
+</div>
 
 <h3>Resample the imported track</h3>
+
+<p>Now do the real conversion. <span class="menu-path">Tracks → Resample…</span> is the operation that recalculates the audio at the new rate. Pitch and length are preserved; only the number of measurements per second changes.</p>
 
 <ol class="steps">
   <li>Click anywhere in the <strong>Track Control Panel</strong> (the gray box on the left of the track). The whole track highlights to show it's selected.</li>
   <li>From the menu bar: <span class="menu-path">Tracks → Resample…</span></li>
   <li>The Resample dialog opens with a dropdown labeled <strong>New sample rate (Hz)</strong>. Pick <strong>44100</strong>. Click <strong>OK</strong>.</li>
-  <li>Audacity processes the track. To confirm the change took effect, open the Audio Track Dropdown Menu again and hover over <strong>Rate</strong>: <strong>44100</strong> should now be the checked entry. The waveform looks identical; the underlying rate has changed.</li>
+  <li>Audacity processes the track. The waveform's length on the timeline stays the same; if you play it back now it sounds identical to before. Open the Audio Track Dropdown Menu and hover <strong>Rate</strong>: <strong>44100</strong> is now the checked entry, and the audio underneath has been recalculated to match.</li>
 </ol>
 
 <div class="callout">
-  <div class="callout-label">Resample vs. project rate vs. export rate</div>
-  <p>Three different sample rates touch this work, and they're easy to confuse.</p>
+  <div class="callout-label">Two operations, one menu name</div>
+  <p>The two operations live in two different places:</p>
   <ul>
-    <li>The <strong>track's sample rate</strong> is the rate the audio data is stored at on disk. This is what Resample changes.</li>
-    <li>The <strong>project's sample rate</strong> is the rate Audacity uses for playback and for any new recordings made inside the project. You set this in Preferences (44100 Hz for everything in MUS 381).</li>
-    <li>The <strong>export sample rate</strong> is the rate of the WAV file Audacity writes when you export. You'll set this to 44100 in Step 6.</li>
+    <li><strong>Audio Track Dropdown Menu → Rate → [pick a rate]</strong> changes the label. Same samples, new speed of playback. Pitch and length both shift.</li>
+    <li><strong>Tracks → Resample…</strong> changes the samples. New samples at the new rate. Pitch and length preserved.</li>
   </ul>
-  <p>If a track and the project don't match, Audacity will play the track back by resampling on the fly (slower playback, often slightly worse quality, and the file on disk is still at the original rate). Running Resample explicitly is the cleaner move: now everything matches, top to bottom.</p>
+  <p>The rule of thumb: if you want the sound to come along intact, use Resample. If you want the sound to bend, use the dropdown menu. The library standardizes on 44.1 kHz, so for prepping samples the answer is always Resample.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">A note on the project rate</div>
+  <p>There's a third rate hovering nearby: the <strong>project's sample rate</strong>, set in <span class="menu-path">Audacity → Preferences → Audio Settings</span>. That one governs playback and any new recordings made inside the project; you set it to 44100 in Step 2. If the project rate and a track's rate don't match, Audacity quietly resamples the track on the fly during playback, but the file on disk stays at the original rate. Running Resample explicitly is cleaner: now everything (track, project, future export) is at 44100, top to bottom.</p>
 </div>
 
 <hr>
