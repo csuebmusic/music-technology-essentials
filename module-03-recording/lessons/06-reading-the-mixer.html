@@ -353,13 +353,37 @@
 <ul>
   <li><strong>LINE.</strong> 1/4-inch TRS. The line-level balanced input. Where a synth, a DI box's output, or a DAW playback feed plugs in.</li>
   <li><strong>MON.</strong> 1/4-inch TRS. The monitor return: where a track playing back from a recorder or DAW plugs in. The signal here feeds the channel's monitor path (section 3).</li>
-  <li><strong>INSERT.</strong> 1/4-inch TRS, wired as send/return on one cable. The channel's insert point: a place to drop an outboard processor (a compressor, a reverb pedal, a piece of analog gear) into the channel's signal path.
+  <li><strong>INSERT.</strong> 1/4-inch TRS, wired as send/return on one cable. The channel's insert point: a place to drop an outboard processor (a compressor, an external EQ, a piece of analog gear) into the channel's signal path.
 
     <div class="callout">
       <div class="callout-label">A third way to use a TRS cable</div>
       <p>In Lecture 2 you met TRS as a cable with three conductors (tip, ring, sleeve), and saw two ways to wire it: <strong>balanced</strong> (tip = signal, ring = inverted signal, sleeve = ground), and <strong>unbalanced stereo</strong> (tip = left, ring = right, sleeve = ground).</p>
       <p>On an insert: <strong>tip = send</strong> (the channel's signal going out to the outboard processor), <strong>ring = return</strong> (the processor's output coming back into the channel), <strong>sleeve = ground</strong>. The two signal conductors aren't a stereo pair and they aren't a balanced pair. They're a <strong>two-way loop</strong>: one carries the signal out, the other carries the processed signal back, on the same physical cable. The signal leaves the channel, runs out the tip, goes through whatever processor you've patched in, returns through the ring, and re-enters the channel further down the strip. This is what people mean when they say "insert send and return on a single TRS." One cable, two signals, opposite directions.</p>
       <p>Cables wired this way are sometimes called <strong>insert cables</strong>: a TRS plug at one end, two TS plugs at the other (one labeled "send," one labeled "return"), so you can patch the loop into a piece of gear that has separate input and output jacks.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Insert send vs. aux send</div>
+      <p>Both an insert and an aux send have a connector called "send" leaving the strip, and the word does different work in each case.</p>
+      <p>An <strong>aux send</strong> is a <strong>parallel branch</strong>. The aux pulls a copy of the channel's signal off at a tap point and routes it somewhere else. The main flow through the channel keeps going at full strength, untouched. Two signals end up in flight at the same time: the original on the channel, a copy out at the aux destination. Nothing comes back to the channel from an aux send. (The river-with-taps diagram earlier in this section.)</p>
+      <p>An <strong>insert</strong> is a <strong>serial loop</strong>. The insert breaks the channel's signal path: the signal leaves the strip at the tip, runs through the outboard processor, and the <em>processed</em> signal comes back through the ring to take its place. While the loop is active, the original unprocessed signal is no longer on the strip. One signal at a time, briefly diverted through external gear.</p>
+      <p>The two shapes solve different problems. Reach for an aux send when you want the original signal <em>and</em> something else, side by side: the dry vocal in the mix plus a reverb tail behind it, the dry signal plus a delay echoing alongside. Reach for an insert when you want the signal itself shaped: the vocal compressed, the snare gated, the bass distorted. After the insert, the channel is carrying a different version of the same signal; the original is gone.</p>
+      <p>The canonical inserts (effects that work on the signal itself, replacing it with a modified version):</p>
+      <ul>
+        <li><strong>Compressor.</strong> Reduces dynamic range above a threshold. The course met this in Module 2, Reading 7 (Dynamics): threshold, ratio, attack, release. On the console, you patch the compressor into the insert; the channel's signal goes out, gets compressed, comes back compressed.</li>
+        <li><strong>Limiter.</strong> A compressor with a very high ratio, used to catch peaks before they cause distortion downstream. Also in the Module 2 Dynamics reading.</li>
+        <li><strong>Gate (or noise gate).</strong> The opposite of a compressor: silences the signal when it falls <em>below</em> a threshold, then opens up when the signal returns. Useful for cleaning up a noisy mic between phrases, or for tightening the bleed between drum mics.</li>
+        <li><strong>De-esser.</strong> A frequency-selective compressor that engages only on harsh "s" sounds in vocal mics. Same principle as a regular compressor, narrower target.</li>
+        <li><strong>External EQ.</strong> When the four-band EQ on the strip isn't enough (more bands, more precise control, or a particular EQ's musical character), an outboard EQ goes on the insert and shapes the signal in place.</li>
+        <li><strong>Distortion or saturation.</strong> A processor that adds harmonic content to the signal: anything from a guitar pedal to a tape-emulation box. The point is to change what the signal sounds like, so an insert is the right placement.</li>
+      </ul>
+      <p>The canonical aux sends, by contrast (effects that produce a separate wet stream that runs alongside the dry):</p>
+      <ul>
+        <li><strong>Reverb.</strong> A room sound generated from the signal that plays back alongside the original. The aux carries the signal to the reverb unit; the reverb's output returns to a separate channel (one of the stereo effects returns on the submasters, in our console's case) where its level is blended in with the dry mix.</li>
+        <li><strong>Delay.</strong> Echoes of the signal that arrive after the original. Same topology as reverb: aux feeds the delay, delay returns to its own channel for blending.</li>
+        <li><strong>Chorus, flanger, phaser.</strong> Modulation effects that thicken or shimmer a signal. Same aux-send-and-return pattern; the wet stream gets blended with the dry to taste.</li>
+      </ul>
+      <p>The rule of thumb: <strong>if the effect <em>replaces</em> the signal, use an insert. If the effect <em>adds something alongside</em> the signal, use an aux send.</strong> There are exceptions in advanced use (parallel compression sets up a compressor on an aux send for deliberate blend; "insert reverb" exists for special cases), but the rule covers the great majority of decisions you'll make.</p>
     </div>
   </li>
   <li><strong>DIR. O/P.</strong> 1/4-inch. The channel's direct output: a tap of this channel's signal that goes straight to whatever you plug in here, independently of the channel's routing buttons. In a studio session, this is often what feeds the corresponding track of the DAW.</li>
