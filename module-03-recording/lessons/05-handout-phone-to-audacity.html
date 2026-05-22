@@ -82,40 +82,14 @@
 
 <h2>Step 1 · Get the recording off your phone</h2>
 
-<p>The path depends on your phone. Both routes end the same way: a WAV file sitting in your <code>~/Documents/lastname/</code> working folder, ready to import into Audacity.</p>
-
-<p>Today's transfer tool is <strong>LocalSend</strong>: a free, open-source app that moves files directly between two devices on the same Wi-Fi network. It works the same on iPhone, Android, Mac, and Windows, so the procedure below is one set of steps regardless of which phone you have. LocalSend is already installed on every lab Mac; you install it once on your phone, and from then on every transfer is the same five taps.</p>
-
-<h3>One-time setup (on your phone)</h3>
-
-<ol class="steps">
-  <li>On your phone, open the App Store (iPhone) or Google Play (Android) and search for <strong>LocalSend</strong>. The icon is a blue arrow inside a teal square.</li>
-  <li>Install it. It's free on both platforms, no account required.</li>
-  <li>Open the app once after install. Grant the permissions it asks for (local network access on iPhone; nearby device and storage permissions on Android). These let LocalSend see other devices on the Wi-Fi and write the received file to a folder you can find.</li>
-</ol>
-
-<p>That's the one-time piece. You won't repeat it again.</p>
-
-<h3>Sending a recording from phone to Mac</h3>
-
-<ol class="steps">
-  <li>Confirm both devices are on the same Wi-Fi network. The lab Macs and the campus Wi-Fi the phones connect to need to see each other on the network; the TA will confirm at the start of the session which network to be on.</li>
-  <li>On the lab Mac, open <strong>LocalSend</strong> (it's in Applications, or use Spotlight: <kbd>Cmd</kbd> + <kbd>Space</kbd>, type "localsend"). It opens to the <strong>Receive</strong> tab. Note the device name shown at the top of the window (something randomly generated like <em>Quiet Mountain</em> or <em>Patient Coconut</em>).</li>
-  <li>On your phone, open LocalSend. Tap <strong>Send</strong> at the bottom.</li>
-  <li>Tap <strong>File</strong>, then navigate to your recording and select it. (On iPhone, your Lossless Field Recorder files are inside the Files app under <em>On My iPhone → Lossless Field Recorder</em>. On Android, your Field Recorder files are wherever the app saves them, usually <em>Internal storage / Recordings</em>.)</li>
-  <li>The phone shows a list of nearby devices it can see. Tap the lab Mac (find it by the device name you noted in step 2).</li>
-  <li>On the Mac, a window pops up asking to accept the incoming file. Click <strong>Accept</strong>. The transfer completes in a few seconds.</li>
-  <li>The file lands in <code>~/Downloads/</code> on the Mac by default. Move it into your working folder: drag it from <code>Downloads</code> into <code>~/Documents/lastname/</code>.</li>
-</ol>
-
 <div class="callout">
-  <div class="callout-label">If the Mac doesn't appear in the device list</div>
-  <p>Two things to check first: both devices are on the same Wi-Fi network, and LocalSend is open and on the right tab on each side (Receive on Mac, Send on phone). If that's all true and they still don't see each other, the campus network may be blocking device-to-device discovery on that segment. Fall back to <strong>LocalSend Web</strong>: on the Mac, open a browser and go to <a href="https://localsend.org/web">localsend.org/web</a>; on your phone, open the same URL. Both pages show the same QR code; scan the Mac's code from the phone to pair them, and send the file through the browser. No install needed on either side.</p>
+  <div class="callout-label">To be finalized</div>
+  <p>The phone-to-Mac transfer procedure for this lab is pending IT confirmation about network device discovery in MB2525. The procedure will go here once the method is settled. Goal of this step, either way: end with a WAV (or M4A) file from your phone sitting in your <code>~/Documents/lastname/</code> working folder, ready to import into Audacity.</p>
 </div>
 
 <div class="callout">
   <div class="callout-label">Other phone apps</div>
-  <p>If you've been recording with a different app (the iOS Voice Memos app, or a different Android recorder), LocalSend still works the same way; you just point step 4 at wherever that other app saves its files. The file format may be different from what the recommended apps produce: Voice Memos produces M4A, not WAV. Audacity opens M4A directly, and the rest of today's procedure still applies. MP3 also works, with the caveat that MP3 is a lossy format, so it's the most compressed version of your recording. WAV is the cleanest option when the app gives you the choice.</p>
+  <p>If you've been recording with a different app (the iOS Voice Memos app, or a different Android recorder), the same goal applies: get the file onto the lab Mac. The file format may differ from what the recommended apps produce: Voice Memos produces M4A, not WAV. Audacity opens M4A directly, and the rest of today's procedure still applies. MP3 also works, with the caveat that MP3 is a lossy format, so it's the most compressed version of your recording. WAV is the cleanest option when the app gives you the choice.</p>
 </div>
 
 <hr>
@@ -303,8 +277,6 @@
     <tr><th>Action</th><th>Where</th></tr>
   </thead>
   <tbody>
-    <tr><td>LocalSend (Mac)</td><td>Applications → LocalSend (or Spotlight: <kbd>Cmd</kbd> + <kbd>Space</kbd>, "localsend")</td></tr>
-    <tr><td>LocalSend (browser fallback)</td><td><a href="https://localsend.org/web">localsend.org/web</a> on both devices</td></tr>
     <tr><td>Import audio file</td><td><span class="menu-path">File → Import → Audio…</span> · <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></td></tr>
     <tr><td>Resample a track</td><td>Click the Track Control Panel, then <span class="menu-path">Tracks → Resample…</span></td></tr>
     <tr><td>Mix stereo down to mono</td><td><span class="menu-path">Tracks → Mix → Mix Stereo Down to Mono</span></td></tr>
