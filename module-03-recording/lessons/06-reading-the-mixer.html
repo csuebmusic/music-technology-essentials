@@ -36,12 +36,14 @@
       margin-top: 0.3rem;
     }
 
-    /* The channel-strip and wide-photo figures sit larger than the
-       default 480px since they're the conceptual anchors of the reading.
-       The single-strip figures are tall and narrow; the rear-panel and
-       console-overview figures are wide. */
+    /* The annotated input strip is a portrait photo with typeset
+       labels along the right edge. It needs to render larger than the
+       default 480px-equivalent so the labels are readable, but still
+       smaller than full prose-width so it reads as an illustration.
+       The .wide class handles the landscape annotated and rear-panel
+       photos separately. */
     figure.strip img {
-      max-width: 220px;
+      max-width: 400px;
     }
     figure.wide img {
       max-width: 100%;
