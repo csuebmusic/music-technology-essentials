@@ -114,6 +114,20 @@ Files that don't:
 - Lab handouts (Wed): they already carry an `<h2>End of session</h2>` block with the session-specific "what to upload today" steps plus the same "continue with the rest of the card's routine" tail. That block does the same job in heading-and-prose form; adding the callout would double up.
 - The Session Routines card itself, the Day 1 reading, listening pages, and project prompts: same exception list as Today's gear, for the same reasons.
 
+### Lab handout end-of-session tail (canonical sentence)
+
+Every lab handout's End of session block closes with the same sentence pointing back to the Session Routines card:
+
+```
+Then continue with the rest of the card's end-of-session routine: eject the NAS, sign out of browser accounts, quit all apps, knobs back to zero, unplug everything (including the mic's XLR from both ends), stow the gear back in the lab's gear storage, chair in.
+```
+
+The Session Routines card is the canonical source for what's in this list. The sentence is repeated in lab handouts as a salience cue, not as the authoritative procedure. **If the routine changes (a step added, removed, or reordered on the card), update the card first, then sweep every lab handout for the same edit.** Otherwise the cue and the card will drift, and students who follow the cue will skip whatever the card added.
+
+Lab handouts that currently carry this sentence:
+- Module 2 Labs 1, 2, 3
+- Module 3 Labs 1, 2
+
 ## Markdown files (internal)
 
 Markdown docs (module specs, TA notes, this folder) use the H1 to identify themselves:

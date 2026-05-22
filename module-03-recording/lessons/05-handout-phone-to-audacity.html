@@ -53,7 +53,7 @@
   <div class="subtitle">Move sounds off your phone, resample, prep, and add them to your library.</div>
 </div>
 
-<p class="lede">Since the phone reference card went home last week, you've been recording things that caught your ear: a kettle, a hinge, a hallway, whatever. Today you bring those recordings into Audacity, convert them to the format your library uses, run them through the same prep pipeline you learned in Lab 1, and add them to your library.</p>
+<p class="lede">Since the phone reference card went home last week, you've been recording things that caught your ear: a kettle, a hinge, a hallway, something you didn't know you noticed. Today you bring those recordings into Audacity, convert them to the format your library uses, run them through the same prep pipeline you learned in Lab 1, and add them to your library.</p>
 
 <div class="callout">
   <div class="callout-label">Today's gear</div>
@@ -61,8 +61,8 @@
 </div>
 
 <div class="callout">
-  <div class="callout-label">Before you start</div>
-  <p>You'll need <strong>at least one phone recording</strong> to work through Steps 1 through 5. If you didn't get a chance to record anything between last week and today, take five minutes now: airplane mode on, open the app, record any sound from where you're sitting (a zipper, a chair scrape, your own voice describing the lab). Imperfect is fine; you need a file to push through the pipeline.</p>
+  <div class="callout-label">If you arrive without a recording</div>
+  <p>You'll need <strong>at least one phone recording</strong> to work through Steps 1 through 5. If you didn't get a chance to record anything between last week and today, record one before you start the lab flow: airplane mode on, open the app, record any sound from where you're sitting (a zipper, a chair scrape, your own voice describing the lab). Imperfect is fine; you need a file to push through the pipeline.</p>
 </div>
 
 <h2>What we're doing today</h2>
@@ -71,7 +71,7 @@
   <li>Get a phone recording off the phone and onto the lab Mac.</li>
   <li>Pull your library down from the NAS and open a fresh Audacity project for today's work.</li>
   <li>Import the phone recording into Audacity.</li>
-  <li>Experiment with the track's rate to feel what sample rate is, then resample properly from <strong>48 kHz</strong> down to your project's <strong>44.1 kHz</strong>.</li>
+  <li>(4a) Feel what sample rate is by changing it from the Audio Track Dropdown Menu and listening to what happens, then (4b) resample properly from <strong>48 kHz</strong> down to your project's <strong>44.1 kHz</strong>.</li>
   <li>Run the prep pipeline: <strong>denoise → trim → normalize</strong>.</li>
   <li>Export the prepped sample to a new category folder in your library.</li>
   <li>Worktime: repeat for more phone recordings, record new sounds in the lab, grow the library.</li>
@@ -104,6 +104,11 @@
   <li>Save a new project file for today's work: <span class="menu-path">File → Save Project → Save Project As…</span>, and save it as <code>sample-library-week-07.aup3</code> inside <code>~/Documents/lastname/sample-library/audacity-projects/</code>. Keeping a separate project file per session makes it easy to find your work later.</li>
 </ol>
 
+<div class="callout">
+  <div class="callout-label">A note on the project rate</div>
+  <p>The <strong>project's sample rate</strong> (the one you just confirmed in Audio Settings) governs playback and any new recordings made inside the project. It's separate from the sample rate of an individual track imported into the project. The two might match or might not; Step 4 deals with the case where they don't.</p>
+</div>
+
 <hr>
 
 <h2>Step 3 · Import the phone recording</h2>
@@ -124,11 +129,11 @@
 
 <hr>
 
-<h2>Step 4 · Resample to 44.1 kHz</h2>
+<h2>Step 4a · Feel what sample rate is</h2>
 
-<p>The phone recorded at 48 kHz. Your project is at 44.1 kHz. To use the recording in this project (and to keep your library consistent), the two rates need to match. There are <strong>two different operations</strong> in Audacity that look like they change a track's sample rate. They produce very different results. Today's lab introduces both, because the difference between them is the clearest demonstration of what sample rate actually <em>is</em>.</p>
+<p>The phone recorded at 48 kHz. Your project is at 44.1 kHz. To use the recording in this project (and to keep your library consistent), the two rates need to match. There are <strong>two different operations</strong> in Audacity that look like they change a track's sample rate. They produce very different results. This step uses one of them as a hands-on experiment; Step 4b uses the other one for real.</p>
 
-<h3>What sample rate is, and what changing it can mean</h3>
+<h3>Two ways to change a track's rate</h3>
 
 <p>Sample rate is how many measurements per second the recording stores. A 48 kHz file holds 48,000 measurements for every second of sound; a 44.1 kHz file holds 44,100. The samples themselves are just numbers. The rate is the instruction that says how fast to read those numbers back out.</p>
 
@@ -146,7 +151,7 @@
   <li>Press <strong>spacebar</strong> again to stop. Press <kbd>Cmd</kbd> + <kbd>Z</kbd> to undo the rate change. The track returns to 48000 Hz and the waveform snaps back to its original length.</li>
 </ol>
 
-<p>What just happened: changing the rate in the dropdown menu didn't recalculate the audio. It changed the rate setting Audacity uses to read the samples back. Reading 48,000 measurements per second at the playback rate of 22,050 meant each second of recording took roughly twice as long to play out, and every sound in it dropped in pitch by the same factor. The numbers on disk never changed; only the speed at which Audacity walked through them.</p>
+<p>What just happened: changing the rate in the dropdown menu didn't recalculate the audio. It changed the rate setting Audacity uses to read the samples back. Telling Audacity "these 48,000 samples represent one second of sound at 22,050 Hz" makes each second of recording take roughly twice as long to play out, and every sound in it dropped in pitch by the same factor. The numbers on disk never changed; only the speed at which Audacity walked through them.</p>
 
 <p>This is what sample rate <em>is</em>: a pacing instruction, attached to a stream of numbers. The two get used together. Decouple them by force and you hear what each one contributes.</p>
 
@@ -156,7 +161,9 @@
   <p>The catch: you have to know which operation you're invoking. Not every DAW resamples imported audio automatically; some load the file at its native rate and play it at the project rate, which is the same speed-and-pitch shift you just heard, applied silently to everything that comes in. This is a common source of trouble with downloaded loops, especially drum loops. A 44.1 kHz break dragged into a 48 kHz project plays back faster and higher than it was recorded, and a producer who doesn't check the file's sample rate against the project's may spend an hour wondering why their drums feel slightly off. Look at the rate of every file you import. If it matches the project, you're done. If it doesn't, decide on purpose: resample (preserve the sound) or reinterpret (use the shift musically).</p>
 </div>
 
-<h3>Resample the imported track</h3>
+<hr>
+
+<h2>Step 4b · Resample to 44.1 kHz</h2>
 
 <p>Now do the real conversion. <span class="menu-path">Tracks → Resample…</span> is the operation that recalculates the audio at the new rate. Pitch and length are preserved; only the number of measurements per second changes.</p>
 
@@ -177,11 +184,6 @@
   <p>The rule of thumb: if you want the sound to come along intact, use Resample. If you want the sound to bend, use the dropdown menu. The library standardizes on 44.1 kHz, so for prepping samples the answer is always Resample.</p>
 </div>
 
-<div class="callout">
-  <div class="callout-label">A note on the project rate</div>
-  <p>The <strong>project's sample rate</strong>, set in <span class="menu-path">Audacity → Preferences → Audio Settings</span>, governs playback and any new recordings made inside the project; you set it to 44100 in Step 2. If the project rate and a track's rate don't match, Audacity quietly resamples the track on the fly during playback, but the file on disk stays at the original rate. Running Resample explicitly is cleaner: now everything (track, project, future export) is at 44100, top to bottom.</p>
-</div>
-
 <hr>
 
 <h2>Step 5 · Run the prep pipeline</h2>
@@ -200,7 +202,7 @@
 
 <div class="pipeline-list">
   <ol>
-    <li><span class="step-label">Capture noise profile.</span> Use the I-beam to select a quiet region of the phone recording (a second or two of silence before or after the sound itself). Open <span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span> → click <strong>Get Noise Profile</strong>. The dialog closes.</li>
+    <li><span class="step-label">Capture noise profile.</span> Use the I-beam to select a quiet region of the phone recording (a second or two of silence before or after the sound itself). Open <span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span> → click <strong>Get Noise Profile</strong>. The dialog closes. (If your recording has no quiet region anywhere, see the underwater callout below for what to do.)</li>
     <li><span class="step-label">Denoise.</span> Double-click the clip to select the whole thing. Open Noise Reduction again. Leave the sliders at <strong>6, 6.00, 6</strong> (a gentle starting point). Click <strong>OK</strong>.</li>
     <li><span class="step-label">Trim.</span> Select just the sound itself with the I-beam, leaving the silence outside the selection. <span class="menu-path">Edit → Remove Special → Trim Audio</span> (<kbd>Cmd</kbd> + <kbd>T</kbd>).</li>
     <li><span class="step-label">Fade.</span> Zoom in (<kbd>Cmd</kbd> + <kbd>1</kbd>) at the start, select about 50 ms, <span class="menu-path">Effect → Fading → Fade In</span>. Zoom out (<kbd>Cmd</kbd> + <kbd>F</kbd>). Repeat at the end with Fade Out.</li>
@@ -238,7 +240,7 @@
   <li>Back in Audacity, double-click the prepped clip to select it.</li>
   <li><span class="menu-path">File → Export Audio…</span> opens the Export dialog. Fill in:
     <ul>
-      <li><strong>File Name:</strong> following the convention <code>[category]-[descriptor]-[variant].wav</code> (e.g. <code>kitchen-kettle-boil.wav</code>, <code>metal-keys-jangle.wav</code>)</li>
+      <li><strong>File Name:</strong> following the convention <code>[category]-[descriptor]-[variant].wav</code>, where the <code>-variant</code> slot distinguishes multiple takes of the same descriptor (e.g. <code>metal-keys-jangle.wav</code> and <code>metal-keys-drop.wav</code>, or <code>kitchen-kettle-boil.wav</code> and <code>kitchen-kettle-pour.wav</code>). When you only have one take of something and don't expect more, you can drop the variant slot: <code>kitchen-kettle.wav</code> is fine. Add the variant later when a second take of the same descriptor comes in.</li>
       <li><strong>Folder:</strong> click <strong>Browse…</strong> and pick the category folder you just created</li>
       <li><strong>Format:</strong> <code>WAV (Microsoft)</code></li>
       <li><strong>Channels:</strong> <strong>Mono</strong> (or <strong>Stereo</strong> if you kept it stereo in Step 3)</li>
@@ -250,7 +252,7 @@
   <li>Click <strong>Export</strong>. Leave the metadata dialog blank.</li>
 </ol>
 
-<p>One sample is now in the library at its new path: for example, <code>~/Documents/lastname/sample-library/kitchen/kitchen-kettle-boil.wav</code>.</p>
+<p>One sample is now in the library at its new path: for example, <code>~/Documents/lastname/sample-library/kitchen/kitchen-kettle-boil.wav</code>, or <code>~/Documents/lastname/sample-library/kitchen/kitchen-kettle.wav</code> if you only have one kettle take so far.</p>
 
 <h3>Update the README</h3>
 
@@ -265,7 +267,9 @@
 
 <h2>Step 7 · Worktime</h2>
 
-<p>The rest of the session is yours. A few good ways to spend it:</p>
+<p>You've now moved one sound off your phone, resampled it, prepped it, exported it, and updated your library README. That's the procedure for every phone recording from here on. The rest of the session is for repetition: more recordings through the same pipeline, more samples in the library, more practice with the moves so they get fast.</p>
+
+<p>A few good ways to spend it:</p>
 
 <ul>
   <li><strong>Push more phone recordings through the pipeline.</strong> If you have several recordings on your phone, repeat Steps 1 through 6 for each one. Each recording gets its own pass; group them into category folders as you go.</li>
@@ -278,7 +282,7 @@
 
 <div class="callout">
   <div class="callout-label">Aim for the midterm</div>
-  <p>The midterm library is due in two weeks (Wed Wk 8). The working target is roughly 15 to 25 prepped sounds, organized in your folder structure with the README up to date. Today is the session where the library starts feeling like a library rather than four paper sounds. Aim for at least 3 to 5 new prepped samples in your library by the end of today; more if you can.</p>
+  <p>The midterm library is due in two weeks (Wed Wk 8). The working target is roughly 15 to 25 prepped sounds, organized in your folder structure with the README up to date. Today is the session where the library starts feeling like a library rather than four paper sounds. Aim for at least 2 to 3 new prepped samples in your library by the end of today; more if the procedure feels comfortable.</p>
 </div>
 
 <hr>
