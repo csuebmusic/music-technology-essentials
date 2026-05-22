@@ -492,7 +492,7 @@ Eight sections from the conceptual frame through the live-vs-studio synthesis: (
 
 The running example throughout: **The Sound Below**, a four-piece (vocals + dynamic mic, electric guitar + amp + dynamic mic, bass + DI box, drums = kick dynamic + snare dynamic + condenser overhead). Six XLR signals into the console. The band's instrumentation deliberately rehearses every signal-and-mic combination from Lectures 1 and 2 so the reading anchors back to what students already know.
 
-The reading uses six photos from the Toft manual: the whole-console overview, a single input strip, a single submaster strip, the master section strip, the rear-panel input section (showing LINE / MON / INSERT / DIR. O/P + XLR per channel), and the rear-panel output section (showing subgroup outputs, monitor returns, effects returns, aux masters, master output). All photos credited to Toft Audio Designs / PMI Audio Group with the standard educational-use line.
+The reading uses six photos: a top-down shot of the studio's actual 16-channel ATB (sourced from Retro Gear Shop), plus five from the Toft manual (single input strip, single submaster strip, master section strip, rear-panel input section showing LINE / MON / INSERT / DIR. O/P + XLR per channel, rear-panel output section showing subgroup outputs, monitor returns, effects returns, aux masters, master output). Manual-sourced photos credited to Toft Audio Designs / PMI Audio Group; the overview photo credited to Retro Gear Shop.
 
 ### Resolved decisions
 
