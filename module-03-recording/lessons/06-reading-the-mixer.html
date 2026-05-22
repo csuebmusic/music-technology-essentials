@@ -175,9 +175,149 @@
 
 <p><strong>Phase reverse and an 80 Hz high-pass filter.</strong> Two small switches. Phase reverse flips the polarity of the signal (sometimes needed when two mics on the same source are partially cancelling each other). The 80 Hz filter rolls off everything below 80 Hz, useful for cutting room rumble or wind on vocal mics.</p>
 
+<div class="callout">
+  <div class="callout-label">Phase, again</div>
+  <p>You met phase in Lecture 1, inside the XLR cable: two wires carrying the same audio, one flipped upside down, summed at the interface so external noise cancels out (peak meets trough, the math collapses to silence). The phase-reverse button on the channel strip does the same flip operation, but here on the <em>whole signal</em>, on purpose. Two mics on the same source can sometimes produce signals that are partially out of phase with each other (some frequencies cancel, leaving the sound thin and hollow). Hitting phase-reverse on one of the two channels flips that channel's polarity and lets you check whether the sum gets stronger or weaker. Stronger means you'd been cancelling something; the flip fixed it. Weaker means leave the button alone.</p>
+</div>
+
 <p><strong>Four-band equaliser.</strong> Four pairs of knobs. Each pair is a frequency control (which band of the spectrum to affect) and a boost/cut control (how much to change it). High, high-mid, low-mid, and low. Each band can boost or cut by 15 dB. The high and low are shelving (everything above or below a frequency moves together); the two middle bands are peaking (a bell curve centered on the chosen frequency). The whole EQ section can be switched into or out of the signal path with one button.</p>
 
+<div class="callout">
+  <div class="callout-label">Same operation, different surface</div>
+  <p>The EQ you used in Audacity (<span class="menu-path">Effect → EQ and Filters → Filter Curve EQ</span>) and the EQ on this channel strip do the same kind of work: boost or cut specific frequency ranges of the signal. The surface is different. In Audacity, you click points on a curve and the software shapes the audio mathematically; on the console, you turn knobs and an analog circuit shapes the signal as the voltage flows through it.</p>
+  <p>The other difference matters more: where in the signal flow the EQ sits. Audacity's Filter Curve EQ <em>changes the audio data on the track</em> when you click Apply (destructive: you can undo it during the session, but if you save and close, the change is permanent). The console's EQ <em>shapes the signal as it passes through the channel strip</em> on its way to the output. Whatever's plugged into the input (the mic on stage, the DAW playback at mixdown) keeps making the sound it was making; only the signal coming out of the channel is shaped. Turn the EQ knobs back to flat, or hit the EQ In/Out button, and the channel returns to passing the signal through unchanged. This is non-destructive: you can change your mind freely, take after take, without ever altering the source.</p>
+</div>
+
 <p><strong>Six aux sends.</strong> Six green knobs, one per aux. Each one is a tap of the signal at this channel that goes out to a separate output on the back of the console (the AUX MASTERS jacks). The level of each tap is set independently of the channel's main fader. Aux 1 is permanently <strong>pre-fader</strong> (the tap happens before the fader, so the fader doesn't affect the aux level). Auxes 3 through 6 can be switched <strong>pre or post</strong>: pre-fader (independent of the fader) or post-fader (the fader controls them along with the main channel signal). What you actually use the aux sends for is the subject of sections 6 and 7.</p>
+
+<div class="callout">
+  <div class="callout-label">A river with taps</div>
+  <p>Think of the channel's signal as a river flowing left to right through the strip, from the input on top down to the fader and out to the L-R bus. The aux sends are taps along the river: small pipes that siphon off a copy of the water into a separate channel running somewhere else, without slowing the main flow. Each aux knob controls how much water its pipe carries; turn it down to zero and that pipe sends nothing.</p>
+  <figure>
+    <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg"
+         role="img" aria-label="Diagram of the aux sends as taps on a signal river. A main horizontal arrow runs left to right from the channel input through the EQ, the aux tap point, the fader, and out to the L-R output. At the aux tap point, three smaller arrows branch downward, each labeled Aux 1, Aux 2, and Aux 3, each going to a separate destination box labeled Aux Master 1, Aux Master 2, and Aux Master 3.">
+      <defs>
+        <marker id="arrowhead-main" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="var(--accent)"/>
+        </marker>
+        <marker id="arrowhead-tap" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+          <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
+        </marker>
+      </defs>
+
+      <text x="360" y="22" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
+            fill="var(--accent)">THE CHANNEL'S SIGNAL, WITH TAPS</text>
+
+      <!-- Input -->
+      <g>
+        <rect x="20" y="65" width="100" height="50" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="70" y="95" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Input</text>
+      </g>
+
+      <!-- Main flow: Input → EQ -->
+      <line x1="122" y1="90" x2="183" y2="90"
+            stroke="var(--accent)" stroke-width="3" marker-end="url(#arrowhead-main)"/>
+
+      <!-- EQ -->
+      <g>
+        <rect x="185" y="65" width="80" height="50" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="225" y="95" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">EQ</text>
+      </g>
+
+      <!-- Main flow: EQ → tap point -->
+      <line x1="267" y1="90" x2="338" y2="90"
+            stroke="var(--accent)" stroke-width="3"/>
+
+      <!-- Tap junction (small dot) -->
+      <circle cx="340" cy="90" r="4" fill="var(--accent)"/>
+      <text x="340" y="58" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">aux tap point</text>
+
+      <!-- Main flow continues: tap → Fader -->
+      <line x1="342" y1="90" x2="423" y2="90"
+            stroke="var(--accent)" stroke-width="3" marker-end="url(#arrowhead-main)"/>
+
+      <!-- Fader -->
+      <g>
+        <rect x="425" y="65" width="80" height="50" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="465" y="95" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Fader</text>
+      </g>
+
+      <!-- Main flow: Fader → L-R out -->
+      <line x1="507" y1="90" x2="578" y2="90"
+            stroke="var(--accent)" stroke-width="3" marker-end="url(#arrowhead-main)"/>
+
+      <!-- L-R bus -->
+      <g>
+        <rect x="580" y="65" width="120" height="50" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="640" y="95" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">L-R output</text>
+      </g>
+
+      <!-- Aux taps: three branches going down from the tap point -->
+      <!-- Each is a thinner dashed arrow + small Aux knob label + destination box -->
+
+      <!-- Aux 1 branch (leftmost) -->
+      <path d="M 340 92 Q 340 140 220 168 L 220 198"
+            fill="none" stroke="var(--accent)" stroke-width="1.5"
+            stroke-dasharray="4 3" marker-end="url(#arrowhead-tap)"/>
+      <text x="240" y="135" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">Aux 1 knob</text>
+      <g>
+        <rect x="155" y="200" width="130" height="42" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.2"/>
+        <text x="220" y="218" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Aux Master 1</text>
+        <text x="220" y="233" text-anchor="middle"
+              font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">e.g. wedge mix</text>
+      </g>
+
+      <!-- Aux 2 branch (middle) -->
+      <path d="M 340 92 L 340 198"
+            fill="none" stroke="var(--accent)" stroke-width="1.5"
+            stroke-dasharray="4 3" marker-end="url(#arrowhead-tap)"/>
+      <text x="350" y="180" text-anchor="start"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">Aux 2 knob</text>
+      <g>
+        <rect x="275" y="200" width="130" height="42" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.2"/>
+        <text x="340" y="218" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Aux Master 2</text>
+        <text x="340" y="233" text-anchor="middle"
+              font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">e.g. headphone cue</text>
+      </g>
+
+      <!-- Aux 3 branch (rightmost) -->
+      <path d="M 340 92 Q 340 140 460 168 L 460 198"
+            fill="none" stroke="var(--accent)" stroke-width="1.5"
+            stroke-dasharray="4 3" marker-end="url(#arrowhead-tap)"/>
+      <text x="440" y="135" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">Aux 3 knob</text>
+      <g>
+        <rect x="395" y="200" width="130" height="42" rx="4"
+              fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.2"/>
+        <text x="460" y="218" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Aux Master 3</text>
+        <text x="460" y="233" text-anchor="middle"
+              font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">e.g. reverb send</text>
+      </g>
+
+      <!-- "...and three more" label to the right -->
+      <text x="600" y="222" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" font-style="italic" fill="var(--ink-soft)">...and three more</text>
+    </svg>
+    <figcaption>The channel's main flow runs left to right; the aux taps siphon off copies of the signal at independent levels.</figcaption>
+  </figure>
+  <p>The main flow doesn't change because of the taps. Whatever level you set on the channel fader, the signal arriving at the L-R bus is the same. The aux taps are <em>parallel</em>: they pull a copy off the main flow without subtracting from it. This is what makes one channel useful to many destinations at once. The vocal mic feeds the main mix (audience), <em>and</em> the singer's wedge (via Aux 1), <em>and</em> a reverb unit (via Aux 4), all simultaneously. One signal, many places, each at its own level.</p>
+</div>
 
 <p><strong>Monitor section.</strong> A second smaller level control, labeled <strong>MON LEVEL</strong>, with its own <strong>MON PAN</strong>. This is a parallel signal path; everything from here down is about that second path, and it's the reason this console is called <em>in-line</em>. We'll unpack the monitor section in section 3.</p>
 
@@ -187,7 +327,7 @@
 
 <p><strong>Routing buttons.</strong> Beside the fader: <strong>L-R</strong> sends this channel to the master stereo output; <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong> send it to one of the four submaster pairs (which become subgroups 1 through 8). The pan knob decides which side of the selected pair the signal goes to.</p>
 
-<p><strong>The fader.</strong> A 100mm vertical slider. The main level control for this channel. Where the channel sits in the final mix.</p>
+<p><strong>The fader.</strong> A 100mm vertical slider. The main level control for this channel. Where the channel sits in the final mix. The scale beside it runs from minus-infinity at the bottom (fader all the way down, signal fully attenuated, no audio passing through) up past -40, -30, -20, -10, -5, through <strong>0</strong> (a thicker line, usually marked with a small notch), and up to +5 and +10 at the top. The 0 mark is called <strong>unity gain</strong>, or just <strong>unity</strong>: the fader is passing the signal through at the same level it came in at, with no change. Above unity, the fader amplifies the signal further (up to +10 dB on this console). Below unity, it attenuates: -10 dB cuts the signal level noticeably; -20 dB cuts it sharply; further down still and the signal is barely audible. The dB scale here is the same kind of decibel scale you saw on Audacity's meters in Lab 1, with the same warning behavior: small moves near the top of the scale do a lot, large moves near the bottom do relatively little.</p>
 
 <p>That's one strip. The console has sixteen of them, identical. Once you understand one, the rest is a question of how to use sixteen of them together.</p>
 
@@ -455,6 +595,7 @@
   <li><strong>Submaster.</strong> On this console, the strip that controls a subgroup. Both names appear in different traditions; "submaster" is what the Toft labels it.</li>
   <li><strong>Aux send.</strong> A separate tap from each channel that goes out to a separate destination. Lets the engineer build a different mix of the same channels for a different purpose (a performer's headphone cue, a reverb send, a monitor wedge).</li>
   <li><strong>Pre-fader / post-fader (aux).</strong> Pre-fader: the aux tap sits before the channel fader, so the fader doesn't affect the aux level. Post-fader: the aux tap sits after the channel fader, so the fader does affect it. Pre-fader is typical for headphone cues; post-fader is typical for reverb sends.</li>
+  <li><strong>Unity gain.</strong> The position on a fader or knob where the signal passes through at the same level it came in at, with no amplification or attenuation. Marked as 0 dB on the scale, usually with a thicker line or a notch. Going above unity boosts the signal; going below unity reduces it.</li>
   <li><strong>Direct out.</strong> A per-channel output that taps the channel's post-fader signal and sends it straight to a single destination (usually one track of a DAW). Independent of routing buttons.</li>
   <li><strong>Insert.</strong> A break in a channel's signal path, exposed as a send/return jack on the back of the console, where an outboard processor (compressor, EQ) can be patched in.</li>
   <li><strong>Talkback.</strong> A small microphone in the master section, plus buttons that route the engineer's voice into the aux outputs (to performers' headphones) or onto the recording (for slating takes).</li>
