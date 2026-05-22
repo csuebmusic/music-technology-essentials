@@ -455,7 +455,13 @@ Eight steps from phone-side transfer through library upload: get the recording o
 
 Introduces the mixer as the place where many signal flows converge, split, and route to different destinations. Up to now students have thought about one flow at a time (one mic, one signal, one input). A mixer is what handles five or ten or twenty flows at once. The pedagogical move: walk through **the same fictional band in two scenarios** (live performance and studio session) to surface what's the same and what's different.
 
-**The fictional band:** to be sketched. Working assumption: 4–5 piece. Vocals, guitar, bass, drums, maybe keys. Each instrument has known mic-and-signal requirements that connect back to Wk 6 Mon and Wk 7 Mon.
+**The fictional band: The Sound Below.** A four-piece, defined in the reading's opening sidebar and reused as the running example through sections 6 and 7. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2:
+- **Vocals:** dynamic mic, mic-level signal, XLR
+- **Electric guitar:** amp mic'ed with a dynamic, mic-level, XLR
+- **Bass guitar:** through a DI box (instrument → mic-level via the DI), XLR
+- **Drums:** three mics, kick (dynamic), snare (dynamic), overhead (condenser, needs phantom power), three XLRs
+
+Six signals into the console total.
 
 **Scenario 1: Live sound.**
 
@@ -480,13 +486,19 @@ Concepts that land here:
 
 ### Reading
 
-[`lessons/NN-reading-the-mixer.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/) *(to be written)*
+[`lessons/06-reading-the-mixer.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/06-reading-the-mixer.html)
 
-### Open questions for when we draft
+Eight sections from the conceptual frame through the live-vs-studio synthesis: (1) the mixer as the place where many flows meet; (2) the channel strip walked top to bottom on the Toft ATB; (3) the in-line architecture (one strip, two paths) and the I/P REV button; (4) the submaster section (subgroups, monitor returns, stereo effects returns); (5) the master section (talkback, monitor switching, 2-track returns, master fader); (6) a live-sound walkthrough using The Sound Below (the running fictional four-piece) at a small venue; (7) the same band tracking in a studio session, with the I/P REV move surfaced at mixdown; (8) the synthesis (auxes and subgroups are the same routing tools in both contexts, only the destination changes). Closes with vocabulary and a "for further exploration" pointer to the Tape Op and Sound on Sound reviews of the console.
 
-- How much detail on the channel strip itself? (Probably: gain, EQ briefly, fader, pan, aux sends, mute/solo. Not: per-band EQ tuning, parametric vs. graphic, etc.)
-- Should the reading include actual photos of mixers, or schematic diagrams, or both? Schematic diagrams probably read more clearly for beginners; a single photo of a real mixer at the start grounds the abstraction.
-- The fictional band needs a name and a defined instrumentation before this is drafted. Worth doing as a one-pager (the band, who's in it, what they play, what mics/signals each one uses) so the reading and the lecture both pull from the same source.
+The running example throughout: **The Sound Below**, a four-piece (vocals + dynamic mic, electric guitar + amp + dynamic mic, bass + DI box, drums = kick dynamic + snare dynamic + condenser overhead). Six XLR signals into the console. The band's instrumentation deliberately rehearses every signal-and-mic combination from Lectures 1 and 2 so the reading anchors back to what students already know.
+
+The reading uses six photos from the Toft manual: the whole-console overview, a single input strip, a single submaster strip, the master section strip, the rear-panel input section (showing LINE / MON / INSERT / DIR. O/P + XLR per channel), and the rear-panel output section (showing subgroup outputs, monitor returns, effects returns, aux masters, master output). All photos credited to Toft Audio Designs / PMI Audio Group with the standard educational-use line.
+
+### Resolved decisions
+
+- **Detail on the channel strip:** the reading covers what's on the front panel of the Toft input strip in beginner-friendly prose (input gain, phase, 80 Hz filter, four-band EQ, six aux sends, monitor section, solo/mute, pan, routing buttons, fader). Doesn't get into per-band EQ tuning or different EQ topologies.
+- **Photos vs schematic diagrams:** photos chosen. The Toft manual's own flow diagrams are too dense for beginners; six photos from the manual ground the explanations in the actual console. Conceptual flow is carried by prose and section structure, not by a master schematic.
+- **The fictional band:** named (The Sound Below), instrumented, and reused across the live and studio sections.
 
 ### Block-by-block
 

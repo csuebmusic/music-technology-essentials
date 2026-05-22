@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · The Mixer</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Reading-specific tweaks (matches Lecture 1 and Lecture 2 in this module) */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure svg {
+      max-width: 100%;
+      height: auto;
+    }
+    figure img {
+      max-width: 480px;
+      width: 100%;
+      height: auto;
+    }
+    figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.75rem;
+    }
+    .photo-attribution {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    /* The channel-strip and wide-photo figures sit larger than the
+       default 480px since they're the conceptual anchors of the reading.
+       The single-strip figures are tall and narrow; the rear-panel and
+       console-overview figures are wide. */
+    figure.strip img {
+      max-width: 220px;
+    }
+    figure.wide img {
+      max-width: 100%;
+    }
+
+    .callout {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .callout-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .callout p { margin: 0.5rem 0; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* Sidebar: the fictional band introduction sits in a framed block
+       near the top of the reading so students can refer back to it. */
+    .sidebar {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .sidebar h3 {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .sidebar ul {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+    }
+    .sidebar li {
+      padding: 0.15rem 0;
+    }
+    .sidebar p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 03 · Lecture 3</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 03 · Recording, sample prep &amp; library building</div>
+  <h1>The Mixer</h1>
+  <div class="subtitle">One console, many signal flows. Live sound and a studio session, walked through on the same desk.</div>
+</div>
+
+<p class="lede">Up to now every signal flow you've worked with has been one path at a time: one mic, one cable, one input, one recording. A mixer is the piece of equipment that handles many flows at once and gives the engineer a way to combine, route, and route again. This reading walks through the mixer as a concept, using the console in our studio (a Toft Audio Designs ATB) as the running example. The same console handles a live show and a studio recording session; what changes between those two contexts is not the hardware but where each signal flow ends up.</p>
+
+<div class="callout">
+  <div class="callout-label">Today's gear</div>
+  <p>Take from the lab's gear storage: <strong>audio interface, headphones</strong>. Plug in and run through the start-of-session steps on the <strong>Session Routines</strong> card before continuing here.</p>
+</div>
+
+<figure class="wide">
+  <img src="../../assets/images/module-03-week-08/toft-atb/console-overview.png"
+       alt="The Toft Audio Designs Series ATB console, photographed from above. A long, low rectangular frame with twenty-four green and red vertical faders on the left half (the input channels), eight smaller faders and bargraph meters in the middle (the submasters), and one larger blue stereo fader plus a section of red and white controls on the right (the master section)."
+       loading="lazy">
+  <figcaption>The Toft Audio Designs Series ATB. The console pictured is the 32-channel version; our studio has the 16-channel.</figcaption>
+  <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
+</figure>
+
+<aside class="sidebar">
+  <h3>The Sound Below · a running example</h3>
+  <p>Throughout this reading, the same fictional band shows up in both a live and a studio scenario. A small group keeps the diagrams concrete and the same instruments connect back to the mic and signal types from Lectures 1 and 2.</p>
+  <p><strong>The Sound Below:</strong> a four-piece. Their instrumentation, with the mic or signal you'd reach for in each case:</p>
+  <ul>
+    <li><strong>Vocals.</strong> Dynamic mic on a stand. Mic-level signal, XLR cable.</li>
+    <li><strong>Electric guitar.</strong> Played through a small amp. Dynamic mic in front of the amp's speaker. Mic-level signal, XLR cable.</li>
+    <li><strong>Bass guitar.</strong> Played through a DI box, no amp. Instrument-level signal converted to mic-level by the DI, then XLR cable to the console.</li>
+    <li><strong>Drums.</strong> Three mics: one dynamic on the kick drum, one dynamic on the snare, one condenser overhead. Three XLR cables. The condenser needs phantom power.</li>
+  </ul>
+  <p>That's six signals into the console. The console has to take all six, let the engineer adjust each one independently, and send the result somewhere useful: in a live show, to the speakers the audience hears; in a studio session, to the recording.</p>
+</aside>
+
+<hr>
+
+<h2>1 · The mixer as the place where flows meet</h2>
+
+<p>A mixer (or console, or board, or desk: the words are interchangeable) is the piece of equipment in the middle of every multi-source audio workflow. Each source plugs into its own <strong>channel</strong>. Each channel has its own controls (level, EQ, routing, sometimes more). The channels combine into one or more outputs that go somewhere: speakers, headphones, a recorder.</p>
+
+<p>The mixer's job is the same in every context: take many flows in, let the engineer shape each one, and send the combined result somewhere. What changes from context to context is what's connected at the input and where the output goes. Live sound and studio recording are two of those contexts. The hardware between them is the same hardware; the patching changes.</p>
+
+<p>Our studio's console is the <strong>Toft Audio Designs Series ATB</strong>, designed by Malcolm Toft, who founded Trident Audio in 1972 and built consoles for studios that recorded David Bowie, Queen, Stevie Wonder, and many others. The Toft ATB is a modern descendant of that lineage: a smaller, more affordable design for project studios, but with the same kind of channel-strip layout you'd find on a console in a commercial studio. Once you learn this one, the next one will feel familiar.</p>
+
+<p>The board has three kinds of strips, arranged left to right:</p>
+
+<ol>
+  <li><strong>Input strips</strong> (sixteen on our console). One per channel. Where signals from mics, instruments, and the DAW come in.</li>
+  <li><strong>Submaster strips</strong> (eight). Group outputs that combine many channels into one before sending to a recorder, and that also handle DAW returns.</li>
+  <li><strong>Master strip</strong> (one). The final stereo output to the control-room speakers, plus talkback and monitoring controls.</li>
+</ol>
+
+<p>The rest of this reading walks each section, then runs the band through the console twice: once live, once in the studio.</p>
+
+<hr>
+
+<h2>2 · The channel strip</h2>
+
+<p>Every input on the console is a vertical strip with the same set of controls, top to bottom. Learn one strip and you know all of them. Here's a single channel:</p>
+
+<figure class="strip">
+  <img src="../../assets/images/module-03-week-08/toft-atb/input-strip.png"
+       alt="A single input channel strip from the Toft ATB console. Reading from top to bottom: a red and silver area labeled +48V and INPUT GAIN with LINE and MIC selection; a row of dark and colored knobs labeled HF, HM, LM, LF (the four-band equaliser); six green AUX knobs labeled AUX 1 through AUX 6; a red MON LEVEL knob with a smaller MON PAN knob below it; a SOLO and MUTE indicator; a large red channel pan knob; and at the bottom, a tall vertical fader with -20 through +5 markings and pushbuttons labeled L-R and 1-2, 3-4, 5-6, 7-8 for routing to subgroups."
+       loading="lazy">
+  <figcaption>A single input strip on the Toft ATB.</figcaption>
+  <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
+</figure>
+
+<p>From top to bottom, the controls do this:</p>
+
+<p><strong>Input section.</strong> A button labeled <strong>+48V</strong> turns phantom power on (you met this in Lecture 1). A button labeled <strong>I/P REV</strong> (input reverse) swaps two signal paths inside the channel; we come back to it in section 3. A button labeled <strong>LINE</strong> switches between the mic input on the back and the line input on the back. A red knob labeled <strong>INPUT GAIN</strong> sets how much amplification the preamp applies. Same gain knob you set in Lab 1 to land peaks at -12 to -6 dBFS in Audacity; here it's setting the level going into the mixer's own internal flow.</p>
+
+<p><strong>Phase reverse and an 80 Hz high-pass filter.</strong> Two small switches. Phase reverse flips the polarity of the signal (sometimes needed when two mics on the same source are partially cancelling each other). The 80 Hz filter rolls off everything below 80 Hz, useful for cutting room rumble or wind on vocal mics.</p>
+
+<p><strong>Four-band equaliser.</strong> Four pairs of knobs. Each pair is a frequency control (which band of the spectrum to affect) and a boost/cut control (how much to change it). High, high-mid, low-mid, and low. Each band can boost or cut by 15 dB. The high and low are shelving (everything above or below a frequency moves together); the two middle bands are peaking (a bell curve centered on the chosen frequency). The whole EQ section can be switched into or out of the signal path with one button.</p>
+
+<p><strong>Six aux sends.</strong> Six green knobs, one per aux. Each one is a tap of the signal at this channel that goes out to a separate output on the back of the console (the AUX MASTERS jacks). The level of each tap is set independently of the channel's main fader. Aux 1 is permanently <strong>pre-fader</strong> (the tap happens before the fader, so the fader doesn't affect the aux level). Auxes 3 through 6 can be switched <strong>pre or post</strong>: pre-fader (independent of the fader) or post-fader (the fader controls them along with the main channel signal). What you actually use the aux sends for is the subject of sections 6 and 7.</p>
+
+<p><strong>Monitor section.</strong> A second smaller level control, labeled <strong>MON LEVEL</strong>, with its own <strong>MON PAN</strong>. This is a parallel signal path; everything from here down is about that second path, and it's the reason this console is called <em>in-line</em>. We'll unpack the monitor section in section 3.</p>
+
+<p><strong>Solo and mute.</strong> Two small buttons near the bottom. <strong>SOLO</strong> isolates this channel in the control-room speakers (the same kind of solo you used in Audacity, but in hardware). <strong>MUTE</strong> silences the channel without changing the fader position.</p>
+
+<p><strong>Channel pan.</strong> A red knob that places this channel left or right in the stereo image.</p>
+
+<p><strong>Routing buttons.</strong> Beside the fader: <strong>L-R</strong> sends this channel to the master stereo output; <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong> send it to one of the four submaster pairs (which become subgroups 1 through 8). The pan knob decides which side of the selected pair the signal goes to.</p>
+
+<p><strong>The fader.</strong> A 100mm vertical slider. The main level control for this channel. Where the channel sits in the final mix.</p>
+
+<p>That's one strip. The console has sixteen of them, identical. Once you understand one, the rest is a question of how to use sixteen of them together.</p>
+
+<h3>The back of the console</h3>
+
+<p>Each strip's input and a few of its output jacks live on the back of the console. Looking at the rear panel for the first eight channels:</p>
+
+<figure class="wide">
+  <img src="../../assets/images/module-03-week-08/toft-atb/rear-input-section.png"
+       alt="The back panel of the Toft ATB, showing the input connections for channels 1 through 8. Each channel has, from top to bottom: a LINE jack (1/4-inch TRS), a MON jack, an INSERT jack, a DIR. O/P jack, and at the bottom a large female XLR socket labeled MIC."
+       loading="lazy">
+  <figcaption>The rear of the console, input section (channels 1 through 8). Every channel has the same five jacks.</figcaption>
+  <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
+</figure>
+
+<p>Five jacks per channel. Reading from the bottom:</p>
+
+<ul>
+  <li><strong>MIC.</strong> Female XLR. The mic-level balanced input. Where the dynamic mic you used in Lab 1 plugs in.</li>
+  <li><strong>LINE.</strong> 1/4-inch TRS. The line-level balanced input. Where a synth, a DI box's output, or a DAW playback feed plugs in.</li>
+  <li><strong>MON.</strong> 1/4-inch TRS. The monitor return: where a track playing back from a recorder or DAW plugs in. The signal here feeds the channel's monitor path (section 3).</li>
+  <li><strong>INSERT.</strong> 1/4-inch TRS, wired as send/return on one cable. The channel's insert point: a place to drop an outboard processor (a compressor, a reverb pedal, a piece of analog gear) into the channel's signal path.</li>
+  <li><strong>DIR. O/P.</strong> 1/4-inch. The channel's direct output: a tap of this channel's signal that goes straight to whatever you plug in here, independently of the channel's routing buttons. In a studio session, this is often what feeds the corresponding track of the DAW.</li>
+</ul>
+
+<p>Every channel has its own copy of all five.</p>
+
+<hr>
+
+<h2>3 · In-line architecture · one strip, two paths</h2>
+
+<p>The Toft ATB is what's called an <strong>in-line</strong> console. The defining feature: every channel strip carries <em>two</em> signal paths, not one. Both paths can be active at the same time. The big fader at the bottom controls one of them; the smaller MON LEVEL knob in the middle controls the other.</p>
+
+<p>The two paths are:</p>
+
+<ul>
+  <li>The <strong>channel path</strong>: input signal (mic or line) → input gain → EQ → channel fader → routing buttons (L-R or a subgroup). This is the path most people think of as "the channel." It's what you use to record a mic into the console, or to mix a track into the final stereo output.</li>
+  <li>The <strong>monitor path</strong>: monitor input (the MON jack on the back) → MON LEVEL knob → MON PAN → stereo mix bus. This is a second, parallel route that lets you hear something (a track playing back from the DAW, for instance) in the control-room speakers without using up the channel path. Both paths are alive at the same time on the same strip.</li>
+</ul>
+
+<p>The point of this architecture is that one strip can do <em>both</em> things at once: send a mic out to the recorder via the channel path, and bring the recorded track back from the DAW via the monitor path, with their respective controls right next to each other. During a tracking session a single strip is simultaneously feeding the DAW (channel path) and monitoring the playback (monitor path).</p>
+
+<h3>The I/P REV button</h3>
+
+<p>At the top of every input strip is a button labeled <strong>I/P REV</strong>. Press it, and the two paths swap. What was coming in through MIC or LINE now flows through the monitor path; what was coming in through MON now flows through the big fader's path with the full EQ and aux-send chain.</p>
+
+<p>One button. Once for tracking, once again for mixdown. We come back to this in section 7.</p>
+
+<hr>
+
+<h2>4 · The submaster section</h2>
+
+<p>To the right of the sixteen input strips sits the <strong>submaster section</strong>: eight narrower strips that handle group outputs, monitor returns, and effects returns. Here's a single submaster strip:</p>
+
+<figure class="strip">
+  <img src="../../assets/images/module-03-week-08/toft-atb/submaster-strip.png"
+       alt="A single submaster strip from the Toft ATB. Top to bottom: a green AUX knob, a red MUTE indicator, a black BAL knob with L and R markings, a brown FX RET 1 knob, a vertical bargraph meter showing -20 through +15 dBFS, AUX 5 and AUX 6 green knobs with a PRE switch above AUX 5, a red MON LEVEL knob and a black MON PAN knob, a SOLO indicator, a TAPE pushbutton, and at the bottom a pink/red vertical fader with -∞ through +5 markings."
+       loading="lazy">
+  <figcaption>A single submaster strip on the Toft ATB.</figcaption>
+  <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
+</figure>
+
+<p>This strip is doing several jobs at once. Top to bottom:</p>
+
+<p><strong>The stereo effects return (FX RET).</strong> A pair of knobs at the top: a level and a balance. Each submaster strip carries one stereo effects return: a pair of inputs on the back of the console where you can plug in the output of an outboard effect (a reverb pedal, a delay unit, a hardware processor). The effects return feeds straight into the stereo mix. Eight submaster strips, so eight stereo effects returns, which means sixteen extra input channels available during a mix.</p>
+
+<p><strong>The bargraph meter.</strong> Twelve segments running from -20 dBFS at the bottom to +15 dBFS at the top. Same dBFS scale as Audacity's meter, with the same green / yellow / red zones. The meter shows the level of <em>either</em> the group output going to the DAW, or the monitor return coming back, depending on the TAPE switch at the bottom of the strip.</p>
+
+<p><strong>Aux 5 and Aux 6 master sends.</strong> Two green knobs that let this submaster strip contribute to the cue mix or effects send on auxes 5 and 6. The PRE switch above AUX 5 chooses whether the aux send is pre- or post-fader (same idea as on the input strip).</p>
+
+<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a black knob. These control how loud and where this submaster's signal appears in the control-room speakers. This is the submaster's own monitor path: separate from the input strips' monitor paths, doing the same job at the group level.</p>
+
+<p><strong>TAPE.</strong> A red pushbutton that decides what the submaster strip is showing you. Up (out): the strip's bargraph meter and monitor controls reflect the group output (what's being sent to the DAW). Down (in): they reflect the monitor return (what the DAW is playing back). This is the same in/out switching habit a tape deck used to require, and the button is still called TAPE for that reason, even though most studios now use it to flip between "DAW input" and "DAW playback."</p>
+
+<p><strong>The submaster fader.</strong> A 100mm fader controlling the overall level of this submaster's group output.</p>
+
+<p>Two things are easy to miss in this description and worth pulling out:</p>
+
+<ol>
+  <li><strong>The submaster strip is both an output and a return.</strong> Going out: it's the group output that combines whatever input channels you routed to subgroups N-N (via the routing buttons on the input strips). Coming back: it's the monitor return for one track of the DAW. The TAPE button decides which one the strip is letting you hear and meter at any given moment.</li>
+  <li><strong>The eight submasters double as eight stereo effects returns.</strong> Sixteen extra channels at mixdown, on top of the sixteen input strips' channel paths and the sixteen monitor paths. By the time you're mixing, the 16-channel console has 56 inputs available in total. (For the larger versions of the same console: the 24-channel has 72; the 32-channel has 88.)</li>
+</ol>
+
+<h3>The back of the submaster section</h3>
+
+<figure class="wide">
+  <img src="../../assets/images/module-03-week-08/toft-atb/rear-output-section.png"
+       alt="The output section of the Toft ATB rear panel. On the left: MASTER O/P L and R, MASTER INS L and R, 2 TK RET. 1 and 2, ALT SPKR L and R, MAIN SPKR L and R. On the right, in rows: STEREO FX RETURNS 1 through 8 (sixteen jacks), MONITOR RETURNS 1 through 8, SUBGROUP INSERT 1 through 8, SUBMASTER OUTPUTS 1 through 8, and AUX MASTERS 1 through 6. A DC POWER round connector and a DIGITAL OPTION blanking panel sit at the bottom."
+       loading="lazy">
+  <figcaption>The rear of the console, output section. Each row is one of the groups of jacks discussed in this reading.</figcaption>
+  <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
+</figure>
+
+<p>You can see them all laid out: eight <strong>SUBMASTER OUTPUTS</strong>, eight <strong>MONITOR RETURNS</strong>, eight <strong>SUBGROUP INSERTS</strong>, eight stereo (sixteen-jack) <strong>STEREO FX RETURNS</strong>, six <strong>AUX MASTERS</strong>, plus the master outputs, master inserts, two-track returns, and speaker outputs on the far left. The density of connectors on the back is the price of the flexibility on the front.</p>
+
+<hr>
+
+<h2>5 · The master section</h2>
+
+<p>One strip, on the far right of the console. It looks like this:</p>
+
+<figure class="strip">
+  <img src="../../assets/images/module-03-week-08/toft-atb/master-strip.png"
+       alt="The master section of the Toft ATB. Top to bottom: a HEADPHONES jack; 2TK DIG, 2TK 1, and 2TK 2 RET pushbuttons; SOLO MASTER and PHONES LEVEL knobs; a pair of L and R bargraph meters (12 segments); ALT MONITOR and MONO pushbuttons; MON LEVEL and T.B. LEVEL knobs; a circular T.B. MIC grille; TALK TO GROUPS and TALK TO AUXES red pushbuttons; and at the bottom a long blue stereo fader."
+       loading="lazy">
+  <figcaption>The master section.</figcaption>
+  <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
+</figure>
+
+<p>The master section handles everything that affects the whole console rather than any single channel. From top to bottom:</p>
+
+<p><strong>Headphone jack and level.</strong> A high-quality stereo headphone amp with its own level control. The engineer's headphones, separate from the performer headphone cues that the aux sends drive.</p>
+
+<p><strong>Two-track returns.</strong> Three pushbuttons that switch the control-room monitor over from the live mix to one of the 2-track return inputs: <strong>2TK 1 RET</strong>, <strong>2TK 2 RET</strong> (analog), or <strong>2TK DIG RET</strong> (from the optional digital card). This is what you press when you want to A/B the mix you've recorded against the live mix coming out of the console.</p>
+
+<p><strong>Master bargraph meters.</strong> A 12-segment L/R pair showing the final stereo output. The course's main metering reference. There's also a pair of conventional VU meters (the round needle kind) that read in parallel; you can see those on the console-overview photo at the top of this reading.</p>
+
+<p><strong>ALT MONITOR.</strong> A button that routes the control-room signal to a second pair of speaker outputs. Two sets of monitor speakers means you can A/B between them ("does the mix translate to the smaller pair as well as the big pair?").</p>
+
+<p><strong>MONO.</strong> A button that combines L and R into a single mono signal in the monitor speakers. The mix itself stays stereo at the output; this is just a check, to make sure the mix still works when collapsed (radio play, phone speakers, single-speaker venues).</p>
+
+<p><strong>Monitor level.</strong> The master volume for the control-room speakers. The most-touched knob in any control room.</p>
+
+<p><strong>Talkback.</strong> A small microphone built into the console (the round grille labeled T.B. MIC), a level knob (T.B. LEVEL), and two pushbuttons: <strong>TALK TO GROUPS</strong> (the engineer's voice goes out to the subgroups and the master L-R, so it gets recorded on whatever track is armed) and <strong>TALK TO AUXES</strong> (the engineer's voice goes to the aux outputs, which are typically feeding the performers' headphones). Talkback is how the engineer in the control room communicates with the musicians in the live room, and how a session-slate gets put on a take.</p>
+
+<p><strong>Master fader.</strong> A 100mm stereo fader. The final level control before the master output goes out the back of the console to the speakers, to the 2-track recorder, or wherever it's going next.</p>
+
+<hr>
+
+<h2>6 · Live sound · The Sound Below at a small venue</h2>
+
+<p>Picture The Sound Below playing a small venue: a club, a coffeehouse stage, somewhere with maybe seventy seats and a single set of speakers facing the audience. The band's six signals (vocals, electric guitar mic, bass DI, kick, snare, overhead) come from the stage to the console at the back of the room over six XLR cables.</p>
+
+<p>The console's job in this context is to take the six signals and send them two places:</p>
+
+<ol>
+  <li>To the <strong>main speakers</strong> facing the audience. This is the <strong>front-of-house</strong> mix (or just FOH). One stereo mix, what everyone in the audience hears.</li>
+  <li>To the <strong>monitor wedges</strong> on stage, the angled speakers pointing back at each performer so they can hear themselves and the rest of the band. Each performer often needs a different mix: the singer wants more of their own voice; the bass player wants more of the kick drum.</li>
+</ol>
+
+<h3>The front-of-house mix</h3>
+
+<p>For each of the six channels, the engineer presses the <strong>L-R</strong> routing button and balances the channel pan and fader. All six channels now feed into the master stereo L-R bus. The master fader controls the overall level. The signal leaves the console at the MASTER O/P L and R jacks on the back and goes out (often through an amplifier and a few processors) to the main speakers.</p>
+
+<p>That's the front-of-house path: input strip → channel fader → L-R bus → master fader → MASTER O/P → audience.</p>
+
+<h3>Monitor mixes for the stage</h3>
+
+<p>Each performer wears in-ears or has a wedge in front of them, and each wants to hear a different blend of the band. The engineer creates those blends using the <strong>aux sends</strong>.</p>
+
+<p>Aux 1 on each channel strip is permanently pre-fader. The engineer turns up Aux 1 on the vocal channel until the vocal is loud enough for the singer, turns up Aux 1 on the kick drum channel until the kick is loud enough for the singer, and so on. The result is a separate mix (the singer's wedge mix) that comes out of the AUX MASTERS 1 jack on the back. That signal feeds an amplifier that drives the singer's wedge.</p>
+
+<p>Aux 2 does the same thing on a separate set of taps from each channel: a different blend for the bass player's wedge. Aux 3 for the drummer. The engineer can build up to six independent mixes this way, one per aux send. Each one comes out its own back-panel jack and feeds its own destination.</p>
+
+<p>The reason these are pre-fader is important. The performers' wedge mix should stay the same even if the engineer changes the audience mix during the show. If the singer wants the kick a little louder in their wedge, and the engineer then pulls the kick down in the audience mix mid-song, the singer's wedge shouldn't change. Pre-fader means the aux send sits before the channel fader; the fader doesn't affect it.</p>
+
+<p>Talkback completes the live picture. The engineer at the back of the room can press TALK TO AUXES, speak into the talkback mic, and be heard in the performers' wedges and in-ears between songs.</p>
+
+<hr>
+
+<h2>7 · Studio session · The Sound Below tracking</h2>
+
+<p>Same band, different room. The Sound Below are now in a studio with the console in the control room and the band in a separate live room behind the glass. The console's six channels have the same six mic and DI signals coming in over the same XLRs.</p>
+
+<p>The console's job is different now. Front-of-house speakers don't exist; the audience is the recording. The mix going to the audience is the mix going to the DAW. Each performer wears headphones, and each performer's headphone mix is what they need to play to.</p>
+
+<h3>Sending the signals to the DAW</h3>
+
+<p>Each channel still has its mic preamp and EQ doing what they did in the live setting. The difference is what the signal feeds into next.</p>
+
+<p>There are two ways to get the signals into the DAW, both available on this console at the same time:</p>
+
+<ol>
+  <li><strong>Direct outs.</strong> Each channel has a DIR. O/P jack on the back. Plug a cable from each channel's direct out to the corresponding input of the audio interface. Six channels, six direct outs, six DAW tracks. The signal each track receives is the post-fader channel signal from that strip, complete with EQ and gain.</li>
+  <li><strong>Submaster outs.</strong> Press the routing buttons on the input strips to send each channel to a subgroup pair (1-2, 3-4, 5-6, or 7-8). Now the submaster outputs are the feeds to the DAW. Useful when you want to combine several mics into one stereo or mono group before recording (the three drum mics summed to one stereo subgroup, say, rather than three separate tracks).</li>
+</ol>
+
+<p>For The Sound Below, the engineer might use direct outs for vocals, guitar, and bass (one track each in the DAW), and use a subgroup pair for the three drum mics (two tracks, a stereo drum bus).</p>
+
+<h3>Performer headphone mixes</h3>
+
+<p>The aux sends do the same job in the studio that they did at the live show. The mechanism is identical; only the destination changed.</p>
+
+<p>In live sound, AUX MASTERS 1 fed an amplifier driving the singer's wedge. In a studio session, AUX MASTERS 1 feeds a headphone amplifier driving the singer's headphones. The engineer builds the singer's headphone mix the same way they built the singer's wedge mix: by turning up Aux 1 on each channel strip until the blend is what the singer needs.</p>
+
+<p>Aux 2 for the bass player's headphones. Aux 3 for the drummer. Up to six independent headphone mixes, the same way live sound gets up to six wedge mixes. Talkback works the same way: press TALK TO AUXES and the engineer's voice appears in everyone's headphones.</p>
+
+<h3>The monitor path · hearing the DAW playback</h3>
+
+<p>The engineer in the control room needs to hear what's being recorded. The DAW is playing back through its outputs, and the engineer wants those outputs to come up on the control-room speakers so they can listen, EQ, take notes.</p>
+
+<p>This is what the monitor path on each input strip is for. Each DAW playback track is plugged into the corresponding MON jack on the back of the console. The monitor path on that strip (MON LEVEL, MON PAN, the AUX 5-6 TO MON switch, the EQ TO MON switch) handles the playback. The engineer builds up a monitor mix of all the playback tracks using the MON LEVEL knobs on each strip, separately from any channel-path settings. While the band is tracking, both paths are simultaneously active: the channel path is sending the mic to the DAW; the monitor path is receiving the DAW playback back.</p>
+
+<p>This is what "in-line" means in practice. One strip, two paths, both alive at once.</p>
+
+<h3>Mixdown · the I/P REV move</h3>
+
+<p>After tracking is done, it's time to mix. The engineer wants the recorded tracks to come up on the big faders, with full EQ and all six aux sends available, so the mix has the full resources of the console.</p>
+
+<p>Without an in-line architecture, this would mean re-patching: unplugging cables from one set of jacks and plugging them into another. With in-line, it's one button per strip.</p>
+
+<p>Press <strong>I/P REV</strong> on a strip. The two paths swap. The DAW track that was coming in through MON now flows through the big fader, with all the EQ and aux sends. The mic input (which is probably empty now anyway, since recording is done) routes through the small monitor path. Now this strip is what you'd think of as a "channel" in a more conventional split-architecture console: input → fader → mix.</p>
+
+<p>Press I/P REV on all sixteen strips, set the channel routing buttons to L-R, balance the faders, and the console is now a sixteen-channel mixer for the recorded session. The monitor paths are still alive too, available as another set of inputs at mixdown (each one has its own level and pan into the stereo mix). The eight stereo effects returns on the submasters are also still alive. Total inputs to the mix on the 16-channel console: 16 channel paths + 16 monitor paths + 8 stereo effects returns × 2 = 56 inputs. (The 24-channel: 72. The 32-channel: 88. The math is the same, with more strips.)</p>
+
+<hr>
+
+<h2>8 · Auxes and busses · the synthesis</h2>
+
+<p>If you look closely at the live show and the studio session, the mixer was doing the same things in both contexts. The buttons were the same buttons. The aux sends were the aux sends. The master fader was the master fader.</p>
+
+<p>What changed was where the signals went after they left the console:</p>
+
+<table style="margin: 1.5rem auto; border-collapse: collapse; font-size: 0.95rem;">
+  <thead>
+    <tr style="border-bottom: 1px solid var(--rule);">
+      <th style="padding: 0.5rem 1rem; text-align: left; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);">Mechanism on the console</th>
+      <th style="padding: 0.5rem 1rem; text-align: left; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);">Live destination</th>
+      <th style="padding: 0.5rem 1rem; text-align: left; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);">Studio destination</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid var(--rule);">
+      <td style="padding: 0.5rem 1rem;">Master L-R fader</td>
+      <td style="padding: 0.5rem 1rem;">Main speakers (audience)</td>
+      <td style="padding: 0.5rem 1rem;">DAW master record / mix print</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--rule);">
+      <td style="padding: 0.5rem 1rem;">Aux sends 1-6</td>
+      <td style="padding: 0.5rem 1rem;">Performer monitor wedges</td>
+      <td style="padding: 0.5rem 1rem;">Performer headphone mixes (cues) and reverb sends</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--rule);">
+      <td style="padding: 0.5rem 1rem;">Subgroups 1-8 (submaster outputs)</td>
+      <td style="padding: 0.5rem 1rem;">Group buses going to specific FOH zones, or to a separate amp for recording the show</td>
+      <td style="padding: 0.5rem 1rem;">Group feeds to DAW tracks (e.g. three drum mics summed to one stereo subgroup)</td>
+    </tr>
+    <tr>
+      <td style="padding: 0.5rem 1rem;">Talkback</td>
+      <td style="padding: 0.5rem 1rem;">Engineer's voice into the wedges between songs</td>
+      <td style="padding: 0.5rem 1rem;">Engineer's voice into headphones, or recorded slate on the master</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A subgroup or bus is a place where many channels combine before the result goes somewhere. The subgroup buttons on the input strips choose which bus each channel feeds. The submaster fader sets the level of that bus. Where the bus output ultimately ends up is decided by what's plugged into the SUBMASTER OUTPUTS jack on the back: in a live context, often a separate amp feeding a specific speaker zone; in a studio, often the DAW.</p>
+
+<p>An aux is a separate mix structure that runs parallel to the main mix. The aux sends on each channel let the engineer build a different blend of the same channels and route that blend out a different physical output. Live, the destinations are the performers' wedges and reverb units. In the studio, the destinations are the performers' headphone amps and reverb units. The aux is doing exactly the same thing in both cases; the cable from AUX MASTERS 1 just ends up at a different piece of gear.</p>
+
+<p>This is the synthesis the lecture is building toward: <strong>the mixer's structure is one set of routing tools that get reused, with different destinations for different jobs.</strong> Once you can name what each tool does (aux send, subgroup, master, talkback), you can walk into any mix scenario (a club, a studio, a podcast setup, a film mix stage) and identify the same parts doing the same jobs, regardless of how big or small the console.</p>
+
+<hr>
+
+<h2>Vocabulary</h2>
+
+<ul>
+  <li><strong>Channel.</strong> One input on the mixer, with its own set of controls. A console with sixteen channels has sixteen of these.</li>
+  <li><strong>Channel strip.</strong> The vertical column of controls for one channel.</li>
+  <li><strong>In-line console.</strong> A console where each strip carries two signal paths (channel + monitor) so that one strip can both send to a recorder and receive playback at the same time.</li>
+  <li><strong>Channel path.</strong> The signal path that runs from a channel's mic or line input, through the EQ and the big fader, to either the master L-R bus or a subgroup.</li>
+  <li><strong>Monitor path.</strong> The parallel signal path that runs from a channel's MON input, through the MON LEVEL knob, to the stereo mix bus. Used during tracking to hear DAW playback while the channel path is sending to the DAW.</li>
+  <li><strong>Bus.</strong> A summing point inside the console where many channels combine into one signal. The master L-R bus, the subgroup buses, and the aux buses are all examples.</li>
+  <li><strong>Master bus.</strong> The main stereo bus that the master fader controls. Where every channel ends up if its L-R routing button is pressed.</li>
+  <li><strong>Subgroup.</strong> A bus that groups several channels together as a sub-mix, with its own fader, before sending to a destination. The Toft has eight subgroups, controlled by the eight submaster strips.</li>
+  <li><strong>Submaster.</strong> On this console, the strip that controls a subgroup. Both names appear in different traditions; "submaster" is what the Toft labels it.</li>
+  <li><strong>Aux send.</strong> A separate tap from each channel that goes out to a separate destination. Lets the engineer build a different mix of the same channels for a different purpose (a performer's headphone cue, a reverb send, a monitor wedge).</li>
+  <li><strong>Pre-fader / post-fader (aux).</strong> Pre-fader: the aux tap sits before the channel fader, so the fader doesn't affect the aux level. Post-fader: the aux tap sits after the channel fader, so the fader does affect it. Pre-fader is typical for headphone cues; post-fader is typical for reverb sends.</li>
+  <li><strong>Direct out.</strong> A per-channel output that taps the channel's post-fader signal and sends it straight to a single destination (usually one track of a DAW). Independent of routing buttons.</li>
+  <li><strong>Insert.</strong> A break in a channel's signal path, exposed as a send/return jack on the back of the console, where an outboard processor (compressor, EQ) can be patched in.</li>
+  <li><strong>Talkback.</strong> A small microphone in the master section, plus buttons that route the engineer's voice into the aux outputs (to performers' headphones) or onto the recording (for slating takes).</li>
+  <li><strong>Monitor (in this context).</strong> The control-room signal: the mix the engineer is listening to over the studio's monitor speakers. Different from "monitor" in the performer-wedge sense; both meanings stay in use, the context decides which.</li>
+  <li><strong>Front-of-house (FOH).</strong> The main mix sent to the speakers facing the audience in a live show. The "front of the house" is the audience side of a venue.</li>
+  <li><strong>Headphone cue (or just cue).</strong> A performer's headphone mix during tracking. Usually built from one or more aux sends.</li>
+</ul>
+
+<hr>
+
+<h2>For further exploration</h2>
+
+<p>If you want to read the Toft ATB in the words of working engineers, two reviews are good places to start:</p>
+
+<ul>
+  <li>Andy Hong et al., <a href="https://tapeop.com/reviews/gear/69/atb-series-console"><em>Toft Audio Designs ATB Series Console</em></a>, Tape Op #69 (Jan/Feb 2009). Two engineers (one with a 32-channel in a Brooklyn basement, one with a 16-channel in an apartment) describe what tracking and mixing on this console is like, including ergonomic frustrations as well as praises. Gives a sense of what daily use of an analog console feels like, including the parts that aren't in the manual.</li>
+  <li>Hugh Robjohns, <a href="https://www.soundonsound.com/reviews/toft-audio-atb24"><em>Toft Audio Designs ATB24</em></a>, Sound on Sound. A review of the 24-channel version of the same console, with more attention to the signal-flow architecture and the in-line design.</li>
+</ul>
+
+<p>The console itself ships with a manual that documents every connector, switch, and signal path, including signal-flow schematics for each section. The course's copy lives on the studio shelf next to the console.</p>
+
+<div class="callout">
+  <div class="callout-label">End of session</div>
+  <p>Before leaving the station, run the end-of-session routine on the <strong>Session Routines</strong> card. NAS upload first, gear teardown second.</p>
+</div>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 03 · Lecture 3</span>
+</footer>
+
+</body>
+</html>
