@@ -436,9 +436,9 @@ This is the one mostly-unstructured session of the module. Use the room: circula
 
 ### Handout
 
-[`lessons/NN-handout-phone-to-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/) *(to be written; this is Lab 2)*
+[`lessons/05-handout-phone-to-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/05-handout-phone-to-audacity.html) — Lab 2
 
-Walks through the phone → computer → Audacity → prep → library flow, with screenshots of the relevant moments.
+Eight steps from phone-side transfer through library upload: get the recording off the phone (AirDrop on iPhone, USB or share sheet on Android), pull the library down from the NAS, import, resample 48 kHz → 44.1 kHz, run the prep pipeline (with a noise profile captured from the phone recording itself), export to a student-chosen category folder, README update, worktime, NAS upload. References Lab 1 for the prep-pipeline detail rather than re-walking it.
 
 ### Block-by-block
 

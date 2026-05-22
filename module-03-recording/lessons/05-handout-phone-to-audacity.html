@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Phone Recordings into Audacity</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Menu path: matches Lab 1's convention. */
+    .menu-path {
+      font-family: var(--mono);
+      font-size: 0.9em;
+      background: var(--bg-alt);
+      padding: 0.2em 0.55em;
+      border-radius: 2px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    /* Pipeline checklist: a compact reminder of the three prep steps,
+       since the full procedure was taught in detail in Lab 1. */
+    .pipeline-list {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+    }
+    .pipeline-list ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .pipeline-list ol li {
+      padding: 0.3rem 0;
+    }
+    .pipeline-list .step-label {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 03 · Lab 2</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 03 · Recording, sample prep &amp; library building</div>
+  <h1>Phone Recordings into Audacity</h1>
+  <div class="subtitle">Move sounds off your phone, resample, prep, and add them to your library.</div>
+</div>
+
+<p class="lede">Since the phone reference card went home last week, you've been recording things that caught your ear: a kettle, a hinge, a hallway, whatever. Today you bring those recordings into Audacity, convert them to the format your library uses, run them through the same prep pipeline you learned in Lab 1, and add them to your library. Once a few of you have moved a recording across, the second half of class is open worktime: record more, prep more, organize what you have. By the end of the session your library should have grown from four paper sounds to a real working collection.</p>
+
+<div class="callout">
+  <div class="callout-label">Today's gear</div>
+  <p>Take from the lab's gear storage: <strong>audio interface, headphones, dynamic mic (with stand and XLR cable)</strong>. Plug in and run through the start-of-session steps on the <strong>Session Routines</strong> card before continuing here.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Before you start</div>
+  <p>You'll need <strong>at least one phone recording</strong> to work through Steps 1 through 5. If you didn't get a chance to record anything between last week and today, take five minutes now: airplane mode on, open the app, record any sound from where you're sitting (a zipper, a chair scrape, your own voice describing the lab). Imperfect is fine; you need a file to push through the pipeline.</p>
+</div>
+
+<h2>What we're doing today</h2>
+
+<ol class="steps">
+  <li>Get a phone recording off the phone and onto the lab Mac.</li>
+  <li>Pull your library down from the NAS and open a fresh Audacity project for today's work.</li>
+  <li>Import the phone recording into Audacity.</li>
+  <li>Resample it from <strong>48 kHz</strong> down to your project's <strong>44.1 kHz</strong>.</li>
+  <li>Run the prep pipeline: <strong>denoise → trim → normalize</strong>.</li>
+  <li>Export the prepped sample to a new category folder in your library.</li>
+  <li>Worktime: repeat for more phone recordings, record new sounds in the lab, grow the library.</li>
+  <li>Upload to the NAS.</li>
+</ol>
+
+<hr>
+
+<h2>Step 1 · Get the recording off your phone</h2>
+
+<p>The path depends on your phone. Both routes end the same way: a WAV file sitting in your <code>~/Documents/lastname/</code> working folder, ready to import into Audacity.</p>
+
+<h3>iPhone (AirDrop)</h3>
+
+<ol class="steps">
+  <li>On your iPhone, open <strong>Lossless Field Recorder</strong>.</li>
+  <li>Tap the recording you want to transfer. The recording's screen opens.</li>
+  <li>Tap the <strong>share icon</strong> (the square with the upward arrow).</li>
+  <li>In the share sheet, tap <strong>AirDrop</strong>.</li>
+  <li>Wait for the lab Mac to appear in the AirDrop list. The Mac's name will show as something like <code>MB2525-01</code> through <code>MB2525-12</code> depending on which station you're at; check the small label on top of the Mac mini if you're not sure which one is yours.</li>
+  <li>Tap the Mac's icon. On the Mac, a notification appears asking you to accept the file. Click <strong>Accept</strong>; choose <strong>Downloads</strong> when prompted.</li>
+  <li>The file lands in <code>~/Downloads/</code>. Move it into your working folder: drag it from <code>Downloads</code> into <code>~/Documents/lastname/</code>.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">If AirDrop isn't showing the Mac</div>
+  <p>Check three things on the Mac: Wi-Fi is on (top-right menu bar), Bluetooth is on, and AirDrop is set to receive from <strong>Everyone</strong> for the duration of the lab (open Finder, <span class="menu-path">Go → AirDrop</span>, set the receiving option at the bottom of the window). On the iPhone, check that both Wi-Fi and Bluetooth are on (a quick toggle in Control Center). If it still doesn't work, fall back to the Android route below: email the file to yourself, or use a USB cable.</p>
+</div>
+
+<h3>Android (USB or share sheet)</h3>
+
+<p>Field Recorder on Android doesn't have an AirDrop equivalent, so you pick a transfer method that gets the WAV off the phone and onto the Mac. Two options, in order of preference:</p>
+
+<ol class="steps">
+  <li><strong>USB cable.</strong> Connect your phone to the Mac with a USB-C cable. On the phone, swipe down from the top of the screen to open the notification shade, tap the USB notification, and choose <strong>File Transfer</strong> (sometimes called MTP). On the Mac, open <strong>Android File Transfer</strong> (already installed on lab Macs; search Spotlight with <kbd>Cmd</kbd> + <kbd>Space</kbd>). The phone shows up as a browseable file system. Navigate to the folder where Field Recorder saves its files (usually <code>Internal storage / Recordings</code> or <code>Internal storage / Android / data / de.pfitzinger.rec</code>). Drag the WAV file into <code>~/Documents/lastname/</code> on the Mac.</li>
+  <li><strong>Email or cloud share.</strong> Open Field Recorder, find your recording in the file list, tap the share icon. Choose Gmail (or your email app) and email it to yourself. On the Mac, open your email in a browser, download the attachment, move it into <code>~/Documents/lastname/</code>. This works but compresses your inbox; use USB when you can.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Other phone apps</div>
+  <p>If you've been recording with a different app (the iOS Voice Memos app, or a different Android recorder), the same routes apply: AirDrop or share sheet on iPhone, USB or email on Android. The file format may be different: Voice Memos produces M4A files, not WAV. Audacity can still open M4A directly, and the rest of today's procedure still applies. If your app produced an MP3, that also works, with the same caveat: MP3 is a lossy format, so it's the most compressed version of your recording. WAV is always the cleanest option when the app gives you the choice.</p>
+</div>
+
+<hr>
+
+<h2>Step 2 · Open Audacity, pull your library down</h2>
+
+<p>Before you import the phone recording, you need your library in front of you so you can put the prepped sample in the right place.</p>
+
+<ol class="steps">
+  <li>Pull your <code>sample-library/</code> folder down from the NAS to your local working folder. (Same routine as every Wednesday; the <strong>Session Routines</strong> card has it. NAS path: <code>students/lastname/sample-library/</code>. Local destination: <code>~/Documents/lastname/sample-library/</code>.)</li>
+  <li>Open Audacity. Confirm the project format is still <strong>44100 Hz</strong> / <strong>16-bit PCM</strong> in <span class="menu-path">Audacity → Preferences → Audio Settings</span>. (It should be from last week, but worth a glance.)</li>
+  <li>Save a new project file for today's work: <span class="menu-path">File → Save Project → Save Project As…</span>, and save it as <code>sample-library-week-07.aup3</code> inside <code>~/Documents/lastname/sample-library/audacity-projects/</code>. Keeping a separate project file per session makes it easy to find your work later.</li>
+</ol>
+
+<hr>
+
+<h2>Step 3 · Import the phone recording</h2>
+
+<ol class="steps">
+  <li>Click anywhere in the empty Audacity project window to make sure it's the active window.</li>
+  <li>From the menu bar: <span class="menu-path">File → Import → Audio…</span> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>). Navigate to <code>~/Documents/lastname/</code> and select the phone recording. Click <strong>Open</strong>.</li>
+  <li>The waveform appears as a new track in the project.</li>
+  <li>Press <strong>spacebar</strong> to play it back. Confirm it sounds like what you remember recording. If it doesn't, you probably grabbed the wrong file off the phone; check the filename and try again.</li>
+</ol>
+
+<p>The track's left side (the <strong>Track Control Panel</strong>) shows the file's properties. Look at the small text under the track name: it reads something like <code>48000 Hz</code> and <code>32-bit float</code> or <code>24-bit PCM</code>. That tells you the recording's native format. The project's format is 44.1 kHz / 16-bit; the track is at 48 kHz. The two rates don't match.</p>
+
+<div class="callout">
+  <div class="callout-label">Stereo or mono?</div>
+  <p>Phone recordings may be stereo (two channels: left and right) or mono (one channel) depending on the app's pickup-pattern setting. If your track shows two waveform lanes stacked vertically, it's stereo. If it shows one, it's mono. Both work for today; the prep pipeline applies to either. Keep the stereo version if the recording captured spatial information (a hallway, a courtyard, something with left-right movement). Convert to mono if it's a single source recorded up close and the two channels look nearly identical: <span class="menu-path">Tracks → Mix → Mix Stereo Down to Mono</span>. Mono files are half the size and tidier for a sample library.</p>
+</div>
+
+<hr>
+
+<h2>Step 4 · Resample to 44.1 kHz</h2>
+
+<p>The phone recorded at 48 kHz. Your project is at 44.1 kHz. To use the recording in this project (and to keep your library consistent), the two rates need to match. The operation that converts a recording from one sample rate to another is called <strong>resampling</strong>.</p>
+
+<h3>What resampling does</h3>
+
+<p>Sample rate is how many measurements the recording stores per second of sound. 48,000 measurements per second is a slightly denser representation than 44,100 per second; both are well above the threshold that captures everything in human hearing. Resampling recalculates the audio at the new rate: Audacity reads the 48 kHz data, runs a math operation that figures out what the same sound would look like at 44.1 kHz, and replaces the track with the recalculated version. The sound stays the same length; the pitch stays the same; what changes is the underlying number of measurements per second.</p>
+
+<p>Resampling is a normal part of recording work. Anytime two devices were running at different sample rates, you need to resample one to match the other. The reason your library standardizes on 44.1 kHz is so that everything in it can be combined and used together without these conversions happening repeatedly down the line.</p>
+
+<h3>Resample the imported track</h3>
+
+<ol class="steps">
+  <li>Click anywhere in the <strong>Track Control Panel</strong> (the gray box on the left of the track, where the track name and the format info are shown). The whole track highlights to show it's selected.</li>
+  <li>From the menu bar: <span class="menu-path">Tracks → Resample…</span></li>
+  <li>The Resample dialog opens with a dropdown labeled <strong>New sample rate (Hz)</strong>. Pick <strong>44100</strong>. Click <strong>OK</strong>.</li>
+  <li>Audacity processes the track. When it finishes, the small text under the track name in the Track Control Panel now reads <code>44100 Hz</code>. The waveform looks identical; the underlying rate has changed.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Resample vs. project rate vs. export rate</div>
+  <p>Three different sample rates touch this work, and they're easy to confuse.</p>
+  <ul>
+    <li>The <strong>track's sample rate</strong> is the rate the audio data is stored at on disk. This is what Resample changes.</li>
+    <li>The <strong>project's sample rate</strong> is the rate Audacity uses for playback and for any new recordings made inside the project. You set this in Preferences (44100 Hz for everything in MUS 381).</li>
+    <li>The <strong>export sample rate</strong> is the rate of the WAV file Audacity writes when you export. You'll set this to 44100 in Step 6.</li>
+  </ul>
+  <p>If a track and the project don't match, Audacity will play the track back by resampling on the fly (slower playback, often slightly worse quality, and the file on disk is still at the original rate). Running Resample explicitly is the cleaner move: now everything matches, top to bottom.</p>
+</div>
+
+<hr>
+
+<h2>Step 5 · Run the prep pipeline</h2>
+
+<p>The pipeline is the same three steps from Lab 1: <strong>denoise → trim → normalize</strong>. The one practical difference for a phone recording is the noise profile.</p>
+
+<h3>About the noise profile</h3>
+
+<p>In Lab 1 you captured a dedicated 10-second noise-profile clip at the top of the project, recorded in the same room with the same mic at the same gain. The denoise step then used that profile to subtract the room's noise floor from the paper recordings.</p>
+
+<p>A phone recording brings its own noise floor with it: whatever was in the room when you hit record, plus the phone's own electronic hiss. So the noise profile has to come from the phone recording itself. The cleanest way: capture the profile from a quiet portion of the recording before or after the sound you actually want.</p>
+
+<p>This is one reason the phone reference card recommends leaving a beat of silence at each end of a phone take. If you didn't, you can still try denoise using the silence buffer Audacity automatically has between clips, but the result will be less consistent. From this session forward, the habit to build: <strong>record a second or two of silence at the start of every take</strong>, on phone or in the lab. Future-you will use it.</p>
+
+<h3>The pipeline</h3>
+
+<div class="pipeline-list">
+  <ol>
+    <li><span class="step-label">Capture noise profile.</span> Use the I-beam to select a quiet region of the phone recording (a second or two of silence before or after the sound itself). Open <span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span> → click <strong>Get Noise Profile</strong>. The dialog closes.</li>
+    <li><span class="step-label">Denoise.</span> Double-click the clip to select the whole thing. Open Noise Reduction again. Leave the sliders at <strong>6, 6.00, 6</strong> (a gentle starting point). Click <strong>OK</strong>.</li>
+    <li><span class="step-label">Trim.</span> Select just the sound itself with the I-beam, leaving the silence outside the selection. <span class="menu-path">Edit → Remove Special → Trim Audio</span> (<kbd>Cmd</kbd> + <kbd>T</kbd>).</li>
+    <li><span class="step-label">Fade.</span> Zoom in (<kbd>Cmd</kbd> + <kbd>1</kbd>) at the start, select about 50 ms, <span class="menu-path">Effect → Fading → Fade In</span>. Zoom out (<kbd>Cmd</kbd> + <kbd>F</kbd>). Repeat at the end with Fade Out.</li>
+    <li><span class="step-label">Normalize.</span> Double-click the trimmed clip. <span class="menu-path">Effect → Volume and Compression → Normalize…</span> → peak <strong>-1.0 dB</strong>, <strong>Remove DC offset</strong> checked, OK.</li>
+  </ol>
+</div>
+
+<p>If any of these steps feels unfamiliar, open Lab 1's handout (<a href="02-handout-recording-into-audacity.html">Recording into Audacity</a>) and refer to Step 8 there for the full walkthrough with screenshots.</p>
+
+<div class="callout">
+  <div class="callout-label">If denoise is making the recording sound underwater</div>
+  <p>Phone-recorded noise is sometimes harder to subtract cleanly than lab-recorded noise. If the result of denoise sounds hollow, whispery, or has a swimming-pool quality, the profile probably caught some non-noise content (a faint sound, your finger brushing the phone, a passing voice). Undo the denoise (<kbd>Cmd</kbd> + <kbd>Z</kbd>), pick a different quiet region for the profile, and try again. If no part of the recording is quiet enough, skip the denoise step for this file; trim and normalize will still produce a usable sample, just one that carries its original noise floor.</p>
+</div>
+
+<hr>
+
+<h2>Step 6 · Export to your library</h2>
+
+<p>Decide where the sample lives in your library. The library's organized by category folders at the root: you already have <code>paper/</code>. For today's recordings, you'll probably want to add at least one more category. Pick a folder name that fits what you recorded.</p>
+
+<p>A few example categories, to get you thinking:</p>
+
+<ul>
+  <li><code>kitchen/</code> for a kettle, water, ice, fridge, dishes</li>
+  <li><code>metal/</code> for a bike chain, keys, coins, hinges, latches</li>
+  <li><code>fabric/</code> for clothing, cushions, bags, anything soft</li>
+  <li><code>space/</code> or <code>room/</code> for ambient recordings of places (a hallway, an elevator, a courtyard)</li>
+  <li><code>body/</code> for footsteps, claps, breathing, voice</li>
+</ul>
+
+<p>The category is your call; the names above are starting points. The rule is the same as the <code>paper/</code> folder: lowercase, hyphenated if needed, no spaces. Pick one that you'll remember and that fits more than just today's sound (so you can add to it later).</p>
+
+<ol class="steps">
+  <li>In Finder, create the new category folder inside <code>~/Documents/lastname/sample-library/</code>.</li>
+  <li>Back in Audacity, double-click the prepped clip to select it.</li>
+  <li><span class="menu-path">File → Export Audio…</span> opens the Export dialog. Fill in:
+    <ul>
+      <li><strong>File Name:</strong> following the convention <code>[category]-[descriptor]-[variant].wav</code> (e.g. <code>kitchen-kettle-boil.wav</code>, <code>metal-keys-jangle.wav</code>)</li>
+      <li><strong>Folder:</strong> click <strong>Browse…</strong> and pick the category folder you just created</li>
+      <li><strong>Format:</strong> <code>WAV (Microsoft)</code></li>
+      <li><strong>Channels:</strong> <strong>Mono</strong> (or <strong>Stereo</strong> if you kept it stereo in Step 3)</li>
+      <li><strong>Sample Rate:</strong> <code>44100 Hz</code></li>
+      <li><strong>Encoding:</strong> <code>Signed 16-bit PCM</code></li>
+      <li><strong>Export Range:</strong> <strong>Current selection</strong></li>
+    </ul>
+  </li>
+  <li>Click <strong>Export</strong>. Leave the metadata dialog blank.</li>
+</ol>
+
+<p>One sample is now in the library at its new path: for example, <code>~/Documents/lastname/sample-library/kitchen/kitchen-kettle-boil.wav</code>.</p>
+
+<h3>Update the README</h3>
+
+<p>Open your library's <code>README.txt</code> in TextEdit. Add the new category to the ORGANIZATION section and the new file to the CONTENTS section. Update the <code>Last updated:</code> date at the top. Save.</p>
+
+<div class="callout">
+  <div class="callout-label">The README isn't optional</div>
+  <p>Every time you add a sample, update the README the same day. The README is the only document in your library that explains what the library is. Skipping it once means you've started a backlog of work you'll never catch up on; updating it as you go takes 30 seconds. By the midterm, the README is part of what gets graded.</p>
+</div>
+
+<hr>
+
+<h2>Step 7 · Worktime</h2>
+
+<p>The rest of the session is yours. A few good ways to spend it:</p>
+
+<ul>
+  <li><strong>Push more phone recordings through the pipeline.</strong> If you have several recordings on your phone, repeat Steps 1 through 6 for each one. Each recording gets its own pass; group them into category folders as you go.</li>
+  <li><strong>Record new sounds in the lab.</strong> You have the dynamic mic, interface, and headphones at your station. Use them. Anything in the room is fair game: keys, coins, your own voice, a chair scraping, a water bottle, a notebook flipping. The full record-and-prep procedure from Lab 1 still applies; you already know how to do it.</li>
+  <li><strong>Walk the building.</strong> Step out into the hallway, the stairwell, the courtyard with your phone. Record something there. Bring it back, push it through the pipeline.</li>
+  <li><strong>Organize what you have.</strong> Look at your library so far. Are the categories making sense? Are filenames clear? Is the README accurate? Library work isn't just adding files; it's also keeping the structure usable as it grows.</li>
+</ul>
+
+<p>The TA is in the room. Ask for help if a recording isn't working, if denoise is producing strange artifacts, if a file isn't where you expect it. This is the one session in the module where the schedule has slack built in for getting unstuck.</p>
+
+<div class="callout">
+  <div class="callout-label">Aim for the midterm</div>
+  <p>The midterm library is due in two weeks (Wed Wk 8). The working target is roughly 15 to 25 prepped sounds, organized in your folder structure with the README up to date. Today is the session where the library starts feeling like a library rather than four paper sounds. Aim for at least 3 to 5 new prepped samples in your library by the end of today; more if you can.</p>
+</div>
+
+<hr>
+
+<h2>End of session</h2>
+
+<h3>What to upload today</h3>
+
+<ol class="steps">
+  <li>Save the Audacity project for today (<kbd>Cmd</kbd> + <kbd>S</kbd>).</li>
+  <li>Confirm the README at <code>~/Documents/lastname/sample-library/README.txt</code> reflects everything you added today.</li>
+  <li>Run the NAS-upload phase of the <strong>Session Routines</strong> card: connect to the NAS, navigate to <code>students/lastname/</code>, drag the full <code>sample-library/</code> folder up to the NAS, allow it to overwrite. Wait for the copy to finish.</li>
+  <li>Verify by opening <code>students/lastname/sample-library/</code> on the NAS and confirming the new category folder(s) and new samples are there, and that <code>README.txt</code> at the root has today's date in <code>Last updated:</code>.</li>
+</ol>
+
+<p>Then continue with the rest of the card's end-of-session routine: eject the NAS, sign out of browser accounts, quit all apps, knobs back to zero, unplug everything (including the mic's XLR from both ends), stow the gear back in the lab's gear storage, chair in.</p>
+
+<hr>
+
+<h2>Quick reference</h2>
+
+<table class="shortcut-table">
+  <thead>
+    <tr><th>Action</th><th>Where</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>AirDrop receive setting (Mac)</td><td>Finder → Go → AirDrop → Allow me to be discovered by: <strong>Everyone</strong></td></tr>
+    <tr><td>Android File Transfer (Mac)</td><td>Applications → Android File Transfer (or Spotlight)</td></tr>
+    <tr><td>Import audio file</td><td><span class="menu-path">File → Import → Audio…</span> · <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></td></tr>
+    <tr><td>Resample a track</td><td>Click the Track Control Panel, then <span class="menu-path">Tracks → Resample…</span></td></tr>
+    <tr><td>Mix stereo down to mono</td><td><span class="menu-path">Tracks → Mix → Mix Stereo Down to Mono</span></td></tr>
+    <tr><td>Noise Reduction</td><td><span class="menu-path">Effect → Noise Removal and Repair → Noise Reduction…</span></td></tr>
+    <tr><td>Trim Audio</td><td><span class="menu-path">Edit → Remove Special → Trim Audio</span> · <kbd>Cmd</kbd> + <kbd>T</kbd></td></tr>
+    <tr><td>Fade In / Fade Out</td><td><span class="menu-path">Effect → Fading → Fade In / Fade Out</span></td></tr>
+    <tr><td>Normalize</td><td><span class="menu-path">Effect → Volume and Compression → Normalize…</span></td></tr>
+    <tr><td>Export selected audio</td><td><span class="menu-path">File → Export Audio…</span> · <strong>Export Range: Current selection</strong></td></tr>
+    <tr><td>Sample filename convention</td><td><code>[category]-[descriptor]-[variant].wav</code></td></tr>
+  </tbody>
+</table>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 03 · Lab 2</span>
+</footer>
+
+</body>
+</html>
