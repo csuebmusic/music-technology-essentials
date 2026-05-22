@@ -455,13 +455,13 @@ Eight steps from phone-side transfer through library upload: get the recording o
 
 Introduces the mixer as the place where many signal flows converge, split, and route to different destinations. Up to now students have thought about one flow at a time (one mic, one signal, one input). A mixer is what handles five or ten or twenty flows at once. The pedagogical move: walk through **the same fictional band in two scenarios** (live performance and studio session) to surface what's the same and what's different.
 
-**The fictional band: The Sound Below.** A four-piece, defined in the reading's opening sidebar and reused as the running example through sections 6 and 7. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2:
+**The fictional band: The Sound Below.** A four-piece, defined in the reading's opening sidebar and reused as the running example through sections 6 and 7. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2, plus the canonical DI-dry-plus-amp-wet bass treatment and the standard kick-snare-overheads drum miking from Huber (Modern Recording Techniques, 2018):
 - **Vocals:** dynamic mic, mic-level signal, XLR
 - **Electric guitar:** amp mic'ed with a dynamic, mic-level, XLR
-- **Bass guitar:** through a DI box (instrument → mic-level via the DI), XLR
-- **Drums:** three mics, kick (dynamic), snare (dynamic), overhead (condenser, needs phantom power), three XLRs
+- **Bass guitar:** recorded two ways simultaneously, DI dry (XLR out of the DI box) + amp wet (dynamic mic on the bass amp's speaker, XLR). The DI box's thru jack passes the instrument signal on to the amp.
+- **Drums:** four mics, kick (dynamic) + snare (dynamic) + two overhead condensers (left and right, both needing phantom power), four XLRs
 
-Six signals into the console total.
+Eight signals into the console total. With sixteen input channels on our console, the band fills exactly half.
 
 **Scenario 1: Live sound.**
 

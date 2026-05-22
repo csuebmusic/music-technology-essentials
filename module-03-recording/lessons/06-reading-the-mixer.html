@@ -128,10 +128,10 @@
   <ul>
     <li><strong>Vocals.</strong> Dynamic mic on a stand. Mic-level signal, XLR cable.</li>
     <li><strong>Electric guitar.</strong> Played through a small amp. Dynamic mic in front of the amp's speaker. Mic-level signal, XLR cable.</li>
-    <li><strong>Bass guitar.</strong> Played through a DI box, no amp. Instrument-level signal converted to mic-level by the DI, then XLR cable to the console.</li>
-    <li><strong>Drums.</strong> Three mics: one dynamic on the kick drum, one dynamic on the snare, one condenser overhead. Three XLR cables. The condenser needs phantom power.</li>
+    <li><strong>Bass guitar.</strong> Recorded two ways at once. A DI box takes the bass's instrument-level signal, converts it to a mic-level signal on an XLR cable, and sends one path to the console (the <strong>dry</strong> signal: clean, present, every note clearly defined). The DI box's "thru" jack passes the same instrument signal on to a bass amp, which is mic'ed with a dynamic mic at the speaker (the <strong>wet</strong> signal: the body and warmth of the amp). Two channels on the console for one instrument, recorded to two tracks in the DAW. The engineer can blend them at mixdown to taste, or use one and discard the other.</li>
+    <li><strong>Drums.</strong> Four mics: one dynamic on the kick drum, one dynamic on the snare, and a pair of condenser overheads (one left, one right) positioned above the kit to capture the cymbals and the overall blend of the kit in stereo. Four XLR cables. The two condensers need phantom power.</li>
   </ul>
-  <p>That's six signals into the console. The console has to take all six, let the engineer adjust each one independently, and send the result somewhere useful: in a live show, to the speakers the audience hears; in a studio session, to the recording.</p>
+  <p>That's eight signals into the console (vocals + electric guitar mic + bass DI + bass amp mic + kick + snare + overhead left + overhead right). The console has to take all eight, let the engineer adjust each one independently, and send the result somewhere useful: in a live show, to the speakers the audience hears; in a studio session, to the recording. Eight signals from a four-piece is normal; the band fills exactly half of our 16-channel console.</p>
 </aside>
 
 <hr>
@@ -318,9 +318,9 @@
 
 <h2>6 · Live sound · The Sound Below at a small venue</h2>
 
-<p>Picture The Sound Below playing a small venue: a club, a coffeehouse stage, somewhere with maybe seventy seats and a single set of speakers facing the audience. The band's six signals (vocals, electric guitar mic, bass DI, kick, snare, overhead) come from the stage to the console at the back of the room over six XLR cables.</p>
+<p>Picture The Sound Below playing a small venue: a club, a coffeehouse stage, somewhere with maybe seventy seats and a single set of speakers facing the audience. The band's eight signals (vocals, electric guitar mic, bass DI, bass amp mic, kick, snare, overhead left, overhead right) come from the stage to the console at the back of the room over eight XLR cables.</p>
 
-<p>The console's job in this context is to take the six signals and send them two places:</p>
+<p>The console's job in this context is to take the eight signals and send them two places:</p>
 
 <ol>
   <li>To the <strong>main speakers</strong> facing the audience. This is the <strong>front-of-house</strong> mix (or just FOH). One stereo mix, what everyone in the audience hears.</li>
@@ -329,7 +329,7 @@
 
 <h3>The front-of-house mix</h3>
 
-<p>For each of the six channels, the engineer presses the <strong>L-R</strong> routing button and balances the channel pan and fader. All six channels now feed into the master stereo L-R bus. The master fader controls the overall level. The signal leaves the console at the MASTER O/P L and R jacks on the back and goes out (often through an amplifier and a few processors) to the main speakers.</p>
+<p>For each of the eight channels, the engineer presses the <strong>L-R</strong> routing button and balances the channel pan and fader. All eight channels now feed into the master stereo L-R bus. The master fader controls the overall level. The signal leaves the console at the MASTER O/P L and R jacks on the back and goes out (often through an amplifier and a few processors) to the main speakers.</p>
 
 <p>That's the front-of-house path: input strip → channel fader → L-R bus → master fader → MASTER O/P → audience.</p>
 
@@ -349,7 +349,7 @@
 
 <h2>7 · Studio session · The Sound Below tracking</h2>
 
-<p>Same band, different room. The Sound Below are now in a studio with the console in the control room and the band in a separate live room behind the glass. The console's six channels have the same six mic and DI signals coming in over the same XLRs.</p>
+<p>Same band, different room. The Sound Below are now in a studio with the console in the control room and the band in a separate live room behind the glass. The console's eight channels have the same eight mic and DI signals coming in over the same XLRs.</p>
 
 <p>The console's job is different now. Front-of-house speakers don't exist; the audience is the recording. The mix going to the audience is the mix going to the DAW. Each performer wears headphones, and each performer's headphone mix is what they need to play to.</p>
 
@@ -360,11 +360,11 @@
 <p>There are two ways to get the signals into the DAW, both available on this console at the same time:</p>
 
 <ol>
-  <li><strong>Direct outs.</strong> Each channel has a DIR. O/P jack on the back. Plug a cable from each channel's direct out to the corresponding input of the audio interface. Six channels, six direct outs, six DAW tracks. The signal each track receives is the post-fader channel signal from that strip, complete with EQ and gain.</li>
-  <li><strong>Submaster outs.</strong> Press the routing buttons on the input strips to send each channel to a subgroup pair (1-2, 3-4, 5-6, or 7-8). Now the submaster outputs are the feeds to the DAW. Useful when you want to combine several mics into one stereo or mono group before recording (the three drum mics summed to one stereo subgroup, say, rather than three separate tracks).</li>
+  <li><strong>Direct outs.</strong> Each channel has a DIR. O/P jack on the back. Plug a cable from each channel's direct out to the corresponding input of the audio interface. Eight channels, eight direct outs, eight DAW tracks. The signal each track receives is the post-fader channel signal from that strip, complete with EQ and gain.</li>
+  <li><strong>Submaster outs.</strong> Press the routing buttons on the input strips to send each channel to a subgroup pair (1-2, 3-4, 5-6, or 7-8). Now the submaster outputs are the feeds to the DAW. Useful when you want to combine several mics into one stereo or mono group before recording (the four drum mics summed to one stereo subgroup, say, rather than four separate tracks).</li>
 </ol>
 
-<p>For The Sound Below, the engineer might use direct outs for vocals, guitar, and bass (one track each in the DAW), and use a subgroup pair for the three drum mics (two tracks, a stereo drum bus).</p>
+<p>For The Sound Below, the engineer might use direct outs for vocals and electric guitar (one track each), two direct outs for the bass (one for the DI dry, one for the amp wet), and a subgroup pair for the four drum mics (two tracks, a stereo drum bus combining the kick, snare, and the two overheads).</p>
 
 <h3>Performer headphone mixes</h3>
 
@@ -422,7 +422,7 @@
     <tr style="border-bottom: 1px solid var(--rule);">
       <td style="padding: 0.5rem 1rem;">Subgroups 1-8 (submaster outputs)</td>
       <td style="padding: 0.5rem 1rem;">Group buses going to specific FOH zones, or to a separate amp for recording the show</td>
-      <td style="padding: 0.5rem 1rem;">Group feeds to DAW tracks (e.g. three drum mics summed to one stereo subgroup)</td>
+      <td style="padding: 0.5rem 1rem;">Group feeds to DAW tracks (e.g. four drum mics summed to one stereo subgroup)</td>
     </tr>
     <tr>
       <td style="padding: 0.5rem 1rem;">Talkback</td>
