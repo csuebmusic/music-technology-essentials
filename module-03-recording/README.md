@@ -120,6 +120,7 @@ Block-by-block facilitation, demo scripts, common confusions, and pacing fallbac
 
 - **Paper supplies:** scrap paper (not too thick, not too thin) at every station for Wed Wk 6 recordings. Quantity: enough for each student to have 4 sheets, plus extras
 - **Recording gear in the lab's gear storage and inventoried:** dynamic mic, mic stand, XLR cable, audio interface, headphones, one set per workstation. Quick visual check that nothing is missing before the start of Wk 6.
+- **LocalSend installed on every lab Mac** before Wed Wk 7. Free, cross-platform, used to transfer phone recordings onto the lab Mac in Lab 2. Confirm before the session that the Macs and the campus Wi-Fi the student phones connect to can see each other on the network; if device discovery is blocked at the network level, the lab handout's LocalSend Web fallback is the path students will take instead, no install needed
 - **Sample library template ready:** a folder structure students will mirror, ideally available as a downloadable starter on the NAS
 - **Lecture demo materials:** physical examples of XLR, TS, TRS cables (Wk 6 Mon and Wk 7 Mon); a condenser mic and a DI box to hold up in the Wk 7 Mon lecture
 - **Fictional band sketch (Wk 8 Mon):** 4–5 piece band, defined instruments and stage positions, so the live-vs-studio walkthrough is concrete. Worth writing out in advance so the lecture doesn't drift
@@ -421,7 +422,7 @@ Two halves.
 
 **First half: getting phone recordings into Audacity and through the prep pipeline.**
 
-- Transferring files from phone to computer: AirDrop from Lossless Field Recorder on iPhone (open the recording, share icon, AirDrop to Mac); on Android, the Pfitzinger app's file list plus the share sheet (Drive, USB via Android File Transfer, email)
+- Transferring files from phone to computer with **LocalSend** (free, cross-platform; one procedure for iPhone and Android, file lands on the Mac's Downloads folder). Browser-based LocalSend Web as the fallback if the campus network blocks device discovery. The phone-recording reference card (`03-handout-recording-on-phone.html`) prompts students to install LocalSend at the end of Wk 6 so it's ready at the start of this lab
 - File format: both apps produce 48 kHz / 24-bit WAV. Audacity opens them directly with no conversion step. This is the payoff of using dedicated field-recording apps instead of the phone's default voice recorder
 - Importing into Audacity (drag-and-drop, or File → Import → Audio)
 - **Resampling** to the project's 44.1 kHz / 16-bit standard. This is the teaching moment of the lab: sample rate conversion is a routine operation in recording, why we care about matching project rate, what changes (or doesn't) when you resample. Use Tracks → Resample (or the equivalent in the student's Audacity version) to bring the imported clip down to 44.1 kHz
@@ -438,7 +439,7 @@ This is the one mostly-unstructured session of the module. Use the room: circula
 
 [`lessons/05-handout-phone-to-audacity.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/05-handout-phone-to-audacity.html) — Lab 2
 
-Eight steps from phone-side transfer through library upload: get the recording off the phone (AirDrop on iPhone, USB or share sheet on Android), pull the library down from the NAS, import, resample 48 kHz → 44.1 kHz, run the prep pipeline (with a noise profile captured from the phone recording itself), export to a student-chosen category folder, README update, worktime, NAS upload. References Lab 1 for the prep-pipeline detail rather than re-walking it.
+Eight steps from phone-side transfer through library upload: get the recording off the phone with LocalSend (one procedure for both platforms; LocalSend Web as the browser fallback), pull the library down from the NAS, import, resample 48 kHz → 44.1 kHz, run the prep pipeline (with a noise profile captured from the phone recording itself), export to a student-chosen category folder, README update, worktime, NAS upload. References Lab 1 for the prep-pipeline detail rather than re-walking it.
 
 ### Block-by-block
 
