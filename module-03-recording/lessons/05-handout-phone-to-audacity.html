@@ -152,7 +152,8 @@
 
 <div class="callout">
   <div class="callout-label">When relabeling is the move you actually want</div>
-  <p>Forcing a rate change without recalculation is a tape-style speed-and-pitch shift. The sound goes faster and higher, or slower and lower, in a single fixed ratio. Composers reach for this on purpose all the time (the move that turns a footstep into a stomp, or a voice into a creature) and you'll meet it again as a deliberate technique. Today it's an experiment: you used it to feel what sample rate does, not to change your sample.</p>
+  <p>Forcing a rate change without recalculation is a tape-style speed-and-pitch shift. The sound goes faster and higher, or slower and lower, in a single fixed ratio. Composers reach for this on purpose all the time (the move that turns a footstep into a stomp, or a voice into a creature) and you'll meet it again as a deliberate technique.</p>
+  <p>The catch: you have to know which operation you're invoking. Not every DAW resamples imported audio automatically; some load the file at its native rate and play it at the project rate, which is the same speed-and-pitch shift you just heard, applied silently to everything that comes in. This is a common source of trouble with downloaded loops, especially drum loops. A 44.1 kHz break dragged into a 48 kHz project plays back faster and higher than it was recorded, and a producer who doesn't check the file's sample rate against the project's may spend an hour wondering why their drums feel slightly off. Look at the rate of every file you import. If it matches the project, you're done. If it doesn't, decide on purpose: resample (preserve the sound) or relabel (use the shift musically).</p>
 </div>
 
 <h3>Resample the imported track</h3>
