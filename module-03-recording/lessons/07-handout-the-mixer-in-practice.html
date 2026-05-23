@@ -259,20 +259,20 @@
 
 <h2>2 · Scenario 1 · Live sound</h2>
 
-<p>The Sound Below is playing a small venue. The stage holds the band, the amps, the drums, the keys rig, and five monitor wedges (one in front of each performer). Out in front of the stage are the front-of-house speakers facing the audience. Halfway back in the room sits the engineer, behind the console.</p>
+<p>The Sound Below is playing a small venue. The stage holds the band, the amps, the drums, the keys rig, and five stage monitors (one in front of each performer). Out in front of the stage are the front-of-house speakers facing the audience. Halfway back in the room sits the engineer, behind the console.</p>
 
 <p>The job: take the twelve signals coming off the stage and send them to <strong>two destinations</strong> at once.</p>
 
 <ol class="steps">
   <li><strong>Front of house (FOH):</strong> the speakers facing the audience. The audience needs to hear the whole band balanced as a mix. The console builds the master mix and sends it out at MASTER O/P, which cables to the FOH power amps that drive the audience speakers.</li>
-  <li><strong>Stage monitors (wedges):</strong> a separate mix for each performer, so each player hears what <em>they</em> need to perform well. The vocalist mostly wants their own voice plus a bit of the kick to lock the timing; the bassist wants kick, snare, and their own bass; the drummer wants the bass and the click; the guitarist wants vocal, guitar, and drums; the keyboardist wants vocal, her own keys and laptop, and enough drums to lock in. Five performers, five different mixes, all built from the same twelve channels.</li>
+  <li><strong>Stage monitors:</strong> a separate mix for each performer, so each player hears what <em>they</em> need to perform well. The vocalist mostly wants their own voice plus a bit of the kick to lock the timing; the bassist wants kick, snare, and their own bass; the drummer wants the bass and the click; the guitarist wants vocal, guitar, and drums; the keyboardist wants vocal, her own keys and laptop, and enough drums to lock in. Five performers, five different mixes, all built from the same twelve channels.</li>
 </ol>
 
-<p>Sketched at the level of inputs and outputs, the scenario looks like this. The band's twelve signals arrive on the left in two cable families: eight mic-level signals on XLR (vocal, guitar amp, bass DI, bass amp, four drum mics) and four line-level signals on TRS from the keyboardist (keys L/R, laptop L/R). All twelve land at the same console. From that console, two output mixes go to two destinations: the front-of-house speakers facing the audience, and the five stage wedges facing the performers.</p>
+<p>Sketched at the level of inputs and outputs, the scenario looks like this. The band's twelve signals arrive on the left in two cable families: eight mic-level signals on XLR (vocal, guitar amp, bass DI, bass amp, four drum mics) and four line-level signals on TRS from the keyboardist (keys L/R, laptop L/R). All twelve land at the same console. From that console, two output mixes go to two destinations: the front-of-house speakers facing the audience, and the five stage monitors facing the performers.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound scenario at the input-output level. On the left, five source groupings labeled with the band's instruments: vocal on XLR, guitar amp on XLR, bass (DI plus amp mic) on two XLRs, drums (kick, snare, two overheads) on four XLRs, and keys plus laptop on four TRS lines. All cables converge into a single console box in the middle marked with a question mark. From the console, two output paths go to the right: one to the FOH speakers (the audience mix), the other to five stage wedges (the performer mixes).">
+       role="img" aria-label="Diagram of the live-sound scenario at the input-output level. On the left, five source groupings labeled with the band's instruments: vocal on XLR, guitar amp on XLR, bass (DI plus amp mic) on two XLRs, drums (kick, snare, two overheads) on four XLRs, and keys plus laptop on four TRS lines. All cables converge into a single console box in the middle marked with a question mark. From the console, two output paths go to the right: one to the FOH speakers (the audience mix), the other to five stage monitors (the performer mixes).">
 
     <defs>
       <marker id="ah-twodest-xlr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
@@ -393,12 +393,12 @@
             stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-twodest-out)"/>
     </g>
 
-    <!-- OUTPUT 2: Stage wedges -->
+    <!-- OUTPUT 2: Stage monitors -->
     <g>
       <rect x="555" y="300" width="140" height="60" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
       <text x="625" y="327" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Stage wedges</text>
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Stage monitors</text>
       <text x="625" y="345" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">to the performers · ×5</text>
 
@@ -410,7 +410,7 @@
   <figcaption>The live-sound scenario at the input-output level. Twelve signals arrive at the console on the left (teal = XLR mic-level, plum = TRS line-level); two output mixes leave on the right. The rest of this section fills in what's inside the box.</figcaption>
 </figure>
 
-<p>Behind the console, halfway back in the room, is the engineer. Their job for the night is to <strong>ride the faders</strong>: listen continuously to what's coming out of the FOH speakers, keep the band balanced as the song moves (vocal up in the chorus, guitar back during the verse, kick steady through it all), and at the same time keep the five wedge mixes balanced for each player on stage. The engineer is making small fader moves and EQ adjustments constantly through the show; the work happens in real time and is finished when the band walks off.</p>
+<p>Behind the console, halfway back in the room, is the engineer. Their job for the night is to <strong>ride the faders</strong>: listen continuously to what's coming out of the FOH speakers, keep the band balanced as the song moves (vocal up in the chorus, guitar back during the verse, kick steady through it all), and at the same time keep the five stage monitor mixes balanced for each player on stage. The engineer is making small fader moves and EQ adjustments constantly through the show; the work happens in real time and is finished when the band walks off.</p>
 
 <h3>From the stage to the console</h3>
 
@@ -630,13 +630,13 @@
   <figcaption>Scenario 1 main routing. Dotted arrows show internal routing on the console (channels and subgroups landing in the master mix); the solid arrow on the right represents the master mix leaving the console at MASTER O/P and driving the FOH amps that power the audience speakers.</figcaption>
 </figure>
 
-<h3>The wedge mixes: building five different mixes on the aux sends</h3>
+<h3>The stage monitor mixes: building five different mixes on the aux sends</h3>
 
-<p>The five performers each need a different blend in their wedge. The aux sends are how that gets built. Each aux is its own bus, with its own master level, going out the back of the console to a separate output. Send that output to a wedge amplifier, and the aux's bus becomes that performer's monitor mix.</p>
+<p>The five performers each need a different blend in their stage monitor. The aux sends are how that gets built. Each aux is its own bus, with its own master level, going out the back of the console to a separate output. Send that output to a stage monitor amplifier, and the aux's bus becomes that performer's monitor mix.</p>
 
-<p>For monitor wedges, every aux used for a wedge mix is set <strong>pre-fader</strong>. The reason: the FOH engineer might pull the vocal fader down between songs (chatter, a quiet intro, anything), and the singer still needs to hear their own voice in the wedge at the same level. Pre-fader means the aux send level is independent of the channel fader; whatever the engineer does at FOH doesn't bleed into the stage mix.</p>
+<p>For stage monitors, every aux used for a monitor mix is set <strong>pre-fader</strong>. The reason: the FOH engineer might pull the vocal fader down between songs (chatter, a quiet intro, anything), and the singer still needs to hear their own voice in the stage monitor at the same level. Pre-fader means the aux send level is independent of the channel fader; whatever the engineer does at FOH doesn't bleed into the stage mix.</p>
 
-<p>The console has six aux sends per channel. Five performers take five auxes (1 through 5) for their wedges. That leaves Aux 6 for a single shared FX send to the outboard reverb unit; the delay drops out of this evening's setup. A larger console with more auxes wouldn't force the trade-off, but on the Toft, with five wedges to feed, the engineer chooses what matters most for the show.</p>
+<p>The console has six aux sends per channel. Five performers take five auxes (1 through 5) for their stage monitors. That leaves Aux 6 for a single shared FX send to the outboard reverb unit; the delay drops out of this evening's setup. A larger console with more auxes wouldn't force the trade-off, but on the Toft, with five stage monitors to feed, the engineer chooses what matters most for the show.</p>
 
 <table class="routing">
   <caption>Scenario 1 · live show · aux assignments</caption>
@@ -651,31 +651,31 @@
   <tbody>
     <tr>
       <td class="ch">Aux 1</td>
-      <td>Vocalist's wedge</td>
+      <td>Vocalist's stage monitor</td>
       <td>Pre</td>
       <td>Vocal (loud) · kick (low) · everything else minimal</td>
     </tr>
     <tr>
       <td class="ch">Aux 2</td>
-      <td>Guitarist's wedge</td>
+      <td>Guitarist's stage monitor</td>
       <td>Pre</td>
       <td>Vocal · guitar · kick · snare</td>
     </tr>
     <tr>
       <td class="ch">Aux 3</td>
-      <td>Bassist's wedge</td>
+      <td>Bassist's stage monitor</td>
       <td>Pre</td>
       <td>Bass DI · kick · snare · vocal (low)</td>
     </tr>
     <tr>
       <td class="ch">Aux 4</td>
-      <td>Drummer's wedge</td>
+      <td>Drummer's stage monitor</td>
       <td>Pre</td>
       <td>Bass DI · vocal · click (if applicable)</td>
     </tr>
     <tr>
       <td class="ch">Aux 5</td>
-      <td>Keyboardist's wedge</td>
+      <td>Keyboardist's stage monitor</td>
       <td>Pre</td>
       <td>Keys · laptop · vocal · kick · snare</td>
     </tr>
@@ -688,11 +688,11 @@
   </tbody>
 </table>
 
-<p>Aux 6 is doing a different job from the five wedges: it feeds an outboard reverb unit instead of a monitor speaker. It runs <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 6 post-fader makes that happen automatically. The reverb return comes back into a spare submaster strip on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the master mix alongside the dry signals.</p>
+<p>Aux 6 is doing a different job from the five stage monitors: it feeds an outboard reverb unit instead of a stage monitor speaker. It runs <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 6 post-fader makes that happen automatically. The reverb return comes back into a spare submaster strip on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the master mix alongside the dry signals.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound aux routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. Dashed lines from each channel converge into a parallel aux tap bus that feeds six aux send buses (Aux 1 through Aux 6) at the bottom. Auxes 1 through 5 go to the five wedges on stage; Aux 6 feeds an outboard reverb unit whose return blends back into the master mix (exiting the frame at the top right).">
+       role="img" aria-label="Diagram of the live-sound aux routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. Dashed lines from each channel converge into a parallel aux tap bus that feeds six aux send buses (Aux 1 through Aux 6) at the bottom. Auxes 1 through 5 go to the five stage monitors on stage; Aux 6 feeds an outboard reverb unit whose return blends back into the master mix (exiting the frame at the top right).">
     <defs>
       <marker id="ah-foh-aux" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -701,7 +701,7 @@
 
     <text x="360" y="20" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
-          fill="var(--accent)">SCENARIO 1 · AUX SENDS · WEDGES AND FX</text>
+          fill="var(--accent)">SCENARIO 1 · AUX SENDS · STAGE MONITORS AND FX</text>
 
     <!-- Twelve channels on the left, stacked -->
     <g font-family="DM Mono, monospace" font-size="10" fill="var(--ink)">
@@ -766,27 +766,27 @@
       <!-- Aux 1 -->
       <rect x="170" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="215" y="446" text-anchor="middle" font-weight="600">Aux 1</text>
-      <text x="215" y="462" text-anchor="middle" fill="var(--ink-soft)">vocal wedge</text>
+      <text x="215" y="462" text-anchor="middle" fill="var(--ink-soft)">vocal monitor</text>
 
       <!-- Aux 2 -->
       <rect x="270" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="315" y="446" text-anchor="middle" font-weight="600">Aux 2</text>
-      <text x="315" y="462" text-anchor="middle" fill="var(--ink-soft)">guitar wedge</text>
+      <text x="315" y="462" text-anchor="middle" fill="var(--ink-soft)">guitar monitor</text>
 
       <!-- Aux 3 -->
       <rect x="370" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="415" y="446" text-anchor="middle" font-weight="600">Aux 3</text>
-      <text x="415" y="462" text-anchor="middle" fill="var(--ink-soft)">bass wedge</text>
+      <text x="415" y="462" text-anchor="middle" fill="var(--ink-soft)">bass monitor</text>
 
       <!-- Aux 4 -->
       <rect x="470" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="515" y="446" text-anchor="middle" font-weight="600">Aux 4</text>
-      <text x="515" y="462" text-anchor="middle" fill="var(--ink-soft)">drum wedge</text>
+      <text x="515" y="462" text-anchor="middle" fill="var(--ink-soft)">drum monitor</text>
 
       <!-- Aux 5 -->
       <rect x="170" y="490" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="265" y="506" text-anchor="middle" font-weight="600">Aux 5</text>
-      <text x="265" y="522" text-anchor="middle" fill="var(--ink-soft)">keys wedge</text>
+      <text x="265" y="522" text-anchor="middle" fill="var(--ink-soft)">keys monitor</text>
 
       <!-- Aux 6 -->
       <rect x="370" y="490" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
@@ -794,10 +794,10 @@
       <text x="465" y="522" text-anchor="middle" fill="var(--ink-soft)">reverb send (outboard)</text>
     </g>
 
-    <!-- Auxes 1-5 → wedges destination label on the right -->
+    <!-- Auxes 1-5 → stage monitors destination label on the right -->
     <line x1="562" y1="450" x2="595" y2="450" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-aux)"/>
     <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
-      <text x="630" y="444" text-anchor="middle" font-weight="600" fill="var(--ink)">five wedges</text>
+      <text x="630" y="444" text-anchor="middle" font-weight="600" fill="var(--ink)">five monitors</text>
       <text x="630" y="459" text-anchor="middle">on stage</text>
     </g>
 
@@ -811,12 +811,12 @@
     <path d="M 670 490 Q 695 280 670 60" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ah-foh-aux)" opacity="0.7"/>
     <text x="675" y="280" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" transform="rotate(90 675 280)">FX return blends into master mix</text>
   </svg>
-  <figcaption>Scenario 1 aux routing. Each channel's aux taps run in parallel to the main flow; five auxes feed the performers' wedges, the sixth feeds an outboard reverb whose return blends back into the master mix from the diagram above.</figcaption>
+  <figcaption>Scenario 1 aux routing. Each channel's aux taps run in parallel to the main flow; five auxes feed the performers' stage monitors, the sixth feeds an outboard reverb whose return blends back into the master mix from the diagram above.</figcaption>
 </figure>
 
 <div class="callout">
   <div class="callout-label">One source, seven destinations</div>
-  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the master mix (audience hears it via the FOH amps), the vocal wedge (singer hears it), the four other wedges (everyone else hears it in their stage mixes), and the reverb send (so vocals carry a tail). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
+  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the master mix (audience hears it via the FOH amps), the vocal stage monitor (singer hears it), the four other stage monitors (everyone else hears it in their stage mixes), and the reverb send (so vocals carry a tail). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
 </div>
 
 <hr>
@@ -829,7 +829,7 @@
 
 <p>The reasons are practical and artistic. Practically: isolating one source at a time means no bleed (a kick mic picks up only the kick, not also the bassist's amp through the open door). Artistically: the band can take many takes of each part without anyone else getting tired, edit between takes, fix what doesn't work, and use the studio as a composition tool. The studio session is less like a performance and more like a slow, patient assembly.</p>
 
-<p>This re-shapes everything about how the console gets used. The master mix is now what the engineer monitors in the control-room speakers (the speaker output of the master section feeds them, so the engineer hears whatever's being captured plus whatever's playing back from Pro Tools). Each tracking pass only uses the channels for the source being recorded that day; the rest of the channels carry previous days' takes coming back from Pro Tools. The wedge-mix-per-performer picture from Scenario 1 collapses to a single cue mix for whoever is in the live room. And the I/P REV button, instead of being a once-at-the-end move, becomes part of the daily routine.</p>
+<p>This re-shapes everything about how the console gets used. The master mix is now what the engineer monitors in the control-room speakers (the speaker output of the master section feeds them, so the engineer hears whatever's being captured plus whatever's playing back from Pro Tools). Each tracking pass only uses the channels for the source being recorded that day; the rest of the channels carry previous days' takes coming back from Pro Tools. The monitor-mix-per-performer picture from Scenario 1 collapses to a single cue mix for whoever is in the live room. And the I/P REV button, instead of being a once-at-the-end move, becomes part of the daily routine.</p>
 
 <h3>From the live room to the console</h3>
 
@@ -1090,7 +1090,7 @@
     </tr>
     <tr>
       <td class="ch">Aux sends (pre-fader)</td>
-      <td>Five stage wedges (one per performer, Aux 1-5)</td>
+      <td>Five stage monitors (one per performer, Aux 1-5)</td>
       <td>One headphone cue for whoever is tracking today (Aux 1)</td>
     </tr>
     <tr>

@@ -234,7 +234,7 @@
         <text x="220" y="218" text-anchor="middle"
               font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Aux Master 1</text>
         <text x="220" y="233" text-anchor="middle"
-              font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">e.g. wedge mix</text>
+              font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">e.g. stage monitor mix</text>
       </g>
 
       <!-- Aux 2 branch (middle) -->
@@ -273,7 +273,7 @@
     </svg>
     <figcaption>The channel's main flow runs left to right; the aux taps siphon off copies of the signal at independent levels.</figcaption>
   </figure>
-  <p>The main flow doesn't change because of the taps. Whatever level you set on the channel fader, the signal arriving at the master mix is the same. The aux taps are <em>parallel</em>: they pull a copy off the main flow without subtracting from it. This is what makes one channel useful to many destinations at once. The vocal mic feeds the main mix (audience), <em>and</em> the singer's wedge (via Aux 1), <em>and</em> a reverb unit (via Aux 4), all simultaneously. One signal, many places, each at its own level.</p>
+  <p>The main flow doesn't change because of the taps. Whatever level you set on the channel fader, the signal arriving at the master mix is the same. The aux taps are <em>parallel</em>: they pull a copy off the main flow without subtracting from it. This is what makes one channel useful to many destinations at once. The vocal mic feeds the main mix (audience), <em>and</em> the singer's stage monitor (via Aux 1), <em>and</em> a reverb unit (via Aux 4), all simultaneously. One signal, many places, each at its own level.</p>
 </div>
 
 <p><strong>Monitor section.</strong> A second smaller level control, labeled <strong>MON LEVEL</strong>, with its own <strong>MON PAN</strong>. This is a second input on the same strip, with its own way into the master mix, and it's the reason this console is called <em>in-line</em>. We'll unpack the monitor section in section 3.</p>
@@ -386,7 +386,7 @@
 
 <p>Top to bottom inside this section:</p>
 
-<p><strong>AUX 5 and AUX 6, with PRE switch.</strong> The submaster strips each have two aux sends, sharing buses with channel auxes 5 and 6 (the callout below explains why). Use them to send the subgroup off to wherever a wedge or a headphone cue needs the whole sub-mix. The <strong>PRE</strong> button decides whether the tap happens before or after MON LEVEL.</p>
+<p><strong>AUX 5 and AUX 6, with PRE switch.</strong> The submaster strips each have two aux sends, sharing buses with channel auxes 5 and 6 (the callout below explains why). Use them to send the subgroup off to wherever a stage monitor or a headphone cue needs the whole sub-mix. The <strong>PRE</strong> button decides whether the tap happens before or after MON LEVEL.</p>
 
 <div class="callout">
   <div class="callout-label">Why share aux 5 and 6 instead of adding aux 7 and 8</div>
@@ -765,7 +765,7 @@
 
 <p>Walking the Toft control by control is a technical exercise, but the reason the console is built the way it is is artistic. The designers had to make choices: how many channels, how many aux sends, how many subgroups, where the EQ sits in the chain, what the I/P REV button swaps, whether the submaster MON LEVEL feeds the master mix or something else. Each choice opens some patching possibilities and forecloses others. A good console is one where the flexibility lines up with the work an engineer actually wants to do.</p>
 
-<p>That work is partly recipe-following and partly invention. The recipes are conventions the field has settled on: pre-fader for wedges, post-fader for reverb sends, route the drum kit to a subgroup pair, put the vocal on Aux 1. Knowing the recipes is half the job. The other half is figuring out what to do when the recipes don't quite fit, or when the session calls for something the conventional patching doesn't cover: a parallel compression chain that needs an aux return blended with the dry, a delay that should feed back into a reverb on a different aux, a click track that needs to reach two performers but not a third. Solving those problems is where the engineering becomes design, and where the console becomes a creative instrument rather than just a transparent path from source to recording.</p>
+<p>That work is partly recipe-following and partly invention. The recipes are conventions the field has settled on: pre-fader for stage monitors, post-fader for reverb sends, route the drum kit to a subgroup pair, put the vocal on Aux 1. Knowing the recipes is half the job. The other half is figuring out what to do when the recipes don't quite fit, or when the session calls for something the conventional patching doesn't cover: a parallel compression chain that needs an aux return blended with the dry, a delay that should feed back into a reverb on a different aux, a click track that needs to reach two performers but not a third. Solving those problems is where the engineering becomes design, and where the console becomes a creative instrument rather than just a transparent path from source to recording.</p>
 
 <p>The puzzle is small at first (where does this mic go, how do I get this track to the performer's headphones) and grows with practice. Engineers who've worked on the same console for years still find new patches inside it; engineers moving between consoles carry the routing logic with them, because the underlying operations (channel, subgroup, aux, master) are the same even when the specific jacks and switches are not. What you're learning here is the routing vocabulary itself. The Toft is one place to learn it, the way one piano is one place to learn the keyboard.</p>
 
@@ -787,13 +787,13 @@
   <li><strong>Control-room speakers.</strong> The studio's monitor speakers, in the room where the engineer is sitting. Fed by the speaker output.</li>
   <li><strong>Subgroup.</strong> A bus that groups several channels together as a sub-mix, with its own fader and its own routing into the master mix, before sending to a destination. The Toft has eight subgroups, controlled by the eight submaster strips.</li>
   <li><strong>Submaster.</strong> On this console, the strip that controls a subgroup. Both names appear in different traditions; "submaster" is what the Toft labels it.</li>
-  <li><strong>Aux send.</strong> A separate tap from each channel that goes out to a separate destination. Lets the engineer build a different mix of the same channels for a different purpose (a performer's headphone cue, a reverb send, a monitor wedge).</li>
+  <li><strong>Aux send.</strong> A separate tap from each channel that goes out to a separate destination. Lets the engineer build a different mix of the same channels for a different purpose (a performer's headphone cue, a reverb send, a stage monitor).</li>
   <li><strong>Pre-fader / post-fader (aux).</strong> Pre-fader: the aux tap sits before the channel fader, so the fader doesn't affect the aux level. Post-fader: the aux tap sits after the channel fader, so the fader does affect it. Pre-fader is typical for headphone cues; post-fader is typical for reverb sends.</li>
   <li><strong>Unity gain.</strong> The position on a fader or knob where the signal passes through at the same level it came in at, with no amplification or attenuation. Marked as 0 dB on the scale, usually with a thicker line or a notch. Going above unity boosts the signal; going below unity reduces it.</li>
   <li><strong>Direct out.</strong> A per-channel output that taps the channel's post-fader signal and sends it straight to a single destination (usually one track of a DAW). Independent of routing buttons.</li>
   <li><strong>Insert.</strong> A break in a channel's signal path, exposed as a send/return jack on the back of the console, where an outboard processor (compressor, EQ) can be patched in.</li>
   <li><strong>Talkback.</strong> A small microphone in the master section, plus buttons that route the engineer's voice into the aux outputs (to performers' headphones) or onto the recording (for slating takes).</li>
-  <li><strong>Monitor (the word, on this desk).</strong> Used three different ways. (1) The MON jack on the back of an input strip plus the MON LEVEL knob in the strip's middle: a second input on the strip, routing into the master mix; primarily for DAW playback during tracking. (2) The MON LEVEL and MON PAN on a submaster strip: the subgroup's route into the master mix. (3) The MON LEVEL on the master strip: the overall volume knob for the control-room speakers. Three different jobs, all labeled MON because they all sit on what engineers traditionally called the "monitoring" side of the recording process. Distinct from "monitor" in the live-sound sense of a performer's wedge (covered in the next lab).</li>
+  <li><strong>Monitor (the word, on this desk).</strong> Used three different ways. (1) The MON jack on the back of an input strip plus the MON LEVEL knob in the strip's middle: a second input on the strip, routing into the master mix; primarily for DAW playback during tracking. (2) The MON LEVEL and MON PAN on a submaster strip: the subgroup's route into the master mix. (3) The MON LEVEL on the master strip: the overall volume knob for the control-room speakers. Three different jobs, all labeled MON because they all sit on what engineers traditionally called the "monitoring" side of the recording process. Distinct from "monitor" in the live-sound sense of a performer's stage monitor (covered in the next lab).</li>
   <li><strong>Front-of-house (FOH).</strong> The main mix sent to the speakers facing the audience in a live show. The "front of the house" is the audience side of a venue.</li>
   <li><strong>Headphone cue (or just cue).</strong> A performer's headphone mix during tracking. Usually built from one or more aux sends.</li>
 </ul>
