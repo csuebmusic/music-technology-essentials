@@ -408,15 +408,6 @@
 
 <p>A 100mm fader controlling the level of this subgroup's output at the SUBMASTER OUTPUT jack on the back: the level the DAW gets. It does not affect the subgroup's contribution to the master mix (which is set by the MON LEVEL above). The fader scale matches the input strip's: minus-infinity at the bottom, 0 (unity) marked with a thicker line, +10 at the top.</p>
 
-<div class="callout">
-  <div class="callout-label">Two ways to read a submaster strip</div>
-  <p>The eight submaster strips look like one structure, but each strip is actually doing two jobs at once. Easy to miss when you're walking it control by control:</p>
-  <ol>
-    <li><strong>The strip is both an output and a return.</strong> Going out: it's the subgroup that combines the input channels routed here, and that combined signal has two destinations: the SUBMASTER OUTPUTS jack on the back (level set by the submaster fader, typically to the DAW), and the master mix (level and pan set by MON LEVEL and MON PAN). Coming back: the strip is also the return for one playback track of the DAW, arriving at the MONITOR RETURNS jack. The TAPE button decides whether the middle controls are operating on the live subgroup going out or the playback coming back.</li>
-    <li><strong>The eight submasters double as eight stereo effects returns.</strong> The top of each strip (MUTE, BAL, FX RET) is a self-contained stereo input that has nothing to do with the subgroup-output role. It's there so an outboard effect can be plugged into the back of the console and blended into the mix without using up an input channel.</li>
-  </ol>
-</div>
-
 <h3>Summing: what happens at the destination</h3>
 
 <p>Recall the five routing buttons from section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button assigns the channel directly to the master mix; the other four assign it to one of the four subgroup pairs. When several channels are routed to the same subgroup pair, their signals mix together in that subgroup (the summing operation from section 2's bus callout): the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two subgroups in the pair.</p>
