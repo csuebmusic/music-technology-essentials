@@ -253,13 +253,13 @@
 
 <div class="callout">
   <div class="callout-label">Why the keyboardist's signals look different</div>
-  <p>The keyboardist's four signals are the first non-microphone sources on the band today, and the first <strong>line-level</strong> signals you've routed into the console. The stage keyboard puts out a stereo pair from its main outputs (L and R, 1/4" TRS, line level); the laptop puts out a second stereo pair from its audio interface (also L and R, 1/4" TRS, line level). Four line-level signals total.</p>
-  <p>These plug into the <strong>LINE</strong> jacks on the back of the console, not the MIC jacks. The reason: line-level signals are already strong enough to pass through the console's circuitry without needing the preamp's amplification. The mic preamp on each channel exists to boost weak mic-level signals up to the level the rest of the console expects; sending a line-level signal into a mic preamp would over-amplify it and clip. On each input strip's front panel, the <strong>LINE</strong> button (top of the strip) switches the channel between its rear-panel MIC and LINE jacks. For the keys and laptop channels, that button gets pushed in.</p>
+  <p>The keyboardist's four signals are the first non-microphone sources on the band today, and the first <strong>line-level</strong> signals in the lab. The stage keyboard puts out a stereo pair from its main outputs (L and R, 1/4" TRS, line level); the laptop puts out a second stereo pair from its audio interface (also L and R, 1/4" TRS, line level). Four line-level signals at the source.</p>
+  <p>Line-level signals are already strong enough to pass through a console's circuitry without needing a preamp's amplification: the preamp's job is to boost weak mic-level signals up to the level the rest of the console expects, and sending a line-level signal into a mic preamp without precaution can over-amplify it and clip. How a line-level source is handled on the way to the console depends on the scenario: live sound and studio recording solve it in different ways, both covered in section 2 below.</p>
 </div>
 
 <h3>The channel map</h3>
 
-<p>The twelve signals get assigned to input channels 1 through 12 on the console. Channels 13 through 16 sit empty today. The assignment below is the one used in the live-sound scenario; the studio scenario re-arranges some sources to land on specific preamps (more on that in the next section).</p>
+<p>The twelve signals get assigned to input channels 1 through 12 on the console for the live show. Channels 13 through 16 sit empty there. In the studio, the channel assignments shift: the eight mic-level signals re-arrange among Ch 1-8 to optimize which external preamp each source passes through, and the keyboardist's four line-level signals leave Ch 9-12 entirely and land on Ch 15-16 via a different route (covered in section 2 below).</p>
 
 <table class="routing">
   <caption>Channel assignments · live-sound scenario</caption>
@@ -280,14 +280,14 @@
     <tr><td class="ch">Ch 6</td><td>Snare</td><td>MIC (XLR)</td><td>off</td></tr>
     <tr><td class="ch">Ch 7</td><td>Overhead L</td><td>MIC (XLR)</td><td><strong>on</strong></td></tr>
     <tr><td class="ch">Ch 8</td><td>Overhead R</td><td>MIC (XLR)</td><td><strong>on</strong></td></tr>
-    <tr><td class="ch">Ch 9</td><td>Keys L</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
-    <tr><td class="ch">Ch 10</td><td>Keys R</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
-    <tr><td class="ch">Ch 11</td><td>Laptop L</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
-    <tr><td class="ch">Ch 12</td><td>Laptop R</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 9</td><td>Keys L (DI'd from line)</td><td>MIC (XLR)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 10</td><td>Keys R (DI'd from line)</td><td>MIC (XLR)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 11</td><td>Laptop L (DI'd from line)</td><td>MIC (XLR)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 12</td><td>Laptop R (DI'd from line)</td><td>MIC (XLR)</td><td>off</td></tr>
   </tbody>
 </table>
 
-<p>Only the two overhead condensers need phantom power; the dynamics, the DI, and the four line-level sources don't draw +48V. (If you're unsure why, the polar-patterns and condenser-mic sections of Lecture 2 cover it.)</p>
+<p>In the live-sound chain, all twelve signals arrive at the console on the MIC (XLR) jack: the eight mic-level signals from microphones and DI boxes on the bass, plus the keyboardist's four signals after their DI box. Only the two overhead condensers need phantom power; the dynamics and the DI boxes don't draw +48V. (If you're unsure why, the polar-patterns and condenser-mic sections of Lecture 2 cover it.)</p>
 
 <hr>
 
@@ -297,7 +297,7 @@
 
 <h3>Live sound: the stage box and the snake</h3>
 
-<p>At the side of the stage, sitting on the floor or bolted to a riser, is a sturdy metal box about the size of a thick laptop. Its top face is a grid of jacks: a row of female XLR inputs (often labeled 1, 2, 3, ... up to the number of channels on the box), sometimes with a row of 1/4" TRS jacks below them for line-level sources. This is the <strong>stage box</strong>. Every mic on the stage plugs into one of its jacks with a short XLR cable. The vocalist's mic on a short run; the kick drum's mic on a short run; each overhead condenser on a short run. The longest cable on the stage at this point is the one from the drum overhead to the stage box, maybe ten feet.</p>
+<p>At the side of the stage, sitting on the floor or bolted to a riser, is a sturdy metal box about the size of a thick laptop. Its top face is a grid of jacks: a row of female XLR inputs, labeled 1, 2, 3, ... up to the number of channels on the box. This is the <strong>stage box</strong>. Every mic on the stage plugs into one of its jacks with a short XLR cable. The vocalist's mic on a short run; the kick drum's mic on a short run; each overhead condenser on a short run. The longest cable on the stage at this point is the one from the drum overhead to the stage box, maybe ten feet.</p>
 
 <p>From the back of the stage box, one fat black cable runs off the stage, along the wall or under the floor, all the way to the console at front-of-house. This cable is the <strong>snake</strong> (sometimes a <strong>multicore</strong>, or in audio-engineer slang the <strong>multi</strong>). Inside its outer jacket are dozens of individually shielded balanced pairs: one pair per channel of the stage box, often plus a few return pairs going back the other way for monitor speakers on the stage. A 16-channel snake carries 16 signals on a single physical cable; a 32-channel snake carries 32. At the console end, the snake terminates in a fan-out: a bundle of individual XLR connectors, labeled 1 through N, that plug into the back of the console.</p>
 
@@ -310,6 +310,23 @@
 </figure>
 
 <p><strong>The stage box jack number becomes the console channel number.</strong> Vocalist's mic plugged into stage box jack 1 lands on console channel 1. Kick mic plugged into jack 5 lands on console channel 5. The engineer working at the console knows which physical mic is on which channel because the stage box and the console agree on the numbering. Re-patch the mic into a different jack and the source moves to a different console channel; the engineer at FOH has to re-label the fader.</p>
+
+<p>That works cleanly for every input on the band today except the keyboardist's. The stage box has female XLR jacks; the keyboard and the laptop have <strong>1/4" TRS line outputs</strong>. The connectors don't match, and even if they did, the signal coming out of the keys rig is line-level, while a stage box is designed for the mic-level signals that show up on every other channel. Both problems get solved by the same piece of gear: a <strong>DI box</strong>, the same kind that handled the bass guitar back in Lecture 2.</p>
+
+<p>The keyboardist places one DI box at her station with four inputs and four outputs. Her stage keyboard's L and R outputs go into two of the DI's 1/4" TRS inputs; the laptop's L and R outputs go into the other two. On the DI box's front face, a <strong>pad switch</strong> for each channel is engaged: this tells the DI that the incoming signal is line-level (hot) rather than instrument-level, and pads the input down so the DI's internal circuit doesn't clip. Four XLR cables come out of the DI box's outputs, carrying four mic-level signals to four jacks on the stage box. From the snake's point of view, the keyboardist's four channels look exactly like the eight mic channels: balanced, mic-level, on XLR. The engineer at FOH treats them as four more mic inputs with their preamps set a touch lower than for an actual mic.</p>
+
+<div class="callout">
+  <div class="callout-label">What the DI is doing for the keys, exactly</div>
+  <p>The DI box performs three transformations at once. First, it converts the connector: 1/4" TRS in, XLR out. Second, it pads the signal down from line-level to mic-level (the part of the DI's job that you might not expect, since the textbook description of a DI is "instrument-level to mic-level"). Third, it converts the signal from the keyboard's grounded electronics to a transformer-isolated path, which means the keys rig and the rest of the stage rig stop sharing a ground path that could otherwise cause hum. The third thing is silent when it's working and very loud when it isn't.</p>
+  <p>The DI's <strong>pad switch</strong> is the explicit "I'm feeding you a hot source" control. Without it, a line-level signal hitting an unpadded DI input would overload the DI's front end. With it, the DI accepts the line-level input cleanly and the output still arrives at the stage box at the same mic-level the other channels are using. Most professional DI boxes have either a -20 dB or -30 dB pad on each input, and some have an explicit "line / instrument" toggle that does the same job under a different label.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Two simpler alternatives, when they're available</div>
+  <p>The DI-box route is the most reliable and the most uniform (every channel arrives at the console as XLR-on-MIC, no exceptions). There are two simpler alternatives, used when the situation allows.</p>
+  <p>First: a <strong>TRS-to-XLR cable</strong>. The signal stays balanced and line-level (TRS and XLR can both carry a balanced signal; a properly wired adapter cable just remaps the conductors), and the keys arrive at the stage box on the XLR jack at line-level instead of mic-level. The console's preamp on that channel gets set much lower than for a mic, because the signal is already strong. Works on most consoles, since the MIC jack will accept up to about +4 dBu, but the engineer has to remember to set the gain differently for the keys channels.</p>
+  <p>Second: many stage boxes (and the consoles they feed into) have a separate row of <strong>1/4" TRS line-level inputs</strong> alongside the XLR row, specifically for keys, DI'd guitars, and other line-level sources. When the stage box has these, the keys plug straight in with regular TRS cables and arrive at the console on the LINE jack at line-level. The simplest setup of all, when the venue's stage box happens to have the right inputs. The ProX in the photo above does not; many touring rigs do.</p>
+</div>
 
 <div class="callout">
   <div class="callout-label">Why a snake works where twelve loose cables wouldn't</div>
@@ -325,7 +342,7 @@
 
 <h3>Studio: from live room to patch panel to preamps to console</h3>
 
-<p>The studio answer to the same problem is more elaborate, because a studio is built for repeated use across many different sessions and needs more flexibility than a touring band's stage box. The chain in our studio (MB2508) has four stages between the mic and the recording software.</p>
+<p>The studio answer to the same problem is more elaborate, because a studio is built for repeated use across many different sessions and needs more flexibility than a touring band's stage box. There are actually two parallel chains in our studio (MB2508): one for the mic-level sources (vocals, guitar amp, bass, drums) and a shorter one for the keyboardist's line-level sources. The mic-level chain is walked first, in four stages.</p>
 
 <ol class="steps">
   <li><strong>The mic plugs into the studio rack, inside the live room.</strong> In one corner of the live room sits a <strong>studio rack</strong>: an open metal frame with horizontal rails that hold a stack of rack-mounted gear. Each piece of gear in the rack is its own panel screwed into the rails, so everything is visible from the front of the rack. One of those panels exposes a row of female XLR jacks (8 of them in MB2508), labeled 1 through 8. Each mic in the live room plugs directly into one of those jacks with a short XLR cable. This row of jacks is the <strong>XLR patch panel</strong>: the studio's analog of a stage box, but rack-mounted in fixed studio furniture instead of carried around as a portable metal box.</li>
@@ -348,9 +365,23 @@
   <p>On a tracking day, the engineer has eight patch panel jacks to allocate. With only four mics active (drums), or two (bass DI + bass amp), or one (vocals), the eight jacks are more than enough. The constraint is real only when many mics need to be on at once, and even then the engineer can swap patches mid-session.</p>
 </div>
 
+<h3>The keys path: a separate route, bypassing the rack</h3>
+
+<p>The chain above describes how the eight mic-level signals get from the live room to the Toft. The keyboardist's four signals don't follow it. They're line-level at the source, so they don't need the patch panel or the external preamps; sending them through that chain would just add unnecessary conversion stages and waste two preamp inputs on a signal that's already at the right level.</p>
+
+<p>Instead, the keyboardist's outputs go to a small <strong>two-channel audio interface</strong> that lives in the control room, not in the live room. The two interface inputs accept her 1/4" TRS line-level signals directly; the interface's two analog outputs are wired into <strong>Toft channels 15 and 16</strong> on the LINE jacks at the back of the console. From the Toft's point of view, two channels on the right end of the desk are reserved for the keyboardist, permanently fed from this interface.</p>
+
+<p>Two interface inputs and four line-level sources looks like a mismatch, and it would be if the band were playing together. With the studio's tracking workflow it isn't: the keyboardist tracks her stage keyboard on one day and her laptop on another, never both at the same time. On keys day, her two keyboard outputs (L and R) cable into the interface; Pro Tools records two tracks (Ch 15 and Ch 16). On laptop day, those same two interface inputs receive the laptop's two outputs instead; Pro Tools records two more tracks (again Ch 15 and Ch 16, but a different take and a different source). Across the two days, four discrete tracks land in the session even though the chain has only two channels at any moment.</p>
+
+<div class="callout">
+  <div class="callout-label">Two different chains for two different sources</div>
+  <p>Across the full MB2508 setup, the band's twelve signals reach Pro Tools by two completely separate paths. The eight mic-level signals take the long path: patch panel in the live room, into the rack-mounted preamps, through the wall to the Toft's LINE inputs at channels 1 through 8 (the channel-to-source mapping shifting each tracking day with the preamp allocation). The keyboardist's four signals take the short path: straight to the interface in the control room, into the Toft's LINE inputs at channels 15 and 16 (permanently). The two chains never share a piece of gear past the source.</p>
+  <p>Why two chains? The mic-level signals need preamps (to lift them up to line-level) and benefit from being shaped by the external preamps' character; the line-level signals need neither. Forcing them all through the same chain would help nothing and would cost two preamp inputs per session on signals that don't want preamping. The studio uses the right tool for each kind of source.</p>
+</div>
+
 <h3>The two answers, side by side</h3>
 
-<p>The stage box and the studio's rack solve the same problem from different angles. The stage box is built for a band that arrives, sets up, plays, and leaves; everything is patched once for the night, then the snake is wound down and the rig moves on. The studio's rack is built for endless reuse across years of sessions: the XLR patch panel on the front, the two preamps mounted next to it, and the eight cables running through the wall to the Toft all stay fixed; what changes from session to session is which mics get plugged in, and to which jacks. One answers "how do we move many signals through a building for one evening." The other answers "how do we run a recording room that supports a thousand sessions over a decade."</p>
+<p>The stage box and the studio rack solve the same problem from different angles. The stage box is built for a band that arrives, sets up, plays, and leaves; everything (including the keyboardist's DI'd line-level signals) is patched once for the night, then the snake is wound down and the rig moves on. The studio's mic-level chain is built for endless reuse across years of sessions: the rack, the XLR patch panel, the two preamps, and the eight cables running through the wall all stay fixed; what changes from session to session is which mics get plugged in and to which jacks. The keyboardist's signals take a separate, parallel path entirely (interface in the control room, into Ch 15-16), reflecting that they don't need preamps and shouldn't take up preamp inputs they don't benefit from. One scenario answers "how do we move many signals through a building for one evening." The other answers "how do we run a recording room that supports a thousand sessions over a decade, with the right tool for each kind of source."</p>
 
 <hr>
 
@@ -629,7 +660,7 @@
 
 <h3>Getting the signals to Pro Tools</h3>
 
-<p>The route from microphone to Pro Tools track is the chain you walked in section 2: mic → XLR patch panel on the studio rack (in the live room) → preamp 1 or preamp 2 (mounted in the same rack) → through the wall as line-level cables → Toft LINE input (in the control room) → channel strip → audio interface → Mac Pro → Pro Tools.</p>
+<p>The route from microphone to Pro Tools track is the chain you walked in section 2: mic → XLR patch panel on the studio rack (in the live room) → preamp 1 or preamp 2 (mounted in the same rack) → through the wall as line-level cables → Toft LINE input (in the control room) → channel strip → audio interface → Mac Pro → Pro Tools. The keyboardist's signals take the parallel short path also described in section 2: keys or laptop → two-channel interface (in the control room) → Toft LINE inputs at channels 15-16 → channel strip → audio interface → Mac Pro → Pro Tools.</p>
 
 <p>The piece that's new in this scenario is the last leg, the Toft-to-interface connection. Each input channel on the console has a <strong>DIR. O/P</strong> jack on the back (Lecture 3, section 2): a tap of that channel's post-fader signal, sent straight out to a single destination independently of the routing buttons. The studio's audio interface has a row of inputs; each direct out feeds one of them. Pro Tools sees one input per channel of the Toft, and records each one as its own track.</p>
 
@@ -637,6 +668,7 @@
   <div class="callout-label">Channel mapping in the studio is more flexible</div>
   <p>In Scenario 1 the channel map was fixed: Ch 1 always meant vocal, Ch 5 always meant kick, and so on. In the studio the mapping is more fluid because each tracking day uses a different subset of the patch panel jacks, and the engineer chooses which patch panel jack each mic goes into based on which preamp the source should pass through. A snare mic patched into jack 3 (one of the ISA 828's inputs) ends up on a different Toft channel than the same snare mic patched into jack 4 (one of the Octopre's inputs). The Toft channel number is downstream of the patch panel decision.</p>
   <p>On drums day, four mics fill four jacks; on bass day, two mics fill two; on vocal day, one mic fills one. The previous day's takes don't take up patch panel jacks at all (they play back from Pro Tools into the Toft's MON jacks, not the LINE jacks). Channels that aren't taking a fresh input that day are dedicated to monitoring the playback.</p>
+  <p>Channels 15 and 16 are the exception to the flexibility: they're permanently reserved for the two-channel interface that feeds the keyboardist's signals from the control room. On keys day, those two channels carry the stage keyboard; on laptop day, those same two channels carry the laptop. The interface stays cabled to the Toft the same way across both days; only what's plugged into the interface itself changes.</p>
 </div>
 
 <h3>The headphone cue: one mix for the player in the room</h3>
@@ -791,12 +823,17 @@
       <td>One source or section at a time, across many tracking days</td>
     </tr>
     <tr>
-      <td class="ch">Source-to-console chain</td>
+      <td class="ch">Source-to-console chain · mic-level sources</td>
       <td>Stage box on stage → snake → console at FOH</td>
-      <td>Studio rack in live room (XLR patch panel + two external preamps mounted together) → through-wall line cables → Toft LINE inputs</td>
+      <td>Studio rack in live room (XLR patch panel + two external preamps mounted together) → through-wall line cables → Toft LINE inputs at Ch 1-8</td>
     </tr>
     <tr>
-      <td class="ch">Mic preamp</td>
+      <td class="ch">Source-to-console chain · keyboardist's line-level sources</td>
+      <td>Keys/laptop → DI box at stage → mic-level XLR into snake → console at FOH</td>
+      <td>Keys/laptop → two-channel interface in control room → Toft LINE inputs at Ch 15-16</td>
+    </tr>
+    <tr>
+      <td class="ch">Mic preamp (for mic-level sources)</td>
       <td>On-board on each channel strip (INPUT GAIN, MIC jack)</td>
       <td>External (ISA 828 or Octopre); on-board preamp bypassed (LINE jack)</td>
     </tr>
@@ -807,8 +844,8 @@
     </tr>
     <tr>
       <td class="ch">Subgroups 3-4 · electronic bus</td>
-      <td>Keys + laptop bus for FOH level control</td>
-      <td>Keys + laptop bus for engineer's control-room mix on keys day</td>
+      <td>Keys + laptop bus for FOH level control (four channels into one stereo pair)</td>
+      <td>Not used (keys and laptop track separately, each filling only Ch 15-16)</td>
     </tr>
     <tr>
       <td class="ch">L-R master</td>
