@@ -630,6 +630,109 @@
 
 <p><strong>MON LEVEL.</strong> A red knob: the master volume for the control-room speakers (whichever pair is currently selected by ALT MONITOR). The most-touched knob in any control room. Doesn't affect MASTER O/P, only the speakers in the room.</p>
 
+<figure>
+  <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Diagram of the master output split. The L-R master bus runs into the master fader. From the master fader, two parallel paths leave: a recording path going to MASTER O/P (then to the DAW, 2-track recorder, or broadcast feed), and a monitor path going through MONO, MON LEVEL, and the ALT MONITOR switch, which selects between MAIN SPKR (the main pair of monitor speakers) and ALT SPKR (the alternate pair). The recording path is independent of the monitor controls.">
+    <defs>
+      <marker id="arrowhead-master" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+        <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
+      </marker>
+    </defs>
+
+    <text x="360" y="22" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
+          fill="var(--accent)">MASTER OUTPUT · RECORDING PATH AND MONITOR PATH</text>
+
+    <!-- L-R master bus label -->
+    <text x="360" y="55" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">L-R master bus</text>
+
+    <!-- Master fader -->
+    <rect x="290" y="68" width="140" height="48" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
+    <text x="360" y="89" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Master fader</text>
+    <text x="360" y="106" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">level for L-R bus</text>
+
+    <!-- Split arrows from master fader -->
+    <path d="M 320 116 Q 320 138 180 160" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+    <path d="M 400 116 Q 400 138 540 160" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+
+    <!-- Path labels -->
+    <text x="220" y="148" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">recording path</text>
+    <text x="500" y="148" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">monitor path</text>
+
+    <!-- MASTER O/P box (recording path) -->
+    <rect x="100" y="166" width="160" height="58" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="180" y="188" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">MASTER O/P</text>
+    <text x="180" y="206" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">balanced L and R</text>
+
+    <!-- Recording destinations -->
+    <line x1="180" y1="226" x2="180" y2="260" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+    <rect x="60" y="266" width="240" height="48" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.2"/>
+    <text x="180" y="287" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">to DAW · 2-track · broadcast</text>
+    <text x="180" y="303" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the recorded mix</text>
+
+    <!-- MONO box (monitor path) -->
+    <rect x="460" y="166" width="160" height="40" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="540" y="183" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">MONO</text>
+    <text x="540" y="198" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">L + R sum (optional)</text>
+
+    <!-- MON LEVEL box -->
+    <line x1="540" y1="208" x2="540" y2="222" stroke="var(--accent)" stroke-width="1.5"/>
+    <rect x="460" y="224" width="160" height="40" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="540" y="241" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">MON LEVEL</text>
+    <text x="540" y="256" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">control-room volume</text>
+
+    <!-- ALT MONITOR switch -->
+    <line x1="540" y1="266" x2="540" y2="280" stroke="var(--accent)" stroke-width="1.5"/>
+    <rect x="460" y="282" width="160" height="40" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="540" y="299" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">ALT MONITOR</text>
+    <text x="540" y="314" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">selects main or alt pair</text>
+
+    <!-- Speaker pair split -->
+    <path d="M 490 322 Q 490 344 440 360" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+    <path d="M 590 322 Q 590 344 640 360" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+
+    <!-- MAIN SPKR box -->
+    <rect x="360" y="366" width="160" height="58" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="440" y="388" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">MAIN SPKR</text>
+    <text x="440" y="406" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">main pair (default)</text>
+
+    <!-- ALT SPKR box -->
+    <rect x="560" y="366" width="160" height="58" rx="4"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="640" y="388" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">ALT SPKR</text>
+    <text x="640" y="406" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">alternate pair</text>
+  </svg>
+  <figcaption>From the master fader the signal splits into two parallel paths: the recording path goes to MASTER O/P (and from there to the DAW or recorder), and the monitor path runs through MONO, MON LEVEL, and ALT MONITOR before reaching the control-room speakers. The monitor controls shape what the engineer hears in the room; they don't touch the recording.</figcaption>
+</figure>
+
+<h3>Talkback and master fader</h3>
+
 <p><strong>Talkback.</strong> A small microphone built into the console (the round grille labeled T.B. MIC), a level knob above it (T.B. LEVEL), and two red pushbuttons below it: <strong>TALK TO AUXES</strong> (the engineer's voice goes to the aux outputs, which are typically feeding the performers' headphones) and <strong>TALK TO GROUPS</strong> (the engineer's voice goes out to the subgroups and the master L-R, so it gets recorded on whatever track is armed). Talkback is how the engineer in the control room communicates with the musicians in the live room, and how a session slate gets put on a take.</p>
 
 <div class="callout">
@@ -640,7 +743,7 @@
   <p>The film-set equivalent is the clapper board (the slate that snaps shut at the start of every shot). Audio recording does the same job with the engineer's voice and this button.</p>
 </div>
 
-<p><strong>Master fader.</strong> A 100mm stereo fader at the bottom of the strip (the large blue one). The final level control before the master output goes out the back of the console to the speakers, to the 2-track recorder, or wherever it's going next.</p>
+<p><strong>Master fader.</strong> A 100mm stereo fader at the bottom of the strip (the large blue one). The level control for the L-R master bus. Whatever this fader is set to is what comes out of MASTER O/P (going to the recorder), and is also what feeds the monitor chain that drives the control-room speakers.</p>
 
 
 <h2>Vocabulary</h2>
