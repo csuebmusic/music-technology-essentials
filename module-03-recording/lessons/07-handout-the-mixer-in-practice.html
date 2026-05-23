@@ -94,10 +94,9 @@
 <div class="title-block">
   <div class="module-tag">Module 03 · Recording, sample prep &amp; library building</div>
   <h1>The Mixer in Practice</h1>
-  <div class="subtitle">One band, one console, two scenarios: a live show and a studio session.</div>
 </div>
 
-<p class="lede">Monday's reading walked the console section by section: channel strip, in-line architecture, submasters, master. Today you watch it work. The pedagogical move is to take the <em>same</em> band, with the <em>same</em> instruments and the <em>same</em> set of mics, and run them through the console twice: once for a live show in a small venue, once for a studio recording session. The hardware doesn't change between the two; only what's plugged into the inputs and where the outputs go. Once you see both walkthroughs side by side, the apparent gap between "live console" and "studio console" collapses into a single observation: same desk, same tools, different destinations.</p>
+<p class="lede">Monday's reading walked the console section by section: channel strip, in-line architecture, submasters, master. Today you watch it work. The pedagogical move is to take the <em>same</em> band, with the <em>same</em> instruments and the <em>same</em> set of mics, and run them through the console twice: once for a live show in a small venue, once for a studio recording session. The hardware doesn't change between the two; only what's plugged into the inputs and where the outputs go.</p>
 
 <div class="callout">
   <div class="callout-label">Today's gear</div>
@@ -107,8 +106,8 @@
 <h2>What we're doing today</h2>
 
 <ol class="steps">
-  <li>Meet the band: <strong>The Sound Below</strong>. Four players, eight signals into the console.</li>
-  <li>Map the eight signals onto the console's input channels. Same map for both scenarios.</li>
+  <li>Meet the band: <strong>The Sound Below</strong>. Five players, twelve signals into the console.</li>
+  <li>Map the twelve signals onto the console's input channels. Same map for both scenarios.</li>
   <li>Walk <strong>Scenario 1: Live sound.</strong> The audience and the performers each need a different mix from the same set of channels.</li>
   <li>Walk <strong>Scenario 2: Studio recording.</strong> Same band, same channels, very different destinations.</li>
   <li>Compare the two scenarios side by side. Name what stayed the same; name what moved.</li>
@@ -118,10 +117,10 @@
 
 <h2>1 · Meet the band: The Sound Below</h2>
 
-<p>The Sound Below is a four-piece. The instrumentation was chosen to exercise every signal type, mic kind, and cable you've met in this module: a mic-level vocal, a mic-level guitar amp, the canonical DI-dry-plus-amp-wet bass treatment from Lecture 2, and the standard four-mic drum setup (kick, snare, and a stereo pair of overhead condensers) from Huber's <em>Modern Recording Techniques</em>. Eight signals total. The console has sixteen input channels; the band fills exactly half.</p>
+<p>The Sound Below is a five-piece. The instrumentation was chosen to exercise every signal type, mic kind, and cable you've met in this module: a mic-level vocal, a mic-level guitar amp, the canonical DI-dry-plus-amp-wet bass treatment from Lecture 2, the standard four-mic drum setup (kick, snare, and a stereo pair of overhead condensers), and a stage keyboardist with a laptop running alongside (the only line-level signals in the band). Twelve signals total. The console has sixteen input channels; the band fills three-quarters of it.</p>
 
 <table class="routing">
-  <caption>The Sound Below · the band's eight signals</caption>
+  <caption>The Sound Below · the band's twelve signals</caption>
   <thead>
     <tr>
       <th>Player</th>
@@ -188,6 +187,34 @@
       <td>Mic level</td>
       <td>XLR</td>
     </tr>
+    <tr>
+      <td>Keyboardist</td>
+      <td>Stage keyboard, left output</td>
+      <td>Synth / keyboard output</td>
+      <td>Line level</td>
+      <td>1/4" TRS</td>
+    </tr>
+    <tr>
+      <td>Keyboardist</td>
+      <td>Stage keyboard, right output</td>
+      <td>Synth / keyboard output</td>
+      <td>Line level</td>
+      <td>1/4" TRS</td>
+    </tr>
+    <tr>
+      <td>Keyboardist</td>
+      <td>Laptop, left output (Ableton)</td>
+      <td>Laptop audio interface</td>
+      <td>Line level</td>
+      <td>1/4" TRS</td>
+    </tr>
+    <tr>
+      <td>Keyboardist</td>
+      <td>Laptop, right output (Ableton)</td>
+      <td>Laptop audio interface</td>
+      <td>Line level</td>
+      <td>1/4" TRS</td>
+    </tr>
   </tbody>
 </table>
 
@@ -196,9 +223,15 @@
   <p>Bass is the one source on the band today that gets recorded two ways at once. The bassist's signal hits a DI box first: the box's <strong>direct out</strong> sends a clean, balanced copy straight to the console (the "dry" signal), and the box's <strong>thru</strong> jack passes the instrument signal along to the bass amp, where a dynamic mic on the cab captures the amp's tone (the "wet" signal). Two channels, two mic-level XLRs into the console, both arriving at the same moment. At mixdown the engineer blends them: the DI carries the low-end punch and the note attack; the mic'd amp carries the warmth, the room, the speaker's character. Going DI-only often sounds sterile; going amp-only often sounds muddy; blending the two is the standard solution.</p>
 </div>
 
+<div class="callout">
+  <div class="callout-label">Why the keyboardist's signals look different</div>
+  <p>The keyboardist's four signals are the first non-microphone sources on the band today, and the first <strong>line-level</strong> signals you've routed into the console. The stage keyboard puts out a stereo pair from its main outputs (L and R, 1/4" TRS, line level); the laptop puts out a second stereo pair from its audio interface (also L and R, 1/4" TRS, line level). Four line-level signals total.</p>
+  <p>These plug into the <strong>LINE</strong> jacks on the back of the console, not the MIC jacks. The reason: line-level signals are already strong enough to pass through the console's circuitry without needing the preamp's amplification. The mic preamp on each channel exists to boost weak mic-level signals up to the level the rest of the console expects; sending a line-level signal into a mic preamp would over-amplify it and clip. On each input strip's front panel, the <strong>LINE</strong> button (top of the strip) switches the channel between its rear-panel MIC and LINE jacks. For the keys and laptop channels, that button gets pushed in.</p>
+</div>
+
 <h3>The channel map</h3>
 
-<p>The eight signals get assigned to input channels 1 through 8 on the console, in a stable order. The same map applies in both scenarios; only what happens <em>after</em> each channel will change. Channels 9 through 16 sit empty today.</p>
+<p>The twelve signals get assigned to input channels 1 through 12 on the console, in a stable order. The same map applies in both scenarios; only what happens <em>after</em> each channel will change. Channels 13 through 16 sit empty today.</p>
 
 <table class="routing">
   <caption>Channel assignments · used in both scenarios</caption>
@@ -219,22 +252,26 @@
     <tr><td class="ch">Ch 6</td><td>Snare</td><td>MIC (XLR)</td><td>off</td></tr>
     <tr><td class="ch">Ch 7</td><td>Overhead L</td><td>MIC (XLR)</td><td><strong>on</strong></td></tr>
     <tr><td class="ch">Ch 8</td><td>Overhead R</td><td>MIC (XLR)</td><td><strong>on</strong></td></tr>
+    <tr><td class="ch">Ch 9</td><td>Keys L</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 10</td><td>Keys R</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 11</td><td>Laptop L</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
+    <tr><td class="ch">Ch 12</td><td>Laptop R</td><td>LINE (1/4" TRS)</td><td>off</td></tr>
   </tbody>
 </table>
 
-<p>Only the two overhead condensers need phantom power; the rest are dynamics or DI sources that don't draw +48V. (If you're unsure why, the polar-patterns and condenser-mic sections of Lecture 2 cover it.)</p>
+<p>Only the two overhead condensers need phantom power; the dynamics, the DI, and the four line-level sources don't draw +48V. (If you're unsure why, the polar-patterns and condenser-mic sections of Lecture 2 cover it.)</p>
 
 <hr>
 
 <h2>2 · Scenario 1 · Live sound</h2>
 
-<p>The Sound Below is playing a small venue. The stage holds the band, the amps, the drums, and four monitor wedges (one in front of each performer). Out in front of the stage are the front-of-house speakers facing the audience. Halfway back in the room sits the engineer, behind the console.</p>
+<p>The Sound Below is playing a small venue. The stage holds the band, the amps, the drums, the keys rig, and five monitor wedges (one in front of each performer). Out in front of the stage are the front-of-house speakers facing the audience. Halfway back in the room sits the engineer, behind the console.</p>
 
-<p>The job: take the eight signals coming off the stage and send them to <strong>two destinations</strong> at once.</p>
+<p>The job: take the twelve signals coming off the stage and send them to <strong>two destinations</strong> at once.</p>
 
 <ol class="steps">
   <li><strong>Front of house (FOH):</strong> the speakers facing the audience. The audience needs to hear the whole band balanced as a mix. This is the L-R master output.</li>
-  <li><strong>Stage monitors (wedges):</strong> a separate mix for each performer, so each player hears what <em>they</em> need to perform well. The vocalist mostly wants their own voice plus a bit of the kick to lock the timing; the bassist wants kick, snare, and their own bass; the drummer wants the bass and the click; the guitarist wants vocal, guitar, and drums. Four performers, four different mixes, all built from the same eight channels.</li>
+  <li><strong>Stage monitors (wedges):</strong> a separate mix for each performer, so each player hears what <em>they</em> need to perform well. The vocalist mostly wants their own voice plus a bit of the kick to lock the timing; the bassist wants kick, snare, and their own bass; the drummer wants the bass and the click; the guitarist wants vocal, guitar, and drums; the keyboardist wants vocal, her own keys and laptop, and enough drums to lock in. Five performers, five different mixes, all built from the same twelve channels.</li>
 </ol>
 
 <h3>The FOH mix: routing to L-R</h3>
@@ -243,11 +280,15 @@
 
 <p>For drums, the standard move is the one the reading walked through: route the four drum channels (5, 6, 7, 8) to <strong>subgroup pair 1-2</strong> instead of straight to L-R. Pan the kick and snare center; pan overhead L hard left and overhead R hard right. Then route subs 1 and 2 to the L-R master with their own pair of faders. Now the engineer has one pair of submaster faders that controls the whole drum kit's level in the FOH mix, without touching the individual drum-mic balance. If the drums need to come down 3 dB during a quiet verse, two faders move; the kit's internal balance stays exactly where it was.</p>
 
-<h3>The wedge mixes: building four different mixes on the aux sends</h3>
+<p>The same logic applies to the keyboardist's four channels. Route the keys L/R and laptop L/R (channels 9 through 12) to <strong>subgroup pair 3-4</strong>. Pan each L channel hard left and each R channel hard right; the two stereo pairs sum across the subgroup pair into one stereo electronic submix. Subs 3 and 4 then route to L-R with their own fader pair. One pair of faders controls everything coming from the keys rig in the FOH mix, and the internal balance between the stage keyboard and the laptop stays set wherever the keyboardist's gain-staging put it.</p>
 
-<p>The four performers each need a different blend in their wedge. The aux sends are how that gets built. Each aux is its own bus, with its own master level, going out the back of the console to a separate output. Send that output to a wedge amplifier, and the aux's bus becomes that performer's monitor mix.</p>
+<h3>The wedge mixes: building five different mixes on the aux sends</h3>
+
+<p>The five performers each need a different blend in their wedge. The aux sends are how that gets built. Each aux is its own bus, with its own master level, going out the back of the console to a separate output. Send that output to a wedge amplifier, and the aux's bus becomes that performer's monitor mix.</p>
 
 <p>For monitor wedges, every aux used for a wedge mix is set <strong>pre-fader</strong>. The reason: the FOH engineer might pull the vocal fader down between songs (chatter, a quiet intro, anything), and the singer still needs to hear their own voice in the wedge at the same level. Pre-fader means the aux send level is independent of the channel fader; whatever the engineer does at FOH doesn't bleed into the stage mix.</p>
+
+<p>The console has six aux sends per channel. Five performers take five auxes (1 through 5) for their wedges. That leaves Aux 6 for a single shared FX send to the outboard reverb unit; the delay drops out of this evening's setup. A larger console with more auxes wouldn't force the trade-off, but on the Toft, with five wedges to feed, the engineer chooses what matters most for the show.</p>
 
 <table class="routing">
   <caption>Scenario 1 · live show · aux assignments</caption>
@@ -286,24 +327,24 @@
     </tr>
     <tr>
       <td class="ch">Aux 5</td>
+      <td>Keyboardist's wedge</td>
+      <td>Pre</td>
+      <td>Keys · laptop · vocal · kick · snare</td>
+    </tr>
+    <tr>
+      <td class="ch">Aux 6</td>
       <td>Reverb send (to outboard reverb unit)</td>
       <td>Post</td>
       <td>Vocal mainly; touch of snare</td>
     </tr>
-    <tr>
-      <td class="ch">Aux 6</td>
-      <td>Delay send (to outboard delay)</td>
-      <td>Post</td>
-      <td>Vocal · maybe guitar at the bridge</td>
-    </tr>
   </tbody>
 </table>
 
-<p>Two auxes (5 and 6) are doing a different job: they feed outboard effects units rather than wedges. These run <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 5 post-fader makes that happen automatically. The effects return back into spare submaster strips on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the L-R master with the dry signals.</p>
+<p>Aux 6 is doing a different job from the five wedges: it feeds an outboard reverb unit instead of a monitor speaker. It runs <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 6 post-fader makes that happen automatically. The reverb return comes back into a spare submaster strip on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the L-R master alongside the dry signals.</p>
 
 <figure class="diagram">
-  <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound routing for The Sound Below. Eight channels on the left labeled Ch 1 Vocal through Ch 8 Overhead R. The four drum channels (5 through 8) route into a Subgroups 1-2 box that combines them into a drum bus. All channels also feed the L-R master in the center, which goes to the FOH speakers on the right. Below, the same eight channels feed six aux send buses (Aux 1 through Aux 6). Auxes 1 through 4 are labeled as wedge mixes for vocalist, guitarist, bassist, and drummer. Auxes 5 and 6 are labeled as reverb and delay sends. The reverb and delay returns come back to the L-R master.">
+  <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Diagram of the live-sound routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. The four drum channels (5 through 8) route into a Subs 1-2 box, the drum bus. The four keys-and-laptop channels (9 through 12) route into a Subs 3-4 box, the electronic bus. The non-drum, non-electronic channels (1 through 4) and both subgroup pairs feed the L-R master in the centre, which goes to the FOH speakers on the right. Below, all twelve channels feed six aux send buses (Aux 1 through Aux 6). Auxes 1 through 5 are labeled as wedge mixes for vocalist, guitarist, bassist, drummer, and keyboardist. Aux 6 is labeled as a reverb send. The reverb return comes back to the L-R master.">
     <defs>
       <marker id="ah-foh" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -314,7 +355,7 @@
           font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
           fill="var(--accent)">SCENARIO 1 · LIVE SOUND</text>
 
-    <!-- Eight channels on the left, stacked -->
+    <!-- Twelve channels on the left, stacked -->
     <g font-family="DM Mono, monospace" font-size="10" fill="var(--ink)">
       <rect x="20" y="50" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="80" y="65" text-anchor="middle">Ch 1 · Vocal</text>
@@ -339,128 +380,161 @@
 
       <rect x="20" y="246" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
       <text x="80" y="261" text-anchor="middle">Ch 8 · Overhead R</text>
+
+      <rect x="20" y="274" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="80" y="289" text-anchor="middle">Ch 9 · Keys L</text>
+
+      <rect x="20" y="302" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="80" y="317" text-anchor="middle">Ch 10 · Keys R</text>
+
+      <rect x="20" y="330" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="80" y="345" text-anchor="middle">Ch 11 · Laptop L</text>
+
+      <rect x="20" y="358" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="80" y="373" text-anchor="middle">Ch 12 · Laptop R</text>
     </g>
 
     <!-- Subgroup pair 1-2 (drum bus) -->
     <g>
-      <rect x="195" y="190" width="120" height="78" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
-      <text x="255" y="215" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Subs 1-2</text>
-      <text x="255" y="234" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">drum bus</text>
-      <text x="255" y="250" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(four drum mics)</text>
+      <rect x="195" y="186" width="120" height="86" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
+      <text x="255" y="210" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Subs 1-2</text>
+      <text x="255" y="230" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">drum bus</text>
+      <text x="255" y="247" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(four drum mics)</text>
     </g>
 
     <!-- Routing arrows: drum channels into subgroup pair -->
     <line x1="142" y1="173" x2="193" y2="210" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
     <line x1="142" y1="201" x2="193" y2="220" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
-    <line x1="142" y1="229" x2="193" y2="230" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
-    <line x1="142" y1="257" x2="193" y2="240" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="229" x2="193" y2="232" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="257" x2="193" y2="244" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+
+    <!-- Subgroup pair 3-4 (electronic bus) -->
+    <g>
+      <rect x="195" y="298" width="120" height="86" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
+      <text x="255" y="322" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Subs 3-4</text>
+      <text x="255" y="342" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">electronic bus</text>
+      <text x="255" y="359" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(keys + laptop)</text>
+    </g>
+
+    <!-- Routing arrows: keys/laptop channels into subgroup pair 3-4 -->
+    <line x1="142" y1="285" x2="193" y2="320" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="313" x2="193" y2="330" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="341" x2="193" y2="342" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="369" x2="193" y2="354" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
 
     <!-- L-R master bus -->
     <g>
-      <rect x="370" y="120" width="140" height="60" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="440" y="145" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">L-R master</text>
-      <text x="440" y="164" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the FOH mix</text>
+      <rect x="370" y="170" width="140" height="60" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="440" y="195" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">L-R master</text>
+      <text x="440" y="214" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the FOH mix</text>
     </g>
 
-    <!-- Arrows: non-drum channels to L-R; drum subgroup pair to L-R -->
-    <line x1="142" y1="61" x2="368" y2="135" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
-    <line x1="142" y1="89" x2="368" y2="145" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
-    <line x1="142" y1="117" x2="368" y2="155" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
-    <line x1="142" y1="145" x2="368" y2="165" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
-    <line x1="317" y1="229" x2="368" y2="170" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ah-foh)"/>
+    <!-- Arrows: non-drum, non-electronic channels (1-4) to L-R -->
+    <line x1="142" y1="61" x2="368" y2="180" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="89" x2="368" y2="190" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="117" x2="368" y2="200" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <line x1="142" y1="145" x2="368" y2="210" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <!-- Subs 1-2 → L-R master -->
+    <line x1="317" y1="225" x2="368" y2="218" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ah-foh)"/>
+    <!-- Subs 3-4 → L-R master -->
+    <line x1="317" y1="335" x2="368" y2="225" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ah-foh)"/>
 
     <!-- FOH speakers -->
     <g>
-      <rect x="565" y="120" width="130" height="60" rx="4" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="630" y="145" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">FOH speakers</text>
-      <text x="630" y="164" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--bg-alt)">to the audience</text>
+      <rect x="565" y="170" width="130" height="60" rx="4" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="630" y="195" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">FOH speakers</text>
+      <text x="630" y="214" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--bg-alt)">to the audience</text>
     </g>
-    <line x1="512" y1="150" x2="563" y2="150" stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-foh)"/>
+    <line x1="512" y1="200" x2="563" y2="200" stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-foh)"/>
 
     <!-- "any channel can feed any aux" tap arrows: dashed lines from each channel down to the aux region -->
-    <g stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 3" fill="none" opacity="0.55">
-      <line x1="80" y1="72" x2="80" y2="305"/>
-      <line x1="80" y1="100" x2="80" y2="305"/>
-      <line x1="80" y1="128" x2="80" y2="305"/>
-      <line x1="80" y1="156" x2="80" y2="305"/>
-      <line x1="80" y1="184" x2="80" y2="305"/>
-      <line x1="80" y1="212" x2="80" y2="305"/>
-      <line x1="80" y1="240" x2="80" y2="305"/>
-      <line x1="80" y1="268" x2="80" y2="305"/>
+    <g stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 3" fill="none" opacity="0.5">
+      <line x1="80" y1="72" x2="80" y2="415"/>
+      <line x1="80" y1="100" x2="80" y2="415"/>
+      <line x1="80" y1="128" x2="80" y2="415"/>
+      <line x1="80" y1="156" x2="80" y2="415"/>
+      <line x1="80" y1="184" x2="80" y2="415"/>
+      <line x1="80" y1="212" x2="80" y2="415"/>
+      <line x1="80" y1="240" x2="80" y2="415"/>
+      <line x1="80" y1="268" x2="80" y2="415"/>
+      <line x1="80" y1="296" x2="80" y2="415"/>
+      <line x1="80" y1="324" x2="80" y2="415"/>
+      <line x1="80" y1="352" x2="80" y2="415"/>
+      <line x1="80" y1="380" x2="80" y2="415"/>
     </g>
     <!-- One bold dashed arrow representing the aux tap bus going from channel column to the aux row -->
-    <path d="M 80 290 L 165 320" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="5 3" marker-end="url(#ah-foh)"/>
-    <text x="105" y="305" font-family="DM Mono, monospace" font-size="9" letter-spacing="0.06em" fill="var(--ink-soft)">aux taps (parallel · independent levels)</text>
+    <path d="M 80 400 L 165 440" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="5 3" marker-end="url(#ah-foh)"/>
+    <text x="105" y="415" font-family="DM Mono, monospace" font-size="9" letter-spacing="0.06em" fill="var(--ink-soft)">aux taps (parallel · independent levels)</text>
 
     <!-- Aux buses (bottom row) -->
     <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">
       <!-- Aux 1 -->
-      <rect x="170" y="310" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="215" y="326" text-anchor="middle" font-weight="600">Aux 1</text>
-      <text x="215" y="342" text-anchor="middle" fill="var(--ink-soft)">vocal wedge</text>
+      <rect x="170" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="215" y="446" text-anchor="middle" font-weight="600">Aux 1</text>
+      <text x="215" y="462" text-anchor="middle" fill="var(--ink-soft)">vocal wedge</text>
 
       <!-- Aux 2 -->
-      <rect x="270" y="310" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="315" y="326" text-anchor="middle" font-weight="600">Aux 2</text>
-      <text x="315" y="342" text-anchor="middle" fill="var(--ink-soft)">guitar wedge</text>
+      <rect x="270" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="315" y="446" text-anchor="middle" font-weight="600">Aux 2</text>
+      <text x="315" y="462" text-anchor="middle" fill="var(--ink-soft)">guitar wedge</text>
 
       <!-- Aux 3 -->
-      <rect x="370" y="310" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="415" y="326" text-anchor="middle" font-weight="600">Aux 3</text>
-      <text x="415" y="342" text-anchor="middle" fill="var(--ink-soft)">bass wedge</text>
+      <rect x="370" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="415" y="446" text-anchor="middle" font-weight="600">Aux 3</text>
+      <text x="415" y="462" text-anchor="middle" fill="var(--ink-soft)">bass wedge</text>
 
       <!-- Aux 4 -->
-      <rect x="470" y="310" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="515" y="326" text-anchor="middle" font-weight="600">Aux 4</text>
-      <text x="515" y="342" text-anchor="middle" fill="var(--ink-soft)">drum wedge</text>
+      <rect x="470" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="515" y="446" text-anchor="middle" font-weight="600">Aux 4</text>
+      <text x="515" y="462" text-anchor="middle" fill="var(--ink-soft)">drum wedge</text>
 
       <!-- Aux 5 -->
-      <rect x="170" y="370" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="265" y="386" text-anchor="middle" font-weight="600">Aux 5</text>
-      <text x="265" y="402" text-anchor="middle" fill="var(--ink-soft)">reverb send (outboard)</text>
+      <rect x="170" y="490" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="265" y="506" text-anchor="middle" font-weight="600">Aux 5</text>
+      <text x="265" y="522" text-anchor="middle" fill="var(--ink-soft)">keys wedge</text>
 
       <!-- Aux 6 -->
-      <rect x="370" y="370" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="465" y="386" text-anchor="middle" font-weight="600">Aux 6</text>
-      <text x="465" y="402" text-anchor="middle" fill="var(--ink-soft)">delay send (outboard)</text>
+      <rect x="370" y="490" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+      <text x="465" y="506" text-anchor="middle" font-weight="600">Aux 6</text>
+      <text x="465" y="522" text-anchor="middle" fill="var(--ink-soft)">reverb send (outboard)</text>
     </g>
 
-    <!-- Auxes 1-4 → wedges destination label on the right -->
-    <line x1="562" y1="330" x2="595" y2="330" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <!-- Auxes 1-5 → wedges destination label on the right -->
+    <line x1="562" y1="450" x2="595" y2="450" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
     <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
-      <text x="630" y="324" text-anchor="middle" font-weight="600" fill="var(--ink)">four wedges</text>
-      <text x="630" y="339" text-anchor="middle">on stage</text>
+      <text x="630" y="444" text-anchor="middle" font-weight="600" fill="var(--ink)">five wedges</text>
+      <text x="630" y="459" text-anchor="middle">on stage</text>
     </g>
 
-    <!-- Auxes 5-6 → outboard FX, then return into L-R master via curved arc -->
-    <line x1="562" y1="390" x2="595" y2="390" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
+    <!-- Aux 6 → outboard reverb, then return into L-R master via curved arc -->
+    <line x1="562" y1="510" x2="595" y2="510" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh)"/>
     <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
-      <text x="630" y="384" text-anchor="middle" font-weight="600" fill="var(--ink)">outboard FX</text>
-      <text x="630" y="399" text-anchor="middle">reverb · delay</text>
+      <text x="630" y="504" text-anchor="middle" font-weight="600" fill="var(--ink)">outboard FX</text>
+      <text x="630" y="519" text-anchor="middle">reverb unit</text>
     </g>
     <!-- FX-return arc: from outboard FX label back up to L-R master -->
-    <path d="M 670 370 Q 690 250 580 165" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ah-foh)" opacity="0.7"/>
-    <text x="700" y="270" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" transform="rotate(60 700 270)">FX returns blend</text>
+    <path d="M 670 490 Q 695 340 580 215" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ah-foh)" opacity="0.7"/>
+    <text x="700" y="370" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" transform="rotate(75 700 370)">FX return blends to L-R</text>
   </svg>
-  <figcaption>Scenario 1 routing. The L-R master carries the FOH mix to the audience; six aux sends carry parallel mixes to the wedges and to the outboard effects.</figcaption>
+  <figcaption>Scenario 1 routing. The L-R master carries the FOH mix to the audience; six aux sends carry parallel mixes to the five wedges and to the outboard reverb.</figcaption>
 </figure>
 
 <div class="callout">
-  <div class="callout-label">One source, six destinations</div>
-  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the L-R master (audience hears it), the vocal wedge (singer hears it), the other three wedges (other players hear it in their mixes), the reverb send (so vocals carry a tail), and the delay send (so vocals catch a delay on chorus lines). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
+  <div class="callout-label">One source, seven destinations</div>
+  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the L-R master (audience hears it), the vocal wedge (singer hears it), the four other wedges (everyone else hears it in their stage mixes), and the reverb send (so vocals carry a tail). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
 </div>
 
 <hr>
 
 <h2>3 · Scenario 2 · Studio recording session</h2>
 
-<p>Same band. Same eight signals. Same eight channels on the console. But now the venue is gone: the band is in a studio's live room, the engineer is in the control room behind the glass, and the goal isn't a real-time mix for an audience; it's a clean multitrack <strong>recording</strong> that can be mixed later.</p>
+<p>Same band. Same twelve signals. Same twelve channels on the console. But now the venue is gone: the band is in a studio's live room, the engineer is in the control room behind the glass, and the goal isn't a real-time mix for an audience; it's a clean multitrack <strong>recording</strong> that can be mixed later.</p>
 
 <p>Three things shift. First, the L-R master no longer feeds speakers in the room with the band; it feeds the control-room monitors (the speakers the engineer is listening to). Second, every channel needs to land on its own track in the DAW so it can be edited independently later. Third, the audience is replaced by a set of headphones on each player's head; the wedge mixes become <strong>headphone cues</strong>, built the same way (aux sends) but going to a different physical destination.</p>
 
 <h3>Getting every channel to the DAW</h3>
 
-<p>The studio uses an audio interface as the bridge from the console's analog signals to the computer's digital tracks. Each input channel on the console has a <strong>DIR. O/P</strong> jack on the back (Lecture 3, section 2): a tap of that channel's post-fader signal, sent straight out to a single destination independently of the routing buttons. Patch Ch 1's direct out into input 1 on the audio interface, Ch 2's direct out into input 2, and so on for all eight channels. The DAW gets eight independent tracks; each track is exactly what was on its channel strip, with the engineer's input gain and channel EQ already applied.</p>
+<p>The studio uses an audio interface as the bridge from the console's analog signals to the computer's digital tracks. Each input channel on the console has a <strong>DIR. O/P</strong> jack on the back (Lecture 3, section 2): a tap of that channel's post-fader signal, sent straight out to a single destination independently of the routing buttons. Patch Ch 1's direct out into input 1 on the audio interface, Ch 2's direct out into input 2, and so on for all twelve channels. The DAW gets twelve independent tracks; each track is exactly what was on its channel strip, with the engineer's input gain and channel EQ already applied.</p>
 
 <div class="callout">
   <div class="callout-label">Two ways to get tracks to the DAW</div>
@@ -472,7 +546,7 @@
 
 <p>The performers in the live room need to hear themselves and each other while they play; without headphones, the only thing in the room is acoustic bleed from drums and amps. Each performer gets a pair of headphones connected to a <strong>cue mix</strong>: a personalized blend of the channels, built on the aux sends in exactly the same way as the wedges in Scenario 1.</p>
 
-<p>The vocalist's cue is built on Aux 1, the guitarist's on Aux 2, the bassist's on Aux 3, the drummer's on Aux 4. Each aux runs out of the console to a headphone amplifier (a small box that distributes the cue signal to multiple headphone jacks at performer-comfortable levels). All four auxes stay <strong>pre-fader</strong>, for the same reason as live: the engineer's level moves on the channel faders shouldn't bleed into what the performers are hearing.</p>
+<p>The vocalist's cue is built on Aux 1, the guitarist's on Aux 2, the bassist's on Aux 3, the drummer's on Aux 4, the keyboardist's on Aux 5. Each aux runs out of the console to a headphone amplifier (a small box that distributes the cue signal to multiple headphone jacks at performer-comfortable levels). All five auxes stay <strong>pre-fader</strong>, for the same reason as live: the engineer's level moves on the channel faders shouldn't bleed into what the performers are hearing.</p>
 
 <table class="routing">
   <caption>Scenario 2 · studio session · aux assignments</caption>
@@ -510,7 +584,13 @@
       <td>Click (loud) · bass DI · vocal</td>
     </tr>
     <tr>
-      <td class="ch">Aux 5-6</td>
+      <td class="ch">Aux 5</td>
+      <td>Keyboardist's headphone cue</td>
+      <td>Pre</td>
+      <td>Keys · laptop · vocal · drums · click</td>
+    </tr>
+    <tr>
+      <td class="ch">Aux 6</td>
       <td>Free for outboard FX during tracking, or unused</td>
       <td>–</td>
       <td>Engineer's preference</td>
@@ -529,9 +609,9 @@
 
 <h3>At mixdown: the I/P REV move</h3>
 
-<p>The band leaves; the engineer comes back the next day to mix. The eight tracks are now sitting in the DAW. To mix on the console, the engineer needs each DAW track playing back through its own channel strip, with the big fader, the four-band EQ, and the routing all available for shaping. The way to do that on an in-line console is the <strong>I/P REV</strong> button.</p>
+<p>The band leaves; the engineer comes back the next day to mix. The twelve tracks are now sitting in the DAW. To mix on the console, the engineer needs each DAW track playing back through its own channel strip, with the big fader, the four-band EQ, and the routing all available for shaping. The way to do that on an in-line console is the <strong>I/P REV</strong> button.</p>
 
-<p>The DAW's playback outputs are wired to the console's <strong>MON</strong> jacks on the back: DAW output 1 to Ch 1's MON jack, DAW output 2 to Ch 2's MON jack, and so on. Normally (during tracking) the MON input feeds the small monitor knob in the middle of the strip. When the engineer presses I/P REV at the top of every input strip, the two paths swap: the signal coming in through MON now flows through the big channel fader with the full EQ and aux-send chain. The mic input (which has nothing on it now anyway, since the mics have gone home) flows through the smaller monitor path, where it's silent. Eight presses of I/P REV, and the eight DAW tracks are sitting on the eight channel strips with full processing available.</p>
+<p>The DAW's playback outputs are wired to the console's <strong>MON</strong> jacks on the back: DAW output 1 to Ch 1's MON jack, DAW output 2 to Ch 2's MON jack, and so on. Normally (during tracking) the MON input feeds the small monitor knob in the middle of the strip. When the engineer presses I/P REV at the top of every input strip, the two paths swap: the signal coming in through MON now flows through the big channel fader with the full EQ and aux-send chain. The mic input (which has nothing on it now anyway, since the mics have gone home) flows through the smaller monitor path, where it's silent. Twelve presses of I/P REV, and the twelve DAW tracks are sitting on the twelve channel strips with full processing available.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg"
@@ -606,7 +686,7 @@
 
 <div class="callout">
   <div class="callout-label">Why the in-line design pays off here</div>
-  <p>On a non-in-line console (called a <strong>split</strong> design), the channels and the monitor returns live on entirely separate sets of strips, and a typical eight-channel tracking session would mean the engineer is mixing on a different set of faders from the one they tracked through. On an in-line console, the channel and its monitor return share the same strip, and the I/P REV button is the swap-over. One row of faders carries the band live; the same row, with the button pressed, carries the band at mixdown. The mixing fingers stay on the same strip.</p>
+  <p>On a non-in-line console (called a <strong>split</strong> design), the channels and the monitor returns live on entirely separate sets of strips, and a typical twelve-channel tracking session would mean the engineer is mixing on a different set of faders from the one they tracked through. On an in-line console, the channel and its monitor return share the same strip, and the I/P REV button is the swap-over. One row of faders carries the band live; the same row, with the button pressed, carries the band at mixdown. The mixing fingers stay on the same strip.</p>
 </div>
 
 <hr>
@@ -626,9 +706,9 @@
   </thead>
   <tbody>
     <tr>
-      <td class="ch">Input channels 1-8</td>
-      <td>Eight mic-level signals from stage</td>
-      <td>Eight mic-level signals from live room (same eight)</td>
+      <td class="ch">Input channels 1-12</td>
+      <td>Eight mic-level + four line-level signals from stage</td>
+      <td>Eight mic-level + four line-level signals from live room (same twelve)</td>
     </tr>
     <tr>
       <td class="ch">Input gain, phase, HPF, EQ</td>
@@ -641,18 +721,23 @@
       <td>Drum bus for engineer's control-room mix only</td>
     </tr>
     <tr>
+      <td class="ch">Subgroups 3-4</td>
+      <td>Electronic bus (keys + laptop) for FOH level control</td>
+      <td>Electronic bus for engineer's control-room mix only</td>
+    </tr>
+    <tr>
       <td class="ch">L-R master</td>
       <td>Feeds the FOH speakers (audience)</td>
       <td>Feeds the control-room speakers (engineer)</td>
     </tr>
     <tr>
-      <td class="ch">Aux 1-4 (pre-fader)</td>
+      <td class="ch">Aux 1-5 (pre-fader)</td>
       <td>Stage wedges (one per performer)</td>
       <td>Headphone cues (one per performer)</td>
     </tr>
     <tr>
-      <td class="ch">Aux 5-6 (post-fader)</td>
-      <td>FX sends to outboard reverb / delay</td>
+      <td class="ch">Aux 6 (post-fader)</td>
+      <td>FX send to outboard reverb</td>
       <td>Free for outboard FX or unused</td>
     </tr>
     <tr>
