@@ -26,6 +26,33 @@
       text-align: center;
     }
 
+    /* Photo frame: matches the mixer reading (Lecture 3) figure
+       styling. Used for product photos that ground a prose explanation. */
+    figure.photo {
+      margin: 1.75rem 0 2rem;
+      text-align: center;
+    }
+    figure.photo img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+    }
+    figure.photo figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.6rem;
+    }
+    figure.photo .photo-attribution {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint, var(--ink-soft));
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
     /* Routing table: students will read this column-by-column to see
        where each channel's signal travels in each scenario. */
     table.routing {
@@ -274,7 +301,15 @@
 
 <p>From the back of the stage box, one fat black cable runs off the stage, along the wall or under the floor, all the way to the console at front-of-house. This cable is the <strong>snake</strong> (sometimes a <strong>multicore</strong>, or in audio-engineer slang the <strong>multi</strong>). Inside its outer jacket are dozens of individually shielded balanced pairs: one pair per channel of the stage box, often plus a few return pairs going back the other way for monitor speakers on the stage. A 16-channel snake carries 16 signals on a single physical cable; a 32-channel snake carries 32. At the console end, the snake terminates in a fan-out: a bundle of individual XLR connectors, labeled 1 through N, that plug into the back of the console.</p>
 
-<p>The patching pattern is the part students need to internalize. <strong>The stage box jack number becomes the console channel number.</strong> Vocalist's mic plugged into stage box jack 1 lands on console channel 1. Kick mic plugged into jack 5 lands on console channel 5. The engineer working at the console knows which physical mic is on which channel because the stage box and the console agree on the numbering. Re-patch the mic into a different jack and the source moves to a different console channel; the engineer at FOH has to re-label the fader.</p>
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-08/stage-to-console/analog-stage-box-with-snake.jpg"
+       alt="An analog stage box and snake photographed together. The metal box on the left has a grid of female XLR jacks on its top face, arranged in two rows and numbered. Below the numbered jacks is a smaller row labeled A, B, C, D for return channels. A thick black multicore cable exits the right side of the box and fans out at the far end into a bundle of about two dozen individual male XLR connectors, several of them ringed with red tape for visual identification."
+       loading="lazy">
+  <figcaption>An analog stage box with its 24-channel snake fanned out at the console end. Inputs on the top face (numbered) take mics from the stage; returns (A-D) carry monitor feeds back to the stage; the male XLR fan-out at the right plugs into the console at FOH.</figcaption>
+  <div class="photo-attribution">Photo via ProX Live Performance Gear.</div>
+</figure>
+
+<p><strong>The stage box jack number becomes the console channel number.</strong> Vocalist's mic plugged into stage box jack 1 lands on console channel 1. Kick mic plugged into jack 5 lands on console channel 5. The engineer working at the console knows which physical mic is on which channel because the stage box and the console agree on the numbering. Re-patch the mic into a different jack and the source moves to a different console channel; the engineer at FOH has to re-label the fader.</p>
 
 <div class="callout">
   <div class="callout-label">Why a snake works where twelve loose cables wouldn't</div>
