@@ -634,17 +634,26 @@
 
 <p>The five performers each need a different blend in their stage monitor. The aux sends are how that gets built. Each aux is its own bus, with its own master level, going out the back of the console to a separate output. Send that output to a stage monitor amplifier, and the aux's bus becomes that performer's monitor mix.</p>
 
-<p>For stage monitors, every aux used for a monitor mix is set <strong>pre-fader</strong>. The reason: the FOH engineer might pull the vocal fader down between songs (chatter, a quiet intro, anything), and the singer still needs to hear their own voice in the stage monitor at the same level. Pre-fader means the aux send level is independent of the channel fader; whatever the engineer does at FOH doesn't bleed into the stage mix.</p>
+<p>Each performer gets one aux (auxes 1 through 5, one per stage monitor). The pattern below is the same for all five; only the channels turned up on each aux change.</p>
 
-<p>The console has six aux sends per channel. Five performers take five auxes (1 through 5) for their stage monitors. That leaves Aux 6 for a single shared FX send to the outboard reverb unit; the delay drops out of this evening's setup. A larger console with more auxes wouldn't force the trade-off, but on the Toft, with five stage monitors to feed, the engineer chooses what matters most for the show.</p>
+<p><strong>Patch · One stage monitor mix on one aux.</strong></p>
+
+<ol class="steps">
+  <li>Pick an aux (1, 2, 3, 4, or 5) for this performer's mix.</li>
+  <li>Set that aux to <strong>pre-fader</strong> on every input channel. Aux 1 is permanently pre-fader (no switch). For Auxes 2 through 5, press the channel's PRE button for that aux. Pre-fader means the aux send level is independent of the channel fader: the FOH engineer can pull the vocal fader down between songs and the singer still hears their own voice in their stage monitor at the same level.</li>
+  <li>On the channels this performer needs to hear: turn the aux knob up to a working level. On the channels they don't need: leave the aux knob at zero.</li>
+  <li>Adjust each channel's contribution by ear (the performer's own voice or instrument usually loud, the time-keeping references like kick and snare audible enough to lock in, everything else minimal or off).</li>
+  <li>At the master section, set the Aux Master knob for this aux to the working level the stage monitor amp expects.</li>
+</ol>
+
+<p>Repeat the patch five times, once per performer. The blends below are a starting point for The Sound Below; adjust to taste once the band is playing.</p>
 
 <table class="routing">
-  <caption>Scenario 1 · live show · aux assignments</caption>
+  <caption>Scenario 1 · live show · stage monitor mixes (all pre-fader)</caption>
   <thead>
     <tr>
       <th>Aux</th>
       <th>Destination</th>
-      <th>Pre / Post</th>
       <th>What's turned up on this aux</th>
     </tr>
   </thead>
@@ -652,171 +661,34 @@
     <tr>
       <td class="ch">Aux 1</td>
       <td>Vocalist's stage monitor</td>
-      <td>Pre</td>
       <td>Vocal (loud) · kick (low) · everything else minimal</td>
     </tr>
     <tr>
       <td class="ch">Aux 2</td>
       <td>Guitarist's stage monitor</td>
-      <td>Pre</td>
       <td>Vocal · guitar · kick · snare</td>
     </tr>
     <tr>
       <td class="ch">Aux 3</td>
       <td>Bassist's stage monitor</td>
-      <td>Pre</td>
       <td>Bass DI · kick · snare · vocal (low)</td>
     </tr>
     <tr>
       <td class="ch">Aux 4</td>
       <td>Drummer's stage monitor</td>
-      <td>Pre</td>
       <td>Bass DI · vocal · click (if applicable)</td>
     </tr>
     <tr>
       <td class="ch">Aux 5</td>
       <td>Keyboardist's stage monitor</td>
-      <td>Pre</td>
       <td>Keys · laptop · vocal · kick · snare</td>
-    </tr>
-    <tr>
-      <td class="ch">Aux 6</td>
-      <td>Reverb send (to outboard reverb unit)</td>
-      <td>Post</td>
-      <td>Vocal mainly; touch of snare</td>
     </tr>
   </tbody>
 </table>
 
-<p>Aux 6 is doing a different job from the five stage monitors: it feeds an outboard reverb unit instead of a stage monitor speaker. It runs <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 6 post-fader makes that happen automatically. The reverb return comes back into a spare submaster strip on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the master mix alongside the dry signals.</p>
-
-<figure class="diagram">
-  <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound aux routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. Dashed lines from each channel converge into a parallel aux tap bus that feeds six aux send buses (Aux 1 through Aux 6) at the bottom. Auxes 1 through 5 go to the five stage monitors on stage; Aux 6 feeds an outboard reverb unit whose return blends back into the master mix (exiting the frame at the top right).">
-    <defs>
-      <marker id="ah-foh-aux" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
-        <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
-      </marker>
-    </defs>
-
-    <text x="360" y="20" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
-          fill="var(--accent)">SCENARIO 1 · AUX SENDS · STAGE MONITORS AND FX</text>
-
-    <!-- Twelve channels on the left, stacked -->
-    <g font-family="DM Mono, monospace" font-size="10" fill="var(--ink)">
-      <rect x="20" y="50" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="65" text-anchor="middle">Ch 1 · Vocal</text>
-
-      <rect x="20" y="78" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="93" text-anchor="middle">Ch 2 · Guitar</text>
-
-      <rect x="20" y="106" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="121" text-anchor="middle">Ch 3 · Bass DI</text>
-
-      <rect x="20" y="134" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="149" text-anchor="middle">Ch 4 · Bass amp</text>
-
-      <rect x="20" y="162" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="177" text-anchor="middle">Ch 5 · Kick</text>
-
-      <rect x="20" y="190" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="205" text-anchor="middle">Ch 6 · Snare</text>
-
-      <rect x="20" y="218" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="233" text-anchor="middle">Ch 7 · Overhead L</text>
-
-      <rect x="20" y="246" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="261" text-anchor="middle">Ch 8 · Overhead R</text>
-
-      <rect x="20" y="274" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="289" text-anchor="middle">Ch 9 · Keys L</text>
-
-      <rect x="20" y="302" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="317" text-anchor="middle">Ch 10 · Keys R</text>
-
-      <rect x="20" y="330" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="345" text-anchor="middle">Ch 11 · Laptop L</text>
-
-      <rect x="20" y="358" width="120" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="80" y="373" text-anchor="middle">Ch 12 · Laptop R</text>
-    </g>
-
-    <!-- "any channel can feed any aux" tap arrows: dashed lines from each channel down to the aux region -->
-    <g stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 3" fill="none" opacity="0.5">
-      <line x1="80" y1="72" x2="80" y2="415"/>
-      <line x1="80" y1="100" x2="80" y2="415"/>
-      <line x1="80" y1="128" x2="80" y2="415"/>
-      <line x1="80" y1="156" x2="80" y2="415"/>
-      <line x1="80" y1="184" x2="80" y2="415"/>
-      <line x1="80" y1="212" x2="80" y2="415"/>
-      <line x1="80" y1="240" x2="80" y2="415"/>
-      <line x1="80" y1="268" x2="80" y2="415"/>
-      <line x1="80" y1="296" x2="80" y2="415"/>
-      <line x1="80" y1="324" x2="80" y2="415"/>
-      <line x1="80" y1="352" x2="80" y2="415"/>
-      <line x1="80" y1="380" x2="80" y2="415"/>
-    </g>
-    <!-- One bold dashed arrow representing the aux tap bus going from channel column to the aux row -->
-    <path d="M 80 400 L 165 440" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="5 3" marker-end="url(#ah-foh-aux)"/>
-    <text x="105" y="415" font-family="DM Mono, monospace" font-size="9" letter-spacing="0.06em" fill="var(--ink-soft)">aux taps (parallel · independent levels)</text>
-
-    <!-- Aux buses (bottom row) -->
-    <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink)">
-      <!-- Aux 1 -->
-      <rect x="170" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="215" y="446" text-anchor="middle" font-weight="600">Aux 1</text>
-      <text x="215" y="462" text-anchor="middle" fill="var(--ink-soft)">vocal monitor</text>
-
-      <!-- Aux 2 -->
-      <rect x="270" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="315" y="446" text-anchor="middle" font-weight="600">Aux 2</text>
-      <text x="315" y="462" text-anchor="middle" fill="var(--ink-soft)">guitar monitor</text>
-
-      <!-- Aux 3 -->
-      <rect x="370" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="415" y="446" text-anchor="middle" font-weight="600">Aux 3</text>
-      <text x="415" y="462" text-anchor="middle" fill="var(--ink-soft)">bass monitor</text>
-
-      <!-- Aux 4 -->
-      <rect x="470" y="430" width="90" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="515" y="446" text-anchor="middle" font-weight="600">Aux 4</text>
-      <text x="515" y="462" text-anchor="middle" fill="var(--ink-soft)">drum monitor</text>
-
-      <!-- Aux 5 -->
-      <rect x="170" y="490" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="265" y="506" text-anchor="middle" font-weight="600">Aux 5</text>
-      <text x="265" y="522" text-anchor="middle" fill="var(--ink-soft)">keys monitor</text>
-
-      <!-- Aux 6 -->
-      <rect x="370" y="490" width="190" height="40" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
-      <text x="465" y="506" text-anchor="middle" font-weight="600">Aux 6</text>
-      <text x="465" y="522" text-anchor="middle" fill="var(--ink-soft)">reverb send (outboard)</text>
-    </g>
-
-    <!-- Auxes 1-5 → stage monitors destination label on the right -->
-    <line x1="562" y1="450" x2="595" y2="450" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-aux)"/>
-    <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
-      <text x="630" y="444" text-anchor="middle" font-weight="600" fill="var(--ink)">five monitors</text>
-      <text x="630" y="459" text-anchor="middle">on stage</text>
-    </g>
-
-    <!-- Aux 6 → outboard reverb, then return into master mix via curved arc -->
-    <line x1="562" y1="510" x2="595" y2="510" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-aux)"/>
-    <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
-      <text x="630" y="504" text-anchor="middle" font-weight="600" fill="var(--ink)">outboard FX</text>
-      <text x="630" y="519" text-anchor="middle">reverb unit</text>
-    </g>
-    <!-- FX-return arc: exits the frame at the top toward the master mix shown in the main-routing diagram above -->
-    <path d="M 670 490 Q 695 280 670 60" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ah-foh-aux)" opacity="0.7"/>
-    <text x="675" y="280" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" transform="rotate(90 675 280)">FX return blends into master mix</text>
-  </svg>
-  <figcaption>Scenario 1 aux routing. Each channel's aux taps run in parallel to the main flow; five auxes feed the performers' stage monitors, the sixth feeds an outboard reverb whose return blends back into the master mix from the diagram above.</figcaption>
-</figure>
-
 <div class="callout">
-  <div class="callout-label">One source, seven destinations</div>
-  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the master mix (audience hears it via the FOH amps), the vocal stage monitor (singer hears it), the four other stage monitors (everyone else hears it in their stage mixes), and the reverb send (so vocals carry a tail). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
+  <div class="callout-label">One source, six destinations</div>
+  <p>The vocalist's mic on Ch 1 ends up in six places at once during a live show: the master mix (audience hears it via the FOH amps), the vocal stage monitor (singer hears it), and the four other stage monitors (everyone else hears it in their stage mixes). Six destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
 </div>
 
 <hr>
@@ -1095,7 +967,7 @@
     </tr>
     <tr>
       <td class="ch">Aux sends (post-fader)</td>
-      <td>FX send to outboard reverb (Aux 6)</td>
+      <td>Aux 6 spare (no outboard FX in tonight's setup)</td>
       <td>Free for outboard FX or additional cues (Aux 2-6)</td>
     </tr>
     <tr>
