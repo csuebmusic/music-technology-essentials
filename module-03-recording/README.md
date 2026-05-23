@@ -1,6 +1,6 @@
 # Module 03 — Recording, Sample Prep & Library Building
 
-**Weeks 6–8 · 6 sessions (600 minutes total)**
+**Weeks 6–9 · 8 sessions (800 minutes total)**
 
 > **Status:** Roadmap in place. Session blocks are stubs to be filled in between sessions as the module is built out. The spec at the top is the load-bearing part for now.
 
@@ -8,18 +8,18 @@
 
 ## Module purpose
 
-Module 2 taught students to manipulate sound that was handed to them. Module 3 teaches them to make their own. By the end of three weeks they should be able to plug in a microphone, capture a clean recording, prepare the file for use, and organize it into a usable library.
+Module 2 taught students to manipulate sound that was handed to them. Module 3 teaches them to make their own. By the end of four weeks they should be able to plug in a microphone, capture a clean recording, prepare the file for use, and organize it into a usable library.
 
 The deliverable is the library itself, the curated and organized collection of sounds students will draw from for the rest of the semester (and beyond). The midterm is two parts: the library submission, and a terminology exam covering Modules 1 through 3.
 
-The arc of the module: trace the basic flow from mic to DAW → record into Audacity → widen the flow (other signal types, other mics, signal modifiers) → see how a mixer routes multiple flows at once (live vs. studio) → submit the library.
+The arc of the module: trace the basic flow from mic to DAW → record into Audacity → widen the flow (other signal types, other mics, signal modifiers) → see how a mixer routes multiple flows at once (the Toft ATB in detail) → put the mixer through the live-vs-studio scenarios → review and visit the actual studio → submit the library.
 
 Two principles thread through the module:
 
-1. **Signal flow is a sequence of decisions.** Sound becomes signal becomes recording becomes sample becomes library. At every stage, something is chosen: which mic, which signal type, which cable, which input, which interface, which prep step, which destination folder. Students should be able to look at any setup (a stage, a studio, a phone propped against a doorframe) and name the flow from acoustic source to stored file. The basic recording chain is the most common version of this flow; the Wk 7 expansion (instrument and line signals, DI boxes, preamps) and the Wk 8 mixer lecture (live vs. studio routing) widen the frame.
+1. **Signal flow is a sequence of decisions.** Sound becomes signal becomes recording becomes sample becomes library. At every stage, something is chosen: which mic, which signal type, which cable, which input, which interface, which prep step, which destination folder. Students should be able to look at any setup (a stage, a studio, a phone propped against a doorframe) and name the flow from acoustic source to stored file. The basic recording chain is the most common version of this flow; the Wk 7 expansion (instrument and line signals, DI boxes, preamps) and the Wk 8 mixer sessions (the console and the live-vs-studio scenarios) widen the frame.
 2. **A sample is not a recording.** A recording is what comes out of the mic; a sample is what goes into the library. Turning one into the other is its own discipline, and it spans both the tracking stage and the prep stage. While recording: leave headroom (peaks around -12 to -6 dBFS) so there are decisions left to make. After recording: denoise, trim, normalize, name, and file. Neither step is optional; both are what make a usable library possible.
 
-By the end of Wk 8, students should have a working library of their own recordings, prepped to a consistent standard, organized in a documented folder structure, ready to use as raw material in Module 4 (Ableton).
+By the end of Wk 9, students should have a working library of their own recordings, prepped to a consistent standard, organized in a documented folder structure, ready to use as raw material in Module 4 (Ableton).
 
 ---
 
@@ -60,7 +60,7 @@ By the end of this module, students should be able to:
 
 ## Deliverable: Midterm
 
-Two parts, both due Wed Wk 8.
+Two parts, both due Wed Wk 9.
 
 ### Sample library
 
@@ -73,11 +73,12 @@ Full prompt and rubric: [`projects/project-02-sample-library.html`](https://csue
 **Timeline:**
 - Wk 6 Wed: students record their first 4 sounds in lab (paper crumble x2 speeds, paper rip x2 speeds), prep them, and submit them as a starter library
 - Wk 7 onward: students record additional sounds in lab and on their phones outside class
-- Wk 8 Wed: final library submission
+- Wk 8: Mon mixer lecture and Wed mixer-in-practice lab. Students continue adding sounds to the library between sessions.
+- Wk 9 Wed: final library submission
 
 ### Terminology exam
 
-A cumulative in-class exam covering Modules 1 through 3 vocabulary and concepts. ~30 minutes, in-class on Wed Wk 8 after library submission is verified.
+A cumulative in-class exam covering Modules 1 through 3 vocabulary and concepts. ~30 minutes, in-class on Wed Wk 9 after library submission is verified.
 
 Full exam and answer key: [`projects/terminology-exam.md`](./projects/terminology-exam.md) *(to be written, TA-facing only)*
 
@@ -89,13 +90,13 @@ Full exam and answer key: [`projects/terminology-exam.md`](./projects/terminolog
 
 Full listening assignment with guided questions: [`listening/historical.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/listening/historical.html) *(to be written)*
 
-**Due:** Mon Wk 8, before class.
+**Due:** Mon Wk 9, before class.
 
 **Peer listening:** Module 3 also includes a peer-listening assignment, where students browse and listen to each other's sample libraries after midterm submission and respond briefly. The format differs from Module 2's peer listening: students are listening to *libraries* (collections of curated sounds) rather than *finished pieces*, so the prompts orient toward what's in the libraries and what the listener would do with it.
 
 Peer listening assignment: [`listening/peer-midterm.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/listening/peer-midterm.html) *(to be written)*
 
-**Due:** Mon Wk 9, before class.
+**Due:** Mon Wk 10, before class.
 
 ---
 
@@ -107,8 +108,10 @@ Peer listening assignment: [`listening/peer-midterm.html`](https://csuebmusic.gi
 | 6 | Wed | Session 2 · Lab: Recording into Audacity (Lab 1). Project setup, four paper recordings (crumble slow/fast, rip slow/fast), three-step sample prep pipeline (denoise / trim / normalize), library folder set up, naming convention established. Phone-recording reference card distributed. |
 | 7 | Mon | Session 3 · Lecture: Widening the flow. Instrument-level and line-level signals. TS and TRS cables. Condenser mics and other transducer types. Signal modifiers: DI boxes and hardware preamps. |
 | 7 | Wed | Session 4 · Lab: Phone recording → Audacity (Lab 2). Importing phone recordings into Audacity, prepping them through the same pipeline. Worktime on the library. |
-| 8 | Mon | Session 5 · Lecture: The mixer. Live sound vs. recording session walkthrough using a fictional band as the running example. Auxes, busses, monitor sends, headphone mixes. |
-| 8 | Wed | Session 6 · **Midterm: library submission + terminology exam.** |
+| 8 | Mon | Session 5 · Lecture: The mixer. The Toft ATB walked top to bottom: channel strip, in-line architecture, submasters, master section. Fictional band (The Sound Below) introduced as the running example for Wednesday. |
+| 8 | Wed | Session 6 · Lab: The mixer in practice (Lab 3). The Sound Below walked through two scenarios on the same desk: a live show and a studio tracking session. Synthesis: same console, same tools, different destinations. |
+| 9 | Mon | Session 7 · Review + studio visit (MB2508). Module 3 vocabulary review for the next-day exam, plus the in-person visit to the studio where the actual Toft lives. |
+| 9 | Wed | Session 8 · **Midterm: library submission + terminology exam.** |
 
 Block-by-block facilitation, demo scripts, common confusions, and pacing fallbacks for each session will be filled in below as the module is built out.
 
@@ -447,58 +450,40 @@ Eight steps from phone-side transfer through library upload: get the recording o
 
 ---
 
-## Session 5 · Mon Wk 8: The mixer · live vs. studio
+## Session 5 · Mon Wk 8: The mixer
 
 **100 min · Lecture-style · MB2525**
 
 ### Roadmap
 
-Introduces the mixer as the place where many signal flows converge, split, and route to different destinations. Up to now students have thought about one flow at a time (one mic, one signal, one input). A mixer is what handles five or ten or twenty flows at once. The pedagogical move: walk through **the same fictional band in two scenarios** (live performance and studio session) to surface what's the same and what's different.
+Introduces the mixer as the place where many signal flows converge. Up to now students have thought about one flow at a time (one mic, one signal, one input, one recording). A mixer is what handles many flows at once and gives the engineer routing, processing, and combining tools they couldn't pull off with a single audio interface.
 
-**The fictional band: The Sound Below.** A four-piece, defined in the reading's opening sidebar and reused as the running example through sections 6 and 7. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2, plus the canonical DI-dry-plus-amp-wet bass treatment and the standard kick-snare-overheads drum miking from Huber (Modern Recording Techniques, 2018):
-- **Vocals:** dynamic mic, mic-level signal, XLR
-- **Electric guitar:** amp mic'ed with a dynamic, mic-level, XLR
-- **Bass guitar:** recorded two ways simultaneously, DI dry (XLR out of the DI box) + amp wet (dynamic mic on the bass amp's speaker, XLR). The DI box's thru jack passes the instrument signal on to the amp.
-- **Drums:** four mics, kick (dynamic) + snare (dynamic) + two overhead condensers (left and right, both needing phantom power), four XLRs
+The lecture walks the actual console in the studio (a Toft Audio Designs ATB) top to bottom, in five sections:
 
-Eight signals into the console total. With sixteen input channels on our console, the band fills exactly half.
+1. **The mixer as the place where flows meet.** Conceptual frame: what a mixer is for, how it sits in the chain between mics and audio interface, the analog-vs-digital distinction (a digital mixer like an X32 or SQ can replace the interface; an analog console like the Toft cannot).
+2. **The channel strip.** Walked control by control: input gain, phase reverse, 80 Hz HPF, four-band EQ, six aux sends, monitor section, pan/solo/mute, routing buttons to L-R and to subgroup pairs, the channel fader and unity gain. Callouts connect each control back to material from Lectures 1 and 2 (phase to the XLR balanced-cable trick; the EQ to Audacity's Filter Curve EQ; the aux sends to the river-with-taps metaphor; TRS as a third-way wiring on the insert jack).
+3. **In-line architecture.** Every strip carries two paths (channel and monitor), both active at the same time. The processing-vs-monitoring distinction lands here, plus the I/P REV button that swaps them at mixdown.
+4. **The submaster section.** Eight subgroup strips, what they do, how channels get routed to them, the stereo effects returns.
+5. **The master section.** Aux masters, talkback, monitor switching, 2-track returns, the master stereo fader.
 
-**Scenario 1: Live sound.**
+**Setup for Wednesday's lab.** The reading also introduces **The Sound Below**, a fictional four-piece (vocals + dynamic mic, electric guitar + amp + dynamic mic, bass DI + amp wet, drums = kick + snare + two condenser overheads). Eight signals into the console total, filling exactly half of our 16-channel desk. The band is introduced in the reading's closing material so students walk into Wednesday's lab knowing the running example.
 
-The band is playing a small venue. The mixer's job is to take everything happening on stage and send it two places: (1) the front-of-house speakers the audience hears, (2) the monitor wedges or in-ears each performer hears.
-
-Concepts that land here:
-- **Channel strips** — one per input. Gain, EQ, fader.
-- **The main mix** — what comes out the front-of-house speakers.
-- **Aux sends** — separate mixes that go to a different destination. In live sound, auxes feed monitor wedges (each performer wants to hear a different mix).
-
-**Scenario 2: Studio recording session.**
-
-The same band, now in a studio. The mixer's job changes. Front-of-house speakers don't exist; the audience is the recording. The performers wear headphones, and each performer's headphone mix is what they need to play to.
-
-Concepts that land here:
-- The same channel strips, the same EQ, the same faders
-- **Auxes** now feed **headphone mixes** instead of monitor wedges. The mechanism is the same; the destination is different.
-- **Busses** — groups of channels routed together (e.g. all drum mics summed to a "drums" bus before going to the mix). Useful both live and in studio, but easier to introduce in the studio context.
-- **Recording sends** — the mix going to the DAW for capture.
-
-**The synthesis:** auxes and busses are routing tools. They look the same on the mixer; what's different is what's plugged into them. Once a student understands that, the apparent complexity collapses.
+The lecture explicitly does *not* walk the live-sound or studio-session scenarios; those are the work of Wednesday's lab (Session 6 below). The Monday lecture is "what the console is"; the Wednesday lab is "what the console does."
 
 ### Reading
 
 [`lessons/06-reading-the-mixer.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/06-reading-the-mixer.html)
 
-Eight sections from the conceptual frame through the live-vs-studio synthesis: (1) the mixer as the place where many flows meet; (2) the channel strip walked top to bottom on the Toft ATB; (3) the in-line architecture (one strip, two paths) and the I/P REV button; (4) the submaster section (subgroups, monitor returns, stereo effects returns); (5) the master section (talkback, monitor switching, 2-track returns, master fader); (6) a live-sound walkthrough using The Sound Below (the running fictional four-piece) at a small venue; (7) the same band tracking in a studio session, with the I/P REV move surfaced at mixdown; (8) the synthesis (auxes and subgroups are the same routing tools in both contexts, only the destination changes). Closes with vocabulary and a "for further exploration" pointer to the Tape Op and Sound on Sound reviews of the console.
-
-The running example throughout: **The Sound Below**, a four-piece (vocals + dynamic mic, electric guitar + amp + dynamic mic, bass + DI box, drums = kick dynamic + snare dynamic + condenser overhead). Six XLR signals into the console. The band's instrumentation deliberately rehearses every signal-and-mic combination from Lectures 1 and 2 so the reading anchors back to what students already know.
+Five sections plus vocabulary and a "for further exploration" pointer: (1) the mixer as the place where many flows meet (with the analog-vs-digital paragraph); (2) the channel strip walked top to bottom on the Toft ATB with seven embedded callouts (phase, EQ, aux sends with river-and-taps SVG, routing/pan worked example, TRS-as-insert-loop, aux-vs-insert with canonical effect categories, processing-vs-monitoring); (3) the in-line architecture and the I/P REV button; (4) the submaster section (subgroups, monitor returns, stereo effects returns); (5) the master section (aux masters, talkback, monitor switching, 2-track returns, master fader). Closes with vocabulary and a "for further exploration" pointer to the Tape Op and Sound on Sound reviews of the console.
 
 The reading uses five photos: a top-down shot of the studio's actual 16-channel ATB (sourced from Retro Gear Shop) as the chapter-opening overview; an annotated front-panel photo of a single input strip with every control labeled (Aux Masters, EQ bands, monitor section, fader); an annotated front-panel photo of the entire group/master section showing all eight submaster strips alongside the master strip (used twice in the reading: section 4 focuses on the submaster strips, section 5 focuses on the master strip); the rear-panel input section showing LINE / MON / INSERT / DIR. O/P + XLR per channel (from the Toft manual); the rear-panel output section showing subgroup outputs, monitor returns, effects returns, aux masters, master output (from the Toft manual). Annotated front-panel photos sourced separately; rear-panel photos credited to Toft Audio Designs / PMI Audio Group; the overview credited to Retro Gear Shop.
 
 ### Resolved decisions
 
 - **Detail on the channel strip:** the reading covers what's on the front panel of the Toft input strip in beginner-friendly prose (input gain, phase, 80 Hz filter, four-band EQ, six aux sends, monitor section, solo/mute, pan, routing buttons, fader). Doesn't get into per-band EQ tuning or different EQ topologies.
-- **Photos vs schematic diagrams:** photos chosen. The Toft manual's own flow diagrams are too dense for beginners; six photos from the manual ground the explanations in the actual console. Conceptual flow is carried by prose and section structure, not by a master schematic.
-- **The fictional band:** named (The Sound Below), instrumented, and reused across the live and studio sections.
+- **Photos vs schematic diagrams:** photos chosen. The Toft manual's own flow diagrams are too dense for beginners; five photos ground the explanations in the actual console. Conceptual flow is carried by prose, callouts (including the river-and-taps SVG for aux sends), and section structure, rather than by a master schematic.
+- **Lecture/lab split:** the console walkthrough (what it is) is Monday's lecture; the live-vs-studio scenarios (what it does) are Wednesday's lab. The split lets the Monday reading run heavy on the channel-strip detail without crowding out the scenario material, and lets Wednesday focus on application.
+- **The fictional band:** named (The Sound Below), instrumented, and used as the running example for Wednesday's lab walkthroughs.
 
 ### Block-by-block
 
@@ -506,7 +491,73 @@ The reading uses five photos: a top-down shot of the studio's actual 16-channel 
 
 ---
 
-## Session 6 · Wed Wk 8: Midterm — library submission + terminology exam
+## Session 6 · Wed Wk 8: The mixer in practice (Lab 3)
+
+**100 min · Lab-style · MB2525**
+
+### Roadmap
+
+Hands-on session that takes the console students just met in Monday's reading and puts it through two real scenarios. The pedagogical move: walk through **the same fictional band in two contexts** (live performance and studio recording session) on the same desk, surfacing what stays the same and what changes between them.
+
+**The fictional band: The Sound Below.** A four-piece, the running example introduced at the end of Monday's reading. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2, plus the canonical DI-dry-plus-amp-wet bass treatment and the standard kick-snare-overheads drum miking from Huber (Modern Recording Techniques, 2018):
+- **Vocals:** dynamic mic, mic-level signal, XLR
+- **Electric guitar:** amp mic'ed with a dynamic, mic-level, XLR
+- **Bass guitar:** recorded two ways simultaneously, DI dry (XLR out of the DI box) + amp wet (dynamic mic on the bass amp's speaker, XLR). The DI box's thru jack passes the instrument signal on to the amp.
+- **Drums:** four mics, kick (dynamic) + snare (dynamic) + two overhead condensers (left and right, both needing phantom power), four XLRs
+
+Eight signals into the console total. With sixteen input channels on our console, the band fills exactly half.
+
+**Scenario 1: Live sound.** The band is playing a small venue. The mixer's job is to take everything happening on stage and send it two places: (1) the front-of-house speakers the audience hears (via the L-R master), (2) the monitor wedges each performer hears (via the aux sends, with each aux carrying a different blend for a different performer).
+
+**Scenario 2: Studio recording session.** The same band in the studio. The L-R master now feeds the control-room speakers (what the engineer hears), not an audience. The DAW captures the recording via direct outs or subgroup outs. The aux sends now feed performer headphone cues instead of monitor wedges. At mixdown, the I/P REV button swaps each channel's paths so the small monitor knob becomes the recording playback level and the big channel fader controls the playback mix to the speakers.
+
+**The synthesis.** Auxes are routing tools; subgroups are routing tools; the master is a routing tool. They look the same on the desk in both scenarios; what differs is what's plugged into them and where their output goes. Once a student understands that, the apparent complexity of "live console vs. studio console" collapses into "same console, different destinations."
+
+**Interactive tool (planned).** The lab will eventually include an in-browser tool that lets students manipulate a simplified version of the console and see signal routing change in real time. For Fall 2026 this lab runs prose-only; the interactive piece is on the roadmap for a later iteration.
+
+### Handout
+
+[`lessons/07-handout-the-mixer-in-practice.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/07-handout-the-mixer-in-practice.html) — Lab 3
+
+Walks both scenarios in detail. Today's gear is minimal (this is a desk-and-projector session, not a recording session). Students follow the walkthroughs as the lecturer demonstrates the routing decisions on the actual console at the front of the room.
+
+### Block-by-block
+
+*To be filled in.*
+
+---
+
+## Session 7 · Mon Wk 9: Module 3 review + studio visit (MB2508)
+
+**100 min · Review + studio visit · starts in MB2525, moves to MB2508**
+
+### Roadmap
+
+Final session before the midterm. Two halves.
+
+**First half: review.** Walk the Module 3 vocabulary and concepts that the terminology exam covers. The review reading (see below) collects everything in one place; the lecture uses the reading as a map.
+
+**Second half: studio visit to MB2508.** Where the actual Toft ATB lives. Up to now students have read about the console in the abstract and seen photos; today they sit at the desk. The visit isn't an open-ended studio tour; it's a structured ~30-40 minute hands-on:
+- Identify the input strips, submasters, master section, talkback, master fader on the actual desk
+- Identify the front of the channel strip controls in person (phase, HPF, EQ knobs, aux send knobs, monitor section, pan, routing buttons, fader)
+- Identify the rear-panel jacks on a real input section (LINE, MON, INSERT, DIR. O/P, MIC)
+- Identify The Sound Below's eight signals as channel-routing decisions on the desk
+
+Whether to actually power the console on and pass signal through it depends on time and on whether the studio is set up. If powered, demonstrate one channel from a mic in MB2508 (or playback from a test source) through the channel strip to the monitor speakers. If unpowered, the tour is observational only.
+
+### Reading
+
+[`lessons/08-reading-midterm-review.html`](https://csuebmusic.github.io/music-technology-essentials/module-03-recording/lessons/08-reading-midterm-review.html)
+
+Synthesizes Module 3 vocabulary and concepts in one place. Functions as a study guide for the next-day terminology exam. Maps every term back to the lesson where it was introduced so students can re-read the specific section if a term is unfamiliar. Closes with a "what to bring to the exam" reminder (just yourself; closed-book, no devices).
+
+### Block-by-block
+
+*To be filled in.*
+
+---
+
+## Session 8 · Wed Wk 9: Midterm — library submission + terminology exam
 
 **100 min · Mixed format · MB2525**
 
@@ -584,8 +635,8 @@ Students at the end of Module 3 should be able to:
 
 *Stub. To be filled in as readings are drafted.*
 
-- The peer-listening discussion on Mon Wk 9 (start of Module 4) opens with a discussion of the sample libraries students just submitted. Plan that into Module 4's first session.
-- Sample libraries built in this module become the source material for Module 4 audio work (Wks 9–11 in Ableton). The "your library" framing should appear in the Module 4 README.
+- The peer-listening discussion on Mon Wk 10 (start of Module 4) opens with a discussion of the sample libraries students just submitted. Plan that into Module 4's first session.
+- Sample libraries built in this module become the source material for Module 4 audio work (Wks 10–11 in Ableton). The "your library" framing should appear in the Module 4 README.
 - The ADSR forward-promise from Module 2 (Mon Wk 3 reading) is still outstanding for Module 4 synthesis content.
 
 ### What gets logged
@@ -596,4 +647,4 @@ After Module 3 ends, write a short retrospective covering what went well, what d
 
 ## What follows
 
-Module 4 (Wks 9–14) moves into Ableton. Audio work first, MIDI and synthesis second. The sample libraries built in this module are the bridge: students will load their own libraries into Ableton in Wk 9 and start making pieces from their own recorded material.
+Module 4 (Wks 10–14) moves into Ableton. Audio work first, MIDI and synthesis second. The sample libraries built in this module are the bridge: students will load their own libraries into Ableton in Wk 10 and start making pieces from their own recorded material.
