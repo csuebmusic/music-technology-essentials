@@ -478,12 +478,23 @@
 
 <p>All twelve signals arrive at the console on the MIC (XLR) jack: the eight mic-level signals from microphones and the DI box on the bass, plus the keyboardist's four signals after her DI box. Only the two overhead condensers need phantom power; the dynamics and the DI boxes don't draw +48V. (If you're unsure why, the polar-patterns and condenser-mic sections of Lecture 2 cover it.)</p>
 
+<h3>The FOH mix: routing to L-R</h3>
+
+<p>Each channel's <strong>L-R</strong> button sends that channel to the master stereo bus. The channel pan knob places it left or right; the channel fader sets its level in the mix; the channel EQ shapes its tone. The engineer rides faders, makes EQ moves, and uses the master fader to set the overall level coming out of the FOH speakers.</p>
+
+<p>For drums, the standard move is the one the reading walked through: route the four drum channels (5, 6, 7, 8) to <strong>subgroup pair 1-2</strong> instead of straight to L-R. Pan the kick and snare center; pan overhead L hard left and overhead R hard right. Then route subs 1 and 2 to the L-R master with their own pair of faders. Now the engineer has one pair of submaster faders that controls the whole drum kit's level in the FOH mix, without touching the individual drum-mic balance. If the drums need to come down 3 dB during a quiet verse, two faders move; the kit's internal balance stays exactly where it was.</p>
+
+<p>The same logic applies to the keyboardist's four channels. Route the keys L/R and laptop L/R (channels 9 through 12) to <strong>subgroup pair 3-4</strong>. Pan each L channel hard left and each R channel hard right; the two stereo pairs sum across the subgroup pair into one stereo electronic submix. Subs 3 and 4 then route to L-R with their own fader pair. One pair of faders controls everything coming from the keys rig in the FOH mix, and the internal balance between the stage keyboard and the laptop stays set wherever the keyboardist's gain-staging put it.</p>
+
 <figure class="diagram">
   <svg viewBox="0 0 720 410" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound main routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. The four drum channels (5 through 8) route into a Subs 1-2 box, the drum bus. The four keys-and-laptop channels (9 through 12) route into a Subs 3-4 box, the electronic bus. The non-drum, non-electronic channels (1 through 4) and both subgroup pairs feed the L-R master in the centre, which goes to the FOH speakers on the right.">
+       role="img" aria-label="Diagram of the live-sound main routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. The four drum channels (5 through 8) route into a Subs 1-2 box, the drum bus. The four keys-and-laptop channels (9 through 12) route into a Subs 3-4 box, the electronic bus. The non-drum, non-electronic channels (1 through 4) and both subgroup pairs feed the L-R master at the top of the routing region, which goes to the FOH speakers on the right.">
     <defs>
       <marker id="ah-foh-main" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
+      </marker>
+      <marker id="ah-foh-internal" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+        <polygon points="0 0, 8 2.5, 0 5" fill="var(--ink-soft)"/>
       </marker>
     </defs>
 
@@ -538,11 +549,11 @@
       <text x="255" y="247" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(four drum mics)</text>
     </g>
 
-    <!-- Routing arrows: drum channels into subgroup pair -->
-    <line x1="142" y1="173" x2="193" y2="210" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="201" x2="193" y2="220" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="229" x2="193" y2="232" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="257" x2="193" y2="244" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
+    <!-- Routing arrows: drum channels into subgroup pair (internal: dotted, soft) -->
+    <line x1="142" y1="173" x2="193" y2="210" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="201" x2="193" y2="220" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="229" x2="193" y2="232" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="257" x2="193" y2="244" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
 
     <!-- Subgroup pair 3-4 (electronic bus) -->
     <g>
@@ -552,47 +563,40 @@
       <text x="255" y="359" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">(keys + laptop)</text>
     </g>
 
-    <!-- Routing arrows: keys/laptop channels into subgroup pair 3-4 -->
-    <line x1="142" y1="285" x2="193" y2="320" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="313" x2="193" y2="330" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="341" x2="193" y2="342" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="369" x2="193" y2="354" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
+    <!-- Routing arrows: keys/laptop channels into subgroup pair 3-4 (internal: dotted, soft) -->
+    <line x1="142" y1="285" x2="193" y2="320" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="313" x2="193" y2="330" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="341" x2="193" y2="342" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="369" x2="193" y2="354" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
 
-    <!-- L-R master bus -->
+    <!-- L-R master bus (moved up to align with channels 1-4) -->
     <g>
-      <rect x="370" y="170" width="140" height="60" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="440" y="195" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">L-R master</text>
-      <text x="440" y="214" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the FOH mix</text>
+      <rect x="370" y="75" width="140" height="60" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="440" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">L-R master</text>
+      <text x="440" y="119" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the FOH mix</text>
     </g>
 
-    <!-- Arrows: non-drum, non-electronic channels (1-4) to L-R -->
-    <line x1="142" y1="61" x2="368" y2="180" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="89" x2="368" y2="190" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="117" x2="368" y2="200" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <line x1="142" y1="145" x2="368" y2="210" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-main)"/>
-    <!-- Subs 1-2 → L-R master -->
-    <line x1="317" y1="225" x2="368" y2="218" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ah-foh-main)"/>
-    <!-- Subs 3-4 → L-R master -->
-    <line x1="317" y1="335" x2="368" y2="225" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ah-foh-main)"/>
+    <!-- Arrows: non-drum, non-electronic channels (1-4) to L-R (internal: dotted, soft, near-horizontal) -->
+    <line x1="142" y1="61" x2="368" y2="85" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="89" x2="368" y2="95" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="117" x2="368" y2="110" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <line x1="142" y1="145" x2="368" y2="120" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <!-- Subs 1-2 → L-R master (internal: dotted, soft) -->
+    <line x1="317" y1="210" x2="368" y2="125" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <!-- Subs 3-4 → L-R master (internal: dotted, soft) -->
+    <line x1="317" y1="320" x2="368" y2="130" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
 
-    <!-- FOH speakers -->
+    <!-- FOH speakers (moved up to align with L-R master) -->
     <g>
-      <rect x="565" y="170" width="130" height="60" rx="4" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="630" y="195" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">FOH speakers</text>
-      <text x="630" y="214" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--bg-alt)">to the audience</text>
+      <rect x="565" y="75" width="130" height="60" rx="4" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="630" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">FOH speakers</text>
+      <text x="630" y="119" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--bg-alt)">to the audience</text>
     </g>
-    <line x1="512" y1="200" x2="563" y2="200" stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-foh-main)"/>
+    <!-- L-R → FOH speakers stays solid accent: this is the external output, not internal routing -->
+    <line x1="512" y1="105" x2="563" y2="105" stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-foh-main)"/>
   </svg>
-  <figcaption>Scenario 1 main routing. Channels feed the two subgroup pairs and the L-R master; the master output drives the FOH speakers facing the audience.</figcaption>
+  <figcaption>Scenario 1 main routing. Dotted arrows show the internal routing on the console (channels and subgroups feeding L-R); the solid arrow on the right is the L-R master output driving the FOH speakers.</figcaption>
 </figure>
-
-<h3>The FOH mix: routing to L-R</h3>
-
-<p>Each channel's <strong>L-R</strong> button sends that channel to the master stereo bus. The channel pan knob places it left or right; the channel fader sets its level in the mix; the channel EQ shapes its tone. The engineer rides faders, makes EQ moves, and uses the master fader to set the overall level coming out of the FOH speakers.</p>
-
-<p>For drums, the standard move is the one the reading walked through: route the four drum channels (5, 6, 7, 8) to <strong>subgroup pair 1-2</strong> instead of straight to L-R. Pan the kick and snare center; pan overhead L hard left and overhead R hard right. Then route subs 1 and 2 to the L-R master with their own pair of faders. Now the engineer has one pair of submaster faders that controls the whole drum kit's level in the FOH mix, without touching the individual drum-mic balance. If the drums need to come down 3 dB during a quiet verse, two faders move; the kit's internal balance stays exactly where it was.</p>
-
-<p>The same logic applies to the keyboardist's four channels. Route the keys L/R and laptop L/R (channels 9 through 12) to <strong>subgroup pair 3-4</strong>. Pan each L channel hard left and each R channel hard right; the two stereo pairs sum across the subgroup pair into one stereo electronic submix. Subs 3 and 4 then route to L-R with their own fader pair. One pair of faders controls everything coming from the keys rig in the FOH mix, and the internal balance between the stage keyboard and the laptop stays set wherever the keyboardist's gain-staging put it.</p>
 
 <h3>The wedge mixes: building five different mixes on the aux sends</h3>
 
