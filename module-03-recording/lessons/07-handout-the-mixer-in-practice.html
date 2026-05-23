@@ -809,7 +809,11 @@
 
 <h2>3 · Scenario 2 · You try!</h2>
 
-<p>Same console, your turn to do the patching. Click <strong>Generate a band</strong> to pull a lineup from the pool below; you'll get a band with its instruments, signal counts, and stage monitor needs. Your job is to think through the channel map, the FOH routing, and the stage monitor mixes (the same three pieces Scenario 1 walked). Each section has a <strong>Show one approach</strong> button that reveals a worked solution, but try to answer first on paper before peeking. There isn't always one right answer; routing is interpretive, and the reveal is one reasonable approach with a note on the trade-offs.</p>
+<p>Same console, your turn to do the patching. Click <strong>Generate a band</strong> to pull a lineup from the pool below; you'll get a band with its instruments, mics, and stage monitor needs.</p>
+
+<p>Work it through methodically, the same way Scenario 1 did. Read the <strong>signal chart</strong> (player → captured → mic / source → signal type → cable) first; that tells you what's coming off the stage. Then build the <strong>channel chart</strong> yourself (channel → source → MIC or LINE jack → phantom power on/off); that's what you'd write down before patching the back of the console. From there, plan the FOH mix and the stage monitor mixes.</p>
+
+<p>Each section has a <strong>Show one approach</strong> button that reveals a worked solution, but try to answer first on paper before peeking. There isn't always one right answer; routing is interpretive, and the reveal is one reasonable approach with a note on the trade-offs.</p>
 
 <p>Hit the button again to get a different lineup. The pool has six bands, each chosen to expose a different routing concept past what The Sound Below covered.</p>
 
@@ -830,21 +834,21 @@
       name: "Lineup 1 · String quartet at an outdoor festival",
       tagline: "An outdoor summer festival, traffic noise from a nearby road, light wind. Acoustic projection alone won't carry the instruments past the front rows, and the players need a little of themselves back to hear each other over the ambient noise.",
       band: [
-        { player: "Violin I", source: "Small-diaphragm condenser on a stand, foam windscreen", signal: "XLR mic" },
-        { player: "Violin II", source: "Small-diaphragm condenser on a stand, foam windscreen", signal: "XLR mic" },
-        { player: "Viola", source: "Small-diaphragm condenser on a stand, foam windscreen", signal: "XLR mic" },
-        { player: "Cello", source: "Small-diaphragm condenser on a stand, foam windscreen", signal: "XLR mic" }
+        { player: "Violin I", captured: "Violin", sourceType: "Small-diaphragm condenser (Shure SM81) on a stand, foam windscreen", signalType: "Mic level", cable: "XLR" },
+        { player: "Violin II", captured: "Violin", sourceType: "Small-diaphragm condenser (Shure SM81) on a stand, foam windscreen", signalType: "Mic level", cable: "XLR" },
+        { player: "Viola", captured: "Viola", sourceType: "Small-diaphragm condenser (Shure SM81) on a stand, foam windscreen", signalType: "Mic level", cable: "XLR" },
+        { player: "Cello", captured: "Cello", sourceType: "Small-diaphragm condenser (Shure SM81) on a stand, foam windscreen", signalType: "Mic level", cable: "XLR" }
       ],
       channelCount: 4,
       monitorCount: 2,
       concept: "When NOT to use subgroups: with low channel count and similarly weighted mono signals, route everything direct to L-R.",
       channelMap: [
-        { ch: 1, label: "Violin I", source: "MIC, XLR" },
-        { ch: 2, label: "Violin II", source: "MIC, XLR" },
-        { ch: 3, label: "Viola", source: "MIC, XLR" },
-        { ch: 4, label: "Cello", source: "MIC, XLR" }
+        { ch: 1, label: "Violin I", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 2, label: "Violin II", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 3, label: "Viola", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 4, label: "Cello", jack: "MIC (XLR)", phantom: "on" }
       ],
-      channelMapNotes: "Engage the 80 Hz HPF on every channel: wind noise on condensers sits below the instruments' fundamentals and the filter knocks it out without touching the music. Phantom power (+48V) is on for all four (condensers need it).",
+      channelMapNotes: "All four mics are small-diaphragm condensers and need +48V; engage phantom power on every channel. Engage the 80 Hz HPF too: wind noise on condensers sits below the instruments' fundamentals and the filter knocks it out without touching the music.",
       fohRouting: "All four channels direct to L-R, no subgroups in use. Pan to roughly mirror stage positions: Violin I left, Violin II center-left, Viola center-right, Cello right. With only four channels and no subgrouping, the engineer has four faders riding the whole quartet, and that's enough for the work.",
       fohTradeoff: "Could you put the quartet on subgroup pair 1-2 to get a master 'quartet level' knob? Yes, but you'd be adding an extra control stage with nothing to gain: the four channels are already the smallest unit you'd want to control, and the master fader already gives you a global level. Subgroups earn their place when you have many channels worth grouping; four don't.",
       monitorMixes: [
@@ -857,21 +861,21 @@
       name: "Lineup 2 · Singer with looper",
       tagline: "A solo artist who builds layered loops on stage from voice and acoustic guitar, then sings over them.",
       band: [
-        { player: "Voice", source: "Dynamic vocal mic (SM58 or similar)", signal: "XLR mic" },
-        { player: "Acoustic guitar", source: "Clip-on condenser on the soundhole", signal: "XLR mic" },
-        { player: "Looper pedal L", source: "Looper output L, line-level", signal: "TRS line" },
-        { player: "Looper pedal R", source: "Looper output R, line-level", signal: "TRS line" }
+        { player: "Voice", captured: "Voice into a handheld mic", sourceType: "Dynamic mic (Shure SM58)", signalType: "Mic level", cable: "XLR" },
+        { player: "Acoustic guitar", captured: "Guitar body, near the soundhole", sourceType: "Clip-on condenser (DPA 4099)", signalType: "Mic level", cable: "XLR" },
+        { player: "Looper L", captured: "Looper pedal output L", sourceType: "Pedal line output", signalType: "Line level", cable: "TRS" },
+        { player: "Looper R", captured: "Looper pedal output R", sourceType: "Pedal line output", signalType: "Line level", cable: "TRS" }
       ],
       channelCount: 4,
       monitorCount: 1,
       concept: "A stereo line-level source on a subgroup pair: the looper L+R wants one pair of submaster strips to ride as a unit during the show.",
       channelMap: [
-        { ch: 1, label: "Voice", source: "MIC, XLR" },
-        { ch: 2, label: "Acoustic guitar", source: "MIC, XLR" },
-        { ch: 3, label: "Looper L", source: "LINE, TRS" },
-        { ch: 4, label: "Looper R", source: "LINE, TRS" }
+        { ch: 1, label: "Voice", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 2, label: "Acoustic guitar", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 3, label: "Looper L", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 4, label: "Looper R", jack: "LINE (TRS)", phantom: "off" }
       ],
-      channelMapNotes: "The looper outputs are line-level, so they go into the LINE jacks on the back, not MIC. Press the LINE button on channels 3 and 4 to switch each channel's input section from MIC to LINE.",
+      channelMapNotes: "The looper outputs are line-level: they go into the LINE jacks on the back, not MIC. Press the LINE button on channels 3 and 4 to switch each strip's input section from MIC to LINE. Phantom power only on Ch 2 (the clip-on condenser); the SM58 and the line inputs don't draw +48V.",
       fohRouting: "Channels 1 and 2 (voice and guitar) direct to L-R, panned roughly center (voice center, guitar just off-center). Channels 3 and 4 (looper L+R) to subgroup pair 1-2, panned hard left and hard right, so the stereo image of the looped material is preserved. The submaster strips for subs 1 and 2 then put the looped material into the master mix via their MON LEVEL knobs (TAPE button up, MON PAN hard left and hard right).",
       fohTradeoff: "Why not just route the looper to L-R like the voice and guitar? You could, but then you're riding four separate faders that all need to move together when the loops are getting busy. With the looper on its own subgroup pair, the engineer has a single pair of MON LEVEL knobs that brings the whole looped layer up or down as a unit, leaving the dry vocal and guitar untouched. That's the move when one source needs independent control as a group.",
       monitorMixes: [
@@ -883,31 +887,31 @@
       name: "Lineup 3 · Punk power trio with double-mic'd kick",
       tagline: "Loud, fast, dense low end. Bass, drums, guitar, vocal, with the kick drum mic'd both inside (beater attack) and outside (resonant head body).",
       band: [
-        { player: "Lead vocal", source: "Dynamic vocal mic", signal: "XLR mic" },
-        { player: "Electric guitar amp", source: "SM57 on the speaker cone", signal: "XLR mic" },
-        { player: "Bass DI", source: "DI box on the bass output", signal: "XLR mic-level (post-DI)" },
-        { player: "Bass amp", source: "Dynamic mic on the cabinet", signal: "XLR mic" },
-        { player: "Kick (in)", source: "Dynamic mic inside the kick (beater side)", signal: "XLR mic" },
-        { player: "Kick (out)", source: "Large-diaphragm mic outside the kick (resonant head)", signal: "XLR mic" },
-        { player: "Snare", source: "SM57 on the top head", signal: "XLR mic" },
-        { player: "Overhead L", source: "Small-diaphragm condenser", signal: "XLR mic" },
-        { player: "Overhead R", source: "Small-diaphragm condenser", signal: "XLR mic" }
+        { player: "Lead vocal", captured: "Voice into a handheld mic", sourceType: "Dynamic mic (Shure SM58)", signalType: "Mic level", cable: "XLR" },
+        { player: "Electric guitar amp", captured: "Mic on the guitar amp's speaker cone", sourceType: "Dynamic mic (Shure SM57)", signalType: "Mic level", cable: "XLR" },
+        { player: "Bass DI", captured: "Bass guitar through a DI box, direct out", sourceType: "Passive DI box (Radial JDI)", signalType: "Mic level (balanced)", cable: "XLR" },
+        { player: "Bass amp", captured: "Mic on the bass amp's cabinet", sourceType: "Dynamic mic (Sennheiser MD421)", signalType: "Mic level", cable: "XLR" },
+        { player: "Kick (in)", captured: "Inside the kick, near the beater", sourceType: "Dynamic mic (Shure Beta 52A)", signalType: "Mic level", cable: "XLR" },
+        { player: "Kick (out)", captured: "Outside the kick, in front of the resonant head", sourceType: "Large-diaphragm dynamic mic (Electro-Voice RE20)", signalType: "Mic level", cable: "XLR" },
+        { player: "Snare", captured: "Top head of the snare", sourceType: "Dynamic mic (Shure SM57)", signalType: "Mic level", cable: "XLR" },
+        { player: "Overhead L", captured: "Above the kit, left side", sourceType: "Small-diaphragm condenser (Shure SM81)", signalType: "Mic level", cable: "XLR" },
+        { player: "Overhead R", captured: "Above the kit, right side", sourceType: "Small-diaphragm condenser (Shure SM81)", signalType: "Mic level", cable: "XLR" }
       ],
       channelCount: 9,
       monitorCount: 3,
       concept: "Two mics on the same drum (kick in + kick out) both route to the drum subgroup pair, summed center.",
       channelMap: [
-        { ch: 1, label: "Lead vocal", source: "MIC, XLR" },
-        { ch: 2, label: "Guitar amp", source: "MIC, XLR" },
-        { ch: 3, label: "Bass DI", source: "MIC, XLR (post-DI)" },
-        { ch: 4, label: "Bass amp", source: "MIC, XLR" },
-        { ch: 5, label: "Kick in", source: "MIC, XLR" },
-        { ch: 6, label: "Kick out", source: "MIC, XLR" },
-        { ch: 7, label: "Snare", source: "MIC, XLR" },
-        { ch: 8, label: "Overhead L", source: "MIC, XLR" },
-        { ch: 9, label: "Overhead R", source: "MIC, XLR" }
+        { ch: 1, label: "Lead vocal", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 2, label: "Guitar amp", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 3, label: "Bass DI", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 4, label: "Bass amp", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 5, label: "Kick (in)", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 6, label: "Kick (out)", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 7, label: "Snare", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 8, label: "Overhead L", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 9, label: "Overhead R", jack: "MIC (XLR)", phantom: "on" }
       ],
-      channelMapNotes: "Phantom power on the overheads (condensers) and the bass-amp mic if it's a condenser. The 80 Hz HPF can go on the vocal and the overheads to clean up rumble; leave it off the kick channels and the bass.",
+      channelMapNotes: "Phantom power only on the overhead condensers (channels 8 and 9). The rest are dynamics and a passive DI box, none of which draw +48V. The 80 Hz HPF can go on the vocal and overheads to clean up rumble; leave it off the kick and bass channels (the music lives down there).",
       fohRouting: "Channels 1-4 (vocal, guitar, bass DI, bass amp) direct to L-R. Channels 5-9 (the five drum mics) to subgroup pair 1-2. On the drum channels, pan kick-in and kick-out both to center (they're the same drum, summed to mono), snare to center, overhead L hard left, overhead R hard right. Submasters 1 and 2 then place the kit in the master mix via MON LEVEL (panned hard L and hard R) — same move as The Sound Below's drum routing.",
       fohTradeoff: "Why two channels for one kick? Blending an in-mic (attack, click) with an out-mic (body, low end) gives the engineer a tone control: more in-mic for a punchy aggressive kick, more out-mic for a deeper rounded kick. Both go to the same place (subgroup 1-2, panned center), but having them on separate channels means the engineer can blend them with the channel faders before they hit the subgroup. Once they're in the subgroup they're one summed signal; the blend is set upstream.",
       monitorMixes: [
@@ -921,31 +925,31 @@
       name: "Lineup 4 · Jazz quartet",
       tagline: "A jazz combo playing acoustic and quiet at a club: upright bass, drums (brushes), piano, saxophone.",
       band: [
-        { player: "Upright bass DI", source: "Pickup → DI box", signal: "XLR mic-level (post-DI)" },
-        { player: "Upright bass body", source: "Side-address condenser on the body", signal: "XLR mic" },
-        { player: "Kick", source: "Dynamic mic inside", signal: "XLR mic" },
-        { player: "Snare", source: "SM57 on the top head", signal: "XLR mic" },
-        { player: "Overhead L", source: "Small-diaphragm condenser", signal: "XLR mic" },
-        { player: "Overhead R", source: "Small-diaphragm condenser", signal: "XLR mic" },
-        { player: "Piano (bass strings)", source: "Condenser on the bass side", signal: "XLR mic" },
-        { player: "Piano (treble strings)", source: "Condenser on the treble side", signal: "XLR mic" },
-        { player: "Tenor saxophone", source: "Large-diaphragm condenser on a stand", signal: "XLR mic" }
+        { player: "Bass DI", captured: "Upright bass pickup through a DI box", sourceType: "Passive DI box (K&K pickup → Radial JDI)", signalType: "Mic level (balanced)", cable: "XLR" },
+        { player: "Bass body", captured: "Side of the upright bass body", sourceType: "Large-diaphragm condenser (AKG C414)", signalType: "Mic level", cable: "XLR" },
+        { player: "Kick", captured: "Inside the kick drum", sourceType: "Dynamic mic (Shure Beta 52A)", signalType: "Mic level", cable: "XLR" },
+        { player: "Snare", captured: "Top head of the snare", sourceType: "Dynamic mic (Shure SM57)", signalType: "Mic level", cable: "XLR" },
+        { player: "Overhead L", captured: "Above the kit, left side", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
+        { player: "Overhead R", captured: "Above the kit, right side", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
+        { player: "Piano L (bass strings)", captured: "Inside the grand piano, over the bass strings", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
+        { player: "Piano R (treble strings)", captured: "Inside the grand piano, over the treble strings", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
+        { player: "Tenor saxophone", captured: "A foot or two in front of the bell", sourceType: "Large-diaphragm condenser (Neumann TLM 103)", signalType: "Mic level", cable: "XLR" }
       ],
       channelCount: 9,
       monitorCount: 4,
       concept: "Multiple stereo subgroups: drums on subgroup pair 1-2, piano on subgroup pair 3-4. Each is a stereo group with its own pan splits.",
       channelMap: [
-        { ch: 1, label: "Bass DI", source: "MIC, XLR (post-DI)" },
-        { ch: 2, label: "Bass body", source: "MIC, XLR" },
-        { ch: 3, label: "Kick", source: "MIC, XLR" },
-        { ch: 4, label: "Snare", source: "MIC, XLR" },
-        { ch: 5, label: "Overhead L", source: "MIC, XLR" },
-        { ch: 6, label: "Overhead R", source: "MIC, XLR" },
-        { ch: 7, label: "Piano L (bass)", source: "MIC, XLR" },
-        { ch: 8, label: "Piano R (treble)", source: "MIC, XLR" },
-        { ch: 9, label: "Saxophone", source: "MIC, XLR" }
+        { ch: 1, label: "Bass DI", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 2, label: "Bass body", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 3, label: "Kick", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 4, label: "Snare", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 5, label: "Overhead L", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 6, label: "Overhead R", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 7, label: "Piano L (bass)", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 8, label: "Piano R (treble)", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 9, label: "Saxophone", jack: "MIC (XLR)", phantom: "on" }
       ],
-      channelMapNotes: "Phantom power on every condenser (bass body, overheads, both piano mics, sax). The 80 Hz HPF on the sax and the overheads.",
+      channelMapNotes: "Six channels need +48V (bass body, both overheads, both piano mics, sax): all condensers. The kick and snare are dynamics; the bass DI is passive. The 80 Hz HPF can go on the sax and overheads to clean up rumble.",
       fohRouting: "Channels 1, 2, and 9 (bass DI, bass body, sax) direct to L-R, panned center (bass) and slightly off-center (sax). The bass arrives on two channels because the DI gives the attack and string articulation while the body mic gives the woody resonance; both go to L-R panned center, summed acoustically by the master mix. Channels 3-6 (drums) to subgroup pair 1-2, the standard kit move. Channels 7-8 (piano) to subgroup pair 3-4, with piano L (bass strings) panned hard left and piano R (treble strings) panned hard right. Submasters 3 and 4 then place the piano in the master mix as a stereo image, MON PAN hard L and hard R, MON LEVEL set by ear.",
       fohTradeoff: "Why does the piano get the same treatment as the drums? Both are a single instrument (a piano, a kit) with multiple mics that need to land in the mix as a stereo image. Subgroup pairs are the console's way of saying 'treat these channels as a stereo group from now on,' and a piano with two mics earns that treatment the same way a kit does. The bass on two channels doesn't, because the two bass mics are both mono on the same instrument (no stereo width to preserve); they sum to mono at the master mix without needing a subgroup.",
       monitorMixes: [
@@ -960,31 +964,31 @@
       name: "Lineup 5 · Electronic duo",
       tagline: "Two performers, hardware synths and a drum machine, mostly line-level. A synth player and a beat-maker.",
       band: [
-        { player: "Synth A L", source: "Analog synth output L", signal: "TRS line" },
-        { player: "Synth A R", source: "Analog synth output R", signal: "TRS line" },
-        { player: "Synth B L", source: "Analog synth output L", signal: "TRS line" },
-        { player: "Synth B R", source: "Analog synth output R", signal: "TRS line" },
-        { player: "Drum machine L", source: "Drum machine output L", signal: "TRS line" },
-        { player: "Drum machine R", source: "Drum machine output R", signal: "TRS line" },
-        { player: "Sampler L", source: "Sampler output L", signal: "TRS line" },
-        { player: "Sampler R", source: "Sampler output R", signal: "TRS line" },
-        { player: "Synth player vocal", source: "Dynamic vocal mic (occasional vocals)", signal: "XLR mic" }
+        { player: "Synth A L", captured: "Analog synth output L", sourceType: "Hardware synth line out", signalType: "Line level", cable: "TRS" },
+        { player: "Synth A R", captured: "Analog synth output R", sourceType: "Hardware synth line out", signalType: "Line level", cable: "TRS" },
+        { player: "Synth B L", captured: "Analog synth output L", sourceType: "Hardware synth line out", signalType: "Line level", cable: "TRS" },
+        { player: "Synth B R", captured: "Analog synth output R", sourceType: "Hardware synth line out", signalType: "Line level", cable: "TRS" },
+        { player: "Drum machine L", captured: "Drum machine output L", sourceType: "Hardware drum machine line out", signalType: "Line level", cable: "TRS" },
+        { player: "Drum machine R", captured: "Drum machine output R", sourceType: "Hardware drum machine line out", signalType: "Line level", cable: "TRS" },
+        { player: "Sampler L", captured: "Sampler output L", sourceType: "Hardware sampler line out", signalType: "Line level", cable: "TRS" },
+        { player: "Sampler R", captured: "Sampler output R", sourceType: "Hardware sampler line out", signalType: "Line level", cable: "TRS" },
+        { player: "Synth player vocal", captured: "Voice into a handheld mic (occasional vocals)", sourceType: "Dynamic mic (Shure SM58)", signalType: "Mic level", cable: "XLR" }
       ],
       channelCount: 9,
       monitorCount: 2,
       concept: "Everything stereo, mostly line-level. Four stereo pairs onto the desk, all on LINE inputs (preamp untouched), and the subgroup pairs start to feel constraining.",
       channelMap: [
-        { ch: 1, label: "Synth A L", source: "LINE, TRS" },
-        { ch: 2, label: "Synth A R", source: "LINE, TRS" },
-        { ch: 3, label: "Synth B L", source: "LINE, TRS" },
-        { ch: 4, label: "Synth B R", source: "LINE, TRS" },
-        { ch: 5, label: "Drum machine L", source: "LINE, TRS" },
-        { ch: 6, label: "Drum machine R", source: "LINE, TRS" },
-        { ch: 7, label: "Sampler L", source: "LINE, TRS" },
-        { ch: 8, label: "Sampler R", source: "LINE, TRS" },
-        { ch: 9, label: "Synth player vocal", source: "MIC, XLR" }
+        { ch: 1, label: "Synth A L", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 2, label: "Synth A R", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 3, label: "Synth B L", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 4, label: "Synth B R", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 5, label: "Drum machine L", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 6, label: "Drum machine R", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 7, label: "Sampler L", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 8, label: "Sampler R", jack: "LINE (TRS)", phantom: "off" },
+        { ch: 9, label: "Synth player vocal", jack: "MIC (XLR)", phantom: "off" }
       ],
-      channelMapNotes: "Eight LINE buttons engaged (channels 1-8). Phantom power only on Ch 9 (if the vocal mic is a condenser; usually it isn't on a small electronic show, so +48V can stay off). The 80 Hz HPF on the vocal channel.",
+      channelMapNotes: "Eight LINE buttons engaged (channels 1-8) to switch those strips from MIC to LINE input. No phantom power anywhere: the eight line sources don't need it, and the SM58 on Ch 9 is a dynamic. The 80 Hz HPF on the vocal channel.",
       fohRouting: "Each stereo pair onto its own subgroup pair, panned hard L and hard R: synth A to subs 1-2, synth B to subs 3-4, drum machine to subs 5-6, sampler to subs 7-8. The vocal (channel 9) direct to L-R, panned center. Every submaster strip's TAPE button up, MON LEVEL up, MON PAN hard L on the odd-numbered subs and hard R on the even-numbered ones. The engineer now has four pairs of MON LEVEL knobs, one per stereo source, plus a vocal fader. Eight knobs and one fader for the whole show.",
       fohTradeoff: "All eight subgroups are now in use, with one knob-pair per electronic source. The advantage: each source can be brought up or down as a stereo unit without re-balancing internally. The cost: if the band added a fifth stereo source mid-show, there'd be nowhere to put it (the subgroups are full). A larger console with more subgroups wouldn't force the trade-off; on the Toft, the engineer's planning has to fit in eight. Alternative: combine drum machine + sampler onto one subgroup pair (5-6), freeing up subs 7-8 for whatever comes next.",
       monitorMixes: [
@@ -997,27 +1001,27 @@
       name: "Lineup 6 · Folk band with sit-in fiddler",
       tagline: "Three core members (vocalist + guitarist, bassist, percussionist on cajón) plus a guest fiddler who joins for half the set.",
       band: [
-        { player: "Lead vocal", source: "Dynamic vocal mic", signal: "XLR mic" },
-        { player: "Acoustic guitar", source: "Clip-on condenser", signal: "XLR mic" },
-        { player: "Bass DI", source: "DI box on the bass output", signal: "XLR mic-level (post-DI)" },
-        { player: "Cajón face", source: "Boundary mic on the front", signal: "XLR mic" },
-        { player: "Cajón overhead", source: "Small-diaphragm condenser above", signal: "XLR mic" },
-        { player: "Fiddle (contact)", source: "Clip-on contact mic", signal: "XLR mic" },
-        { player: "Fiddle (ambient)", source: "Small-diaphragm condenser on a stand", signal: "XLR mic" }
+        { player: "Lead vocal", captured: "Voice into a handheld mic", sourceType: "Dynamic mic (Shure SM58)", signalType: "Mic level", cable: "XLR" },
+        { player: "Acoustic guitar", captured: "Guitar body, near the soundhole", sourceType: "Clip-on condenser (DPA 4099)", signalType: "Mic level", cable: "XLR" },
+        { player: "Bass DI", captured: "Bass guitar through a DI box, direct out", sourceType: "Passive DI box (Radial JDI)", signalType: "Mic level (balanced)", cable: "XLR" },
+        { player: "Cajón face", captured: "On the floor in front of the cajón's playing face", sourceType: "Boundary condenser (Shure Beta 91A)", signalType: "Mic level", cable: "XLR" },
+        { player: "Cajón overhead", captured: "Above the cajón", sourceType: "Small-diaphragm condenser (Shure SM81)", signalType: "Mic level", cable: "XLR" },
+        { player: "Fiddle contact", captured: "Clip-on contact pickup on the fiddle bridge", sourceType: "Piezo contact mic (Schertler Stat-V)", signalType: "Mic level (balanced)", cable: "XLR" },
+        { player: "Fiddle ambient", captured: "A foot in front of the fiddle", sourceType: "Small-diaphragm condenser (Shure SM81) on a stand", signalType: "Mic level", cable: "XLR" }
       ],
       channelCount: 7,
       monitorCount: 3,
       concept: "A performer who's only present part of the time. Pre-fader sends are doing real work: the fiddle monitor mix has to be set up before the fiddler walks on, so it's ready the moment the channels come up.",
       channelMap: [
-        { ch: 1, label: "Lead vocal", source: "MIC, XLR" },
-        { ch: 2, label: "Acoustic guitar", source: "MIC, XLR" },
-        { ch: 3, label: "Bass DI", source: "MIC, XLR (post-DI)" },
-        { ch: 4, label: "Cajón face", source: "MIC, XLR" },
-        { ch: 5, label: "Cajón overhead", source: "MIC, XLR" },
-        { ch: 6, label: "Fiddle contact", source: "MIC, XLR" },
-        { ch: 7, label: "Fiddle ambient", source: "MIC, XLR" }
+        { ch: 1, label: "Lead vocal", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 2, label: "Acoustic guitar", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 3, label: "Bass DI", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 4, label: "Cajón face", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 5, label: "Cajón overhead", jack: "MIC (XLR)", phantom: "on" },
+        { ch: 6, label: "Fiddle contact", jack: "MIC (XLR)", phantom: "off" },
+        { ch: 7, label: "Fiddle ambient", jack: "MIC (XLR)", phantom: "on" }
       ],
-      channelMapNotes: "Phantom power on the guitar clip-on (condenser), the cajón overhead (condenser), and the fiddle ambient (condenser). The contact mic is usually unpowered. The 80 Hz HPF on vocal, cajón overhead, and the fiddle ambient.",
+      channelMapNotes: "Four channels need +48V (all condensers: guitar clip-on, cajón boundary, cajón overhead, fiddle ambient). The fiddle contact mic is a piezo pickup, not a condenser — it doesn't draw +48V (and applying it can damage some piezo electronics, so leave it off). The SM58 vocal, the passive bass DI box, and the piezo contact mic all run without phantom.",
       fohRouting: "Channels 1, 2, 3 (vocal, guitar, bass) direct to L-R. Channels 4-5 (cajón) to subgroup pair 1-2, two-mic cajón treated like a small kit, with the face mic panned slightly off-center and the overhead slightly the other way. Channels 6-7 (fiddle) to subgroup pair 3-4, treated as a stereo group (contact mic for clarity, ambient mic for air); panned roughly center. The fiddle subgroup is muted (or the channels are muted) when the fiddler is offstage; press the MUTE buttons on subs 3 and 4 to drop the whole fiddle group out of the master mix without touching the channel routing.",
       fohTradeoff: "Why give the fiddler a subgroup pair? So the engineer can mute and unmute the entire fiddle contribution to the master mix with two button presses, rather than chasing two channel mutes. The subgroup-pair-with-mute pattern is the classic move for a sit-in performer: the routing is built once, the on/off control is fast.",
       monitorMixes: [
@@ -1050,26 +1054,26 @@
     html += '<span><strong>Concept:</strong> ' + escapeHTML(lineup.concept) + '</span>';
     html += '</div>';
 
-    // Band table
+    // Chart 1: Signal chart (what's coming off the stage)
     html += '<table class="routing">';
-    html += '<caption>The band · sources and signal types</caption>';
-    html += '<thead><tr><th>Source</th><th>How it\'s captured</th><th>Signal</th></tr></thead><tbody>';
+    html += '<caption>Chart 1 · the signals coming off the stage</caption>';
+    html += '<thead><tr><th>Player / source</th><th>What\'s being captured</th><th>Source type</th><th>Signal type</th><th>Cable</th></tr></thead><tbody>';
     for (const b of lineup.band) {
-      html += '<tr><td class="ch">' + escapeHTML(b.player) + '</td><td>' + escapeHTML(b.source) + '</td><td>' + escapeHTML(b.signal) + '</td></tr>';
+      html += '<tr><td class="ch">' + escapeHTML(b.player) + '</td><td>' + escapeHTML(b.captured) + '</td><td>' + escapeHTML(b.sourceType) + '</td><td>' + escapeHTML(b.signalType) + '</td><td>' + escapeHTML(b.cable) + '</td></tr>';
     }
     html += '</tbody></table>';
 
     // Question 1: Channel map
     html += '<div class="youtry-section">';
-    html += '<div class="youtry-section-label">Question 1 · The channel map</div>';
-    html += '<p class="youtry-prompt">Which signal lands on which channel? Write out the mapping (Ch 1 = ?, Ch 2 = ?, etc.) and decide whether each channel uses the MIC or LINE jack on the back.</p>';
+    html += '<div class="youtry-section-label">Question 1 · The channel chart</div>';
+    html += '<p class="youtry-prompt">Lay out the channel chart: which signal lands on which channel (Ch 1, Ch 2, ...)? For each channel, does it use the MIC or LINE jack on the back? Is phantom power on or off?</p>';
     html += '<button class="youtry-btn reveal" data-target="reveal-cm">Show one approach</button>';
     html += '<div class="youtry-reveal-target" id="reveal-cm">';
     html += '<table class="routing">';
-    html += '<caption>Suggested channel map</caption>';
-    html += '<thead><tr><th>Ch</th><th>Source</th><th>Input jack</th></tr></thead><tbody>';
+    html += '<caption>Chart 2 · suggested channel chart</caption>';
+    html += '<thead><tr><th>Channel</th><th>Source</th><th>Rear-panel jack</th><th>Phantom power (+48V)</th></tr></thead><tbody>';
     for (const c of lineup.channelMap) {
-      html += '<tr><td class="ch">Ch ' + c.ch + '</td><td>' + escapeHTML(c.label) + '</td><td>' + escapeHTML(c.source) + '</td></tr>';
+      html += '<tr><td class="ch">Ch ' + c.ch + '</td><td>' + escapeHTML(c.label) + '</td><td>' + escapeHTML(c.jack) + '</td><td>' + (c.phantom === 'on' ? '<strong>on</strong>' : 'off') + '</td></tr>';
     }
     html += '</tbody></table>';
     html += '<p>' + escapeHTML(lineup.channelMapNotes) + '</p>';
