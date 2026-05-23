@@ -70,8 +70,8 @@ The course is structured around four modules, each ending in a real deliverable.
 |---|---|---|---|
 | 1 | Computer & studio fluency | 1 | — (setup) |
 | 2 | Digital audio + editing + mixing in Audacity | 2–5 | **Project 1: Musique concrète** (Wed Wk 5) |
-| 3 | Recording, sample prep, library building | 6–8 | **Midterm: sample library + terminology exam** (Wk 8) |
-| 4 | Ableton — audio (Wks 9–11) + MIDI/synth (Wks 12–14) | 9–14 | Final project Draft 1 (Wk 14) |
+| 3 | Recording, sample prep, library building | 6–9 | **Midterm: sample library + terminology exam** (Wk 9) |
+| 4 | Ableton — audio (Wks 10–11) + MIDI/synth (Wks 12–14) | 10–14 | Final project Draft 1 (Wk 14) |
 | — | Revision week | 15 | Final project Draft 2 (Wk 15) |
 | — | Finals | Dec 7–12 | Final exam (cumulative) + final piece uploaded to NAS, posted for class listening |
 
@@ -118,7 +118,7 @@ The course is structured around four modules, each ending in a real deliverable.
 
 ---
 
-## Module 3 — Recording, sample prep, library building (Weeks 6–8)
+## Module 3 — Recording, sample prep, library building (Weeks 6–9)
 
 **Why this module:** Now that students can edit and arrange, they learn to *generate* their own raw material. This module builds field-recording fundamentals, basic studio recording, and the skill of preparing sounds for later creative use. The deliverable is the library itself — a curated, organized, usable resource the student will draw from for the rest of the semester (and beyond).
 
@@ -133,17 +133,17 @@ The course is structured around four modules, each ending in a real deliverable.
 
 **Listening:** Field recording and acousmatic tradition (Chris Watson, Hildegard Westerkamp, Francisco López, others). Module 3 also includes a peer listening assignment after midterm submission, where students browse and listen to each other's sample libraries and respond briefly. The format differs from Module 2's peer listening: students are listening to libraries (collections of curated sounds) rather than finished pieces, so the prompts are oriented toward what's in the libraries and what they'd do with it.
 
-**Deliverable: Midterm**
+**Deliverable: Midterm (Wk 9)**
 - **Sample library** — minimum [N] sounds, organized in a documented folder structure on the NAS, with naming conventions, prepared and ready for use
 - **Terminology exam** — covers Modules 1–3 vocabulary and concepts
 
 ---
 
-## Module 4 — Ableton (Weeks 9–14)
+## Module 4 — Ableton (Weeks 10–14)
 
-**Why this module:** Ableton is the destination DAW for the course. Six weeks gives students real fluency, not just exposure. The module is split into two halves — audio first (which connects directly to their sample library work from Module 3), then MIDI and synthesis (which opens up a new creative dimension). The split lets students build confidence with familiar material before tackling new abstractions.
+**Why this module:** Ableton is the destination DAW for the course. Five weeks gives students working fluency. The module is split into two halves: audio first (which connects directly to their sample library work from Module 3), then MIDI and synthesis (which opens up a new creative dimension). The split lets students build confidence with familiar material before tackling new abstractions.
 
-### Module 4a — Ableton: audio (Weeks 9–11)
+### Module 4a — Ableton: audio (Weeks 10–11)
 
 **Topics:**
 - Ableton interface: Session view vs Arrangement view

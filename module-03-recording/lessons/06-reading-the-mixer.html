@@ -66,33 +66,6 @@
     .callout p { margin: 0.5rem 0; }
     .callout p:last-child { margin-bottom: 0; }
 
-    /* Sidebar: the fictional band introduction sits in a framed block
-       near the top of the reading so students can refer back to it. */
-    .sidebar {
-      background: var(--bg-alt);
-      border: 1px solid var(--rule);
-      padding: 1.25rem 1.5rem;
-      margin: 1.75rem 0;
-    }
-    .sidebar h3 {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-    }
-    .sidebar ul {
-      margin: 0.5rem 0;
-      padding-left: 1.5rem;
-    }
-    .sidebar li {
-      padding: 0.15rem 0;
-    }
-    .sidebar p:last-child {
-      margin-bottom: 0;
-    }
   </style>
 </head>
 <body>
@@ -123,21 +96,6 @@
   <figcaption>Our studio's console: the Toft Audio Designs Series ATB, 16-channel.</figcaption>
   <div class="photo-attribution">Photo via Retro Gear Shop.</div>
 </figure>
-
-<aside class="sidebar">
-  <h3>The Sound Below · a running example</h3>
-  <p>Throughout this reading, the same fictional band shows up in both a live and a studio scenario. A small group keeps the diagrams concrete and the same instruments connect back to the mic and signal types from Lectures 1 and 2.</p>
-  <p><strong>The Sound Below:</strong> a four-piece. Their instrumentation, with the mic or signal you'd reach for in each case:</p>
-  <ul>
-    <li><strong>Vocals.</strong> Dynamic mic on a stand. Mic-level signal, XLR cable.</li>
-    <li><strong>Electric guitar.</strong> Played through a small amp. Dynamic mic in front of the amp's speaker. Mic-level signal, XLR cable.</li>
-    <li><strong>Bass guitar.</strong> Recorded two ways at once. A DI box takes the bass's instrument-level signal, converts it to a mic-level signal on an XLR cable, and sends one path to the console (the <strong>dry</strong> signal: clean, present, every note clearly defined). The DI box's "thru" jack passes the same instrument signal on to a bass amp, which is mic'ed with a dynamic mic at the speaker (the <strong>wet</strong> signal: the body and warmth of the amp). Two channels on the console for one instrument, recorded to two tracks in the DAW. The engineer can blend them at mixdown to taste, or use one and discard the other.</li>
-    <li><strong>Drums.</strong> Four mics: one dynamic on the kick drum, one dynamic on the snare, and a pair of condenser overheads (one left, one right) positioned above the kit to capture the cymbals and the overall blend of the kit in stereo. Four XLR cables. The two condensers need phantom power.</li>
-  </ul>
-  <p>That's eight signals into the console (vocals + electric guitar mic + bass DI + bass amp mic + kick + snare + overhead left + overhead right). The console has to take all eight, let the engineer adjust each one independently, and send the result somewhere useful: in a live show, to the speakers the audience hears; in a studio session, to the recording. Eight signals from a four-piece is normal; the band fills exactly half of our 16-channel console.</p>
-</aside>
-
-<hr>
 
 <h2>1 · The mixer as the place where flows meet</h2>
 
@@ -189,7 +147,7 @@
   <p>The other difference matters more: where in the signal flow the EQ sits. Audacity's Filter Curve EQ <em>changes the audio data on the track</em> when you click Apply (destructive: you can undo it during the session, but if you save and close, the change is permanent). The console's EQ <em>shapes the signal as it passes through the channel strip</em> on its way to the output. Whatever's plugged into the input (the mic on stage, the DAW playback at mixdown) keeps making the sound it was making; only the signal coming out of the channel is shaped. Turn the EQ knobs back to flat, or hit the EQ In/Out button, and the channel returns to passing the signal through unchanged. This is non-destructive: you can change your mind freely, take after take, without ever altering the source.</p>
 </div>
 
-<p><strong>Six aux sends.</strong> Six green knobs, one per aux. Each one is a tap of the signal at this channel that goes out to a separate output on the back of the console (the AUX MASTERS jacks). The level of each tap is set independently of the channel's main fader. Aux 1 is permanently <strong>pre-fader</strong> (the tap happens before the fader, so the fader doesn't affect the aux level). Auxes 3 through 6 can be switched <strong>pre or post</strong>: pre-fader (independent of the fader) or post-fader (the fader controls them along with the main channel signal). What you actually use the aux sends for is the subject of sections 6 and 7.</p>
+<p><strong>Six aux sends.</strong> Six green knobs, one per aux. Each one is a tap of the signal at this channel that goes out to a separate output on the back of the console (the AUX MASTERS jacks). The level of each tap is set independently of the channel's main fader. Aux 1 is permanently <strong>pre-fader</strong> (the tap happens before the fader, so the fader doesn't affect the aux level). Auxes 3 through 6 can be switched <strong>pre or post</strong>: pre-fader (independent of the fader) or post-fader (the fader controls them along with the main channel signal). What you actually use the aux sends for is the subject of Wednesday's lab.</p>
 
 <div class="callout">
   <div class="callout-label">A river with taps</div>
@@ -483,131 +441,6 @@
 
 <p><strong>Master fader.</strong> A 100mm stereo fader. The final level control before the master output goes out the back of the console to the speakers, to the 2-track recorder, or wherever it's going next.</p>
 
-<hr>
-
-<h2>6 · Live sound · The Sound Below at a small venue</h2>
-
-<p>Picture The Sound Below playing a small venue: a club, a coffeehouse stage, somewhere with maybe seventy seats and a single set of speakers facing the audience. The band's eight signals (vocals, electric guitar mic, bass DI, bass amp mic, kick, snare, overhead left, overhead right) come from the stage to the console at the back of the room over eight XLR cables.</p>
-
-<p>The console's job in this context is to take the eight signals and send them two places:</p>
-
-<ol>
-  <li>To the <strong>main speakers</strong> facing the audience. This is the <strong>front-of-house</strong> mix (or just FOH). One stereo mix, what everyone in the audience hears.</li>
-  <li>To the <strong>monitor wedges</strong> on stage, the angled speakers pointing back at each performer so they can hear themselves and the rest of the band. Each performer often needs a different mix: the singer wants more of their own voice; the bass player wants more of the kick drum.</li>
-</ol>
-
-<h3>The front-of-house mix</h3>
-
-<p>For each of the eight channels, the engineer presses the <strong>L-R</strong> routing button and balances the channel pan and fader. All eight channels now feed into the master stereo L-R bus. The master fader controls the overall level. The signal leaves the console at the MASTER O/P L and R jacks on the back and goes out (often through an amplifier and a few processors) to the main speakers.</p>
-
-<p>That's the front-of-house path: input strip → channel fader → L-R bus → master fader → MASTER O/P → audience.</p>
-
-<h3>Monitor mixes for the stage</h3>
-
-<p>Each performer wears in-ears or has a wedge in front of them, and each wants to hear a different blend of the band. The engineer creates those blends using the <strong>aux sends</strong>.</p>
-
-<p>Aux 1 on each channel strip is permanently pre-fader. The engineer turns up Aux 1 on the vocal channel until the vocal is loud enough for the singer, turns up Aux 1 on the kick drum channel until the kick is loud enough for the singer, and so on. The result is a separate mix (the singer's wedge mix) that comes out of the AUX MASTERS 1 jack on the back. That signal feeds an amplifier that drives the singer's wedge.</p>
-
-<p>Aux 2 does the same thing on a separate set of taps from each channel: a different blend for the bass player's wedge. Aux 3 for the drummer. The engineer can build up to six independent mixes this way, one per aux send. Each one comes out its own back-panel jack and feeds its own destination.</p>
-
-<p>The reason these are pre-fader is important. The performers' wedge mix should stay the same even if the engineer changes the audience mix during the show. If the singer wants the kick a little louder in their wedge, and the engineer then pulls the kick down in the audience mix mid-song, the singer's wedge shouldn't change. Pre-fader means the aux send sits before the channel fader; the fader doesn't affect it.</p>
-
-<p>Talkback completes the live picture. The engineer at the back of the room can press TALK TO AUXES, speak into the talkback mic, and be heard in the performers' wedges and in-ears between songs.</p>
-
-<hr>
-
-<h2>7 · Studio session · The Sound Below tracking</h2>
-
-<p>Same band, different room. The Sound Below are now in a studio with the console in the control room and the band in a separate live room behind the glass. The console's eight channels have the same eight mic and DI signals coming in over the same XLRs.</p>
-
-<p>The console's job is different now. Front-of-house speakers don't exist; the audience is the recording. The mix going to the audience is the mix going to the DAW. Each performer wears headphones, and each performer's headphone mix is what they need to play to.</p>
-
-<h3>Sending the signals to the DAW</h3>
-
-<p>Each channel still has its mic preamp and EQ doing what they did in the live setting. The difference is what the signal feeds into next.</p>
-
-<p>There are two ways to get the signals into the DAW, both available on this console at the same time:</p>
-
-<ol>
-  <li><strong>Direct outs.</strong> Each channel has a DIR. O/P jack on the back. Plug a cable from each channel's direct out to the corresponding input of the audio interface. Eight channels, eight direct outs, eight DAW tracks. The signal each track receives is the post-fader channel signal from that strip, complete with EQ and gain.</li>
-  <li><strong>Submaster outs.</strong> Press the routing buttons on the input strips to send each channel to a subgroup pair (1-2, 3-4, 5-6, or 7-8). Now the submaster outputs are the feeds to the DAW. Useful when you want to combine several mics into one stereo or mono group before recording (the four drum mics summed to one stereo subgroup, say, rather than four separate tracks).</li>
-</ol>
-
-<p>For The Sound Below, the engineer might use direct outs for vocals and electric guitar (one track each), two direct outs for the bass (one for the DI dry, one for the amp wet), and a subgroup pair for the four drum mics (two tracks, a stereo drum bus combining the kick, snare, and the two overheads).</p>
-
-<h3>Performer headphone mixes</h3>
-
-<p>The aux sends do the same job in the studio that they did at the live show. The mechanism is identical; only the destination changed.</p>
-
-<p>In live sound, AUX MASTERS 1 fed an amplifier driving the singer's wedge. In a studio session, AUX MASTERS 1 feeds a headphone amplifier driving the singer's headphones. The engineer builds the singer's headphone mix the same way they built the singer's wedge mix: by turning up Aux 1 on each channel strip until the blend is what the singer needs.</p>
-
-<p>Aux 2 for the bass player's headphones. Aux 3 for the drummer. Up to six independent headphone mixes, the same way live sound gets up to six wedge mixes. Talkback works the same way: press TALK TO AUXES and the engineer's voice appears in everyone's headphones.</p>
-
-<h3>The monitor path · hearing the DAW playback</h3>
-
-<p>The engineer in the control room needs to hear what's being recorded. The DAW is playing back through its outputs, and the engineer wants those outputs to come up on the control-room speakers so they can listen, EQ, take notes.</p>
-
-<p>This is what the monitor path on each input strip is for. Each DAW playback track is plugged into the corresponding MON jack on the back of the console. The monitor path on that strip (MON LEVEL, MON PAN, the AUX 5-6 TO MON switch, the EQ TO MON switch) handles the playback. The engineer builds up a monitor mix of all the playback tracks using the MON LEVEL knobs on each strip, separately from any channel-path settings. While the band is tracking, both paths are simultaneously active: the channel path is sending the mic to the DAW; the monitor path is receiving the DAW playback back.</p>
-
-<p>This is what "in-line" means in practice. One strip, two paths, both alive at once.</p>
-
-<h3>Mixdown · the I/P REV move</h3>
-
-<p>After tracking is done, it's time to mix. The engineer wants the recorded tracks to come up on the big faders, with full EQ and all six aux sends available, so the mix has the full resources of the console.</p>
-
-<p>Without an in-line architecture, this would mean re-patching: unplugging cables from one set of jacks and plugging them into another. With in-line, it's one button per strip.</p>
-
-<p>Press <strong>I/P REV</strong> on a strip. The two paths swap. The DAW track that was coming in through MON now flows through the big fader, with all the EQ and aux sends. The mic input (which is probably empty now anyway, since recording is done) routes through the small monitor path. Now this strip is what you'd think of as a "channel" in a more conventional split-architecture console: input → fader → mix.</p>
-
-<p>Press I/P REV on all sixteen strips, set the channel routing buttons to L-R, balance the faders, and the console is now a sixteen-channel mixer for the recorded session. The monitor paths are still alive too, available as another set of inputs at mixdown (each one has its own level and pan into the stereo mix). The eight stereo effects returns on the submasters are also still alive. Total inputs to the mix on the 16-channel console: 16 channel paths + 16 monitor paths + 8 stereo effects returns × 2 = 56 inputs. (The 24-channel: 72. The 32-channel: 88. The math is the same, with more strips.)</p>
-
-<hr>
-
-<h2>8 · Auxes and busses · the synthesis</h2>
-
-<p>If you look closely at the live show and the studio session, the mixer was doing the same things in both contexts. The buttons were the same buttons. The aux sends were the aux sends. The master fader was the master fader.</p>
-
-<p>What changed was where the signals went after they left the console:</p>
-
-<table style="margin: 1.5rem auto; border-collapse: collapse; font-size: 0.95rem;">
-  <thead>
-    <tr style="border-bottom: 1px solid var(--rule);">
-      <th style="padding: 0.5rem 1rem; text-align: left; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);">Mechanism on the console</th>
-      <th style="padding: 0.5rem 1rem; text-align: left; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);">Live destination</th>
-      <th style="padding: 0.5rem 1rem; text-align: left; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);">Studio destination</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid var(--rule);">
-      <td style="padding: 0.5rem 1rem;">Master L-R fader</td>
-      <td style="padding: 0.5rem 1rem;">Main speakers (audience)</td>
-      <td style="padding: 0.5rem 1rem;">DAW master record / mix print</td>
-    </tr>
-    <tr style="border-bottom: 1px solid var(--rule);">
-      <td style="padding: 0.5rem 1rem;">Aux sends 1-6</td>
-      <td style="padding: 0.5rem 1rem;">Performer monitor wedges</td>
-      <td style="padding: 0.5rem 1rem;">Performer headphone mixes (cues) and reverb sends</td>
-    </tr>
-    <tr style="border-bottom: 1px solid var(--rule);">
-      <td style="padding: 0.5rem 1rem;">Subgroups 1-8 (submaster outputs)</td>
-      <td style="padding: 0.5rem 1rem;">Group buses going to specific FOH zones, or to a separate amp for recording the show</td>
-      <td style="padding: 0.5rem 1rem;">Group feeds to DAW tracks (e.g. four drum mics summed to one stereo subgroup)</td>
-    </tr>
-    <tr>
-      <td style="padding: 0.5rem 1rem;">Talkback</td>
-      <td style="padding: 0.5rem 1rem;">Engineer's voice into the wedges between songs</td>
-      <td style="padding: 0.5rem 1rem;">Engineer's voice into headphones, or recorded slate on the master</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>A subgroup or bus is a place where many channels combine before the result goes somewhere. The subgroup buttons on the input strips choose which bus each channel feeds. The submaster fader sets the level of that bus. Where the bus output ultimately ends up is decided by what's plugged into the SUBMASTER OUTPUTS jack on the back: in a live context, often a separate amp feeding a specific speaker zone; in a studio, often the DAW.</p>
-
-<p>An aux is a separate mix structure that runs parallel to the main mix. The aux sends on each channel let the engineer build a different blend of the same channels and route that blend out a different physical output. Live, the destinations are the performers' wedges and reverb units. In the studio, the destinations are the performers' headphone amps and reverb units. The aux is doing exactly the same thing in both cases; the cable from AUX MASTERS 1 just ends up at a different piece of gear.</p>
-
-<p>This is the synthesis the lecture is building toward: <strong>the mixer's structure is one set of routing tools that get reused, with different destinations for different jobs.</strong> Once you can name what each tool does (aux send, subgroup, master, talkback), you can walk into any mix scenario (a club, a studio, a podcast setup, a film mix stage) and identify the same parts doing the same jobs, regardless of how big or small the console.</p>
-
-<hr>
 
 <h2>Vocabulary</h2>
 
