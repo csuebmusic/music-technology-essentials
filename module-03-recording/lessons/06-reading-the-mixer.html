@@ -462,7 +462,7 @@
 
     <!-- Subgroup pair -->
     <g>
-      <rect x="120" y="205" width="120" height="50" rx="4"
+      <rect x="120" y="205" width="120" height="58" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
       <text x="180" y="225" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Sub 1 (L)</text>
@@ -471,7 +471,7 @@
     </g>
 
     <g>
-      <rect x="320" y="205" width="120" height="50" rx="4"
+      <rect x="320" y="205" width="120" height="58" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
       <text x="380" y="225" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Sub 2 (R)</text>
@@ -480,8 +480,8 @@
     </g>
 
     <!-- Connection from subs to faders -->
-    <line x1="180" y1="257" x2="180" y2="285" stroke="var(--accent)" stroke-width="1.5"/>
-    <line x1="380" y1="257" x2="380" y2="285" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="180" y1="265" x2="180" y2="285" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="380" y1="265" x2="380" y2="285" stroke="var(--accent)" stroke-width="1.5"/>
 
     <!-- Submaster faders -->
     <g>
@@ -501,12 +501,6 @@
       <text x="380" y="324" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">"drum bus R"</text>
     </g>
-
-    <!-- Side annotation -->
-    <text x="595" y="232" text-anchor="start"
-          font-family="DM Mono, monospace" font-size="10" font-style="italic" fill="var(--ink-soft)">one pair of faders</text>
-    <text x="595" y="247" text-anchor="start"
-          font-family="DM Mono, monospace" font-size="10" font-style="italic" fill="var(--ink-soft)">controls all four mics</text>
   </svg>
   <figcaption>Four drum mics routed to subgroup pair 1-2. Pan position decides how each channel's signal splits between the two submasters; the subgroups sum the contributions and feed one pair of faders.</figcaption>
 </figure>
