@@ -631,104 +631,117 @@
 <p><strong>MON LEVEL.</strong> A red knob: the master volume for the control-room speakers (whichever pair is currently selected by ALT MONITOR). The most-touched knob in any control room. Doesn't affect MASTER O/P, only the speakers in the room.</p>
 
 <figure>
-  <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the master output split. The L-R master bus runs into the master fader. From the master fader, two parallel paths leave: a recording path going to MASTER O/P (then to the DAW, 2-track recorder, or broadcast feed), and a monitor path going through MONO, MON LEVEL, and the ALT MONITOR switch, which selects between MAIN SPKR (the main pair of monitor speakers) and ALT SPKR (the alternate pair). The recording path is independent of the monitor controls.">
+  <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Trace-back diagram of the master output. At the bottom of the figure, three back-panel jacks are shown side by side: MAIN SPKR, ALT SPKR, and MASTER O/P. Arrows trace upward from each jack to where the signal comes from. MAIN SPKR and ALT SPKR both come from a Monitor circuit box (front-panel controls), which contains three settings: MONO, MON LEVEL, and ALT MONITOR. The ALT MONITOR setting decides whether the monitor signal exits via MAIN SPKR or ALT SPKR. MASTER O/P bypasses the monitor circuit entirely. Above the monitor circuit, the signal traces back to the master fader, which receives the L-R master bus at the top.">
     <defs>
-      <marker id="arrowhead-master" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <marker id="arrowhead-up" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
       </marker>
     </defs>
 
     <text x="360" y="22" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
-          fill="var(--accent)">MASTER OUTPUT · RECORDING PATH AND MONITOR PATH</text>
+          fill="var(--accent)">MASTER OUTPUT · TRACE BACK FROM THE BACK PANEL</text>
 
-    <!-- L-R master bus label -->
-    <text x="360" y="55" text-anchor="middle"
+    <!-- L-R master bus (top, source) -->
+    <text x="360" y="62" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">L-R master bus</text>
 
+    <!-- Arrow up to master bus from master fader -->
+    <line x1="360" y1="92" x2="360" y2="70" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
+
     <!-- Master fader -->
-    <rect x="290" y="68" width="140" height="48" rx="4"
+    <rect x="290" y="94" width="140" height="48" rx="4"
           fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
-    <text x="360" y="89" text-anchor="middle"
+    <text x="360" y="115" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Master fader</text>
-    <text x="360" y="106" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">level for L-R bus</text>
+    <text x="360" y="132" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">L-R bus level</text>
 
-    <!-- Split arrows from master fader -->
-    <path d="M 320 116 Q 320 138 180 160" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
-    <path d="M 400 116 Q 400 138 540 160" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+    <!-- Splits from master fader: down-left to monitor circuit, down-right to MASTER O/P -->
+    <!-- The split is at the bottom of the master fader (y=142). Arrows go DOWN to the lower elements,
+         but visually we draw them with arrowheads at the END (the lower element side) so the eye
+         traces UP from each destination back to the master fader. -->
 
-    <!-- Path labels -->
-    <text x="220" y="148" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">recording path</text>
-    <text x="500" y="148" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">monitor path</text>
+    <!-- Arrow from monitor circuit UP to master fader -->
+    <path d="M 200 218 Q 200 180 290 142" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-start="url(#arrowhead-up)"/>
 
-    <!-- MASTER O/P box (recording path) -->
-    <rect x="100" y="166" width="160" height="58" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="180" y="188" text-anchor="middle"
-          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">MASTER O/P</text>
-    <text x="180" y="206" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">balanced L and R</text>
+    <!-- Arrow from MASTER O/P UP to master fader -->
+    <path d="M 540 348 Q 540 200 430 142" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-start="url(#arrowhead-up)"/>
 
-    <!-- Recording destinations -->
-    <line x1="180" y1="226" x2="180" y2="260" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
-    <rect x="60" y="266" width="240" height="48" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.2"/>
-    <text x="180" y="287" text-anchor="middle"
-          font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">to DAW · 2-track · broadcast</text>
-    <text x="180" y="303" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the recorded mix</text>
+    <!-- Monitor circuit container -->
+    <rect x="60" y="220" width="320" height="148" rx="6"
+          fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="6 3"/>
+    <text x="220" y="244" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="10" letter-spacing="0.1em"
+          fill="var(--accent)">MONITOR CIRCUIT · FRONT-PANEL SETTINGS</text>
 
-    <!-- MONO box (monitor path) -->
-    <rect x="460" y="166" width="160" height="40" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="540" y="183" text-anchor="middle"
+    <!-- Three settings inside the monitor circuit, side by side -->
+    <rect x="78" y="262" width="92" height="48" rx="3"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="124" y="282" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">MONO</text>
-    <text x="540" y="198" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">L + R sum (optional)</text>
+    <text x="124" y="298" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)">L+R sum?</text>
 
-    <!-- MON LEVEL box -->
-    <line x1="540" y1="208" x2="540" y2="222" stroke="var(--accent)" stroke-width="1.5"/>
-    <rect x="460" y="224" width="160" height="40" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="540" y="241" text-anchor="middle"
+    <rect x="174" y="262" width="92" height="48" rx="3"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="220" y="282" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">MON LEVEL</text>
-    <text x="540" y="256" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">control-room volume</text>
+    <text x="220" y="298" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)">speaker volume</text>
 
-    <!-- ALT MONITOR switch -->
-    <line x1="540" y1="266" x2="540" y2="280" stroke="var(--accent)" stroke-width="1.5"/>
-    <rect x="460" y="282" width="160" height="40" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="540" y="299" text-anchor="middle"
+    <rect x="270" y="262" width="92" height="48" rx="3"
+          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="316" y="282" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">ALT MONITOR</text>
-    <text x="540" y="314" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">selects main or alt pair</text>
+    <text x="316" y="298" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)">main or alt?</text>
 
-    <!-- Speaker pair split -->
-    <path d="M 490 322 Q 490 344 440 360" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
-    <path d="M 590 322 Q 590 344 640 360" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-master)"/>
+    <text x="220" y="346" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">these settings shape the monitor signal;</text>
+    <text x="220" y="358" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">they do not affect MASTER O/P</text>
 
-    <!-- MAIN SPKR box -->
-    <rect x="360" y="366" width="160" height="58" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="440" y="388" text-anchor="middle"
-          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">MAIN SPKR</text>
-    <text x="440" y="406" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">main pair (default)</text>
+    <!-- Arrows from each speaker output UP to the monitor circuit -->
+    <line x1="125" y1="408" x2="125" y2="370" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
+    <line x1="280" y1="408" x2="280" y2="370" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
 
-    <!-- ALT SPKR box -->
-    <rect x="560" y="366" width="160" height="58" rx="4"
-          fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="640" y="388" text-anchor="middle"
-          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">ALT SPKR</text>
-    <text x="640" y="406" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">alternate pair</text>
+    <!-- Bottom row: three back-panel jacks (filled with accent to signal "physical output") -->
+    <!-- MAIN SPKR jack -->
+    <rect x="60" y="408" width="130" height="44" rx="4"
+          fill="var(--accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="125" y="428" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">MAIN SPKR</text>
+    <text x="125" y="443" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="8" fill="var(--bg-alt)">L · R · back panel</text>
+
+    <!-- ALT SPKR jack -->
+    <rect x="215" y="408" width="130" height="44" rx="4"
+          fill="var(--accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="280" y="428" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">ALT SPKR</text>
+    <text x="280" y="443" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="8" fill="var(--bg-alt)">L · R · back panel</text>
+
+    <!-- MASTER O/P jack -->
+    <rect x="475" y="408" width="130" height="44" rx="4"
+          fill="var(--accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="540" y="428" text-anchor="middle"
+          font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">MASTER O/P</text>
+    <text x="540" y="443" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="8" fill="var(--bg-alt)">L · R · back panel</text>
+
+    <!-- Connecting line: MASTER O/P up toward master fader (drawn earlier) starts at y=408. -->
+    <!-- Side legend on the right of the diagram -->
+    <text x="635" y="431" text-anchor="start"
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">back of console</text>
+
+    <!-- Side legend: front-panel label near master fader -->
+    <text x="450" y="125" text-anchor="start"
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">front panel</text>
   </svg>
-  <figcaption>From the master fader the signal splits into two parallel paths: the recording path goes to MASTER O/P (and from there to the DAW or recorder), and the monitor path runs through MONO, MON LEVEL, and ALT MONITOR before reaching the control-room speakers. The monitor controls shape what the engineer hears in the room; they don't touch the recording.</figcaption>
+  <figcaption>Reading bottom to top: the three back-panel jacks (MAIN SPKR, ALT SPKR, MASTER O/P) trace back to where their signals come from. Both speaker jacks come from the monitor circuit, where the MONO, MON LEVEL, and ALT MONITOR settings shape the signal and decide which speaker pair receives it. MASTER O/P bypasses the monitor circuit entirely, going straight from the master fader to the back of the console.</figcaption>
 </figure>
 
 <h3>Talkback and master fader</h3>
