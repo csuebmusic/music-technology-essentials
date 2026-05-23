@@ -323,16 +323,15 @@
   <p>The picture above describes an analog snake: one shielded pair per audio channel, lots of copper, heavy. A modern variant is the <strong>digital snake</strong>: a small box at the stage that does analog-to-digital conversion locally, and sends all the channels as a single digital stream over an ethernet cable (or a fiber-optic cable) to the console. The same Cat6 cable that runs your laptop's internet can carry 32 channels of audio at 48 kHz. The connectors are different and the box at the stage is doing more work, but conceptually it's the same idea: bundle many signals onto one path. Many touring engineers prefer digital snakes for the weight savings; many older venues still use analog snakes because they already own one and they last forever.</p>
 </div>
 
-<h3>Studio: from live room to patchbay to preamps to console</h3>
+<h3>Studio: from live room to patch panel to preamps to console</h3>
 
-<p>The studio answer to the same problem is more elaborate, because a studio is built for repeated use across many different sessions and needs more flexibility than a touring band's stage box. The chain in our studio (MB2508) has five stages between the mic and the recording software.</p>
+<p>The studio answer to the same problem is more elaborate, because a studio is built for repeated use across many different sessions and needs more flexibility than a touring band's stage box. The chain in our studio (MB2508) has four stages between the mic and the recording software.</p>
 
 <ol class="steps">
-  <li><strong>The mic in the live room.</strong> Each microphone plugs into a short XLR cable that runs to a <strong>tie panel</strong> on the wall of the live room: a fixed metal panel with a row of female XLR jacks built into it (8 of them in MB2508). The panel labels are visible from inside the room: mic plugs into jack 1, jack 2, and so on.</li>
-  <li><strong>Internal cabling through the wall.</strong> Behind the tie panel, each jack is permanently wired through the wall to a corresponding jack inside the <strong>cabinet</strong>, which sits in the recording booth on the other side. The musicians never see this wiring. It just delivers the signal from the live-room wall to the booth.</li>
-  <li><strong>The XLR patch panel in the cabinet.</strong> Inside the cabinet is the other end of those internal cables, terminated as a row of 8 female XLR jacks. This is the <strong>patch panel</strong> (sometimes loosely called a patchbay, although that name is more strictly reserved for the 1/4" TRS routing bays elsewhere in studios). Each jack is the booth-side mirror of one tie-panel jack: tie-panel jack 1 → patch panel jack 1, and so on. Standing at the cabinet, the engineer sees 8 labeled inputs.</li>
-  <li><strong>The two hardware preamps.</strong> Behind the patch panel, the jacks are wired in a fixed pattern: the <strong>odd jacks (1, 3, 5, 7)</strong> route to the four inputs of the <strong>Focusrite ISA 828</strong>, and the <strong>even jacks (2, 4, 6, 8)</strong> route to the four inputs of the <strong>Octopre Platinum</strong>. These two preamps live outside the console, and they are the first place where the mic-level signal gets amplified up to line level. Each preamp has its own gain knob per channel; on a tracking day the engineer sets those gains for the level they want into Pro Tools.</li>
-  <li><strong>Into the Toft, on the LINE inputs.</strong> The eight preamp outputs feed eight of the Toft's LINE inputs on the back (not the MIC inputs). The signal arriving at the console is already line-level, already boosted, already coloured by whichever preamp it passed through. From here it travels through whatever channel-strip processing the engineer dials in (EQ, fader, routing) on its way to the audio interface, the Mac Pro, and Pro Tools.</li>
+  <li><strong>The mic plugs into the cabinet, inside the live room.</strong> Standing against one wall of the live room is a tall <strong>cabinet</strong> that holds the studio's front-end gear. Its front face exposes a row of female XLR jacks (8 of them in MB2508), labeled 1 through 8. Each mic on the floor of the live room plugs directly into one of those jacks with a short XLR cable. This row of jacks is the <strong>XLR patch panel</strong>: the studio's analog of a stage box, but built into a piece of fixed studio furniture instead of a portable metal box.</li>
+  <li><strong>Inside the cabinet: two hardware preamps.</strong> Behind the patch panel, the jacks are wired in a fixed pattern: the <strong>odd jacks (1, 3, 5, 7)</strong> route to the four inputs of the <strong>Focusrite ISA 828</strong>, and the <strong>even jacks (2, 4, 6, 8)</strong> route to the four inputs of the <strong>Octopre Platinum</strong>. These two preamps live outside the console, inside the cabinet itself, and they are the first place where the mic-level signal gets amplified up to line level. Each preamp has its own gain knob per channel; on a tracking day the engineer sets those gains for the level they want into Pro Tools.</li>
+  <li><strong>Through the wall, into the control room.</strong> The preamp outputs leave the back of the cabinet as eight line-level cables and pass through the wall into the control room next door. These are the only cables in the chain that cross between rooms. The musicians in the live room see only the cabinet and its labeled XLR inputs; the engineer at the Toft in the control room sees only the eight line-level cables emerging from the wall.</li>
+  <li><strong>Into the Toft, on the LINE inputs.</strong> The eight line-level cables feed eight of the Toft's LINE inputs on the back (not the MIC inputs). The signal arriving at the console is already line-level, already boosted, already coloured by whichever preamp it passed through. From here it travels through whatever channel-strip processing the engineer dials in (EQ, fader, routing) on its way to the audio interface, the Mac Pro, and Pro Tools.</li>
 </ol>
 
 <div class="callout">
@@ -351,7 +350,7 @@
 
 <h3>The two answers, side by side</h3>
 
-<p>The stage box and the studio's tie-panel-plus-patch-panel solve the same problem from different angles. The stage box is built for a band that arrives, sets up, plays, and leaves; everything is patched once for the night, then the snake is wound down and the rig moves on. The studio's chain is built for endless reuse across years of sessions: the tie panel and the internal wiring stay fixed; the patch panel jacks and the preamp routing stay fixed; what changes from session to session is which mics get plugged in and to which jacks. One answers "how do we move many signals through a building for one evening." The other answers "how do we run a recording room that supports a thousand sessions over a decade."</p>
+<p>The stage box and the studio's cabinet solve the same problem from different angles. The stage box is built for a band that arrives, sets up, plays, and leaves; everything is patched once for the night, then the snake is wound down and the rig moves on. The studio's cabinet is built for endless reuse across years of sessions: the XLR patch panel on its front, the two preamps inside, and the eight cables running through the wall to the Toft all stay fixed; what changes from session to session is which mics get plugged in, and to which jacks. One answers "how do we move many signals through a building for one evening." The other answers "how do we run a recording room that supports a thousand sessions over a decade."</p>
 
 <hr>
 
@@ -630,7 +629,7 @@
 
 <h3>Getting the signals to Pro Tools</h3>
 
-<p>The route from microphone to Pro Tools track is the long chain you walked in section 2: mic → live-room tie panel → internal cabling → patch panel in the cabinet → preamp 1 or preamp 2 → Toft LINE input → channel strip → audio interface → Mac Pro → Pro Tools.</p>
+<p>The route from microphone to Pro Tools track is the chain you walked in section 2: mic → XLR patch panel on the cabinet (in the live room) → preamp 1 or preamp 2 (inside the cabinet) → through the wall as line-level cables → Toft LINE input (in the control room) → channel strip → audio interface → Mac Pro → Pro Tools.</p>
 
 <p>The piece that's new in this scenario is the last leg, the Toft-to-interface connection. Each input channel on the console has a <strong>DIR. O/P</strong> jack on the back (Lecture 3, section 2): a tap of that channel's post-fader signal, sent straight out to a single destination independently of the routing buttons. The studio's audio interface has a row of inputs; each direct out feeds one of them. Pro Tools sees one input per channel of the Toft, and records each one as its own track.</p>
 
@@ -794,7 +793,7 @@
     <tr>
       <td class="ch">Source-to-console chain</td>
       <td>Stage box on stage → snake → console at FOH</td>
-      <td>Tie panel in live room → cabinet patch panel → external preamps → Toft LINE inputs</td>
+      <td>Cabinet in live room (XLR patch panel + two external preamps) → through-wall line cables → Toft LINE inputs</td>
     </tr>
     <tr>
       <td class="ch">Mic preamp</td>
