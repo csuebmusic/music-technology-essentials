@@ -377,6 +377,142 @@
 
 <p>For this section, focus on the eight submaster strips that fill the left side of the photo. (The two rows of controls at the very top of the section, the L/R VU meters and the row of six green Aux Masters knobs, belong to the master section and are covered in section 5.) Each submaster strip is built of four labeled sub-sections, top to bottom: a <strong>stereo effects return</strong>, a <strong>bargraph meter</strong>, a <strong>tape return</strong>, and at the bottom the <strong>subgroup fader</strong>. Each one walked in turn.</p>
 
+<h3>Summing: what happens at the destination</h3>
+
+<p>Before walking the strip control by control, the routing piece. Every input strip has the five routing buttons you met in section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button sends the channel to the master stereo output; the other four send it to one of the four submaster pairs. When several channels are routed to the same subgroup pair, their signals <strong>sum</strong> together in that subgroup: the subgroup carries the sum of every channel routed to it, with each channel's pan position deciding the left-right split between the two submasters in the pair.</p>
+
+<p>The canonical case is drums. The four drum mics for The Sound Below (kick, snare, overhead left, overhead right) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); overhead L is panned hard left (100% to sub 1); overhead R is panned hard right (100% to sub 2). The four channels become two summed signals on the subgroup pair, and the kit now has a single pair of faders controlling its overall level in the mix. Pull the subgroup faders down by 3 dB and the whole kit drops by 3 dB together, without changing the balance among the mics.</p>
+
+<figure>
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Diagram of four drum mics routed to subgroup pair 1-2. Four channels at the top, labeled Kick, Snare, OH L, and OH R, each showing its pan position. Arrows flow down to two subgroup boxes labeled Sub 1 (left) and Sub 2 (right). Kick and snare split 50/50 between the two subs; OH L sends 100% to sub 1; OH R sends 100% to sub 2. Below the subgroups, a pair of submaster faders labeled Sub 1 fader and Sub 2 fader.">
+    <defs>
+      <marker id="arrowhead-sum" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+        <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
+      </marker>
+    </defs>
+
+    <text x="360" y="22" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
+          fill="var(--accent)">FOUR CHANNELS → ONE SUBGROUP PAIR</text>
+
+    <!-- Four input channels at the top -->
+    <!-- Channel 1: Kick (center pan) -->
+    <g>
+      <rect x="40" y="50" width="120" height="62" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="100" y="72" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 5 · Kick</text>
+      <text x="100" y="92" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: center</text>
+      <text x="100" y="106" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">routed to 1-2</text>
+    </g>
+
+    <!-- Channel 2: Snare (center pan) -->
+    <g>
+      <rect x="180" y="50" width="120" height="62" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="240" y="72" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 6 · Snare</text>
+      <text x="240" y="92" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: center</text>
+      <text x="240" y="106" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">routed to 1-2</text>
+    </g>
+
+    <!-- Channel 3: Overhead L (hard left) -->
+    <g>
+      <rect x="320" y="50" width="120" height="62" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="380" y="72" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 7 · OH L</text>
+      <text x="380" y="92" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: hard left</text>
+      <text x="380" y="106" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">routed to 1-2</text>
+    </g>
+
+    <!-- Channel 4: Overhead R (hard right) -->
+    <g>
+      <rect x="460" y="50" width="120" height="62" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="520" y="72" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 8 · OH R</text>
+      <text x="520" y="92" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: hard right</text>
+      <text x="520" y="106" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">routed to 1-2</text>
+    </g>
+
+    <!-- Routing arrows -->
+    <!-- Kick: center pan → 50/50 split -->
+    <path d="M 100 114 Q 100 160 175 200" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-sum)"/>
+    <path d="M 100 114 Q 100 160 365 200" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-sum)"/>
+
+    <!-- Snare: center pan → 50/50 split -->
+    <path d="M 240 114 Q 240 160 195 200" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-sum)"/>
+    <path d="M 240 114 Q 240 160 385 200" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-sum)"/>
+
+    <!-- OH L: hard left → 100% to sub 1 -->
+    <path d="M 380 114 Q 380 160 215 200" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-sum)"/>
+
+    <!-- OH R: hard right → 100% to sub 2 -->
+    <path d="M 520 114 Q 520 160 405 200" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-sum)"/>
+
+    <!-- Subgroup pair -->
+    <g>
+      <rect x="120" y="205" width="120" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
+      <text x="180" y="225" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Sub 1 (L)</text>
+      <text x="180" y="245" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick·snare·OH L summed</text>
+    </g>
+
+    <g>
+      <rect x="320" y="205" width="120" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.8"/>
+      <text x="380" y="225" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Sub 2 (R)</text>
+      <text x="380" y="245" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick·snare·OH R summed</text>
+    </g>
+
+    <!-- Connection from subs to faders -->
+    <line x1="180" y1="257" x2="180" y2="285" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="380" y1="257" x2="380" y2="285" stroke="var(--accent)" stroke-width="1.5"/>
+
+    <!-- Submaster faders -->
+    <g>
+      <rect x="130" y="287" width="100" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="180" y="307" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Sub 1 fader</text>
+      <text x="180" y="324" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">"drum bus L"</text>
+    </g>
+
+    <g>
+      <rect x="330" y="287" width="100" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="380" y="307" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Sub 2 fader</text>
+      <text x="380" y="324" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">"drum bus R"</text>
+    </g>
+
+    <!-- Side annotation -->
+    <text x="595" y="232" text-anchor="start"
+          font-family="DM Mono, monospace" font-size="10" font-style="italic" fill="var(--ink-soft)">one pair of faders</text>
+    <text x="595" y="247" text-anchor="start"
+          font-family="DM Mono, monospace" font-size="10" font-style="italic" fill="var(--ink-soft)">controls all four mics</text>
+  </svg>
+  <figcaption>Four drum mics routed to subgroup pair 1-2. Pan position decides how each channel's signal splits between the two submasters; the subgroups sum the contributions and feed one pair of faders.</figcaption>
+</figure>
+
+<p>This is the move that makes a 16-channel desk feel like a much bigger console at mix time. Eight subgroups, eight pairs of hands at the master level: drums as a kit, vocals plus backing vocals as a chorus, guitars as a section, keys as a layer. The L-R bus then receives the subgroup outputs (each subgroup routed to L-R via its own routing buttons in the master section) and sums them once more into the final stereo mix.</p>
+
 <h3>Stereo FX Return (top of strip)</h3>
 
 <p>A self-contained stereo input for a signal coming from an outboard audio effect unit (a reverb, a delay, a hardware processor), plugged in at the back of the console. Three controls plus a button, top to bottom:</p>
