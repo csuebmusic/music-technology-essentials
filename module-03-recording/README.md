@@ -108,8 +108,8 @@ Peer listening assignment: [`listening/peer-midterm.html`](https://csuebmusic.gi
 | 6 | Wed | Session 2 · Lab: Recording into Audacity (Lab 1). Project setup, four paper recordings (crumble slow/fast, rip slow/fast), three-step sample prep pipeline (denoise / trim / normalize), library folder set up, naming convention established. Phone-recording reference card distributed. |
 | 7 | Mon | Session 3 · Lecture: Widening the flow. Instrument-level and line-level signals. TS and TRS cables. Condenser mics and other transducer types. Signal modifiers: DI boxes and hardware preamps. |
 | 7 | Wed | Session 4 · Lab: Phone recording → Audacity (Lab 2). Importing phone recordings into Audacity, prepping them through the same pipeline. Worktime on the library. |
-| 8 | Mon | Session 5 · Lecture: The mixer. The Toft ATB walked top to bottom: channel strip, in-line architecture, submasters, master section. Fictional band (The Sound Below) introduced as the running example for Wednesday. |
-| 8 | Wed | Session 6 · Lab: The mixer in practice (Lab 3). The Sound Below walked through two scenarios on the same desk: a live show and a studio tracking session. Synthesis: same console, same tools, different destinations. |
+| 8 | Mon | Session 5 · Lecture: The mixer. The Toft ATB walked top to bottom: channel strip, in-line architecture, submasters, master section. |
+| 8 | Wed | Session 6 · Lab: The mixer in practice (Lab 3). A fictional band (The Sound Below) is introduced here and walked through two scenarios on the same desk: a live show and a studio tracking session. Synthesis: same console, same tools, different destinations. |
 | 9 | Mon | Session 7 · Review + studio visit (MB2508). Module 3 vocabulary review for the next-day exam, plus the in-person visit to the studio where the actual Toft lives. |
 | 9 | Wed | Session 8 · **Midterm: library submission + terminology exam.** |
 
@@ -466,8 +466,6 @@ The lecture walks the actual console in the studio (a Toft Audio Designs ATB) to
 4. **The submaster section.** Eight subgroup strips, what they do, how channels get routed to them, the stereo effects returns.
 5. **The master section.** Aux masters, talkback, monitor switching, 2-track returns, the master stereo fader.
 
-**Setup for Wednesday's lab.** The reading also introduces **The Sound Below**, a fictional four-piece (vocals + dynamic mic, electric guitar + amp + dynamic mic, bass DI + amp wet, drums = kick + snare + two condenser overheads). Eight signals into the console total, filling exactly half of our 16-channel desk. The band is introduced in the reading's closing material so students walk into Wednesday's lab knowing the running example.
-
 The lecture explicitly does *not* walk the live-sound or studio-session scenarios; those are the work of Wednesday's lab (Session 6 below). The Monday lecture is "what the console is"; the Wednesday lab is "what the console does."
 
 ### Reading
@@ -483,7 +481,7 @@ The reading uses five photos: a top-down shot of the studio's actual 16-channel 
 - **Detail on the channel strip:** the reading covers what's on the front panel of the Toft input strip in beginner-friendly prose (input gain, phase, 80 Hz filter, four-band EQ, six aux sends, monitor section, solo/mute, pan, routing buttons, fader). Doesn't get into per-band EQ tuning or different EQ topologies.
 - **Photos vs schematic diagrams:** photos chosen. The Toft manual's own flow diagrams are too dense for beginners; five photos ground the explanations in the actual console. Conceptual flow is carried by prose, callouts (including the river-and-taps SVG for aux sends), and section structure, rather than by a master schematic.
 - **Lecture/lab split:** the console walkthrough (what it is) is Monday's lecture; the live-vs-studio scenarios (what it does) are Wednesday's lab. The split lets the Monday reading run heavy on the channel-strip detail without crowding out the scenario material, and lets Wednesday focus on application.
-- **The fictional band:** named (The Sound Below), instrumented, and used as the running example for Wednesday's lab walkthroughs.
+- **The fictional band:** named (The Sound Below), instrumented, and used as the running example for Wednesday's lab walkthroughs only. The Monday lecture and its reading stay band-agnostic so the console walkthrough doesn't depend on a setup students haven't met yet.
 
 ### Block-by-block
 
@@ -499,7 +497,7 @@ The reading uses five photos: a top-down shot of the studio's actual 16-channel 
 
 Hands-on session that takes the console students just met in Monday's reading and puts it through two real scenarios. The pedagogical move: walk through **the same fictional band in two contexts** (live performance and studio recording session) on the same desk, surfacing what stays the same and what changes between them.
 
-**The fictional band: The Sound Below.** A four-piece, the running example introduced at the end of Monday's reading. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2, plus the canonical DI-dry-plus-amp-wet bass treatment and the standard kick-snare-overheads drum miking from Huber (Modern Recording Techniques, 2018):
+**The fictional band: The Sound Below.** A four-piece, introduced in this lab handout as the running example for the two scenarios below. Instrumentation chosen to exercise every signal type and mic introduced in Lectures 1 and 2, plus the canonical DI-dry-plus-amp-wet bass treatment and the standard kick-snare-overheads drum miking from Huber (Modern Recording Techniques, 2018):
 - **Vocals:** dynamic mic, mic-level signal, XLR
 - **Electric guitar:** amp mic'ed with a dynamic, mic-level, XLR
 - **Bass guitar:** recorded two ways simultaneously, DI dry (XLR out of the DI box) + amp wet (dynamic mic on the bass amp's speaker, XLR). The DI box's thru jack passes the instrument signal on to the amp.
