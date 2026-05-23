@@ -284,7 +284,7 @@
 
 <p><strong>Channel pan.</strong> A red knob that places this channel left or right in the stereo image.</p>
 
-<p><strong>Routing buttons.</strong> Beside the fader: <strong>L-R</strong> sends this channel to the master stereo output; <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong> send it to one of the four submaster pairs (which become subgroups 1 through 8). The pan knob decides which side of the selected pair the signal goes to.</p>
+<p><strong>Routing buttons.</strong> Beside the fader: <strong>L-R</strong> assigns this channel to the master stereo bus; <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong> assign it to one of the four submaster pairs (which become subgroups 1 through 8). The buttons are <em>independent</em>: each one is its own on/off, and any combination can be engaged at once. A channel routed to both 1-2 and L-R appears in both places simultaneously. The pan knob decides the left-right split across whichever pair the signal lands on.</p>
 
 <div class="callout">
   <div class="callout-label">How the pan knob splits the signal across a subgroup pair</div>
@@ -344,7 +344,7 @@
 <p>The two paths are:</p>
 
 <ul>
-  <li>The <strong>channel path</strong>: input signal (mic or line) → input gain → EQ → channel fader → routing buttons (L-R or a subgroup). This is the path most people think of as "the channel." It's what you use to record a mic into the console, or to mix a track into the final stereo output.</li>
+  <li>The <strong>channel path</strong>: input signal (mic or line) → input gain → EQ → channel fader → routing buttons (L-R, and/or one or more subgroup pairs). This is the path most people think of as "the channel." It's what you use to record a mic into the console, or to mix a track into the final stereo output.</li>
   <li>The <strong>monitor path</strong>: monitor input (the MON jack on the back) → MON LEVEL knob → MON PAN → stereo mix bus. This is a second, parallel route that lets you hear something (a track playing back from the DAW, for instance) in the control-room speakers without using up the channel path. Both paths are alive at the same time on the same strip.</li>
 </ul>
 
@@ -381,7 +381,13 @@
 
 <p>Every input strip has the five routing buttons you met in section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button sends that specific channel to the master stereo output; the other four send it to one of the four submaster pairs. When several channels are routed to the same subgroup pair, their signals mix together in that subgroup (the summing operation you met in section 2's bus callout): the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two submasters in the pair.</p>
 
-<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit now has a single pair of faders controlling its overall level in the mix. Pull the subgroup faders down by 3 dB and the whole kit drops by 3 dB together, without changing the balance among the mics.</p>
+<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit now has a single pair of faders controlling its overall level on the way out of the console. Pull the subgroup faders down by 3 dB and the whole kit drops by 3 dB together on its way out, without changing the balance among the mics.</p>
+
+<div class="callout">
+  <div class="callout-label">Where the subgroup pair actually goes</div>
+  <p>The subgroup pair, on the way out of the console, ends at the <strong>SUBMASTER OUTPUTS</strong> jacks on the back (subgroup 1 leaves at SUBMASTER OUTPUT 1, subgroup 2 at SUBMASTER OUTPUT 2, and so on). Those jacks normally feed eight inputs of a recorder or DAW. They are <em>not</em> wired to the L-R master bus inside the console.</p>
+  <p>A channel routed only to <strong>1-2</strong> reaches those jacks and stops there. To get the same channel into the L-R stereo mix as well, the channel also needs <strong>L-R</strong> engaged: the L-R button on each input strip is an independent assignment that runs in parallel with the 1-2 (or 3-4, 5-6, 7-8) buttons. A drum channel routed to both 1-2 <em>and</em> L-R is feeding the subgroup pair on the way to a recorder <em>and</em> sitting in the stereo mix; the subgroup fader controls the recorder send only, while the channel fader controls the L-R contribution.</p>
+</div>
 
 <figure>
   <svg viewBox="0 0 720 370" xmlns="http://www.w3.org/2000/svg"
@@ -535,7 +541,7 @@
   <p>Making the submaster aux sends share buses with the channel aux sends (instead of introducing aux 7 and 8) keeps the bus count down. Each new bus would mean another conductor across the console, another Aux Master knob, another output jack on the back.</p>
 </div>
 
-<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a small black knob. These control how loud and where this submaster's signal appears in the control-room speakers. The submaster's own monitor path: separate from the input strips' monitor paths, doing the same job at the group level.</p>
+<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a small black knob. These control how loud and where this submaster's signal sits in the <em>control-room speakers</em>: they feed the monitor circuit (the same one that hears the L-R master), not the L-R mix itself. Their job is to let the engineer hear the subgroup (or the tape return coming back, depending on the TAPE switch) on the studio monitors. They do not put the subgroup into the stereo mix that leaves the console at MASTER O/P.</p>
 
 <p><strong>SOLO.</strong> A white pushbutton. Press it to send just this submaster to the solo bus, muting the other submasters in the control room while you listen. Same job as the SOLO button on the input strip, applied at the group level instead of the channel level.</p>
 
@@ -549,7 +555,7 @@
   <div class="callout-label">Two ways to read a submaster strip</div>
   <p>The eight submaster strips look like one structure, but each strip is actually doing two jobs at once. Easy to miss when you're walking it control by control:</p>
   <ol>
-    <li><strong>The strip is both an output and a return.</strong> Going out: it's the group output that combines whatever input channels you routed to subgroups 1-8 (via the routing buttons on the input strips). Coming back: it's the monitor return for one track of the DAW. The TAPE button decides which one the strip is letting you hear and meter at any given moment.</li>
+    <li><strong>The strip is both an output and a return.</strong> Going out: it's the group output that combines whatever input channels you routed to subgroups 1-8 (via the routing buttons on the input strips), heading for the SUBMASTER OUTPUTS jack on the back. Coming back: it's the monitor return for one track of the DAW, coming in at the MONITOR RETURNS jack. The TAPE button decides which one the strip is letting you hear and meter at any given moment.</li>
     <li><strong>The eight submasters double as eight stereo effects returns.</strong> The top of each strip (MUTE, BAL, FX RET) is a self-contained stereo input that has nothing to do with the subgroup-output role; it's there so an outboard effect can be plugged into the back of the console and blended into the mix without using up an input channel.</li>
   </ol>
 </div>
@@ -568,9 +574,9 @@
 
 <ul>
   <li><strong>STEREO FX RETURNS</strong> (top row, eight stereo, sixteen physical jacks). The inputs for outboard effect units (reverb, delay, hardware processor); each pair lands at the MUTE / BAL / FX RET controls at the top of one submaster strip on the front.</li>
-  <li><strong>MONITOR RETURNS</strong> (eight jacks). The inputs that bring eight tracks of DAW playback back into the submaster section. When the TAPE button on a strip is pressed in, the strip's bargraph meter and tape-return controls are reading these inputs.</li>
+  <li><strong>MONITOR RETURNS</strong> (eight jacks). The inputs that bring eight tracks of DAW playback back into the submaster section. Each one is wired in parallel to two places inside the console: the corresponding submaster strip's tape-return controls (when its TAPE button is pressed in), and the <strong>LINE</strong> jack of the matching input channel 1 through 8. Pressing LINE on input channel 5, for example, lets channel 5's full strip (EQ, fader, L-R button, aux sends) operate on whatever DAW playback is feeding MONITOR RETURN 5. This is the route used to bring DAW playback into the L-R mix during mixdown.</li>
   <li><strong>SUBGROUP INSERT</strong> (eight jacks). One insert send/return per subgroup, used to patch external processing (a compressor, an EQ, a tape simulator) across the whole subgroup before the submaster fader. The subgroup equivalent of the channel insert from section 2: same wiring trick (TRS jack carrying send on the tip, return on the ring), applied to a summed signal instead of a single channel.</li>
-  <li><strong>SUBMASTER OUTPUTS</strong> (eight jacks). Where the eight subgroup outputs leave the console, typically going to eight inputs on the DAW's audio interface for recording.</li>
+  <li><strong>SUBMASTER OUTPUTS</strong> (eight jacks). Where the eight subgroup outputs leave the console, typically going to eight inputs on the DAW's audio interface for recording. The subgroups exit the console here; they don't feed the L-R master internally.</li>
 </ul>
 
 <p>The bottom row of jacks (AUX MASTERS) and the left side of the photo (master outputs, master inserts, two-track returns, speaker outputs) belong to the master section, covered next.</p>
