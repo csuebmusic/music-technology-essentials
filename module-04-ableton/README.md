@@ -1,6 +1,6 @@
 # Module 4 — Ableton: Audio, MIDI & Synthesis
 
-**Weeks 9–15** (11 class meetings). Students move into Ableton Live for audio production, MIDI sequencing, and basic synthesis — culminating in the **final project** (open prompt) and the **cumulative final exam** during finals week.
+**Weeks 10–15** (11 class meetings). Students move into Ableton Live for audio production, MIDI sequencing, and basic synthesis — culminating in the **final project** (open prompt) and the **cumulative final exam** during finals week.
 
 > **Status:** Scaffolding only — materials in development.
 

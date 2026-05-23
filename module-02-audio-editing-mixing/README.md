@@ -950,4 +950,4 @@ This becomes the basis for revising the module README for the next time the cour
 
 ## What follows
 
-Module 3 (Weeks 6–8) is recording and sample library building. Students will move from manipulating *provided* sounds to generating their own. The mixing and editing fluency built in Module 2 carries forward; the source material changes.
+Module 3 (Weeks 6–9) is recording and sample library building. Students will move from manipulating *provided* sounds to generating their own. The mixing and editing fluency built in Module 2 carries forward; the source material changes.
