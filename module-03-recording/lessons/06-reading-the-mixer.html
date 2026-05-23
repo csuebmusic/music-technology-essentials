@@ -110,7 +110,7 @@
 <ol>
   <li><strong>Input strips</strong> (sixteen on our console). One per channel. Where signals from mics, instruments, and the DAW come in.</li>
   <li><strong>Submaster strips</strong> (eight). Group outputs that combine many channels into one before sending to the DAW, and that also handle DAW returns.</li>
-  <li><strong>Master strip</strong> (one). The final stereo output to the control-room speakers, plus talkback and monitoring controls.</li>
+  <li><strong>Master strip</strong> (one). The final stereo output of the console, plus the controls that shape what the engineer hears in the room, plus talkback.</li>
 </ol>
 
 <hr>
@@ -145,14 +145,14 @@
   <p>The other difference matters more: where in the signal flow the EQ sits. Audacity's Filter Curve EQ <em>changes the audio data on the track</em> when you click Apply (destructive: you can undo it during the session, but if you save and close, the change is permanent). The console's EQ <em>shapes the signal as it passes through the channel strip</em> on its way to the output. Whatever's plugged into the input (the mic on stage, the DAW playback at mixdown) keeps making the sound it was making; only the signal coming out of the channel is shaped. Turn the EQ knobs back to flat, or hit the EQ In/Out button, and the channel returns to passing the signal through unchanged. This is non-destructive: you can change your mind freely, take after take, without ever altering the source.</p>
 </div>
 
-<p><strong>Six aux sends.</strong> Six green knobs, one per aux. Each one is a tap of the signal at this channel that goes out to a separate output on the back of the console (the AUX MASTERS jacks). The level of each tap is set independently of the channel's main fader. Aux 1 is permanently <strong>pre-fader</strong> (the tap happens before the fader, so the fader doesn't affect the aux level). Auxes 3 through 6 can be switched <strong>pre or post</strong>: pre-fader (independent of the fader) or post-fader (the fader controls them along with the main channel signal). What you actually use the aux sends for is the subject of Wednesday's lab.</p>
+<p><strong>Six aux sends.</strong> Six green knobs, one per aux. Each one is a tap of the signal at this channel that goes out to a separate output on the back of the console (the AUX MASTERS jacks). The level of each tap is set independently of the channel's main fader. Aux 1 is permanently <strong>pre-fader</strong> (the tap happens before the fader, so the fader doesn't affect the aux level). Auxes 2 through 6 can be switched <strong>pre or post</strong>: pre-fader (independent of the fader) or post-fader (the fader controls them along with the main channel signal). What you actually use the aux sends for is the subject of Wednesday's lab.</p>
 
 <div class="callout">
   <div class="callout-label">A river with taps</div>
   <p>Think of the channel's signal as a river flowing left to right through the strip, from the input on top down to the fader and out into the master mix. The aux sends are taps along the river: small pipes that siphon off a copy of the water into a separate channel running somewhere else, without slowing the main flow. Each aux knob controls how much water its pipe carries; turn it down to zero and that pipe sends nothing.</p>
   <figure>
     <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg"
-         role="img" aria-label="Diagram of the aux sends as taps on a signal river. A main horizontal arrow runs left to right from the channel input through the EQ, the aux tap point, the fader, and out to the L-R output. At the aux tap point, three smaller arrows branch downward, each labeled Aux 1, Aux 2, and Aux 3, each going to a separate destination box labeled Aux Master 1, Aux Master 2, and Aux Master 3.">
+         role="img" aria-label="Diagram of the aux sends as taps on a signal river. A main horizontal arrow runs left to right from the channel input through the EQ, the aux tap point, the fader, and out into the master mix. At the aux tap point, three smaller arrows branch downward, each labeled Aux 1, Aux 2, and Aux 3, each going to a separate destination box labeled Aux Master 1, Aux Master 2, and Aux Master 3.">
       <defs>
         <marker id="arrowhead-main" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
           <polygon points="0 0, 10 3, 0 6" fill="var(--accent)"/>
@@ -207,16 +207,16 @@
               font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Fader</text>
       </g>
 
-      <!-- Main flow: Fader → L-R out -->
+      <!-- Main flow: Fader → master mix -->
       <line x1="507" y1="90" x2="578" y2="90"
             stroke="var(--accent)" stroke-width="3" marker-end="url(#arrowhead-main)"/>
 
-      <!-- L-R bus -->
+      <!-- Master mix destination -->
       <g>
         <rect x="580" y="65" width="120" height="50" rx="4"
               fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
         <text x="640" y="95" text-anchor="middle"
-              font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">L-R output</text>
+              font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Master mix</text>
       </g>
 
       <!-- Aux taps: three branches going down from the tap point -->
@@ -337,7 +337,7 @@
 
 <h2>3 · In-line architecture · one strip, two inputs</h2>
 
-<p>The Toft ATB is what's called an <strong>in-line</strong> console. The defining feature: every input strip carries two inputs at once, not one. There's the main input that travels down the big fader (set up in section 2): mic or line on the back, through INPUT GAIN, EQ, the fader, the routing buttons, out to L-R or a subgroup. And there's a second, smaller input that travels through the <strong>monitor section</strong> in the middle of the strip: a separate signal on the back at the <strong>MON</strong> jack, with its own level (<strong>MON LEVEL</strong>) and its own pan (<strong>MON PAN</strong>), routed onto the master mix.</p>
+<p>The Toft ATB is what's called an <strong>in-line</strong> console. The defining feature: every input strip carries two inputs at once, not one. There's the main input that travels down the big fader (set up in section 2): mic or line on the back, through INPUT GAIN, EQ, the fader, the routing buttons, out to L-R or a subgroup pair. And there's a second, smaller input that travels through the <strong>monitor section</strong> in the middle of the strip: a separate signal on the back at the <strong>MON</strong> jack, with its own level (<strong>MON LEVEL</strong>) and its own pan (<strong>MON PAN</strong>), routed to the master mix.</p>
 
 <p>Both inputs can be active at the same time on the same strip, carrying two different signals to the master mix.</p>
 
@@ -345,11 +345,9 @@
 
 <p>The label MON on the back of the console, and MON LEVEL on the front, both use the word <strong>monitor</strong>. The word isn't naming the studio speakers. It's naming the source: in the era of multi-track tape, "monitoring" a recorded track meant hearing the playback come back into the console alongside whatever was being newly recorded, so the engineer could keep checking the take against the previously-recorded layers. The MON jack on the back is that playback-return input.</p>
 
-<p>The same word will show up again later in different roles. Sections 4 and 5 will flag each one as it comes up.</p>
-
 <h3>The I/P REV button</h3>
 
-<p>At the top of every input strip is a button labeled <strong>I/P REV</strong> (input reverse). Press it, and the two inputs on that strip swap. Whatever was coming in the MIC or LINE jack now travels through the monitor section; whatever was coming in the MON jack now travels through the channel path with full EQ, aux sends, and the big fader. The most common use is at mixdown, when an engineer wants the full processing chain on the recorded track that had been coming back through the smaller monitor section during tracking. We'll come back to it.</p>
+<p>At the top of every input strip is a button labeled <strong>I/P REV</strong> (input reverse). Press it, and the two inputs on that strip swap. Whatever was coming in the MIC or LINE jack now travels through the monitor section; whatever was coming in the MON jack now travels through the channel path with full EQ, aux sends, and the big fader. The most common use is at mixdown, when an engineer wants the full processing chain on the recorded track that had been coming back through the smaller monitor section during tracking.</p>
 
 <hr>
 
@@ -366,7 +364,7 @@
 
 <p>For this section, focus on the eight submaster strips that fill the left side of the photo. (The two rows of controls at the very top of the section, the L/R VU meters and the row of six green Aux Masters knobs, belong to the master section and are covered in section 5.)</p>
 
-<p>Each submaster strip is built of four labeled sub-sections, top to bottom: a <strong>stereo effects return</strong>, a <strong>bargraph meter</strong>, a <strong>tape return</strong>, and at the bottom the <strong>subgroup fader</strong>. Each one walked in turn.</p>
+<p>Each submaster strip is built of four labeled sub-sections, top to bottom: a <strong>stereo effects return</strong>, a <strong>bargraph meter</strong>, a <strong>tape return</strong>, and at the bottom the <strong>subgroup fader</strong>.</p>
 
 <h3>Stereo FX Return (top of strip)</h3>
 
@@ -388,7 +386,7 @@
 
 <p>Top to bottom inside this section:</p>
 
-<p><strong>AUX 5 and AUX 6, with PRE switch.</strong> The submasters each have two aux sends, but instead of being aux 7-8 (since the channels have 1-6), they're just 5-6. It's easier to send several individual tracks to a single submaster and use AUX 5 and AUX 6 to tap that signal off somewhere else (usually headphones or monitors). The <strong>PRE</strong> button decides if the tap happens before or after the level knob below.</p>
+<p><strong>AUX 5 and AUX 6, with PRE switch.</strong> The submaster strips each have two aux sends, sharing buses with channel auxes 5 and 6 (the callout below explains why). Use them to send the subgroup off to wherever a wedge or a headphone cue needs the whole sub-mix. The <strong>PRE</strong> button decides whether the tap happens before or after MON LEVEL.</p>
 
 <div class="callout">
   <div class="callout-label">Why share aux 5 and 6 instead of adding aux 7 and 8</div>
@@ -414,7 +412,7 @@
 
 <p>Recall the five routing buttons from section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button assigns the channel directly to the master mix; the other four assign it to one of the four subgroup pairs. When several channels are routed to the same subgroup pair, their signals mix together in that subgroup (the summing operation from section 2's bus callout): the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two subgroups in the pair.</p>
 
-<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit is now a single stereo group inside the console. From here, the kit travels onward together: turn down sub 1 and the whole kit's left channel drops, turn down sub 2 and the right drops, with the internal balance among the mics unchanged.</p>
+<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit is now a single stereo group inside the console. From here, the kit travels onward together as a stereo pair: sub 1 carries the left side, sub 2 carries the right, and the controls on the two submaster strips set what happens to that stereo pair on its way out. The next callout walks where it goes.</p>
 
 <div class="callout">
   <div class="callout-label">Where the subgroup pair actually goes</div>
@@ -555,7 +553,7 @@
   <img src="../../assets/images/module-03-week-08/toft-atb/rear-output-section.png"
        alt="The output section of the Toft ATB rear panel. On the left: MASTER O/P L and R, MASTER INS L and R, 2 TK RET. 1 and 2, ALT SPKR L and R, MAIN SPKR L and R. On the right, in rows: STEREO FX RETURNS 1 through 8 (sixteen jacks), MONITOR RETURNS 1 through 8, SUBGROUP INSERT 1 through 8, SUBMASTER OUTPUTS 1 through 8, and AUX MASTERS 1 through 6. A DC POWER round connector and a DIGITAL OPTION blanking panel sit at the bottom."
        loading="lazy">
-  <figcaption>The rear of the console, output section. Each row is one of the groups of jacks discussed in this reading.</figcaption>
+  <figcaption>The rear of the console, output section. For this section, focus on the right half: the four rows of submaster jacks (STEREO FX RETURNS, MONITOR RETURNS, SUBGROUP INSERT, SUBMASTER OUTPUTS).</figcaption>
   <div class="photo-attribution">Image © Toft Audio Designs / PMI Audio Group. Used for educational purposes.</div>
 </figure>
 
@@ -583,11 +581,11 @@
   <figcaption>The same photo as section 4. Now focus on the master strip on the right, plus the six Aux Masters knobs and the L/R VU meters at the top.</figcaption>
 </figure>
 
-<p>The master section handles everything that affects the whole console rather than any single channel. Two rows of controls sit at the very top of the section, above the eight submaster strips from section 4; the master strip itself fills the column on the far right. Walking top to bottom across the whole section:</p>
+<p>The master section handles everything that affects the whole console rather than any single channel. Two rows of controls sit at the very top of the section, above the eight submaster strips from section 4; the master strip itself fills the column on the far right.</p>
 
 <p><strong>L/R VU meters.</strong> The two round needle meters at the very top, labeled LEFT and RIGHT. VU meters respond more slowly than peak meters: they average the signal over a short window, which makes them a better visual stand-in for perceived loudness than for instantaneous peaks. The needle moves with the music in a way the bargraph segments do not.</p>
 
-<p><strong>Aux Masters.</strong> Six green knobs in a row across the top of the section, one per aux send. Each aux send on each input channel feeds into one of these six masters; the Aux Master knob then sets the overall level of <em>that aux's output</em> before it leaves the back of the console at the corresponding AUX MASTERS jack. Think of each Aux Master as the master fader for one of the six parallel mixes the aux sends create.</p>
+<p><strong>Aux Masters.</strong> Six green knobs in a row across the top of the section, one per aux send. Each aux send across the desk (the six on every input channel, plus auxes 5 and 6 on every submaster strip) feeds into one of these six masters; the Aux Master knob then sets the overall level of <em>that aux's output</em> before it leaves the back of the console at the corresponding AUX MASTERS jack. Think of each Aux Master as the master fader for one of the six parallel mixes the aux sends create.</p>
 
 <p>The remaining controls run down the master strip on the far right of the section, top to bottom.</p>
 
@@ -749,13 +747,13 @@
 
 <h3>Talkback and master fader</h3>
 
-<p><strong>Talkback.</strong> A small microphone built into the console (the round grille labeled T.B. MIC), a level knob above it (T.B. LEVEL), and two red pushbuttons below it: <strong>TALK TO AUXES</strong> (the engineer's voice goes to the aux outputs, which are typically feeding the performers' headphones) and <strong>TALK TO GROUPS</strong> (the engineer's voice goes out to the subgroups and the master L-R, so it gets recorded on whatever track is armed). Talkback is how the engineer in the control room communicates with the musicians in the live room, and how a session slate gets put on a take.</p>
+<p><strong>Talkback.</strong> A small microphone built into the console (the round grille labeled T.B. MIC), a level knob above it (T.B. LEVEL), and two red pushbuttons below it: <strong>TALK TO AUXES</strong> and <strong>TALK TO GROUPS</strong>. Together they're how the engineer in the control room communicates with the musicians in the live room, and how a session slate gets put on a take.</p>
 
 <div class="callout">
   <div class="callout-label">Talkback in practice: two buttons, two jobs</div>
   <p>The two talkback buttons look similar but do very different things, and the consequence of pressing the wrong one shows up at the worst moment (during playback of a take you thought was clean).</p>
   <p><strong>TALK TO AUXES.</strong> The engineer's voice goes to the aux outputs, which are typically routed to the performers' headphones in the live room. The musicians hear the engineer ("hold on, I think we lost the click track"), but nothing gets recorded. This is the everyday button: anytime you want to say something to the band between takes, or during a take if you absolutely have to, TALK TO AUXES is the one.</p>
-  <p><strong>TALK TO GROUPS.</strong> The engineer's voice goes out to the subgroups and the master L-R, which means it gets recorded onto whatever tracks are armed. This is for <strong>slating</strong> the take: at the top of every take, the engineer announces the take number ("Song one, take three") so when you're sorting through forty takes later, every one is labeled at the head of the audio file. The slate becomes part of the recording, gets logged with the session, and saves your sanity at mixdown. Press TALK TO GROUPS, announce the slate, release, hit record.</p>
+  <p><strong>TALK TO GROUPS.</strong> The engineer's voice goes out to the subgroups and the master mix, which means it gets recorded onto whatever tracks are armed. This is for <strong>slating</strong> the take: at the top of every take, the engineer announces the take number ("Song one, take three") so when you're sorting through forty takes later, every one is labeled at the head of the audio file. The slate becomes part of the recording, gets logged with the session, and saves your sanity at mixdown. Press TALK TO GROUPS, announce the slate, release, hit record.</p>
   <p>The film-set equivalent is the clapper board (the slate that snaps shut at the start of every shot). Audio recording does the same job with the engineer's voice and this button.</p>
 </div>
 
