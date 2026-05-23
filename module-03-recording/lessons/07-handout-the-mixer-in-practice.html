@@ -414,7 +414,7 @@
 
 <h3>From the stage to the console</h3>
 
-<p>Before any of that routing happens, the twelve signals have to physically travel from the stage to the console at front-of-house, which is halfway back in the room. Venues solve this with two pieces of dedicated hardware: a stage box and a snake.</p>
+<p>Before any of that routing happens, the twelve signals have to physically travel from the stage to the console. Venues solve this with two pieces of dedicated hardware: a stage box and a snake.</p>
 
 <p>At the side of the stage, sitting on the floor or bolted to a riser, is a sturdy metal box about the size of a thick laptop. Its top face is a grid of jacks: a row of female XLR inputs, labeled 1, 2, 3, ... up to the number of channels on the box. This is the <strong>stage box</strong>. Every mic on the stage plugs into one of its jacks with a short XLR cable. The vocalist's mic on a short run; the kick drum's mic on a short run; each overhead condenser on a short run. The longest cable on the stage at this point is the one from the drum overhead to the stage box, maybe ten feet.</p>
 
@@ -435,23 +435,10 @@
 <p>The keyboardist places one DI box at her station with four inputs and four outputs. Her stage keyboard's L and R outputs go into two of the DI's 1/4" TRS inputs; the laptop's L and R outputs go into the other two. On the DI box's front face, a <strong>pad switch</strong> for each channel is engaged: this tells the DI that the incoming signal is line-level (hot) rather than instrument-level, and pads the input down so the DI's internal circuit doesn't clip. Four XLR cables come out of the DI box's outputs, carrying four mic-level signals to four jacks on the stage box. From the snake's point of view, the keyboardist's four channels look exactly like the eight mic channels: balanced, mic-level, on XLR. The engineer at FOH treats them as four more mic inputs with their preamps set a touch lower than for an actual mic.</p>
 
 <div class="callout">
-  <div class="callout-label">What the DI is doing for the keys, exactly</div>
-  <p>The DI box performs three transformations at once. First, it converts the connector: 1/4" TRS in, XLR out. Second, it pads the signal down from line-level to mic-level (the part of the DI's job that you might not expect, since the textbook description of a DI is "instrument-level to mic-level"). Third, it converts the signal from the keyboard's grounded electronics to a transformer-isolated path, which means the keys rig and the rest of the stage rig stop sharing a ground path that could otherwise cause hum. The third thing is silent when it's working and very loud when it isn't.</p>
-  <p>The DI's <strong>pad switch</strong> is the explicit "I'm feeding you a hot source" control. Without it, a line-level signal hitting an unpadded DI input would overload the DI's front end. With it, the DI accepts the line-level input cleanly and the output still arrives at the stage box at the same mic-level the other channels are using. Most professional DI boxes have either a -20 dB or -30 dB pad on each input, and some have an explicit "line / instrument" toggle that does the same job under a different label.</p>
-</div>
-
-<div class="callout">
   <div class="callout-label">Two simpler alternatives, when they're available</div>
   <p>The DI-box route is the most reliable and the most uniform (every channel arrives at the console as XLR-on-MIC, no exceptions). There are two simpler alternatives, used when the situation allows.</p>
   <p>First: a <strong>TRS-to-XLR cable</strong>. The signal stays balanced and line-level (TRS and XLR can both carry a balanced signal; a properly wired adapter cable just remaps the conductors), and the keys arrive at the stage box on the XLR jack at line-level instead of mic-level. The console's preamp on that channel gets set much lower than for a mic, because the signal is already strong. Works on most consoles, since the MIC jack will accept up to about +4 dBu, but the engineer has to remember to set the gain differently for the keys channels.</p>
   <p>Second: many stage boxes (and the consoles they feed into) have a separate row of <strong>1/4" TRS line-level inputs</strong> alongside the XLR row, specifically for keys, DI'd guitars, and other line-level sources. When the stage box has these, the keys plug straight in with regular TRS cables and arrive at the console on the LINE jack at line-level. The simplest setup of all, when the venue's stage box happens to have the right inputs. The ProX in the photo above does not; many touring rigs do.</p>
-</div>
-
-<div class="callout">
-  <div class="callout-label">Why a snake works where twelve loose cables wouldn't</div>
-  <p>Two reasons, one obvious and one not.</p>
-  <p>The obvious one: cable management. Twelve XLR cables snaking individually across a floor are a tripping hazard, a tangle to wind down at the end of the night, and a labeling nightmare. One labeled multicore goes down and comes back up cleanly.</p>
-  <p>The non-obvious one: noise rejection. Every cable on stage is acting as an antenna, picking up hum from the venue's lighting circuits, RF from wireless transmitters, and electrical noise from amplifiers. A single shielded cable carrying balanced signals (the trick you met in Lecture 1: same audio on two wires, one flipped, the receiving end subtracts the two and any noise picked up equally on both wires cancels out) is dramatically quieter at 75 feet than twelve unshielded cables in a tangle would be. Snakes are built specifically to preserve the balanced-line noise rejection over long runs. This is one of the practical reasons why every microphone on stage uses balanced XLR (and not because the engineer just happens to like XLR connectors): without it, long cable runs would be unusable.</p>
 </div>
 
 <div class="callout">
