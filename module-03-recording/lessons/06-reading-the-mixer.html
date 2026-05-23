@@ -381,11 +381,11 @@
 
 <p>Every input strip has the five routing buttons you met in section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button sends that specific channel to the master stereo output; the other four send it to one of the four submaster pairs. When several channels are routed to the same subgroup pair, their signals <strong>mix</strong> (also called <strong>sum</strong>) together in that subgroup: the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two submasters in the pair.</p>
 
-<p>The canonical case is drums. The four drum mics for The Sound Below (kick, snare, overhead left, overhead right) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); overhead L is panned hard left (100% to sub 1); overhead R is panned hard right (100% to sub 2). The four channels become two summed signals on the subgroup pair, and the kit now has a single pair of faders controlling its overall level in the mix. Pull the subgroup faders down by 3 dB and the whole kit drops by 3 dB together, without changing the balance among the mics.</p>
+<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit now has a single pair of faders controlling its overall level in the mix. Pull the subgroup faders down by 3 dB and the whole kit drops by 3 dB together, without changing the balance among the mics.</p>
 
 <figure>
   <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of four drum mics routed to subgroup pair 1-2. Four channels at the top, labeled Kick, Snare, OH L, and OH R, each showing its pan position. Arrows flow down to two subgroup boxes labeled Sub 1 (left) and Sub 2 (right). Kick and snare split 50/50 between the two subs; OH L sends 100% to sub 1; OH R sends 100% to sub 2. Below the subgroups, a pair of submaster faders labeled Sub 1 fader and Sub 2 fader.">
+       role="img" aria-label="Diagram of four drum mics routed to subgroup pair 1-2. Four channels at the top, labeled Kick, Snare, Overhead L, and Overhead R, each showing its pan position. Arrows flow down to two subgroup boxes labeled Sub 1 (left) and Sub 2 (right). Kick and snare split 50/50 between the two subs; Overhead L sends 100% to sub 1; Overhead R sends 100% to sub 2. Below the subgroups, a pair of submaster faders labeled Sub 1 fader and Sub 2 fader.">
     <defs>
       <marker id="arrowhead-sum" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -402,7 +402,7 @@
       <rect x="40" y="50" width="120" height="62" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
       <text x="100" y="72" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 5 · Kick</text>
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Kick</text>
       <text x="100" y="92" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: center</text>
       <text x="100" y="106" text-anchor="middle"
@@ -414,7 +414,7 @@
       <rect x="180" y="50" width="120" height="62" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
       <text x="240" y="72" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 6 · Snare</text>
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Snare</text>
       <text x="240" y="92" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: center</text>
       <text x="240" y="106" text-anchor="middle"
@@ -426,7 +426,7 @@
       <rect x="320" y="50" width="120" height="62" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
       <text x="380" y="72" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 7 · OH L</text>
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Overhead L</text>
       <text x="380" y="92" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: hard left</text>
       <text x="380" y="106" text-anchor="middle"
@@ -438,7 +438,7 @@
       <rect x="460" y="50" width="120" height="62" rx="4"
             fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
       <text x="520" y="72" text-anchor="middle"
-            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Ch 8 · OH R</text>
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Overhead R</text>
       <text x="520" y="92" text-anchor="middle"
             font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">pan: hard right</text>
       <text x="520" y="106" text-anchor="middle"
@@ -467,7 +467,7 @@
       <text x="180" y="225" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Sub 1 (L)</text>
       <text x="180" y="245" text-anchor="middle"
-            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick·snare·OH L summed</text>
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick · snare · overhead L</text>
     </g>
 
     <g>
@@ -476,7 +476,7 @@
       <text x="380" y="225" text-anchor="middle"
             font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Sub 2 (R)</text>
       <text x="380" y="245" text-anchor="middle"
-            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick·snare·OH R summed</text>
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick · snare · overhead R</text>
     </g>
 
     <!-- Connection from subs to faders -->
