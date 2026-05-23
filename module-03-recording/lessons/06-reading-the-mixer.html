@@ -366,6 +366,57 @@
 
 <p>For this section, focus on the eight submaster strips that fill the left side of the photo. (The two rows of controls at the very top of the section, the L/R VU meters and the row of six green Aux Masters knobs, belong to the master section and are covered in section 5.)</p>
 
+<p>Each submaster strip is built of four labeled sub-sections, top to bottom: a <strong>stereo effects return</strong>, a <strong>bargraph meter</strong>, a <strong>tape return</strong>, and at the bottom the <strong>subgroup fader</strong>. Each one walked in turn.</p>
+
+<h3>Stereo FX Return (top of strip)</h3>
+
+<p>A self-contained stereo input for a signal coming from an outboard audio effect unit (a reverb, a delay, a hardware processor), plugged in at the back of the console. Three controls plus a button, top to bottom:</p>
+
+<ul>
+  <li><strong>MUTE</strong> button: a red square at the very top. Press it to silence this effects return without changing any of the other settings.</li>
+  <li><strong>BAL</strong> knob: a small black knob that adjusts the left-right balance of the stereo return.</li>
+  <li><strong>FX RET</strong> level knob: a pink knob that sets how much of the effects return joins the master mix.</li>
+</ul>
+
+<h3>Bargraph meter</h3>
+
+<p>Twelve segments running from -20 dBFS at the bottom to +15 dBFS at the top. Same dBFS scale as Audacity's meter, with the same green / yellow / red zones. The meter shows the level of <em>either</em> the subgroup output going to the DAW, or the tape return coming back, depending on the TAPE switch in the section below.</p>
+
+<h3>Tape Return (middle section, with: Aux 5 &amp; 6 Level, Pan, Solo)</h3>
+
+<p>The whole middle block of controls (PRE, AUX 5, AUX 6, MON LEVEL, MON PAN, SOLO, TAPE) is one named section. The label "Tape Return" describes what these controls do <em>during playback</em>, when the strip is monitoring the DAW's output coming back into the console. The same controls also work on the subgroup output going to the DAW: the <strong>TAPE</strong> button at the bottom of this section selects which signal the controls (and the bargraph above) are operating on.</p>
+
+<p>Top to bottom inside this section:</p>
+
+<p><strong>AUX 5 and AUX 6, with PRE switch.</strong> The submasters each have two aux sends, but instead of being aux 7-8 (since the channels have 1-6), they're just 5-6. It's easier to send several individual tracks to a single submaster and use AUX 5 and AUX 6 to tap that signal off somewhere else (usually headphones or monitors). The <strong>PRE</strong> button decides if the tap happens before or after the level knob below.</p>
+
+<div class="callout">
+  <div class="callout-label">Why share aux 5 and 6 instead of adding aux 7 and 8</div>
+  <p>An aux send is a <strong>bus</strong>: a single horizontal conductor that runs the length of the console, with every channel and submaster that wants to contribute connecting to it through its aux knob. Aux 5 is one bus; everything that turns up its aux 5 knob dumps a copy of its signal onto that bus, which ends at the Aux 5 Master in the master section and goes out the AUX MASTERS 5 jack on the back.</p>
+  <p>Making the submaster aux sends share buses with the channel aux sends (instead of introducing aux 7 and 8) keeps the bus count down. Each new bus would mean another conductor across the console, another Aux Master knob, another output jack on the back.</p>
+</div>
+
+<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a small black knob. This is the submaster's <em>route into the master mix</em>: MON LEVEL sets how much of the subgroup joins the master mix, MON PAN places it left-right in the stereo image. With MON LEVEL all the way down, the subgroup is heading only to the SUBMASTER OUTPUTS jack (the send to the DAW); turn it up and the subgroup also lands in the master mix. The job of these two controls is the subgroup equivalent of the L-R button and channel pan on an input strip, but at the group level instead of the individual-channel level.</p>
+
+<p>The labels on the front panel say MON, but the destination is the master mix, not the studio speakers. (Section 5 walks the master strip's MON LEVEL knob, which is a different control with a different job: the volume of the control-room speakers.)</p>
+
+<p><strong>SOLO.</strong> A white pushbutton. Press it to send just this submaster to the solo bus, muting the other submasters in the control room while you listen. Same job as the SOLO button on the input strip, applied at the group level instead of the channel level.</p>
+
+<p><strong>TAPE.</strong> A red pushbutton that selects the source for the whole middle section (bargraph, AUX 5 and 6, MON LEVEL and MON PAN, SOLO). Up (out): the live subgroup output, summed from whichever input channels routed here. Down (in): the playback coming back from the DAW through the MONITOR RETURNS jack on the back (covered later in this section). The name TAPE is a holdover from when those returns were a tape machine; most studios now use it to flip between "what's going to the DAW" and "what's coming back from the DAW."</p>
+
+<h3>Subgroup fader (bottom of strip)</h3>
+
+<p>A 100mm fader controlling the level of this subgroup's output at the SUBMASTER OUTPUT jack on the back: the level the DAW gets. It does not affect the subgroup's contribution to the master mix (which is set by the MON LEVEL above). The fader scale matches the input strip's: minus-infinity at the bottom, 0 (unity) marked with a thicker line, +10 at the top.</p>
+
+<div class="callout">
+  <div class="callout-label">Two ways to read a submaster strip</div>
+  <p>The eight submaster strips look like one structure, but each strip is actually doing two jobs at once. Easy to miss when you're walking it control by control:</p>
+  <ol>
+    <li><strong>The strip is both an output and a return.</strong> Going out: it's the subgroup that combines the input channels routed here, and that combined signal has two destinations: the SUBMASTER OUTPUTS jack on the back (level set by the submaster fader, typically to the DAW), and the master mix (level and pan set by MON LEVEL and MON PAN). Coming back: the strip is also the return for one playback track of the DAW, arriving at the MONITOR RETURNS jack. The TAPE button decides whether the middle controls are operating on the live subgroup going out or the playback coming back.</li>
+    <li><strong>The eight submasters double as eight stereo effects returns.</strong> The top of each strip (MUTE, BAL, FX RET) is a self-contained stereo input that has nothing to do with the subgroup-output role. It's there so an outboard effect can be plugged into the back of the console and blended into the mix without using up an input channel.</li>
+  </ol>
+</div>
+
 <h3>Summing: what happens at the destination</h3>
 
 <p>Recall the five routing buttons from section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button assigns the channel directly to the master mix; the other four assign it to one of the four subgroup pairs. When several channels are routed to the same subgroup pair, their signals mix together in that subgroup (the summing operation from section 2's bus callout): the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two subgroups in the pair.</p>
@@ -504,57 +555,6 @@
   </svg>
   <figcaption>Four drum mics routed to subgroup pair 1-2. Pan position decides how each channel's signal splits between the two subgroups; from here the kit travels onward as a stereo group.</figcaption>
 </figure>
-
-<p>Each submaster strip is built of four labeled sub-sections, top to bottom: a <strong>stereo effects return</strong>, a <strong>bargraph meter</strong>, a <strong>tape return</strong>, and at the bottom the <strong>subgroup fader</strong>. Each one walked in turn.</p>
-
-<h3>Stereo FX Return (top of strip)</h3>
-
-<p>A self-contained stereo input for a signal coming from an outboard audio effect unit (a reverb, a delay, a hardware processor), plugged in at the back of the console. Three controls plus a button, top to bottom:</p>
-
-<ul>
-  <li><strong>MUTE</strong> button: a red square at the very top. Press it to silence this effects return without changing any of the other settings.</li>
-  <li><strong>BAL</strong> knob: a small black knob that adjusts the left-right balance of the stereo return.</li>
-  <li><strong>FX RET</strong> level knob: a pink knob that sets how much of the effects return joins the master mix.</li>
-</ul>
-
-<h3>Bargraph meter</h3>
-
-<p>Twelve segments running from -20 dBFS at the bottom to +15 dBFS at the top. Same dBFS scale as Audacity's meter, with the same green / yellow / red zones. The meter shows the level of <em>either</em> the subgroup output going to the DAW, or the tape return coming back, depending on the TAPE switch in the section below.</p>
-
-<h3>Tape Return (middle section, with: Aux 5 &amp; 6 Level, Pan, Solo)</h3>
-
-<p>The whole middle block of controls (PRE, AUX 5, AUX 6, MON LEVEL, MON PAN, SOLO, TAPE) is one named section. The label "Tape Return" describes what these controls do <em>during playback</em>, when the strip is monitoring the DAW's output coming back into the console. The same controls also work on the subgroup output going to the DAW: the <strong>TAPE</strong> button at the bottom of this section selects which signal the controls (and the bargraph above) are operating on.</p>
-
-<p>Top to bottom inside this section:</p>
-
-<p><strong>AUX 5 and AUX 6, with PRE switch.</strong> The submasters each have two aux sends, but instead of being aux 7-8 (since the channels have 1-6), they're just 5-6. It's easier to send several individual tracks to a single submaster and use AUX 5 and AUX 6 to tap that signal off somewhere else (usually headphones or monitors). The <strong>PRE</strong> button decides if the tap happens before or after the level knob below.</p>
-
-<div class="callout">
-  <div class="callout-label">Why share aux 5 and 6 instead of adding aux 7 and 8</div>
-  <p>An aux send is a <strong>bus</strong>: a single horizontal conductor that runs the length of the console, with every channel and submaster that wants to contribute connecting to it through its aux knob. Aux 5 is one bus; everything that turns up its aux 5 knob dumps a copy of its signal onto that bus, which ends at the Aux 5 Master in the master section and goes out the AUX MASTERS 5 jack on the back.</p>
-  <p>Making the submaster aux sends share buses with the channel aux sends (instead of introducing aux 7 and 8) keeps the bus count down. Each new bus would mean another conductor across the console, another Aux Master knob, another output jack on the back.</p>
-</div>
-
-<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a small black knob. This is the submaster's <em>route into the master mix</em>: MON LEVEL sets how much of the subgroup joins the master mix, MON PAN places it left-right in the stereo image. With MON LEVEL all the way down, the subgroup is heading only to the SUBMASTER OUTPUTS jack (the send to the DAW); turn it up and the subgroup also lands in the master mix. The job of these two controls is the subgroup equivalent of the L-R button and channel pan on an input strip, but at the group level instead of the individual-channel level.</p>
-
-<p>The labels on the front panel say MON, but the destination is the master mix, not the studio speakers. (Section 5 walks the master strip's MON LEVEL knob, which is a different control with a different job: the volume of the control-room speakers.)</p>
-
-<p><strong>SOLO.</strong> A white pushbutton. Press it to send just this submaster to the solo bus, muting the other submasters in the control room while you listen. Same job as the SOLO button on the input strip, applied at the group level instead of the channel level.</p>
-
-<p><strong>TAPE.</strong> A red pushbutton that selects the source for the whole middle section (bargraph, AUX 5 and 6, MON LEVEL and MON PAN, SOLO). Up (out): the live subgroup output, summed from whichever input channels routed here. Down (in): the playback coming back from the DAW through the MONITOR RETURNS jack on the back (covered later in this section). The name TAPE is a holdover from when those returns were a tape machine; most studios now use it to flip between "what's going to the DAW" and "what's coming back from the DAW."</p>
-
-<h3>Subgroup fader (bottom of strip)</h3>
-
-<p>A 100mm fader controlling the level of this subgroup's output at the SUBMASTER OUTPUT jack on the back: the level the DAW gets. It does not affect the subgroup's contribution to the master mix (which is set by the MON LEVEL above). The fader scale matches the input strip's: minus-infinity at the bottom, 0 (unity) marked with a thicker line, +10 at the top.</p>
-
-<div class="callout">
-  <div class="callout-label">Two ways to read a submaster strip</div>
-  <p>The eight submaster strips look like one structure, but each strip is actually doing two jobs at once. Easy to miss when you're walking it control by control:</p>
-  <ol>
-    <li><strong>The strip is both an output and a return.</strong> Going out: it's the subgroup that combines the input channels routed here, and that combined signal has two destinations: the SUBMASTER OUTPUTS jack on the back (level set by the submaster fader, typically to the DAW), and the master mix (level and pan set by MON LEVEL and MON PAN). Coming back: the strip is also the return for one playback track of the DAW, arriving at the MONITOR RETURNS jack. The TAPE button decides whether the middle controls are operating on the live subgroup going out or the playback coming back.</li>
-    <li><strong>The eight submasters double as eight stereo effects returns.</strong> The top of each strip (MUTE, BAL, FX RET) is a self-contained stereo input that has nothing to do with the subgroup-output role. It's there so an outboard effect can be plugged into the back of the console and blended into the mix without using up an input channel.</li>
-  </ol>
-</div>
 
 <h3>The back of the submaster section</h3>
 
