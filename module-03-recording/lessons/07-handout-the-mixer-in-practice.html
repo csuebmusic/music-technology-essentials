@@ -268,6 +268,148 @@
   <li><strong>Stage monitors (wedges):</strong> a separate mix for each performer, so each player hears what <em>they</em> need to perform well. The vocalist mostly wants their own voice plus a bit of the kick to lock the timing; the bassist wants kick, snare, and their own bass; the drummer wants the bass and the click; the guitarist wants vocal, guitar, and drums; the keyboardist wants vocal, her own keys and laptop, and enough drums to lock in. Five performers, five different mixes, all built from the same twelve channels.</li>
 </ol>
 
+<p>Sketched at the level of inputs and outputs, the scenario looks like this. The band's twelve signals arrive on the left in two cable families: eight mic-level signals on XLR (vocal, guitar amp, bass DI, bass amp, four drum mics) and four line-level signals on TRS from the keyboardist (keys L/R, laptop L/R). All twelve land at the same console. From that console, two output mixes go to two destinations: the front-of-house speakers facing the audience, and the five stage wedges facing the performers.</p>
+
+<figure class="diagram">
+  <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="Diagram of the live-sound scenario at the input-output level. On the left, five source groupings labeled with the band's instruments: vocal on XLR, guitar amp on XLR, bass (DI plus amp mic) on two XLRs, drums (kick, snare, two overheads) on four XLRs, and keys plus laptop on four TRS lines. All cables converge into a single console box in the middle marked with a question mark. From the console, two output paths go to the right: one to the FOH speakers (the audience mix), the other to five stage wedges (the performer mixes).">
+
+    <defs>
+      <marker id="ah-twodest-xlr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="var(--cable-xlr)"/>
+      </marker>
+      <marker id="ah-twodest-trs" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="var(--cable-trs)"/>
+      </marker>
+      <marker id="ah-twodest-out" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="var(--accent)"/>
+      </marker>
+    </defs>
+
+    <text x="360" y="22" text-anchor="middle"
+          font-family="DM Mono, monospace" font-size="11" letter-spacing="0.12em"
+          fill="var(--accent)">TWELVE SIGNALS IN · TWO MIXES OUT</text>
+
+    <!-- Console (shared in the middle, spanning all rows) -->
+    <g>
+      <rect x="320" y="60" width="140" height="360" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="390" y="232" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Console</text>
+      <text x="390" y="262" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="34" font-weight="600" fill="var(--accent)">?</text>
+    </g>
+
+    <!-- ROW 1: Vocal (XLR) -->
+    <g>
+      <rect x="20" y="65" width="130" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="85" y="88" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Vocal</text>
+      <text x="85" y="104" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">mic level</text>
+
+      <line x1="152" y1="90" x2="318" y2="90"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-twodest-xlr)"/>
+      <text x="235" y="82" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9"
+            fill="var(--cable-xlr)">XLR · ×1</text>
+    </g>
+
+    <!-- ROW 2: Guitar amp (XLR) -->
+    <g>
+      <rect x="20" y="130" width="130" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="85" y="153" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Guitar amp mic</text>
+      <text x="85" y="169" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">mic level</text>
+
+      <line x1="152" y1="155" x2="318" y2="155"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-twodest-xlr)"/>
+      <text x="235" y="147" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9"
+            fill="var(--cable-xlr)">XLR · ×1</text>
+    </g>
+
+    <!-- ROW 3: Bass (DI + amp mic), 2 XLR -->
+    <g>
+      <rect x="20" y="195" width="130" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="85" y="218" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Bass DI + amp mic</text>
+      <text x="85" y="234" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">mic level</text>
+
+      <line x1="152" y1="220" x2="318" y2="220"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-twodest-xlr)"/>
+      <text x="235" y="212" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9"
+            fill="var(--cable-xlr)">XLR · ×2</text>
+    </g>
+
+    <!-- ROW 4: Drums (kick, snare, OH L/R), 4 XLR -->
+    <g>
+      <rect x="20" y="260" width="130" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="85" y="283" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Drum mics</text>
+      <text x="85" y="299" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">kick · snare · OH L/R</text>
+
+      <line x1="152" y1="285" x2="318" y2="285"
+            stroke="var(--cable-xlr)" stroke-width="2.5" marker-end="url(#ah-twodest-xlr)"/>
+      <text x="235" y="277" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9"
+            fill="var(--cable-xlr)">XLR · ×4</text>
+    </g>
+
+    <!-- ROW 5: Keys + laptop (TRS line) -->
+    <g>
+      <rect x="20" y="325" width="130" height="50" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="85" y="348" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Keys + laptop</text>
+      <text x="85" y="364" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">line level</text>
+
+      <line x1="152" y1="350" x2="318" y2="350"
+            stroke="var(--cable-trs)" stroke-width="2.5" marker-end="url(#ah-twodest-trs)"/>
+      <text x="235" y="342" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9"
+            fill="var(--cable-trs)">TRS · ×4</text>
+    </g>
+
+    <!-- OUTPUT 1: FOH speakers -->
+    <g>
+      <rect x="555" y="120" width="140" height="60" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="625" y="147" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">FOH speakers</text>
+      <text x="625" y="165" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">to the audience</text>
+
+      <line x1="462" y1="220" x2="553" y2="155"
+            stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-twodest-out)"/>
+    </g>
+
+    <!-- OUTPUT 2: Stage wedges -->
+    <g>
+      <rect x="555" y="300" width="140" height="60" rx="4"
+            fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="625" y="327" text-anchor="middle"
+            font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Stage wedges</text>
+      <text x="625" y="345" text-anchor="middle"
+            font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">to the performers · ×5</text>
+
+      <line x1="462" y1="280" x2="553" y2="325"
+            stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-twodest-out)"/>
+    </g>
+
+  </svg>
+  <figcaption>The live-sound scenario at the input-output level. Twelve signals arrive at the console on the left (teal = XLR mic-level, plum = TRS line-level); two output mixes leave on the right. The rest of this section fills in what's inside the box.</figcaption>
+</figure>
+
 <h3>From the stage to the console</h3>
 
 <p>Before any of that routing happens, the twelve signals have to physically travel from the stage to the console at front-of-house, which is halfway back in the room. Venues solve this with two pieces of dedicated hardware: a stage box and a snake.</p>
