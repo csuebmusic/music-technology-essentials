@@ -107,7 +107,8 @@
 
 <ol class="steps">
   <li>Meet the band: <strong>The Sound Below</strong>. Five players, twelve signals into the console.</li>
-  <li>Map the twelve signals onto the console's input channels. Same map for both scenarios.</li>
+  <li>Map the twelve signals onto the console's input channels.</li>
+  <li>Walk the <strong>stage-to-console</strong> chain for each scenario: how twelve signals actually travel from where they're made to where they're shaped.</li>
   <li>Walk <strong>Scenario 1: Live sound.</strong> The audience and the performers each need a different mix from the same set of channels.</li>
   <li>Walk <strong>Scenario 2: Studio recording.</strong> Same band, same channels, very different destinations.</li>
   <li>Compare the two scenarios side by side. Name what stayed the same; name what moved.</li>
@@ -231,10 +232,10 @@
 
 <h3>The channel map</h3>
 
-<p>The twelve signals get assigned to input channels 1 through 12 on the console, in a stable order. The same map applies in both scenarios; only what happens <em>after</em> each channel will change. Channels 13 through 16 sit empty today.</p>
+<p>The twelve signals get assigned to input channels 1 through 12 on the console. Channels 13 through 16 sit empty today. The assignment below is the one used in the live-sound scenario; the studio scenario re-arranges some sources to land on specific preamps (more on that in the next section).</p>
 
 <table class="routing">
-  <caption>Channel assignments · used in both scenarios</caption>
+  <caption>Channel assignments · live-sound scenario</caption>
   <thead>
     <tr>
       <th>Channel</th>
@@ -263,7 +264,63 @@
 
 <hr>
 
-<h2>2 · Scenario 1 · Live sound</h2>
+<h2>2 · From the source to the console</h2>
+
+<p>Twelve signals are at one end of the room; the console is at the other. Or further: the console may be a hundred feet away from the stage, or in a different room behind a glass wall. The signals have to get there. Twelve individual cables thrown across the floor would tangle, trip dancers, fail at the connectors, and (over long distances) act as antennas for every nearby light dimmer and motor. Real venues and real studios solve this with purpose-built hardware that bundles many signals onto one organized path. The hardware looks different in live sound and in studio recording, but it's solving the same problem.</p>
+
+<h3>Live sound: the stage box and the snake</h3>
+
+<p>At the side of the stage, sitting on the floor or bolted to a riser, is a sturdy metal box about the size of a thick laptop. Its top face is a grid of jacks: a row of female XLR inputs (often labeled 1, 2, 3, ... up to the number of channels on the box), sometimes with a row of 1/4" TRS jacks below them for line-level sources. This is the <strong>stage box</strong>. Every mic on the stage plugs into one of its jacks with a short XLR cable. The vocalist's mic on a short run; the kick drum's mic on a short run; each overhead condenser on a short run. The longest cable on the stage at this point is the one from the drum overhead to the stage box, maybe ten feet.</p>
+
+<p>From the back of the stage box, one fat black cable runs off the stage, along the wall or under the floor, all the way to the console at front-of-house. This cable is the <strong>snake</strong> (sometimes a <strong>multicore</strong>, or in audio-engineer slang the <strong>multi</strong>). Inside its outer jacket are dozens of individually shielded balanced pairs: one pair per channel of the stage box, often plus a few return pairs going back the other way for monitor speakers on the stage. A 16-channel snake carries 16 signals on a single physical cable; a 32-channel snake carries 32. At the console end, the snake terminates in a fan-out: a bundle of individual XLR connectors, labeled 1 through N, that plug into the back of the console.</p>
+
+<p>The patching pattern is the part students need to internalize. <strong>The stage box jack number becomes the console channel number.</strong> Vocalist's mic plugged into stage box jack 1 lands on console channel 1. Kick mic plugged into jack 5 lands on console channel 5. The engineer working at the console knows which physical mic is on which channel because the stage box and the console agree on the numbering. Re-patch the mic into a different jack and the source moves to a different console channel; the engineer at FOH has to re-label the fader.</p>
+
+<div class="callout">
+  <div class="callout-label">Why a snake works where twelve loose cables wouldn't</div>
+  <p>Two reasons, one obvious and one not.</p>
+  <p>The obvious one: cable management. Twelve XLR cables snaking individually across a floor are a tripping hazard, a tangle to wind down at the end of the night, and a labeling nightmare. One labeled multicore goes down and comes back up cleanly.</p>
+  <p>The non-obvious one: noise rejection. Every cable on stage is acting as an antenna, picking up hum from the venue's lighting circuits, RF from wireless transmitters, and electrical noise from amplifiers. A single shielded cable carrying balanced signals (the trick you met in Lecture 1: same audio on two wires, one flipped, the receiving end subtracts the two and any noise picked up equally on both wires cancels out) is dramatically quieter at 75 feet than twelve unshielded cables in a tangle would be. Snakes are built specifically to preserve the balanced-line noise rejection over long runs. This is one of the practical reasons why every microphone on stage uses balanced XLR (and not because the engineer just happens to like XLR connectors): without it, long cable runs would be unusable.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Modern digital snakes</div>
+  <p>The picture above describes an analog snake: one shielded pair per audio channel, lots of copper, heavy. A modern variant is the <strong>digital snake</strong>: a small box at the stage that does analog-to-digital conversion locally, and sends all the channels as a single digital stream over an ethernet cable (or a fiber-optic cable) to the console. The same Cat6 cable that runs your laptop's internet can carry 32 channels of audio at 48 kHz. The connectors are different and the box at the stage is doing more work, but conceptually it's the same idea: bundle many signals onto one path. Many touring engineers prefer digital snakes for the weight savings; many older venues still use analog snakes because they already own one and they last forever.</p>
+</div>
+
+<h3>Studio: from live room to patchbay to preamps to console</h3>
+
+<p>The studio answer to the same problem is more elaborate, because a studio is built for repeated use across many different sessions and needs more flexibility than a touring band's stage box. The chain in our studio (MB2508) has five stages between the mic and the recording software.</p>
+
+<ol class="steps">
+  <li><strong>The mic in the live room.</strong> Each microphone plugs into a short XLR cable that runs to a <strong>tie panel</strong> on the wall of the live room: a fixed metal panel with a row of female XLR jacks built into it (8 of them in MB2508). The panel labels are visible from inside the room: mic plugs into jack 1, jack 2, and so on.</li>
+  <li><strong>Internal cabling through the wall.</strong> Behind the tie panel, each jack is permanently wired through the wall to a corresponding jack inside the <strong>cabinet</strong>, which sits in the recording booth on the other side. The musicians never see this wiring. It just delivers the signal from the live-room wall to the booth.</li>
+  <li><strong>The XLR patch panel in the cabinet.</strong> Inside the cabinet is the other end of those internal cables, terminated as a row of 8 female XLR jacks. This is the <strong>patch panel</strong> (sometimes loosely called a patchbay, although that name is more strictly reserved for the 1/4" TRS routing bays elsewhere in studios). Each jack is the booth-side mirror of one tie-panel jack: tie-panel jack 1 → patch panel jack 1, and so on. Standing at the cabinet, the engineer sees 8 labeled inputs.</li>
+  <li><strong>The two hardware preamps.</strong> Behind the patch panel, the jacks are wired in a fixed pattern: the <strong>odd jacks (1, 3, 5, 7)</strong> route to the four inputs of the <strong>Focusrite ISA 828</strong>, and the <strong>even jacks (2, 4, 6, 8)</strong> route to the four inputs of the <strong>Octopre Platinum</strong>. These two preamps live outside the console, and they are the first place where the mic-level signal gets amplified up to line level. Each preamp has its own gain knob per channel; on a tracking day the engineer sets those gains for the level they want into Pro Tools.</li>
+  <li><strong>Into the Toft, on the LINE inputs.</strong> The eight preamp outputs feed eight of the Toft's LINE inputs on the back (not the MIC inputs). The signal arriving at the console is already line-level, already boosted, already coloured by whichever preamp it passed through. From here it travels through whatever channel-strip processing the engineer dials in (EQ, fader, routing) on its way to the audio interface, the Mac Pro, and Pro Tools.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">The mic preamp left the console</div>
+  <p>In Monday's reading, the channel strip's <strong>INPUT GAIN</strong> knob was the place where the preamp lived: a red knob at the top of each strip, setting how much amplification the mic-level signal received before passing through the rest of the channel. That description fits any console where the preamp is on board.</p>
+  <p>In our studio, the preamp has been moved outside the console. The ISA 828 and the Octopre do the mic-level-to-line-level boost <em>before</em> the signal ever reaches the Toft. By the time a channel sees the signal, the gain has already been set on the external preamp's front panel; the Toft's INPUT GAIN knob becomes a secondary trim (typically left at unity, or used for fine adjustment), and the <strong>LINE</strong> button at the top of the strip is engaged so the channel listens to the LINE jack on the back instead of the MIC jack.</p>
+  <p>Why bother moving the preamp out? Two reasons. The first is sound: external preamps like the ISA 828 are designed and built to a higher specification than the preamps inside a project-studio console; they impart a particular character that's part of the studio's sonic signature. The second is flexibility: with the preamp separate from the console, the engineer can choose a different preamp per source per session (one preamp for vocals, another for drums, a third borrowed from a friend just for this take), without being locked into whatever the console happened to ship with.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Which preamp for which source: the choice the patch panel encodes</div>
+  <p>The two preamps in MB2508 don't sound the same. The <strong>Focusrite ISA 828</strong> ("the good one") is a transformer-coupled design, clean and detailed, with a warmth on transient material that engineers reach for on lead vocals and intimate sources. The <strong>Octopre Platinum</strong> ("the cheaper one") is solid-state, more workmanlike, perfectly usable on louder sources where the preamp's character is less audible against the source's own loudness.</p>
+  <p>Because the patch panel's odd jacks are hard-wired to the ISA and the even jacks are hard-wired to the Octopre, <strong>which jack you plug a mic into is a decision about how that mic will sound on the recording.</strong> The engineer doesn't have a "preamp select" switch; the choice gets made by which jack the cable goes into. The conventional move is to send the most exposed, most-listened-to sources through the ISA (vocals first, then stereo pairs, then any solo instrument the song depends on) and route the loud workhorse sources through the Octopre (kick drum, guitar amp, anything in a busy mix).</p>
+  <p>On a tracking day, the engineer has eight patch panel jacks to allocate. With only four mics active (drums), or two (bass DI + bass amp), or one (vocals), the eight jacks are more than enough. The constraint is real only when many mics need to be on at once, and even then the engineer can swap patches mid-session.</p>
+</div>
+
+<h3>The two answers, side by side</h3>
+
+<p>The stage box and the studio's tie-panel-plus-patch-panel solve the same problem from different angles. The stage box is built for a band that arrives, sets up, plays, and leaves; everything is patched once for the night, then the snake is wound down and the rig moves on. The studio's chain is built for endless reuse across years of sessions: the tie panel and the internal wiring stay fixed; the patch panel jacks and the preamp routing stay fixed; what changes from session to session is which mics get plugged in and to which jacks. One answers "how do we move many signals through a building for one evening." The other answers "how do we run a recording room that supports a thousand sessions over a decade."</p>
+
+<hr>
+
+<h2>3 · Scenario 1 · Live sound</h2>
 
 <p>The Sound Below is playing a small venue. The stage holds the band, the amps, the drums, the keys rig, and five monitor wedges (one in front of each performer). Out in front of the stage are the front-of-house speakers facing the audience. Halfway back in the room sits the engineer, behind the console.</p>
 
@@ -526,30 +583,36 @@
 
 <hr>
 
-<h2>3 · Scenario 2 · Studio recording session</h2>
+<h2>4 · Scenario 2 · Studio recording session</h2>
 
-<p>Same band. Same twelve signals. Same twelve channels on the console. But now the venue is gone: the band is in a studio's live room, the engineer is in the control room behind the glass, and the goal isn't a real-time mix for an audience; it's a clean multitrack <strong>recording</strong> that can be mixed later.</p>
+<p>Same band, same twelve signals, same console, very different goal. The band is now in a studio's live room; the engineer is in the control room behind the glass; the audience is gone. The output isn't a real-time mix for someone listening tonight. It's a multitrack <strong>recording</strong>: each instrument captured on its own track in Pro Tools, to be edited and mixed later in front of the screen, days or weeks after the band has gone home.</p>
 
-<p>Three things shift. First, the L-R master no longer feeds speakers in the room with the band; it feeds the control-room monitors (the speakers the engineer is listening to). Second, every channel needs to land on its own track in the DAW so it can be edited independently later. Third, the audience is replaced by a set of headphones on each player's head; the wedge mixes become <strong>headphone cues</strong>, built the same way (aux sends) but going to a different physical destination.</p>
+<p>The reality of studio work, almost everywhere, is that the band does <em>not</em> play together all at once. Studio recording proceeds by <strong>tracking</strong>: one source or one section at a time, layering the recording in passes. The typical order is rhythm section first (drums, then bass), then the harmonic and rhythmic layers (guitar, then keys), and finally vocals on top. The drummer plays to a click track in headphones; the bassist plays to the drum recording; the guitarist plays to drums and bass; the keyboardist plays to drums and bass and guitar; the vocalist sings to the full instrumental band. Each player performs in dialogue with whatever was captured on the previous days. By the end, the band has made an arrangement together that they never played together in the room.</p>
 
-<h3>Getting every channel to the DAW</h3>
+<p>The reasons are practical and artistic. Practically: isolating one source at a time means no bleed (a kick mic picks up only the kick, not also the bassist's amp through the open door). Artistically: the band can take many takes of each part without anyone else getting tired, edit between takes, fix what doesn't work, and use the studio as a composition tool. The studio session is less like a performance and more like a slow, patient assembly.</p>
 
-<p>The studio uses an audio interface as the bridge from the console's analog signals to the computer's digital tracks. Each input channel on the console has a <strong>DIR. O/P</strong> jack on the back (Lecture 3, section 2): a tap of that channel's post-fader signal, sent straight out to a single destination independently of the routing buttons. Patch Ch 1's direct out into input 1 on the audio interface, Ch 2's direct out into input 2, and so on for all twelve channels. The DAW gets twelve independent tracks; each track is exactly what was on its channel strip, with the engineer's input gain and channel EQ already applied.</p>
+<p>This re-shapes everything about how the console gets used. The L-R master still feeds the control-room monitors (the engineer needs to hear what's being captured plus what's playing back). Each tracking pass only uses the channels for the source being recorded that day; the rest of the channels carry previous days' takes coming back from Pro Tools. The wedge-mix-per-performer picture from Scenario 1 collapses to a single cue mix for whoever is in the live room. And the I/P REV button, instead of being a once-at-the-end move, becomes part of the daily routine.</p>
+
+<h3>Getting the signals to Pro Tools</h3>
+
+<p>The route from microphone to Pro Tools track is the long chain you walked in section 2: mic → live-room tie panel → internal cabling → patch panel in the cabinet → preamp 1 or preamp 2 → Toft LINE input → channel strip → audio interface → Mac Pro → Pro Tools.</p>
+
+<p>The piece that's new in this scenario is the last leg, the Toft-to-interface connection. Each input channel on the console has a <strong>DIR. O/P</strong> jack on the back (Lecture 3, section 2): a tap of that channel's post-fader signal, sent straight out to a single destination independently of the routing buttons. The studio's audio interface has a row of inputs; each direct out feeds one of them. Pro Tools sees one input per channel of the Toft, and records each one as its own track.</p>
 
 <div class="callout">
-  <div class="callout-label">Two ways to get tracks to the DAW</div>
-  <p>Direct outs aren't the only option for getting channels to a multitrack recorder. The alternative is to route channels to subgroups and then send the subgroup outputs to the DAW. The reading's drum example is a setup for this: route the four drum mics to subgroup pair 1-2, and the DAW gets one stereo drum track that has the kit pre-mixed at the console. The trade-off: simpler at mixdown (one stereo track instead of four), but you can't change the balance among the drum mics afterward.</p>
-  <p>The everyday studio choice is to send <em>everything</em> to the DAW via direct outs (one track per mic, total flexibility at mixdown), and use subgroups only for the engineer's live control-room mix during tracking. That way the DAW captures the most flexible version, and the subgroups serve the engineer's ears in the moment.</p>
+  <div class="callout-label">Channel mapping in the studio is more flexible</div>
+  <p>In Scenario 1 the channel map was fixed: Ch 1 always meant vocal, Ch 5 always meant kick, and so on. In the studio the mapping is more fluid because each tracking day uses a different subset of the patch panel jacks, and the engineer chooses which patch panel jack each mic goes into based on which preamp the source should pass through. A snare mic patched into jack 3 (one of the ISA 828's inputs) ends up on a different Toft channel than the same snare mic patched into jack 4 (one of the Octopre's inputs). The Toft channel number is downstream of the patch panel decision.</p>
+  <p>On drums day, four mics fill four jacks; on bass day, two mics fill two; on vocal day, one mic fills one. The previous day's takes don't take up patch panel jacks at all (they play back from Pro Tools into the Toft's MON jacks, not the LINE jacks). Channels that aren't taking a fresh input that day are dedicated to monitoring the playback.</p>
 </div>
 
-<h3>The headphone cues: same aux sends, different destination</h3>
+<h3>The headphone cue: one mix for the player in the room</h3>
 
-<p>The performers in the live room need to hear themselves and each other while they play; without headphones, the only thing in the room is acoustic bleed from drums and amps. Each performer gets a pair of headphones connected to a <strong>cue mix</strong>: a personalized blend of the channels, built on the aux sends in exactly the same way as the wedges in Scenario 1.</p>
+<p>The performers in the live room need to hear themselves and the previous tracks while they play. Since only one or two players are in the room on any given tracking day, the console only needs to build one or two cue mixes, not five. <strong>Aux 1</strong> typically carries the cue mix for the day: a personalized blend of the previous days' recorded tracks (playing back through the MON returns), the click track, and the current day's live mic, all balanced to whatever level the player needs in their headphones.</p>
 
-<p>The vocalist's cue is built on Aux 1, the guitarist's on Aux 2, the bassist's on Aux 3, the drummer's on Aux 4, the keyboardist's on Aux 5. Each aux runs out of the console to a headphone amplifier (a small box that distributes the cue signal to multiple headphone jacks at performer-comfortable levels). All five auxes stay <strong>pre-fader</strong>, for the same reason as live: the engineer's level moves on the channel faders shouldn't bleed into what the performers are hearing.</p>
+<p>The aux runs out of the console to a headphone amplifier in the live room, where it gets distributed to the player's headphones (and any spare headphones for additional players who happen to be in the room without recording, watching the takes). Aux 1 stays <strong>pre-fader</strong>: the engineer's level moves on the channel faders are for the control-room mix, not for what the player hears.</p>
 
 <table class="routing">
-  <caption>Scenario 2 · studio session · aux assignments</caption>
+  <caption>Scenario 2 · studio tracking · aux assignments</caption>
   <thead>
     <tr>
       <th>Aux</th>
@@ -561,57 +624,40 @@
   <tbody>
     <tr>
       <td class="ch">Aux 1</td>
-      <td>Vocalist's headphone cue</td>
+      <td>Player's headphone cue (whoever is tracking today)</td>
       <td>Pre</td>
-      <td>Vocal · click · scratch guide tracks</td>
+      <td>Previous-day tracks · click · live mic of the player in the room</td>
     </tr>
     <tr>
-      <td class="ch">Aux 2</td>
-      <td>Guitarist's headphone cue</td>
-      <td>Pre</td>
-      <td>Vocal · guitar · drums · click</td>
-    </tr>
-    <tr>
-      <td class="ch">Aux 3</td>
-      <td>Bassist's headphone cue</td>
-      <td>Pre</td>
-      <td>Bass DI · kick · snare · click</td>
-    </tr>
-    <tr>
-      <td class="ch">Aux 4</td>
-      <td>Drummer's headphone cue</td>
-      <td>Pre</td>
-      <td>Click (loud) · bass DI · vocal</td>
-    </tr>
-    <tr>
-      <td class="ch">Aux 5</td>
-      <td>Keyboardist's headphone cue</td>
-      <td>Pre</td>
-      <td>Keys · laptop · vocal · drums · click</td>
-    </tr>
-    <tr>
-      <td class="ch">Aux 6</td>
-      <td>Free for outboard FX during tracking, or unused</td>
+      <td class="ch">Aux 2-6</td>
+      <td>Free for additional cues, FX sends, or unused</td>
       <td>–</td>
-      <td>Engineer's preference</td>
+      <td>Used as the session calls for them</td>
     </tr>
   </tbody>
 </table>
 
+<p>If two players are tracking together on the same day (a bassist and a drummer recording the rhythm section live, say), Aux 2 picks up the second cue mix. If the engineer wants a wet vocal in the singer's headphones to help with pitch and feel, Aux 3 becomes a reverb send. The other auxes stay available; the session uses what it needs.</p>
+
 <div class="callout">
   <div class="callout-label">What's a click track</div>
-  <p>A <strong>click track</strong> is a metronome the players hear in their headphones while they record. Each beat is a short click sound at the song's tempo; the players follow it so the recording lands on a steady tempo grid. Useful when the song will be edited later (clicks make it easy to line up takes), or when there's no drummer carrying the time, or when the band wants to record one player at a time (overdubbing) and needs a tempo reference all the takes share. The click usually lives on its own DAW track that gets fed back into the console via a spare input or a tape return; from there it gets sent to whichever aux cues need it.</p>
+  <p>A <strong>click track</strong> is a metronome the players hear in their headphones while they record. Each beat is a short click sound at the song's tempo; the players follow it so the recording lands on a steady tempo grid. The drummer is the first one to hear it (drums are usually tracked first, and the click sets the tempo for every layer that follows). Once the drum takes are committed, the click can stay in the headphone mix or drop out; many engineers keep it in for the rest of tracking so every layer locks to the exact same grid.</p>
+  <p>The click usually lives on its own track in Pro Tools that gets fed back into the console via a spare MON input or a tape return; from there it gets sent into the cue mix on Aux 1.</p>
 </div>
 
 <h3>What the engineer hears: the control-room mix</h3>
 
-<p>While the band tracks, the engineer is in the control room listening through the studio monitors. The L-R master output feeds those monitors (via the MASTER O/P jacks and the monitor circuit you met in Lecture 3, section 5). The engineer adjusts faders, EQ, and pans to get a balanced reference mix for their own ears. None of this affects what gets recorded: the DAW is capturing each channel's direct out independently, so the engineer's mix decisions during tracking are just for monitoring; the real mix happens later, in front of the DAW.</p>
+<p>While someone is tracking, the engineer is in the control room listening through the studio monitors. The L-R master output feeds those monitors (via the MASTER O/P jacks and the monitor circuit you met in Lecture 3, section 5). The engineer adjusts faders, EQ, and pans for the day's session: the live mic of whoever's playing, plus the previous days' tracks coming back from Pro Tools, all balanced for the engineer's own ears. None of this affects what gets recorded: Pro Tools captures the day's live channels via their direct outs independently of how the engineer sets the channel-strip fader or EQ. The control-room mix during tracking is the engineer's monitoring reference, not the recording itself; the real mix happens later, with the entire band's tracks committed.</p>
 
-<h3>At mixdown: the I/P REV move</h3>
+<h3>The I/P REV move: how previous-day tracks get to the big faders</h3>
 
-<p>The band leaves; the engineer comes back the next day to mix. The twelve tracks are now sitting in the DAW. To mix on the console, the engineer needs each DAW track playing back through its own channel strip, with the big fader, the four-band EQ, and the routing all available for shaping. The way to do that on an in-line console is the <strong>I/P REV</strong> button.</p>
+<p>From day 2 of tracking onward, the engineer has a problem the live show never has. The bassist is in the live room playing along with the drum tracks from day 1. The drum tracks are coming back from Pro Tools into the Toft's MON jacks (one DAW output per drum mic, into the corresponding channel's MON jack on the back). On the monitor path, each MON input feeds only the small monitor knob in the middle of the strip: enough level to send the drums to the control-room speakers and to the bassist's headphone cue, but no EQ, no big fader, no real shaping. If the engineer wants to EQ the kick down a few dB so the bassist can hear his own low end better, the small monitor knob doesn't reach the EQ; it's downstream of all the channel-strip processing.</p>
 
-<p>The DAW's playback outputs are wired to the console's <strong>MON</strong> jacks on the back: DAW output 1 to Ch 1's MON jack, DAW output 2 to Ch 2's MON jack, and so on. Normally (during tracking) the MON input feeds the small monitor knob in the middle of the strip. When the engineer presses I/P REV at the top of every input strip, the two paths swap: the signal coming in through MON now flows through the big channel fader with the full EQ and aux-send chain. The mic input (which has nothing on it now anyway, since the mics have gone home) flows through the smaller monitor path, where it's silent. Twelve presses of I/P REV, and the twelve DAW tracks are sitting on the twelve channel strips with full processing available.</p>
+<p>The fix is the <strong>I/P REV</strong> button at the top of each input strip. When the engineer presses I/P REV on a channel, the two paths swap: the signal coming in through MON (the DAW playback) now flows through the big channel fader with the full EQ and aux-send chain, and whatever was at the MIC or LINE input flows down the smaller monitor path. On every channel that's playing back a previous take during today's session, I/P REV gets pressed; the playback now sits on the big faders, fully shapeable. The channels for whatever new sources are being tracked today stay with I/P REV off, so the live mics still flow normally through the channel path on their way to Pro Tools.</p>
+
+<p>The same move is also what the engineer uses at <strong>mixdown</strong>, after all tracking is done. With the live mics gone home, every channel that was carrying a fresh input now becomes a playback-only channel; I/P REV gets pressed across the board, and the full multitrack sits on the big faders for mixing. The button isn't a mixdown-only feature; it's the in-line console's way of letting any channel carry either a fresh input or a recorded playback, on a strip-by-strip basis, switchable at any moment.</p>
+
+<p>The diagram below shows the swap as a comparison between two states of a single channel strip: I/P REV off (the channel path is alive, the monitor path carries DAW playback through the small knob) and I/P REV on (the paths trade places, and DAW playback gets the big fader). It applies equally to a tracking day's playback channel and to a mixdown-day channel.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg"
@@ -686,12 +732,12 @@
 
 <div class="callout">
   <div class="callout-label">Why the in-line design pays off here</div>
-  <p>On a non-in-line console (called a <strong>split</strong> design), the channels and the monitor returns live on entirely separate sets of strips, and a typical twelve-channel tracking session would mean the engineer is mixing on a different set of faders from the one they tracked through. On an in-line console, the channel and its monitor return share the same strip, and the I/P REV button is the swap-over. One row of faders carries the band live; the same row, with the button pressed, carries the band at mixdown. The mixing fingers stay on the same strip.</p>
+  <p>On a non-in-line console (called a <strong>split</strong> design), the channels and the monitor returns live on entirely separate sets of strips, and a tracking session means the engineer is constantly looking back and forth between two sets of faders: one for the live mics, another for the playback. On an in-line console, the channel and its monitor return share the same strip, and the I/P REV button is the swap-over per strip. Today's live channels stay one way; yesterday's playback channels flip the other way; both are right under the engineer's hand on the same row of faders. When tracking is done and mixing begins, every strip flips together and the same row of faders becomes the mix surface. The mixing fingers stay on the same strip across the entire arc of the recording.</p>
 </div>
 
 <hr>
 
-<h2>4 · Synthesis · same console, different destinations</h2>
+<h2>5 · Synthesis · same console, different destinations</h2>
 
 <p>Two scenarios on the same desk. Now look at what stayed the same and what moved.</p>
 
@@ -706,24 +752,29 @@
   </thead>
   <tbody>
     <tr>
-      <td class="ch">Input channels 1-12</td>
-      <td>Eight mic-level + four line-level signals from stage</td>
-      <td>Eight mic-level + four line-level signals from live room (same twelve)</td>
+      <td class="ch">Sources active at once</td>
+      <td>All twelve, all the time, all night</td>
+      <td>One source or section at a time, across many tracking days</td>
     </tr>
     <tr>
-      <td class="ch">Input gain, phase, HPF, EQ</td>
-      <td>Set per channel to shape each signal</td>
-      <td>Set per channel to shape each signal</td>
+      <td class="ch">Source-to-console chain</td>
+      <td>Stage box on stage → snake → console at FOH</td>
+      <td>Tie panel in live room → cabinet patch panel → external preamps → Toft LINE inputs</td>
     </tr>
     <tr>
-      <td class="ch">Subgroups 1-2</td>
+      <td class="ch">Mic preamp</td>
+      <td>On-board on each channel strip (INPUT GAIN, MIC jack)</td>
+      <td>External (ISA 828 or Octopre); on-board preamp bypassed (LINE jack)</td>
+    </tr>
+    <tr>
+      <td class="ch">Subgroups 1-2 · drum bus</td>
       <td>Drum bus for FOH level control</td>
-      <td>Drum bus for engineer's control-room mix only</td>
+      <td>Drum bus for engineer's control-room mix on drums day</td>
     </tr>
     <tr>
-      <td class="ch">Subgroups 3-4</td>
-      <td>Electronic bus (keys + laptop) for FOH level control</td>
-      <td>Electronic bus for engineer's control-room mix only</td>
+      <td class="ch">Subgroups 3-4 · electronic bus</td>
+      <td>Keys + laptop bus for FOH level control</td>
+      <td>Keys + laptop bus for engineer's control-room mix on keys day</td>
     </tr>
     <tr>
       <td class="ch">L-R master</td>
@@ -731,29 +782,29 @@
       <td>Feeds the control-room speakers (engineer)</td>
     </tr>
     <tr>
-      <td class="ch">Aux 1-5 (pre-fader)</td>
-      <td>Stage wedges (one per performer)</td>
-      <td>Headphone cues (one per performer)</td>
+      <td class="ch">Aux sends (pre-fader)</td>
+      <td>Five stage wedges (one per performer, Aux 1-5)</td>
+      <td>One headphone cue for whoever is tracking today (Aux 1)</td>
     </tr>
     <tr>
-      <td class="ch">Aux 6 (post-fader)</td>
-      <td>FX send to outboard reverb</td>
-      <td>Free for outboard FX or unused</td>
+      <td class="ch">Aux sends (post-fader)</td>
+      <td>FX send to outboard reverb (Aux 6)</td>
+      <td>Free for outboard FX or additional cues (Aux 2-6)</td>
     </tr>
     <tr>
       <td class="ch">Direct outs</td>
       <td>Typically unused</td>
-      <td>One per channel to the audio interface, into the DAW</td>
+      <td>One per active channel to the audio interface, into Pro Tools</td>
     </tr>
     <tr>
       <td class="ch">MON inputs + I/P REV</td>
       <td>Unused (no DAW playback during a live show)</td>
-      <td>DAW playback comes back here; I/P REV at mixdown</td>
+      <td>DAW playback comes back here; I/P REV flips previous-day tracks onto the big faders during tracking, then flips everything at mixdown</td>
     </tr>
   </tbody>
 </table>
 
-<p>The shape of the work is the same: take many signals in, shape each one, build the mixes the situation calls for, send the result somewhere. The hardware is identical. The patching, and the destination of every output, is what changes between contexts.</p>
+<p>The two scenarios run on different clocks. The live show is real-time and simultaneous: twelve signals into the console at the same moment, two output mixes built and ridden in parallel, all of it finished by the end of the night. The studio is iterative and layered: one or two signals into the console at a time, captured to disk, then revisited across days as the next layer plays along with the previous. The shape of the engineer's work is the same in both cases: take signals in, shape each one with the channel-strip controls, build whichever mixes the situation calls for, send the result somewhere. The hardware is identical. The patching, the destination of every output, and the pacing change between contexts.</p>
 
 <p>The same observation extends past these two scenarios. A film mixing stage, a broadcast truck, a live-streamed church service, an album-mixing session, a podcast studio: the console at the center is doing the same operations. Channels, EQ, fader, pan, routing to a subgroup or a master, aux sends to wherever the situation needs parallel mixes. Once the underlying operations make sense, every new context is a re-patching exercise rather than a re-learning exercise.</p>
 
