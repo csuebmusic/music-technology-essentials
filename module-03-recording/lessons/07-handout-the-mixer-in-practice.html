@@ -264,7 +264,7 @@
 <p>The job: take the twelve signals coming off the stage and send them to <strong>two destinations</strong> at once.</p>
 
 <ol class="steps">
-  <li><strong>Front of house (FOH):</strong> the speakers facing the audience. The audience needs to hear the whole band balanced as a mix. This is the L-R master output.</li>
+  <li><strong>Front of house (FOH):</strong> the speakers facing the audience. The audience needs to hear the whole band balanced as a mix. The console builds the master mix and sends it out at MASTER O/P, which cables to the FOH power amps that drive the audience speakers.</li>
   <li><strong>Stage monitors (wedges):</strong> a separate mix for each performer, so each player hears what <em>they</em> need to perform well. The vocalist mostly wants their own voice plus a bit of the kick to lock the timing; the bassist wants kick, snare, and their own bass; the drummer wants the bass and the click; the guitarist wants vocal, guitar, and drums; the keyboardist wants vocal, her own keys and laptop, and enough drums to lock in. Five performers, five different mixes, all built from the same twelve channels.</li>
 </ol>
 
@@ -478,17 +478,21 @@
 
 <p>All twelve signals arrive at the console on the MIC (XLR) jack: the eight mic-level signals from microphones and the DI box on the bass, plus the keyboardist's four signals after her DI box. Only the two overhead condensers need phantom power; the dynamics and the DI boxes don't draw +48V. (If you're unsure why, the polar-patterns and condenser-mic sections of Lecture 2 cover it.)</p>
 
-<h3>The FOH mix: routing to L-R</h3>
+<h3>The FOH mix: routing to the master mix</h3>
 
-<p>Only the first four channels (vocal, guitar, bass DI, bass amp) get routed directly to the L-R master. Their <strong>L-R</strong> button sends each channel to the master stereo bus; the channel pan knob places it left or right; the channel fader sets its level in the mix; the channel EQ shapes its tone. The eight remaining channels (drums, keys, laptop) take an intermediate stop on the way to L-R, covered in the next two paragraphs. The engineer rides the four direct channels alongside the two subgroup pairs, makes EQ moves, and uses the master fader to set the overall level coming out of the FOH speakers.</p>
+<p>Channels 1 through 4 (vocal, guitar, bass DI, bass amp) go directly to the master mix. Their <strong>L-R</strong> button assigns them; the channel pan knob places each left or right; the channel fader sets level; the channel EQ shapes tone. Four faders, one for each of these channels, ridden directly by the engineer.</p>
 
-<p>For drums, the standard move is the one the reading walked through: route the four drum channels (5, 6, 7, 8) to <strong>subgroup pair 1-2</strong> instead of straight to L-R. Pan the kick and snare center; pan overhead L hard left and overhead R hard right. Then route subs 1 and 2 to the L-R master with their own pair of faders. Now the engineer has one pair of submaster faders that controls the whole drum kit's level in the FOH mix, without touching the individual drum-mic balance. If the drums need to come down 3 dB during a quiet verse, two faders move; the kit's internal balance stays exactly where it was.</p>
+<p>For drums, the standard move is the one the reading walked through: route the four drum channels (5, 6, 7, 8) to <strong>subgroup pair 1-2</strong> instead of directly to L-R. The 1-2 button on each input strip is the assignment (L-R off on these channels). Pan the kick and snare center, overhead L hard left, overhead R hard right. The four channels sum into the subgroup pair: sub 1 carries the left side of the kit, sub 2 the right.</p>
 
-<p>The same logic applies to the keyboardist's four channels. Route the keys L/R and laptop L/R (channels 9 through 12) to <strong>subgroup pair 3-4</strong>. Pan each L channel hard left and each R channel hard right; the two stereo pairs sum across the subgroup pair into one stereo electronic submix. Subs 3 and 4 then route to L-R with their own fader pair. One pair of faders controls everything coming from the keys rig in the FOH mix, and the internal balance between the stage keyboard and the laptop stays set wherever the keyboardist's gain-staging put it.</p>
+<p>From the subgroup, the kit reaches the master mix through the submaster strip's <strong>MON LEVEL</strong> and <strong>MON PAN</strong> in the middle of the strip (with the strip's TAPE button up, since the live subgroup output is the source, not playback). MON LEVEL sets the drum bus's overall level in the master mix; MON PAN places it (sub 1 hard left, sub 2 hard right, for a stereo kit). The submaster fader at the bottom of the strip, which would normally control the level out to a recorder, stays unused in a live show: there's no recorder to feed.</p>
+
+<p>So for the live show, the engineer's drum-control surface on the Toft is two knobs: MON LEVEL on submaster 1 (drum bus left) and MON LEVEL on submaster 2 (drum bus right). Pull both knobs down by 3 dB during a quiet verse and the whole kit drops in the master mix by 3 dB together, with the internal balance among the drum mics untouched. Bring them back up for the chorus.</p>
+
+<p>The same logic applies to the keyboardist's four channels. Route the keys L/R and laptop L/R (channels 9 through 12) to <strong>subgroup pair 3-4</strong>. Pan each L channel hard left and each R channel hard right; the two stereo pairs sum across the subgroup pair into one stereo electronic submix. The submaster strips for subs 3 and 4 then place that submix into the master mix through their MON LEVEL and MON PAN, exactly the same move as the drums. One pair of knobs controls everything coming from the keys rig in the FOH mix.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 410" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound main routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. The four drum channels (5 through 8) route into a Subs 1-2 box, the drum bus. The four keys-and-laptop channels (9 through 12) route into a Subs 3-4 box, the electronic bus. The non-drum, non-electronic channels (1 through 4) and both subgroup pairs feed the L-R master at the top of the routing region, which goes to the FOH speakers on the right.">
+       role="img" aria-label="Diagram of the live-sound main routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. The four drum channels (5 through 8) route into a Subs 1-2 box, the drum bus. The four keys-and-laptop channels (9 through 12) route into a Subs 3-4 box, the electronic bus. The non-drum, non-electronic channels (1 through 4) feed the master mix directly. Both subgroup pairs reach the master mix through their submaster strip's MON LEVEL knobs. The master mix exits the console at MASTER O/P, driving the FOH amps that power the audience speakers on the right.">
     <defs>
       <marker id="ah-foh-main" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -569,33 +573,36 @@
     <line x1="142" y1="341" x2="193" y2="342" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
     <line x1="142" y1="369" x2="193" y2="354" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
 
-    <!-- L-R master bus (moved up to align with channels 1-4) -->
+    <!-- Master mix box (moved up to align with channels 1-4) -->
     <g>
       <rect x="370" y="75" width="140" height="60" rx="4" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="440" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">L-R master</text>
-      <text x="440" y="119" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">the FOH mix</text>
+      <text x="440" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Master mix</text>
+      <text x="440" y="119" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">to MASTER O/P</text>
     </g>
 
-    <!-- Arrows: non-drum, non-electronic channels (1-4) to L-R (internal: dotted, soft, near-horizontal) -->
+    <!-- Arrows: non-drum, non-electronic channels (1-4) to master mix (internal: dotted, soft, near-horizontal) -->
     <line x1="142" y1="61" x2="368" y2="85" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
     <line x1="142" y1="89" x2="368" y2="95" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
     <line x1="142" y1="117" x2="368" y2="110" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
     <line x1="142" y1="145" x2="368" y2="120" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
-    <!-- Subs 1-2 → L-R master (internal: dotted, soft) -->
+    <!-- Subs 1-2 → master mix (internal: dotted, soft) -->
     <line x1="317" y1="210" x2="368" y2="125" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
-    <!-- Subs 3-4 → L-R master (internal: dotted, soft) -->
+    <text x="320" y="158" text-anchor="start" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" font-style="italic">via MON LEVEL</text>
+    <!-- Subs 3-4 → master mix (internal: dotted, soft) -->
     <line x1="317" y1="320" x2="368" y2="130" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#ah-foh-internal)"/>
+    <text x="320" y="263" text-anchor="start" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" font-style="italic">via MON LEVEL</text>
 
-    <!-- FOH speakers (moved up to align with L-R master) -->
+    <!-- FOH speakers (moved up to align with master mix) -->
     <g>
       <rect x="565" y="75" width="130" height="60" rx="4" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
       <text x="630" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="var(--bg)">FOH speakers</text>
       <text x="630" y="119" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--bg-alt)">to the audience</text>
     </g>
-    <!-- L-R → FOH speakers stays solid accent: this is the external output, not internal routing -->
+    <!-- Master mix → MASTER O/P → FOH amps → FOH speakers (one solid arrow representing the external chain) -->
     <line x1="512" y1="105" x2="563" y2="105" stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-foh-main)"/>
+    <text x="537" y="143" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--accent)" font-style="italic">via FOH amps</text>
   </svg>
-  <figcaption>Scenario 1 main routing. Dotted arrows show the internal routing on the console (channels and subgroups feeding L-R); the solid arrow on the right is the L-R master output driving the FOH speakers.</figcaption>
+  <figcaption>Scenario 1 main routing. Dotted arrows show internal routing on the console (channels and subgroups landing in the master mix); the solid arrow on the right represents the master mix leaving the console at MASTER O/P and driving the FOH amps that power the audience speakers.</figcaption>
 </figure>
 
 <h3>The wedge mixes: building five different mixes on the aux sends</h3>
@@ -656,11 +663,11 @@
   </tbody>
 </table>
 
-<p>Aux 6 is doing a different job from the five wedges: it feeds an outboard reverb unit instead of a monitor speaker. It runs <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 6 post-fader makes that happen automatically. The reverb return comes back into a spare submaster strip on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the L-R master alongside the dry signals.</p>
+<p>Aux 6 is doing a different job from the five wedges: it feeds an outboard reverb unit instead of a monitor speaker. It runs <strong>post-fader</strong> because the wet effect should follow the dry signal in the FOH mix. If the vocal fader comes down during a quiet section, the reverb on the vocal should come down with it; setting Aux 6 post-fader makes that happen automatically. The reverb return comes back into a spare submaster strip on the FX returns section (where the reading covered the stereo effects returns), where it gets blended into the master mix alongside the dry signals.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the live-sound aux routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. Dashed lines from each channel converge into a parallel aux tap bus that feeds six aux send buses (Aux 1 through Aux 6) at the bottom. Auxes 1 through 5 go to the five wedges on stage; Aux 6 feeds an outboard reverb unit whose return blends back into the L-R master (exiting the frame at the top right).">
+       role="img" aria-label="Diagram of the live-sound aux routing for The Sound Below. Twelve channels on the left labeled Ch 1 Vocal through Ch 12 Laptop R. Dashed lines from each channel converge into a parallel aux tap bus that feeds six aux send buses (Aux 1 through Aux 6) at the bottom. Auxes 1 through 5 go to the five wedges on stage; Aux 6 feeds an outboard reverb unit whose return blends back into the master mix (exiting the frame at the top right).">
     <defs>
       <marker id="ah-foh-aux" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -769,22 +776,22 @@
       <text x="630" y="459" text-anchor="middle">on stage</text>
     </g>
 
-    <!-- Aux 6 → outboard reverb, then return into L-R master via curved arc -->
+    <!-- Aux 6 → outboard reverb, then return into master mix via curved arc -->
     <line x1="562" y1="510" x2="595" y2="510" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ah-foh-aux)"/>
     <g font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">
       <text x="630" y="504" text-anchor="middle" font-weight="600" fill="var(--ink)">outboard FX</text>
       <text x="630" y="519" text-anchor="middle">reverb unit</text>
     </g>
-    <!-- FX-return arc: exits the frame at the top toward the L-R master shown in the main-routing diagram above -->
+    <!-- FX-return arc: exits the frame at the top toward the master mix shown in the main-routing diagram above -->
     <path d="M 670 490 Q 695 280 670 60" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ah-foh-aux)" opacity="0.7"/>
-    <text x="675" y="280" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" transform="rotate(90 675 280)">FX return blends back to L-R master</text>
+    <text x="675" y="280" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)" transform="rotate(90 675 280)">FX return blends into master mix</text>
   </svg>
-  <figcaption>Scenario 1 aux routing. Each channel's aux taps run in parallel to the main flow; five auxes feed the performers' wedges, the sixth feeds an outboard reverb whose return blends back into the L-R master from the diagram above.</figcaption>
+  <figcaption>Scenario 1 aux routing. Each channel's aux taps run in parallel to the main flow; five auxes feed the performers' wedges, the sixth feeds an outboard reverb whose return blends back into the master mix from the diagram above.</figcaption>
 </figure>
 
 <div class="callout">
   <div class="callout-label">One source, seven destinations</div>
-  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the L-R master (audience hears it), the vocal wedge (singer hears it), the four other wedges (everyone else hears it in their stage mixes), and the reverb send (so vocals carry a tail). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
+  <p>The vocalist's mic on Ch 1 ends up in seven places at once during a live show: the master mix (audience hears it via the FOH amps), the vocal wedge (singer hears it), the four other wedges (everyone else hears it in their stage mixes), and the reverb send (so vocals carry a tail). Seven destinations, one mic, one channel strip. The aux sends are what make that possible; the river-with-taps diagram from Monday's reading is exactly this picture at work.</p>
 </div>
 
 <hr>
@@ -797,7 +804,7 @@
 
 <p>The reasons are practical and artistic. Practically: isolating one source at a time means no bleed (a kick mic picks up only the kick, not also the bassist's amp through the open door). Artistically: the band can take many takes of each part without anyone else getting tired, edit between takes, fix what doesn't work, and use the studio as a composition tool. The studio session is less like a performance and more like a slow, patient assembly.</p>
 
-<p>This re-shapes everything about how the console gets used. The L-R master still feeds the control-room monitors (the engineer needs to hear what's being captured plus what's playing back). Each tracking pass only uses the channels for the source being recorded that day; the rest of the channels carry previous days' takes coming back from Pro Tools. The wedge-mix-per-performer picture from Scenario 1 collapses to a single cue mix for whoever is in the live room. And the I/P REV button, instead of being a once-at-the-end move, becomes part of the daily routine.</p>
+<p>This re-shapes everything about how the console gets used. The master mix is now what the engineer monitors in the control-room speakers (the speaker output of the master section feeds them, so the engineer hears whatever's being captured plus whatever's playing back from Pro Tools). Each tracking pass only uses the channels for the source being recorded that day; the rest of the channels carry previous days' takes coming back from Pro Tools. The wedge-mix-per-performer picture from Scenario 1 collapses to a single cue mix for whoever is in the live room. And the I/P REV button, instead of being a once-at-the-end move, becomes part of the daily routine.</p>
 
 <h3>From the live room to the console</h3>
 
@@ -910,11 +917,11 @@
 
 <h3>What the engineer hears: the control-room mix</h3>
 
-<p>While someone is tracking, the engineer is in the control room listening through the studio monitors. The L-R master output feeds those monitors (via the MASTER O/P jacks and the monitor circuit you met in Lecture 3, section 5). The engineer adjusts faders, EQ, and pans for the day's session: the live mic of whoever's playing, plus the previous days' tracks coming back from Pro Tools, all balanced for the engineer's own ears. None of this affects what gets recorded: Pro Tools captures the day's live channels via their direct outs independently of how the engineer sets the channel-strip fader or EQ. The control-room mix during tracking is the engineer's monitoring reference, not the recording itself; the real mix happens later, with the entire band's tracks committed.</p>
+<p>While someone is tracking, the engineer is in the control room listening through the studio monitors. The master section's speaker output feeds those monitors (see Lecture 3, section 5), so whatever the console is summing into the master mix arrives in the engineer's room in real time. The engineer adjusts faders, EQ, and pans for the day's session: the live mic of whoever's playing, plus the previous days' tracks coming back from Pro Tools, all balanced for the engineer's own ears. None of this affects what gets recorded: Pro Tools captures the day's live channels via their direct outs independently of how the engineer sets the channel-strip fader or EQ. The control-room mix during tracking is the engineer's monitoring reference, not the recording itself; the real mix happens later, with the entire band's tracks committed.</p>
 
 <h3>The I/P REV move: how previous-day tracks get to the big faders</h3>
 
-<p>From day 2 of tracking onward, the engineer has a problem the live show never has. The bassist is in the live room playing along with the drum tracks from day 1. The drum tracks are coming back from Pro Tools into the Toft's MON jacks (one DAW output per drum mic, into the corresponding channel's MON jack on the back). On the monitor path, each MON input feeds only the small monitor knob in the middle of the strip: enough level to send the drums to the control-room speakers and to the bassist's headphone cue, but no EQ, no big fader, no real shaping. If the engineer wants to EQ the kick down a few dB so the bassist can hear his own low end better, the small monitor knob doesn't reach the EQ; it's downstream of all the channel-strip processing.</p>
+<p>From day 2 of tracking onward, the engineer has a problem the live show never has. The bassist is in the live room playing along with the drum tracks from day 1. The drum tracks are coming back from Pro Tools into the Toft's MON jacks (one DAW output per drum mic, into the corresponding channel's MON jack on the back). On each strip, the MON input flows through the monitor section in the middle, lands in the master mix, and reaches the engineer's speakers via the speaker output: enough to hear the drum playback alongside whatever new source is being recorded. What the monitor section <em>doesn't</em> reach is the channel EQ or the big fader. If the engineer wants to EQ the kick down a few dB so the bassist can hear his own low end better, the monitor section can't do it; the EQ lives on the channel path.</p>
 
 <p>The fix is the <strong>I/P REV</strong> button at the top of each input strip. When the engineer presses I/P REV on a channel, the two paths swap: the signal coming in through MON (the DAW playback) now flows through the big channel fader with the full EQ and aux-send chain, and whatever was at the MIC or LINE input flows down the smaller monitor path. On every channel that's playing back a previous take during today's session, I/P REV gets pressed; the playback now sits on the big faders, fully shapeable. The channels for whatever new sources are being tracked today stay with I/P REV off, so the live mics still flow normally through the channel path on their way to Pro Tools.</p>
 
@@ -924,7 +931,7 @@
 
 <figure class="diagram">
   <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram showing the I/P REV swap on one channel strip. Two strips drawn side by side. On the left: tracking mode. The mic input at the top flows down through input gain, EQ, and the big fader to the L-R master at the bottom. The MON input on the side flows into the small monitor knob, which feeds the stereo monitor bus. On the right: mixdown mode after I/P REV is pressed. The DAW playback (entering through MON) now flows through the big fader with full EQ; the mic input (which has nothing on it now) flows through the small monitor knob.">
+       role="img" aria-label="Diagram showing the I/P REV swap on one channel strip. Two strips drawn side by side. On the left: tracking mode. The mic input at the top flows down through input gain, EQ, and the big fader to a direct out to the DAW. The MON input on the side flows into the small monitor knob, which lands in the master mix. On the right: mixdown mode after I/P REV is pressed. The DAW playback (entering through MON) now flows through the big fader with full EQ on its way to the master mix; the mic input (with nothing on it now) flows through the small monitor knob.">
     <defs>
       <marker id="ah-iprev" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -952,12 +959,12 @@
     <rect x="115" y="196" width="110" height="26" rx="3" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
     <text x="170" y="213" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="var(--bg)">to DAW (direct out)</text>
 
-    <!-- Side: MON in → small knob → stereo monitor bus -->
+    <!-- Side: MON in → small knob → master mix -->
     <rect x="100" y="240" width="140" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="3 2"/>
     <text x="170" y="256" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="var(--ink-soft)">MON in (DAW playback)</text>
     <line x1="170" y1="262" x2="170" y2="278" stroke="var(--ink-soft)" stroke-width="1.2" stroke-dasharray="3 2" marker-end="url(#ah-iprev)"/>
     <rect x="115" y="280" width="110" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--ink-soft)" stroke-width="1"/>
-    <text x="170" y="296" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">small knob → monitor bus</text>
+    <text x="170" y="296" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">small knob → master mix</text>
 
     <!-- Divider -->
     <line x1="360" y1="50" x2="360" y2="310" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3 4"/>
@@ -979,7 +986,7 @@
 
     <line x1="550" y1="166" x2="550" y2="193" stroke="var(--accent)" stroke-width="2" marker-end="url(#ah-iprev)"/>
     <rect x="495" y="196" width="110" height="26" rx="3" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
-    <text x="550" y="213" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="var(--bg)">to L-R master</text>
+    <text x="550" y="213" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="var(--bg)">to master mix</text>
 
     <!-- Side: MON in → big fader path (already covered above); small knob path for the mic (silent) -->
     <rect x="480" y="240" width="140" height="22" rx="3" fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1.4"/>
@@ -1038,18 +1045,23 @@
     </tr>
     <tr>
       <td class="ch">Subgroups 1-2 · drum bus</td>
-      <td>Drum bus for FOH level control</td>
-      <td>Drum bus for engineer's control-room mix on drums day</td>
+      <td>Drum bus into the master mix via submaster MON LEVEL (submaster fader unused, no recorder)</td>
+      <td>Drum bus into the engineer's control-room mix on drums day (submaster fader can also feed Pro Tools as a recorded drum bus)</td>
     </tr>
     <tr>
       <td class="ch">Subgroups 3-4 · electronic bus</td>
-      <td>Keys + laptop bus for FOH level control (four channels into one stereo pair)</td>
+      <td>Keys + laptop bus into the master mix via submaster MON LEVEL (four channels into one stereo pair)</td>
       <td>Not used (keys and laptop track separately, each filling only Ch 15-16)</td>
     </tr>
     <tr>
-      <td class="ch">L-R master</td>
-      <td>Feeds the FOH speakers (audience)</td>
-      <td>Feeds the control-room speakers (engineer)</td>
+      <td class="ch">Master mix → MASTER O/P</td>
+      <td>To the FOH amps, driving the audience speakers</td>
+      <td>To a 2-track recorder or stereo capture, for the final mixdown</td>
+    </tr>
+    <tr>
+      <td class="ch">Speaker output</td>
+      <td>Unused (engineer listens to the FOH or wears headphones)</td>
+      <td>Drives the control-room speakers, so the engineer hears the master mix while tracking and mixing</td>
     </tr>
     <tr>
       <td class="ch">Aux sends (pre-fader)</td>
