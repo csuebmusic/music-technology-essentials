@@ -151,7 +151,7 @@
 
 <div class="callout">
   <div class="callout-label">A river with taps</div>
-  <p>Think of the channel's signal as a river flowing left to right through the strip, from the input on top down to the fader and out to the L-R bus. The aux sends are taps along the river: small pipes that siphon off a copy of the water into a separate channel running somewhere else, without slowing the main flow. Each aux knob controls how much water its pipe carries; turn it down to zero and that pipe sends nothing.</p>
+  <p>Think of the channel's signal as a river flowing left to right through the strip, from the input on top down to the fader and out into the master mix. The aux sends are taps along the river: small pipes that siphon off a copy of the water into a separate channel running somewhere else, without slowing the main flow. Each aux knob controls how much water its pipe carries; turn it down to zero and that pipe sends nothing.</p>
   <figure>
     <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg"
          role="img" aria-label="Diagram of the aux sends as taps on a signal river. A main horizontal arrow runs left to right from the channel input through the EQ, the aux tap point, the fader, and out to the L-R output. At the aux tap point, three smaller arrows branch downward, each labeled Aux 1, Aux 2, and Aux 3, each going to a separate destination box labeled Aux Master 1, Aux Master 2, and Aux Master 3.">
@@ -275,22 +275,22 @@
     </svg>
     <figcaption>The channel's main flow runs left to right; the aux taps siphon off copies of the signal at independent levels.</figcaption>
   </figure>
-  <p>The main flow doesn't change because of the taps. Whatever level you set on the channel fader, the signal arriving at the L-R bus is the same. The aux taps are <em>parallel</em>: they pull a copy off the main flow without subtracting from it. This is what makes one channel useful to many destinations at once. The vocal mic feeds the main mix (audience), <em>and</em> the singer's wedge (via Aux 1), <em>and</em> a reverb unit (via Aux 4), all simultaneously. One signal, many places, each at its own level.</p>
+  <p>The main flow doesn't change because of the taps. Whatever level you set on the channel fader, the signal arriving at the master mix is the same. The aux taps are <em>parallel</em>: they pull a copy off the main flow without subtracting from it. This is what makes one channel useful to many destinations at once. The vocal mic feeds the main mix (audience), <em>and</em> the singer's wedge (via Aux 1), <em>and</em> a reverb unit (via Aux 4), all simultaneously. One signal, many places, each at its own level.</p>
 </div>
 
-<p><strong>Monitor section.</strong> A second smaller level control, labeled <strong>MON LEVEL</strong>, with its own <strong>MON PAN</strong>. This is a second, parallel route onto the master mix on the same strip, and it's the reason this console is called <em>in-line</em>. We'll unpack the monitor section in section 3.</p>
+<p><strong>Monitor section.</strong> A second smaller level control, labeled <strong>MON LEVEL</strong>, with its own <strong>MON PAN</strong>. This is a second input on the same strip, with its own way into the master mix, and it's the reason this console is called <em>in-line</em>. We'll unpack the monitor section in section 3.</p>
 
 <p><strong>Solo and mute.</strong> Two small buttons near the bottom. <strong>SOLO</strong> isolates this channel in the control-room speakers (the same solo you used in Audacity, but in hardware). <strong>MUTE</strong> silences the channel without changing the fader position.</p>
 
 <p><strong>Channel pan.</strong> A red knob that places this channel left or right in the stereo image.</p>
 
-<p><strong>Routing buttons.</strong> Beside the fader: <strong>L-R</strong> assigns this channel to the L-R master bus; <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong> assign it to one of the four submaster pairs (which become subgroups 1 through 8). The buttons are <em>independent</em>: each one is its own on/off, and any combination can be engaged at once. A channel routed to both 1-2 and L-R appears in both places simultaneously. The pan knob decides the left-right split across whichever pair the signal lands on.</p>
+<p><strong>Routing buttons.</strong> Beside the fader: <strong>L-R</strong> assigns this channel directly to the master mix; <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong> assign it to one of the four subgroup pairs (subgroups 1 through 8). The buttons are independent (any combination can be engaged), and the typical case is to use one or the other: L-R for a channel that goes directly to the mix, or a subgroup pair for a channel that wants to be grouped with others first. The pan knob decides the left-right split across whichever pair the signal lands on.</p>
 
 <div class="callout">
   <div class="callout-label">How the pan knob splits the signal across a subgroup pair</div>
   <p>Worked example. You have a mic plugged into channel 1, and you press the <strong>1-2</strong> button on that channel. The channel's signal is now routed to the subgroup pair 1 and 2 (subgroup 1 = left side of the pair, subgroup 2 = right side; odd-numbered sub on the left, even on the right). What happens next depends on the channel's pan knob.</p>
   <p>With the pan knob in the centre: 50% of the signal goes to subgroup 1, 50% goes to subgroup 2. Pan all the way to the left: 100% of the signal goes to subgroup 1, 0% to subgroup 2. Pan all the way to the right: 100% to subgroup 2, 0% to subgroup 1. Anywhere in between is a smooth ratio (75/25, 60/40, etc.).</p>
-  <p>This is what people mean by a stereo <strong>bus</strong>: two submasters wired together as a left-right pair, each with its own fader, with the channel pan knob acting as a level splitter between the two. A bus is the point inside the console where many channels combine into one signal; the technical name for that combining operation is <strong>mixing</strong> (also called <strong>summing</strong>, which is more literal: the bus adds the channel signals together into one). Sub 1 is one bus, sub 2 is another; treating them as a pair gives you a stereo bus. The L-R master bus is the same idea at a different scale: it carries everything mixed together from any channel routed to L-R.</p>
+  <p>This is what people mean by a stereo <strong>bus</strong>: two subgroups treated as a left-right pair, with the channel pan knob acting as a level splitter between them. A bus is the point inside the console where many channel signals combine into one; the technical name for that combining operation is <strong>mixing</strong> (also called <strong>summing</strong>, which is more literal: the bus adds the channel signals together into one). Sub 1 is one bus, sub 2 is another; treating them as a pair gives you a stereo bus. The master mix works the same way at a larger scale, summing every channel routed to L-R into the final stereo program.</p>
 </div>
 
 <p><strong>The fader.</strong> The main level control for this channel. Where the channel sits in the final mix. The scale beside it runs from minus-infinity at the bottom (fader all the way down, signal fully attenuated, no audio passing through) up past -40, -30, -20, -10, -5, through <strong>0</strong> (a thicker line, usually marked with a small notch), and up to +5 and +10 at the top. The 0 mark is called <strong>unity gain</strong>, or just <strong>unity</strong>: the fader is passing the signal through at the same level it came in at, with no change. Above unity, the fader amplifies the signal further (up to +10 dB on this console). Below unity, it attenuates: -10 dB cuts the signal level noticeably; -20 dB cuts it sharply; further down still and the signal is barely audible. The dB scale here is the same decibel scale you saw on Audacity's meters in Lab 1, with the same warning behavior: small moves near the top of the scale do a lot, large moves near the bottom do relatively little.</p>
@@ -311,7 +311,7 @@
 
 <ul>
   <li><strong>LINE.</strong> 1/4-inch TRS. The line-level balanced input. Where a synth, a DI box's output, or a DAW playback feed plugs in.</li>
-  <li><strong>MON.</strong> 1/4-inch TRS. The monitor return: where a track playing back from a recorder or DAW plugs in. The signal here feeds the channel's MON route into the L-R master bus (section 3).</li>
+  <li><strong>MON.</strong> 1/4-inch TRS. The monitor return: where a track playing back from a recorder or DAW plugs in. The signal here feeds the channel's monitor section into the master mix (section 3).</li>
   <li><strong>INSERT.</strong> 1/4-inch TRS, wired as send/return on one cable. The channel's insert point: a place to drop an outboard processor (a compressor, an external EQ, a piece of analog gear) into the channel's signal path.
 
     <div class="callout">
@@ -324,7 +324,7 @@
     <div class="callout">
       <div class="callout-label">Insert send vs. aux send</div>
       <p>Both an insert and an aux send have a connector called "send" leaving the strip, and the word does different work in each case.</p>
-      <p>An <strong>aux send</strong> is a <strong>parallel branch</strong>. The aux pulls a copy of the channel's signal off at a tap point and routes it somewhere else. The main flow through the channel keeps going at full strength, untouched. Two signals end up in flight at the same time: the original on the channel, a copy out at the aux destination. Nothing comes back to the channel from an aux send (the copy will come back to the master section, however, via whatever destination it was sent to: for example, a reverb return blended into the L-R mix). (The river-with-taps diagram earlier in this section.)</p>
+      <p>An <strong>aux send</strong> is a <strong>parallel branch</strong>. The aux pulls a copy of the channel's signal off at a tap point and routes it somewhere else. The main flow through the channel keeps going at full strength, untouched. Two signals end up in flight at the same time: the original on the channel, a copy out at the aux destination. Nothing comes back to the channel from an aux send (the copy will come back to the master section, however, via whatever destination it was sent to: for example, a reverb return blended into the master mix). (The river-with-taps diagram earlier in this section.)</p>
       <p>An <strong>insert</strong> is a <strong>serial loop</strong>. The insert breaks the channel's signal path: the signal leaves the strip at the tip, runs through the outboard processor, and the <em>processed</em> signal comes back through the ring to take its place. While the loop is active, the original unprocessed signal is no longer on the strip. The whole round trip happens in real time, fast enough to feel instantaneous: the signal is being shaped continuously as it passes through the processor, with no audible delay between leaving the strip and coming back.</p>
       <p>The rule of thumb for which audio effects belong on an insert and which belong on an aux send: <strong>if the effect <em>replaces</em> the signal, use an insert. If the effect <em>adds something alongside</em> the signal, use an aux send.</strong> Compressors, limiters, gates, de-essers, external EQs, and distortion all work on the signal itself, so they go on inserts. Reverb, delay, and the modulation effects (chorus, flanger, phaser) produce a separate wet stream that plays back alongside the dry, so they go on aux sends. There are exceptions in advanced use (parallel compression sets up a compressor on an aux send for deliberate blend; "insert reverb" exists for special cases), but the rule covers the great majority of decisions you'll make.</p>
     </div>
@@ -337,39 +337,28 @@
 
 <hr>
 
-<h2>3 · In-line architecture · one strip, two routes</h2>
+<h2>3 · In-line architecture · one strip, two inputs</h2>
 
-<p>The Toft ATB is what's called an <strong>in-line</strong> console. The defining feature: every input strip has <em>two</em> independent routes onto the same final mix. The big fader at the bottom controls one of them; the smaller MON LEVEL knob in the middle controls the other. Both can be alive at the same time, carrying two different signals, both feeding the same destination.</p>
+<p>The Toft ATB is what's called an <strong>in-line</strong> console. The defining feature: every input strip carries two inputs at once, not one. There's the main input that travels down the big fader (set up in section 2): mic or line on the back, through INPUT GAIN, EQ, the fader, the routing buttons, out to L-R or a subgroup. And there's a second, smaller input that travels through the <strong>monitor section</strong> in the middle of the strip: a separate signal on the back at the <strong>MON</strong> jack, with its own level (<strong>MON LEVEL</strong>) and its own pan (<strong>MON PAN</strong>), routed onto the master mix.</p>
 
-<p>That destination is the <strong>L-R master bus</strong>: the stereo mix the console builds up across all its inputs, and the one that leaves the console at the MASTER O/P jacks on the back. The L-R master bus is what gets captured by whatever device is recording the mix.</p>
-
-<p>The two routes on each input strip are:</p>
-
-<ul>
-  <li>The <strong>channel route</strong>: whatever signal is plugged into the MIC or LINE jack on the back → INPUT GAIN → EQ → channel fader → routing buttons → L-R master bus (when the L-R button is engaged).</li>
-  <li>The <strong>MON route</strong>: whatever signal is plugged into the MON jack on the back → MON LEVEL knob → MON PAN → L-R master bus.</li>
-</ul>
-
-<p>Both routes end at the L-R master bus. The console sums the two contributions together with everything else feeding L-R, and the master fader controls the final level out of MASTER O/P.</p>
+<p>Both inputs can be active at the same time on the same strip, carrying two different signals to two different places.</p>
 
 <div class="callout">
-  <div class="callout-label">Why two routes onto the same mix</div>
-  <p>The motivating case is a multi-day tracking session. On day 1, drums are recorded: the kick mic plugs into channel 5's MIC jack, the snare into channel 6's MIC jack, the overheads into channels 7 and 8. The mics travel down the channel route on those strips, and the recorded tracks land in the DAW.</p>
-  <p>On day 2, the bassist arrives and plays along with yesterday's drum recordings. The DAW plays the four drum tracks back, one track per output of the audio interface. Those four outputs cable into the MON jacks on channels 5 through 8 on the back of the console. The bass mic plugs into a fresh channel (say channel 9) on its MIC jack. Now the engineer has, on the same row of strips, the live bass mic feeding L-R via channel 9's channel route, <em>and</em> yesterday's four drum tracks feeding L-R via the MON routes on channels 5 through 8. Every strip on the desk does both things at once.</p>
-  <p>This is what "in-line" means: the two routes are arranged in a line on the same strip, with the controls for each next to each other. A non-in-line console would put the live mic on one strip and the playback on a separate strip somewhere else on the desk, which uses up twice as many strips and puts the related controls in two different places.</p>
+  <div class="callout-label">Why two inputs on one strip</div>
+  <p>The motivating case is a multi-day tracking session. On day 1, drums are recorded: the kick mic plugs into channel 5's MIC jack, the snare into channel 6's, the overheads into channels 7 and 8. Each strip's big fader feeds the mix the band is hearing in the room while they play, and the channel's direct output sends the signal to a track in the DAW for recording.</p>
+  <p>On day 2, the bassist plays along with yesterday's drum recordings. The DAW plays back the four drum tracks, and those four outputs cable into the <strong>MON jacks</strong> on the back of channels 5 through 8. The bass mic plugs into a fresh channel (say channel 9) on its MIC jack. Now every drum strip is doing two jobs at once. The channel's big fader is no longer carrying a live mic (the mic is no longer plugged in), but the monitor section is carrying yesterday's recorded drum track, summed into the master mix. On channel 9, the big fader is carrying the live bass mic going to the mix. Same row of strips, two roles running side by side.</p>
+  <p>This is what "in-line" means: each strip can be its own input <em>and</em> its own return for a recorded track, with the controls for both right next to each other. A non-in-line console would put the bass mic on one strip and the drum playback on a separate strip somewhere else on the desk, using up twice as many strips.</p>
 </div>
 
 <h3>"Monitor" on this desk is a confusing word</h3>
 
-<p>The label MON on the back of the console, and MON LEVEL on the front, both use the word <strong>monitor</strong>. The word is not naming the control-room speakers. It is naming the <em>source</em> of the signal: the MON jack is where the multi-track recorder's playback (originally a tape machine; now a DAW) comes back into the console for the engineer to listen to alongside whatever is being newly recorded. In studio terminology from the era of tape, "monitoring" a track meant hearing it played back from the recorder. The MON jack on the back is that playback-return input.</p>
+<p>The label MON on the back of the console, and MON LEVEL on the front, both use the word <strong>monitor</strong>. The word isn't naming the studio speakers. It's naming the source: in the era of multi-track tape, "monitoring" a recorded track meant hearing the playback come back into the console alongside whatever was being newly recorded, so the engineer could keep checking the take against the previously-recorded layers. The MON jack on the back is that playback-return input. Where it goes after that (onto the master mix) is exactly the question section 4 picks up.</p>
 
-<p>Where the signal goes after the MON jack is a separate question, and the answer (for the input strip) is: it goes onto the L-R master bus, alongside everything else in the mix.</p>
-
-<p>The word <strong>monitor</strong> shows up again in two other places on this console, with two other meanings: on the submaster strip (section 4), where MON LEVEL on a subgroup feeds the studio speakers rather than the L-R master bus, and on the master strip (section 5), where MON LEVEL is the master volume for the studio speakers. Same word, three different jobs. The reading flags this every time it comes up; once you've walked the whole desk, the three uses settle into place.</p>
+<p>The same word will show up again later in different roles. Sections 4 and 5 will flag each one as it comes up.</p>
 
 <h3>The I/P REV button</h3>
 
-<p>At the top of every input strip is a button labeled <strong>I/P REV</strong> (input reverse). Press it, and the two routes on that strip swap. Whatever was coming in the MIC or LINE jack now flows through the MON LEVEL knob; whatever was coming in the MON jack now flows through the channel route with full EQ, aux sends, and the big fader. The most common use is at mixdown, when every strip's job changes from "live mic via the channel route, plus playback via the MON route" to "playback on the big fader with full processing, second playback on the MON LEVEL." We'll come back to it.</p>
+<p>At the top of every input strip is a button labeled <strong>I/P REV</strong> (input reverse). Press it, and the two inputs on that strip swap. Whatever was coming in the MIC or LINE jack now travels through the monitor section; whatever was coming in the MON jack now travels through the channel path with full EQ, aux sends, and the big fader. The most common use is at mixdown, when an engineer wants the full processing chain on the recorded track that had been coming back through the smaller monitor section during tracking. We'll come back to it.</p>
 
 <hr>
 
@@ -388,14 +377,19 @@
 
 <h3>Summing: what happens at the destination</h3>
 
-<p>Every input strip has the five routing buttons you met in section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button assigns the channel to the L-R master bus; the other four assign it to one of the four submaster pairs. The buttons are independent, so a channel can be assigned to one of the subgroup pairs and to L-R at the same time. When several channels are routed to the same subgroup pair, their signals mix together in that subgroup (the summing operation you met in section 2's bus callout): the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two submasters in the pair.</p>
+<p>Recall the five routing buttons from section 2 (<strong>L-R</strong>, <strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>). The L-R button assigns the channel directly to the master mix; the other four assign it to one of the four subgroup pairs. When several channels are routed to the same subgroup pair, their signals mix together in that subgroup (the summing operation from section 2's bus callout): the subgroup carries the combined output of every channel routed to it, with each channel's pan position deciding the left-right split between the two subgroups in the pair.</p>
 
-<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit now has a single pair of faders controlling its overall level on the way out of the console. Pull the subgroup faders down by 3 dB and the whole kit drops by 3 dB together on its way out, without changing the balance among the mics.</p>
+<p>The canonical case is drums. Say four drum mics (a kick, a snare, and a pair of overhead mics for the cymbals and the overall kit) all route to subgroup pair 1-2. Kick and snare are panned center (each splits 50/50 between sub 1 and sub 2); the left overhead is panned hard left (100% to sub 1); the right overhead is panned hard right (100% to sub 2). The four channels become two combined signals on the subgroup pair, and the kit is now a single stereo group inside the console. From here, the kit travels onward together: turn down sub 1 and the whole kit's left channel drops, turn down sub 2 and the right drops, with the internal balance among the mics unchanged.</p>
 
 <div class="callout">
   <div class="callout-label">Where the subgroup pair actually goes</div>
-  <p>The subgroup pair, on the way out of the console, ends at the <strong>SUBMASTER OUTPUTS</strong> jacks on the back (subgroup 1 leaves at SUBMASTER OUTPUT 1, subgroup 2 at SUBMASTER OUTPUT 2, and so on). Those jacks normally feed eight inputs of a recorder or DAW. They are <em>not</em> wired to the L-R master bus inside the console.</p>
-  <p>A channel routed only to <strong>1-2</strong> reaches those jacks and stops there. To get the same channel onto the L-R master bus as well, the channel also needs <strong>L-R</strong> engaged: the L-R button on each input strip is an independent assignment that runs in parallel with the 1-2 (or 3-4, 5-6, 7-8) buttons. A drum channel routed to both 1-2 <em>and</em> L-R is feeding the subgroup pair on the way to a recorder <em>and</em> sitting in the L-R master mix; the subgroup fader controls the recorder send, while the channel fader controls the L-R contribution.</p>
+  <p>From the subgroup, the combined signal goes to <strong>two places</strong>, each with its own control on the submaster strip:</p>
+  <ol>
+    <li><strong>Out the back of the console</strong>, at the <strong>SUBMASTER OUTPUTS</strong> jacks (subgroup 1 leaves at SUBMASTER OUTPUT 1, subgroup 2 at SUBMASTER OUTPUT 2, and so on). The level is set by the <strong>submaster fader</strong> at the bottom of the strip. Those jacks typically feed eight inputs of a recorder.</li>
+    <li><strong>Into the master mix</strong>, via the <strong>MON LEVEL</strong> and <strong>MON PAN</strong> in the middle of the strip. MON LEVEL sets how much of the subgroup goes into the master mix; MON PAN places it left-right. The signal then joins everything else in the master mix on its way to MASTER O/P.</li>
+  </ol>
+  <p>The two destinations are independent. The recorder can get one level (set by the submaster fader), while the master mix gets another (set by the MON LEVEL). Neither has to follow the other.</p>
+  <p>So if four drum mics are routed to subs 1-2 only (channels with the 1-2 button engaged, L-R off), the kit reaches the recorder via the submaster faders <em>and</em> reaches the master mix via the MON LEVEL knobs. The submaster strip is doing the work of a stereo-pan-and-level control for the whole drum group on its way into the mix, with a separate fader for the recorder send.</p>
 </div>
 
 <figure>
@@ -517,7 +511,7 @@
             font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">"drum bus R"</text>
     </g>
   </svg>
-  <figcaption>Four drum mics routed to subgroup pair 1-2. Pan position decides how each channel's signal splits between the two submasters; the subgroups sum the contributions and feed one pair of faders.</figcaption>
+  <figcaption>Four drum mics routed to subgroup pair 1-2. Pan position decides how each channel's signal splits between the two subgroups; from here the kit travels onward as a stereo group.</figcaption>
 </figure>
 
 <p>Each submaster strip is built of four labeled sub-sections, top to bottom: a <strong>stereo effects return</strong>, a <strong>bargraph meter</strong>, a <strong>tape return</strong>, and at the bottom the <strong>subgroup fader</strong>. Each one walked in turn.</p>
@@ -529,7 +523,7 @@
 <ul>
   <li><strong>MUTE</strong> button: a red square at the very top. Press it to silence this effects return without changing any of the other settings.</li>
   <li><strong>BAL</strong> knob: a small black knob that adjusts the left-right balance of the stereo return.</li>
-  <li><strong>FX RET</strong> level knob: a pink knob that sets how much of the effects return feeds the L-R master bus.</li>
+  <li><strong>FX RET</strong> level knob: a pink knob that sets how much of the effects return joins the master mix.</li>
 </ul>
 
 <h3>Bargraph meter</h3>
@@ -550,24 +544,24 @@
   <p>Making the submaster aux sends share buses with the channel aux sends (instead of introducing aux 7 and 8) keeps the bus count down. Each new bus would mean another conductor across the console, another Aux Master knob, another output jack on the back.</p>
 </div>
 
-<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a small black knob. <em>This is the second use of the word</em> "<em>monitor</em>" <em>that section 3 flagged.</em> On the submaster strip, MON LEVEL is not a route onto the L-R master bus. It is a route onto the <strong>monitor bus</strong>, a separate bus inside the console that feeds the studio's speakers. Turning up MON LEVEL on submaster 1 lets the engineer hear subgroup 1 over the control-room speakers without changing what gets recorded at MASTER O/P. (The monitor bus, the speaker outputs, and the master strip's MON LEVEL knob that controls them all are covered in section 5.)</p>
+<p><strong>MON LEVEL and MON PAN.</strong> A red knob and a small black knob. This is the submaster's <em>route into the master mix</em>: MON LEVEL sets how much of the subgroup joins the master mix, MON PAN places it left-right in the stereo image. With MON LEVEL all the way down, the subgroup is heading only to the SUBMASTER OUTPUTS jack (the recorder send); turn it up and the subgroup also lands in the master mix. The job of these two controls is the subgroup equivalent of the L-R button and channel pan on an input strip, but at the group level instead of the individual-channel level.</p>
 
-<p>So on the input strip, MON LEVEL feeds the L-R master bus (the recorded mix). On the submaster strip, MON LEVEL feeds the monitor bus (the speakers). Same knob name, two different destinations.</p>
+<p>The labels on the front panel say MON, but the destination is the master mix, not the studio speakers. (Section 5 walks the master strip's MON LEVEL knob, which is a different control with a different job: the volume of the control-room speakers.)</p>
 
 <p><strong>SOLO.</strong> A white pushbutton. Press it to send just this submaster to the solo bus, muting the other submasters in the control room while you listen. Same job as the SOLO button on the input strip, applied at the group level instead of the channel level.</p>
 
-<p><strong>TAPE.</strong> A red pushbutton that selects what this whole section (bargraph, aux 5/6, monitor, solo) is operating on. Up (out): the subgroup output going to the DAW. Down (in): the tape return coming back from the DAW. The button is still called TAPE because the same in/out switching habit used to be how engineers worked with tape decks; most studios now use it to flip between "DAW input" and "DAW playback."</p>
+<p><strong>TAPE.</strong> A red pushbutton that selects the source for the whole middle section (bargraph, AUX 5 and 6, MON LEVEL and MON PAN, SOLO). Up (out): the live subgroup output, summed from whichever input channels routed here. Down (in): the playback coming back from the recorder through the MONITOR RETURNS jack on the back (covered later in this section). The name TAPE is a holdover from when those returns were a tape machine; most studios now use it to flip between "what's going to the DAW" and "what's coming back from the DAW."</p>
 
 <h3>Subgroup fader (bottom of strip)</h3>
 
-<p>A 100mm fader controlling the overall level of this subgroup's output. Same fader scale as the input strip's: minus-infinity at the bottom, 0 (unity) marked with a thicker line, +10 at the top.</p>
+<p>A 100mm fader controlling the level of this subgroup's output at the SUBMASTER OUTPUT jack on the back: the level the recorder gets. It does not affect the subgroup's contribution to the master mix (which is set by the MON LEVEL above). The fader scale matches the input strip's: minus-infinity at the bottom, 0 (unity) marked with a thicker line, +10 at the top.</p>
 
 <div class="callout">
   <div class="callout-label">Two ways to read a submaster strip</div>
   <p>The eight submaster strips look like one structure, but each strip is actually doing two jobs at once. Easy to miss when you're walking it control by control:</p>
   <ol>
-    <li><strong>The strip is both an output and a return.</strong> Going out: it's the group output that combines whatever input channels you routed to subgroups 1-8 (via the routing buttons on the input strips), heading for the SUBMASTER OUTPUTS jack on the back. Coming back: it's the monitor return for one track of the DAW, coming in at the MONITOR RETURNS jack. The TAPE button decides which one the strip is letting you hear and meter at any given moment.</li>
-    <li><strong>The eight submasters double as eight stereo effects returns.</strong> The top of each strip (MUTE, BAL, FX RET) is a self-contained stereo input that has nothing to do with the subgroup-output role; it's there so an outboard effect can be plugged into the back of the console and blended into the mix without using up an input channel.</li>
+    <li><strong>The strip is both an output and a return.</strong> Going out: it's the subgroup that combines the input channels routed here, and that combined signal has two destinations: the SUBMASTER OUTPUTS jack on the back (level set by the submaster fader, typically to a recorder), and the master mix (level and pan set by MON LEVEL and MON PAN). Coming back: the strip is also the return for one playback track of the DAW, arriving at the MONITOR RETURNS jack. The TAPE button decides whether the middle controls are operating on the live subgroup going out or the playback coming back.</li>
+    <li><strong>The eight submasters double as eight stereo effects returns.</strong> The top of each strip (MUTE, BAL, FX RET) is a self-contained stereo input that has nothing to do with the subgroup-output role. It's there so an outboard effect can be plugged into the back of the console and blended into the mix without using up an input channel.</li>
   </ol>
 </div>
 
@@ -587,7 +581,7 @@
   <li><strong>STEREO FX RETURNS</strong> (top row, eight stereo, sixteen physical jacks). The inputs for outboard effect units (reverb, delay, hardware processor); each pair lands at the MUTE / BAL / FX RET controls at the top of one submaster strip on the front.</li>
   <li><strong>MONITOR RETURNS</strong> (eight jacks). The inputs that bring eight tracks of DAW playback back into the submaster section. Each one is wired in parallel to two places inside the console: the corresponding submaster strip's tape-return controls (when its TAPE button is pressed in), and the <strong>LINE</strong> jack of the matching input channel 1 through 8. The two jacks aren't independent inputs; they're two physical sockets on the same internal input. Only one of them should have a cable in it at any given time. The point of the parallel wiring is convenience at mixdown: a DAW already plugged into MONITOR RETURNS 1-8 during tracking can be brought back into the channel strips with full EQ, aux sends, and L-R assign by simply pressing LINE on each channel, without re-patching anything at the back.</li>
   <li><strong>SUBGROUP INSERT</strong> (eight jacks). One insert send/return per subgroup, used to patch external processing (a compressor, an EQ, a tape simulator) across the whole subgroup before the submaster fader. The subgroup equivalent of the channel insert from section 2: same wiring trick (TRS jack carrying send on the tip, return on the ring), applied to a summed signal instead of a single channel.</li>
-  <li><strong>SUBMASTER OUTPUTS</strong> (eight jacks). Where the eight subgroup outputs leave the console, typically going to eight inputs on the DAW's audio interface for recording. The subgroups exit the console here; they don't feed the L-R master internally.</li>
+  <li><strong>SUBMASTER OUTPUTS</strong> (eight jacks). Where the eight subgroup outputs leave the console. The submaster fader on the front sets the level here. These outputs typically feed eight inputs on the DAW's audio interface for recording the individual subgroups as separate tracks. The subgroup also reaches the master mix internally, via the MON LEVEL on the same strip, but that's a separate path from these jacks.</li>
 </ul>
 
 <p>The bottom row of jacks (AUX MASTERS) and the left side of the photo (master outputs, master inserts, two-track returns, speaker outputs) belong to the master section, covered next.</p>
@@ -630,11 +624,15 @@
 
 <p><strong>Master bargraph meters.</strong> A 12-segment L/R pair showing the final stereo output. The course's main metering reference: same dBFS scale as Audacity's meter, same green/yellow/red zones. Faster response than the VU meters at the top of the section, useful for catching peaks the VU needles would smooth over.</p>
 
-<h3>Monitor controls (MASTER O/P · ALT SPKR · MAIN SPKR)</h3>
+<h3>Two outputs from the master section: MASTER O/P and the speakers</h3>
 
-<p>The next three controls (ALT MONITOR, MONO, MON LEVEL) act on the <strong>monitor bus</strong>: the bus inside the console that feeds the studio speakers. Different from the L-R master bus, which is what the console builds up across all its inputs and what leaves at MASTER O/P at the back to whatever is recording. The two buses are related: the L-R master bus is one of the things the monitor bus picks up, so whatever's in the captured mix is automatically in the speakers. The submaster MON LEVEL knobs (section 4) and the SOLO buttons also feed the monitor bus, which is how the engineer hears subgroups or solos in the speakers without changing what gets recorded.</p>
+<p>The master section has two distinct outputs going to two different places. They both carry the master mix, but they diverge after the master fader, and the controls on either side don't affect the other.</p>
 
-<p>So: the captured mix leaves the console at the <strong>MASTER O/P</strong> jacks (L and R, balanced). MASTER O/P is what feeds the 2-track recorder, the DAW input, the broadcast feed, whatever is capturing the mix. The control room hears the captured mix (plus anything else on the monitor bus) through a separate output: the <strong>MAIN SPKR</strong> jacks (L and R, the main pair of monitor speakers) or, when ALT MONITOR is engaged, the <strong>ALT SPKR</strong> jacks (L and R, the second pair). The next three controls shape what comes out of those speaker jacks; they do not affect MASTER O/P.</p>
+<p>The first output is <strong>MASTER O/P</strong> (L and R, balanced jacks on the back). This is the master mix on its way out of the console: to the 2-track recorder, the DAW input, the broadcast feed, the FOH amplifiers in a live show, whoever is capturing or carrying away the mix. The master fader at the bottom of the strip sets the level out of MASTER O/P.</p>
+
+<p>The second output is the <strong>speaker output</strong>, which exits at either the <strong>MAIN SPKR</strong> jacks (L and R, the main pair of control-room monitor speakers) or the <strong>ALT SPKR</strong> jacks (L and R, the second pair). This is what the engineer hears in the room while working. The three controls walked next (ALT MONITOR, MONO, MON LEVEL) shape this speaker output; they do not affect MASTER O/P.</p>
+
+<p>The split happens after the master fader. Both outputs carry whatever the fader is letting through, but from that point on the engineer can adjust the speaker side freely (turn the room down, listen in mono, switch to the alt pair) without changing what the recorder is getting.</p>
 
 <p><strong>ALT MONITOR.</strong> A white button that switches the control-room signal from the <strong>MAIN SPKR</strong> jacks to the <strong>ALT SPKR</strong> jacks at the back of the console. Two sets of monitor speakers means you can A/B between them ("does the mix translate to the smaller pair as well as the big pair?").</p>
 
@@ -651,7 +649,7 @@
 
 <figure>
   <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"
-       role="img" aria-label="Diagram of the master output. At the top of the figure, three back-panel jacks are shown side by side: MAIN SPKR, ALT SPKR, and MASTER O/P. The signal flows upward from the master fader at the bottom to those jacks. MAIN SPKR and ALT SPKR both connect through the monitor bus, which is shaped by three front-panel controls in the middle: MONO, MON LEVEL, and ALT MONITOR. The ALT MONITOR setting decides whether the monitor bus exits via MAIN SPKR or ALT SPKR. MASTER O/P bypasses the monitor bus entirely, connecting directly from the master fader to the back of the console. Below the master fader is the L-R master bus.">
+       role="img" aria-label="Diagram of the master output. At the top of the figure, three back-panel jacks are shown side by side: MAIN SPKR, ALT SPKR, and MASTER O/P. The signal flows upward from the master fader at the bottom to those jacks. MAIN SPKR and ALT SPKR both pass through three front-panel monitor controls (MONO, MON LEVEL, ALT MONITOR) on the way out. The ALT MONITOR setting decides whether the speaker signal exits via MAIN SPKR or ALT SPKR. MASTER O/P bypasses the monitor controls entirely, connecting directly from the master fader to the back of the console. Below the master fader is the master mix.">
     <defs>
       <marker id="arrowhead-up" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
         <polygon points="0 0, 8 2.5, 0 5" fill="var(--accent)"/>
@@ -691,18 +689,18 @@
     <text x="635" y="73" text-anchor="start"
           font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">back of console</text>
 
-    <!-- Arrows from monitor bus UP to each speaker jack -->
+    <!-- Arrows from monitor controls UP to each speaker jack -->
     <line x1="125" y1="132" x2="125" y2="94" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
     <line x1="280" y1="132" x2="280" y2="94" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
 
-    <!-- Monitor bus container -->
+    <!-- Monitor controls container -->
     <rect x="60" y="134" width="320" height="148" rx="6"
           fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="6 3"/>
     <text x="220" y="158" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="10" letter-spacing="0.1em"
-          fill="var(--accent)">MONITOR BUS · SHAPED BY THREE CONTROLS</text>
+          fill="var(--accent)">MONITOR CONTROLS · SPEAKER PATH</text>
 
-    <!-- Three settings on the monitor bus, side by side -->
+    <!-- Three settings on the speaker path, side by side -->
     <rect x="78" y="176" width="92" height="48" rx="3"
           fill="var(--bg-alt)" stroke="var(--accent)" stroke-width="1"/>
     <text x="124" y="196" text-anchor="middle"
@@ -725,14 +723,14 @@
           font-family="DM Mono, monospace" font-size="8" fill="var(--ink-soft)">main or alt?</text>
 
     <text x="220" y="252" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">these controls shape what's on the monitor bus;</text>
+          font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">these controls shape what reaches the speakers;</text>
     <text x="220" y="266" text-anchor="middle"
           font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">they do not affect MASTER O/P</text>
 
-    <!-- Arrow from master fader UP to the monitor bus -->
+    <!-- Arrow from master fader UP to the monitor controls -->
     <path d="M 290 358 Q 200 320 200 282" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
 
-    <!-- Arrow from master fader UP and to the right, bypassing the monitor bus, to MASTER O/P -->
+    <!-- Arrow from master fader UP and to the right, bypassing the monitor controls, to MASTER O/P -->
     <path d="M 430 358 Q 540 260 540 94" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
 
     <!-- Master fader -->
@@ -741,20 +739,20 @@
     <text x="360" y="379" text-anchor="middle"
           font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="var(--ink)">Master fader</text>
     <text x="360" y="396" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">L-R bus level</text>
+          font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)">master mix level</text>
 
     <!-- Side legend: "front panel" label near the master fader -->
     <text x="450" y="389" text-anchor="start"
           font-family="DM Mono, monospace" font-size="9" font-style="italic" fill="var(--ink-soft)">front panel</text>
 
-    <!-- Arrow from L-R master bus UP into master fader -->
+    <!-- Arrow from master mix UP into master fader -->
     <line x1="360" y1="436" x2="360" y2="412" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead-up)"/>
 
-    <!-- L-R master bus label at the very bottom -->
+    <!-- Master mix label at the very bottom -->
     <text x="360" y="450" text-anchor="middle"
-          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">L-R master bus</text>
+          font-family="DM Mono, monospace" font-size="10" fill="var(--ink-soft)">master mix (from all the strips)</text>
   </svg>
-  <figcaption>Signal flows upward from the master fader at the bottom to the three back-panel jacks at the top. MAIN SPKR and ALT SPKR both come off the monitor bus, where the MONO, MON LEVEL, and ALT MONITOR settings shape the signal and decide which speaker pair receives it. MASTER O/P bypasses the monitor bus entirely, going straight from the master fader to the back of the console.</figcaption>
+  <figcaption>Signal flows upward from the master fader at the bottom to the three back-panel jacks at the top. MAIN SPKR and ALT SPKR both pass through the three monitor controls (MONO, MON LEVEL, ALT MONITOR) on the way out. MASTER O/P bypasses those controls entirely, going straight from the master fader to the back of the console.</figcaption>
 </figure>
 
 <h3>Talkback and master fader</h3>
@@ -769,12 +767,12 @@
   <p>The film-set equivalent is the clapper board (the slate that snaps shut at the start of every shot). Audio recording does the same job with the engineer's voice and this button.</p>
 </div>
 
-<p><strong>Master fader.</strong> A 100mm stereo fader at the bottom of the strip (the large blue one). The level control for the L-R master bus. Whatever this fader is set to is what leaves at MASTER O/P (going to the recorder) and is also what the monitor bus picks up to send to the speakers.</p>
+<p><strong>Master fader.</strong> A 100mm stereo fader at the bottom of the strip (the large blue one). The level control for the master mix on its way out at MASTER O/P (the recorder side) and on its way to the speaker output (the room side). Wherever the fader is set is the level that hits both sides of the split downstream.</p>
 
 <div class="callout">
   <div class="callout-label">Master fader vs. monitor controls: which one kills what</div>
-  <p>The master fader sits <em>upstream</em> of the split between MASTER O/P and the monitor bus. Everything downstream depends on it. Pull the master fader all the way down and nothing leaves the console: no signal to MASTER O/P (the recorder gets silence), no signal to the speakers (the room goes silent).</p>
-  <p>The monitor controls (MONO, MON LEVEL, the ALT MONITOR switch) sit <em>downstream</em> of the split, on the speaker side only. Pull MON LEVEL all the way down and the control room goes silent, but MASTER O/P keeps carrying the full mix straight to the recorder. The engineer can't hear what's happening; the recording still captures it perfectly.</p>
+  <p>The master fader sits <em>upstream</em> of the split between MASTER O/P and the speaker output. Everything downstream depends on it. Pull the master fader all the way down and nothing leaves the console: no signal to MASTER O/P (the recorder gets silence), no signal to the speakers (the room goes silent).</p>
+  <p>The three monitor controls (MONO, MON LEVEL, ALT MONITOR) sit <em>downstream</em> of the split, on the speaker side only. Pull the master strip's MON LEVEL all the way down and the control room goes silent, but MASTER O/P keeps carrying the full mix straight to the recorder. The engineer can't hear what's happening; the recording still captures it perfectly.</p>
   <p>This matters in practice. If you hit the spacebar to record and the control room sounds silent, your first instinct shouldn't be "the recording is broken." Check MON LEVEL first; the recording may be running fine and you just can't hear it.</p>
 </div>
 
@@ -786,14 +784,14 @@
   <li><strong>Digital mixer.</strong> A console where the audio signals are samples processed as math. Typically includes analog-to-digital conversion inside the same box as the routing, so the mixer can function as the audio interface and connect directly to a computer.</li>
   <li><strong>Channel.</strong> One input on the mixer, with its own set of controls. A console with sixteen channels has sixteen of these.</li>
   <li><strong>Channel strip.</strong> The vertical column of controls for one channel.</li>
-  <li><strong>In-line console.</strong> A console where each input strip carries two independent routes onto the L-R master bus, so a single strip can both send a live mic to the recorder and bring a previously-recorded track back from the DAW at the same time.</li>
-  <li><strong>Channel route.</strong> The route on an input strip that runs from the MIC or LINE jack on the back, through INPUT GAIN, EQ, the channel fader, and the routing buttons, onto the L-R master bus (or a subgroup).</li>
-  <li><strong>MON route.</strong> The second route on an input strip, running from the MON jack on the back, through the MON LEVEL and MON PAN knobs, onto the L-R master bus. Used during tracking to bring DAW playback into the mix alongside whatever new signal the channel route is recording.</li>
-  <li><strong>Bus.</strong> A summing point inside the console where many signals combine into one. The L-R master bus, the subgroup buses, the aux buses, and the monitor bus are all examples.</li>
+  <li><strong>In-line console.</strong> A console where each input strip carries two inputs at once: a main input on the big channel fader, and a second smaller input through the strip's monitor section. The two can be active at the same time, which lets a single strip both send a live mic to the recorder and bring a previously-recorded track back from the DAW.</li>
+  <li><strong>Bus.</strong> A summing point inside the console where many signals combine into one. The subgroup buses, the aux buses, and the master mix are all examples.</li>
   <li><strong>Mix / sum.</strong> The combining operation that happens on a bus. Many channels arrive on the bus, each at whatever level its fader and routing set; the bus adds them together into one signal. "Mix" is the everyday word; "sum" is the more literal technical term. Both are in use.</li>
-  <li><strong>L-R master bus.</strong> The main stereo mix the console builds up across all its inputs. Controlled by the master fader, leaves the console at MASTER O/P, captured by whatever is recording the mix.</li>
-  <li><strong>Monitor bus.</strong> A separate stereo bus inside the console that feeds the studio speakers (MAIN SPKR or ALT SPKR). Fed by the L-R master bus (so the speakers automatically hear the captured mix), by the submaster MON LEVEL knobs (so the engineer can hear subgroups extra-loud in the speakers), and by the SOLO buttons. Controlled by the master section's MON LEVEL knob. Does not affect what gets recorded at MASTER O/P.</li>
-  <li><strong>Subgroup.</strong> A bus that groups several channels together as a sub-mix, with its own fader, before sending to a destination. The Toft has eight subgroups, controlled by the eight submaster strips.</li>
+  <li><strong>Master mix.</strong> The main stereo mix the console builds up across all its inputs. Fed by every input channel's L-R button, every input strip's monitor section, every submaster's MON LEVEL and MON PAN, every FX RET, and any 2-track returns. Controlled by the master fader; leaves the console at MASTER O/P.</li>
+  <li><strong>MASTER O/P.</strong> The pair of balanced 1/4-inch jacks at the back of the console where the master mix leaves. Cabled to the recorder, the DAW input, the broadcast feed, or the FOH amplifiers in a live show.</li>
+  <li><strong>Speaker output.</strong> A separate path out of the master section to the studio's control-room monitor speakers, exiting at MAIN SPKR (or ALT SPKR when ALT MONITOR is engaged). Shaped by the three monitor controls on the master strip (MONO, MON LEVEL, ALT MONITOR). Does not affect MASTER O/P.</li>
+  <li><strong>Control-room speakers.</strong> The studio's monitor speakers, in the room where the engineer is sitting. Fed by the speaker output.</li>
+  <li><strong>Subgroup.</strong> A bus that groups several channels together as a sub-mix, with its own fader and its own routing into the master mix, before sending to a destination. The Toft has eight subgroups, controlled by the eight submaster strips.</li>
   <li><strong>Submaster.</strong> On this console, the strip that controls a subgroup. Both names appear in different traditions; "submaster" is what the Toft labels it.</li>
   <li><strong>Aux send.</strong> A separate tap from each channel that goes out to a separate destination. Lets the engineer build a different mix of the same channels for a different purpose (a performer's headphone cue, a reverb send, a monitor wedge).</li>
   <li><strong>Pre-fader / post-fader (aux).</strong> Pre-fader: the aux tap sits before the channel fader, so the fader doesn't affect the aux level. Post-fader: the aux tap sits after the channel fader, so the fader does affect it. Pre-fader is typical for headphone cues; post-fader is typical for reverb sends.</li>
@@ -801,7 +799,7 @@
   <li><strong>Direct out.</strong> A per-channel output that taps the channel's post-fader signal and sends it straight to a single destination (usually one track of a DAW). Independent of routing buttons.</li>
   <li><strong>Insert.</strong> A break in a channel's signal path, exposed as a send/return jack on the back of the console, where an outboard processor (compressor, EQ) can be patched in.</li>
   <li><strong>Talkback.</strong> A small microphone in the master section, plus buttons that route the engineer's voice into the aux outputs (to performers' headphones) or onto the recording (for slating takes).</li>
-  <li><strong>Monitor (the word, on this desk).</strong> Used three different ways. (1) The MON jack on the back of an input strip and its MON LEVEL knob: a route for DAW playback to come back into the console and join the L-R master bus alongside the live mics. (2) MON LEVEL on a submaster strip: a way to send a subgroup to the monitor bus and hear it extra-loud in the studio speakers. (3) MON LEVEL on the master strip: the overall volume knob for the studio speakers. The same word in each case, doing a different job. Also distinct from "monitor" in the live-sound sense of a performer's wedge (covered in the next lab).</li>
+  <li><strong>Monitor (the word, on this desk).</strong> Used three different ways. (1) The MON jack on the back of an input strip plus the MON LEVEL knob in the strip's middle: a second input on the strip, routing into the master mix; primarily for DAW playback during tracking. (2) The MON LEVEL and MON PAN on a submaster strip: the subgroup's route into the master mix. (3) The MON LEVEL on the master strip: the overall volume knob for the control-room speakers. Three different jobs, all labeled MON because they all sit on what engineers traditionally called the "monitoring" side of the recording process. Distinct from "monitor" in the live-sound sense of a performer's wedge (covered in the next lab).</li>
   <li><strong>Front-of-house (FOH).</strong> The main mix sent to the speakers facing the audience in a live show. The "front of the house" is the audience side of a venue.</li>
   <li><strong>Headphone cue (or just cue).</strong> A performer's headphone mix during tracking. Usually built from one or more aux sends.</li>
 </ul>
