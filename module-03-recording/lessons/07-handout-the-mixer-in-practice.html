@@ -480,15 +480,40 @@
 
 <h3>The FOH mix: routing to the master mix</h3>
 
-<p>Channels 1 through 4 (vocal, guitar, bass DI, bass amp) go directly to the master mix. Their <strong>L-R</strong> button assigns them; the channel pan knob places each left or right; the channel fader sets level; the channel EQ shapes tone. Four faders, one for each of these channels, ridden directly by the engineer.</p>
+<p>Three patches to set up the FOH mix, one for each group of channels.</p>
 
-<p>For drums, the standard move is the one the reading walked through: route the four drum channels (5, 6, 7, 8) to <strong>subgroup pair 1-2</strong> instead of directly to L-R. The 1-2 button on each input strip is the assignment (L-R off on these channels). Pan the kick and snare center, overhead L hard left, overhead R hard right. The four channels sum into the subgroup pair: sub 1 carries the left side of the kit, sub 2 the right.</p>
+<p><strong>Patch 1 · Vocal, guitar, bass DI, bass amp (channels 1-4) directly to the master mix.</strong></p>
 
-<p>From the subgroup, the kit reaches the master mix through the submaster strip's <strong>MON LEVEL</strong> and <strong>MON PAN</strong> in the middle of the strip (with the strip's TAPE button up, since the live subgroup output is the source, not playback). MON LEVEL sets the drum bus's overall level in the master mix; MON PAN places it (sub 1 hard left, sub 2 hard right, for a stereo kit). The submaster fader at the bottom of the strip, which would normally control the level out to the DAW, stays unused in a live show: there's no DAW to feed.</p>
+<ol class="steps">
+  <li>On each of channels 1, 2, 3, 4: press the <strong>L-R</strong> button. The 1-2, 3-4, 5-6, 7-8 buttons stay out.</li>
+  <li>On each of those channels: set the channel pan knob (centre for vocal and bass DI, slightly left/right for the two amp mics if the engineer wants width).</li>
+  <li>Adjust each channel's INPUT GAIN, EQ, and fader as the band plays.</li>
+</ol>
 
-<p>So for the live show, the engineer's drum-control surface on the Toft is two knobs: MON LEVEL on submaster 1 (drum bus left) and MON LEVEL on submaster 2 (drum bus right). Pull both knobs down by 3 dB during a quiet verse and the whole kit drops in the master mix by 3 dB together, with the internal balance among the drum mics untouched. Bring them back up for the chorus.</p>
+<p>The engineer now has four faders, one per channel, riding directly into the master mix.</p>
 
-<p>The same logic applies to the keyboardist's four channels. Route the keys L/R and laptop L/R (channels 9 through 12) to <strong>subgroup pair 3-4</strong>. Pan each L channel hard left and each R channel hard right; the two stereo pairs sum across the subgroup pair into one stereo electronic submix. The submaster strips for subs 3 and 4 then place that submix into the master mix through their MON LEVEL and MON PAN, exactly the same move as the drums. One pair of knobs controls everything coming from the keys rig in the FOH mix.</p>
+<p><strong>Patch 2 · Drums (channels 5-8) routed to subgroup pair 1-2, then into the master mix.</strong></p>
+
+<ol class="steps">
+  <li>On each of channels 5 (kick), 6 (snare), 7 (overhead L), 8 (overhead R): press the <strong>1-2</strong> button. L-R stays out.</li>
+  <li>On the channel pan knobs: kick centred, snare centred, overhead L hard left, overhead R hard right. The four channels now sum into the subgroup pair (sub 1 = left side of the kit, sub 2 = right).</li>
+  <li>On submaster strips 1 and 2: set the <strong>TAPE</strong> button up (the live subgroup is the source, not playback).</li>
+  <li>On submaster strip 1: turn <strong>MON LEVEL</strong> up, set <strong>MON PAN</strong> hard left. On submaster strip 2: MON LEVEL up, MON PAN hard right. The drum kit now lands in the master mix as a stereo pair.</li>
+  <li>Leave both submaster faders down. They control the level out to the SUBMASTER OUTPUTS jacks (the DAW send), which a live show isn't using.</li>
+</ol>
+
+<p>The engineer's drum-control surface is now two knobs: MON LEVEL on submaster 1 (drum bus left), MON LEVEL on submaster 2 (drum bus right). Pull both down by 3 dB during a quiet verse and the whole kit drops by 3 dB in the master mix; the internal balance among the drum mics doesn't move.</p>
+
+<p><strong>Patch 3 · Keys and laptop (channels 9-12) routed to subgroup pair 3-4, then into the master mix.</strong></p>
+
+<ol class="steps">
+  <li>On each of channels 9 (keys L), 10 (keys R), 11 (laptop L), 12 (laptop R): press the <strong>3-4</strong> button. L-R stays out.</li>
+  <li>On the channel pan knobs: channels 9 and 11 hard left, channels 10 and 12 hard right. The two stereo pairs sum across the subgroup pair into one stereo electronic submix.</li>
+  <li>On submaster strips 3 and 4: TAPE up, MON LEVEL up, MON PAN hard left on sub 3 and hard right on sub 4. The electronic submix now lands in the master mix.</li>
+  <li>Leave submaster faders 3 and 4 down (same reason as the drum subs).</li>
+</ol>
+
+<p>One pair of knobs (MON LEVEL on submasters 3 and 4) controls everything coming from the keys rig in the FOH mix. The internal balance between the stage keyboard and the laptop stays set wherever the keyboardist's gain-staging at her station put it.</p>
 
 <figure class="diagram">
   <svg viewBox="0 0 720 410" xmlns="http://www.w3.org/2000/svg"
