@@ -111,12 +111,11 @@
     .callout p:last-child { margin-bottom: 0; }
   </style>
 </head>
-</head>
 <body>
 
 <header class="handout-header">
   <span class="course">MUS 381 · Essentials of Music Technology</span>
-  <span class="meta">Module 03 · Lab 3</span>
+  <span class="meta">Module 03 · Lab 4</span>
 </header>
 
 <div class="title-block">
@@ -124,7 +123,248 @@
   <h1>The Mixer in Practice · Studio Recording</h1>
 </div>
 
-<p class="lede">A companion to the live-sound handout. Same band, same twelve signals, same console, very different chain: how the signals reach the console in our studio, how Pro Tools captures them, and how the in-line console handles tracking layer by layer.</p>
+<p class="lede">A guide to recording in our studio. The first half walks the studio's gear and how it's all wired together (live room, control room, the path each signal takes from a mic on a stand to a track in Pro Tools). The second half pretends we're recording The Sound Below from front to back, with hands on the actual console.</p>
+
+<h2>Part 1 · The studio</h2>
+
+<h3>Two rooms, one signal path</h3>
+
+<p>The studio is two rooms with a window between them.</p>
+
+<p>The <strong>live room</strong> (where you are right now if you walked in from the hallway) is where the band plays. It has mic stands, instrument amps when the band brings them, and a rack against one wall holding most of the gear that gets the band's signals out of the room.</p>
+
+<p>The <strong>control room</strong> (on the other side of the window) is where the engineer sits. The Toft ATB lives here, on a console desk with a side rack tucked into one end. Pro Tools runs on a Mac Pro next to the desk. Speakers on stands behind the console face the engineer's listening position. Headphones for control-room work hang on the wall.</p>
+
+<p>The two rooms are connected by a wall full of XLR jacks and an audio path that runs in both directions: live signals come from the live room into the control room (mic → preamp → console → DAW), and a mix comes back the other way so performers in the live room can hear themselves and each other in headphones while they record. Everything in this handout sits somewhere on that two-way path.</p>
+
+<h3>The live-room rack</h3>
+
+<p>The rack against the live-room wall holds five things, top to bottom in the order signal travels through them.</p>
+
+<h4>Mic input panels: Hosa PDR-369 (×2)</h4>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/hosa-pdr-369-mic-panel.jpg" alt="A 1U rack panel with twelve XLR female jacks across the front, numbered 1 through 12. The brand label reads &quot;Hosa PDR-369 MIC IN PANEL&quot; on the left." loading="lazy">
+  <figcaption>One of the two Hosa PDR-369 mic input panels in the live-room rack.</figcaption>
+  <div class="photo-attribution">Photo via Hosa Technology.</div>
+</figure>
+
+<p>Two of these panels live in the rack, stacked. Each panel is a row of twelve XLR female jacks numbered 1 through 12. Plug a microphone (or a DI box's output) into one of these jacks and you're feeding a preamp downstream. The first eight jacks on the top panel correspond to channels 1 through 8 on the first preamp; the first eight jacks on the bottom panel correspond to channels 1 through 8 on the second preamp.</p>
+
+<p>The panels exist because plugging mics directly into the back of a preamp is impractical when the preamp lives in a rack tucked against the wall. The panel brings the eight inputs forward in a tidy row at standing height, and a fixed XLR cable runs from the back of each panel jack to the corresponding mic input on the preamp inside the same rack.</p>
+
+<h4>Eight-channel preamps: Focusrite ISA 828 MkII and OctoPre Platinum</h4>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/focusrite-isa-828-mkii.png" alt="Front and rear views of the Focusrite ISA 828 MkII, an 8-channel rack-mount mic preamp. The front panel has eight identical input strips, each with gain, impedance, phantom power, phase, and high-pass controls. The rear panel has 8 XLR mic inputs and a DB25 connector for line outputs." loading="lazy">
+  <figcaption>Focusrite ISA 828 MkII. Eight microphone preamps in 2U of rack space.</figcaption>
+  <div class="photo-attribution">Photo via Focusrite.</div>
+</figure>
+
+<p>A <strong>preamp</strong> takes a mic-level signal (small, fragile, from a microphone) and lifts it to <strong>line level</strong> (large, robust, ready to be sent down the next stage of the chain). You met one preamp already, the one inside the audio interface at every lab station; this is the same job, done by a dedicated piece of gear with eight independent channels.</p>
+
+<p>Our studio uses two such preamps stacked in the live-room rack. The <strong>Focusrite ISA 828 MkII</strong> is the top unit. Each channel has its own gain knob, impedance selector (the &quot;Z in&quot; toggle), 80 Hz HPF, phase invert, and +48V phantom power switch. The 80 Hz HPF and phase invert do the same things they do on the Toft (you met them in Lecture 3); the gain knob does what you've been doing in Audacity since Module 2.</p>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/focusrite-octopre-platinum.jpg" alt="Front and rear views of the Focusrite OctoPre Platinum, an 8-channel mic preamp. The front panel has eight input strips arranged in two rows of four, each with gain, level meter, +48V, phase, and high-pass controls. The rear panel has 8 XLR mic inputs and 8 TRS line outputs." loading="lazy">
+  <figcaption>Focusrite OctoPre Platinum. Eight more preamps in 1U.</figcaption>
+  <div class="photo-attribution">Photo via Focusrite.</div>
+</figure>
+
+<p>Below the ISA sits the <strong>Focusrite OctoPre Platinum</strong>, another eight-channel preamp with the same job and a slightly different sound. Its controls are arranged differently (the channels are split into two rows of four) but each strip carries the same essentials: gain, +48V, phase, HPF. Sixteen preamp channels total between the two units.</p>
+
+<p>The line-level outputs of both preamps don't stay in the live room. They travel through the wall to the control room, where they land on the back of the Toft ATB.</p>
+
+<h4>Headphone console: Rane MH4 Mojo Series</h4>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/rane-mh4-headphone-console.jpg" alt="A 1U rack-mount unit with four channels, each having a 1/4-inch headphone jack and a level knob. The unit is labeled &quot;Rane MH4 Stereo Headphone Console.&quot;" loading="lazy">
+  <figcaption>Rane MH4 Mojo Series. Four independent headphone outs in 1U.</figcaption>
+  <div class="photo-attribution">Photo via Rane Corporation.</div>
+</figure>
+
+<p>Performers in the live room wear headphones during tracking so they can hear a mix while playing; the engineer in the control room needs to be able to send them that mix. The <strong>Rane MH4</strong> is a four-channel headphone amplifier in the live-room rack. A single stereo cue mix comes from the control room into the back of the MH4, and four independent headphone outputs (with per-output level knobs) leave the front to drum-fill, vocal booth, or wherever a performer happens to be standing.</p>
+
+<p>Four players can be on independent headphone-level knobs from one stereo source. The source itself, the actual mix they're hearing, gets built back in the control room.</p>
+
+<h4>Power conditioner: Furman PL-8 Series 2</h4>
+
+<p>The last thing in the rack is the <strong>Furman PL-8 Series 2</strong>, a power conditioner. Every piece of gear in the rack plugs into the back of the Furman; the Furman plugs into one wall outlet. The conditioner filters out electrical noise on the power line, protects everything plugged into it from surges, and gives the engineer a single power switch that turns the whole rack on or off.</p>
+
+<h3>The control-room side rack</h3>
+
+<p>The Toft sits on a console desk that has a side rack built into one end. Five pieces of gear live in it, in roughly the order they show up in the signal path.</p>
+
+<h4>Master clock: Apogee Big Ben</h4>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/apogee-big-ben.webp" alt="A 1U rack-mount unit with a small LED screen showing &quot;192.0&quot; (the sample rate in kHz), surrounded by sample-rate indicator LEDs (44.1, 48, 88.2, 96, 176.4, 192). The unit is labeled &quot;Apogee Big Ben Master Word Clock.&quot; The rear panel shows multiple BNC word clock outputs, AES I/O, optical I/O, and a video sync input." loading="lazy">
+  <figcaption>Apogee Big Ben. One clock running the whole studio.</figcaption>
+  <div class="photo-attribution">Photo via Apogee Electronics.</div>
+</figure>
+
+<p>Every digital audio device runs on a <strong>clock</strong>: a steady stream of timing pulses that tells the device when to capture each sample. If two digital devices in the same studio are running on slightly different clocks, the small drift between them produces clicks, dropouts, and slow phase smearing. The fix is to use one device as the <strong>master clock</strong> and route its timing to every other digital device in the studio, so they all run on the same beat.</p>
+
+<p>The <strong>Apogee Big Ben</strong> is our master clock. It generates a precise word-clock signal at the studio's chosen sample rate (44.1, 48, 88.2, 96, 176.4, or 192 kHz; we work at 48 kHz for Module 4 sessions) and distributes that signal over BNC cables through the wall to every digital device in both rooms. The Avid HDX in the side rack receives the clock; any other digital gear in the studio receives the clock; everyone agrees on the moment when each sample begins.</p>
+
+<h4>Audio interface: Avid HDX I/O</h4>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/avid-hdx-io.webp" alt="Front and rear views of the Avid HDX I/O, a 2U rack-mount audio interface. The front panel has level meters for 16 inputs and 16 outputs plus sample-rate and sync-mode indicator LEDs. The rear panel has two DB25 analog input connectors (one labeled +4dBu BALANCED, one labeled -10dBV BALANCED), one DB25 analog output connector, AES/EBU and TDIF digital ports, ADAT optical in/out, S/PDIF, and BNC word-clock in/out." loading="lazy">
+  <figcaption>Avid HDX I/O. The bridge between the analog console and Pro Tools.</figcaption>
+  <div class="photo-attribution">Photo via Avid Technology.</div>
+</figure>
+
+<p>The <strong>Avid HDX I/O</strong> is the audio interface that connects the Toft to Pro Tools. It's a 16-in / 16-out converter (16 analog inputs that become digital tracks Pro Tools can record; 16 analog outputs that turn Pro Tools tracks back into analog audio for the console to receive). It connects to the Mac Pro by a single proprietary cable to the <strong>HDX PCIe card</strong> installed in the computer, which gives Pro Tools many more simultaneous tracks than a USB or Thunderbolt interface could carry.</p>
+
+<p>The HDX is the device that the master clock matters for most: every sample Pro Tools captures or plays back gets its timing from the Big Ben signal arriving at the HDX's BNC word-clock input.</p>
+
+<h4>Bus compressor: SSL XLogic G Series</h4>
+
+<p>A stereo <strong>bus compressor</strong>, used for gentle level-evening of a stereo mix. Lives in the side rack so the engineer can patch it into the master mix path (via the master section's INSERT loop) when a mix is approaching final and needs a unifying glue.</p>
+
+<p>This is one of the most-loved studio compressors in the world; we'll come back to what it does in Module 4. For now, just know it's in the rack and waiting.</p>
+
+<h4>Effects processor: TC Electronic M2000</h4>
+
+<p>A studio reverb and delay processor. Mono in, stereo out. Wired to one of the Toft's stereo effects returns so the engineer can send any channel a reverb tail via an aux send and hear the tail come back as part of the mix. Same aux-send-as-effect-tap mechanism you read about in Lecture 3.</p>
+
+<h4>Power conditioner: Furman PL-8 Series 2</h4>
+
+<p>Same model as the live-room rack's. One switch turns the whole side rack on.</p>
+
+<h3>How the studio's signals actually flow</h3>
+
+<p>With the gear in place, the path of a single mic signal from the live room to a Pro Tools track and back to the band's headphones runs like this. Imagine a vocalist standing in the live room with an SM58 in hand.</p>
+
+<figure class="diagram">
+  <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="studio-flow-title">
+    <title id="studio-flow-title">Signal flow from the live room through the preamps, through the wall, into the Toft, out to the HDX, into Pro Tools, and back out as a headphone cue.</title>
+    <style>
+      .flow-room { fill: var(--bg-alt); stroke: var(--rule); stroke-width: 1; }
+      .flow-box { fill: var(--bg); stroke: var(--ink-soft); stroke-width: 1; }
+      .flow-toft { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
+      .flow-wall { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 4; }
+      .flow-arrow { stroke: var(--ink); stroke-width: 1.5; fill: none; }
+      .flow-arrow-rev { stroke: var(--accent); stroke-width: 1.5; fill: none; }
+      .flow-label { font-family: var(--mono); font-size: 11px; fill: var(--ink); }
+      .flow-label-small { font-family: var(--mono); font-size: 10px; fill: var(--ink-soft); }
+      .flow-room-label { font-family: var(--mono); font-size: 12px; fill: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+    </style>
+
+    <!-- Live room (left) -->
+    <rect x="20" y="40" width="320" height="380" class="flow-room" rx="4"/>
+    <text x="30" y="60" class="flow-room-label">Live room</text>
+
+    <!-- Mic source -->
+    <rect x="50" y="80" width="120" height="34" class="flow-box" rx="2"/>
+    <text x="60" y="101" class="flow-label">Vocalist · SM58</text>
+
+    <!-- Hosa panel -->
+    <rect x="50" y="140" width="120" height="34" class="flow-box" rx="2"/>
+    <text x="60" y="155" class="flow-label">Hosa panel A</text>
+    <text x="60" y="167" class="flow-label-small">Jack 1 (XLR)</text>
+
+    <!-- ISA preamp -->
+    <rect x="50" y="200" width="270" height="44" class="flow-box" rx="2"/>
+    <text x="60" y="217" class="flow-label">Focusrite ISA 828 · channel 1</text>
+    <text x="60" y="234" class="flow-label-small">Mic level → line level (+48V if needed)</text>
+
+    <!-- Rane headphone console (target of returning cue) -->
+    <rect x="50" y="330" width="270" height="60" class="flow-box" rx="2"/>
+    <text x="60" y="350" class="flow-label">Rane MH4 headphone console</text>
+    <text x="60" y="367" class="flow-label-small">4 player headphone outs · vocalist's cans plug in here</text>
+
+    <!-- Arrows in live room -->
+    <line x1="110" y1="114" x2="110" y2="138" class="flow-arrow" marker-end="url(#arrowhead)"/>
+    <line x1="110" y1="174" x2="110" y2="198" class="flow-arrow" marker-end="url(#arrowhead)"/>
+
+    <!-- Wall -->
+    <line x1="370" y1="40" x2="370" y2="420" class="flow-wall"/>
+    <text x="350" y="32" class="flow-label-small" text-anchor="middle">Wall</text>
+
+    <!-- Control room (right) -->
+    <rect x="400" y="40" width="340" height="380" class="flow-room" rx="4"/>
+    <text x="410" y="60" class="flow-room-label">Control room</text>
+
+    <!-- Toft -->
+    <rect x="430" y="80" width="280" height="120" class="flow-toft" rx="4"/>
+    <text x="440" y="100" class="flow-label">Toft ATB · channel 1</text>
+    <text x="440" y="118" class="flow-label-small">XLR input (line-level from ISA)</text>
+    <text x="440" y="135" class="flow-label-small">Channel fader → routed to subgroup 1</text>
+    <text x="440" y="152" class="flow-label-small">Subgroup 1 OUTPUT → to HDX in</text>
+    <text x="440" y="173" class="flow-label-small">Submaster 1 MON RETURN ← from HDX out</text>
+    <text x="440" y="190" class="flow-label-small">MON LEVEL/MON PAN → master mix</text>
+
+    <!-- HDX -->
+    <rect x="430" y="220" width="280" height="60" class="flow-box" rx="2"/>
+    <text x="440" y="240" class="flow-label">Avid HDX I/O</text>
+    <text x="440" y="257" class="flow-label-small">In 1 (analog) → Pro Tools track 1 (record)</text>
+    <text x="440" y="274" class="flow-label-small">Pro Tools playback → Out 1 (analog)</text>
+
+    <!-- Pro Tools / Mac -->
+    <rect x="430" y="300" width="280" height="40" class="flow-box" rx="2"/>
+    <text x="440" y="324" class="flow-label">Mac Pro · Pro Tools</text>
+
+    <!-- Headphone send (back to live room) -->
+    <rect x="430" y="360" width="280" height="40" class="flow-box" rx="2"/>
+    <text x="440" y="384" class="flow-label">Aux send for cue mix → through wall</text>
+
+    <!-- Toft to HDX -->
+    <line x1="570" y1="200" x2="570" y2="220" class="flow-arrow" marker-end="url(#arrowhead)"/>
+    <!-- HDX to Pro Tools (down) -->
+    <line x1="540" y1="280" x2="540" y2="298" class="flow-arrow" marker-end="url(#arrowhead)"/>
+    <!-- Pro Tools to HDX (up, reverse direction) -->
+    <line x1="600" y1="298" x2="600" y2="282" class="flow-arrow-rev" marker-end="url(#arrowhead-accent)"/>
+    <!-- HDX back to Toft (up, reverse direction) -->
+    <line x1="630" y1="220" x2="630" y2="202" class="flow-arrow-rev" marker-end="url(#arrowhead-accent)"/>
+
+    <!-- ISA to Toft (through wall) -->
+    <line x1="320" y1="220" x2="430" y2="100" class="flow-arrow" marker-end="url(#arrowhead)"/>
+
+    <!-- Headphone aux back to Rane -->
+    <line x1="430" y1="380" x2="320" y2="350" class="flow-arrow-rev" marker-end="url(#arrowhead-accent)"/>
+
+    <!-- Big Ben clock note -->
+    <rect x="430" y="410" width="280" height="0" class="flow-box" rx="2"/>
+
+    <!-- Arrowhead markers -->
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 z" fill="var(--ink)"/>
+      </marker>
+      <marker id="arrowhead-accent" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Live signal in black flows left to right; cue return mix in the accent color flows right to left. Big Ben's word clock distribution runs underneath everything and isn't drawn.</figcaption>
+</figure>
+
+<p>Step by step:</p>
+
+<ol class="steps">
+  <li>The vocalist sings into the SM58.</li>
+  <li>The XLR from the mic plugs into jack 1 on the top Hosa panel in the live-room rack.</li>
+  <li>Inside the rack, a fixed XLR cable runs from the back of that panel jack to mic input 1 on the Focusrite ISA 828. The ISA's gain knob, +48V switch (off for the dynamic SM58), HPF, and phase invert are at the engineer's disposal.</li>
+  <li>The ISA brings the mic signal up to line level. Its channel 1 line output (XLR on the back) runs through a wall feed-through to the back of the Toft in the control room, landing on the <strong>XLR (MIC) input</strong> of channel 1. The signal is line-level on a balanced XLR cable, which the Toft's mic preamp will see and pass through with low gain.</li>
+  <li>The Toft's channel 1 strip handles the signal exactly as you read about in Lecture 3: input gain set low (the ISA already brought the level up), EQ and HPF as needed, route the big channel fader to a subgroup pair (say, subgroup 1 for the vocal). The fader's level controls what gets sent to the subgroup.</li>
+  <li>The subgroup 1 strip outputs the signal via the <strong>SUBMASTER OUTPUT</strong> jack on the back of the Toft. That jack runs to analog input 1 of the Avid HDX in the side rack.</li>
+  <li>The HDX converts the analog signal to digital using the sample clock supplied by the Big Ben. Pro Tools records the result on track 1.</li>
+  <li>Pro Tools immediately plays back whatever it's recording (along with any tracks recorded on previous days), with the playback going out the HDX's analog output 1 back into the Toft.</li>
+  <li>HDX output 1 lands on the <strong>submaster 1 MONITOR RETURN</strong> jack on the back of the Toft. With submaster 1's TAPE button pressed down, the submaster's monitor section now uses the Pro Tools return as its source. The submaster's MON LEVEL and MON PAN bring the return into the master mix.</li>
+  <li>The master mix feeds the control-room speakers (so the engineer hears what's being recorded), and an aux send taps a copy of the master mix that travels back through the wall to the Rane MH4's stereo input.</li>
+  <li>The Rane sends the same stereo cue to four independent headphone outs. The vocalist's headphones are plugged into one of them. They hear themselves (with whatever processing the Toft and Pro Tools are doing) plus all the previously-recorded tracks, in time, while they sing.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Why the LINE jacks on channels 1–8 are empty</div>
+  <p>Look at the back of the Toft, channels 1 through 8. The XLR jacks have cables in them (the line outputs from the ISA). The LINE jacks right next to them are empty. This is on purpose.</p>
+  <p>The Toft's submaster monitor returns (where Pro Tools playback lands) are wired in parallel to the LINE jacks of channels 1 through 8. Plugging anything into a LINE jack on those channels would inject that signal directly into the submaster monitor path and collide with the Pro Tools return. Leaving them empty keeps the Pro Tools playback path clean.</p>
+  <p>Channels 9 through 16 are a different story; we'll come back to what's on their LINE jacks when we use them.</p>
+</div>
+
+<hr>
 
 <h2>1 · Scenario 2 · Studio recording session</h2>
 
@@ -435,7 +675,7 @@
 
 <footer class="handout-footer">
   <span>MUS 381 · CSU East Bay</span>
-  <span>Module 03 · Lab 3</span>
+  <span>Module 03 · Lab 4</span>
 </footer>
 
 </body>
