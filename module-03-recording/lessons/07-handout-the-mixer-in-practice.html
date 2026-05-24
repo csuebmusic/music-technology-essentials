@@ -813,6 +813,8 @@
 
 <p>Work it through methodically, the same way Scenario 1 did. Read the <strong>signal chart</strong> (player → captured → mic / source → signal type → cable) first; that tells you what's coming off the stage. Then build the <strong>channel chart</strong> yourself (channel → source → MIC or LINE jack → phantom power on/off); that's what you'd write down before patching the back of the console. From there, plan the FOH mix and the stage monitor mixes.</p>
 
+<p>The specific mic models listed in the signal chart are for reference: real working examples of the transducer types from Lecture 3's reading. If you want to know why one of them was chosen for a particular source (frequency response, polar pattern, max SPL, that kind of thing), google the mic name and read its spec sheet.</p>
+
 <p>Each section has a <strong>Show one approach</strong> button that reveals a worked solution, but try to answer first on paper before peeking. There isn't always one right answer; routing is interpretive, and the reveal is one reasonable approach with a note on the trade-offs.</p>
 
 <p>Hit the button again to get a different lineup. The pool has six bands, each chosen to expose a different routing concept past what The Sound Below covered.</p>
@@ -888,7 +890,7 @@
       tagline: "Loud, fast, dense low end. Bass, drums, guitar, vocal, with the kick drum mic'd both inside (beater attack) and outside (resonant head body).",
       band: [
         { player: "Lead vocal", captured: "Voice into a handheld mic", sourceType: "Dynamic mic (Shure SM58)", signalType: "Mic level", cable: "XLR" },
-        { player: "Electric guitar amp", captured: "Mic on the guitar amp's speaker cone", sourceType: "Dynamic mic (Shure SM57)", signalType: "Mic level", cable: "XLR" },
+        { player: "Electric guitar", captured: "Mic on the guitar amp's speaker cone", sourceType: "Dynamic mic (Shure SM57)", signalType: "Mic level", cable: "XLR" },
         { player: "Bass DI", captured: "Bass guitar through a DI box, direct out", sourceType: "Passive DI box (Radial JDI)", signalType: "Mic level (balanced)", cable: "XLR" },
         { player: "Bass amp", captured: "Mic on the bass amp's cabinet", sourceType: "Dynamic mic (Sennheiser MD421)", signalType: "Mic level", cable: "XLR" },
         { player: "Kick (in)", captured: "Inside the kick, near the beater", sourceType: "Dynamic mic (Shure Beta 52A)", signalType: "Mic level", cable: "XLR" },
@@ -931,8 +933,8 @@
         { player: "Snare", captured: "Top head of the snare", sourceType: "Dynamic mic (Shure SM57)", signalType: "Mic level", cable: "XLR" },
         { player: "Overhead L", captured: "Above the kit, left side", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
         { player: "Overhead R", captured: "Above the kit, right side", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
-        { player: "Piano L (bass strings)", captured: "Inside the grand piano, over the bass strings", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
-        { player: "Piano R (treble strings)", captured: "Inside the grand piano, over the treble strings", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
+        { player: "Piano L", captured: "Inside the grand piano, over the bass strings", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
+        { player: "Piano R", captured: "Inside the grand piano, over the treble strings", sourceType: "Small-diaphragm condenser (Neumann KM 184)", signalType: "Mic level", cable: "XLR" },
         { player: "Tenor saxophone", captured: "A foot or two in front of the bell", sourceType: "Large-diaphragm condenser (Neumann TLM 103)", signalType: "Mic level", cable: "XLR" }
       ],
       channelCount: 9,
