@@ -851,7 +851,17 @@
         { ch: 4, label: "Cello", jack: "MIC (XLR)", phantom: "on" }
       ],
       channelMapNotes: "All four mics are small-diaphragm condensers and need +48V; engage phantom power on every channel. Engage the 80 Hz HPF too: wind noise on condensers sits below the instruments' fundamentals and the filter knocks it out without touching the music.",
-      fohRouting: "All four channels direct to L-R, no subgroups in use. Pan to roughly mirror stage positions: Violin I left, Violin II center-left, Viola center-right, Cello right. With only four channels and no subgrouping, the engineer has four faders riding the whole quartet, and that's enough for the work.",
+      fohPatches: [
+        {
+          name: "Patch 1 · All four channels direct to the master mix",
+          intro: "With only four channels and similarly weighted mono signals, every channel goes direct to L-R. No subgroups in use.",
+          steps: [
+            "On Ch 1, Ch 2, Ch 3, Ch 4: press the <strong>L-R</strong> button down. Leave all eight subgroup buttons (1-2, 3-4, 5-6, 7-8) up.",
+            "Set the channel pan knobs to mirror stage positions: Ch 1 (Violin I) about 10 o'clock; Ch 2 (Violin II) about 11 o'clock; Ch 3 (Viola) about 1 o'clock; Ch 4 (Cello) about 2 o'clock.",
+            "Adjust each channel's INPUT GAIN, EQ, and fader as the quartet plays. Four faders, one per channel, riding straight into the master mix.",
+          ]
+        },
+      ],
       fohTradeoff: "Could you put the quartet on subgroup pair 1-2 to get a master 'quartet level' knob? Yes, but you'd be adding an extra control stage with nothing to gain: the four channels are already the smallest unit you'd want to control, and the master fader already gives you a global level. Subgroups earn their place when you have many channels worth grouping; four don't.",
       monitorMixes: [
         { aux: "Aux 1", performer: "Stage monitor 1 (violins side)", blend: "Violin I, Violin II at moderate level; viola and cello quieter for context" },
@@ -878,10 +888,31 @@
         { ch: 4, label: "Looper R", jack: "LINE (TRS)", phantom: "off" }
       ],
       channelMapNotes: "The looper outputs are line-level: they go into the LINE jacks on the back, not MIC. Press the LINE button on channels 3 and 4 to switch each strip's input section from MIC to LINE. Phantom power only on Ch 2 (the clip-on condenser); the SM58 and the line inputs don't draw +48V.",
-      fohRouting: "Channels 1 and 2 (voice and guitar) direct to L-R, panned roughly center (voice center, guitar just off-center). Channels 3 and 4 (looper L+R) to subgroup pair 1-2, panned hard left and hard right, so the stereo image of the looped material is preserved. The submaster strips for subs 1 and 2 then put the looped material into the master mix via their MON LEVEL knobs (TAPE button up, MON PAN hard left and hard right).",
+      fohPatches: [
+        {
+          name: "Patch 1 · Vocal and guitar direct to the master mix (channels 1-2)",
+          intro: "Voice and acoustic guitar route directly to L-R. The artist's dry sources sit in front of the looped backing.",
+          steps: [
+            "On Ch 1 and Ch 2: press the <strong>L-R</strong> button down. Leave the subgroup buttons up.",
+            "Pan: Ch 1 (Voice) center (12 o'clock); Ch 2 (Acoustic guitar) just off-center (about 1 o'clock).",
+            "Adjust INPUT GAIN, EQ, and fader on both channels as the artist plays.",
+          ]
+        },
+        {
+          name: "Patch 2 · Looper L+R routed to subgroup pair 1-2, then into the master mix",
+          intro: "The stereo looper output gets its own subgroup pair so the engineer can ride the whole looped layer as a unit, without touching the dry voice and guitar.",
+          steps: [
+            "On Ch 3 (Looper L) and Ch 4 (Looper R): press the <strong>1-2</strong> button down. Leave L-R up.",
+            "Pan: Ch 3 hard left; Ch 4 hard right. The stereo image of the loops lands intact on the subgroup pair.",
+            "On submaster strips 1 and 2: set the <strong>TAPE</strong> button up (the live subgroup is the source, not playback).",
+            "On submaster strip 1: turn <strong>MON LEVEL</strong> up, set <strong>MON PAN</strong> hard left. On submaster strip 2: MON LEVEL up, MON PAN hard right. The looper now lands in the master mix as a stereo pair.",
+            "Leave the submaster faders down (no DAW to feed).",
+          ]
+        },
+      ],
       fohTradeoff: "Why not just route the looper to L-R like the voice and guitar? You could, but then you're riding four separate faders that all need to move together when the loops are getting busy. With the looper on its own subgroup pair, the engineer has a single pair of MON LEVEL knobs that brings the whole looped layer up or down as a unit, leaving the dry vocal and guitar untouched. That's the move when one source needs independent control as a group.",
       monitorMixes: [
-        { aux: "Aux 1", performer: "Artist's stage monitor", blend: "Voice (loud) · guitar (audible) · looper L+R (audible) — the artist needs to hear everything they're building" }
+        { aux: "Aux 1", performer: "Artist's stage monitor", blend: "Voice (loud) · guitar (audible) · looper L+R (audible): the artist needs to hear everything they're building" }
       ],
       monitorTradeoff: "One performer, one stage monitor: simple. Pre-fader, of course (this evening's setup default for stage monitors). The artist's whole loop-and-perform workflow depends on hearing what's already been looped; if the looper drops out of the monitor, they can't sing in tune with their own backing."
     },
@@ -914,14 +945,36 @@
         { ch: 9, label: "Overhead R", jack: "MIC (XLR)", phantom: "on" }
       ],
       channelMapNotes: "Phantom power only on the overhead condensers (channels 8 and 9). The rest are dynamics and a passive DI box, none of which draw +48V. The 80 Hz HPF can go on the vocal and overheads to clean up rumble; leave it off the kick and bass channels (the music lives down there).",
-      fohRouting: "Channels 1-4 (vocal, guitar, bass DI, bass amp) direct to L-R. Channels 5-9 (the five drum mics) to subgroup pair 1-2. On the drum channels, pan kick-in and kick-out both to center (they're the same drum, summed to mono), snare to center, overhead L hard left, overhead R hard right. Submasters 1 and 2 then place the kit in the master mix via MON LEVEL (panned hard L and hard R) — same move as The Sound Below's drum routing.",
+      fohPatches: [
+        {
+          name: "Patch 1 · Vocal, guitar, bass DI, bass amp direct to the master mix (channels 1-4)",
+          intro: "The four front-end channels route directly to L-R, same as channels 1-4 in The Sound Below.",
+          steps: [
+            "On Ch 1, Ch 2, Ch 3, Ch 4: press the <strong>L-R</strong> button down. Leave the subgroup buttons up.",
+            "Pan: Ch 1 (Vocal) center; Ch 2 (Guitar) center or slightly off-center; Ch 3 (Bass DI) center; Ch 4 (Bass amp) center.",
+            "Set the bass DI and bass amp channel faders together to blend the dry DI tone with the wet amp tone. They sum at the master mix as one combined bass sound.",
+          ]
+        },
+        {
+          name: "Patch 2 · Drums (channels 5-9) routed to subgroup pair 1-2",
+          intro: "Five drum channels collapse to a stereo drum bus on subgroup pair 1-2. The two kick channels (kick-in and kick-out) both go to center, summed in the subgroup as one combined kick.",
+          steps: [
+            "On Ch 5 (Kick in), Ch 6 (Kick out), Ch 7 (Snare): press the <strong>1-2</strong> button down. Pan all three center.",
+            "On Ch 8 (Overhead L): press the <strong>1-2</strong> button down, pan hard left.",
+            "On Ch 9 (Overhead R): press the <strong>1-2</strong> button down, pan hard right.",
+            "Set the kick-in and kick-out faders together to blend attack (in-mic) with body (out-mic). This is the kick tone control, set upstream of the subgroup.",
+            "On submaster strips 1 and 2: TAPE up, MON LEVEL up, MON PAN hard left on sub 1 and hard right on sub 2. The kit lands in the master mix as a stereo pair.",
+            "Leave both submaster faders down.",
+          ]
+        },
+      ],
       fohTradeoff: "Why two channels for one kick? Blending an in-mic (attack, click) with an out-mic (body, low end) gives the engineer a tone control: more in-mic for a punchy aggressive kick, more out-mic for a deeper rounded kick. Both go to the same place (subgroup 1-2, panned center), but having them on separate channels means the engineer can blend them with the channel faders before they hit the subgroup. Once they're in the subgroup they're one summed signal; the blend is set upstream.",
       monitorMixes: [
         { aux: "Aux 1", performer: "Vocalist's stage monitor", blend: "Vocal (loud) · kick in (low) · snare (low)" },
         { aux: "Aux 2", performer: "Guitarist's stage monitor", blend: "Vocal · guitar · kick in · snare" },
         { aux: "Aux 3", performer: "Drummer's stage monitor", blend: "Bass DI · vocal · click (if used); the drummer hears their own kit acoustically" }
       ],
-      monitorTradeoff: "Bassist doesn't get a monitor: bass players in small venues typically stand close to their amp and hear themselves through it. One fewer monitor mix to ride, one more aux send free for other uses. In the kick channels, send kick-in (not kick-out) to monitors — the in-mic gives the timing transient that performers lock to; kick-out is for the FOH low-end body that the audience hears."
+      monitorTradeoff: "Bassist doesn't get a monitor: bass players in small venues typically stand close to their amp and hear themselves through it. One fewer monitor mix to ride, one more aux send free for other uses. In the kick channels, send kick-in (not kick-out) to monitors: the in-mic gives the timing transient that performers lock to; kick-out is for the FOH low-end body that the audience hears."
     },
     {
       name: "Lineup 4 · Jazz quartet",
@@ -952,7 +1005,36 @@
         { ch: 9, label: "Saxophone", jack: "MIC (XLR)", phantom: "on" }
       ],
       channelMapNotes: "Six channels need +48V (bass body, both overheads, both piano mics, sax): all condensers. The kick and snare are dynamics; the bass DI is passive. The 80 Hz HPF can go on the sax and overheads to clean up rumble.",
-      fohRouting: "Channels 1, 2, and 9 (bass DI, bass body, sax) direct to L-R, panned center (bass) and slightly off-center (sax). The bass arrives on two channels because the DI gives the attack and string articulation while the body mic gives the woody resonance; both go to L-R panned center, summed acoustically by the master mix. Channels 3-6 (drums) to subgroup pair 1-2, the standard kit move. Channels 7-8 (piano) to subgroup pair 3-4, with piano L (bass strings) panned hard left and piano R (treble strings) panned hard right. Submasters 3 and 4 then place the piano in the master mix as a stereo image, MON PAN hard L and hard R, MON LEVEL set by ear.",
+      fohPatches: [
+        {
+          name: "Patch 1 · Bass and saxophone direct to the master mix (channels 1, 2, 9)",
+          intro: "The bass arrives on two channels (DI + body mic) but it's mono. Both go to L-R panned center; they sum acoustically in the master mix. The sax is one mono channel direct to L-R.",
+          steps: [
+            "On Ch 1 (Bass DI), Ch 2 (Bass body), Ch 9 (Saxophone): press the <strong>L-R</strong> button down. Leave subgroup buttons up.",
+            "Pan: Ch 1 and Ch 2 both center; Ch 9 (Saxophone) slightly off-center (about 11 o'clock or 1 o'clock).",
+            "Set the two bass channel faders together to blend the DI's articulation with the body mic's resonance.",
+          ]
+        },
+        {
+          name: "Patch 2 · Drums (channels 3-6) routed to subgroup pair 1-2",
+          intro: "Standard drum-bus move, same as The Sound Below.",
+          steps: [
+            "On Ch 3 (Kick), Ch 4 (Snare): press the <strong>1-2</strong> button down, pan center.",
+            "On Ch 5 (Overhead L): press <strong>1-2</strong> down, pan hard left.",
+            "On Ch 6 (Overhead R): press <strong>1-2</strong> down, pan hard right.",
+            "On submaster strips 1 and 2: TAPE up, MON LEVEL up, MON PAN hard left / hard right. Submaster faders down.",
+          ]
+        },
+        {
+          name: "Patch 3 · Piano (channels 7-8) routed to subgroup pair 3-4",
+          intro: "The piano's two mics land in the master mix as a stereo pair: bass strings on the left, treble strings on the right.",
+          steps: [
+            "On Ch 7 (Piano L · bass strings): press the <strong>3-4</strong> button down, pan hard left.",
+            "On Ch 8 (Piano R · treble strings): press the <strong>3-4</strong> button down, pan hard right.",
+            "On submaster strips 3 and 4: TAPE up, MON LEVEL up, MON PAN hard left on sub 3 and hard right on sub 4. Submaster faders down.",
+          ]
+        },
+      ],
       fohTradeoff: "Why does the piano get the same treatment as the drums? Both are a single instrument (a piano, a kit) with multiple mics that need to land in the mix as a stereo image. Subgroup pairs are the console's way of saying 'treat these channels as a stereo group from now on,' and a piano with two mics earns that treatment the same way a kit does. The bass on two channels doesn't, because the two bass mics are both mono on the same instrument (no stereo width to preserve); they sum to mono at the master mix without needing a subgroup.",
       monitorMixes: [
         { aux: "Aux 1", performer: "Bassist's stage monitor", blend: "Piano L+R (a lot) · sax (some) · drums (light)" },
@@ -960,7 +1042,7 @@
         { aux: "Aux 3", performer: "Pianist's stage monitor", blend: "Bass DI · sax · drums (light); not much piano (they hear it acoustically)" },
         { aux: "Aux 4", performer: "Saxophonist's stage monitor", blend: "Bass · piano L+R · drums (light)" }
       ],
-      monitorTradeoff: "Jazz players want to hear each other, not themselves. Each monitor is mostly other instruments — the player's own sound comes from their instrument right in front of them. The exception is the bassist, who stands far from the drums and piano and needs them close. Keep levels modest: this is a quiet acoustic group, and loud monitors leaking into mics destroys the intimate sound the audience came for."
+      monitorTradeoff: "Jazz players want to hear each other, not themselves. Each monitor is mostly other instruments: the player's own sound comes from their instrument right in front of them. The exception is the bassist, who stands far from the drums and piano and needs them close. Keep levels modest: this is a quiet acoustic group, and loud monitors leaking into mics destroys the intimate sound the audience came for."
     },
     {
       name: "Lineup 5 · Electronic duo",
@@ -991,7 +1073,28 @@
         { ch: 9, label: "Synth player vocal", jack: "MIC (XLR)", phantom: "off" }
       ],
       channelMapNotes: "Eight LINE buttons engaged (channels 1-8) to switch those strips from MIC to LINE input. No phantom power anywhere: the eight line sources don't need it, and the SM58 on Ch 9 is a dynamic. The 80 Hz HPF on the vocal channel.",
-      fohRouting: "Each stereo pair onto its own subgroup pair, panned hard L and hard R: synth A to subs 1-2, synth B to subs 3-4, drum machine to subs 5-6, sampler to subs 7-8. The vocal (channel 9) direct to L-R, panned center. Every submaster strip's TAPE button up, MON LEVEL up, MON PAN hard L on the odd-numbered subs and hard R on the even-numbered ones. The engineer now has four pairs of MON LEVEL knobs, one per stereo source, plus a vocal fader. Eight knobs and one fader for the whole show.",
+      fohPatches: [
+        {
+          name: "Patch 1 · Vocal direct to the master mix (channel 9)",
+          intro: "The one mono mic-level source sits direct on L-R, the way the vocal did in The Sound Below.",
+          steps: [
+            "On Ch 9: press the <strong>L-R</strong> button down. Pan center.",
+            "Adjust INPUT GAIN, EQ, and fader as the synth player sings.",
+          ]
+        },
+        {
+          name: "Patch 2 · Four stereo line sources, each on its own subgroup pair",
+          intro: "Each stereo source (synth A, synth B, drum machine, sampler) gets a subgroup pair. With one MON LEVEL pair per source, the engineer has independent control over each electronic layer.",
+          steps: [
+            "Ch 1 (Synth A L) and Ch 2 (Synth A R): press the <strong>1-2</strong> button down. Pan Ch 1 hard left, Ch 2 hard right.",
+            "Ch 3 (Synth B L) and Ch 4 (Synth B R): press the <strong>3-4</strong> button down. Pan Ch 3 hard left, Ch 4 hard right.",
+            "Ch 5 (Drum machine L) and Ch 6 (Drum machine R): press the <strong>5-6</strong> button down. Pan Ch 5 hard left, Ch 6 hard right.",
+            "Ch 7 (Sampler L) and Ch 8 (Sampler R): press the <strong>7-8</strong> button down. Pan Ch 7 hard left, Ch 8 hard right.",
+            "On every submaster strip 1 through 8: TAPE up, MON LEVEL up. On the odd-numbered subs (1, 3, 5, 7): MON PAN hard left. On the even-numbered (2, 4, 6, 8): MON PAN hard right.",
+            "Leave all eight submaster faders down.",
+          ]
+        },
+      ],
       fohTradeoff: "All eight subgroups are now in use, with one knob-pair per electronic source. The advantage: each source can be brought up or down as a stereo unit without re-balancing internally. The cost: if the band added a fifth stereo source mid-show, there'd be nowhere to put it (the subgroups are full). A larger console with more subgroups wouldn't force the trade-off; on the Toft, the engineer's planning has to fit in eight. Alternative: combine drum machine + sampler onto one subgroup pair (5-6), freeing up subs 7-8 for whatever comes next.",
       monitorMixes: [
         { aux: "Aux 1", performer: "Synth player's stage monitor", blend: "Synth A L+R · synth B L+R · drum machine L+R · vocal" },
@@ -1023,15 +1126,44 @@
         { ch: 6, label: "Fiddle contact", jack: "MIC (XLR)", phantom: "off" },
         { ch: 7, label: "Fiddle ambient", jack: "MIC (XLR)", phantom: "on" }
       ],
-      channelMapNotes: "Four channels need +48V (all condensers: guitar clip-on, cajón boundary, cajón overhead, fiddle ambient). The fiddle contact mic is a piezo pickup, not a condenser — it doesn't draw +48V (and applying it can damage some piezo electronics, so leave it off). The SM58 vocal, the passive bass DI box, and the piezo contact mic all run without phantom.",
-      fohRouting: "Channels 1, 2, 3 (vocal, guitar, bass) direct to L-R. Channels 4-5 (cajón) to subgroup pair 1-2, two-mic cajón treated like a small kit, with the face mic panned slightly off-center and the overhead slightly the other way. Channels 6-7 (fiddle) to subgroup pair 3-4, treated as a stereo group (contact mic for clarity, ambient mic for air); panned roughly center. The fiddle subgroup is muted (or the channels are muted) when the fiddler is offstage; press the MUTE buttons on subs 3 and 4 to drop the whole fiddle group out of the master mix without touching the channel routing.",
+      channelMapNotes: "Four channels need +48V (all condensers: guitar clip-on, cajón boundary, cajón overhead, fiddle ambient). The fiddle contact mic is a piezo pickup, not a condenser, and it doesn't draw +48V (applying it can damage some piezo electronics, so leave it off). The SM58 vocal, the passive bass DI box, and the piezo contact mic all run without phantom.",
+      fohPatches: [
+        {
+          name: "Patch 1 · Vocal, guitar, bass direct to the master mix (channels 1-3)",
+          intro: "The three core mono channels route straight to L-R.",
+          steps: [
+            "On Ch 1 (Vocal), Ch 2 (Acoustic guitar), Ch 3 (Bass DI): press the <strong>L-R</strong> button down. Leave subgroups up.",
+            "Pan: Ch 1 center; Ch 2 slightly off-center; Ch 3 center.",
+          ]
+        },
+        {
+          name: "Patch 2 · Cajón (channels 4-5) routed to subgroup pair 1-2",
+          intro: "Two cajón mics get the small-stereo-group treatment: face mic for the attack, overhead for the air, panned across the subgroup pair.",
+          steps: [
+            "On Ch 4 (Cajón face): press the <strong>1-2</strong> button down, pan slightly off-center (about 11 o'clock).",
+            "On Ch 5 (Cajón overhead): press the <strong>1-2</strong> button down, pan slightly off-center the other way (about 1 o'clock).",
+            "On submaster strips 1 and 2: TAPE up, MON LEVEL up, MON PAN hard left / hard right. Submaster faders down.",
+          ]
+        },
+        {
+          name: "Patch 3 · Fiddle (channels 6-7) routed to subgroup pair 3-4, ready to mute",
+          intro: "The fiddler is on stage for half the set. Routing the two fiddle channels to a subgroup pair lets the engineer mute the entire fiddle contribution to the master mix with two button presses, instead of chasing two channel mutes.",
+          steps: [
+            "On Ch 6 (Fiddle contact): press the <strong>3-4</strong> button down, pan center.",
+            "On Ch 7 (Fiddle ambient): press the <strong>3-4</strong> button down, pan center.",
+            "On submaster strips 3 and 4: TAPE up, MON LEVEL up, MON PAN hard left / hard right. Submaster faders down.",
+            "Before the show starts (fiddler offstage): press the <strong>MUTE</strong> button on submasters 3 and 4. The fiddle group is now patched but silent at the master mix.",
+            "When the fiddler walks on: release MUTE on submasters 3 and 4. The fiddle is in the mix immediately.",
+          ]
+        },
+      ],
       fohTradeoff: "Why give the fiddler a subgroup pair? So the engineer can mute and unmute the entire fiddle contribution to the master mix with two button presses, rather than chasing two channel mutes. The subgroup-pair-with-mute pattern is the classic move for a sit-in performer: the routing is built once, the on/off control is fast.",
       monitorMixes: [
         { aux: "Aux 1", performer: "Lead vocalist/guitarist's stage monitor", blend: "Vocal (loud) · guitar · bass · cajón (light)" },
         { aux: "Aux 2", performer: "Bassist's stage monitor", blend: "Vocal · guitar · bass · cajón face (for the rhythm pocket)" },
         { aux: "Aux 3", performer: "Percussionist's stage monitor", blend: "Vocal · guitar · bass" }
       ],
-      monitorTradeoff: "The sit-in fiddler shares the lead vocalist's monitor (or stands near it). When the fiddler walks on, the engineer pulls up the fiddle channel faders, unmutes subs 3-4, and the audience hears the fiddle in the master mix immediately. Because the aux sends to the three core stage monitors are pre-fader, the existing monitor mixes for the three core players don't change at all when the fiddler joins — the channel faders moving doesn't affect their pre-fader monitor levels. This is why pre-fader is the right default for stage monitors; the value is invisible until the engineer starts moving faders during a song."
+      monitorTradeoff: "The sit-in fiddler shares the lead vocalist's monitor (or stands near it). When the fiddler walks on, the engineer pulls up the fiddle channel faders, unmutes subs 3-4, and the audience hears the fiddle in the master mix immediately. Because the aux sends to the three core stage monitors are pre-fader, the existing monitor mixes for the three core players don't change at all when the fiddler joins: the channel faders moving doesn't affect their pre-fader monitor levels. This is why pre-fader is the right default for stage monitors; the value is invisible until the engineer starts moving faders during a song."
     }
   ];
 
@@ -1065,10 +1197,18 @@
     }
     html += '</tbody></table>';
 
-    // Question 1: Channel map
+    // Question 1: Channel chart
     html += '<div class="youtry-section">';
     html += '<div class="youtry-section-label">Question 1 · The channel chart</div>';
-    html += '<p class="youtry-prompt">Lay out the channel chart: which signal lands on which channel (Ch 1, Ch 2, ...)? For each channel, does it use the MIC or LINE jack on the back? Is phantom power on or off?</p>';
+    html += '<p class="youtry-prompt">Lay out the channel chart: which signal lands on which channel (Ch 1, Ch 2, ...)? For each channel, does it use the MIC or LINE jack on the back? Is phantom power on or off? Fill out the blank chart below before peeking at the reveal.</p>';
+    // Blank chart for the student to fill out
+    html += '<table class="routing">';
+    html += '<caption>Your channel chart · fill this out</caption>';
+    html += '<thead><tr><th>Channel</th><th>Source</th><th>Rear-panel jack</th><th>Phantom power (+48V)</th></tr></thead><tbody>';
+    for (let i = 1; i <= lineup.channelCount; i++) {
+      html += '<tr><td class="ch">Ch ' + i + '</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>';
+    }
+    html += '</tbody></table>';
     html += '<button class="youtry-btn reveal" data-target="reveal-cm">Show one approach</button>';
     html += '<div class="youtry-reveal-target" id="reveal-cm">';
     html += '<table class="routing">';
@@ -1081,24 +1221,40 @@
     html += '<p>' + escapeHTML(lineup.channelMapNotes) + '</p>';
     html += '</div></div>';
 
-    // Question 2: FOH routing
+    // Question 2: FOH routing — actionable patches
     html += '<div class="youtry-section">';
     html += '<div class="youtry-section-label">Question 2 · The FOH mix</div>';
-    html += '<p class="youtry-prompt">Which channels go direct to L-R, and which to a subgroup pair? For any subgroup-routed channels, which pair (1-2, 3-4, 5-6, 7-8) and how do they pan? Why?</p>';
+    html += '<p class="youtry-prompt">You\'ve decided how this band should route. Now make it happen at the desk. For each channel, which routing button gets pressed down (L-R, or one of the subgroup pairs 1-2, 3-4, 5-6, 7-8)? Where do the pans go? For any signals routed via a subgroup, what do the submaster strips need to do to land that subgroup in the master mix? Write out the button-by-button steps before peeking.</p>';
     html += '<button class="youtry-btn reveal" data-target="reveal-foh">Show one approach</button>';
     html += '<div class="youtry-reveal-target" id="reveal-foh">';
-    html += '<p>' + escapeHTML(lineup.fohRouting) + '</p>';
+    for (const p of lineup.fohPatches) {
+      html += '<p><strong>' + escapeHTML(p.name) + '.</strong> ' + escapeHTML(p.intro) + '</p>';
+      html += '<ol class="steps">';
+      for (const s of p.steps) {
+        html += '<li>' + s + '</li>';
+      }
+      html += '</ol>';
+    }
     html += '<div class="callout"><div class="callout-label">Trade-off</div><p>' + escapeHTML(lineup.fohTradeoff) + '</p></div>';
     html += '</div></div>';
 
-    // Question 3: Stage monitor mixes
+    // Question 3: Stage monitor mixes — universal recipe + per-aux table
     html += '<div class="youtry-section">';
     html += '<div class="youtry-section-label">Question 3 · The stage monitor mixes</div>';
-    html += '<p class="youtry-prompt">How many auxes do you need? Which performer gets which aux? What channels are turned up on each aux, and why?</p>';
+    html += '<p class="youtry-prompt">How many auxes do you need? Which performer gets which aux? And for each aux: which channels turn up, and how do you make sure the aux is set up correctly (pre-fader, with a working Aux Master level)? Write out the button-by-button steps for one aux before peeking.</p>';
     html += '<button class="youtry-btn reveal" data-target="reveal-mon">Show one approach</button>';
     html += '<div class="youtry-reveal-target" id="reveal-mon">';
+    html += '<p>This band needs <strong>' + lineup.monitorCount + ' stage monitor mix' + (lineup.monitorCount === 1 ? '' : 'es') + '</strong>, so use <strong>Aux 1 through Aux ' + lineup.monitorCount + '</strong> (one aux per monitor). The patch below runs once per aux; repeat it for each performer.</p>';
+    html += '<p><strong>Patch · One stage monitor mix on one aux.</strong></p>';
+    html += '<ol class="steps">';
+    html += '<li>Pick an aux for this performer\'s mix (Aux 1, 2, 3, ... as needed).</li>';
+    html += '<li>Set that aux to <strong>pre-fader</strong> on every input channel. Aux 1 is permanently pre-fader (no switch). For Auxes 2 through 5, press the channel\'s PRE button down for that aux. Pre-fader means the aux send level is independent of the channel fader.</li>';
+    html += '<li>On the channels this performer needs to hear: turn the aux knob up to a working level. On the channels they don\'t need: leave the aux knob at zero.</li>';
+    html += '<li>Adjust each channel\'s contribution by ear (the table below lists what to turn up for each aux on this band).</li>';
+    html += '<li>At the master section, set the Aux Master knob for this aux to a working line-level send (about unity, then trim by ear once the monitor is playing).</li>';
+    html += '</ol>';
     html += '<table class="routing">';
-    html += '<caption>Suggested stage monitor mixes (all pre-fader)</caption>';
+    html += '<caption>For this band · which channels turn up on each aux</caption>';
     html += '<thead><tr><th>Aux</th><th>Destination</th><th>What\'s turned up on this aux</th></tr></thead><tbody>';
     for (const m of lineup.monitorMixes) {
       html += '<tr><td class="ch">' + escapeHTML(m.aux) + '</td><td>' + escapeHTML(m.performer) + '</td><td>' + escapeHTML(m.blend) + '</td></tr>';
