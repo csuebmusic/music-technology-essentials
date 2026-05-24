@@ -59,6 +59,47 @@
       margin-top: 0.3rem;
     }
 
+    /* Photo pair: two photos shown side-by-side (e.g. two fan-cable
+       variants). Each child <div class="photo-pair-item"> holds one
+       image and its caption/attribution. On narrow viewports they
+       stack vertically. */
+    figure.photo-pair {
+      margin: 1.75rem 0 2rem;
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    figure.photo-pair .photo-pair-item {
+      flex: 1 1 280px;
+      max-width: 360px;
+      text-align: center;
+    }
+    figure.photo-pair img {
+      max-width: 100%;
+      max-height: 220px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    figure.photo-pair figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.6rem;
+    }
+    figure.photo-pair .photo-attribution {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint, var(--ink-soft));
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
     /* Routing table: students will read this column-by-column to see
        where each channel's signal travels in each scenario. */
     table.routing {
@@ -158,15 +199,22 @@
   <li><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 male XLRs. These run through the wall into Toft <strong>XLR (MIC) inputs 1 through 8</strong>.</li>
 </ul>
 
-<figure class="photo">
-  <img src="../../assets/images/module-03-week-09/db25-to-trs-fan-cable.webp" alt="A DB25-to-8×TRS fan cable. One DB25 male connector on one end, fanning out to eight 1/4-inch TRS plugs on the other end, each labeled with its channel number." loading="lazy">
-  <figcaption>DB25-to-8×TRS fan cable. One DB25 carries eight balanced signals on a single connector; the fan breaks them out to eight individual TRS plugs.</figcaption>
-  <div class="photo-attribution">Photo via Mogami.</div>
+<figure class="photo-pair">
+  <div class="photo-pair-item">
+    <img src="../../assets/images/module-03-week-09/db25-to-trs-fan-cable.webp" alt="A DB25-to-8×TRS fan cable. One DB25 male connector on one end, fanning out to eight 1/4-inch TRS plugs on the other end, each labeled with its channel number." loading="lazy">
+    <figcaption>DB25-to-8×TRS fan cable.</figcaption>
+    <div class="photo-attribution">Photo via Mogami.</div>
+  </div>
+  <div class="photo-pair-item">
+    <img src="../../assets/images/module-03-week-09/db25-to-xlr-fan-cable.webp" alt="A DB25-to-8×XLR-female fan cable. One DB25 male connector on one end, fanning out to eight female XLR plugs on the other end, each on a colored wire." loading="lazy">
+    <figcaption>DB25-to-8×XLR fan cable.</figcaption>
+    <div class="photo-attribution">Photo via Pro Co.</div>
+  </div>
 </figure>
 
 <div class="callout">
   <div class="callout-label">What's a DB25 connector?</div>
-  <p>A <strong>DB25</strong> (sometimes called DSUB-25) is a 25-pin connector that carries <strong>eight balanced audio signals on a single plug</strong>. Behind the racks in this studio, almost every multi-channel connection between two pieces of gear runs as DB25 to keep the wiring tidy. <strong>Fan cables</strong> (also called <strong>snakes</strong>) translate between DB25 and individual plugs at the gear that needs them: the image above shows a DB25-to-8×TRS fan cable, and the same idea exists with XLR plugs and TS plugs on the gear end. These snakes are everywhere in the studio's internal wiring, but you almost never have to touch them once they're in place.</p>
+  <p>A <strong>DB25</strong> (sometimes called DSUB-25) is a 25-pin connector that carries <strong>eight balanced audio signals on a single plug</strong>. Behind the racks in this studio, almost every multi-channel connection between two pieces of gear runs as DB25 to keep the wiring tidy. <strong>Fan cables</strong> (also called <strong>snakes</strong>) translate between DB25 and individual plugs at the gear that needs them. The two images above show the same idea in two flavors: DB25-to-8×TRS (used at the HDX, Toft submasters, and the patchbay) and DB25-to-8×XLR (used at the SSL G and M2000); there's also a DB25-to-8×TS variant used inside insert cables. These snakes are everywhere in the studio's internal wiring, but you almost never have to touch them once they're in place.</p>
 </div>
 
 <p>The Toft inputs are labeled MIC, but they accept line-level too: an XLR cable can carry mic-level or line-level (you read this in Lecture 2). With a line-level signal arriving at the Toft's MIC input, the Toft's onboard preamp doesn't need to amplify; the channel's INPUT GAIN knob becomes a <strong>trim</strong>, set low to fine-tune the level. The ISA has already done the gain work; the Toft's gain knob just nudges what's there.</p>
