@@ -249,7 +249,9 @@
   <div class="photo-attribution">Photo via Switchcraft.</div>
 </figure>
 
-<p>The flexibility layer. 48 small jacks across the top row and 48 across the bottom, organized into 48 columns. The rear has 12 DB25 connectors (six for inputs, six for outputs) carrying the same 96 signals; DB25 fan cables run from there to every piece of gear in the studio. Every column is <strong>normalled</strong> by default, meaning the top jack's signal flows automatically to the bottom jack until you interrupt it by plugging a <strong>TT cable</strong> into the front.</p>
+<p>The flexibility layer. 96 small jacks on the front, organized as <strong>48 columns</strong> with one jack on top and one on bottom of each column. On the rear, 12 DB25 connectors (six labeled INPUT across the top row, six labeled OUTPUT across the bottom row). Each rear DB25 carries 8 channels. The top jacks on the front are wired internally to the rear INPUT DB25s; signals arrive from gear and appear there as <strong>sources</strong>. The bottom jacks are wired to the rear OUTPUT DB25s; signals leave there and travel out to gear as <strong>destinations</strong>. DB25 fan cables run from the rear to every relevant jack on the Toft and to every external processor in the rack.</p>
+
+<p>Each of the 48 columns can be set to one of three <strong>normalling</strong> modes by turning a small screw on the front of the bay: <strong>full-normal</strong> connects top to bottom whenever no patch cable is plugged in (the signal flows through automatically); <strong>half-normal</strong> keeps the top-to-bottom connection unless a cable is plugged into the bottom jack alone (which breaks the connection and forces external routing); <strong>non-normal</strong> never connects top to bottom (the column is just two independent jacks). Different columns of our patchbay use different modes depending on what they carry.</p>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/tt-bantam-cable.avif" alt="A TT (bantam) patch cable. Two small slim 1/4-inch-style plugs (TRS tip-ring-sleeve, much thinner than a 1/4-inch jack) on either end of a short cable." loading="lazy">
@@ -263,20 +265,24 @@
   <p>TT cables are short (usually 1 to 3 feet long), white or color-coded for visibility, and live in a tray under the patchbay. The engineer grabs one to make a connection on the front of the bay, runs it from a source jack to a destination jack, and unplugs it when done.</p>
 </div>
 
-<p>The 48 columns are organized into thematic blocks. Reading left to right across the bay:</p>
+<p>Before reading the layout, a word about how the Toft's <strong>INSERT</strong> jacks reach the patchbay. Each Toft insert is a single 1/4" TRS jack carrying both directions on the same cable (you read about this in Lecture 3): tip = send, ring = return, sleeve = ground. To put the send and return on the patchbay as separately patchable signals, the Toft's inserts connect to the patchbay rear via <strong>insert snakes</strong>: cables with 8 TRS plugs at the Toft end (each plug into one insert jack) and 2 DB25 plugs at the patchbay end (one DB25 carries the 8 SEND legs, the other carries the 8 RETURN legs). Inside the cable, the tip wire of each TRS is routed to a pin on the SEND DB25 and the ring wire is routed to a pin on the RETURN DB25; the split happens inside the cable.</p>
+
+<p>This means each Toft insert occupies <strong>one column</strong> on the patchbay: the SEND leg lands on a rear INPUT DB25 pin and appears at the top jack of the column; the RETURN leg lands on the matching rear OUTPUT DB25 pin and appears at the bottom jack. The column is set to half-normal, so the SEND-to-RETURN connection is closed automatically (the insert loop is intact) unless someone plugs a cable into the bottom jack to break it and route external processing through.</p>
+
+<p>With that in mind, the 48 columns of the patchbay are organized into four thematic blocks. Reading left to right across the bay:</p>
 
 <ul>
-  <li><strong>Toft channel inserts</strong> (16 columns): top jack is the INSERT SEND from each channel strip, bottom jack is the INSERT RETURN. With nothing patched, signal flows through and the channel acts as if no insert exists.</li>
-  <li><strong>Toft subgroup inserts</strong> (8 columns): same structure, one column per subgroup pair.</li>
-  <li><strong>Toft master section</strong> (a few columns): the master mix INSERT SEND and RETURN live here, as do the AUX MASTERS (Aux 1 through 6).</li>
-  <li><strong>Outboard gear I/O</strong> (the remaining columns): inputs and outputs of every external processor in the side rack. Right now this is the SSL G and the M2000; any new outboard would land here too.</li>
+  <li><strong>Toft channel inserts</strong> (columns 1-16): one column per channel insert. Top jack is the SEND leg (signal leaving the channel strip); bottom jack is the RETURN leg (signal coming back into the strip). Half-normal: insert loop closed at rest, breakable by plugging into the bottom jack.</li>
+  <li><strong>Toft subgroup inserts</strong> (columns 17-24): one column per subgroup insert. Same structure as channel inserts, same half-normal setting.</li>
+  <li><strong>Toft master inserts</strong> (columns 25-26): the master mix has two TRS insert jacks on the Toft (L and R), so two columns on the patchbay: column 25 carries the master INSERT L (SEND on top, RETURN on bottom); column 26 carries the master INSERT R. Half-normal.</li>
+  <li><strong>Outboard gear, aux masters, and effects returns</strong> (columns 33-48, plus a few empty slots in 27-32 left for future expansion): the inputs and outputs of every external processor in the side rack appear here, as do the six Toft AUX MASTERS and four of the Toft's eight STEREO EFFECTS RETURNS. The SSL G occupies four columns (its L IN, R IN, L OUT, R OUT all appear), the M2000 occupies three (mono IN, L OUT, R OUT), and any new outboard would land in the remaining slots. These columns are non-normalled (no automatic top-to-bottom connection); they sit as appearance points waiting for the engineer to patch them together with TT cables.</li>
 </ul>
 
-<p>Two of these columns are pre-wired with permanent <strong>normals</strong> that route the SSL and the M2000 to useful places on the Toft without any TT cables in the front. These are the studio's default configuration:</p>
+<p>Two pieces of outboard gear are wired to the patchbay as the studio's <strong>default configuration</strong>: the SSL G is permanently in the master mix INSERT path, and the M2000 is permanently available as a reverb on Aux 3. This is achieved not by changing the patchbay's normalling but by leaving a small set of TT cables plugged into the front of the bay all the time. These permanent cables route the signals through the SSL and M2000; they only come off when an engineer wants to use those processors for something else during a session.</p>
 
 <ul>
-  <li><strong>SSL G</strong>: normalled into the Toft master section INSERT loop. The master mix is processed by the SSL on its way to MAIN SPKR.</li>
-  <li><strong>M2000</strong>: input normalled from Toft Aux Master 3; stereo output normalled to Toft STEREO EFFECTS RETURNS 1 and 2. Any channel can send to Aux 3 and hear reverb come back in the master mix.</li>
+  <li><strong>SSL G default</strong> (4 permanent TT cables): master INSERT L SEND → SSL L IN; SSL L OUT → master INSERT L RETURN; master INSERT R SEND → SSL R IN; SSL R OUT → master INSERT R RETURN. The master mix passes through the SSL on its way to MAIN SPKR.</li>
+  <li><strong>M2000 default</strong> (3 permanent TT cables): Aux Master 3 → M2000 IN; M2000 L OUT → Effects Return 1 (L); M2000 R OUT → Effects Return 1 (R). Any channel that dials up Aux 3 sends signal to the M2000, which generates reverb returning through ER1 back into the master mix.</li>
 </ul>
 
 <p>The next two items walk these defaults in more detail.</p>
@@ -292,7 +298,7 @@
 <p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time. The full story (what threshold, ratio, attack, and release do) is Module 4 territory; for Part 1, all that matters is where it sits in the signal path.</p>
 
 <ul>
-  <li><strong>Default normalled routing:</strong> patched into the <strong>Toft master section INSERT loop</strong>. Master mix INSERT send → SSL input; SSL output → master mix INSERT return.</li>
+  <li><strong>Default routing:</strong> patched into the <strong>Toft master mix INSERT loop</strong> via four permanent TT cables on the front of the patchbay. The L cables: master INSERT L SEND → SSL L IN, then SSL L OUT → master INSERT L RETURN. The R cables: same for R. The master mix signal exits the Toft on the SEND legs, runs through the SSL, and returns on the RETURN legs.</li>
   <li><strong>At rest:</strong> the master mix passes through the SSL on its way out the MAIN SPKR output.</li>
   <li><strong>During tracking:</strong> no Pro Tools playback is hitting the master mix yet, so the SSL is just sitting in the path.</li>
   <li><strong>At mixdown:</strong> when the engineer plays Pro Tools tracks through the console, the SSL processes the summed mix on its way to the speakers.</li>
@@ -311,8 +317,8 @@
 <p>A studio-grade reverb and delay processor. Mono input, stereo output. Reverb is the canonical aux-send-and-return effect (you read about this in Lecture 3): the engineer dials a level on Aux 3 for any channel that needs reverb; the M2000 generates a stereo reverb tail; the stereo tail returns to the console and lands in the master mix alongside the dry signal.</p>
 
 <ul>
-  <li><strong>Default normalled routing:</strong> M2000 input patched to Toft <strong>Aux Master 3</strong> (post-fader, so when a channel fader goes down, that channel's reverb goes down with it). M2000 stereo output patched to the Toft <strong>STEREO EFFECTS RETURNS 1 (L) and 2 (R)</strong> in the submaster section, which feed the master mix.</li>
-  <li><strong>To use in a session:</strong> dial up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through the stereo effects returns; the master mix carries dry + wet to the speakers and to the cue.</li>
+  <li><strong>Default routing:</strong> three permanent TT cables on the front of the patchbay. Aux Master 3 (top jack of its column) → M2000 IN (bottom jack of its column). M2000 L OUT → Effects Return 1 (L). M2000 R OUT → Effects Return 1 (R). At the Toft end, a small Y-cable combines the two effects-return TS plugs back into a single stereo TRS plug that mates with the ER1 jack (post-fader on submaster 1).</li>
+  <li><strong>To use in a session:</strong> dial up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through ER1; the master mix carries dry + wet to the speakers and to the cue.</li>
 </ul>
 
 <p>Like the SSL, the M2000 can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
@@ -351,8 +357,8 @@
 
 <div class="callout">
   <div class="callout-label">The patchbay at rest vs. the patchbay in use</div>
-  <p>Everything in this description assumes no patch cables are plugged into the front of the Switchcraft 9625. The defaults route the SSL to the master INSERT and the M2000 to Aux 3 / stereo effects returns. Most sessions can run on the defaults without touching the patchbay.</p>
-  <p>When a session needs different routing (the SSL on a subgroup INSERT to record compression onto drums; the M2000 as an insert effect on a single channel; a substituted piece of outboard gear), the engineer plugs short TT cables on the front of the patchbay to break the normalled paths and re-route. Part 2 of this handout shows what that looks like in practice during The Sound Below's session.</p>
+  <p>At rest, the front of the Switchcraft 9625 has <strong>7 TT cables permanently plugged in</strong>: four routing the SSL onto the master mix INSERT, three routing the M2000 onto Aux 3 → Effects Return 1. Those cables are the studio's default configuration; they stay in place across sessions. Most sessions can run on these defaults without adding or removing any cables.</p>
+  <p>When a session needs different routing (the SSL on a subgroup INSERT to record compression onto drums; the M2000 as an insert effect on a single channel; a substituted piece of outboard gear), the engineer pulls the default cables that are in the way and plugs new TT cables to re-route. Part 2 of this handout shows what that looks like in practice during The Sound Below's session.</p>
 </div>
 
 <hr>
