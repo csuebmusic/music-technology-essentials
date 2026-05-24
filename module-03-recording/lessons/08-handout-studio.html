@@ -163,7 +163,7 @@
 <h4>3. Focusrite OctoPre Platinum (8-channel mic preamp)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/focusrite-octopre-platinum.jpg" alt="Front and rear views of the Focusrite OctoPre Platinum. The front has eight input strips with gain, +48V, phase, HPF, level meter. The rear has 8 XLR mic inputs and 8 TRS line outputs." loading="lazy">
+  <img src="../../assets/images/module-03-week-09/focusrite-octopre-platinum.jpg" alt="Front and rear views of the Focusrite OctoPre Platinum. The front has eight input strips with gain, +48V, phase, HPF, level meter. The rear has 8 XLR mic inputs and a DB25 connector for 8 line outputs." loading="lazy">
   <figcaption>Focusrite OctoPre Platinum. Second preamp in the live-room rack.</figcaption>
   <div class="photo-attribution">Photo via Focusrite.</div>
 </figure>
@@ -172,7 +172,7 @@
 
 <ul>
   <li><strong>Inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel B below.</li>
-  <li><strong>Outputs (rear):</strong> 8 line-level XLR outputs. Run through the wall into Toft <strong>XLR (MIC) inputs 9 through 16</strong> as line-level signals (same trim-not-gain situation as the ISA's outputs into channels 1-8).</li>
+  <li><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 male XLRs. These run through the wall into Toft <strong>XLR (MIC) inputs 9 through 16</strong> as line-level signals (same trim-not-gain situation as the ISA's outputs into channels 1-8).</li>
 </ul>
 
 <h4>4. Hosa mic input panels (×2: panel A and panel B)</h4>
@@ -183,14 +183,12 @@
   <div class="photo-attribution">Photo via Hosa Technology.</div>
 </figure>
 
-<p>Two identical Hosa panels, mounted one above the other near the bottom of the rack. Each panel has 16 XLR female jacks across its front, numbered 1 through 16; jacks 1-8 are wired internally to the preamp directly above the panel, and jacks 9-16 are unused (left in place in case the studio expands later).</p>
+<p>Two identical Hosa panels, one for each preamp. Each panel has 16 XLR female jacks across its front, numbered 1 through 16; jacks 1-8 are wired internally to its preamp (9-16 are unused, left in place in case the studio expands at some point).</p>
 
 <ul>
   <li><strong>Hosa panel A:</strong> jacks 1-8 wired to ISA 828 mic inputs 1-8.</li>
   <li><strong>Hosa panel B:</strong> jacks 1-8 wired to OctoPre mic inputs 1-8.</li>
 </ul>
-
-<p>The panels exist because plugging mics into the back of a preamp tucked into a wall rack is impractical. They bring 16 mic-input jacks (two banks of 8) forward to a standing-height row at the front of the rack. The band's mics plug in here; everything downstream is wiring you don't have to think about while setting up the session.</p>
 
 <h4>5. Rane MH4 Mojo Series (4-out headphone splitter)</h4>
 
@@ -239,7 +237,10 @@
   <div class="photo-attribution">Photo via Mogami.</div>
 </figure>
 
-<p>The DB25 connector is studio shorthand for "eight balanced signals on one plug." Behind the racks in our studio, almost every multi-channel connection runs as DB25 to keep the wiring tidy; fan cables like the one above translate between DB25 and individual TRS plugs at the gear that needs them.</p>
+<div class="callout">
+  <div class="callout-label">What's a DB25 connector?</div>
+  <p>A <strong>DB25</strong> (sometimes called DSUB-25) is a 25-pin connector that carries <strong>eight balanced audio signals on a single plug</strong>. Behind the racks in our studio, almost every multi-channel connection runs as DB25 to keep the wiring tidy: the HDX in and out, the ISA 828 outputs, the OctoPre outputs, and the patchbay all use DB25 connectors for their 8-channel I/O. Fan cables (also called <strong>snakes</strong>) translate between DB25 and individual plugs at the gear that needs them. The one above is DB25-to-8×TRS, but the same snake exists with XLR plugs (used for the SSL and M2000) and TS plugs (used for inserts). These snakes are everywhere in the studio's internal wiring, but you almost never have to touch them once they're in place.</p>
+</div>
 
 <h4>3. Switchcraft 9625 patchbay</h4>
 
@@ -249,7 +250,7 @@
   <div class="photo-attribution">Photo via Switchcraft.</div>
 </figure>
 
-<p>The flexibility layer. 96 small jacks on the front, organized as <strong>48 columns</strong> with one jack on top and one on bottom of each column. On the rear, 12 DB25 connectors (six labeled INPUT across the top row, six labeled OUTPUT across the bottom row). Each rear DB25 carries 8 channels. The top jacks on the front are wired internally to the rear INPUT DB25s; signals arrive from gear and appear there as <strong>sources</strong>. The bottom jacks are wired to the rear OUTPUT DB25s; signals leave there and travel out to gear as <strong>destinations</strong>. DB25 fan cables run from the rear to every relevant jack on the Toft and to every external processor in the rack.</p>
+<p>The flexibility layer. 96 TT jacks on the front, organized as <strong>48 columns</strong> with one jack on top and one on bottom of each column. On the rear, 12 DB25 connectors (six labeled INPUT across the top row, six labeled OUTPUT across the bottom row). Each rear DB25 carries 8 channels. The top jacks on the front are wired internally to the rear INPUT DB25s; signals arrive from gear and appear there as <strong>sources</strong>. The bottom jacks are wired to the rear OUTPUT DB25s; signals leave there and travel out to gear as <strong>destinations</strong>. DB25 fan cables run from the rear to every relevant jack on the Toft and to every external processor in the rack.</p>
 
 <p>Each of the 48 columns can be set to one of three <strong>normalling</strong> modes by turning a small screw on the front of the bay: <strong>full-normal</strong> connects top to bottom whenever no patch cable is plugged in (the signal flows through automatically); <strong>half-normal</strong> keeps the top-to-bottom connection unless a cable is plugged into the bottom jack alone (which breaks the connection and forces external routing); <strong>non-normal</strong> never connects top to bottom (the column is just two independent jacks). Different columns of our patchbay use different modes depending on what they carry.</p>
 
@@ -262,30 +263,33 @@
 <div class="callout">
   <div class="callout-label">What's a TT cable?</div>
   <p><strong>TT</strong> stands for <strong>tiny telephone</strong>: a smaller version of the 1/4" TRS plug used in patchbays. A TT plug is about 4.4 mm across (vs. 6.35 mm for a regular 1/4" TRS) and carries the same tip-ring-sleeve signal. The smaller size lets a patchbay fit 96 jacks in a 1U rack space, which would be impossible with full-size 1/4" jacks.</p>
-  <p>TT cables are short (usually 1 to 3 feet long), white or color-coded for visibility, and live in a tray under the patchbay. The engineer grabs one to make a connection on the front of the bay, runs it from a source jack to a destination jack, and unplugs it when done.</p>
+  <p>TT cables are short (usually 1 to 3 feet long), white or color-coded for visibility. The engineer grabs one to make a connection on the front of the bay, runs it from a source jack to a destination jack, and unplugs it when done.</p>
 </div>
 
-<p>Before reading the layout, a word about how the Toft's <strong>INSERT</strong> jacks reach the patchbay. Each Toft insert is a single 1/4" TRS jack carrying both directions on the same cable (you read about this in Lecture 3): tip = send, ring = return, sleeve = ground. To put the send and return on the patchbay as separately patchable signals, the Toft's inserts connect to the patchbay rear via <strong>insert snakes</strong>: cables with 8 TRS plugs at the Toft end (each plug into one insert jack) and 2 DB25 plugs at the patchbay end (one DB25 carries the 8 SEND legs, the other carries the 8 RETURN legs). Inside the cable, the tip wire of each TRS is routed to a pin on the SEND DB25 and the ring wire is routed to a pin on the RETURN DB25; the split happens inside the cable.</p>
-
-<p>This means each Toft insert occupies <strong>one column</strong> on the patchbay: the SEND leg lands on a rear INPUT DB25 pin and appears at the top jack of the column; the RETURN leg lands on the matching rear OUTPUT DB25 pin and appears at the bottom jack. The column is set to half-normal, so the SEND-to-RETURN connection is closed automatically (the insert loop is intact) unless someone plugs a cable into the bottom jack to break it and route external processing through.</p>
+<div class="callout">
+  <div class="callout-label">A bit technical: how Toft inserts reach the patchbay</div>
+  <p>Each Toft insert is a single 1/4" TRS jack carrying both directions on the same cable (you read about this in Lecture 3): tip = send, ring = return, sleeve = ground. To put the send and return on the patchbay as separately patchable signals, the Toft's inserts connect to the patchbay rear via <strong>insert snakes</strong>: cables with 8 TRS plugs at the Toft end (each plug into one insert jack) and 2 DB25 plugs at the patchbay end (one DB25 carries the 8 SEND legs, the other carries the 8 RETURN legs). Inside the cable, the tip wire of each TRS is routed to a pin on the SEND DB25 and the ring wire is routed to a pin on the RETURN DB25; the split happens inside the cable.</p>
+  <p>This means each Toft insert occupies <strong>one column</strong> on the patchbay: the SEND leg lands on a rear INPUT DB25 pin and appears at the top jack of the column; the RETURN leg lands on the matching rear OUTPUT DB25 pin and appears at the bottom jack. The column is set to half-normal, so the SEND-to-RETURN connection is closed automatically (the insert loop is intact) unless someone plugs a cable into the bottom jack to break it and route external processing through.</p>
+</div>
 
 <p>With that in mind, the 48 columns of the patchbay are organized into four thematic blocks. Reading left to right across the bay:</p>
 
 <ul>
-  <li><strong>Toft channel inserts</strong> (columns 1-16): one column per channel insert. Top jack is the SEND leg (signal leaving the channel strip); bottom jack is the RETURN leg (signal coming back into the strip). Half-normal: insert loop closed at rest, breakable by plugging into the bottom jack.</li>
-  <li><strong>Toft subgroup inserts</strong> (columns 17-24): one column per subgroup insert. Same structure as channel inserts, same half-normal setting.</li>
-  <li><strong>Toft master inserts</strong> (columns 25-26): the master mix has two TRS insert jacks on the Toft (L and R), so two columns on the patchbay: column 25 carries the master INSERT L (SEND on top, RETURN on bottom); column 26 carries the master INSERT R. Half-normal.</li>
-  <li><strong>Outboard gear, aux masters, and effects returns</strong> (columns 33-48, plus a few empty slots in 27-32 left for future expansion): the inputs and outputs of every external processor in the side rack appear here, as do the six Toft AUX MASTERS and four of the Toft's eight STEREO EFFECTS RETURNS. The SSL G occupies four columns (its L IN, R IN, L OUT, R OUT all appear), the M2000 occupies three (mono IN, L OUT, R OUT), and any new outboard would land in the remaining slots. These columns are non-normalled (no automatic top-to-bottom connection); they sit as appearance points waiting for the engineer to patch them together with TT cables.</li>
+  <li><strong>Toft channel inserts</strong> (columns 1-16): one column per channel insert. Top jack is SEND (signal leaving the channel strip); bottom jack is RETURN (signal coming back into the strip). Half-normal: insert loop closed at rest, breakable by plugging into the bottom jack.</li>
+  <li><strong>Toft subgroup inserts</strong> (columns 17-24): one column per subgroup insert. Same structure and half-normal setting as channel inserts.</li>
+  <li><strong>Toft master inserts</strong> (columns 25-26): column 25 carries the master INSERT L (SEND on top, RETURN on bottom); column 26 carries the master INSERT R. Half-normal.</li>
+  <li><strong>Outboard gear, aux masters, and effects returns</strong> (columns 33-48, with 27-32 left empty for future expansion):
+    <ul>
+      <li>Cols 33-34: SSL G L and R (output on top jack, input on bottom jack).</li>
+      <li>Cols 35-36: M2000 (col 35 carries the mono IN on bottom and L OUT on top; col 36 carries the R OUT on top).</li>
+      <li>Cols 41-46: Toft Aux Masters 1 through 6 (top jacks).</li>
+      <li>Cols 41-48: four of the Toft's eight stereo effects returns, two columns each for L+R (bottom jacks).</li>
+    </ul>
+    Non-normalled: no automatic top-to-bottom connection; the columns sit as appearance points waiting for the engineer to patch them.
+  </li>
 </ul>
 
-<p>Two pieces of outboard gear are wired to the patchbay as the studio's <strong>default configuration</strong>: the SSL G is permanently in the master mix INSERT path, and the M2000 is permanently available as a reverb on Aux 3. This is achieved not by changing the patchbay's normalling but by leaving a small set of TT cables plugged into the front of the bay all the time. These permanent cables route the signals through the SSL and M2000; they only come off when an engineer wants to use those processors for something else during a session.</p>
-
-<ul>
-  <li><strong>SSL G default</strong> (4 permanent TT cables): master INSERT L SEND → SSL L IN; SSL L OUT → master INSERT L RETURN; master INSERT R SEND → SSL R IN; SSL R OUT → master INSERT R RETURN. The master mix passes through the SSL on its way to MAIN SPKR.</li>
-  <li><strong>M2000 default</strong> (3 permanent TT cables): Aux Master 3 → M2000 IN; M2000 L OUT → Effects Return 1 (L); M2000 R OUT → Effects Return 1 (R). Any channel that dials up Aux 3 sends signal to the M2000, which generates reverb returning through ER1 back into the master mix.</li>
-</ul>
-
-<p>The next two items walk these defaults in more detail.</p>
+<p>Two of these outboard slots are wired into the studio's <strong>default configuration</strong> via permanent TT cables on the front of the bay: the SSL G is patched into the master mix INSERT path, and the M2000 is patched as a reverb on Aux 3. The next two items walk these defaults in more detail.</p>
 
 <h4>4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
