@@ -27,15 +27,31 @@
     }
 
     /* Photo frame: matches the mixer reading (Lecture 3) figure
-       styling. Used for product photos that ground a prose explanation. */
+       styling. Used for product photos that ground a prose explanation.
+       All photos render at a uniform size (480 × 180 landscape box) with
+       object-fit: contain so the source aspect ratio is preserved and
+       any extra space inside the box is whitespace, not stretching. */
     figure.photo {
       margin: 1.75rem 0 2rem;
       text-align: center;
     }
-    figure.photo img {
-      max-width: 420px;
+    figure.photo .photo-frame {
       width: 100%;
+      max-width: 480px;
+      aspect-ratio: 8 / 3;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+    }
+    figure.photo img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
+      object-fit: contain;
     }
     figure.photo figcaption {
       font-family: var(--mono);
@@ -140,7 +156,7 @@
 <h4>2. Focusrite ISA 828 MkII (8-channel mic preamp)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/focusrite-isa-828-mkii.png" alt="Front and rear views of the Focusrite ISA 828 MkII. The front has eight identical input strips: gain, impedance, +48V, phase, HPF, mic/line/insert select. The rear has 8 XLR mic inputs and a DB25 connector for 8 line outputs." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/focusrite-isa-828-mkii.png" alt="Front and rear views of the Focusrite ISA 828 MkII. The front has eight identical input strips: gain, impedance, +48V, phase, HPF, mic/line/insert select. The rear has 8 XLR mic inputs and a DB25 connector for 8 line outputs." loading="lazy"></div>
   <figcaption>Focusrite ISA 828 MkII. Top preamp in the live-room rack.</figcaption>
   <div class="photo-attribution">Photo via Focusrite.</div>
 </figure>
@@ -157,7 +173,7 @@
 <h4>3. Focusrite OctoPre Platinum (8-channel mic preamp)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/focusrite-octopre-platinum.jpg" alt="Front and rear views of the Focusrite OctoPre Platinum. The front has eight input strips with gain, +48V, phase, HPF, level meter. The rear has 8 XLR mic inputs and 8 TRS line outputs." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/focusrite-octopre-platinum.jpg" alt="Front and rear views of the Focusrite OctoPre Platinum. The front has eight input strips with gain, +48V, phase, HPF, level meter. The rear has 8 XLR mic inputs and 8 TRS line outputs." loading="lazy"></div>
   <figcaption>Focusrite OctoPre Platinum. Second preamp in the live-room rack.</figcaption>
   <div class="photo-attribution">Photo via Focusrite.</div>
 </figure>
@@ -172,7 +188,7 @@
 <h4>4. Hosa mic input panels (×2: panel A and panel B)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/hosa-pdr-369-mic-panel.jpg" alt="A 1U rack panel with sixteen XLR female jacks across the front, numbered 1 through 16. Labeled MIC IN PANEL." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/hosa-pdr-369-mic-panel.jpg" alt="A 1U rack panel with sixteen XLR female jacks across the front, numbered 1 through 16. Labeled MIC IN PANEL." loading="lazy"></div>
   <figcaption>Hosa 16-jack mic input panel. One per preamp; jacks 9-16 unused.</figcaption>
   <div class="photo-attribution">Photo via Hosa Technology.</div>
 </figure>
@@ -189,7 +205,7 @@
 <h4>5. Rane MH4 Mojo Series (4-out headphone splitter)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/rane-mh4-headphone-console.jpg" alt="A 1U rack-mount unit with four channels, each having a 1/4-inch headphone jack and a level knob, plus a mono/stereo source switch. Labeled Rane MH4 Stereo Headphone Console." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/rane-mh4-headphone-console.jpg" alt="A 1U rack-mount unit with four channels, each having a 1/4-inch headphone jack and a level knob, plus a mono/stereo source switch. Labeled Rane MH4 Stereo Headphone Console." loading="lazy"></div>
   <figcaption>Rane MH4. One cue mix, four players, four volume knobs.</figcaption>
   <div class="photo-attribution">Photo via Rane Corporation.</div>
 </figure>
@@ -214,7 +230,7 @@
 <h4>2. Avid HDX I/O (audio interface)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/avid-hdx-io.webp" alt="Front and rear views of the Avid HDX I/O. The front has level meters for 16 inputs and 16 outputs plus sample-rate and sync-mode indicators. The rear has two DB25 analog input connectors (+4dBu and -10dBV), a DB25 analog output connector, AES/EBU, TDIF, ADAT optical, S/PDIF, and BNC word-clock I/O." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/avid-hdx-io.webp" alt="Front and rear views of the Avid HDX I/O. The front has level meters for 16 inputs and 16 outputs plus sample-rate and sync-mode indicators. The rear has two DB25 analog input connectors (+4dBu and -10dBV), a DB25 analog output connector, AES/EBU, TDIF, ADAT optical, S/PDIF, and BNC word-clock I/O." loading="lazy"></div>
   <figcaption>Avid HDX I/O. The bridge between the analog console and Pro Tools.</figcaption>
   <div class="photo-attribution">Photo via Avid Technology.</div>
 </figure>
@@ -228,7 +244,7 @@
 </ul>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/db25-to-trs-fan-cable.webp" alt="A DB25-to-8×TRS fan cable. One DB25 male connector on one end, fanning out to eight 1/4-inch TRS plugs on the other end, each labeled with its channel number." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/db25-to-trs-fan-cable.webp" alt="A DB25-to-8×TRS fan cable. One DB25 male connector on one end, fanning out to eight 1/4-inch TRS plugs on the other end, each labeled with its channel number." loading="lazy"></div>
   <figcaption>DB25-to-8×TRS fan cable. One DB25 carries eight balanced signals on a single connector; the fan breaks them out to eight individual TRS plugs.</figcaption>
   <div class="photo-attribution">Photo via Mogami.</div>
 </figure>
@@ -238,7 +254,7 @@
 <h4>3. Switchcraft 9625 patchbay</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/switchcraft-9625-patchbay.jpg" alt="Front and rear views of the Switchcraft StudioPatch 9625 patchbay. The front has a long horizontal row of small TT (bantam) jacks, two rows of 48 jacks each. The rear has twelve DB25 connectors labeled INPUT 1-8 through INPUT 41-48 across the top row and OUTPUT 1-8 through OUTPUT 41-48 across the bottom row." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/switchcraft-9625-patchbay.jpg" alt="Front and rear views of the Switchcraft StudioPatch 9625 patchbay. The front has a long horizontal row of small TT (bantam) jacks, two rows of 48 jacks each. The rear has twelve DB25 connectors labeled INPUT 1-8 through INPUT 41-48 across the top row and OUTPUT 1-8 through OUTPUT 41-48 across the bottom row." loading="lazy"></div>
   <figcaption>Switchcraft StudioPatch 9625. Every important send and return in the studio lands here.</figcaption>
   <div class="photo-attribution">Photo via Switchcraft.</div>
 </figure>
@@ -246,7 +262,7 @@
 <p>The flexibility layer. 48 small jacks across the top row and 48 across the bottom, organized into 48 columns. The rear has 12 DB25 connectors (six for inputs, six for outputs) carrying the same 96 signals; DB25 fan cables run from there to every piece of gear in the studio. Every column is <strong>normalled</strong> by default, meaning the top jack's signal flows automatically to the bottom jack until you interrupt it by plugging a <strong>TT cable</strong> into the front.</p>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/tt-bantam-cable.avif" alt="A TT (bantam) patch cable. Two small slim 1/4-inch-style plugs (TRS tip-ring-sleeve, much thinner than a 1/4-inch jack) on either end of a short cable." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/tt-bantam-cable.avif" alt="A TT (bantam) patch cable. Two small slim 1/4-inch-style plugs (TRS tip-ring-sleeve, much thinner than a 1/4-inch jack) on either end of a short cable." loading="lazy"></div>
   <figcaption>A TT (bantam) patch cable.</figcaption>
   <div class="photo-attribution">Photo via Mogami.</div>
 </figure>
@@ -278,7 +294,7 @@
 <h4>4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/ssl-xlogic-g-compressor.jpg" alt="Front view of the SSL XLogic G Series Compressor. A 1U rack-mount unit with a large analog VU meter on the left and six knobs and two buttons across the front: threshold, attack, ratio, release, make-up gain, compressor in/out, external sidechain, auto fade." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/ssl-xlogic-g-compressor.jpg" alt="Front view of the SSL XLogic G Series Compressor. A 1U rack-mount unit with a large analog VU meter on the left and six knobs and two buttons across the front: threshold, attack, ratio, release, make-up gain, compressor in/out, external sidechain, auto fade." loading="lazy"></div>
   <figcaption>SSL XLogic G Series Compressor. The classic SSL bus comp in 1U.</figcaption>
   <div class="photo-attribution">Photo via Solid State Logic.</div>
 </figure>
@@ -297,7 +313,7 @@
 <h4>5. TC Electronic M2000 (effects processor)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/tc-electronic-m2000.jpg" alt="Front view of the TC Electronic M2000 Studio Effects Processor. A 1U rack-mount unit with a small LCD screen showing program parameters, surrounded by section buttons (Setup, Engine 1, Engine 2, Combined 1+2, Snapshots, Control) and a large adjust knob on the right." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/tc-electronic-m2000.jpg" alt="Front view of the TC Electronic M2000 Studio Effects Processor. A 1U rack-mount unit with a small LCD screen showing program parameters, surrounded by section buttons (Setup, Engine 1, Engine 2, Combined 1+2, Snapshots, Control) and a large adjust knob on the right." loading="lazy"></div>
   <figcaption>TC Electronic M2000. Mono in, stereo out. Reverb and delay for the studio.</figcaption>
   <div class="photo-attribution">Photo via TC Electronic.</div>
 </figure>
@@ -314,7 +330,7 @@
 <h3>One more piece: the Behringer Xenyx (control room, not in the rack)</h3>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/behringer-xenyx-qx1204usb.webp" alt="Top view of the Behringer Xenyx QX1204USB mixer. A small 8-channel mixer with four mono mic/line input strips, two stereo line-input strips, a USB port, master fader, and a multi-FX processor on the right." loading="lazy">
+  <div class="photo-frame"><img src="../../assets/images/module-03-week-09/behringer-xenyx-qx1204usb.webp" alt="Top view of the Behringer Xenyx QX1204USB mixer. A small 8-channel mixer with four mono mic/line input strips, two stereo line-input strips, a USB port, master fader, and a multi-FX processor on the right." loading="lazy"></div>
   <figcaption>Behringer Xenyx QX1204USB. A small mixer that lives next to the Toft as a USB interface for student laptops.</figcaption>
   <div class="photo-attribution">Photo via Behringer.</div>
 </figure>
