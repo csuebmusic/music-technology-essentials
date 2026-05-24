@@ -299,16 +299,16 @@
   <div class="photo-attribution">Photo via Solid State Logic.</div>
 </figure>
 
-<p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time. The full story (what threshold, ratio, attack, and release do) is Module 4 territory; for Part 1, all that matters is where it sits in the signal path.</p>
+<p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time. You've already met threshold, ratio, attack, and release in the Module 2 reading on dynamics; this is the analog hardware version of the same idea.</p>
 
 <ul>
-  <li><strong>Default routing:</strong> patched into the <strong>Toft master mix INSERT loop</strong> via four permanent TT cables on the front of the patchbay. The L cables: master INSERT L SEND → SSL L IN, then SSL L OUT → master INSERT L RETURN. The R cables: same for R. The master mix signal exits the Toft on the SEND legs, runs through the SSL, and returns on the RETURN legs.</li>
-  <li><strong>At rest:</strong> the master mix passes through the SSL on its way out the MAIN SPKR output.</li>
-  <li><strong>During tracking:</strong> no Pro Tools playback is hitting the master mix yet, so the SSL is just sitting in the path.</li>
-  <li><strong>At mixdown:</strong> when the engineer plays Pro Tools tracks through the console, the SSL processes the summed mix on its way to the speakers.</li>
+  <li><strong>Default routing:</strong> sitting on the master mix INSERT (columns 25-26 of the patchbay). The master mix runs through the SSL on its way out of the console to MAIN SPKR.</li>
+  <li><strong>At rest:</strong> when no music is playing, the SSL is in the path but doing nothing.</li>
+  <li><strong>During tracking:</strong> nothing is playing back through the master mix, so the SSL still just sits there.</li>
+  <li><strong>At mixdown:</strong> the SSL processes the summed mix on its way to the speakers.</li>
 </ul>
 
-<p>An engineer who wants to put the SSL on something else (a drum subgroup during tracking, a single channel, the headphone cue) re-patches at the patchbay; the SSL's input and output jacks both appear there.</p>
+<p>An engineer who wants to put the SSL on something else (a drum subgroup during tracking, a single channel) re-patches at the patchbay: pull the default cables, plug new ones into the SSL's I/O jacks elsewhere on the bay.</p>
 
 <h4>5. TC Electronic M2000 (effects processor)</h4>
 
@@ -318,16 +318,16 @@
   <div class="photo-attribution">Photo via TC Electronic.</div>
 </figure>
 
-<p>A studio-grade reverb and delay processor. Mono input, stereo output. Reverb is the canonical aux-send-and-return effect (you read about this in Lecture 3): the engineer dials a level on Aux 3 for any channel that needs reverb; the M2000 generates a stereo reverb tail; the stereo tail returns to the console and lands in the master mix alongside the dry signal.</p>
+<p>A studio-grade reverb and delay processor. Mono input, stereo output. Reverb is the canonical aux-send-and-return effect (you read about this in Lecture 3): the engineer dials a level on Aux 3 for any channel that needs reverb; the M2000 generates a stereo reverb tail; the tail returns to the console and lands in the master mix alongside the dry signal.</p>
 
 <ul>
-  <li><strong>Default routing:</strong> three permanent TT cables on the front of the patchbay. Aux Master 3 (top jack of its column) → M2000 IN (bottom jack of its column). M2000 L OUT → Effects Return 1 (L). M2000 R OUT → Effects Return 1 (R). At the Toft end, a small Y-cable combines the two effects-return TS plugs back into a single stereo TRS plug that mates with the ER1 jack (post-fader on submaster 1).</li>
-  <li><strong>To use in a session:</strong> dial up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through ER1; the master mix carries dry + wet to the speakers and to the cue.</li>
+  <li><strong>Default routing:</strong> Aux 3 feeds the M2000's input; the M2000's stereo output returns to Effects Return 1 on the Toft. All three connections live on the front of the patchbay.</li>
+  <li><strong>To use in a session:</strong> turn up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through ER1; the master mix carries dry + wet to the speakers and to the cue.</li>
 </ul>
 
 <p>Like the SSL, the M2000 can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
 
-<h3>One more piece: the Behringer Xenyx (control room, not in the rack)</h3>
+<h4>6. Behringer Xenyx QX1204USB (USB interface, on the console desk)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/behringer-xenyx-qx1204usb.webp" alt="Top view of the Behringer Xenyx QX1204USB mixer. A small 8-channel mixer with four mono mic/line input strips, two stereo line-input strips, a USB port, master fader, and a multi-FX processor on the right." loading="lazy">
@@ -338,7 +338,7 @@
 <p>A small 8-channel mixer that sits on the console desk next to the Toft, used as a USB audio interface for student laptops. When a student wants to play their laptop into the Toft without going through Pro Tools and the HDX, they plug their laptop into the Behringer via USB and route the Behringer's outputs into the Toft.</p>
 
 <ul>
-  <li><strong>Channels 1-2 in:</strong> receive the Toft <strong>master op</strong> (so the laptop user can hear what's currently in the master mix while they're playing).</li>
+  <li><strong>Channels 1-2 in:</strong> receive the Toft <strong>MASTER O/P</strong> (so the laptop user can hear what's currently in the master mix while they're playing).</li>
   <li><strong>USB in/out:</strong> to and from the student's laptop. The Behringer self-clocks via this USB connection.</li>
   <li><strong>Main out:</strong> Toft <strong>LINE inputs 9-10</strong> (so the laptop's main mix lands on Toft channels 9 and 10).</li>
   <li><strong>Alt 3-4 out:</strong> Toft <strong>LINE inputs 11-12</strong> (a second pair of outputs landing on Toft channels 11 and 12).</li>
