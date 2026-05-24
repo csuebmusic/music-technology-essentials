@@ -148,8 +148,8 @@ Cable: DB25MM10TRS #4. Normal: half-normal for columns 25-26 (the active master 
 | 42 | Toft Aux Master 2 | DB25M10TRS #1 (TRS plug to Toft Aux Master 2) |
 | 43 | Toft Aux Master 3 | DB25M10TRS #1 (TRS plug to Toft Aux Master 3) |
 | 44 | Toft Aux Master 4 | DB25M10TRS #1 (TRS plug to Toft Aux Master 4) |
-| 45 | Toft Aux Master 5 | DB25M10TRS #1 (TRS plug to Toft Aux Master 5) |
-| 46 | Toft Aux Master 6 | DB25M10TRS #1 (TRS plug to Toft Aux Master 6) |
+| 45 | (spare) | (Aux Master 5 goes direct to Rane MH4 stereo cue input, not to the bay) |
+| 46 | (spare) | (Aux Master 6 goes direct to Rane MH4 stereo cue input, not to the bay) |
 | 47 | (spare) | |
 | 48 | (spare) | |
 
@@ -209,8 +209,8 @@ At the Toft end, the Y-cable on ER1 combines patchbay columns 41 and 42 back int
 - The SSL is permanently in the master mix INSERT path by default. To bypass it, the engineer pulls the 4 TT cables that route the SSL.
 - The M2000 is permanently available as a parallel reverb on Aux 3 → ER1. Any channel can send to Aux 3 and hear reverb come back in the master mix.
 - 4 of the Toft's 8 stereo effects returns are exposed on the bay (ER1-ER4, with ER1 occupied by the M2000 default and ER2-ER4 available for session-specific stereo sources). The remaining 4 effects returns (ER5-ER8) are not on the bay; they can be reached only by direct cable to the Toft rear.
-- The aux masters (all 6) are exposed on the bay for ad-hoc patching (e.g., routing aux 1 to a different destination than its default reverb).
-- 14 spare columns total (6 in the inserts block + 4 in the outboard block + 2 in the aux block + 2 unallocated) for future expansion.
+- Aux Masters 1-4 are exposed on the bay for ad-hoc patching (e.g., routing aux 1 to a different destination than its default reverb). Aux Masters 5 and 6 are not on the bay; they run direct to the Rane MH4 headphone unit's stereo cue input, and overriding that path requires unplugging the direct cables at the Toft rear.
+- 16 spare columns total (6 in the inserts block + 4 in the outboard block + 4 in the aux block + 2 unallocated) for future expansion.
 
 ## Open questions / future revisions
 
