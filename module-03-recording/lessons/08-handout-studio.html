@@ -337,7 +337,7 @@
   </li>
 </ul>
 
-<p>The studio's <strong>default configuration</strong> uses two of these outboard slots already: the compressor sits on the master mix INSERT path (the master mix runs through it on its way out of the console), and the effects processor sits on Aux 3 as a reverb. Both connections are made with TT cables on the front of the patchbay and can be moved during any session. The next two items walk these defaults in more detail.</p>
+<p>The studio's <strong>default configuration</strong> uses two of these outboard slots already: the compressor sits on the master mix INSERT path (the master mix runs through it on its way out of the console), and the effects processor sits on Aux 3. Both connections are made with TT cables on the front of the patchbay and can be moved during any session. The next two items walk these defaults in more detail.</p>
 
 <h4>4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
@@ -349,31 +349,55 @@
 
 <p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time. You've already met threshold, ratio, attack, and release in the Module 2 reading on dynamics; this is the analog hardware version of the same idea.</p>
 
-<ul>
-  <li><strong>Default routing:</strong> sitting on the master mix INSERT (columns 25-26 of the patchbay). The master mix runs through the SSL on its way out of the console to MAIN SPKR.</li>
-  <li><strong>At rest:</strong> when no music is playing, the SSL is in the path but doing nothing.</li>
-  <li><strong>During tracking:</strong> nothing is playing back through the master mix, so the SSL still just sits there.</li>
-  <li><strong>At mixdown:</strong> the SSL processes the summed mix on its way to the speakers.</li>
-</ul>
+<p>The unit sits on the master mix INSERT by default (the TT cables that route it live on patchbay columns 25-26 connecting to columns 33-34). The master mix runs through the compression unit on its way out of the console to MAIN SPKR. When nothing is playing, the unit is in the path but doing nothing; at mixdown, it processes the summed mix on its way to the speakers.</p>
 
-<p>An engineer who wants to put the SSL on something else (a drum subgroup during tracking, a single channel) re-patches at the patchbay: pull the default cables, plug new ones into the SSL's I/O jacks elsewhere on the bay.</p>
+<div class="callout">
+  <div class="callout-label">Recipe: hear the compression unit working on the master mix</div>
+  <p>With Pro Tools playing back through the Toft and signal showing on the master meter, the master mix is already running through the compression unit at the patchbay. To hear what the compression is doing:</p>
+  <ol>
+    <li>On the front of the compression unit, press the <strong>IN</strong> button so the compressor engages.</li>
+    <li>Set <strong>ratio</strong> to a moderate value (e.g., 4:1) and <strong>threshold</strong> low enough that the VU meter starts showing gain reduction on the loudest parts of the mix.</li>
+    <li>Press <strong>IN</strong> off and on to A/B between processed and unprocessed. The mix gets a little tighter and louder with the compressor in.</li>
+  </ol>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Recipe: move the compression unit from the master mix to the drum subgroup</div>
+  <p>For tracking drums, an engineer might want the compression unit on the drum subgroup (say subgroup 1-2) instead of the master mix. To re-patch:</p>
+  <ol>
+    <li>Pull the four TT cables routing the compression unit to the master INSERT (columns 25-26 and columns 33-34).</li>
+    <li>Plug new TT cables from <strong>SUBGROUP 1 INSERT SEND</strong> (column 17 top) to <strong>compression unit L IN</strong> (column 33 bottom), and from <strong>compression unit L OUT</strong> (column 33 top) to <strong>SUBGROUP 1 INSERT RETURN</strong> (column 17 bottom).</li>
+    <li>Repeat for subgroup 2 using column 18 and column 34.</li>
+  </ol>
+  <p>Now the drums (routed to subgroup 1-2 by their channels' 1-2 routing buttons) pass through the compression unit on their way to the DAW. The master mix is no longer compressed.</p>
+</div>
 
 <h4>5. TC Electronic M2000 (effects processor)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/tc-electronic-m2000.jpg" alt="Front view of the TC Electronic M2000 Studio Effects Processor. A 1U rack-mount unit with a small LCD screen showing program parameters, surrounded by section buttons (Setup, Engine 1, Engine 2, Combined 1+2, Snapshots, Control) and a large adjust knob on the right." loading="lazy">
-  <figcaption>TC Electronic M2000. Mono in, stereo out. Reverb and delay for the studio.</figcaption>
+  <figcaption>TC Electronic M2000. Mono in, stereo out. Reverbs, delays, modulation effects, and more.</figcaption>
   <div class="photo-attribution">Photo via TC Electronic.</div>
 </figure>
 
-<p>A studio-grade reverb and delay processor. Mono input, stereo output. Reverb is the canonical aux-send-and-return effect (you read about this in Lecture 3): the engineer dials a level on Aux 3 for any channel that needs reverb; the M2000 generates a stereo reverb tail; the tail returns to the console and lands in the master mix alongside the dry signal.</p>
+<p>A studio-grade effects processor: reverbs of every flavor (hall, plate, room, spring), delays, chorus, flanger, phaser, pitch shift, and combinations of these. Mono input, stereo output. Whichever effect is loaded, the workflow is the same: a channel sends a copy of its signal to the effects processor via an aux send; the processor generates a stereo wet signal; that wet signal returns to the console through an effects return and joins the master mix alongside the dry signal coming from the channel itself.</p>
 
-<ul>
-  <li><strong>Default routing:</strong> Aux 3 feeds the M2000's input; the M2000's stereo output returns to <strong>STEREO FX RETURN 1</strong> (ER1 for short) on the Toft. All three connections live on the front of the patchbay.</li>
-  <li><strong>To use in a session:</strong> turn up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through ER1; the master mix carries dry + wet to the speakers and to the cue.</li>
-</ul>
+<p>The effects processor sits on Aux 3 by default (the TT cables that route it live on patchbay column 43 connecting to columns 35-36, with the unit's stereo output returning through STEREO FX RETURN 1, ER1 for short). Any channel that turns up its Aux 3 knob sends a copy of its signal to the effects processor and hears the processed result come back in the master mix.</p>
 
-<p>Like the SSL, the M2000 can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
+<div class="callout">
+  <div class="callout-label">Recipe: add a chorus effect to a vocal on channel 1</div>
+  <p>Say a vocal mic is plugged into channel 1 of the Toft and you want a touch of chorus added to it in the master mix. With the effects processor on its default Aux 3 routing:</p>
+  <ol>
+    <li>On the front of the effects processor, navigate to a chorus preset and load it.</li>
+    <li>On channel 1 of the Toft, find the <strong>Aux 3</strong> knob in the aux-send section near the top of the strip. Make sure it's switched to <strong>post-fader</strong> (so the chorus level follows the vocal fader; when the vocal goes down, the chorus goes down with it).</li>
+    <li>Sing or speak into the mic so signal is moving on channel 1.</li>
+    <li>Slowly turn the Aux 3 knob up. The effects processor's input meter responds; the chorus tail returns through ER1 into the master mix; you hear the vocal with chorus.</li>
+    <li>Use the <strong>FX RET</strong> knob at the top of submaster strip 1 to set how loud the chorus return sits in the master mix relative to the dry vocal on channel 1.</li>
+  </ol>
+  <p>To add the same chorus to a second channel (say a guitar on channel 5), turn up that channel's Aux 3 knob too. The effects processor mixes both contributions and returns one stereo wet signal that lands in the master mix.</p>
+</div>
+
+<p>Like the compression unit, the effects processor can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
 
 <h4>6. Behringer Xenyx QX1204USB (USB interface, on the console desk)</h4>
 
