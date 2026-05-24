@@ -112,7 +112,7 @@
 
     /* You-Try widget. A scenario generator: click 'Generate a band'
        to pull a random lineup from the pool; each lineup presents
-       three reveal-on-click questions (channel map, FOH routing,
+       three reveal-on-click questions (channel chart, FOH routing,
        stage monitor mixes). Self-contained per project conventions. */
     .youtry {
       background: var(--bg-alt);
@@ -256,7 +256,7 @@
 <p>The Sound Below is a five-piece. The instrumentation was chosen to exercise every signal type, mic kind, and cable you've met in this module: a mic-level vocal, a mic-level guitar amp, the canonical DI-dry-plus-amp-wet bass treatment from Lecture 2, the standard four-mic drum setup (kick, snare, and a stereo pair of overhead condensers), and a stage keyboardist with a laptop running alongside (the only line-level signals in the band). Twelve signals total. The console has sixteen input channels; the band fills three-quarters of it.</p>
 
 <table class="routing">
-  <caption>The Sound Below · the band's twelve signals</caption>
+  <caption>Chart 1 · The Sound Below · the band's twelve signals</caption>
   <thead>
     <tr>
       <th>Player</th>
@@ -556,12 +556,12 @@
   <p>The picture above describes an analog snake: one shielded pair per audio channel, lots of copper, heavy. A modern variant is the <strong>digital snake</strong>: a small box at the stage that does analog-to-digital conversion locally, and sends all the channels as a single digital stream over an ethernet cable (or a fiber-optic cable) to the console. This only works if the console is also digital: a digital snake feeds a digital console with a matching digital input. An analog console (like the Toft ATB in MB2508) expects analog audio on XLR jacks at every input, so it has to be paired with an analog snake. The same Cat6 cable that runs your laptop's internet can carry 32 channels of audio at 48 kHz. The connectors are different and the box at the stage is doing more work, but conceptually it's the same idea: bundle many signals onto one path. Many touring engineers prefer digital snakes for the weight savings; many older venues still use analog snakes because they already own one and they last forever.</p>
 </div>
 
-<h3>The channel map</h3>
+<h3>The channel chart</h3>
 
 <p>The twelve signals get assigned to input channels 1 through 12 on the console.</p>
 
 <table class="routing">
-  <caption>Channel assignments · live-sound scenario</caption>
+  <caption>Chart 2 · channel assignments · live-sound scenario</caption>
   <thead>
     <tr>
       <th>Channel</th>
@@ -596,7 +596,7 @@
 
 <ol class="steps">
   <li>On each of channels 1, 2, 3, 4: press the <strong>L-R</strong> button down. The 1-2, 3-4, 5-6, 7-8 buttons stay up.</li>
-  <li>On each of those channels: set the channel pan knob (centre for vocal and bass DI, slightly left/right for the two amp mics if the engineer wants width).</li>
+  <li>On each of those channels: set the channel pan knob (center for vocal and bass DI, slightly left/right for the two amp mics if the engineer wants width).</li>
   <li>Adjust each channel's INPUT GAIN, EQ, and fader as the band plays.</li>
 </ol>
 
@@ -606,7 +606,7 @@
 
 <ol class="steps">
   <li>On each of channels 5 (kick), 6 (snare), 7 (overhead L), 8 (overhead R): press the <strong>1-2</strong> button down. L-R stays up.</li>
-  <li>On the channel pan knobs: kick centred, snare centred, overhead L hard left, overhead R hard right. The four channels now sum into the subgroup pair (sub 1 = left side of the kit, sub 2 = right).</li>
+  <li>On the channel pan knobs: kick centered, snare centered, overhead L hard left, overhead R hard right. The four channels now sum into the subgroup pair (sub 1 = left side of the kit, sub 2 = right).</li>
   <li>On submaster strips 1 and 2: set the <strong>TAPE</strong> button up (the live subgroup is the source, not playback).</li>
   <li>On submaster strip 1: turn <strong>MON LEVEL</strong> up, set <strong>MON PAN</strong> hard left. On submaster strip 2: MON LEVEL up, MON PAN hard right. The drum kit now lands in the master mix as a stereo pair.</li>
   <li>Leave both submaster faders down. They control the level out to the SUBMASTER OUTPUTS jacks (the DAW send), which a live show isn't using.</li>
@@ -754,7 +754,7 @@
 
 <ol class="steps">
   <li>Pick an aux (1, 2, 3, 4, or 5) for this performer's mix.</li>
-  <li>Set that aux to <strong>pre-fader</strong> on every input channel. Aux 1 is permanently pre-fader (no switch). For Auxes 2 through 5, press the channel's PRE button for that aux. Pre-fader means the aux send level is independent of the channel fader: the FOH engineer can pull the vocal fader down between songs and the singer still hears their own voice in their stage monitor at the same level.</li>
+  <li>Set that aux to <strong>pre-fader</strong> on every input channel. Aux 1 is permanently pre-fader (no switch). For Auxes 2 through 5, press the channel's PRE button down for that aux. Pre-fader means the aux send level is independent of the channel fader: the FOH engineer can pull the vocal fader down between songs and the singer still hears their own voice in their stage monitor at the same level.</li>
   <li>On the channels this performer needs to hear: turn the aux knob up to a working level. On the channels they don't need: leave the aux knob at zero.</li>
   <li>Adjust each channel's contribution by ear (the performer's own voice or instrument usually loud, the time-keeping references like kick and snare audible enough to lock in, everything else minimal or off).</li>
   <li>At the master section, set the Aux Master knob for this aux to a working line-level send (about unity, then trim by ear once the monitor is playing).</li>
@@ -813,7 +813,7 @@
 
 <p>Work it through methodically, the same way Scenario 1 did. Read the <strong>signal chart</strong> (player → captured → mic / source → signal type → cable) first; that tells you what's coming off the stage. Then build the <strong>channel chart</strong> yourself (channel → source → MIC or LINE jack → phantom power on/off); that's what you'd write down before patching the back of the console. From there, plan the FOH mix and the stage monitor mixes.</p>
 
-<p>The specific mic models listed in the signal chart are for reference: real working examples of the transducer types from Lecture 3's reading. If you want to know why one of them was chosen for a particular source (frequency response, polar pattern, max SPL, that kind of thing), google the mic name and read its spec sheet.</p>
+<p>The specific mic models listed in the signal chart are for reference: real working examples of the transducer types from Lecture 2's reading. If you want to know why one of them was chosen for a particular source (frequency response, polar pattern, max SPL, anything along those lines), google the mic name and read its spec sheet.</p>
 
 <p>Each section has a <strong>Show one approach</strong> button that reveals a worked solution, but try to answer first on paper before peeking. There isn't always one right answer; routing is interpretive, and the reveal is one reasonable approach with a note on the trade-offs.</p>
 
@@ -1302,7 +1302,7 @@
 
 <h2>End of session</h2>
 
-<h3>What to upload today</h3>
+<h3>Before you leave</h3>
 
 <ol class="steps">
   <li>Take five minutes before leaving to keep your existing sample library moving: open <code>~/Documents/lastname/sample-library/</code>, check that any sounds you recorded this week are tagged, and confirm the running README still reflects what's in the folders. If there are sounds you haven't prepped yet, this is a good moment to do one or two more passes through the denoise → trim → normalize pipeline.</li>
