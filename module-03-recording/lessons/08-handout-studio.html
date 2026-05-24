@@ -127,7 +127,7 @@
 
 <h2>Part 1 · The studio</h2>
 
-<p>MB2508 has two rooms: the <strong>control room</strong> (where the engineer sits at the Toft) and the <strong>live room</strong> (where the band plays, behind the internal door). The two rooms share a wall full of XLR feed-throughs and BNC pass-throughs that connect everything in one room to everything in the other. This part documents what's in each room and how it's all wired.</p>
+<p>MB2508 has two rooms: the <strong>control room</strong> (where the engineer sits at the Toft) and the <strong>live room</strong> (where the band plays, behind the internal door). The two rooms share a wall full of XLR feed-throughs and TRS pass-throughs that connect everything in one room to everything in the other. This part documents what's in each room and how it's all wired.</p>
 
 <h3>The live-room rack</h3>
 
@@ -147,9 +147,12 @@
 
 <p>A <strong>preamp</strong> takes a mic-level signal (small, fragile, from a microphone) and lifts it to <strong>line level</strong> (large, robust, ready to travel a long cable to the next stage). You met one preamp already, the one inside the audio interface at every lab station; this is the same job done by a dedicated 8-channel unit with its own personality.</p>
 
-<p><strong>Inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel A below.</p>
+<ul>
+  <li><strong>Inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel A below.</li>
+  <li><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 male XLRs. These run through the wall into Toft <strong>XLR (MIC) inputs 1 through 8</strong>.</li>
+</ul>
 
-<p><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 XLR males. These run through the wall into <strong>Toft XLR (MIC) inputs 1 through 8</strong>.</p>
+<p>The Toft inputs are labeled MIC, but they accept line-level too: an XLR cable can carry mic-level or line-level (you read this in Lecture 2). With a line-level signal arriving at the Toft's MIC input, the Toft's onboard preamp doesn't need to amplify; the channel's INPUT GAIN knob becomes a <strong>trim</strong>, set low to fine-tune the level. The ISA has already done the gain work; the Toft's gain knob just nudges what's there.</p>
 
 <h4>3. Focusrite OctoPre Platinum (8-channel mic preamp)</h4>
 
@@ -161,67 +164,54 @@
 
 <p>Same job as the ISA, slightly different sound, slightly different controls. Eight more preamp channels.</p>
 
-<p><strong>Inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel B below.</p>
+<ul>
+  <li><strong>Inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel B below.</li>
+  <li><strong>Outputs (rear):</strong> 8 line-level XLR outputs. Run through the wall into Toft <strong>XLR (MIC) inputs 9 through 16</strong> as line-level signals (same trim-not-gain situation as the ISA's outputs into channels 1-8).</li>
+</ul>
 
-<p><strong>Outputs (rear):</strong> 8 line-level XLR outputs. Run through the wall into <strong>Toft XLR (MIC) inputs 9 through 16</strong>.</p>
-
-<h4>4. Hosa mic input panel A (8 jacks → ISA 828)</h4>
+<h4>4. Hosa mic input panels (×2: panel A and panel B)</h4>
 
 <figure class="photo">
-  <img src="../../assets/images/module-03-week-09/hosa-pdr-369-mic-panel.jpg" alt="A 1U rack panel with eight XLR female jacks across the front, numbered 1 through 8. Labeled MIC IN PANEL." loading="lazy">
-  <figcaption>Hosa 8-jack mic input panel. One per preamp.</figcaption>
+  <img src="../../assets/images/module-03-week-09/hosa-pdr-369-mic-panel.jpg" alt="A 1U rack panel with sixteen XLR female jacks across the front, numbered 1 through 16. Labeled MIC IN PANEL." loading="lazy">
+  <figcaption>Hosa 16-jack mic input panel. One per preamp; jacks 9-16 unused.</figcaption>
   <div class="photo-attribution">Photo via Hosa Technology.</div>
 </figure>
 
-<p>A row of 8 XLR female jacks at the front of the rack. Each jack is wired internally to the matching mic input on the ISA 828 directly above: panel jack 1 → ISA channel 1, jack 2 → ISA channel 2, and so on.</p>
+<p>Two identical Hosa panels, mounted one above the other near the bottom of the rack. Each panel has 16 XLR female jacks across its front, numbered 1 through 16; jacks 1-8 are wired internally to the preamp directly above the panel, and jacks 9-16 are unused (left in place in case the studio expands later).</p>
 
-<p>The panel exists because plugging mics into the back of a preamp tucked into a wall rack is impractical. The panel brings the eight mic inputs forward at standing height. Plug a microphone (or a DI box output) into panel jack <em>N</em>, and you're feeding ISA channel <em>N</em>.</p>
+<ul>
+  <li><strong>Hosa panel A:</strong> jacks 1-8 wired to ISA 828 mic inputs 1-8.</li>
+  <li><strong>Hosa panel B:</strong> jacks 1-8 wired to OctoPre mic inputs 1-8.</li>
+</ul>
 
-<h4>5. Hosa mic input panel B (8 jacks → OctoPre)</h4>
+<p>The panels exist because plugging mics into the back of a preamp tucked into a wall rack is impractical. They bring 16 mic-input jacks (two banks of 8) forward to a standing-height row at the front of the rack. The band's mics plug in here; everything downstream is wiring you don't have to think about while setting up the session.</p>
 
-<p>Identical to panel A. Each of its 8 XLR jacks wires internally to the matching mic input on the OctoPre directly above: panel B jack 1 → OctoPre channel 1, and so on.</p>
-
-<p>Between the two panels, the live room presents <strong>16 mic-input jacks at a row in the rack</strong>, in two clearly labeled groups of 8. The band's mics plug in here; everything downstream is wiring you don't have to think about while you're setting up the session.</p>
-
-<h4>6. Rane MH4 Mojo Series (4-channel headphone console)</h4>
+<h4>5. Rane MH4 Mojo Series (4-out headphone splitter)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/rane-mh4-headphone-console.jpg" alt="A 1U rack-mount unit with four channels, each having a 1/4-inch headphone jack and a level knob, plus a mono/stereo source switch. Labeled Rane MH4 Stereo Headphone Console." loading="lazy">
-  <figcaption>Rane MH4. Four player headphones, one cue source.</figcaption>
+  <figcaption>Rane MH4. One cue mix, four players, four volume knobs.</figcaption>
   <div class="photo-attribution">Photo via Rane Corporation.</div>
 </figure>
 
-<p>Performers in the live room wear headphones during tracking so they can hear themselves and the other tracks while playing. The MH4 is what splits one stereo cue mix into four independent headphone outputs.</p>
+<p>Performers in the live room wear headphones during tracking so they can hear themselves and the other tracks while playing. The MH4 takes one stereo cue mix from the control room and sends <strong>four copies of that same mix</strong> to four headphone jacks on its front, each with its own volume knob.</p>
 
-<p><strong>Inputs (rear):</strong> One stereo cue source. Comes from the control room: <strong>Toft Aux Master 5 (L) + Aux Master 6 (R)</strong>, two TRS cables through the wall.</p>
+<p>This is different from the live-sound setup you read about in Module 3, where each performer's monitor had its own custom mix on its own aux. Most sessions in our studio are small enough that everyone in the live room can work from a single shared cue mix; different players just need different volumes, which is what the MH4's four independent level knobs are for. (A larger studio might run a different headphone amp where each output gets its own custom mix; we don't.)</p>
 
-<p><strong>Outputs (front):</strong> 4 player headphone jacks, each with its own level knob. Drums, bass, guitar, vocalist each plug into one.</p>
-
-<p>One stereo cue mix, four players, four independent volume knobs. The mix itself (what they hear) is built on the Toft using the Aux 5 and Aux 6 send knobs on each input channel.</p>
+<ul>
+  <li><strong>Inputs (rear):</strong> One stereo cue source on two TRS jacks (L+R), coming from the control room: Toft <strong>Aux Master 5 (L) + Aux Master 6 (R)</strong>.</li>
+  <li><strong>Outputs (front):</strong> Four 1/4" headphone jacks, each with its own level knob. Players plug their headphones in here.</li>
+</ul>
 
 <h3>The control-room console and side rack</h3>
 
-<p>The Toft sits on a console desk in the control room. Built into the right end of the desk is a side rack carrying everything the Toft routes to or from. Six pieces of gear, top to bottom:</p>
+<p>The Toft sits on a console desk in the control room. Built into the right end of the desk is a side rack carrying everything the Toft routes to or from. Five pieces of gear, top to bottom:</p>
 
 <h4>1. Furman PL-8 Series 2 (power conditioner)</h4>
 
-<p>Same model as the live-room rack's. Powers everything in the side rack from one outlet, with one master switch. (The Toft itself has its own power switch and is not powered through this Furman; it plugs into a separate dedicated outlet.)</p>
+<p>Same model as the live-room rack's. Powers everything in the side rack from one outlet, with one master switch. (The Toft itself has its own power switch and plugs into a separate dedicated outlet.)</p>
 
-<h4>2. Apogee Big Ben (master word clock)</h4>
-
-<figure class="photo">
-  <img src="../../assets/images/module-03-week-09/apogee-big-ben.webp" alt="A 1U rack-mount unit with an LED screen showing 192.0, surrounded by sample-rate indicator LEDs. Labeled Apogee Big Ben Master Word Clock. The rear panel has multiple BNC word clock outputs, AES I/O, optical I/O." loading="lazy">
-  <figcaption>Apogee Big Ben. One clock for the whole studio.</figcaption>
-  <div class="photo-attribution">Photo via Apogee Electronics.</div>
-</figure>
-
-<p>Every digital audio device runs on a <strong>clock</strong>: a steady stream of timing pulses that says when each sample begins. Two digital devices running on slightly different clocks produce clicks, dropouts, and slow phase smearing. The fix is to designate one device as the <strong>master clock</strong> and feed its timing to every other digital device in the studio.</p>
-
-<p>The Big Ben generates a precise word-clock signal at the chosen sample rate (44.1, 48, 88.2, 96, 176.4, or 192 kHz; we use 48 kHz for Module 4 sessions) and distributes it over BNC cables.</p>
-
-<p><strong>Word-clock outputs (rear):</strong> Multiple BNC outputs. One runs to the HDX immediately below in the same rack. Others run through the wall to BNC pass-throughs in the live room, available for any digital gear a session might need to bring in.</p>
-
-<h4>3. Avid HDX I/O (audio interface)</h4>
+<h4>2. Avid HDX I/O (audio interface)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/avid-hdx-io.webp" alt="Front and rear views of the Avid HDX I/O. The front has level meters for 16 inputs and 16 outputs plus sample-rate and sync-mode indicators. The rear has two DB25 analog input connectors (+4dBu and -10dBV), a DB25 analog output connector, AES/EBU, TDIF, ADAT optical, S/PDIF, and BNC word-clock I/O." loading="lazy">
@@ -231,321 +221,86 @@
 
 <p>The audio interface connecting the Toft to Pro Tools. 16 analog inputs become Pro Tools record tracks; 16 analog outputs return Pro Tools playback to the console.</p>
 
-<p><strong>Analog inputs 1-8 (DB25, +4 dBu):</strong> Receive the <strong>Toft submaster outputs 1-8</strong> via a DB25-to-8×TRS fan cable.</p>
+<ul>
+  <li><strong>Analog inputs 1-8 (DB25, +4 dBu):</strong> Receive the Toft <strong>submaster outputs 1-8</strong> via a DB25-to-8×TRS fan cable.</li>
+  <li><strong>Analog outputs 1-8 (DB25):</strong> Return Pro Tools playback to the Toft <strong>submaster MONITOR RETURNS 1-8</strong> via a second DB25-to-8×TRS fan cable.</li>
+  <li><strong>Connection to Mac Pro:</strong> A single proprietary cable to the HDX PCIe card installed inside the Mac Pro. The PCIe card carries far more simultaneous channels than a USB or Thunderbolt interface would, which is why the HDX uses one. Clocking comes from the Mac Pro across the same cable; no separate master-clock device is needed.</li>
+</ul>
 
-<p><strong>Analog outputs 1-8 (DB25):</strong> Return Pro Tools playback to the <strong>Toft submaster MONITOR RETURNS 1-8</strong> via a second DB25-to-8×TRS fan cable.</p>
+<h4>3. Switchcraft 9625 patchbay</h4>
 
-<p><strong>Word-clock input (BNC):</strong> From the Big Ben directly above.</p>
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/switchcraft-9625-patchbay.jpg" alt="Front and rear views of the Switchcraft StudioPatch 9625 patchbay. The front has a long horizontal row of small TT (bantam) jacks, two rows of 48 jacks each. The rear has twelve DB25 connectors labeled INPUT 1-8 through INPUT 41-48 across the top row and OUTPUT 1-8 through OUTPUT 41-48 across the bottom row." loading="lazy">
+  <figcaption>Switchcraft StudioPatch 9625. Every important send and return in the studio lands here.</figcaption>
+  <div class="photo-attribution">Photo via Switchcraft.</div>
+</figure>
 
-<p><strong>Connection to Mac Pro:</strong> A single proprietary cable to the HDX PCIe card installed inside the Mac Pro. The PCIe card carries far more simultaneous channels than a USB or Thunderbolt interface, which is why the HDX uses one.</p>
-
-<h4>4. Switchcraft 9625 patchbay</h4>
-
-<p>The flexibility layer. A 2×24 TT (bantam) patchbay: 48 small jacks across the top row and 48 across the bottom, organized in 24 columns. Every column is <strong>normalled</strong> by default, which means the top jack's signal flows automatically to the bottom jack until you interrupt it by plugging in a TT cable.</p>
+<p>The flexibility layer. A 2×48 TT (bantam) patchbay: 48 small jacks across the top row and 48 across the bottom, organized into 48 columns. The rear has 12 DB25 connectors (six for inputs, six for outputs) carrying the same 96 signals; DB25 fan cables run from there to every piece of gear in the studio. Every column is <strong>normalled</strong> by default, meaning the top jack's signal flows automatically to the bottom jack until you interrupt it by plugging a TT cable into the front.</p>
 
 <p>The patchbay's purpose is to make every important send and return in the studio reachable from one panel, so the engineer can re-route signal flow with short patch cables instead of crawling behind racks. The Toft's channel inserts, subgroup inserts, master insert, and aux masters all land on the patchbay, alongside the inputs and outputs of every piece of outboard gear (SSL G, M2000, anything you might add later).</p>
 
 <p>At rest (no patch cables plugged), the patchbay is wired with two <strong>default normalled paths</strong> that route the studio's two outboard processors through the most useful signal points on the Toft. These defaults are part of the studio's documented configuration; the next two items describe them.</p>
 
-<h4>5. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
+<h4>4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
-<p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time.</p>
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/ssl-xlogic-g-compressor.jpg" alt="Front view of the SSL XLogic G Series Compressor. A 1U rack-mount unit with a large analog VU meter on the left and six knobs and two buttons across the front: threshold, attack, ratio, release, make-up gain, compressor in/out, external sidechain, auto fade." loading="lazy">
+  <figcaption>SSL XLogic G Series Compressor. The classic SSL bus comp in 1U.</figcaption>
+  <div class="photo-attribution">Photo via Solid State Logic.</div>
+</figure>
 
-<p><strong>Default normalled routing:</strong> the SSL is patched into the <strong>Toft master section INSERT loop</strong>. Master mix send out → SSL input → SSL processes → SSL output → master mix return in. At rest, the master mix passes through the SSL on its way out the MAIN SPKR output. During tracking, no Pro Tools playback is hitting the master mix yet, so the SSL is just sitting in the path. At mixdown, when the engineer plays Pro Tools tracks through the console, the SSL processes the summed mix on its way to the speakers and (if needed) on its way to a stereo bounce.</p>
+<p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time. The full story (what threshold, ratio, attack, and release do) is Module 4 territory; for Part 1, all that matters is where it sits in the signal path.</p>
+
+<ul>
+  <li><strong>Default normalled routing:</strong> patched into the <strong>Toft master section INSERT loop</strong>. Master mix INSERT send → SSL input; SSL output → master mix INSERT return.</li>
+  <li><strong>At rest:</strong> the master mix passes through the SSL on its way out the MAIN SPKR output.</li>
+  <li><strong>During tracking:</strong> no Pro Tools playback is hitting the master mix yet, so the SSL is just sitting in the path.</li>
+  <li><strong>At mixdown:</strong> when the engineer plays Pro Tools tracks through the console, the SSL processes the summed mix on its way to the speakers.</li>
+</ul>
 
 <p>An engineer who wants to put the SSL on something else (a drum subgroup during tracking, a single channel, the headphone cue) re-patches at the patchbay; the SSL's input and output jacks both appear there.</p>
 
-<h4>6. TC Electronic M2000 (effects processor)</h4>
+<h4>5. TC Electronic M2000 (effects processor)</h4>
 
-<p>A studio-grade reverb and delay processor. Mono input, stereo output. Reverb is the canonical aux-send-and-return effect (you read about this in Lecture 3): the engineer dials a level on Aux <em>N</em> for any channel that needs reverb; the M2000 generates a stereo reverb tail; the stereo tail returns to the console and lands in the master mix alongside the dry signal.</p>
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/tc-electronic-m2000.jpg" alt="Front view of the TC Electronic M2000 Studio Effects Processor. A 1U rack-mount unit with a small LCD screen showing program parameters, surrounded by section buttons (Setup, Engine 1, Engine 2, Combined 1+2, Snapshots, Control) and a large adjust knob on the right." loading="lazy">
+  <figcaption>TC Electronic M2000. Mono in, stereo out. Reverb and delay for the studio.</figcaption>
+  <div class="photo-attribution">Photo via TC Electronic.</div>
+</figure>
 
-<p><strong>Default normalled routing:</strong> The M2000 input is patched to <strong>Toft Aux Master 3</strong> (post-fader, so when a channel fader goes down, that channel's reverb goes down with it). The M2000's stereo output is patched to the Toft's <strong>STEREO EFFECTS RETURNS 1 (L) and 2 (R)</strong> in the submaster section, which feed the master mix.</p>
+<p>A studio-grade reverb and delay processor. Mono input, stereo output. Reverb is the canonical aux-send-and-return effect (you read about this in Lecture 3): the engineer dials a level on Aux 3 for any channel that needs reverb; the M2000 generates a stereo reverb tail; the stereo tail returns to the console and lands in the master mix alongside the dry signal.</p>
 
-<p>To use the M2000 in a session: dial up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through the stereo effects returns; the master mix carries dry + wet to the speakers and to the cue.</p>
+<ul>
+  <li><strong>Default normalled routing:</strong> M2000 input patched to Toft <strong>Aux Master 3</strong> (post-fader, so when a channel fader goes down, that channel's reverb goes down with it). M2000 stereo output patched to the Toft <strong>STEREO EFFECTS RETURNS 1 (L) and 2 (R)</strong> in the submaster section, which feed the master mix.</li>
+  <li><strong>To use in a session:</strong> dial up Aux 3 on any channel that needs reverb. That channel's signal travels to the M2000; the reverb returns through the stereo effects returns; the master mix carries dry + wet to the speakers and to the cue.</li>
+</ul>
 
 <p>Like the SSL, the M2000 can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
 
 <h3>One more piece: the Behringer Xenyx (control room, not in the rack)</h3>
 
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/behringer-xenyx-qx1204usb.webp" alt="Top view of the Behringer Xenyx QX1204USB mixer. A small 8-channel mixer with four mono mic/line input strips, two stereo line-input strips, a USB port, master fader, and a multi-FX processor on the right." loading="lazy">
+  <figcaption>Behringer Xenyx QX1204USB. A small mixer that lives next to the Toft as a USB interface for student laptops.</figcaption>
+  <div class="photo-attribution">Photo via Behringer.</div>
+</figure>
+
 <p>A small 8-channel mixer that sits on the console desk next to the Toft, used as a USB audio interface for student laptops. When a student wants to play their laptop into the Toft without going through Pro Tools and the HDX, they plug their laptop into the Behringer via USB and route the Behringer's outputs into the Toft.</p>
 
-<p><strong>Inputs:</strong> USB from a student laptop; channels 1-2 receive the <strong>Toft master op</strong> (so the laptop user can hear what's currently in the master mix while they're playing).</p>
-
-<p><strong>Outputs:</strong> Main out → <strong>Toft LINE inputs 9-10</strong> (so the laptop's main mix lands on Toft channels 9 and 10). Alt 3-4 out → <strong>Toft LINE inputs 11-12</strong> (a second pair of outputs landing on Toft channels 11 and 12).</p>
+<ul>
+  <li><strong>Channels 1-2 in:</strong> receive the Toft <strong>master op</strong> (so the laptop user can hear what's currently in the master mix while they're playing).</li>
+  <li><strong>USB in/out:</strong> to and from the student's laptop. The Behringer self-clocks via this USB connection.</li>
+  <li><strong>Main out:</strong> Toft <strong>LINE inputs 9-10</strong> (so the laptop's main mix lands on Toft channels 9 and 10).</li>
+  <li><strong>Alt 3-4 out:</strong> Toft <strong>LINE inputs 11-12</strong> (a second pair of outputs landing on Toft channels 11 and 12).</li>
+</ul>
 
 <p>The two output pairs let the student split their laptop signal into two stereo destinations on the Toft (for example: the main mix on 9-10 going to the master mix; alternate stems on 11-12 going to a different subgroup or a different headphone cue).</p>
 
 <h3>How the studio's signals actually flow</h3>
 
-<p>With every cable in place, here's a top-to-bottom map of every connection. Mics enter the live-room rack at the bottom; signal travels up through the preamps, through the wall, into the Toft, into the side rack, into Pro Tools. Pro Tools playback comes back down: out of the HDX, into the Toft's monitor returns, summed into the master mix, then back through the wall to the live-room headphones.</p>
+<p>With every cable in place, here's a top-to-bottom map of every connection. Mics enter the live-room rack at the bottom; signal travels up through the preamps, through the wall, into the Toft, into the side rack, into Pro Tools. Pro Tools playback comes back down: out of the HDX, into the Toft's submaster monitor returns, summed into the master mix, then back through the wall to the live-room headphones.</p>
 
-<figure class="diagram">
-  <svg viewBox="0 0 900 1240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="studio-routing-title">
-    <title id="studio-routing-title">Full signal routing of MB2508. Control-room equipment at top, live-room equipment at bottom, with the wall as a horizontal divider in between. Signals flow up from the live room and down again as playback.</title>
-    <style>
-      .room-bg { fill: var(--bg-alt); stroke: var(--rule); stroke-width: 1; }
-      .room-label { font-family: var(--mono); font-size: 14px; fill: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
-      .gear-box { fill: var(--bg); stroke: var(--ink-soft); stroke-width: 1.2; }
-      .toft-box { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
-      .patchbay-box { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 3; }
-      .gear-label { font-family: var(--mono); font-size: 12px; fill: var(--ink); font-weight: 600; }
-      .gear-sub { font-family: var(--mono); font-size: 10px; fill: var(--ink-soft); }
-      .jack-box { fill: var(--bg-alt); stroke: var(--ink-soft); stroke-width: 0.8; }
-      .jack-label { font-family: var(--mono); font-size: 9px; fill: var(--ink); text-anchor: middle; }
-      .wall-line { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 6 4; }
-      .wall-label { font-family: var(--mono); font-size: 11px; fill: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
-      .signal-up { stroke: var(--ink); stroke-width: 1.5; fill: none; }
-      .signal-down { stroke: var(--accent); stroke-width: 1.5; fill: none; }
-      .signal-clock { stroke: var(--ink-soft); stroke-width: 1; fill: none; stroke-dasharray: 3 2; }
-      .signal-label { font-family: var(--mono); font-size: 9px; fill: var(--ink); }
-      .signal-label-rev { font-family: var(--mono); font-size: 9px; fill: var(--accent); }
-    </style>
-
-    <defs>
-      <marker id="ah-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 z" fill="var(--ink)"/>
-      </marker>
-      <marker id="ah-acc" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
-      </marker>
-      <marker id="ah-soft" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 z" fill="var(--ink-soft)"/>
-      </marker>
-    </defs>
-
-    <!-- ============ CONTROL ROOM (top half) ============ -->
-    <rect x="20" y="30" width="860" height="600" class="room-bg" rx="4"/>
-    <text x="35" y="55" class="room-label">Control room · MB2508</text>
-
-    <!-- Mac Pro -->
-    <rect x="50" y="80" width="160" height="50" class="gear-box" rx="2"/>
-    <text x="60" y="100" class="gear-label">Mac Pro</text>
-    <text x="60" y="116" class="gear-sub">Pro Tools · HDX PCIe</text>
-
-    <!-- HDX I/O -->
-    <rect x="50" y="160" width="320" height="80" class="gear-box" rx="2"/>
-    <text x="60" y="180" class="gear-label">Avid HDX I/O</text>
-    <text x="60" y="196" class="gear-sub">Word clock IN ← Big Ben</text>
-    <!-- HDX in 1-8 jacks -->
-    <text x="60" y="220" class="gear-sub">IN  1-8 (DB25, +4 dBu)</text>
-    <rect x="195" y="210" width="170" height="14" class="jack-box"/>
-    <text x="205" y="220" class="jack-label" text-anchor="start">1 2 3 4 5 6 7 8</text>
-    <!-- HDX out 1-8 jacks -->
-    <text x="60" y="234" class="gear-sub">OUT 1-8 (DB25)</text>
-    <rect x="195" y="226" width="170" height="14" class="jack-box"/>
-    <text x="205" y="236" class="jack-label" text-anchor="start">1 2 3 4 5 6 7 8</text>
-
-    <!-- HDX <-> Mac Pro arrow -->
-    <line x1="130" y1="130" x2="130" y2="158" class="signal-up" marker-end="url(#ah-ink)"/>
-    <text x="138" y="148" class="signal-label">PCIe</text>
-
-    <!-- Big Ben -->
-    <rect x="430" y="80" width="240" height="60" class="gear-box" rx="2"/>
-    <text x="440" y="100" class="gear-label">Apogee Big Ben</text>
-    <text x="440" y="116" class="gear-sub">Master word clock · 48 kHz</text>
-    <text x="440" y="130" class="gear-sub">BNC outs → HDX + wall pass-through</text>
-
-    <!-- Big Ben → HDX clock arrow -->
-    <line x1="430" y1="120" x2="380" y2="178" class="signal-clock" marker-end="url(#ah-soft)"/>
-    <text x="385" y="160" class="signal-label" fill="var(--ink-soft)">Word clock</text>
-
-    <!-- Patchbay -->
-    <rect x="700" y="80" width="170" height="180" class="patchbay-box" rx="2"/>
-    <text x="710" y="100" class="gear-label">Switchcraft 9625</text>
-    <text x="710" y="114" class="gear-sub">Patchbay (2×24 TT)</text>
-    <text x="710" y="135" class="gear-sub">Default normals:</text>
-    <text x="710" y="151" class="gear-sub">• SSL → master INSERT</text>
-    <text x="710" y="167" class="gear-sub">• M2000 in ← Aux 3</text>
-    <text x="710" y="183" class="gear-sub">• M2000 out → STEREO</text>
-    <text x="710" y="197" class="gear-sub">  EFFECTS RETURNS 1/2</text>
-    <text x="710" y="220" class="gear-sub">Also patchable:</text>
-    <text x="710" y="234" class="gear-sub">all channel inserts,</text>
-    <text x="710" y="248" class="gear-sub">all aux masters</text>
-
-    <!-- SSL -->
-    <rect x="430" y="170" width="240" height="50" class="gear-box" rx="2"/>
-    <text x="440" y="190" class="gear-label">SSL XLogic G Series</text>
-    <text x="440" y="206" class="gear-sub">Stereo bus compressor</text>
-
-    <!-- M2000 -->
-    <rect x="430" y="240" width="240" height="50" class="gear-box" rx="2"/>
-    <text x="440" y="260" class="gear-label">TC Electronic M2000</text>
-    <text x="440" y="276" class="gear-sub">Reverb / delay · mono in, stereo out</text>
-
-    <!-- Patchbay connections to SSL and M2000 (drawn as dashed since they go through normals) -->
-    <line x1="700" y1="195" x2="670" y2="195" class="signal-clock"/>
-    <line x1="700" y1="265" x2="670" y2="265" class="signal-clock"/>
-
-    <!-- ============ TOFT ATB ============ -->
-    <rect x="50" y="320" width="820" height="280" class="toft-box" rx="3"/>
-    <text x="60" y="345" class="gear-label">Toft Audio Designs Series ATB · 16-channel</text>
-    <text x="60" y="361" class="gear-sub">(control-room console)</text>
-
-    <!-- XLR (MIC) inputs row: 1-16 -->
-    <text x="60" y="395" class="gear-sub">REAR · XLR (MIC) INPUTS 1-16 (from preamps below):</text>
-    <rect x="60" y="405" width="320" height="18" class="jack-box"/>
-    <text x="68" y="418" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8  · ISA</text>
-    <rect x="390" y="405" width="320" height="18" class="jack-box"/>
-    <text x="398" y="418" class="jack-label" text-anchor="start">9 10 11 12 13 14 15 16 · OctoPre</text>
-
-    <!-- LINE inputs row -->
-    <text x="60" y="445" class="gear-sub">REAR · LINE INPUTS 1-16 (TRS):</text>
-    <rect x="60" y="455" width="320" height="18" class="jack-box"/>
-    <text x="68" y="468" class="jack-label" text-anchor="start">1 - 8 · EMPTY (parallel-wired to MON RTNs)</text>
-    <rect x="390" y="455" width="160" height="18" class="jack-box"/>
-    <text x="398" y="468" class="jack-label" text-anchor="start">9 10 ← Behringer Main</text>
-    <rect x="560" y="455" width="80" height="18" class="jack-box"/>
-    <text x="568" y="468" class="jack-label" text-anchor="start">11 12 ← Alt 3-4</text>
-    <rect x="650" y="455" width="60" height="18" class="jack-box"/>
-    <text x="658" y="468" class="jack-label" text-anchor="start">13-16 empty</text>
-
-    <!-- Submaster section -->
-    <text x="60" y="495" class="gear-sub">REAR · SUBMASTER OUTPUTS 1-8 → HDX IN 1-8:</text>
-    <rect x="60" y="505" width="320" height="18" class="jack-box"/>
-    <text x="68" y="518" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8</text>
-
-    <text x="60" y="540" class="gear-sub">REAR · SUBMASTER MON RETURNS 1-8 ← HDX OUT 1-8:</text>
-    <rect x="60" y="550" width="320" height="18" class="jack-box"/>
-    <text x="68" y="563" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8</text>
-
-    <!-- Aux master jacks -->
-    <text x="430" y="495" class="gear-sub">REAR · AUX MASTERS 1-6 (TRS):</text>
-    <rect x="430" y="505" width="280" height="18" class="jack-box"/>
-    <text x="438" y="518" class="jack-label" text-anchor="start">1 · 2 · 3 → M2000 · 4 · 5+6 → Rane MH4</text>
-
-    <!-- Master output and Stereo Effects Returns -->
-    <text x="430" y="540" class="gear-sub">REAR · STEREO EFFECTS RETURNS 1+2 ← M2000 stereo out:</text>
-    <rect x="430" y="550" width="160" height="18" class="jack-box"/>
-    <text x="438" y="563" class="jack-label" text-anchor="start">1 (L)  ·  2 (R)</text>
-
-    <text x="430" y="585" class="gear-sub">REAR · MAIN SPKR OUT → control-room monitors</text>
-    <text x="430" y="599" class="gear-sub">REAR · MASTER OP → Behringer ch 1-2</text>
-
-    <!-- HDX → Toft submaster MON RTN (down) -->
-    <line x1="280" y1="240" x2="280" y2="548" class="signal-down" marker-end="url(#ah-acc)"/>
-    <text x="290" y="350" class="signal-label-rev">DAW playback (DB25 fan)</text>
-
-    <!-- Toft submaster OUT → HDX IN (up) -->
-    <line x1="220" y1="503" x2="220" y2="222" class="signal-up" marker-end="url(#ah-ink)"/>
-    <text x="115" y="350" class="signal-label">Sub outs → HDX in (DB25 fan)</text>
-
-    <!-- Aux 3 → M2000 (right) -->
-    <line x1="550" y1="505" x2="550" y2="290" class="signal-up" marker-end="url(#ah-ink)"/>
-    <text x="555" y="400" class="signal-label">Aux 3 → M2000 in</text>
-
-    <!-- M2000 stereo out → Stereo Effects Returns -->
-    <line x1="610" y1="290" x2="610" y2="548" class="signal-down" marker-end="url(#ah-acc)"/>
-    <text x="615" y="400" class="signal-label-rev">M2000 stereo → Stereo Eff. Rtns</text>
-
-    <!-- SSL ↔ Master INSERT (drawn as bidirectional through patchbay) -->
-    <line x1="500" y1="220" x2="500" y2="320" class="signal-up" marker-end="url(#ah-ink)"/>
-    <text x="380" y="290" class="signal-label">SSL ↔ master INSERT (via patchbay)</text>
-
-    <!-- Behringer -->
-    <rect x="730" y="350" width="140" height="200" class="gear-box" rx="2"/>
-    <text x="740" y="370" class="gear-label">Behringer</text>
-    <text x="740" y="384" class="gear-sub">Xenyx QX1204USB</text>
-    <text x="740" y="406" class="gear-sub">USB ↔ student laptop</text>
-    <text x="740" y="425" class="gear-sub">CH 1-2 IN:</text>
-    <text x="740" y="439" class="gear-sub">← Toft Master OP</text>
-    <text x="740" y="461" class="gear-sub">MAIN OUT →</text>
-    <text x="740" y="475" class="gear-sub">Toft LINE 9-10</text>
-    <text x="740" y="497" class="gear-sub">ALT 3-4 OUT →</text>
-    <text x="740" y="511" class="gear-sub">Toft LINE 11-12</text>
-
-    <!-- Behringer main out → Toft LINE 9-10 -->
-    <line x1="730" y1="475" x2="475" y2="473" class="signal-up" marker-end="url(#ah-ink)"/>
-    <!-- Behringer alt → Toft LINE 11-12 -->
-    <line x1="730" y1="511" x2="600" y2="473" class="signal-up" marker-end="url(#ah-ink)"/>
-    <!-- Toft master op → Behringer 1-2 -->
-    <line x1="650" y1="599" x2="755" y2="440" class="signal-up" marker-end="url(#ah-ink)"/>
-
-    <!-- Control-room speakers -->
-    <rect x="50" y="660" width="160" height="40" class="gear-box" rx="20"/>
-    <text x="60" y="685" class="gear-label">Monitor speakers L/R</text>
-    <!-- Toft MAIN SPKR → speakers -->
-    <line x1="130" y1="600" x2="130" y2="658" class="signal-down" marker-end="url(#ah-acc)"/>
-    <text x="140" y="640" class="signal-label-rev">MAIN SPKR</text>
-
-    <!-- ============ WALL ============ -->
-    <line x1="20" y1="740" x2="880" y2="740" class="wall-line"/>
-    <text x="40" y="755" class="wall-label">Wall between MB2508 (control) and MB2506 (live)</text>
-    <text x="40" y="770" class="gear-sub">XLR feed-throughs · TRS feed-throughs · BNC pass-throughs</text>
-
-    <!-- ============ LIVE ROOM (bottom half) ============ -->
-    <rect x="20" y="790" width="860" height="430" class="room-bg" rx="4"/>
-    <text x="35" y="815" class="room-label">Live room · MB2506</text>
-
-    <!-- ISA 828 -->
-    <rect x="50" y="850" width="380" height="80" class="gear-box" rx="2"/>
-    <text x="60" y="870" class="gear-label">Focusrite ISA 828 MkII (top of live-room rack)</text>
-    <text x="60" y="888" class="gear-sub">REAR · MIC IN 1-8 (XLR) ← Hosa panel A jacks 1-8</text>
-    <text x="60" y="905" class="gear-sub">REAR · LINE OUT 1-8 (DB25 → 8× XLR fan)</text>
-    <rect x="60" y="912" width="320" height="14" class="jack-box"/>
-    <text x="68" y="922" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8 → up to Toft XLR (MIC) 1-8</text>
-
-    <!-- OctoPre -->
-    <rect x="450" y="850" width="380" height="80" class="gear-box" rx="2"/>
-    <text x="460" y="870" class="gear-label">Focusrite OctoPre Platinum</text>
-    <text x="460" y="888" class="gear-sub">REAR · MIC IN 1-8 (XLR) ← Hosa panel B jacks 1-8</text>
-    <text x="460" y="905" class="gear-sub">REAR · LINE OUT 1-8 (XLR)</text>
-    <rect x="460" y="912" width="320" height="14" class="jack-box"/>
-    <text x="468" y="922" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8 → up to Toft XLR (MIC) 9-16</text>
-
-    <!-- ISA → wall arrows -->
-    <line x1="220" y1="926" x2="220" y2="742" class="signal-up" marker-end="url(#ah-ink)"/>
-    <text x="225" y="800" class="signal-label">Line out × 8 → through wall</text>
-    <!-- OctoPre → wall arrows -->
-    <line x1="620" y1="926" x2="620" y2="742" class="signal-up" marker-end="url(#ah-ink)"/>
-    <text x="625" y="800" class="signal-label">Line out × 8 → through wall</text>
-
-    <!-- Hosa A -->
-    <rect x="50" y="950" width="380" height="60" class="gear-box" rx="2"/>
-    <text x="60" y="970" class="gear-label">Hosa mic panel A · 8 XLR jacks → ISA above</text>
-    <rect x="60" y="985" width="320" height="14" class="jack-box"/>
-    <text x="68" y="995" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8</text>
-
-    <!-- Hosa B -->
-    <rect x="450" y="950" width="380" height="60" class="gear-box" rx="2"/>
-    <text x="460" y="970" class="gear-label">Hosa mic panel B · 8 XLR jacks → OctoPre above</text>
-    <rect x="460" y="985" width="320" height="14" class="jack-box"/>
-    <text x="468" y="995" class="jack-label" text-anchor="start">1  2  3  4  5  6  7  8</text>
-
-    <!-- Hosa A → ISA -->
-    <line x1="220" y1="950" x2="220" y2="930" class="signal-up" marker-end="url(#ah-ink)"/>
-    <!-- Hosa B → OctoPre -->
-    <line x1="620" y1="950" x2="620" y2="930" class="signal-up" marker-end="url(#ah-ink)"/>
-
-    <!-- Rane MH4 -->
-    <rect x="50" y="1040" width="380" height="100" class="gear-box" rx="2"/>
-    <text x="60" y="1060" class="gear-label">Rane MH4 Mojo Series (bottom of live-room rack)</text>
-    <text x="60" y="1078" class="gear-sub">REAR · STEREO IN (L+R, TRS)</text>
-    <rect x="60" y="1085" width="50" height="14" class="jack-box"/>
-    <text x="68" y="1095" class="jack-label" text-anchor="start">L  R  ← Aux 5/6</text>
-    <text x="60" y="1117" class="gear-sub">FRONT · 4 headphone outs (1/4")</text>
-    <rect x="60" y="1124" width="120" height="14" class="jack-box"/>
-    <text x="68" y="1134" class="jack-label" text-anchor="start">1  2  3  4 → players</text>
-
-    <!-- Rane stereo in ← Aux 5/6 (through wall, accent down) -->
-    <line x1="100" y1="742" x2="100" y2="1083" class="signal-down" marker-end="url(#ah-acc)"/>
-    <text x="108" y="830" class="signal-label-rev">Cue mix: Aux 5 (L) + Aux 6 (R)</text>
-
-    <!-- Headphones -->
-    <text x="60" y="1170" class="gear-sub">Players' headphones plug into MH4 front jacks 1-4</text>
-    <text x="60" y="1188" class="gear-sub">(drums, bass, guitar/keys, vocalist)</text>
-
-    <!-- Mic sources schematic -->
-    <rect x="450" y="1040" width="380" height="160" class="gear-box" rx="2"/>
-    <text x="460" y="1060" class="gear-label">Mic stands / DI boxes on the floor</text>
-    <text x="460" y="1080" class="gear-sub">Each mic or DI plugs into a Hosa jack above</text>
-    <text x="460" y="1100" class="gear-sub">Panel A jack N → ISA channel N → Toft XLR N</text>
-    <text x="460" y="1118" class="gear-sub">Panel B jack N → OctoPre channel N → Toft XLR (N+8)</text>
-    <text x="460" y="1148" class="gear-sub">Word clock from Big Ben is available in this room</text>
-    <text x="460" y="1162" class="gear-sub">via BNC pass-throughs (for digital gear sessions might bring in)</text>
-
-  </svg>
-  <figcaption>Top-to-bottom routing. Signals going up (live source → preamp → console → DAW) are drawn in ink. Signals coming down (DAW playback, cue mixes, speaker feeds) are drawn in the accent color. The dashed accent line is the wall between MB2508 and MB2506; word-clock distribution is drawn dashed in light gray.</figcaption>
-</figure>
+<p><em>The routing diagram below is a placeholder; we'll redraw it next with cleaner spacing.</em></p>
 
 <div class="callout">
   <div class="callout-label">Why the LINE jacks on channels 1-8 are empty</div>
@@ -556,7 +311,7 @@
 
 <div class="callout">
   <div class="callout-label">The patchbay at rest vs. the patchbay in use</div>
-  <p>Everything in this diagram describes the studio when no patch cables are plugged into the front of the Switchcraft 9625. The defaults route the SSL to the master INSERT and the M2000 to Aux 3 / stereo effects returns. Most sessions can run on the defaults without touching the patchbay.</p>
+  <p>Everything in this description assumes no patch cables are plugged into the front of the Switchcraft 9625. The defaults route the SSL to the master INSERT and the M2000 to Aux 3 / stereo effects returns. Most sessions can run on the defaults without touching the patchbay.</p>
   <p>When a session needs different routing (the SSL on a subgroup INSERT to record compression onto drums; the M2000 as an insert effect on a single channel; a substituted piece of outboard gear), the engineer plugs short TT cables on the front of the patchbay to break the normalled paths and re-route. Part 2 of this handout shows what that looks like in practice during The Sound Below's session.</p>
 </div>
 
