@@ -224,8 +224,16 @@
 <ul>
   <li><strong>Analog inputs 1-8 (DB25, +4 dBu):</strong> Receive the Toft <strong>submaster outputs 1-8</strong> via a DB25-to-8×TRS fan cable.</li>
   <li><strong>Analog outputs 1-8 (DB25):</strong> Return Pro Tools playback to the Toft <strong>submaster MONITOR RETURNS 1-8</strong> via a second DB25-to-8×TRS fan cable.</li>
-  <li><strong>Connection to Mac Pro:</strong> A single proprietary cable to the HDX PCIe card installed inside the Mac Pro. The PCIe card carries far more simultaneous channels than a USB or Thunderbolt interface would, which is why the HDX uses one. Clocking comes from the Mac Pro across the same cable; no separate master-clock device is needed.</li>
+  <li><strong>Connection to Mac Pro:</strong> A single proprietary cable to the HDX PCIe card installed inside the Mac Pro. The PCIe card carries far more simultaneous channels than a USB or Thunderbolt interface would, which is why the HDX uses one.</li>
 </ul>
+
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/db25-to-trs-fan-cable.webp" alt="A DB25-to-8×TRS fan cable. One DB25 male connector on one end, fanning out to eight 1/4-inch TRS plugs on the other end, each labeled with its channel number." loading="lazy">
+  <figcaption>DB25-to-8×TRS fan cable. One DB25 carries eight balanced signals on a single connector; the fan breaks them out to eight individual TRS plugs.</figcaption>
+  <div class="photo-attribution">Photo via Mogami.</div>
+</figure>
+
+<p>The DB25 connector is studio shorthand for "eight balanced signals on one plug." Behind the racks in our studio, almost every multi-channel connection runs as DB25 to keep the wiring tidy; fan cables like the one above translate between DB25 and individual TRS plugs at the gear that needs them.</p>
 
 <h4>3. Switchcraft 9625 patchbay</h4>
 
@@ -235,11 +243,37 @@
   <div class="photo-attribution">Photo via Switchcraft.</div>
 </figure>
 
-<p>The flexibility layer. A 2×48 TT (bantam) patchbay: 48 small jacks across the top row and 48 across the bottom, organized into 48 columns. The rear has 12 DB25 connectors (six for inputs, six for outputs) carrying the same 96 signals; DB25 fan cables run from there to every piece of gear in the studio. Every column is <strong>normalled</strong> by default, meaning the top jack's signal flows automatically to the bottom jack until you interrupt it by plugging a TT cable into the front.</p>
+<p>The flexibility layer. 48 small jacks across the top row and 48 across the bottom, organized into 48 columns. The rear has 12 DB25 connectors (six for inputs, six for outputs) carrying the same 96 signals; DB25 fan cables run from there to every piece of gear in the studio. Every column is <strong>normalled</strong> by default, meaning the top jack's signal flows automatically to the bottom jack until you interrupt it by plugging a <strong>TT cable</strong> into the front.</p>
 
-<p>The patchbay's purpose is to make every important send and return in the studio reachable from one panel, so the engineer can re-route signal flow with short patch cables instead of crawling behind racks. The Toft's channel inserts, subgroup inserts, master insert, and aux masters all land on the patchbay, alongside the inputs and outputs of every piece of outboard gear (SSL G, M2000, anything you might add later).</p>
+<figure class="photo">
+  <img src="../../assets/images/module-03-week-09/tt-bantam-cable.avif" alt="A TT (bantam) patch cable. Two small slim 1/4-inch-style plugs (TRS tip-ring-sleeve, much thinner than a 1/4-inch jack) on either end of a short cable." loading="lazy">
+  <figcaption>A TT (bantam) patch cable.</figcaption>
+  <div class="photo-attribution">Photo via Mogami.</div>
+</figure>
 
-<p>At rest (no patch cables plugged), the patchbay is wired with two <strong>default normalled paths</strong> that route the studio's two outboard processors through the most useful signal points on the Toft. These defaults are part of the studio's documented configuration; the next two items describe them.</p>
+<div class="callout">
+  <div class="callout-label">What's a TT cable?</div>
+  <p><strong>TT</strong> stands for <strong>tiny telephone</strong>: a smaller version of the 1/4" TRS plug used in patchbays. A TT plug is about 4.4 mm across (vs. 6.35 mm for a regular 1/4" TRS) and carries the same tip-ring-sleeve signal. The smaller size lets a patchbay fit 96 jacks in a 1U rack space, which would be impossible with full-size 1/4" jacks.</p>
+  <p>TT cables are short (usually 1 to 3 feet long), white or color-coded for visibility, and live in a tray under the patchbay. The engineer grabs one to make a connection on the front of the bay, runs it from a source jack to a destination jack, and unplugs it when done.</p>
+</div>
+
+<p>The 48 columns are organized into thematic blocks. Reading left to right across the bay:</p>
+
+<ul>
+  <li><strong>Toft channel inserts</strong> (16 columns): top jack is the INSERT SEND from each channel strip, bottom jack is the INSERT RETURN. With nothing patched, signal flows through and the channel acts as if no insert exists.</li>
+  <li><strong>Toft subgroup inserts</strong> (8 columns): same structure, one column per subgroup pair.</li>
+  <li><strong>Toft master section</strong> (a few columns): the master mix INSERT SEND and RETURN live here, as do the AUX MASTERS (Aux 1 through 6).</li>
+  <li><strong>Outboard gear I/O</strong> (the remaining columns): inputs and outputs of every external processor in the side rack. Right now this is the SSL G and the M2000; any new outboard would land here too.</li>
+</ul>
+
+<p>Two of these columns are pre-wired with permanent <strong>normals</strong> that route the SSL and the M2000 to useful places on the Toft without any TT cables in the front. These are the studio's default configuration:</p>
+
+<ul>
+  <li><strong>SSL G</strong>: normalled into the Toft master section INSERT loop. The master mix is processed by the SSL on its way to MAIN SPKR.</li>
+  <li><strong>M2000</strong>: input normalled from Toft Aux Master 3; stereo output normalled to Toft STEREO EFFECTS RETURNS 1 and 2. Any channel can send to Aux 3 and hear reverb come back in the master mix.</li>
+</ul>
+
+<p>The next two items walk these defaults in more detail.</p>
 
 <h4>4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
