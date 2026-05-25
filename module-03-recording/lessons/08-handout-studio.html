@@ -234,6 +234,24 @@
     }
     .callout p { margin: 0.5rem 0; }
     .callout p:last-child { margin-bottom: 0; }
+
+    /* Wrapper around each H4 group in 'How the studio's signals
+       actually flow': a soft tinted box that visually scopes the
+       INS / OUTS / LOOPS charts (or the H5 sub-sections in the
+       patchbay-configuration case) belonging to one signal block. */
+    .signal-group {
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.25rem 1.5rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .signal-group > h4:first-child {
+      margin-top: 1.25rem;
+    }
+    .signal-group > table:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -493,6 +511,7 @@
 
 <p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Three sections, each split into INS (signals arriving at the Toft), OUTS (signals leaving the Toft), and LOOPS (insert points where signal leaves and returns on the same jack).</p>
 
+<div class="signal-group">
 <h4 id="sf-channels">Input channels 1-16</h4>
 
 <table class="routing">
@@ -587,7 +606,9 @@
     </tr>
   </tbody>
 </table>
+</div>
 
+<div class="signal-group">
 <h4 id="sf-submasters">Submasters 1-8</h4>
 
 <table class="routing">
@@ -640,7 +661,9 @@
     </tr>
   </tbody>
 </table>
+</div>
 
+<div class="signal-group">
 <h4 id="sf-master">Master section</h4>
 
 <table class="routing">
@@ -741,7 +764,9 @@
     </tr>
   </tbody>
 </table>
+</div>
 
+<div class="signal-group">
 <h4 id="sf-patchbay">Patchbay configuration</h4>
 
 <p>Every column of the Switchcraft 9625 in the side rack, organized by the four signal blocks introduced earlier. Within each block, the sub-tables follow the same INS / OUTS / LOOPS convention used in the Toft rear-panel chart: INS for signals arriving at the patchbay (top TTs, sources), OUTS for signals leaving the patchbay (bottom TTs, destinations), and LOOPS for insert points where the same column carries SEND on top and RETURN on bottom.</p>
@@ -854,6 +879,7 @@
     <tr><td class="jack">7</td><td>Col 36 (Effects processor R OUT)</td><td>Col 48 (ch 8 MON input)</td></tr>
   </tbody>
 </table>
+</div>
 
 <h3 id="recipes">Recipes: a vocal mic, end to end</h3>
 
