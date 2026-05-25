@@ -138,6 +138,62 @@
       color: var(--ink-soft);
       font-style: italic;
     }
+
+    /* Part 1 index. Three groups of links matching the three h3
+       subsections. Slim, tight; sits just after the Part 1 h2. */
+    nav.part-index {
+      border: 1px solid var(--rule);
+      background: var(--bg-alt);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0 2rem;
+      font-size: 0.9rem;
+    }
+    nav.part-index .index-group {
+      margin: 0 0 0.85rem 0;
+    }
+    nav.part-index .index-group:last-child {
+      margin-bottom: 0;
+    }
+    nav.part-index .index-title {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+    nav.part-index .index-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    nav.part-index .index-title a:hover {
+      text-decoration: underline;
+    }
+    nav.part-index ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav.part-index ul li {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-right: 1.1rem;
+      line-height: 1.6;
+    }
+    nav.part-index ul li:last-child {
+      margin-right: 0;
+    }
+    nav.part-index ul li a {
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+    nav.part-index ul li a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
     table.routing caption {
       caption-side: top;
       font-family: var(--mono);
@@ -185,15 +241,47 @@
 
 <p>MB2508 has two rooms: the <strong>control room</strong> (where the engineer sits at the Toft) and the <strong>live room</strong> (where the band plays, behind the internal door). The two rooms share a wall full of XLR feed-throughs and TRS pass-throughs that connect everything in one room to everything in the other. This part documents what's in each room and how it's all wired.</p>
 
-<h3>The live-room rack</h3>
+<nav class="part-index" aria-label="Part 1 contents">
+  <div class="index-group">
+    <span class="index-title"><a href="#live-room-rack">The live-room rack</a></span>
+    <ul>
+      <li><a href="#lr-furman">1. Furman PL-8</a></li>
+      <li><a href="#lr-isa">2. Focusrite ISA 828</a></li>
+      <li><a href="#lr-octopre">3. Focusrite OctoPre Platinum</a></li>
+      <li><a href="#lr-hosa">4. Hosa mic input panels</a></li>
+      <li><a href="#lr-rane">5. Rane MH4</a></li>
+    </ul>
+  </div>
+  <div class="index-group">
+    <span class="index-title"><a href="#control-room-rack">The control-room console and side rack</a></span>
+    <ul>
+      <li><a href="#cr-furman">1. Furman PL-8</a></li>
+      <li><a href="#cr-hdx">2. Avid HDX I/O</a></li>
+      <li><a href="#cr-patchbay">3. Switchcraft 9625 patchbay</a></li>
+      <li><a href="#cr-ssl">4. SSL XLogic G compressor</a></li>
+      <li><a href="#cr-m2000">5. TC Electronic M2000</a></li>
+      <li><a href="#cr-behringer">6. Behringer Xenyx</a></li>
+    </ul>
+  </div>
+  <div class="index-group">
+    <span class="index-title"><a href="#signal-flow">How the studio's signals actually flow</a></span>
+    <ul>
+      <li><a href="#sf-channels">Input channels 1-16</a></li>
+      <li><a href="#sf-submasters">Submasters 1-8</a></li>
+      <li><a href="#sf-master">Master section</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h3 id="live-room-rack">The live-room rack</h3>
 
 <p>One rack against the wall. Five pieces of gear, top to bottom:</p>
 
-<h4>1. Furman PL-8 Series 2 (power conditioner)</h4>
+<h4 id="lr-furman">1. Furman PL-8 Series 2 (power conditioner)</h4>
 
 <p>Every piece of gear in the rack plugs into the back of the Furman; the Furman plugs into one wall outlet. The conditioner filters electrical noise on the power line, protects everything plugged into it from surges, and gives the studio a single power switch that turns the whole rack on or off. This is the first thing turned on at the start of a session and the last thing turned off.</p>
 
-<h4>2. Focusrite ISA 828 MkII (8-channel mic preamp)</h4>
+<h4 id="lr-isa">2. Focusrite ISA 828 MkII (8-channel mic preamp)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/focusrite-isa-828-mkii.png" alt="Front and rear views of the Focusrite ISA 828 MkII. The front has eight identical input strips: gain, impedance, +48V, phase, HPF, mic/line/insert select. The rear has 8 XLR mic inputs and a DB25 connector for 8 line outputs." loading="lazy">
@@ -228,7 +316,7 @@
 
 <p>The Toft inputs are labeled MIC, but they accept line-level too: an XLR cable can carry mic-level or line-level (you read this in Lecture 2). With a line-level signal arriving at the Toft's MIC input, the Toft's onboard preamp doesn't need to amplify; the channel's INPUT GAIN knob becomes a <strong>trim</strong>, set low to fine-tune the level. The ISA has already done the gain work; the Toft's gain knob just nudges what's there.</p>
 
-<h4>3. Focusrite OctoPre Platinum (8-channel mic preamp)</h4>
+<h4 id="lr-octopre">3. Focusrite OctoPre Platinum (8-channel mic preamp)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/focusrite-octopre-platinum.jpg" alt="Front and rear views of the Focusrite OctoPre Platinum. The front has eight input strips with gain, +48V, phase, HPF, level meter. The rear has 8 XLR mic inputs and a DB25 connector for 8 line outputs." loading="lazy">
@@ -243,7 +331,7 @@
   <li><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 male XLRs. These run through the wall into Toft <strong>XLR (MIC) inputs 9 through 16</strong> as line-level signals (same trim-not-gain situation as the ISA's outputs into channels 1-8).</li>
 </ul>
 
-<h4>4. Hosa mic input panels (×2: panel A and panel B)</h4>
+<h4 id="lr-hosa">4. Hosa mic input panels (×2: panel A and panel B)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/hosa-pdr-369-mic-panel.jpg" alt="A 1U rack panel with sixteen XLR female jacks across the front, numbered 1 through 16. Labeled MIC IN PANEL." loading="lazy">
@@ -258,7 +346,7 @@
   <li><strong>Hosa panel B:</strong> jacks 1-8 wired to OctoPre mic inputs 1-8.</li>
 </ul>
 
-<h4>5. Rane MH4 Mojo Series (4-out headphone splitter)</h4>
+<h4 id="lr-rane">5. Rane MH4 Mojo Series (4-out headphone splitter)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/rane-mh4-headphone-console.jpg" alt="A 1U rack-mount unit with four channels, each having a 1/4-inch headphone jack and a level knob, plus a mono/stereo source switch. Labeled Rane MH4 Stereo Headphone Console." loading="lazy">
@@ -275,15 +363,15 @@
   <li><strong>Outputs (front):</strong> Four 1/4" headphone jacks, each with its own level knob. Players plug their headphones in here.</li>
 </ul>
 
-<h3>The control-room console and side rack</h3>
+<h3 id="control-room-rack">The control-room console and side rack</h3>
 
 <p>The Toft sits on a console desk in the control room. Built into the right end of the desk is a side rack carrying everything the Toft routes to or from. Five pieces of gear, top to bottom:</p>
 
-<h4>1. Furman PL-8 Series 2 (power conditioner)</h4>
+<h4 id="cr-furman">1. Furman PL-8 Series 2 (power conditioner)</h4>
 
 <p>Same model as the live-room rack's. Powers everything in the side rack from one outlet, with one master switch. (The Toft itself has its own power switch and plugs into a separate dedicated outlet.)</p>
 
-<h4>2. Avid HDX I/O (audio interface)</h4>
+<h4 id="cr-hdx">2. Avid HDX I/O (audio interface)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/avid-hdx-io.webp" alt="Front and rear views of the Avid HDX I/O. The front has level meters for 16 inputs and 16 outputs plus sample-rate and sync-mode indicators. The rear has two DB25 analog input connectors (+4dBu and -10dBV), a DB25 analog output connector, AES/EBU, TDIF, ADAT optical, S/PDIF, and BNC word-clock I/O." loading="lazy">
@@ -299,7 +387,7 @@
   <li><strong>Connection to Mac Pro:</strong> A single proprietary cable to the HDX PCIe card installed inside the Mac Pro. The PCIe card carries far more simultaneous channels than a USB or Thunderbolt interface would, which is why the HDX uses one.</li>
 </ul>
 
-<h4>3. Switchcraft 9625 patchbay</h4>
+<h4 id="cr-patchbay">3. Switchcraft 9625 patchbay</h4>
 
 <figure class="photo-pair">
   <div class="photo-pair-item">
@@ -362,7 +450,7 @@
 
 <p>The studio's <strong>default configuration</strong> uses two of these outboard slots already: the compressor sits on the master mix INSERT path (the master mix runs through it on its way out of the console), and the effects processor sits on Aux 3. Both connections are made with TT cables on the front of the patchbay and can be moved during any session. The next two items walk these defaults in more detail.</p>
 
-<h4>4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
+<h4 id="cr-ssl">4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/ssl-xlogic-g-compressor.jpg" alt="Front view of the SSL XLogic G Series Compressor. A 1U rack-mount unit with a large analog VU meter on the left and six knobs and two buttons across the front: threshold, attack, ratio, release, make-up gain, compressor in/out, external sidechain, auto fade." loading="lazy">
@@ -395,7 +483,7 @@
   <p>Now the drums (routed to subgroup 1-2 by their channels' 1-2 routing buttons) pass through the compression unit on their way to the DAW. The master mix is no longer compressed.</p>
 </div>
 
-<h4>5. TC Electronic M2000 (effects processor)</h4>
+<h4 id="cr-m2000">5. TC Electronic M2000 (effects processor)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/tc-electronic-m2000.jpg" alt="Front view of the TC Electronic M2000 Studio Effects Processor. A 1U rack-mount unit with a small LCD screen showing program parameters, surrounded by section buttons (Setup, Engine 1, Engine 2, Combined 1+2, Snapshots, Control) and a large adjust knob on the right." loading="lazy">
@@ -424,7 +512,7 @@
 
 <p>Like the compression unit, the effects processor can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
 
-<h4>6. Behringer Xenyx QX1204USB (USB interface, on the console desk)</h4>
+<h4 id="cr-behringer">6. Behringer Xenyx QX1204USB (USB interface, on the console desk)</h4>
 
 <figure class="photo">
   <img src="../../assets/images/module-03-week-09/behringer-xenyx-qx1204usb.webp" alt="Top view of the Behringer Xenyx QX1204USB mixer. A small 8-channel mixer with four mono mic/line input strips, two stereo line-input strips, a USB port, master fader, and a multi-FX processor on the right." loading="lazy">
@@ -442,11 +530,11 @@
 
 <p>The two output pairs let the student split their laptop signal into two stereo destinations on the Toft (for example: the main mix on 9-10 going to the master mix; alternate stems on 11-12 going to a different subgroup or a different headphone cue).</p>
 
-<h3>How the studio's signals actually flow</h3>
+<h3 id="signal-flow">How the studio's signals actually flow</h3>
 
 <p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Three sections, each split into INS (signals arriving at the Toft), OUTS (signals leaving the Toft), and LOOPS (insert points where signal leaves and returns on the same jack).</p>
 
-<h4>Input channels 1-16</h4>
+<h4 id="sf-channels">Input channels 1-16</h4>
 
 <table class="routing">
   <caption>INS · signals arriving at the Toft</caption>
@@ -541,7 +629,7 @@
   </tbody>
 </table>
 
-<h4>Submasters 1-8</h4>
+<h4 id="sf-submasters">Submasters 1-8</h4>
 
 <table class="routing">
   <caption>INS · signals arriving at the Toft</caption>
@@ -594,7 +682,7 @@
   </tbody>
 </table>
 
-<h4>Master section</h4>
+<h4 id="sf-master">Master section</h4>
 
 <table class="routing">
   <caption>INS · signals arriving at the Toft</caption>
