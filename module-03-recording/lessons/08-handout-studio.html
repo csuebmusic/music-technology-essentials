@@ -205,6 +205,19 @@
       text-align: left;
     }
 
+    /* h5 used inside the patchbay-configuration chart to subdivide
+       by signal block (channel inserts, subgroup inserts, master
+       inserts, outboard gear, aux masters, channel MON inputs,
+       default TT cables). Sits below h4 in weight; doesn't compete
+       with the h4 'Patchbay configuration' parent heading. */
+    h5 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1.5rem 0 0.5rem;
+    }
+
     .callout {
       background: var(--bg-alt);
       border-left: 3px solid var(--accent);
@@ -269,6 +282,7 @@
       <li><a href="#sf-channels">Input channels 1-16</a></li>
       <li><a href="#sf-submasters">Submasters 1-8</a></li>
       <li><a href="#sf-master">Master section</a></li>
+      <li><a href="#sf-patchbay">Patchbay configuration</a></li>
     </ul>
   </div>
 </nav>
@@ -780,6 +794,151 @@
       <td>Patchbay INPUT DB25 4 column 26 top (SEND) + OUTPUT DB25 4 column 26 bottom (RETURN)</td>
       <td>Master mix R insert loop; routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
     </tr>
+  </tbody>
+</table>
+
+<h4 id="sf-patchbay">Patchbay configuration</h4>
+
+<p>Every column of the Switchcraft 9625 in the side rack, organized by the four signal blocks introduced earlier. Within each block, the sub-tables follow the same INS / OUTS / LOOPS convention used in the Toft rear-panel chart: INS for signals arriving at the patchbay (top TTs, sources), OUTS for signals leaving the patchbay (bottom TTs, destinations), and LOOPS for insert points where the same column carries SEND on top and RETURN on bottom.</p>
+
+<h5>Channel inserts (columns 1-16)</h5>
+
+<table class="routing">
+  <caption>LOOPS · insert points</caption>
+  <thead>
+    <tr><th>Column</th><th>Top TT (SEND)</th><th>Bottom TT (RETURN)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">1</td><td>Toft ch 1 INSERT SEND</td><td>Toft ch 1 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">2</td><td>Toft ch 2 INSERT SEND</td><td>Toft ch 2 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">3</td><td>Toft ch 3 INSERT SEND</td><td>Toft ch 3 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">4</td><td>Toft ch 4 INSERT SEND</td><td>Toft ch 4 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">5</td><td>Toft ch 5 INSERT SEND</td><td>Toft ch 5 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">6</td><td>Toft ch 6 INSERT SEND</td><td>Toft ch 6 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">7</td><td>Toft ch 7 INSERT SEND</td><td>Toft ch 7 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">8</td><td>Toft ch 8 INSERT SEND</td><td>Toft ch 8 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">9</td><td>Toft ch 9 INSERT SEND</td><td>Toft ch 9 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">10</td><td>Toft ch 10 INSERT SEND</td><td>Toft ch 10 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">11</td><td>Toft ch 11 INSERT SEND</td><td>Toft ch 11 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">12</td><td>Toft ch 12 INSERT SEND</td><td>Toft ch 12 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">13</td><td>Toft ch 13 INSERT SEND</td><td>Toft ch 13 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">14</td><td>Toft ch 14 INSERT SEND</td><td>Toft ch 14 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">15</td><td>Toft ch 15 INSERT SEND</td><td>Toft ch 15 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">16</td><td>Toft ch 16 INSERT SEND</td><td>Toft ch 16 INSERT RETURN</td><td>half</td></tr>
+  </tbody>
+</table>
+
+<h5>Subgroup inserts (columns 17-24)</h5>
+
+<table class="routing">
+  <caption>LOOPS · insert points</caption>
+  <thead>
+    <tr><th>Column</th><th>Top TT (SEND)</th><th>Bottom TT (RETURN)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">17</td><td>Toft sub 1 INSERT SEND</td><td>Toft sub 1 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">18</td><td>Toft sub 2 INSERT SEND</td><td>Toft sub 2 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">19</td><td>Toft sub 3 INSERT SEND</td><td>Toft sub 3 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">20</td><td>Toft sub 4 INSERT SEND</td><td>Toft sub 4 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">21</td><td>Toft sub 5 INSERT SEND</td><td>Toft sub 5 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">22</td><td>Toft sub 6 INSERT SEND</td><td>Toft sub 6 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">23</td><td>Toft sub 7 INSERT SEND</td><td>Toft sub 7 INSERT RETURN</td><td>half</td></tr>
+    <tr><td class="jack">24</td><td>Toft sub 8 INSERT SEND</td><td>Toft sub 8 INSERT RETURN</td><td>half</td></tr>
+  </tbody>
+</table>
+
+<h5>Master inserts (columns 25-26)</h5>
+
+<table class="routing">
+  <caption>LOOPS · insert points</caption>
+  <thead>
+    <tr><th>Column</th><th>Top TT (SEND)</th><th>Bottom TT (RETURN)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">25</td><td>Toft master INSERT L SEND</td><td>Toft master INSERT L RETURN</td><td>half</td></tr>
+    <tr><td class="jack">26</td><td>Toft master INSERT R SEND</td><td>Toft master INSERT R RETURN</td><td>half</td></tr>
+  </tbody>
+</table>
+
+<h5>Outboard gear (columns 33-36)</h5>
+
+<table class="routing">
+  <caption>INS · signals arriving at the patchbay (top TTs)</caption>
+  <thead>
+    <tr><th>Column</th><th>Top TT (source)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">33</td><td>Compressor unit L OUT</td><td>non</td></tr>
+    <tr><td class="jack">34</td><td>Compressor unit R OUT</td><td>non</td></tr>
+    <tr><td class="jack">35</td><td>Effects processor unit L OUT</td><td>non</td></tr>
+    <tr><td class="jack">36</td><td>Effects processor unit R OUT</td><td>non</td></tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>OUTS · signals leaving the patchbay (bottom TTs)</caption>
+  <thead>
+    <tr><th>Column</th><th>Bottom TT (destination)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">33</td><td>Compressor unit L IN</td><td>non</td></tr>
+    <tr><td class="jack">34</td><td>Compressor unit R IN</td><td>non</td></tr>
+    <tr><td class="jack">35</td><td>Effects processor unit IN (mono)</td><td>non</td></tr>
+    <tr><td class="jack">36</td><td><span class="empty">Empty</span></td><td>non</td></tr>
+  </tbody>
+</table>
+
+<h5>Aux masters (columns 41-44)</h5>
+
+<table class="routing">
+  <caption>INS · signals arriving at the patchbay (top TTs)</caption>
+  <thead>
+    <tr><th>Column</th><th>Top TT (source)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">41</td><td>Toft Aux Master 1</td><td>non</td></tr>
+    <tr><td class="jack">42</td><td>Toft Aux Master 2</td><td>non</td></tr>
+    <tr><td class="jack">43</td><td>Toft Aux Master 3</td><td>non</td></tr>
+    <tr><td class="jack">44</td><td>Toft Aux Master 4</td><td>non</td></tr>
+  </tbody>
+</table>
+
+<h5>Channel MON inputs (columns 41-48)</h5>
+
+<table class="routing">
+  <caption>OUTS · signals leaving the patchbay (bottom TTs)</caption>
+  <thead>
+    <tr><th>Column</th><th>Bottom TT (destination)</th><th>Normal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">41</td><td>Toft ch 1 MON input</td><td>non</td></tr>
+    <tr><td class="jack">42</td><td>Toft ch 2 MON input</td><td>non</td></tr>
+    <tr><td class="jack">43</td><td>Toft ch 3 MON input</td><td>non</td></tr>
+    <tr><td class="jack">44</td><td>Toft ch 4 MON input</td><td>non</td></tr>
+    <tr><td class="jack">45</td><td>Toft ch 5 MON input</td><td>non</td></tr>
+    <tr><td class="jack">46</td><td>Toft ch 6 MON input</td><td>non</td></tr>
+    <tr><td class="jack">47</td><td>Toft ch 7 MON input</td><td>non</td></tr>
+    <tr><td class="jack">48</td><td>Toft ch 8 MON input</td><td>non</td></tr>
+  </tbody>
+</table>
+
+<h5>Default TT cables on the front</h5>
+
+<p>Seven TT cables sit on the front of the patchbay by default, routing the two outboard processors into their default positions. They can be pulled at any time to free up the compressor or effects processor for other use during a session.</p>
+
+<table class="routing">
+  <caption>Default TT cables · front of patchbay</caption>
+  <thead>
+    <tr><th>TT cable</th><th>From (top TT)</th><th>To (bottom TT)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="jack">1</td><td>Col 25 (Master INSERT L SEND)</td><td>Col 33 (Compressor L IN)</td></tr>
+    <tr><td class="jack">2</td><td>Col 33 (Compressor L OUT)</td><td>Col 25 (Master INSERT L RETURN)</td></tr>
+    <tr><td class="jack">3</td><td>Col 26 (Master INSERT R SEND)</td><td>Col 34 (Compressor R IN)</td></tr>
+    <tr><td class="jack">4</td><td>Col 34 (Compressor R OUT)</td><td>Col 26 (Master INSERT R RETURN)</td></tr>
+    <tr><td class="jack">5</td><td>Col 43 (Aux Master 3)</td><td>Col 35 (Effects processor IN)</td></tr>
+    <tr><td class="jack">6</td><td>Col 35 (Effects processor L OUT)</td><td>Col 47 (ch 7 MON input)</td></tr>
+    <tr><td class="jack">7</td><td>Col 36 (Effects processor R OUT)</td><td>Col 48 (ch 8 MON input)</td></tr>
   </tbody>
 </table>
 
