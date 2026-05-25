@@ -129,6 +129,15 @@
       color: var(--accent);
       white-space: nowrap;
     }
+    table.routing td.jack {
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    table.routing .empty {
+      color: var(--ink-soft);
+      font-style: italic;
+    }
     table.routing caption {
       caption-side: top;
       font-family: var(--mono);
@@ -435,9 +444,211 @@
 
 <h3>How the studio's signals actually flow</h3>
 
-<p>With every cable in place, here's a top-to-bottom map of every connection. Mics enter the live-room rack at the bottom; signal travels up through the preamps, through the wall, into the Toft, into the side rack, into Pro Tools. Pro Tools playback comes back down: out of the HDX, into the Toft's submaster monitor returns, summed into the master mix, then back through the wall to the live-room headphones.</p>
+<p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Four tables, grouped by section: channels 1-8, channels 9-16, the submasters, and the master section.</p>
 
-<p><em>The routing diagram below is a placeholder; we'll redraw it next with cleaner spacing.</em></p>
+<table class="routing">
+  <caption>Channels 1-8 · rear-panel jacks</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Default connection</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">MIC 1-8</td>
+      <td>XLR-F</td>
+      <td>Through-wall XLR-M from ISA 828 line outputs 1-8 (DB25 fan cable at ISA end)</td>
+      <td>Line-level signals from the live-room rack's first preamp; Toft INPUT GAIN acts as a trim, not a true preamp gain stage</td>
+    </tr>
+    <tr>
+      <td class="jack">LINE 1-8</td>
+      <td>TRS</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Intentionally unused: these jacks are parallel-wired to the submaster MONITOR RETURNS, which already carry HDX playback. Plugging anything here would collide with that signal.</td>
+    </tr>
+    <tr>
+      <td class="jack">MON 1-8</td>
+      <td>TRS</td>
+      <td>Patchbay OUTPUT DB25 6 (columns 41-48 bottom row)</td>
+      <td>In-line monitor path on each channel; the default permanent TT cables route the effects processor's L and R outputs into MON 7 and MON 8</td>
+    </tr>
+    <tr>
+      <td class="jack">INSERT 1-8</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 1 (SEND legs) + OUTPUT DB25 1 (RETURN legs) via insert snake</td>
+      <td>Per-channel insert loop; at rest the loop is closed (half-normal); plugging into the bottom column jack on the patchbay breaks the normal and forces external processing</td>
+    </tr>
+    <tr>
+      <td class="jack">DIR O/P 1-8</td>
+      <td>TRS</td>
+      <td><span class="empty">Not on patchbay</span></td>
+      <td>Direct output per channel; available for future expansion if needed</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>Channels 9-16 · rear-panel jacks</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Default connection</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">MIC 9-16</td>
+      <td>XLR-F</td>
+      <td>Through-wall XLR-M from OctoPre Platinum line outputs 1-8 (DB25 fan cable at OctoPre end)</td>
+      <td>Line-level signals from the live-room rack's second preamp; same trim-not-gain situation as channels 1-8</td>
+    </tr>
+    <tr>
+      <td class="jack">LINE 9-10</td>
+      <td>TRS</td>
+      <td>Behringer Xenyx main outputs (L+R)</td>
+      <td>Student laptop's main mix from the Behringer USB interface on the console desk</td>
+    </tr>
+    <tr>
+      <td class="jack">LINE 11-12</td>
+      <td>TRS</td>
+      <td>Behringer Xenyx alt 3-4 outputs</td>
+      <td>Behringer's second pair of outputs</td>
+    </tr>
+    <tr>
+      <td class="jack">LINE 13-16</td>
+      <td>TRS</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Available for ad-hoc line-level sources</td>
+    </tr>
+    <tr>
+      <td class="jack">MON 9-16</td>
+      <td>TRS</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Not on the patchbay (the patchbay's channel MON connections only cover channels 1-8)</td>
+    </tr>
+    <tr>
+      <td class="jack">INSERT 9-16</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 2 + OUTPUT DB25 2 via insert snake</td>
+      <td>Same structure and normalling as channel inserts 1-8</td>
+    </tr>
+    <tr>
+      <td class="jack">DIR O/P 9-16</td>
+      <td>TRS</td>
+      <td><span class="empty">Not on patchbay</span></td>
+      <td>Direct output per channel</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>Submasters 1-8 · rear-panel jacks</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Default connection</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">SUBMASTER OUTPUT 1-8</td>
+      <td>TRS</td>
+      <td>HDX analog inputs 1-8 (DB25 fan cable, direct)</td>
+      <td>The 8 subgroup outputs feeding Pro Tools as 8 separate tracks</td>
+    </tr>
+    <tr>
+      <td class="jack">MONITOR RETURN 1-8</td>
+      <td>TRS</td>
+      <td>HDX analog outputs 1-8 (DB25 fan cable, direct)</td>
+      <td>Pro Tools playback returning to the console; parallel-wired to LINE 1-8 on the channel strips (which is why LINE 1-8 are kept empty)</td>
+    </tr>
+    <tr>
+      <td class="jack">SUBGROUP INSERT 1-8</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 3 + OUTPUT DB25 3 via insert snake</td>
+      <td>Per-subgroup insert loop; half-normal; identical structure to channel inserts</td>
+    </tr>
+    <tr>
+      <td class="jack">STEREO FX RETURN 1-8</td>
+      <td>TRS (tip=L, ring=R)</td>
+      <td><span class="empty">Not on patchbay</span></td>
+      <td>Eight stereo effects return jacks; per the Toft's submaster signal flow these feed the master mix only (not the submaster output), so they can't reach Pro Tools. Unused in our default routing because of this; the effects processor returns to channel MON inputs 7-8 instead.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>Master section · rear-panel jacks</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Default connection</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">MASTER INSERT L</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay column 25 via insert snake</td>
+      <td>Master mix L insert loop; permanently routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
+    </tr>
+    <tr>
+      <td class="jack">MASTER INSERT R</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay column 26 via insert snake</td>
+      <td>Master mix R insert loop; permanently routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
+    </tr>
+    <tr>
+      <td class="jack">MASTER O/P L+R</td>
+      <td>TRS</td>
+      <td>Behringer Xenyx channels 1-2 (and optionally a stereo Pro Tools input for a reference mix bounce)</td>
+      <td>The stereo summed master mix</td>
+    </tr>
+    <tr>
+      <td class="jack">MAIN SPKR L+R</td>
+      <td>TRS</td>
+      <td>Control-room monitor speakers</td>
+      <td>Speaker feed from the master section's MONITOR LEVEL knob</td>
+    </tr>
+    <tr>
+      <td class="jack">ALT SPKR L+R</td>
+      <td>TRS</td>
+      <td><span class="empty">Empty (no alt speakers)</span></td>
+      <td>Available for a second speaker pair if added later</td>
+    </tr>
+    <tr>
+      <td class="jack">AUX MASTER 1</td>
+      <td>TRS</td>
+      <td>Patchbay INPUT DB25 6 (column 41 top)</td>
+      <td>Aux 1 send bus; exposed on the bay for ad-hoc patching</td>
+    </tr>
+    <tr>
+      <td class="jack">AUX MASTER 2</td>
+      <td>TRS</td>
+      <td>Patchbay INPUT DB25 6 (column 42 top)</td>
+      <td>Aux 2 send bus; exposed on the bay for ad-hoc patching</td>
+    </tr>
+    <tr>
+      <td class="jack">AUX MASTER 3</td>
+      <td>TRS</td>
+      <td>Patchbay INPUT DB25 6 (column 43 top); routed via 1 TT cable on the front to the effects processor IN</td>
+      <td>Aux 3 send bus; carries the studio's default reverb/effects send</td>
+    </tr>
+    <tr>
+      <td class="jack">AUX MASTER 4</td>
+      <td>TRS</td>
+      <td>Patchbay INPUT DB25 6 (column 44 top)</td>
+      <td>Aux 4 send bus; exposed on the bay for ad-hoc patching</td>
+    </tr>
+    <tr>
+      <td class="jack">AUX MASTER 5</td>
+      <td>TRS</td>
+      <td>Rane MH4 stereo cue input (L), direct cable</td>
+      <td>Aux 5 sends the headphone cue L channel to the live-room headphones</td>
+    </tr>
+    <tr>
+      <td class="jack">AUX MASTER 6</td>
+      <td>TRS</td>
+      <td>Rane MH4 stereo cue input (R), direct cable</td>
+      <td>Aux 6 sends the headphone cue R channel to the live-room headphones</td>
+    </tr>
+    <tr>
+      <td class="jack">2 TRACK RET 1+2</td>
+      <td>TRS (tip=L, ring=R)</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Available for stereo playback sources (e.g., a CD player or external two-track machine)</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr>
 
