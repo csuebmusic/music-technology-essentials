@@ -445,24 +445,7 @@
   <p>This means each Toft insert occupies <strong>one column</strong> on the patchbay: the SEND leg lands on a rear INPUT DB25 pin and appears at the top jack of the column; the RETURN leg lands on the matching rear OUTPUT DB25 pin and appears at the bottom jack. The column is set to half-normal, so the SEND-to-RETURN connection is closed automatically (the insert loop is intact) unless someone plugs a cable into the bottom jack to break it and route external processing through.</p>
 </div>
 
-<p>With that in mind, the 48 columns of the patchbay are organized into four thematic blocks. Reading left to right across the bay:</p>
-
-<ul>
-  <li><strong>Toft channel inserts</strong> (columns 1-16): one column per channel insert. Top jack is SEND (signal leaving the channel strip); bottom jack is RETURN (signal coming back into the strip). Half-normal: insert loop closed at rest, breakable by plugging into the bottom jack.</li>
-  <li><strong>Toft subgroup inserts</strong> (columns 17-24): one column per subgroup insert. Same structure and half-normal setting as channel inserts.</li>
-  <li><strong>Toft master inserts</strong> (columns 25-26): column 25 carries the master INSERT L (SEND on top, RETURN on bottom); column 26 carries the master INSERT R. Half-normal.</li>
-  <li><strong>Outboard gear, aux masters, and channel MON inputs</strong> (columns 33-48, with 27-32 left empty for future expansion):
-    <ul>
-      <li>Columns 33-34: the compressor unit (its output on the top jack, its input on the bottom jack).</li>
-      <li>Columns 35-36: the effects processor unit (column 35 carries the mono IN on the bottom and the L OUT on top; column 36 carries the R OUT on top).</li>
-      <li>Columns 41-44: Toft Aux Masters 1 through 4 (top jacks). Aux Masters 5 and 6 run direct to the headphone unit and don't appear on the bay.</li>
-      <li>Columns 41-48: Toft channels 1-8 MON inputs (bottom jacks). The MON jacks are the in-line monitor path on the channel strip; any signal landing there can be routed to a subgroup and recorded to Pro Tools.</li>
-    </ul>
-    Non-normalled: no automatic top-to-bottom connection; the columns sit as appearance points waiting for the engineer to patch them.
-  </li>
-</ul>
-
-<p>The studio's <strong>default configuration</strong> uses two of these outboard slots already: the compressor sits on the master mix INSERT path (the master mix runs through it on its way out of the console), and the effects processor sits on Aux 3. Both connections are made with TT cables on the front of the patchbay and can be moved during any session. The next two items walk these defaults in more detail.</p>
+<p>With that in mind, the 48 columns of the patchbay are organized into four thematic blocks. You can find the configuration further down in this guide: <a href="#sf-patchbay">jump to Patchbay configuration</a>.</p>
 
 <h4 id="cr-ssl">4. SSL XLogic G Series Compressor (stereo bus compressor)</h4>
 
