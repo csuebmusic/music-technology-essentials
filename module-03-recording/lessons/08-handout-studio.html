@@ -444,10 +444,10 @@
 
 <h3>How the studio's signals actually flow</h3>
 
-<p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Four tables, grouped by section: channels 1-8, channels 9-16, the submasters, and the master section.</p>
+<p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Three tables, grouped by section: the 16 input channels, the submasters, and the master section.</p>
 
 <table class="routing">
-  <caption>Channels 1-8 · rear-panel jacks</caption>
+  <caption>Input channels 1-16 · rear-panel jacks</caption>
   <thead>
     <tr><th>Jack</th><th>Connector</th><th>Source from</th><th>Carries</th></tr>
   </thead>
@@ -459,43 +459,16 @@
       <td>Line-level signals from the live-room rack's first preamp; Toft INPUT GAIN acts as a trim, not a true preamp gain stage</td>
     </tr>
     <tr>
-      <td class="jack">LINE 1-8</td>
-      <td>TRS</td>
-      <td><span class="empty">Empty</span></td>
-      <td>Intentionally unused: these jacks are parallel-wired to the submaster MONITOR RETURNS.</td>
-    </tr>
-    <tr>
-      <td class="jack">MON 1-8</td>
-      <td>TRS</td>
-      <td>Patchbay OUTPUT DB25 6 (columns 41-48 bottom row)</td>
-      <td>In-line monitor path on each channel; the default permanent TT cables route the effects processor's L and R outputs into MON 7 and MON 8</td>
-    </tr>
-    <tr>
-      <td class="jack">INSERT 1-8</td>
-      <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 1 (SEND legs) + OUTPUT DB25 1 (RETURN legs) via insert snake</td>
-      <td>Per-channel insert loop; at rest the loop is closed (half-normal); plugging into the bottom column jack on the patchbay breaks the normal and forces external processing</td>
-    </tr>
-    <tr>
-      <td class="jack">DIR O/P 1-8</td>
-      <td>TRS</td>
-      <td><span class="empty">Not on patchbay</span></td>
-      <td>Direct output per channel; available for future expansion if needed</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="routing">
-  <caption>Channels 9-16 · rear-panel jacks</caption>
-  <thead>
-    <tr><th>Jack</th><th>Connector</th><th>Source from</th><th>Carries</th></tr>
-  </thead>
-  <tbody>
-    <tr>
       <td class="jack">MIC 9-16</td>
       <td>XLR-F</td>
       <td>Through-wall XLR-M from OctoPre Platinum line outputs 1-8 (DB25 fan cable at OctoPre end)</td>
       <td>Line-level signals from the live-room rack's second preamp; same trim-not-gain situation as channels 1-8</td>
+    </tr>
+    <tr>
+      <td class="jack">LINE 1-8</td>
+      <td>TRS</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Intentionally unused: these jacks are parallel-wired to the submaster MONITOR RETURNS.</td>
     </tr>
     <tr>
       <td class="jack">LINE 9-10</td>
@@ -516,10 +489,22 @@
       <td>Available for ad-hoc line-level sources</td>
     </tr>
     <tr>
+      <td class="jack">MON 1-8</td>
+      <td>TRS</td>
+      <td>Patchbay OUTPUT DB25 6 (columns 41-48 bottom row)</td>
+      <td>In-line monitor path on each channel; the default permanent TT cables route the effects processor's L and R outputs into MON 7 and MON 8</td>
+    </tr>
+    <tr>
       <td class="jack">MON 9-16</td>
       <td>TRS</td>
       <td><span class="empty">Empty</span></td>
       <td>Not on the patchbay (the patchbay's channel MON connections only cover channels 1-8)</td>
+    </tr>
+    <tr>
+      <td class="jack">INSERT 1-8</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 1 (SEND legs) + OUTPUT DB25 1 (RETURN legs) via insert snake</td>
+      <td>Per-channel insert loop; at rest the loop is closed (half-normal); plugging into the bottom column jack on the patchbay breaks the normal and forces external processing</td>
     </tr>
     <tr>
       <td class="jack">INSERT 9-16</td>
@@ -528,10 +513,10 @@
       <td>Same structure and normalling as channel inserts 1-8</td>
     </tr>
     <tr>
-      <td class="jack">DIR O/P 9-16</td>
+      <td class="jack">DIR O/P 1-16</td>
       <td>TRS</td>
       <td><span class="empty">Not on patchbay</span></td>
-      <td>Direct output per channel</td>
+      <td>Direct output per channel; available for future expansion if needed</td>
     </tr>
   </tbody>
 </table>
