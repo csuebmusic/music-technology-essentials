@@ -340,12 +340,12 @@
   <li><strong>Toft channel inserts</strong> (columns 1-16): one column per channel insert. Top jack is SEND (signal leaving the channel strip); bottom jack is RETURN (signal coming back into the strip). Half-normal: insert loop closed at rest, breakable by plugging into the bottom jack.</li>
   <li><strong>Toft subgroup inserts</strong> (columns 17-24): one column per subgroup insert. Same structure and half-normal setting as channel inserts.</li>
   <li><strong>Toft master inserts</strong> (columns 25-26): column 25 carries the master INSERT L (SEND on top, RETURN on bottom); column 26 carries the master INSERT R. Half-normal.</li>
-  <li><strong>Outboard gear, aux masters, and effects returns</strong> (columns 33-48, with 27-32 left empty for future expansion):
+  <li><strong>Outboard gear, aux masters, and channel MON inputs</strong> (columns 33-48, with 27-32 left empty for future expansion):
     <ul>
       <li>Columns 33-34: the compressor unit (its output on the top jack, its input on the bottom jack).</li>
       <li>Columns 35-36: the effects processor unit (column 35 carries the mono IN on the bottom and the L OUT on top; column 36 carries the R OUT on top).</li>
       <li>Columns 41-44: Toft Aux Masters 1 through 4 (top jacks). Aux Masters 5 and 6 run direct to the headphone unit and don't appear on the bay.</li>
-      <li>Columns 41-48: four of the Toft's eight stereo effects returns, two columns each for L+R (bottom jacks).</li>
+      <li>Columns 41-48: Toft channels 1-8 MON inputs (bottom jacks). The MON jacks are the in-line monitor path on the channel strip; any signal landing there can be routed to a subgroup and recorded to Pro Tools.</li>
     </ul>
     Non-normalled: no automatic top-to-bottom connection; the columns sit as appearance points waiting for the engineer to patch them.
   </li>
@@ -394,22 +394,24 @@
   <div class="photo-attribution">Photo via TC Electronic.</div>
 </figure>
 
-<p>A studio-grade effects processor: reverbs of every flavor (hall, plate, room, spring), delays, chorus, flanger, phaser, pitch shift, and combinations of these. Mono input, stereo output. Whichever effect is loaded, the workflow is the same: a channel sends a copy of its signal to the effects processor via an aux send; the processor generates a stereo wet signal; that wet signal returns to the console through an effects return and joins the master mix alongside the dry signal coming from the channel itself.</p>
+<p>A studio-grade effects processor: reverbs of every flavor (hall, plate, room, spring), delays, chorus, flanger, phaser, pitch shift, and combinations of these. Mono input, stereo output. Whichever effect is loaded, the workflow is the same: a channel sends a copy of its signal to the effects processor via an aux send; the processor generates a stereo wet signal; that wet signal returns to the console on a separate pair of channels and joins the mix alongside the dry signal coming from the original channel.</p>
 
-<p>The effects processor sits on Aux 3 by default (the TT cables that route it live on patchbay column 43 connecting to columns 35-36, with the unit's stereo output returning through STEREO FX RETURN 1, ER1 for short). Any channel that turns up its Aux 3 knob sends a copy of its signal to the effects processor and hears the processed result come back in the master mix.</p>
+<p>The effects processor sits on Aux 3 by default. The TT cables that route it live on patchbay column 43 (Aux Master 3 source) connecting to columns 35-36 (the effects processor's mono IN and L+R OUT), with the unit's stereo output returning to <strong>channels 7 and 8 MON inputs</strong> on the Toft. Any channel that turns up its Aux 3 knob sends a copy of its signal to the effects processor and hears the processed result come back on channels 7-8 of the console.</p>
 
 <div class="callout">
   <div class="callout-label">Recipe: add a chorus effect to a vocal on channel 1</div>
-  <p>Say a vocal mic is plugged into channel 1 of the Toft and you want a touch of chorus added to it in the master mix. With the effects processor on its default Aux 3 routing:</p>
+  <p>Say a vocal mic is plugged into channel 1 of the Toft and you want a touch of chorus added to it. With the effects processor on its default Aux 3 routing:</p>
   <ol>
     <li>On the front of the effects processor, navigate to a chorus preset and load it.</li>
     <li>On channel 1 of the Toft, find the <strong>Aux 3</strong> knob in the aux-send section near the top of the strip. Make sure it's switched to <strong>post-fader</strong> (so the chorus level follows the vocal fader; when the vocal goes down, the chorus goes down with it).</li>
     <li>Sing or speak into the mic so signal is moving on channel 1.</li>
-    <li>Slowly turn the Aux 3 knob up. The effects processor's input meter responds; the chorus tail returns through ER1 into the master mix; you hear the vocal with chorus.</li>
-    <li>Use the <strong>FX RET</strong> knob at the top of submaster strip 1 to set how loud the chorus return sits in the master mix relative to the dry vocal on channel 1.</li>
+    <li>Slowly turn the Aux 3 knob up. The effects processor's input meter responds; the chorus tail returns to channels 7 and 8 via their MON inputs.</li>
+    <li>On channels 7 and 8, turn up the <strong>MON LEVEL</strong> control to bring the chorus into the master mix. Pan channel 7 hard left and channel 8 hard right so the stereo image of the effect is preserved.</li>
   </ol>
-  <p>To add the same chorus to a second channel (say a guitar on channel 5), turn up that channel's Aux 3 knob too. The effects processor mixes both contributions and returns one stereo wet signal that lands in the master mix.</p>
+  <p>To add the same chorus to a second channel (say a guitar on channel 5), turn up that channel's Aux 3 knob too. The effects processor mixes both contributions and returns one stereo wet signal that lands on channels 7-8.</p>
 </div>
+
+<p>Because the wet signal lands on actual channels (not on a stereo effects return), it can also be routed to a subgroup and recorded to Pro Tools: press the <strong>1-2</strong> (or <strong>3-4</strong>, etc.) routing button on channels 7 and 8, and the chorus shows up as a separate pair of tracks in the DAW alongside the dry vocal.</p>
 
 <p>Like the compression unit, the effects processor can be re-patched at the patchbay to do other jobs (a different aux send, an insert effect on a single channel, a parallel return on a stereo channel pair).</p>
 

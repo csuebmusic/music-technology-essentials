@@ -20,10 +20,9 @@ This document is the wiring authority for the Switchcraft StudioPatch 9625 patch
 | Switchcraft DB25MM10TRS (2× DB25-M to 8× 1/4" TRS-M insert snake, 10 ft) | 4 | Toft inserts → patchbay DB25s 1-4 and 1-4 OUTPUT pairs |
 | Switchcraft DB25M10XLRF (DB25-M to 8× XLR-F, 10 ft) | 1 | Effects gear outputs (SSL, M2000) → patchbay DB25 INPUT 5 |
 | Switchcraft DB25M10XLRM (DB25-M to 8× XLR-M, 10 ft) | 1 | Patchbay DB25 OUTPUT 5 → effects gear inputs (SSL, M2000) |
-| Switchcraft DB25M10TRS (DB25-M to 8× 1/4" TRS-M, 10 ft) | 2 | Toft aux masters → patchbay DB25 INPUT 6; patchbay DB25 OUTPUT 6 → Toft stereo effects returns (via Y-cables) |
-| 2× TS female to TRS male Y-cable | 4 | Combine pairs of TRS plugs at the end of the DB25M10TRS effects-returns cable into stereo TRS plugs that mate with the Toft's stereo effects return jacks (one Y-cable per ER on the bay) |
+| Switchcraft DB25M10TRS (DB25-M to 8× 1/4" TRS-M, 10 ft) | 2 | Toft aux masters → patchbay DB25 INPUT 6; patchbay DB25 OUTPUT 6 → Toft channels 1-8 MON inputs |
 
-Total: 12 cables.
+Total: 8 cables.
 
 ## DB25 allocation
 
@@ -153,26 +152,22 @@ Cable: DB25MM10TRS #4. Normal: half-normal for columns 25-26 (the active master 
 | 47 | (spare) | |
 | 48 | (spare) | |
 
-### OUTPUT DB25 6 → columns 41-48 (bottom TT row only, Toft stereo effects returns)
+### OUTPUT DB25 6 → columns 41-48 (bottom TT row only, Toft channels 1-8 MON inputs)
 
-The Toft has 8 stereo effects returns total (one per submaster strip). We wire 4 of them to the patchbay; the remaining 4 stay direct-wired (or unused) and can be added later if needed.
+Each of the Toft's first 8 input strips has a MON input jack on the rear panel (the in-line monitor path on the channel). These 8 jacks land on the patchbay so that processed signals (such as the effects processor output) can be routed to a channel's MON section and from there into a subgroup output going to the DAW.
 
-Each ER is one TRS jack on the Toft carrying stereo (tip=L, ring=R). On the patchbay, each ER consumes **two channels** (one for L, one for R, appearing as two separate bottom TTs). At the Toft end, a **2-TS-to-TRS Y-cable** combines those two TS plugs from the DB25M10TRS fan cable back into one stereo TRS plug that mates with the ER's jack.
-
-| Column | Bottom TT (destination) | Cable path |
+| Column | Bottom TT (destination) | Cable |
 |---|---|---|
-| 41 | Toft Effects Return 1 (L) | DB25M10TRS #2 → TS plug → Y-cable L input → TRS plug into Toft ER1 |
-| 42 | Toft Effects Return 1 (R) | DB25M10TRS #2 → TS plug → Y-cable R input → TRS plug into Toft ER1 |
-| 43 | Toft Effects Return 2 (L) | DB25M10TRS #2 → TS plug → Y-cable L input → TRS plug into Toft ER2 |
-| 44 | Toft Effects Return 2 (R) | DB25M10TRS #2 → TS plug → Y-cable R input → TRS plug into Toft ER2 |
-| 45 | Toft Effects Return 3 (L) | DB25M10TRS #2 → TS plug → Y-cable L input → TRS plug into Toft ER3 |
-| 46 | Toft Effects Return 3 (R) | DB25M10TRS #2 → TS plug → Y-cable R input → TRS plug into Toft ER3 |
-| 47 | Toft Effects Return 4 (L) | DB25M10TRS #2 → TS plug → Y-cable L input → TRS plug into Toft ER4 |
-| 48 | Toft Effects Return 4 (R) | DB25M10TRS #2 → TS plug → Y-cable R input → TRS plug into Toft ER4 |
+| 41 | Toft channel 1 MON input | DB25M10TRS #2 (TRS plug to ch 1 MON jack) |
+| 42 | Toft channel 2 MON input | DB25M10TRS #2 (TRS plug to ch 2 MON jack) |
+| 43 | Toft channel 3 MON input | DB25M10TRS #2 (TRS plug to ch 3 MON jack) |
+| 44 | Toft channel 4 MON input | DB25M10TRS #2 (TRS plug to ch 4 MON jack) |
+| 45 | Toft channel 5 MON input | DB25M10TRS #2 (TRS plug to ch 5 MON jack) |
+| 46 | Toft channel 6 MON input | DB25M10TRS #2 (TRS plug to ch 6 MON jack) |
+| 47 | Toft channel 7 MON input | DB25M10TRS #2 (TRS plug to ch 7 MON jack) |
+| 48 | Toft channel 8 MON input | DB25M10TRS #2 (TRS plug to ch 8 MON jack) |
 
-4 Y-cables total (one per ER on the bay).
-
-**Normal for columns 41-48:** non-normal (aux masters and effects returns aren't naturally paired with each other).
+**Normal for columns 41-48:** non-normal (aux masters and channel MON inputs aren't naturally paired with each other; routing happens via TT cables on the front).
 
 ---
 
@@ -189,15 +184,15 @@ These cables route the studio's two default outboard processors. They live on th
 | 3 | Column 26 top (Master INS R SEND) | Column 34 bottom (SSL R IN) |
 | 4 | Column 34 top (SSL R OUT) | Column 26 bottom (Master INS R RETURN) |
 
-### M2000 on Aux 3 → Effects Return 1 (3 TT cables)
+### M2000 on Aux 3 → channels 7-8 MON inputs (3 TT cables)
 
 | TT cable | From (top TT, source) | To (bottom TT, destination) |
 |---|---|---|
 | 5 | Column 43 top (Aux Master 3) | Column 35 bottom (M2000 IN) |
-| 6 | Column 35 top (M2000 L OUT) | Column 41 bottom (Effects Return 1 L) |
-| 7 | Column 36 top (M2000 R OUT) | Column 42 bottom (Effects Return 1 R) |
+| 6 | Column 35 top (M2000 L OUT) | Column 47 bottom (ch 7 MON input) |
+| 7 | Column 36 top (M2000 R OUT) | Column 48 bottom (ch 8 MON input) |
 
-At the Toft end, the Y-cable on ER1 combines patchbay columns 41 and 42 back into one stereo TRS plug feeding the ER1 jack.
+The M2000's wet signal lands on channels 7 and 8 via the in-line MON path. By engaging the I/P REV switch on those channels at mixdown (or routing them to a subgroup during tracking), the effects processor's output can be sent to a Pro Tools track and recorded.
 
 **Total: 7 permanent TT cables on the front of the bay.**
 
@@ -207,10 +202,10 @@ At the Toft end, the Y-cable on ER1 combines patchbay columns 41 and 42 back int
 
 - All 26 Toft inserts are reachable from the front of the bay. The half-normal setting keeps the insert loop closed when no cable is plugged, so the console behaves normally; plugging into the bottom (RETURN) jack of any channel breaks the loop and forces external processing.
 - The SSL is permanently in the master mix INSERT path by default. To bypass it, the engineer pulls the 4 TT cables that route the SSL.
-- The M2000 is permanently available as a parallel reverb on Aux 3 → ER1. Any channel can send to Aux 3 and hear reverb come back in the master mix.
-- 4 of the Toft's 8 stereo effects returns are exposed on the bay (ER1-ER4, with ER1 occupied by the M2000 default and ER2-ER4 available for session-specific stereo sources). The remaining 4 effects returns (ER5-ER8) are not on the bay; they can be reached only by direct cable to the Toft rear.
+- The M2000 is permanently available on Aux 3, with its stereo output landing on channels 7 and 8 via the in-line MON path. Any channel can send to Aux 3 and hear the processed signal come back on the channels 7-8 monitor path, and from there into a subgroup output going to the DAW.
+- The Toft's 8 stereo effects returns are NOT on the patchbay. They feed the master mix only (per the Toft's submaster signal flow), which means they can't be recorded to Pro Tools. Routing the M2000 to channels 7-8 MON inputs instead solves this: the wet signal becomes recordable.
 - Aux Masters 1-4 are exposed on the bay for ad-hoc patching (e.g., routing aux 1 to a different destination than its default reverb). Aux Masters 5 and 6 are not on the bay; they run direct to the Rane MH4 headphone unit's stereo cue input, and overriding that path requires unplugging the direct cables at the Toft rear.
-- 16 spare columns total (6 in the inserts block + 4 in the outboard block + 4 in the aux block + 2 unallocated) for future expansion.
+- 12 spare columns total (6 in the inserts block + 4 in the outboard block + 2 unallocated in the aux block) for future expansion.
 
 ## Open questions / future revisions
 
