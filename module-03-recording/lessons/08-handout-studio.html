@@ -444,10 +444,12 @@
 
 <h3>How the studio's signals actually flow</h3>
 
-<p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Three tables, grouped by section: the 16 input channels, the submasters, and the master section.</p>
+<p>With every cable in place, here's a complete map of every jack on the back of the Toft and what's plugged into it. Three sections, each split into INS (signals arriving at the Toft), OUTS (signals leaving the Toft), and LOOPS (insert points where signal leaves and returns on the same jack).</p>
+
+<h4>Input channels 1-16</h4>
 
 <table class="routing">
-  <caption>Input channels 1-16 · rear-panel jacks</caption>
+  <caption>INS · signals arriving at the Toft</caption>
   <thead>
     <tr><th>Jack</th><th>Connector</th><th>Source from</th><th>Carries</th></tr>
   </thead>
@@ -455,13 +457,13 @@
     <tr>
       <td class="jack">MIC 1-8</td>
       <td>XLR-F</td>
-      <td>Through-wall XLR-M from ISA 828 line outputs 1-8 (DB25 fan cable at ISA end)</td>
+      <td>Through-wall XLR-M from ISA 828 line outputs 1-8</td>
       <td>Line-level signals from the live-room rack's first preamp; Toft INPUT GAIN acts as a trim, not a true preamp gain stage</td>
     </tr>
     <tr>
       <td class="jack">MIC 9-16</td>
       <td>XLR-F</td>
-      <td>Through-wall XLR-M from OctoPre Platinum line outputs 1-8 (DB25 fan cable at OctoPre end)</td>
+      <td>Through-wall XLR-M from OctoPre Platinum line outputs 1-8</td>
       <td>Line-level signals from the live-room rack's second preamp; same trim-not-gain situation as channels 1-8</td>
     </tr>
     <tr>
@@ -486,7 +488,7 @@
       <td class="jack">LINE 13-16</td>
       <td>TRS</td>
       <td><span class="empty">Empty</span></td>
-      <td>Available for ad-hoc line-level sources</td>
+      <td></td>
     </tr>
     <tr>
       <td class="jack">MON 1-8</td>
@@ -498,55 +500,63 @@
       <td class="jack">MON 9-16</td>
       <td>TRS</td>
       <td><span class="empty">Empty</span></td>
-      <td>Not on the patchbay (the patchbay's channel MON connections only cover channels 1-8)</td>
-    </tr>
-    <tr>
-      <td class="jack">INSERT 1-8</td>
-      <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 1 (SEND legs) + OUTPUT DB25 1 (RETURN legs) via insert snake</td>
-      <td>Per-channel insert loop; at rest the loop is closed (half-normal); plugging into the bottom column jack on the patchbay breaks the normal and forces external processing</td>
-    </tr>
-    <tr>
-      <td class="jack">INSERT 9-16</td>
-      <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 2 + OUTPUT DB25 2 via insert snake</td>
-      <td>Same structure and normalling as channel inserts 1-8</td>
-    </tr>
-    <tr>
-      <td class="jack">DIR O/P 1-16</td>
-      <td>TRS</td>
-      <td><span class="empty">Not on patchbay</span></td>
-      <td>Direct output per channel; available for future expansion if needed</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
 
 <table class="routing">
-  <caption>Submasters 1-8 · rear-panel jacks</caption>
+  <caption>OUTS · signals leaving the Toft</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Source to</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">DIR O/P 1-16</td>
+      <td>TRS</td>
+      <td><span class="empty">Not on patchbay</span></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>LOOPS · insert points (send out, return in, on the same jack)</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Send/Return path</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">INSERT 1-8</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 1 columns 1-8 (SEND legs) + OUTPUT DB25 1 columns 1-8 (RETURN legs) via insert snake</td>
+      <td>Per-channel insert loop; at rest the loop is closed (half-normal); plugging into the bottom column jack on the patchbay breaks the normal and forces external processing</td>
+    </tr>
+    <tr>
+      <td class="jack">INSERT 9-16</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 2 columns 9-16 (SEND legs) + OUTPUT DB25 2 columns 9-16 (RETURN legs) via insert snake</td>
+      <td>Same structure and normalling as channel inserts 1-8</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Submasters 1-8</h4>
+
+<table class="routing">
+  <caption>INS · signals arriving at the Toft</caption>
   <thead>
     <tr><th>Jack</th><th>Connector</th><th>Source from</th><th>Carries</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td class="jack">SUBMASTER OUTPUT 1-8</td>
+      <td class="jack">MONITOR 1-8</td>
       <td>TRS</td>
-      <td>HDX analog inputs 1-8 (DB25 fan cable, direct)</td>
-      <td>The 8 subgroup outputs feeding Pro Tools as 8 separate tracks</td>
-    </tr>
-    <tr>
-      <td class="jack">MONITOR RETURN 1-8</td>
-      <td>TRS</td>
-      <td>HDX analog outputs 1-8 (DB25 fan cable, direct)</td>
+      <td>HDX analog outputs 1-8</td>
       <td>Pro Tools playback returning to the console; parallel-wired to LINE 1-8 on the channel strips (which is why LINE 1-8 are kept empty)</td>
     </tr>
     <tr>
-      <td class="jack">SUBGROUP INSERT 1-8</td>
-      <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 3 + OUTPUT DB25 3 via insert snake</td>
-      <td>Per-subgroup insert loop; half-normal; identical structure to channel inserts</td>
-    </tr>
-    <tr>
-      <td class="jack">STEREO FX RETURN 1-8</td>
+      <td class="jack">STEREO FX 1-8</td>
       <td>TRS (tip=L, ring=R)</td>
       <td><span class="empty">Not on patchbay</span></td>
       <td>Eight stereo effects return jacks; per the Toft's submaster signal flow these feed the master mix only (not the submaster output), so they can't reach Pro Tools. Unused in our default routing because of this; the effects processor returns to channel MON inputs 7-8 instead.</td>
@@ -555,27 +565,62 @@
 </table>
 
 <table class="routing">
-  <caption>Master section · rear-panel jacks</caption>
+  <caption>OUTS · signals leaving the Toft</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Source to</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">OUTPUT 1-8</td>
+      <td>TRS</td>
+      <td>HDX analog inputs 1-8</td>
+      <td>The 8 subgroup outputs feeding Pro Tools as 8 separate tracks</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>LOOPS · insert points (send out, return in, on the same jack)</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Send/Return path</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="jack">INSERT 1-8</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 3 columns 17-24 (SEND legs) + OUTPUT DB25 3 columns 17-24 (RETURN legs) via insert snake</td>
+      <td>Per-subgroup insert loop; half-normal; identical structure to channel inserts</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Master section</h4>
+
+<table class="routing">
+  <caption>INS · signals arriving at the Toft</caption>
   <thead>
     <tr><th>Jack</th><th>Connector</th><th>Source from</th><th>Carries</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td class="jack">MASTER INSERT L</td>
-      <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay column 25 via insert snake</td>
-      <td>Master mix L insert loop; permanently routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
+      <td class="jack">2 TRACK RET 1+2</td>
+      <td>TRS (tip=L, ring=R)</td>
+      <td><span class="empty">Empty</span></td>
+      <td></td>
     </tr>
-    <tr>
-      <td class="jack">MASTER INSERT R</td>
-      <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay column 26 via insert snake</td>
-      <td>Master mix R insert loop; permanently routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
-    </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>OUTS · signals leaving the Toft</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Source to</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
     <tr>
       <td class="jack">MASTER O/P L+R</td>
       <td>TRS</td>
-      <td>Behringer Xenyx channels 1-2 (and optionally a stereo Pro Tools input for a reference mix bounce)</td>
+      <td>Behringer Xenyx channels 1-2</td>
       <td>The stereo summed master mix</td>
     </tr>
     <tr>
@@ -588,7 +633,7 @@
       <td class="jack">ALT SPKR L+R</td>
       <td>TRS</td>
       <td><span class="empty">Empty (no alt speakers)</span></td>
-      <td>Available for a second speaker pair if added later</td>
+      <td></td>
     </tr>
     <tr>
       <td class="jack">AUX MASTER 1</td>
@@ -626,11 +671,26 @@
       <td>Rane MH4 stereo cue input (R), direct cable</td>
       <td>Aux 6 sends the headphone cue R channel to the live-room headphones</td>
     </tr>
+  </tbody>
+</table>
+
+<table class="routing">
+  <caption>LOOPS · insert points (send out, return in, on the same jack)</caption>
+  <thead>
+    <tr><th>Jack</th><th>Connector</th><th>Send/Return path</th><th>Carries</th></tr>
+  </thead>
+  <tbody>
     <tr>
-      <td class="jack">2 TRACK RET 1+2</td>
-      <td>TRS (tip=L, ring=R)</td>
-      <td><span class="empty">Empty</span></td>
-      <td>Available for stereo playback sources (e.g., a CD player or external two-track machine)</td>
+      <td class="jack">MASTER INSERT L</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 4 column 25 (SEND leg) + OUTPUT DB25 4 column 25 (RETURN leg) via insert snake</td>
+      <td>Master mix L insert loop; permanently routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
+    </tr>
+    <tr>
+      <td class="jack">MASTER INSERT R</td>
+      <td>TRS (tip=send, ring=return)</td>
+      <td>Patchbay INPUT DB25 4 column 26 (SEND leg) + OUTPUT DB25 4 column 26 (RETURN leg) via insert snake</td>
+      <td>Master mix R insert loop; permanently routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
     </tr>
   </tbody>
 </table>
