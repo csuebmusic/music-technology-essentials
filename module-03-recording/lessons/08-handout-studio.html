@@ -888,6 +888,12 @@
   <p>Before any recipe, set up the room and the gear so a signal is moving. Do this once.</p>
   <ol>
     <li><strong>In the live room:</strong> place the mic on a stand at the singer's mouth height. Plug an XLR cable into the bottom of the mic; plug the other end into <strong>jack 1 of Hosa panel A</strong> on the rack.</li>
+    <li><strong>At the Toft master section, silence the room before any gain-staging.</strong> All of the work below is done with the speakers off so that the student learns to set gain by the meters, not by ear.
+      <ul>
+        <li><strong>Master fader:</strong> pull <strong>all the way down</strong>.</li>
+        <li><strong>MONITOR LEVEL knob</strong> (the knob feeding the control-room speakers, in the master section): turn <strong>fully counter-clockwise</strong> to zero.</li>
+      </ul>
+    </li>
     <li><strong>At the ISA 828 front panel, channel 1, set the controls before sending any signal:</strong>
       <ul>
         <li><strong>Input selector:</strong> press until the <strong>MIC</strong> LED is lit (not LINE, not INST). The channel is now listening to the XLR jack on the rear, which is fed by Hosa A jack 1.</li>
@@ -923,6 +929,16 @@
         <li><strong>L-R button:</strong> push <strong>down</strong> so the channel feeds the master mix bus. This is the routing button to the stereo master.</li>
         <li><strong>Channel PAN:</strong> center (12 o'clock). A mono vocal sits in the middle of the stereo field.</li>
         <li><strong>Channel FADER:</strong> set at <strong>unity</strong> (the line marked 0 on the fader strip, usually about 3/4 of the way up the travel). Unity is the "no level change" position; everything above it adds gain, everything below it attenuates.</li>
+      </ul>
+    </li>
+    <li><strong>Bring up the control-room speakers and confirm by ear.</strong> Up to this point everything has been done silently, with the meters as the only feedback. That's intentional: gain staging is a visual discipline first. Now finish by checking that the signal is actually audible in the room.
+      <ul>
+        <li><strong>Master section, MASTER FADER:</strong> confirm it's <strong>all the way down</strong> (nothing summing to the master output yet, even though the channel is routed to L-R).</li>
+        <li><strong>Master section, MONITOR LEVEL knob</strong> (the knob that feeds the control-room main speakers, separate from the master fader): turn to <strong>noon</strong> (12 o'clock). Without this turned up, no signal reaches the speakers regardless of what the master fader is doing.</li>
+        <li><strong>Ask the singer to sing</strong> at performance volume.</li>
+        <li><strong>Slowly raise the master fader</strong> from the bottom of its travel toward unity. The room should fill with the singer's voice. The master left/right bargraph meters in the master section should respond.</li>
+        <li><strong>If the room is silent or weak</strong> as the master fader passes unity, something upstream is wrong. Walk back through the chain: master fader at unity, MONITOR LEVEL at noon, channel fader at unity, channel L-R button down, channel MUTE off, Toft channel meter showing signal during singing. Fix whichever step broke and try again.</li>
+        <li>Once the room sounds right, leave the master fader at <strong>unity</strong> and use the MONITOR LEVEL knob to adjust how loud things are in the room. The master fader sets what the master mix bus is doing (which is what gets recorded if anyone bounces the master); MONITOR LEVEL just sets how loud the speakers are. These are different jobs.</li>
       </ul>
     </li>
     <li><strong>The principle behind all of this:</strong> the loudness was set at the ISA 828 (the earliest stage that can do it cleanly), and the Toft's INPUT GAIN only had to nudge or do nothing. If the Toft meter was silent or weak in the previous step and required a large INPUT GAIN move to come up, that's a sign the ISA 828 gain is too low; go back and add gain there, not at the Toft. The rule is always the same: set the loudness at the earliest stage in the chain that can do the job cleanly. Adding gain later (at the Toft trim, in Pro Tools after recording) amplifies noise along with the signal.</li>
