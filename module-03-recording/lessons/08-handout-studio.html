@@ -285,6 +285,16 @@
       <li><a href="#sf-patchbay">Patchbay configuration</a></li>
     </ul>
   </div>
+  <div class="index-group">
+    <span class="index-title"><a href="#recipes">Recipes: a vocal mic, end to end</a></span>
+    <ul>
+      <li><a href="#recipe-track">1. Get the vocal onto a channel and into Pro Tools</a></li>
+      <li><a href="#recipe-cue">2. Build the singer's headphone mix</a></li>
+      <li><a href="#recipe-comp-master">3. Hear the bus compressor on the master mix</a></li>
+      <li><a href="#recipe-comp-insert">4. Move the bus compressor onto the vocal channel insert</a></li>
+      <li><a href="#recipe-chorus">5. Add a chorus to the vocal via Aux 3</a></li>
+    </ul>
+  </div>
 </nav>
 
 <h3 id="live-room-rack">The live-room rack</h3>
@@ -457,27 +467,6 @@
 
 <p>A stereo <strong>bus compressor</strong>: one of the most-used pieces of mixdown gear in modern studio history. Used to gently glue a stereo mix together by compressing its loudest moments by a few dB at a time. You've already met threshold, ratio, attack, and release in the Module 2 reading on dynamics; this is the analog hardware version of the same idea.</p>
 
-<div class="callout">
-  <div class="callout-label">Recipe: hear the compression unit working on the master mix</div>
-  <p>With Pro Tools playing back through the Toft and signal showing on the master meter, the master mix is already running through the compression unit at the patchbay. To hear what the compression is doing:</p>
-  <ol>
-    <li>On the front of the compression unit, press the <strong>IN</strong> button so the compressor engages.</li>
-    <li>Set <strong>ratio</strong> to a moderate value (e.g., 4:1) and <strong>threshold</strong> low enough that the VU meter starts showing gain reduction on the loudest parts of the mix.</li>
-    <li>Press <strong>IN</strong> off and on to A/B between processed and unprocessed. The mix gets a little tighter and louder with the compressor in.</li>
-  </ol>
-</div>
-
-<div class="callout">
-  <div class="callout-label">Recipe: move the compression unit from the master mix to the drum subgroup</div>
-  <p>For tracking drums, an engineer might want the compression unit on the drum subgroup (say subgroup 1-2) instead of the master mix. To re-patch:</p>
-  <ol>
-    <li>Pull the four TT cables routing the compression unit to the master INSERT (columns 25-26 and columns 33-34).</li>
-    <li>Plug new TT cables from <strong>SUBGROUP 1 INSERT SEND</strong> (column 17 top) to <strong>compression unit L IN</strong> (column 33 bottom), and from <strong>compression unit L OUT</strong> (column 33 top) to <strong>SUBGROUP 1 INSERT RETURN</strong> (column 17 bottom).</li>
-    <li>Plug new TT cables from <strong>SUBGROUP 2 INSERT SEND</strong> (column 18 top) to <strong>compression unit R IN</strong> (column 34 bottom), and from <strong>compression unit R OUT</strong> (column 34 top) to <strong>SUBGROUP 2 INSERT RETURN</strong> (column 18 bottom).</li>
-  </ol>
-  <p>Now the drums (routed to subgroup 1-2 by their channels' 1-2 routing buttons) pass through the compression unit on their way to the DAW. The master mix is no longer compressed.</p>
-</div>
-
 <h4 id="cr-m2000">5. TC Electronic M2000 (effects processor)</h4>
 
 <figure class="photo">
@@ -489,19 +478,6 @@
 <p>A studio-grade effects processor: reverbs of every flavor (hall, plate, room, spring), delays, chorus, flanger, phaser, pitch shift, and combinations of these. Mono input, stereo output. Whichever effect is loaded, the workflow is the same: a channel sends a copy of its signal to the effects processor via an aux send; the processor generates a stereo wet signal; that wet signal returns to the console on a separate pair of channels and joins the mix alongside the dry signal coming from the original channel.</p>
 
 <p>The effects processor sits on Aux 3 by default. The TT cables that route it live on patchbay column 43 (Aux Master 3 source) connecting to columns 35-36 (the effects processor's mono IN and L+R OUT), with the unit's stereo output returning to <strong>channels 7 and 8 MON inputs</strong> on the Toft. Any channel that turns up its Aux 3 knob sends a copy of its signal to the effects processor and hears the processed result come back on channels 7-8 of the console.</p>
-
-<div class="callout">
-  <div class="callout-label">Recipe: add a chorus effect to a vocal on channel 1</div>
-  <p>Say a vocal mic is plugged into channel 1 of the Toft and you want a touch of chorus added to it. With the effects processor on its default Aux 3 routing:</p>
-  <ol>
-    <li>On the front of the effects processor, navigate to a chorus preset and load it.</li>
-    <li>On channel 1 of the Toft, find the <strong>Aux 3</strong> knob in the aux-send section near the top of the strip. Make sure it's switched to <strong>post-fader</strong> (so the chorus level follows the vocal fader; when the vocal goes down, the chorus goes down with it).</li>
-    <li>Sing or speak into the mic so signal is moving on channel 1.</li>
-    <li>Slowly turn the Aux 3 knob up. The effects processor's input meter responds; the chorus tail returns to channels 7 and 8 via their MON inputs.</li>
-    <li>On channels 7 and 8, turn up the <strong>MON LEVEL</strong> control to bring the chorus into the master mix. Pan channel 7 hard left and channel 8 hard right so the stereo image of the effect is preserved.</li>
-  </ol>
-  <p>To add the same chorus to a second channel (say a guitar on channel 5), turn up that channel's Aux 3 knob too. The effects processor mixes both contributions and returns one stereo wet signal that lands on channels 7-8.</p>
-</div>
 
 <p>Because the wet signal lands on actual channels (not on a stereo effects return), it can also be routed to a subgroup and recorded to Pro Tools: press the <strong>1-2</strong> (or <strong>3-4</strong>, etc.) routing button on channels 7 and 8, and the chorus shows up as a separate pair of tracks in the DAW alongside the dry vocal.</p>
 
@@ -890,6 +866,121 @@
     <tr><td class="jack">7</td><td>Col 36 (Effects processor R OUT)</td><td>Col 48 (ch 8 MON input)</td></tr>
   </tbody>
 </table>
+
+<h3 id="recipes">Recipes: a vocal mic, end to end</h3>
+
+<p>Five hands-on walkthroughs, all starting from the same setup: one singer in the live room with a vocal microphone on a stand. The starting state below gets that mic from the live room onto a Toft channel; once it's done, every recipe assumes it. Work through the recipes in order on a first pass, or jump to whichever one you need on a later visit.</p>
+
+<div class="callout">
+  <div class="callout-label">Starting state · vocal mic, live room, ready to track</div>
+  <p>Before any recipe, set up the room and the gear so a signal is moving. Do this once.</p>
+  <ol>
+    <li><strong>In the live room:</strong> place the mic on a stand at the singer's mouth height. Plug an XLR cable into the bottom of the mic; plug the other end into <strong>jack 1 of Hosa panel A</strong> on the wall.</li>
+    <li><strong>In the control-room rack:</strong> the Hosa A panel feeds the <strong>ISA 828 preamp</strong>; channel 1 of the ISA feeds <strong>Toft MIC 1</strong>. The signal path is built in. No cables to patch.</li>
+    <li><strong>At the ISA 828 front panel:</strong> on channel 1, press <strong>+48V</strong> if the mic is a condenser (the singer's mic likely needs phantom power; check with the instructor if unsure). Set the <strong>gain</strong> knob fully counter-clockwise to start. The mic-level signal from the singer is now being lifted to line level by ISA channel 1, which is sending it through the wall to <strong>Toft channel 1</strong>.</li>
+    <li><strong>At the Toft, channel 1:</strong>
+      <ul>
+        <li>Make sure <strong>INPUT GAIN</strong> sits near 12 o'clock (it's a trim, not the main gain stage).</li>
+        <li>Pull every routing button (<strong>1-2</strong>, <strong>3-4</strong>, <strong>5-6</strong>, <strong>7-8</strong>) up so they're off.</li>
+        <li>Push the <strong>L-R</strong> routing button down so the channel goes to the master mix.</li>
+        <li>Set the channel <strong>fader</strong> at unity (0 dB, the line on the fader strip).</li>
+      </ul>
+    </li>
+    <li><strong>Bring the singer's signal up:</strong> ask the singer to speak or sing at performance volume. At the ISA 828, slowly turn channel 1's <strong>gain</strong> knob clockwise until the channel 1 meter on the Toft reads around <strong>-18 dBFS to -12 dBFS</strong> on the loudest moments. That's the working level for tracking. The signal is now live on Toft channel 1 and audible in the control-room monitors.</li>
+  </ol>
+  <p>From here, every recipe below builds on this starting state.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label" id="recipe-track">Recipe 1 · get the vocal onto its own track in Pro Tools</div>
+  <p>The Toft is summing channel 1 into the master mix (you hear it in the room), but it's not yet being recorded. The recording path is the <strong>DIR. O/P</strong> (direct output) on the back of channel 1, which is wired to one of the HDX audio interface inputs (see the Toft rear-panel chart above for exactly which one).</p>
+  <ol>
+    <li><strong>Open the session:</strong> on the control-room Mac, open Pro Tools and either open today's session or create a new one. Sample rate <strong>48 kHz</strong>, bit depth <strong>24-bit</strong>.</li>
+    <li><strong>Create an audio track:</strong> Track → New → 1 Mono Audio Track. Name it <strong>vocal</strong>.</li>
+    <li><strong>Set the input:</strong> on the new track, click the <strong>input selector</strong> and choose the HDX input corresponding to Toft channel 1's DIR. O/P (the Toft rear-panel chart shows the wiring; channel 1 of the Toft routes to HDX input 1 in the default setup).</li>
+    <li><strong>Arm the track:</strong> click the red <strong>record-enable</strong> button on the vocal track. The track meter in Pro Tools should now show the same signal the channel 1 meter on the Toft is showing.</li>
+    <li><strong>Check level once more:</strong> have the singer sing the loudest moment of the song. The Pro Tools meter peaks should sit around <strong>-12 dBFS</strong>. If they're hotter, lower the ISA 828 gain; if they're cold, raise it.</li>
+    <li><strong>Record:</strong> press <strong>record-enable on the transport</strong> (top of the screen), then <strong>play</strong>. Pro Tools is now writing the vocal to disk on track 1.</li>
+    <li><strong>Stop and play back:</strong> press <strong>stop</strong>. Disarm the track (click record-enable off). Press <strong>play</strong> to hear what just got recorded.</li>
+  </ol>
+  <p>The vocal is now on its own track in Pro Tools, separate from the master mix the engineer hears in the room. Keep the channel 1 fader at unity during tracking and set the recording level with the ISA 828 gain knob; that way the recording is committed at a known level regardless of any fader rides the engineer makes for monitoring.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label" id="recipe-cue">Recipe 2 · build the singer's headphone mix</div>
+  <p>The singer needs to hear themselves while tracking, plus any playback (a backing track, a previously recorded guide, a click). The studio's headphone path is hard-wired: <strong>Aux 5 (L)</strong> and <strong>Aux 6 (R)</strong> on the Toft run direct to the <strong>Rane MH4</strong> headphone amplifier in the live room. Building the cue mix is a matter of deciding what each channel sends to Aux 5+6.</p>
+  <ol>
+    <li><strong>In the live room:</strong> plug the singer's headphones into <strong>jack 1</strong> on the front of the Rane MH4. Set the jack 1 level knob to about 9 o'clock (low, to start safely).</li>
+    <li><strong>At the Toft, master section:</strong> find the <strong>Aux 5</strong> and <strong>Aux 6 master</strong> controls and set them to unity (around 12 o'clock or the 0 dB mark). These are the level knobs that feed the headphone amp.</li>
+    <li><strong>Get the singer into their own headphones:</strong> on Toft channel 1 (the vocal), find the <strong>Aux 5</strong> and <strong>Aux 6</strong> knobs in the aux-send section. Set both to <strong>pre-fader</strong> (look for a small PRE/POST switch next to the knob; pre is up). Pre-fader is correct here: the engineer's channel fader is for the control room mix, not for what the singer hears.</li>
+    <li><strong>Turn up the singer's voice in their cue:</strong> slowly turn Aux 5 and Aux 6 on channel 1 up together. Pan them so the singer sits center: Aux 5 (L) gets the mono signal, Aux 6 (R) gets the same mono signal at the same level. Ask the singer to speak; raise the Rane MH4 jack 1 level knob until they say it's comfortable.</li>
+    <li><strong>Add any playback tracks:</strong> if Pro Tools is playing back guide tracks (a click, a backing track, previously recorded layers), those return to the Toft on the <strong>MON inputs</strong> of their channels (the inline monitor path). On each Pro Tools return channel, turn up the <strong>MON LEVEL</strong> knob to bring playback into the control room mix, and turn up <strong>Aux 5 and Aux 6</strong> on those same channels (pre-fader) to send playback into the cue.</li>
+    <li><strong>Balance the cue:</strong> ask the singer "more of your voice or more of the track?" Adjust the Aux 5 and Aux 6 sends on the relevant channels until the balance is what the singer wants. Pan playback channels left and right as appropriate so the cue is stereo.</li>
+  </ol>
+  <p>The cue mix is now independent of the control room mix: the engineer can mute a channel in the room, ride a fader, or solo something for inspection, and the singer hears none of it. If a second player joins on a later take (a guitarist tracking with the vocalist, for example), plug their headphones into Rane MH4 jack 2 and set jack 2's level knob to their preference. Everyone in the room shares the same blend, with their own volume knob.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label" id="recipe-comp-master">Recipe 3 · hear the bus compressor on the master mix</div>
+  <p>By default, the SSL XLogic G compressor sits on the master mix INSERT path: every signal the master section is summing runs through the compressor on its way to the monitors. The compressor's IN button is what engages it; with IN out, the signal passes through unprocessed.</p>
+  <ol>
+    <li><strong>Record a short pass first</strong> using Recipe 1, then stop recording and disarm the track. Press <strong>play</strong> so the vocal is looping back from Pro Tools through the Toft.</li>
+    <li><strong>At the SSL compressor:</strong> press the <strong>IN</strong> button so it lights. The compressor is now active on the master mix.</li>
+    <li><strong>Set the controls to gentle starting points:</strong>
+      <ul>
+        <li><strong>Ratio:</strong> 2:1 (mild)</li>
+        <li><strong>Attack:</strong> 30 ms (medium)</li>
+        <li><strong>Release:</strong> 0.3 s (medium-fast)</li>
+        <li><strong>Threshold:</strong> high to start (clockwise); the VU meter shows no gain reduction yet</li>
+        <li><strong>Make-up gain:</strong> 0 dB</li>
+      </ul>
+    </li>
+    <li><strong>Bring the threshold down</strong> (counter-clockwise) slowly while the vocal plays back. Watch the VU meter on the front of the unit: when the loudest words start pulling the needle down by <strong>2 to 4 dB</strong>, stop. The compressor is now catching peaks only.</li>
+    <li><strong>A/B with the IN button:</strong> press IN off and then on again. The off version sounds a little wider in dynamic range; the on version sounds a little more steady and a little louder. If on sounds dramatically louder, lower the make-up gain so the two versions are at the same loudness, and judge again.</li>
+  </ol>
+  <p>This is the standard use of a bus compressor: gentle glue, a few dB of reduction on peaks, the listener barely notices on its own but hears a difference when you bypass it. Press <strong>IN out</strong> at the end of the session to leave the compressor in its rest state.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label" id="recipe-comp-insert">Recipe 4 · move the bus compressor onto the vocal channel insert</div>
+  <p>The SSL is patched to the master mix by default, but the same unit can be moved to any channel insert by repatching at the bay. To put it directly on the vocal (a one-channel mono compressor on the vocal signal), use the <strong>L side</strong> of the SSL only.</p>
+  <ol>
+    <li><strong>Pull the default master-insert TT cables</strong> on the front of the patchbay. From the Default TT cables chart above, those are cables 1 through 4:
+      <ul>
+        <li>Col 25 (Master INSERT L SEND) → Col 33 (Compressor L IN)</li>
+        <li>Col 33 (Compressor L OUT) → Col 25 (Master INSERT L RETURN)</li>
+        <li>Col 26 (Master INSERT R SEND) → Col 34 (Compressor R IN)</li>
+        <li>Col 34 (Compressor R OUT) → Col 26 (Master INSERT R RETURN)</li>
+      </ul>
+      Pull all four. The compressor is now disconnected from the master mix.
+    </li>
+    <li><strong>Patch the compressor onto channel 1's insert</strong> using two new TT cables:
+      <ul>
+        <li>Plug a TT cable from <strong>column 1, top</strong> (Toft ch 1 INSERT SEND) to <strong>column 33, bottom</strong> (Compressor L IN).</li>
+        <li>Plug a second TT cable from <strong>column 33, top</strong> (Compressor L OUT) to <strong>column 1, bottom</strong> (Toft ch 1 INSERT RETURN).</li>
+      </ul>
+      Plugging into column 1's bottom jack breaks the half-normal connection that closes the insert loop, forcing channel 1's signal to make a round trip through the compressor.
+    </li>
+    <li><strong>At the SSL:</strong> press <strong>IN</strong> on. Set ratio 2:1, attack 30 ms, release 0.3 s, threshold high.</li>
+    <li><strong>Have the singer sing</strong> and bring the threshold down until the VU meter shows 2 to 4 dB of reduction on the loudest words.</li>
+    <li><strong>A/B with the IN button:</strong> off and on. The vocal sounds more even and present with the compressor in.</li>
+  </ol>
+  <p>The R side of the SSL is unused in this configuration. That's fine: a stereo unit can do mono duty as long as you only drive the side you patched. When the session ends, pull the two new TT cables and return the original four cables to their default positions to leave the studio as it was.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label" id="recipe-chorus">Recipe 5 · add a chorus to the vocal via Aux 3</div>
+  <p>The TC Electronic M2000 effects processor sits on Aux 3 by default: any channel that turns up its Aux 3 knob sends a copy of its signal to the M2000, and the M2000's stereo output returns to <strong>channels 7 and 8 MON inputs</strong> on the Toft. To add a chorus to the vocal, load a chorus preset and turn up channel 1's Aux 3.</p>
+  <ol>
+    <li><strong>At the M2000 front panel:</strong> press <strong>Snapshots</strong> (or the equivalent recall button on the unit), browse to a chorus preset, and load it. The display now shows a chorus is loaded.</li>
+    <li><strong>At the Toft, channel 1:</strong> find the <strong>Aux 3</strong> knob in the aux-send section near the top of the strip. Set it to <strong>post-fader</strong> (so when you pull the vocal fader down, the chorus level follows it).</li>
+    <li><strong>Have the singer sing</strong> at performance level. Slowly turn the channel 1 Aux 3 knob up. Watch the M2000's input meter respond on the front panel.</li>
+    <li><strong>Bring the chorus into the control-room mix:</strong> on Toft <strong>channels 7 and 8</strong>, find the <strong>MON LEVEL</strong> knob (the inline monitor path level on each channel strip). Turn both up to unity. The chorus tail returning from the M2000 is now audible in the room alongside the dry vocal.</li>
+    <li><strong>Set the stereo image:</strong> pan channel 7 hard left and channel 8 hard right. The chorus's stereo width is now preserved (the M2000 generates a stereo wet signal from a mono input; left and right need to land in their own speakers).</li>
+    <li><strong>Adjust to taste:</strong> ride the channel 1 Aux 3 knob up and down to control how wet the vocal is. A little is usually enough; a lot turns the vocal into the effect.</li>
+  </ol>
+  <p>To record the chorus to its own pair of Pro Tools tracks alongside the dry vocal, press the <strong>1-2</strong> routing buttons on channels 7 and 8 to send them to subgroup 1-2, and arm two new tracks in Pro Tools whose inputs are the subgroup 1-2 direct outs. The dry vocal is captured on Recipe 1's vocal track; the wet chorus is captured on its own pair.</p>
+</div>
 
 <hr>
 
