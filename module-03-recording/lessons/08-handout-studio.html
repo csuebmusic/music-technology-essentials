@@ -441,7 +441,13 @@
   <li><strong>Analog inputs 1-8 (DB25, +4 dBu):</strong> Receive the Toft <strong>submaster outputs 1-8</strong> via a DB25-to-8×TRS fan cable.</li>
   <li><strong>Analog inputs 9-16 (DB25, +4 dBu):</strong> Receive the Toft <strong>channel direct outs 9-16</strong> via a DB25-to-8×TRS fan cable. Each direct out taps its channel's post-fader signal as a single dedicated track to Pro Tools, separate from anything the submasters are doing.</li>
   <li><strong>Analog outputs 1-8 (DB25):</strong> Return Pro Tools playback to the Toft <strong>submaster MONITOR RETURNS 1-8</strong> via a second DB25-to-8×TRS fan cable.</li>
-  <li><strong>Analog outputs 9-16 (DB25):</strong> Return Pro Tools playback to the Toft <strong>channel MON inputs 9-16</strong> via a second DB25-to-8×TRS fan cable. Each MON input is the in-line monitor path on its channel strip, controlled by the channel's MON LEVEL and MON PAN.</li>
+  <li><strong>Analog outputs 9-16 (DB25):</strong> Return Pro Tools playback to the Toft <strong>channel MON inputs 9-16</strong> via a second DB25-to-8×TRS fan cable. Each MON input is the in-line monitor path on its channel strip, controlled by the channel's MON LEVEL and MON PAN.
+
+    <div class="callout">
+      <div class="callout-label">Remember I/P REV</div>
+      <p>Each Toft channel has an <strong>I/P REV</strong> (input reverse) button that swaps which input feeds the channel fader and which feeds the MON path. Normally the MIC/LINE input goes to the fader and the MON input is the in-line monitor; with I/P REV engaged, the MON input goes to the fader and the MIC/LINE input is sent down the monitor path. On channels 9-16, this is how you put a Pro Tools playback track on the channel fader for mixdown.</p>
+    </div>
+  </li>
   <li><strong>Connection to Mac Pro:</strong> A single proprietary cable to the HDX PCIe card installed inside the Mac Pro. The PCIe card carries far more simultaneous channels than a USB or Thunderbolt interface would, which is why the HDX uses one.</li>
 </ul>
 
