@@ -515,17 +515,23 @@
     <tr>
       <td class="jack">LINE 9-10</td>
       <td>TRS</td>
-      <td>Behringer Xenyx main outputs (L+R)</td>
-      <td>Student laptop's main mix from the Behringer USB interface on the console desk</td>
+      <td>Behringer Xenyx Control Room outputs (L+R)</td>
+      <td>Dry laptop signal: laptop USB into the Behringer, routed via the Control Room bus (USB/2-track button on the Behringer's source matrix) out the Control Room outputs</td>
     </tr>
     <tr>
       <td class="jack">LINE 11-12</td>
       <td>TRS</td>
-      <td>Behringer Xenyx alt 3-4 outputs</td>
-      <td>Behringer's second pair of outputs</td>
+      <td>Behringer Xenyx ALT 3-4 outputs</td>
+      <td>Wet effects return: Toft Aux 3-4 sends, routed into Behringer channels 3 and 4, through the FX processor, out the ALT 3-4 bus</td>
     </tr>
     <tr>
-      <td class="jack">LINE 13-16</td>
+      <td class="jack">LINE 13-14</td>
+      <td>TRS</td>
+      <td>SSL XLogic G compressor stereo outputs (L+R, XLR-to-TRS cables)</td>
+      <td>Parallel compressor return: Toft Aux 5-6 sends fed into the SSL; this is the wet (compressed) signal blended in alongside the dry channels feeding the compressor</td>
+    </tr>
+    <tr>
+      <td class="jack">LINE 15-16</td>
       <td>TRS</td>
       <td><span class="empty">Empty</span></td>
       <td></td>
@@ -533,14 +539,14 @@
     <tr>
       <td class="jack">MON 1-8</td>
       <td>TRS</td>
-      <td>Patchbay OUTPUT DB25 6 (columns 41-48 bottom row)</td>
-      <td>In-line monitor path on each channel; the default TT cables route the effects processor's L and R outputs into MON 7 and MON 8</td>
+      <td><span class="empty">Empty</span></td>
+      <td></td>
     </tr>
     <tr>
       <td class="jack">MON 9-16</td>
       <td>TRS</td>
-      <td><span class="empty">Empty</span></td>
-      <td></td>
+      <td>HDX analog outputs 9-16</td>
+      <td>Pro Tools playback returning to the in-line monitor path on each channel; bring on the channel fader via I/P REV for mixdown</td>
     </tr>
   </tbody>
 </table>
@@ -552,10 +558,16 @@
   </thead>
   <tbody>
     <tr>
-      <td class="jack">DIR O/P 1-16</td>
+      <td class="jack">DIR O/P 1-8</td>
       <td>TRS</td>
+      <td><span class="empty">Empty</span></td>
       <td></td>
-      <td></td>
+    </tr>
+    <tr>
+      <td class="jack">DIR O/P 9-16</td>
+      <td>TRS</td>
+      <td>HDX analog inputs 9-16</td>
+      <td>Post-fader tap on each channel, sent to Pro Tools as 8 dedicated tracks separate from the submasters</td>
     </tr>
   </tbody>
 </table>
@@ -569,14 +581,14 @@
     <tr>
       <td class="jack">INSERT 1-8</td>
       <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 1 columns 1-8 top (SEND) + OUTPUT DB25 1 columns 1-8 bottom (RETURN)</td>
-      <td>Per-channel insert loop; at rest the loop is closed (half-normal); plugging into the bottom column jack on the patchbay breaks the normal and forces external processing</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Per-channel insert loop, available for ad-hoc patching with a TRS insert cable</td>
     </tr>
     <tr>
       <td class="jack">INSERT 9-16</td>
       <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 2 columns 9-16 top (SEND) + OUTPUT DB25 2 columns 9-16 bottom (RETURN)</td>
-      <td>Same structure and normalling as channel inserts 1-8</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Same as channels 1-8</td>
     </tr>
   </tbody>
 </table>
@@ -630,8 +642,8 @@
     <tr>
       <td class="jack">INSERT 1-8</td>
       <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 3 columns 17-24 top (SEND) + OUTPUT DB25 3 columns 17-24 bottom (RETURN)</td>
-      <td>Per-subgroup insert loop; half-normal; identical structure to channel inserts</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Per-subgroup insert loop, available for ad-hoc patching with a TRS insert cable</td>
     </tr>
   </tbody>
 </table>
@@ -682,38 +694,38 @@
     <tr>
       <td class="jack">AUX MASTER 1</td>
       <td>TRS</td>
-      <td>Patchbay INPUT DB25 6 (column 41 top)</td>
-      <td>Aux 1 send bus; exposed on the bay for ad-hoc patching</td>
+      <td>Rane MH4 stereo cue input (L), direct cable</td>
+      <td>Aux 1 sends the headphone cue L channel to the live-room headphones</td>
     </tr>
     <tr>
       <td class="jack">AUX MASTER 2</td>
       <td>TRS</td>
-      <td>Patchbay INPUT DB25 6 (column 42 top)</td>
-      <td>Aux 2 send bus; exposed on the bay for ad-hoc patching</td>
+      <td>Rane MH4 stereo cue input (R), direct cable</td>
+      <td>Aux 2 sends the headphone cue R channel to the live-room headphones</td>
     </tr>
     <tr>
       <td class="jack">AUX MASTER 3</td>
       <td>TRS</td>
-      <td>Headphone unit stereo cue input (L), direct cable</td>
-      <td>Aux 3 sends the headphone cue L channel to the live-room headphones</td>
+      <td>Behringer Xenyx channel 3 XLR input (via TRS-to-XLR cable)</td>
+      <td>Aux 3 sends the L effects channel to the Behringer's FX processor; returns to Toft LINE 11 via the Behringer's ALT 3-4 outputs</td>
     </tr>
     <tr>
       <td class="jack">AUX MASTER 4</td>
       <td>TRS</td>
-      <td>Headphone unit stereo cue input (R), direct cable</td>
-      <td>Aux 4 sends the headphone cue R channel to the live-room headphones</td>
+      <td>Behringer Xenyx channel 4 XLR input (via TRS-to-XLR cable)</td>
+      <td>Aux 4 sends the R effects channel to the Behringer's FX processor; returns to Toft LINE 12 via the Behringer's ALT 3-4 outputs</td>
     </tr>
     <tr>
       <td class="jack">AUX MASTER 5</td>
       <td>TRS</td>
-      <td>Patchbay INPUT DB25 6 (column 43 top)</td>
-      <td>Aux 5 send bus; exposed on the bay for ad-hoc patching</td>
+      <td>SSL XLogic G compressor stereo input (L), direct cable</td>
+      <td>Aux 5 sends the L parallel-compressor channel to the SSL; returns to Toft LINE 13</td>
     </tr>
     <tr>
       <td class="jack">AUX MASTER 6</td>
       <td>TRS</td>
-      <td>Patchbay INPUT DB25 6 (column 44 top)</td>
-      <td>Aux 6 send bus; exposed on the bay for ad-hoc patching</td>
+      <td>SSL XLogic G compressor stereo input (R), direct cable</td>
+      <td>Aux 6 sends the R parallel-compressor channel to the SSL; returns to Toft LINE 14</td>
     </tr>
   </tbody>
 </table>
@@ -727,14 +739,14 @@
     <tr>
       <td class="jack">MASTER INSERT L</td>
       <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 4 column 25 top (SEND) + OUTPUT DB25 4 column 25 bottom (RETURN)</td>
-      <td>Master mix L insert loop; routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Master mix L insert loop, available for ad-hoc patching</td>
     </tr>
     <tr>
       <td class="jack">MASTER INSERT R</td>
       <td>TRS (tip=send, ring=return)</td>
-      <td>Patchbay INPUT DB25 4 column 26 top (SEND) + OUTPUT DB25 4 column 26 bottom (RETURN)</td>
-      <td>Master mix R insert loop; routed through the compressor unit via 2 TT cables on the front of the patchbay</td>
+      <td><span class="empty">Empty</span></td>
+      <td>Master mix R insert loop, available for ad-hoc patching</td>
     </tr>
   </tbody>
 </table>
