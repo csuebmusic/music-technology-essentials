@@ -205,11 +205,9 @@
       text-align: left;
     }
 
-    /* h5 used inside the patchbay-configuration chart to subdivide
-       by signal block (channel inserts, subgroup inserts, master
-       inserts, outboard gear, aux masters, channel MON inputs,
-       default TT cables). Sits below h4 in weight; doesn't compete
-       with the h4 'Patchbay configuration' parent heading. */
+    /* h5 used inside the Behringer-configuration chart to subdivide
+       by direction (inputs, outputs, internal routing). Sits below h4
+       in weight; doesn't compete with the h4 parent heading. */
     h5 {
       font-family: var(--sans);
       font-size: 0.95rem;
@@ -238,7 +236,7 @@
     /* Wrapper around each H4 group in 'How the studio's signals
        actually flow': a soft tinted box that visually scopes the
        INS / OUTS / LOOPS charts (or the H5 sub-sections in the
-       patchbay-configuration case) belonging to one signal block. */
+       Behringer-configuration case) belonging to one signal block. */
     .signal-group {
       background: var(--bg-alt);
       border: 1px solid var(--rule);
@@ -297,7 +295,7 @@
       <li><a href="#sf-channels">Input channels 1-16</a></li>
       <li><a href="#sf-submasters">Submasters 1-8</a></li>
       <li><a href="#sf-master">Master section</a></li>
-      <li><a href="#sf-patchbay">Patchbay configuration</a></li>
+      <li><a href="#sf-behringer">Behringer Xenyx configuration</a></li>
     </ul>
   </div>
   <div class="index-group">
@@ -743,116 +741,115 @@
 </div>
 
 <div class="signal-group">
-<h4 id="sf-patchbay">Patchbay configuration</h4>
+<h4 id="sf-behringer">Behringer Xenyx configuration</h4>
 
-<p>Every column of the Switchcraft 9625 in the side rack, organized by the four signal blocks introduced earlier. Within each block, the sub-tables follow the same INS / OUTS / LOOPS convention used in the Toft rear-panel chart: INS for signals arriving at the patchbay (top TTs, sources), OUTS for signals leaving the patchbay (bottom TTs, destinations), and LOOPS for insert points where the same column carries SEND on top and RETURN on bottom.</p>
+<p>The Behringer's three roles, expressed as INs and OUTs. Inputs are jacks that receive signal arriving at the Behringer (from the Toft or the laptop). Outputs are jacks that send signal leaving the Behringer (back to the Toft or to the laptop). The routing notes section explains how each input gets to its corresponding output inside the box.</p>
 
-<h5>Channel inserts (columns 1-16)</h5>
+<h5>Inputs (signals arriving at the Behringer)</h5>
 
 <table class="routing">
-  <caption>LOOPS · insert points</caption>
+  <caption>INS · signals arriving at the Behringer</caption>
   <thead>
-    <tr><th>Columns</th><th>Top TT (SEND)</th><th>Bottom TT (RETURN)</th><th>Normal</th></tr>
+    <tr><th>Jack</th><th>Connector</th><th>Source from</th><th>Carries</th></tr>
   </thead>
   <tbody>
-    <tr><td class="jack">1-16</td><td>Toft ch 1-16 INSERT SEND</td><td>Toft ch 1-16 INSERT RETURN</td><td>half</td></tr>
+    <tr>
+      <td class="jack">Ch 1 LINE</td>
+      <td>TRS</td>
+      <td>Toft Master O/P L</td>
+      <td>The Toft's master mix, left channel; on its way to the laptop for recording</td>
+    </tr>
+    <tr>
+      <td class="jack">Ch 2 LINE</td>
+      <td>TRS</td>
+      <td>Toft Master O/P R</td>
+      <td>The Toft's master mix, right channel; on its way to the laptop for recording</td>
+    </tr>
+    <tr>
+      <td class="jack">Ch 3 XLR</td>
+      <td>XLR-F</td>
+      <td>Toft Aux Master 3</td>
+      <td>Effects send from the Toft, left channel; on its way through the Behringer's FX processor</td>
+    </tr>
+    <tr>
+      <td class="jack">Ch 4 XLR</td>
+      <td>XLR-F</td>
+      <td>Toft Aux Master 4</td>
+      <td>Effects send from the Toft, right channel; on its way through the Behringer's FX processor</td>
+    </tr>
+    <tr>
+      <td class="jack">USB IN</td>
+      <td>USB-B</td>
+      <td>Laptop USB output</td>
+      <td>Laptop playback (a backing track, a sample, etc.); becomes the dry laptop signal on the Control Room bus</td>
+    </tr>
   </tbody>
 </table>
 
-<h5>Subgroup inserts (columns 17-24)</h5>
+<h5>Outputs (signals leaving the Behringer)</h5>
 
 <table class="routing">
-  <caption>LOOPS · insert points</caption>
+  <caption>OUTS · signals leaving the Behringer</caption>
   <thead>
-    <tr><th>Columns</th><th>Top TT (SEND)</th><th>Bottom TT (RETURN)</th><th>Normal</th></tr>
+    <tr><th>Jack</th><th>Connector</th><th>Destination</th><th>Carries</th></tr>
   </thead>
   <tbody>
-    <tr><td class="jack">17-24</td><td>Toft sub 1-8 INSERT SEND</td><td>Toft sub 1-8 INSERT RETURN</td><td>half</td></tr>
+    <tr>
+      <td class="jack">ALT 3-4 L</td>
+      <td>TRS</td>
+      <td>Toft LINE input 11</td>
+      <td>The Toft's Aux 3 send after passing through Behringer ch 3 + the FX processor; the "wet" effects return</td>
+    </tr>
+    <tr>
+      <td class="jack">ALT 3-4 R</td>
+      <td>TRS</td>
+      <td>Toft LINE input 12</td>
+      <td>The Toft's Aux 4 send after passing through Behringer ch 4 + the FX processor; the "wet" effects return</td>
+    </tr>
+    <tr>
+      <td class="jack">Control Room L</td>
+      <td>TRS</td>
+      <td>Toft LINE input 9</td>
+      <td>The dry laptop signal from the Control Room bus (with the USB/2-track source button pressed)</td>
+    </tr>
+    <tr>
+      <td class="jack">Control Room R</td>
+      <td>TRS</td>
+      <td>Toft LINE input 10</td>
+      <td>The dry laptop signal from the Control Room bus (with the USB/2-track source button pressed)</td>
+    </tr>
+    <tr>
+      <td class="jack">USB OUT</td>
+      <td>USB-B</td>
+      <td>Laptop USB input</td>
+      <td>The Behringer's main mix bus, which carries channels 1+2 (the Toft's master mix); recorded by the laptop</td>
+    </tr>
   </tbody>
 </table>
 
-<h5>Master inserts (columns 25-26)</h5>
+<h5>Routing inside the Behringer</h5>
 
 <table class="routing">
-  <caption>LOOPS · insert points</caption>
+  <caption>How each input reaches its output</caption>
   <thead>
-    <tr><th>Column</th><th>Top TT (SEND)</th><th>Bottom TT (RETURN)</th><th>Normal</th></tr>
+    <tr><th>From input</th><th>Through bus</th><th>To output</th></tr>
   </thead>
   <tbody>
-    <tr><td class="jack">25</td><td>Toft master INSERT L SEND</td><td>Toft master INSERT L RETURN</td><td>half</td></tr>
-    <tr><td class="jack">26</td><td>Toft master INSERT R SEND</td><td>Toft master INSERT R RETURN</td><td>half</td></tr>
-  </tbody>
-</table>
-
-<h5>Outboard gear (columns 33-36)</h5>
-
-<table class="routing">
-  <caption>INS · signals arriving at the patchbay (top TTs)</caption>
-  <thead>
-    <tr><th>Column</th><th>Top TT (source)</th><th>Normal</th></tr>
-  </thead>
-  <tbody>
-    <tr><td class="jack">33</td><td>Compressor unit L OUT</td><td>non</td></tr>
-    <tr><td class="jack">34</td><td>Compressor unit R OUT</td><td>non</td></tr>
-    <tr><td class="jack">35</td><td>Effects processor unit L OUT</td><td>non</td></tr>
-    <tr><td class="jack">36</td><td>Effects processor unit R OUT</td><td>non</td></tr>
-  </tbody>
-</table>
-
-<table class="routing">
-  <caption>OUTS · signals leaving the patchbay (bottom TTs)</caption>
-  <thead>
-    <tr><th>Column</th><th>Bottom TT (destination)</th><th>Normal</th></tr>
-  </thead>
-  <tbody>
-    <tr><td class="jack">33</td><td>Compressor unit L IN</td><td>non</td></tr>
-    <tr><td class="jack">34</td><td>Compressor unit R IN</td><td>non</td></tr>
-    <tr><td class="jack">35</td><td>Effects processor unit IN (mono)</td><td>non</td></tr>
-    <tr><td class="jack">36</td><td><span class="empty">Empty</span></td><td>non</td></tr>
-  </tbody>
-</table>
-
-<h5>Aux masters (columns 41-44)</h5>
-
-<table class="routing">
-  <caption>INS · signals arriving at the patchbay (top TTs)</caption>
-  <thead>
-    <tr><th>Columns</th><th>Top TT (source)</th><th>Normal</th></tr>
-  </thead>
-  <tbody>
-    <tr><td class="jack">41-44</td><td>Toft Aux Masters 1-4</td><td>non</td></tr>
-  </tbody>
-</table>
-
-<h5>Channel MON inputs (columns 41-48)</h5>
-
-<table class="routing">
-  <caption>OUTS · signals leaving the patchbay (bottom TTs)</caption>
-  <thead>
-    <tr><th>Columns</th><th>Bottom TT (destination)</th><th>Normal</th></tr>
-  </thead>
-  <tbody>
-    <tr><td class="jack">41-48</td><td>Toft ch 1-8 MON inputs</td><td>non</td></tr>
-  </tbody>
-</table>
-
-<h5>Default TT cables on the front</h5>
-
-<p>Seven TT cables sit on the front of the patchbay by default, routing the two outboard processors into their default positions. They can be pulled at any time to free up the compressor or effects processor for other use during a session.</p>
-
-<table class="routing">
-  <caption>Default TT cables · front of patchbay</caption>
-  <thead>
-    <tr><th>TT cable</th><th>From (top TT)</th><th>To (bottom TT)</th></tr>
-  </thead>
-  <tbody>
-    <tr><td class="jack">1</td><td>Col 25 (Master INSERT L SEND)</td><td>Col 33 (Compressor L IN)</td></tr>
-    <tr><td class="jack">2</td><td>Col 33 (Compressor L OUT)</td><td>Col 25 (Master INSERT L RETURN)</td></tr>
-    <tr><td class="jack">3</td><td>Col 26 (Master INSERT R SEND)</td><td>Col 34 (Compressor R IN)</td></tr>
-    <tr><td class="jack">4</td><td>Col 34 (Compressor R OUT)</td><td>Col 26 (Master INSERT R RETURN)</td></tr>
-    <tr><td class="jack">5</td><td>Col 43 (Aux Master 3)</td><td>Col 35 (Effects processor IN)</td></tr>
-    <tr><td class="jack">6</td><td>Col 35 (Effects processor L OUT)</td><td>Col 47 (ch 7 MON input)</td></tr>
-    <tr><td class="jack">7</td><td>Col 36 (Effects processor R OUT)</td><td>Col 48 (ch 8 MON input)</td></tr>
+    <tr>
+      <td>Ch 1 + Ch 2 (LINE)</td>
+      <td>Main mix bus</td>
+      <td>USB OUT (to laptop)</td>
+    </tr>
+    <tr>
+      <td>Ch 3 + Ch 4 (XLR), with FX engaged on those channels</td>
+      <td>ALT 3-4 bus</td>
+      <td>ALT 3-4 OUT (to Toft LINE 11-12)</td>
+    </tr>
+    <tr>
+      <td>USB IN</td>
+      <td>Control Room bus (USB/2-track source button pressed)</td>
+      <td>Control Room OUT (to Toft LINE 9-10)</td>
+    </tr>
   </tbody>
 </table>
 </div>
