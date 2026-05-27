@@ -335,7 +335,7 @@
 
 <ul>
   <li><strong>Mic inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel A below.</li>
-  <li><strong>Line inputs (rear):</strong> 8 line-level inputs on a DB25 connector, fed from PHB-350 columns 1-8 via a TRS-to-DB25 snake. Selected on a per-channel basis from the front panel; useful for running a line-level source (a synth, a DI'd guitar, an outboard preamp) through the OctoPre's circuit for its sonic character rather than for gain.</li>
+  <li><strong>Line inputs (rear):</strong> 8 line-level inputs on a DB25 connector, fed from PHB-350 jacks 1-8. Selected on a per-channel basis from the front panel; useful for running a line-level source (a synth, a DI'd guitar, an outboard preamp) through the OctoPre's circuit for its sonic character rather than for gain.</li>
   <li><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 male XLRs. These run through the wall into Toft <strong>XLR (MIC) inputs 1 through 8</strong>.</li>
 </ul>
 
@@ -371,7 +371,7 @@
 
 <ul>
   <li><strong>Mic inputs (rear):</strong> 8 mic-level XLR jacks, one per channel. Each is wired internally to the corresponding jack on Hosa panel B below.</li>
-  <li><strong>Line inputs (rear):</strong> 8 line-level balanced 1/4" TRS jacks, fed from PHB-350 columns 9-16 via a TRS-to-TRS multicore (one TRS plug per ISA channel). Selected on a per-channel basis from the front panel; same idea as the OctoPre's line inputs: route a line-level source through the ISA's circuit for its character.</li>
+  <li><strong>Line inputs (rear):</strong> 8 line-level balanced 1/4" TRS jacks, fed from PHB-350 jacks 9-16. Selected on a per-channel basis from the front panel; same idea as the OctoPre's line inputs: route a line-level source through the ISA's circuit for its character.</li>
   <li><strong>Outputs (rear):</strong> 8 line-level outputs on a single DB25 connector, broken out via a fan cable to 8 male XLRs. These run through the wall into Toft <strong>XLR (MIC) inputs 9 through 16</strong> as line-level signals (same trim-not-gain situation as the OctoPre's outputs into channels 1-8).</li>
 </ul>
 
@@ -390,21 +390,18 @@
   <li><strong>Hosa panel B:</strong> jacks 1-8 wired to ISA 828 mic inputs 1-8.</li>
 </ul>
 
-<h4 id="lr-hosa-line">5. Hosa PHB-350 (balanced TRS patchbay, used as a line input panel)</h4>
+<h4 id="lr-hosa-line">5. Hosa PHB-350 (TRS line input panel)</h4>
 
-<p>A balanced TRS patchbay, mounted in the live-room rack and used as a line-input panel for the two preamps. Each column has four jacks (two on the front, two on the rear), all balanced 1/4" TRS, with a per-column half-normal switch that internally connects rear top to rear bottom unless something is plugged into the front bottom jack. The studio uses 16 columns; the rest are spare.</p>
-
-<p>The signal path through each active column:</p>
+<p>A patchbay panel with balanced 1/4" TRS jacks on its front, used as the live room's line-input panel. Anywhere a performer wants to send a line-level source from the live room into one of the preamps (a synth, a DI'd guitar, a hardware effects unit, an outboard preamp's line output), they plug it into the front of this panel.</p>
 
 <ul>
-  <li><strong>Front top jack:</strong> where a performer plugs in. The TRS cable from a synth, a DI'd guitar, a hardware effects unit, or an outboard preamp's line output goes here. Front top is wired to the same internal node as rear top, so plugging in here is equivalent to plugging into rear top.</li>
-  <li><strong>Rear bottom jack:</strong> wired to the preamp line inputs through a multi-channel cable that runs through the wall. The cable for columns 1-8 is a TRS-to-DB25 snake (the OctoPre takes its line inputs on a single DB25 connector). The cable for columns 9-16 is a TRS-to-TRS multicore (the ISA 828 takes its line inputs on 8 separate TRS jacks).</li>
-  <li><strong>Rear top and front bottom:</strong> empty in normal use. The half-normal carries the performer's signal from front top through to rear bottom (front top → rear top internally → rear bottom via the half-normal switch → preamp). Anything plugged into front bottom would break the half-normal and substitute its own signal; rear top is available as a second tap or a second source if a future patch wants one.</li>
+  <li><strong>Front jacks 1-8:</strong> route to OctoPre line inputs 1-8.</li>
+  <li><strong>Front jacks 9-16:</strong> route to ISA 828 line inputs 1-8.</li>
 </ul>
 
 <p>Both preamps accept a line-level source at the rear in addition to the mic-level XLR, selected with a per-channel front-panel switch. The reason for routing a line-level source through the preamp this way is sonic, not technical: the signal arrives already strong, so the preamp's gain knob acts as a trim. What you're getting is the preamp's <strong>circuit character</strong> on a source that didn't need the preamp's gain.</p>
 
-<p>From the preamp onward, the signal travels the same path as a mic-level signal would: through the preamp's circuit, out the DB25 line output, through the wall to the Toft. PHB-350 columns 1-8 land on Toft channels 1-8 via the OctoPre; PHB-350 columns 9-16 land on Toft channels 9-16 via the ISA.</p>
+<p>From the preamp onward, the signal travels the same path as a mic-level signal would: through the preamp's circuit, out the DB25 line output, through the wall to the Toft. PHB-350 jacks 1-8 land on Toft channels 1-8 via the OctoPre; jacks 9-16 land on Toft channels 9-16 via the ISA.</p>
 
 <h4 id="lr-rane">6. Rane MH4 Mojo Series (4-out headphone splitter)</h4>
 
