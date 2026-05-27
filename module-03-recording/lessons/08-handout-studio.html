@@ -392,14 +392,14 @@
 
 <h4 id="lr-hosa-line">5. Hosa PHB-350 (48-point balanced TRS patchbay, used as a line input panel)</h4>
 
-<p>A 48-column balanced TRS patchbay, mounted in the live-room rack and used as a line-input panel for the two preamps. Each column has four jacks (front top, front bottom, rear top, rear bottom), all balanced 1/4" TRS, with per-column half-normalling between rear top and rear bottom. The studio uses 16 of the 48 columns; the rest are spare.</p>
+<p>A 48-column balanced TRS patchbay, mounted in the live-room rack and used as a line-input panel for the two preamps. Each column has four jacks (two on the front, two on the rear), all balanced 1/4" TRS, with a per-column half-normal switch that internally connects rear top to rear bottom unless something is plugged into the front bottom jack. The studio uses 16 of the 48 columns; the rest are spare.</p>
 
 <p>The signal path through each active column:</p>
 
 <ul>
-  <li><strong>Front top jack:</strong> where a performer plugs in. The TRS cable from a synth, a DI'd guitar, a hardware effects unit, or an outboard preamp's line output goes here.</li>
-  <li><strong>Rear top jack:</strong> wired to the preamp line inputs through a multi-channel cable that runs through the wall. The cable for columns 1-8 is a TRS-to-DB25 snake (the OctoPre takes its line inputs on a single DB25 connector). The cable for columns 9-16 is a TRS-to-TRS multicore (the ISA 828 takes its line inputs on 8 separate TRS jacks).</li>
-  <li><strong>Front bottom and rear bottom:</strong> unused. The columns are kept at the factory half-normal setting; in our use the half-normal never trips, because nothing is plugged into the front bottom and the rear bottom is empty. Signal flows straight from front top to rear top through the column.</li>
+  <li><strong>Front top jack:</strong> where a performer plugs in. The TRS cable from a synth, a DI'd guitar, a hardware effects unit, or an outboard preamp's line output goes here. Front top is wired to the same internal node as rear top, so plugging in here is equivalent to plugging into rear top.</li>
+  <li><strong>Rear bottom jack:</strong> wired to the preamp line inputs through a multi-channel cable that runs through the wall. The cable for columns 1-8 is a TRS-to-DB25 snake (the OctoPre takes its line inputs on a single DB25 connector). The cable for columns 9-16 is a TRS-to-TRS multicore (the ISA 828 takes its line inputs on 8 separate TRS jacks).</li>
+  <li><strong>Rear top and front bottom:</strong> empty in normal use. The half-normal carries the performer's signal from front top through to rear bottom (front top → rear top internally → rear bottom via the half-normal switch → preamp). Anything plugged into front bottom would break the half-normal and substitute its own signal; rear top is available as a second tap or a second source if a future patch wants one.</li>
 </ul>
 
 <p>Both preamps accept a line-level source at the rear in addition to the mic-level XLR, selected with a per-channel front-panel switch. The reason for routing a line-level source through the preamp this way is sonic, not technical: the signal arrives already strong, so the preamp's gain knob acts as a trim. What you're getting is the preamp's <strong>circuit character</strong> on a source that didn't need the preamp's gain.</p>
