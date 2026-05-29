@@ -874,37 +874,44 @@
 
 <p>Get a signal moving from the singer's mic all the way to the monitors in the control room, with the level set cleanly at every stage. Everything below is done silently, with the meters as the only feedback, until the very last step.</p>
 
+<p>This walkthrough runs the vocal through the <strong>ISA 828</strong> rather than the OctoPre. The ISA feeds Toft channels 9 through 16; the reference and effect returns occupy channels 9 through 14, so the vocal lands on <strong>channel 15</strong>.</p>
+
+<div class="callout">
+  <div class="callout-label">Why the ISA for the vocal?</div>
+  <p>The studio's two preamps have different strengths. The OctoPre is a clean workhorse, good for tracking many sources at once. The ISA 828 carries a transformer-coupled mic input derived from Focusrite's classic ISA 110, and it adds weight in the low-mids and a smooth top that flatters a voice. Its selectable input impedance lets you tune how the preamp loads the mic, a control the OctoPre doesn't offer. For the one vocal a session is built around, that character earns its place.</p>
+</div>
+
 <ol>
-  <li><strong>In the live room:</strong> place the mic on a stand at the singer's mouth height. Plug an XLR cable into the bottom of the mic; plug the other end into <strong>jack 1 of Hosa panel A</strong> on the rack.</li>
+  <li><strong>In the live room:</strong> place the mic on a stand at the singer's mouth height. Plug an XLR cable into the bottom of the mic; plug the other end into <strong>jack 7 of Hosa panel B</strong> on the rack.</li>
   <li><strong>At the Toft master section, silence the room before any gain-staging.</strong> All of the work below is done with the speakers off so that the student learns to set gain by the meters, not by ear.
     <ul>
       <li><strong>Master fader:</strong> pull <strong>all the way down</strong>.</li>
       <li><strong>MONITOR LEVEL knob</strong> (the knob feeding the control-room speakers, in the master section): turn <strong>fully counter-clockwise</strong> to zero.</li>
     </ul>
   </li>
-  <li><strong>At the OctoPre front panel, channel 1, set the controls before sending any signal:</strong>
+  <li><strong>At the ISA 828 front panel, channel 7, set the controls before sending any signal:</strong>
     <ul>
-      <li><strong>Source selector:</strong> press until the <strong>MIC</strong> LED is lit (not LINE, not INST). The channel is now listening to the rear XLR jack, which is fed by Hosa A jack 1.</li>
-      <li><strong>Gain knob:</strong> turn fully counter-clockwise to <strong>0 dB</strong>. The OctoPre's gain knob is continuous from 0 to 60 dB; always start at zero before the source makes sound.</li>
-      <li><strong>+48V:</strong> the OctoPre groups phantom power across channels 1-4 with one switch. If the mic is a condenser, press the <strong>+48V (1-4)</strong> switch so it lights. Dynamics (Shure SM58 and similar) leave it off. If a condenser is on any channel in the 1-4 group, the switch has to be on, which means every channel in that group gets phantom; that's safe for dynamics and inert sources, but worth knowing.</li>
-      <li><strong>HPF, Phase:</strong> leave at defaults for the first pass. HPF rolls off below 75 Hz to cut rumble; phase flips polarity for multi-mic setups. Worry about these later once a clean signal is moving.</li>
-      <li><strong>Dynamics knob:</strong> leave fully counter-clockwise at the detent. The OctoPre has a built-in compressor/limiter on each channel, engaged by turning this knob past the detent click. For now, leave it bypassed; compression in this walkthrough will be done downstream on the SSL.</li>
+      <li><strong>Input select:</strong> set to <strong>MIC</strong> (not LINE, not INSERT). The channel is now listening to the rear XLR jack, which is fed by Hosa B jack 7.</li>
+      <li><strong>Gain:</strong> turn fully counter-clockwise to its minimum. Always start at the bottom before the source makes sound.</li>
+      <li><strong>Impedance:</strong> set to the standard position for now. This control changes how the preamp loads the mic, which shifts the tone; the standard setting is a safe default, and you can experiment with it once a clean signal is moving.</li>
+      <li><strong>+48V:</strong> the ISA switches phantom power per channel. If the mic is a condenser, press <strong>+48V</strong> on channel 7 so it lights. A dynamic (Shure SM58 and similar) leaves it off.</li>
+      <li><strong>HPF, Phase:</strong> leave at defaults for the first pass. HPF rolls off low rumble; phase flips polarity for multi-mic setups. Worry about these later once a clean signal is moving.</li>
     </ul>
   </li>
-  <li><strong>Now stage the gain at the source:</strong> the goal is to set the loudness of the signal here, before it leaves the OctoPre, so that everything downstream (the Toft, the Behringer, the laptop) receives a clean, healthy line-level signal it doesn't have to fight.
+  <li><strong>Now stage the gain at the source:</strong> the goal is to set the loudness of the signal here, before it leaves the ISA, so that everything downstream (the Toft, the Behringer, the laptop) receives a clean, healthy line-level signal it doesn't have to fight.
     <ul>
       <li><strong>Ask the singer to sing the loudest part of the song</strong> at full performance volume. Not a polite test, the real thing. The gain is being set for the loudest moment that will ever hit this mic during tracking.</li>
-      <li><strong>Watch the channel 1 LED meter on the OctoPre.</strong> Six segments. The bottom green LED ("signal present") lights around -20 dBFS; the top red LED is the <strong>overload indicator</strong>, lighting just below clipping. If it lights, the signal is too hot.</li>
-      <li><strong>While the singer is singing, slowly turn the gain knob clockwise.</strong> Watch the meter. Stop when the loudest peaks are climbing well up the green-amber LEDs but <em>not</em> lighting the top red overload LED. The OctoPre's gain range is 0-60 dB; for a singer at normal performance distance, you'll usually land somewhere around 25-40 dB.</li>
+      <li><strong>Watch the channel 7 meter on the ISA.</strong> The lower lights show that signal is arriving; the overload indicator near the top warns that the signal is getting too hot. If the overload light catches, the signal is too loud.</li>
+      <li><strong>While the singer is singing, slowly turn the gain up.</strong> Stop when the loudest peaks register strongly on the meter but stay clear of the overload indicator. For a singer at normal performance distance, you'll land at a moderate gain setting.</li>
     </ul>
   </li>
-  <li><strong>At the Toft, channel 1:</strong> walk the channel strip top to bottom and set every control. Leave the EQ section alone for now; everything else needs to be in a known state before signal reaches the fader.
+  <li><strong>At the Toft, channel 15</strong> (where the ISA's channel 7 arrives): walk the channel strip top to bottom and set every control. Leave the EQ section alone for now; everything else needs to be in a known state before signal reaches the fader.
     <ul>
-      <li><strong>+48V:</strong> leave <strong>off</strong>. Phantom power is already being supplied to the mic by the OctoPre if the mic is a condenser. The Toft's +48V button supplies phantom to the channel's own XLR input; the channel is receiving line-level signal from the OctoPre, so there's no need for the Toft to supply phantom.</li>
+      <li><strong>+48V:</strong> leave <strong>off</strong>. Phantom power is already being supplied to the mic by the ISA if the mic is a condenser. The Toft's +48V button supplies phantom to the channel's own XLR input; the channel is receiving line-level signal from the ISA, so there's no need for the Toft to supply phantom.</li>
       <li><strong>PHASE (Ø):</strong> leave <strong>off</strong> (up, not engaged). One mic in play; nothing to fix.</li>
       <li><strong>LINE button:</strong> leave <strong>off</strong> (up, not pressed). When LINE is pressed, the channel switches from the rear XLR (the mic path) to the rear LINE jack. The channel needs to listen to the XLR, so LINE stays unpressed.</li>
       <li><strong>I/P REV button:</strong> leave <strong>off</strong> (up, not pressed). This swaps the channel and monitor signal paths; not needed here.</li>
-      <li><strong>INPUT GAIN:</strong> turn fully counter-clockwise to start at zero. This knob is a trim; the real gain was set at the OctoPre. While the singer sings at performance volume, slowly turn INPUT GAIN clockwise and watch the channel 1 meter on the Toft (the two LEDs next to the fader: green lights at -20 dB, red lights at +10 dB; the green should pulse with the singing, the red should stay dark or only flicker on the very loudest peaks). If the singer is loud enough to hit the green LED steadily with INPUT GAIN near zero, leave it there.</li>
+      <li><strong>INPUT GAIN:</strong> turn fully counter-clockwise to start at zero. This knob is a trim; the real gain was set at the ISA. While the singer sings at performance volume, slowly turn INPUT GAIN clockwise and watch the channel 15 meter on the Toft (the two LEDs next to the fader: green lights at -20 dB, red lights at +10 dB; the green should pulse with the singing, the red should stay dark or only flicker on the very loudest peaks). If the singer is loud enough to hit the green LED steadily with INPUT GAIN near zero, leave it there.</li>
       <li><strong>EQ section:</strong> leave alone. Make sure the <strong>EQ IN</strong> button is <strong>off</strong> (up) so the EQ is bypassed and the channel is passing the mic signal flat. All four EQ boost/cut knobs (HF, HMF, LMF, LF) should be at their <strong>center detents</strong> (12 o'clock). The <strong>80 Hz HPF</strong> button stays <strong>off</strong>. The <strong>EQ TO MON</strong> button stays <strong>off</strong>.</li>
       <li><strong>Aux sends 1 through 6:</strong> all six knobs <strong>fully counter-clockwise</strong> (zero). Leave the <strong>AUX 5-6 TO MON</strong> button <strong>off</strong>.</li>
       <li><strong>MON LEVEL:</strong> turn fully counter-clockwise (zero). Nothing is returning to MON yet.</li>
@@ -920,13 +927,13 @@
     <ul>
       <li><strong>Ask the singer to sing</strong> at performance volume.</li>
       <li><strong>Slowly raise the MASTER FADER</strong> from the bottom of its travel toward <strong>unity</strong>. Nothing in the room yet (MONITOR LEVEL is still at zero), so watch the <strong>master left/right bargraph meters</strong> in the master section. They should respond to the singing, peaking comfortably in the upper green range without lighting the top red segments.</li>
-      <li><strong>If the master meters are peaking into the red</strong> with the master fader at unity, something upstream is too loud. The first place to fix it is at the channel: pull the <strong>channel 1 fader</strong> down a couple of dB at a time until the master meters settle. Don't go back to the OctoPre or the channel INPUT GAIN to fix this; those were set for healthy recording level, and lowering them now would mean a quieter signal in the chain.</li>
+      <li><strong>If the master meters are peaking into the red</strong> with the master fader at unity, something upstream is too loud. The first place to fix it is at the channel: pull the <strong>channel 15 fader</strong> down a couple of dB at a time until the master meters settle. Don't go back to the ISA or the channel INPUT GAIN to fix this; those were set for healthy recording level, and lowering them now would mean a quieter signal in the chain.</li>
       <li><strong>Once the master meters look healthy</strong>, bring the sound into the room: <strong>slowly turn the MONITOR LEVEL knob</strong> clockwise from zero until the speakers are at a comfortable listening volume. The room fills with the singer's voice.</li>
       <li><strong>From here on</strong>, leave the master fader alone and use the MONITOR LEVEL knob to change how loud things are in the room. The master fader sets what the master mix bus is doing (which is what the Behringer will eventually send to the laptop for recording); MONITOR LEVEL just sets how loud the speakers are.</li>
       <li><strong>If the room is silent</strong> when MONITOR LEVEL reaches noon, walk back through the chain: master fader at unity, master meters showing signal, channel fader at unity, channel L-R button down, channel MUTE off, Toft channel meter showing signal during singing. Fix whichever step broke and try again.</li>
     </ul>
   </li>
-  <li><strong>The principle behind all of this:</strong> the loudness was set at the OctoPre (the earliest stage that can do it cleanly), and the Toft's INPUT GAIN only had to nudge or do nothing. If the Toft meter was silent or weak in the previous step and required a large INPUT GAIN move to come up, that's a sign the OctoPre gain is too low; go back and add gain there, not at the Toft. The rule is always the same: set the loudness at the earliest stage in the chain that can do the job cleanly. Adding gain later (at the Toft trim, in a recording app after capture) amplifies noise along with the signal.</li>
+  <li><strong>The principle behind all of this:</strong> the loudness was set at the ISA (the earliest stage that can do it cleanly), and the Toft's INPUT GAIN only had to nudge or do nothing. If the Toft meter was silent or weak in the previous step and required a large INPUT GAIN move to come up, that's a sign the ISA gain is too low; go back and add gain there, not at the Toft. The rule is always the same: set the loudness at the earliest stage in the chain that can do the job cleanly. Adding gain later (at the Toft trim, in a recording app after capture) amplifies noise along with the signal.</li>
 </ol>
 
 <h4 id="part-2-reference">Part 2 · Bring a reference track from the laptop into the Toft</h4>
@@ -944,16 +951,16 @@
     </ul>
   </li>
   <li><strong>Press play on the laptop</strong> at low volume. The Behringer's main meters won't move (the reference isn't on the Main Mix), but the Toft's LINE 9 and 10 jacks are now receiving signal.</li>
-  <li><strong>At the Toft, channel 9:</strong> set up the strip the same way you set up channel 1 in Part 1, with two differences. Pause the laptop first so this happens silently.
+  <li><strong>At the Toft, channel 9:</strong> set up the strip the same way you set up channel 15 in Part 1, with two differences. Pause the laptop first so this happens silently.
     <ul>
       <li><strong>+48V, PHASE, I/P REV:</strong> all <strong>off</strong>.</li>
-      <li><strong>LINE button:</strong> <strong>press it in</strong>. This is the key difference from channel 1. With LINE pressed, the channel listens to the rear LINE jack 9 (the Behringer's Control Room left output) instead of the mic XLR.</li>
+      <li><strong>LINE button:</strong> <strong>press it in</strong>. This is the key difference from channel 15. With LINE pressed, the channel listens to the rear LINE jack 9 (the Behringer's Control Room left output) instead of the mic XLR.</li>
       <li><strong>INPUT GAIN:</strong> start fully counter-clockwise.</li>
       <li><strong>EQ section:</strong> leave alone (EQ IN off, knobs centered, HPF off).</li>
       <li><strong>Aux sends 1-6:</strong> all at zero. Aux 1 will come up in Part 3 to put the reference in the headphone cue.</li>
       <li><strong>MON LEVEL:</strong> zero. MUTE/AFL off.</li>
       <li><strong>Routing buttons (1-2, 3-4, 5-6, 7-8):</strong> all up.</li>
-      <li><strong>L-R button: leave UP (off).</strong> This is the second key difference from channel 1. The reference track must NOT feed the master mix, because the master mix is what gets recorded to the laptop later. Leaving L-R up keeps the reference out of the recording.</li>
+      <li><strong>L-R button: leave UP (off).</strong> This is the second key difference from channel 15. The reference track must NOT feed the master mix, because the master mix is what gets recorded to the laptop later. Leaving L-R up keeps the reference out of the recording.</li>
       <li><strong>Channel PAN:</strong> turn fully <strong>left</strong>. Channel 9 carries the left side of the laptop's stereo image.</li>
       <li><strong>Channel FADER:</strong> set at <strong>unity</strong>. (The fader is doing nothing useful for the recording since L-R is off, but unity is the right rest position and useful in case you need to bring this into the room briefly for an engineer check via SOLO.)</li>
     </ul>
@@ -976,16 +983,16 @@
   <li><strong>In the live room:</strong> plug the singer's headphones into <strong>jack 1</strong> on the front of the Rane MH4.</li>
   <li><strong>Set the Rane MH4 jack 1 level knob</strong> to about <strong>9 o'clock</strong> (low, so nothing startling lands in the singer's ears when signal first arrives).</li>
   <li><strong>At the Toft master section:</strong> find the <strong>Aux 1</strong> and <strong>Aux 2</strong> knobs at the top of the master strip (the row of six small green Aux Master knobs). Set both to unity (around 12 o'clock).</li>
-  <li><strong>Put the vocal in the cue.</strong> On Toft channel 1 (the vocal): set <strong>Aux 1</strong> and <strong>Aux 2</strong> to <strong>pre-fader</strong> (the small PRE switch next to each knob; pre is engaged). Pre-fader is correct here: the engineer's channel fader is for the control-room mix, not for what the singer hears. Slowly turn the channel 1 Aux 1 and Aux 2 knobs up together, by the same amount, so the vocal lands in the center of the cue. Ask the singer to speak; if needed, raise the Rane jack 1 level knob until they say it's comfortable.</li>
+  <li><strong>Put the vocal in the cue.</strong> On Toft channel 15 (the vocal): set <strong>Aux 1</strong> and <strong>Aux 2</strong> to <strong>pre-fader</strong> (the small PRE switch next to each knob; pre is engaged). Pre-fader is correct here: the engineer's channel fader is for the control-room mix, not for what the singer hears. Slowly turn the channel 15 Aux 1 and Aux 2 knobs up together, by the same amount, so the vocal lands in the center of the cue. Ask the singer to speak; if needed, raise the Rane jack 1 level knob until they say it's comfortable.</li>
   <li><strong>Put the reference track in the cue.</strong> On channel 9 (reference L): turn up <strong>Aux 1</strong> (which is the L side of the cue), leave Aux 2 down. On channel 10 (reference R): turn up <strong>Aux 2</strong>, leave Aux 1 down. Set both to pre-fader. The reference now plays in stereo in the singer's headphones, parallel to the vocal.</li>
-  <li><strong>Balance the cue with the singer:</strong> ask "more of your voice or more of the track?" Adjust the Aux 1 and Aux 2 sends on channel 1 (the vocal), and on channels 9 and 10 (the reference), until the blend is what the singer wants. If the whole cue is too loud or too quiet, use the Rane jack 1 level knob.</li>
+  <li><strong>Balance the cue with the singer:</strong> ask "more of your voice or more of the track?" Adjust the Aux 1 and Aux 2 sends on channel 15 (the vocal), and on channels 9 and 10 (the reference), until the blend is what the singer wants. If the whole cue is too loud or too quiet, use the Rane jack 1 level knob.</li>
 </ol>
 
 <p>The cue mix is now independent of the control-room mix. The engineer can mute the vocal in the room, ride a fader, or solo something for inspection, and the singer hears none of it. If a second player joins on a later take, plug their headphones into Rane jack 2 and set jack 2's level knob to their preference. Everyone shares the same blend with their own volume.</p>
 
 <h4 id="part-4-reverb">Part 4 · Add a reverb on the vocal via the Behringer FX</h4>
 
-<p>A reverb on the vocal makes it sit in a sense of space (a room, a hall, a plate). The send-and-return setup: Toft channel 1 sends a copy of the dry vocal to <strong>Aux 3 (L)</strong> and <strong>Aux 4 (R)</strong>; the Aux 3-4 sends arrive at the Behringer on channels 3 and 4 XLR; those channels feed the Behringer's <strong>ALT 3-4 bus</strong> through the built-in FX processor (loaded with a reverb preset); the wet stereo output of the FX returns to the Toft on <strong>LINE inputs 11 and 12</strong>. The wet returns join the master mix on their own channels, blended against the dry vocal on channel 1.</p>
+<p>A reverb on the vocal makes it sit in a sense of space (a room, a hall, a plate). The send-and-return setup: Toft channel 15 sends a copy of the dry vocal to <strong>Aux 3 (L)</strong> and <strong>Aux 4 (R)</strong>; the Aux 3-4 sends arrive at the Behringer on channels 3 and 4 XLR; those channels feed the Behringer's <strong>ALT 3-4 bus</strong> through the built-in FX processor (loaded with a reverb preset); the wet stereo output of the FX returns to the Toft on <strong>LINE inputs 11 and 12</strong>. The wet returns join the master mix on their own channels, blended against the dry vocal on channel 15.</p>
 
 <ol>
   <li><strong>At the Toft master section:</strong> set <strong>Aux 3</strong> and <strong>Aux 4</strong> on the Aux Master row to unity (around 12 o'clock).</li>
@@ -1011,14 +1018,14 @@
       <li><strong>Channel FADERS:</strong> start at <strong>-∞</strong> (all the way down) so the wet doesn't blast into the master before you've staged its gain.</li>
     </ul>
   </li>
-  <li><strong>Send the vocal to the reverb.</strong> On Toft channel 1: find the <strong>Aux 3</strong> and <strong>Aux 4</strong> knobs. Set both to <strong>post-fader</strong> (the PRE switch next to each knob is up). Post-fader is correct for an effects send: if you pull the dry vocal down, the wet should follow. Turn Aux 3 and Aux 4 up together, by the same amount, while the singer sings.</li>
+  <li><strong>Send the vocal to the reverb.</strong> On Toft channel 15: find the <strong>Aux 3</strong> and <strong>Aux 4</strong> knobs. Set both to <strong>post-fader</strong> (the PRE switch next to each knob is up). Post-fader is correct for an effects send: if you pull the dry vocal down, the wet should follow. Turn Aux 3 and Aux 4 up together, by the same amount, while the singer sings.</li>
   <li><strong>Stage the wet return.</strong> Watch Toft channels 11 and 12 meters; bring up <strong>INPUT GAIN</strong> on each until the green meter LED pulses with the reverb tails. Then bring up the channel 11 and 12 faders from -∞ toward unity, watching the master meters and listening in the room. The wet sits behind the dry; how far back is a creative choice.</li>
-  <li><strong>Adjust to taste.</strong> Two controls for the wet/dry balance: the Aux 3-4 send on channel 1 (how much vocal goes to the reverb in the first place) and the channel 11-12 faders (how loud the wet return joins the master mix). Move whichever feels right for the gesture you want.</li>
+  <li><strong>Adjust to taste.</strong> Two controls for the wet/dry balance: the Aux 3-4 send on channel 15 (how much vocal goes to the reverb in the first place) and the channel 11-12 faders (how loud the wet return joins the master mix). Move whichever feels right for the gesture you want.</li>
 </ol>
 
 <h4 id="part-5-compression">Part 5 · Add parallel compression on the vocal via the SSL</h4>
 
-<p>Parallel compression keeps the dry vocal intact on channel 1 and adds a heavily compressed copy alongside it on the master mix. The blend is the engineer's main control: full dynamics on the dry, full squash on the wet, dialed together. Same send-and-return shape as the reverb in Part 4, with two differences: the send goes on Aux 5-6 (which run direct to the SSL), and the return arrives on Toft LINE 13-14.</p>
+<p>Parallel compression keeps the dry vocal intact on channel 15 and adds a heavily compressed copy alongside it on the master mix. The blend is the engineer's main control: full dynamics on the dry, full squash on the wet, dialed together. Same send-and-return shape as the reverb in Part 4, with two differences: the send goes on Aux 5-6 (which run direct to the SSL), and the return arrives on Toft LINE 13-14.</p>
 
 <ol>
   <li><strong>At the Toft master section:</strong> set <strong>Aux 5</strong> and <strong>Aux 6</strong> on the Aux Master row to unity (around 12 o'clock).</li>
@@ -1032,12 +1039,12 @@
     </ul>
   </li>
   <li><strong>At the SSL:</strong> press <strong>IN</strong> so the compressor is engaged. Set gentle starting points: <strong>Ratio</strong> 2:1, <strong>Attack</strong> 30 ms, <strong>Release</strong> 0.3 s, <strong>Threshold</strong> high (clockwise, no gain reduction yet), <strong>Make-up gain</strong> 0 dB.</li>
-  <li><strong>Send the vocal to the compressor.</strong> On Toft channel 1: find the <strong>Aux 5</strong> and <strong>Aux 6</strong> knobs. Set both to <strong>post-fader</strong> (same logic as the reverb: pull the dry down, the wet follows). Turn Aux 5 and Aux 6 up together while the singer sings. Watch the SSL's VU meter; bring the threshold down (counter-clockwise) until the loudest words pull the needle down by <strong>3 to 6 dB</strong>. The compressor is squashing the wet copy hard, which is what parallel compression wants.</li>
+  <li><strong>Send the vocal to the compressor.</strong> On Toft channel 15: find the <strong>Aux 5</strong> and <strong>Aux 6</strong> knobs. Set both to <strong>post-fader</strong> (same logic as the reverb: pull the dry down, the wet follows). Turn Aux 5 and Aux 6 up together while the singer sings. Watch the SSL's VU meter; bring the threshold down (counter-clockwise) until the loudest words pull the needle down by <strong>3 to 6 dB</strong>. The compressor is squashing the wet copy hard, which is what parallel compression wants.</li>
   <li><strong>Stage the wet return.</strong> Watch Toft channels 13 and 14 meters; bring up INPUT GAIN on each until the meters pulse with the compressed signal. Then bring the channel 13 and 14 faders up from -∞ toward unity.</li>
-  <li><strong>Blend.</strong> The dry vocal lives on channel 1's fader. The wet (compressed) lives on the channel 13 and 14 faders. Pull both up together to fill out the vocal; pull the wet back if it's overwhelming the dry. The blend is the parallel-comp control. A common starting place is dry at unity, wet about -6 dB below the dry.</li>
+  <li><strong>Blend.</strong> The dry vocal lives on channel 15's fader. The wet (compressed) lives on the channel 13 and 14 faders. Pull both up together to fill out the vocal; pull the wet back if it's overwhelming the dry. The blend is the parallel-comp control. A common starting place is dry at unity, wet about -6 dB below the dry.</li>
 </ol>
 
-<p>If you want to compare with-and-without, pull the channel 13 and 14 faders all the way down. The dry vocal stays untouched on channel 1; you're hearing it alone. Bring 13-14 back up and the squashed parallel layer fills in underneath. That's the move: blend, A/B, blend again.</p>
+<p>If you want to compare with-and-without, pull the channel 13 and 14 faders all the way down. The dry vocal stays untouched on channel 15; you're hearing it alone. Bring 13-14 back up and the squashed parallel layer fills in underneath. That's the move: blend, A/B, blend again.</p>
 
 <h4 id="part-6-record">Part 6 · Record the master mix to the laptop</h4>
 
@@ -1055,7 +1062,7 @@
   </li>
   <li><strong>Confirm the Behringer's main mix is sending out USB.</strong> The QX1204USB sends its main mix bus back out USB to the laptop automatically; there's no separate switch. Watch the Behringer's main mix meter LEDs respond to the singer.</li>
   <li><strong>At the laptop:</strong> open a recording app (Audacity, GarageBand, Reaper, whatever you've installed). In the app's audio device settings, set the <strong>input device</strong> to the Behringer (it appears as the same <em>USB Audio CODEC</em> or <em>Xenyx QX1204USB</em> that you set for output in Part 2). Set the input to <strong>stereo</strong>. Set the file format to <strong>WAV, 48 kHz, 24-bit</strong> (the studio's recording standard for non-Pro-Tools sessions).</li>
-  <li><strong>Arm a stereo track and watch the input meters in the app.</strong> They should respond to the singer. If they don't move, walk back through the chain: Behringer ch 1-2 main mix faders up, Behringer master fader up, Toft Master fader up, Toft channel 1 L-R down, channel 1 fader up, singer singing.</li>
+  <li><strong>Arm a stereo track and watch the input meters in the app.</strong> They should respond to the singer. If they don't move, walk back through the chain: Behringer ch 1-2 main mix faders up, Behringer master fader up, Toft Master fader up, Toft channel 15 L-R down, channel 15 fader up, singer singing.</li>
   <li><strong>Set the recording level.</strong> The target on the laptop's input meter is the same target you've been using all session: loudest peaks landing around -6 to -3 dBFS, never lighting the red clip indicator. If peaks are too hot, the first place to fix it is at the Toft master fader (not at the laptop's input gain, not at the Behringer ch 1-2 gain). The Toft master is the cleanest stage to control the recording level.</li>
   <li><strong>Record.</strong> Press record in the app, count the singer in, capture the take. Listen back to the take. The laptop's playback returns through the Behringer and out the Control Room outs to Toft LINE 9-10, the same channels the reference track uses. Those channels stay off the master (L-R up), so press SOLO on channels 9 and 10 to hear the take on the control-room speakers. The recording captures dry vocal + wet reverb + wet compression, summed at the Toft master fader.</li>
 </ol>
