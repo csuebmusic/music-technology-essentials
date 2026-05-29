@@ -320,6 +320,13 @@
       <li><a href="#part-6-record">Part 6. Record the master mix to the laptop</a></li>
     </ul>
   </div>
+  <div class="index-group">
+    <span class="index-title"><a href="#comping">Comping the takes</a></span>
+    <ul>
+      <li><a href="#comp-logic">Comping in Logic Pro</a></li>
+      <li><a href="#comp-ableton">Comping in Ableton Live</a></li>
+    </ul>
+  </div>
 </nav>
 
 <h3 id="live-room-rack">The live-room rack</h3>
@@ -1103,7 +1110,38 @@
   <li><strong>Record.</strong> Press record in the app, count the singer in, capture the take. Listen back to the take. The laptop's playback returns through the Behringer and out the Control Room outs to Toft LINE 9-10, the same channels the reference track uses. Un-mute channels 9 and 10 (you muted them to record) to hear the take on the control-room speakers. The recording captures dry vocal + wet reverb + wet compression, summed at the Toft master fader.</li>
 </ol>
 
-<p>If the take is good, save the file to <code>~/Documents/lastname/recordings/</code> with a clear filename. If you want another take, arm a fresh track and roll again. Multiple takes are cheap; comp the best moments after the session ends.</p>
+<hr>
+
+<h3 id="comping">Comping the takes</h3>
+
+<p>You rarely keep one take whole. Across several passes, one take has the strongest first verse, another nails the last chorus, a third has the cleanest line into the bridge. <strong>Comping</strong> (short for compositing) is building one final performance from the best moments of several takes. You do it after the session, in a DAW on your own machine, working from the WAV files you saved to <code>~/Documents/lastname/recordings/</code>.</p>
+
+<p>The idea is the same in every DAW: stack the takes so they line up in time, then move through the song and choose the best take for each phrase. Two guides follow, one for Logic Pro and one for Ableton Live. Use whichever you have.</p>
+
+<h4 id="comp-logic">Comping in Logic Pro</h4>
+
+<p>Logic's Take Folders and Quick Swipe Comping are built for this.</p>
+
+<ol>
+  <li><strong>Start a project at the session settings.</strong> Open Logic, create an empty project with one audio track, and set the sample rate to <strong>48 kHz</strong> in File &gt; Project Settings &gt; Audio so it matches your recordings.</li>
+  <li><strong>Import the takes onto one track.</strong> Drag every take WAV onto the same audio track, each starting at bar 1, stacked on top of one another.</li>
+  <li><strong>Pack them into a Take Folder.</strong> Select all the regions, Control-click one, and choose <strong>Folder &gt; Pack Take Folder</strong>. The takes collapse into a single folder, each take on its own lane inside.</li>
+  <li><strong>Swipe to comp.</strong> Open the folder with its disclosure triangle to see every take. Drag across the part of any take you want to keep; the swiped section highlights and plays, and the comp row at the top of the folder shows the result. Move through the song phrase by phrase, swiping the best take for each.</li>
+  <li><strong>Audition and refine.</strong> Play it back. To change a choice, swipe a different take over that span; Logic crossfades the join automatically, so phrase-to-phrase transitions stay smooth.</li>
+  <li><strong>Flatten and export.</strong> When the comp is right, open the Take Folder menu (top-left of the folder) and choose <strong>Flatten</strong> to render it to one region. Then bounce the project (File &gt; Bounce) or export the region (File &gt; Export) as a <strong>WAV at 48 kHz / 24-bit</strong>.</li>
+</ol>
+
+<h4 id="comp-ableton">Comping in Ableton Live</h4>
+
+<p>Live 11 and later comp with Take Lanes in the Arrangement View.</p>
+
+<ol>
+  <li><strong>Start a Set at the session sample rate.</strong> Open Live, set the sample rate to <strong>48 kHz</strong> in Preferences &gt; Audio, and switch to the <strong>Arrangement View</strong> (press Tab).</li>
+  <li><strong>Drop the takes into take lanes.</strong> Drag the first take WAV onto an audio track at bar 1. Right-click the track and choose <strong>Show Take Lanes</strong>. Drag each remaining take into its own take lane below, all starting at bar 1, so the takes sit stacked and aligned.</li>
+  <li><strong>Comp phrase by phrase.</strong> In a take lane, drag a time range across the part you want; that selection is promoted to the main lane at the top and becomes the active take for that span. Work through the song, choosing the best take in each take lane for each phrase.</li>
+  <li><strong>Audition and refine.</strong> Play the main lane back. To swap a choice, select the same range in a different take lane. If you hear a click at a join, drag the fade handle at the clip edge to add a short crossfade.</li>
+  <li><strong>Consolidate and export.</strong> Select the full span of the finished comp in the main lane and press <strong>Cmd-J</strong> (Ctrl-J on Windows) to consolidate it into one clip. Then File &gt; Export Audio/Video and render a <strong>WAV at 48 kHz / 24-bit</strong>.</li>
+</ol>
 
 <footer class="handout-footer">
   <span>MUS 381 · CSU East Bay</span>
