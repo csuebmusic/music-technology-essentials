@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Module 3 Listening: Three ways to mix a record</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Listening-specific styles (file-local, matching the Module 2
+       listening assignment). */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure svg {
+      max-width: 100%;
+      height: auto;
+    }
+    figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.75rem;
+    }
+    /* Listen-link cards: styled hyperlinks to external audio sources */
+    .listen-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .listen-link:hover {
+      background: var(--bg);
+      border-color: var(--accent);
+      border-left-color: var(--accent);
+    }
+    .listen-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .listen-link .listen-icon {
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .listen-link .listen-body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .listen-link .listen-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    .listen-link .listen-meta {
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-soft);
+      margin-top: 0.25rem;
+    }
+    .listen-link .listen-arrow {
+      flex: 0 0 auto;
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--ink-soft);
+    }
+    /* Photo display: single photo per item (matching Module 2). */
+    .photo-single {
+      margin: 2rem 0;
+    }
+    .photo-single img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      display: block;
+    }
+    .photo-single figure {
+      margin: 0;
+    }
+    .photo-single figcaption {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-top: 0.6rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .photo-attribution {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint, var(--ink-soft));
+      margin-top: 0.3rem;
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 03 · Listening</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 03 · Recording, sample prep &amp; library building</div>
+  <h1>Listening: Three ways to mix a record</h1>
+  <div class="subtitle">The same handful of sounds, mixed three different ways. Listen for how present the mixing is.</div>
+</div>
+
+<p class="lede">In the mixer sessions you saw a console route many signals at once: a live mix for an audience, a studio mix for recording. Routing and level are choices, and a finished record is the sum of thousands of them. This listening is about those choices. The three pieces below sit at three points on a single spectrum, running from a mix that works to disappear to a mix that becomes the music itself.</p>
+
+<hr>
+
+<h2>Before you listen: a spectrum of mixing</h2>
+
+<p>Take three sounds, say a voice, a bass, and a drum kit. Hand them to three different engineers and you can get three records that share almost nothing. The difference is not the sounds. It is what the mixing decides to do with them.</p>
+
+<p>At one end of the spectrum, the engineer works to disappear. The goal is to capture a real performance in a real room as faithfully as possible: the players, the space between them, the air around them. A few well-placed mics, light intervention, and the recording stands in for being in the room. You judge this kind of mixing by how little you notice it.</p>
+
+<p>In the middle, the studio builds something that never happened in any single room. Parts are recorded separately and stacked, instrument on instrument, until they fuse into one wall of sound. Phil Spector called his results "little symphonies for the kids." No group ever performed the finished record live; it exists only as a recording. The mixing is doing an enormous amount of work, and that work goes toward making the construction sound like one convincing whole.</p>
+
+<p>At the far end, the mixing is the composition. In early-1970s Jamaica, engineers like King Tubby and Lee "Scratch" Perry took finished multitrack tapes and reworked them live at the desk: dropping the vocal out entirely, pushing the drums and bass to the front, sending a single snare hit into a long echo, sweeping a filter until a part dissolved. Before them, a mixing desk balanced levels toward a clean final mix. They played the desk like an instrument, and the engineer stepped to the front of the record instead of standing behind it. This is the birth of dub, and it is the reason a producer today reaches for delay and reverb as creative tools, not just corrections.</p>
+
+<figure>
+  <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A spectrum of mixing running from the mix disappearing on the left to the mix becoming the composition on the right, with three recordings placed along it.">
+    <rect width="600" height="230" fill="var(--bg-alt)"/>
+
+    <!-- Spectrum band: accent opacity ramps up left to right, marking
+         increasing intervention by the mix. Three segments. -->
+    <rect x="40" y="150" width="173" height="34" fill="var(--accent)" opacity="0.18"/>
+    <rect x="213" y="150" width="174" height="34" fill="var(--accent)" opacity="0.4"/>
+    <rect x="387" y="150" width="173" height="34" fill="var(--accent)" opacity="0.7"/>
+
+    <!-- Segment labels inside the band -->
+    <text x="126" y="171" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="0.5">CAPTURE THE ROOM</text>
+    <text x="300" y="171" font-family="DM Mono, monospace" font-size="10" fill="var(--ink)" text-anchor="middle" letter-spacing="0.5">BUILD THE RECORD</text>
+    <text x="473" y="171" font-family="DM Mono, monospace" font-size="10" fill="var(--bg)" text-anchor="middle" letter-spacing="0.5">PLAY THE CONSOLE</text>
+
+    <!-- Axis line under the band, arrowhead at the right -->
+    <line x1="40" y1="200" x2="552" y2="200" stroke="var(--ink)" stroke-width="1.5"/>
+    <polygon points="560,200 550,196 550,204" fill="var(--ink)"/>
+
+    <!-- End labels -->
+    <text x="40" y="217" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="start">the mix tries to disappear</text>
+    <text x="552" y="217" font-family="DM Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="end">the mix is the music</text>
+
+    <!-- Record markers above each segment -->
+    <!-- 1 · Bill Evans 1961 -->
+    <g>
+      <line x1="126" y1="118" x2="126" y2="150" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="126" cy="118" r="3.5" fill="var(--accent)"/>
+      <text x="126" y="58" font-family="DM Mono, monospace" font-size="9.5" fill="var(--accent)" text-anchor="middle" font-weight="500">Bill Evans Trio</text>
+      <text x="126" y="72" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">live jazz trio</text>
+      <text x="126" y="84" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">1961</text>
+    </g>
+
+    <!-- 2 · The Ronettes 1963 -->
+    <g>
+      <line x1="300" y1="118" x2="300" y2="150" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="300" cy="118" r="3.5" fill="var(--accent)"/>
+      <text x="300" y="58" font-family="DM Mono, monospace" font-size="9.5" fill="var(--accent)" text-anchor="middle" font-weight="500">The Ronettes</text>
+      <text x="300" y="72" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">Wall of Sound</text>
+      <text x="300" y="84" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">1963</text>
+    </g>
+
+    <!-- 3 · King Tubby 1976 -->
+    <g>
+      <line x1="473" y1="118" x2="473" y2="150" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="473" cy="118" r="3.5" fill="var(--accent)"/>
+      <text x="473" y="58" font-family="DM Mono, monospace" font-size="9.5" fill="var(--accent)" text-anchor="middle" font-weight="500">Pablo / King Tubby</text>
+      <text x="473" y="72" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">dub</text>
+      <text x="473" y="84" font-family="DM Mono, monospace" font-size="8.5" fill="var(--ink-soft)" text-anchor="middle">1976</text>
+    </g>
+  </svg>
+  <figcaption>Three recordings on one spectrum. The shading deepens as the mixing takes a larger hand in the result, from a near-invisible capture to a mix that is itself the performance.</figcaption>
+</figure>
+
+<p>Knowing where a record sits on this spectrum tells you what to listen for. In the first, listen past the music to the room. In the second, try to count the layers, and notice that they could never share one stage. In the third, follow the engineer's hands. As you listen, hold onto one fact: you are now the person making these decisions. Every sample you record, and every choice you make about it, lands somewhere on this same line.</p>
+
+<hr>
+
+<h2>Listen to all three</h2>
+
+<h3>1 · Capture the room · Bill Evans Trio, <em>Gloria's Step</em> (1961)</h3>
+
+<p>Recorded live at the Village Vanguard, a small New York jazz club, on a single Sunday in June 1961: piano, bass, and drums, three players listening hard to each other. The engineer's job here is to vanish. Listen for the size of the room, where each instrument sits in the space, and the sound of an audience a few feet away. Almost nothing stands between the performance and you.</p>
+
+<a class="listen-link" href="https://www.youtube.com/watch?v=rARGPAkIcw4" target="_blank" rel="noopener noreferrer">
+  <span class="listen-icon" aria-hidden="true">▶</span>
+  <span class="listen-body">
+    <span class="listen-title">Listen on YouTube: Bill Evans Trio, <em>Gloria's Step</em> (live, 1961)</span>
+    <span class="listen-meta">~6 min · opens in a new tab</span>
+  </span>
+  <span class="listen-arrow" aria-hidden="true">↗</span>
+</a>
+
+<h3>2 · Build the record · The Ronettes, <em>Be My Baby</em> (1963)</h3>
+
+<p>Phil Spector's most famous production, cut at Gold Star Studios in Hollywood. Spector recorded a small orchestra of session players and layered them, drenched in echo, into a single massive sound. He built it instrument by instrument, with the drums added last. Listen for how dense and seamless it is: a sound far too large and too reverberant to have come from any one room, presented as one record.</p>
+
+<a class="listen-link" href="https://www.youtube.com/watch?v=jSPpbOGnFgk" target="_blank" rel="noopener noreferrer">
+  <span class="listen-icon" aria-hidden="true">▶</span>
+  <span class="listen-body">
+    <span class="listen-title">Listen on YouTube: The Ronettes, <em>Be My Baby</em> (1963)</span>
+    <span class="listen-meta">~3 min · opens in a new tab</span>
+  </span>
+  <span class="listen-arrow" aria-hidden="true">↗</span>
+</a>
+
+<h3>3 · Play the console · Augustus Pablo &amp; King Tubby, <em>King Tubby Meets Rockers Uptown</em> (1976)</h3>
+
+<p>A dub version of a reggae song, "Baby I Love You So." King Tubby took the finished multitrack tape and remixed it live at his desk, turning the song into something new. The vocal is mostly gone. Drums and bass carry everything. Sounds drop out and crash back in, and single hits trail off into long echoes. Listen for the engineer making moves in real time: this is the mix as a performance.</p>
+
+<a class="listen-link" href="https://www.youtube.com/watch?v=35ZjynUONN4" target="_blank" rel="noopener noreferrer">
+  <span class="listen-icon" aria-hidden="true">▶</span>
+  <span class="listen-body">
+    <span class="listen-title">Listen on YouTube: Augustus Pablo &amp; King Tubby, <em>King Tubby Meets Rockers Uptown</em></span>
+    <span class="listen-meta">~3 min · opens in a new tab</span>
+  </span>
+  <span class="listen-arrow" aria-hidden="true">↗</span>
+</a>
+
+<hr>
+
+<h2>Questions</h2>
+
+<p>Answer all four. Listen to each piece at least once before you write.</p>
+
+<ol class="steps">
+  <li><strong>What space do you hear?</strong> For each of the three, describe the sense of space. Where do the instruments seem to be, how much room and echo is around them, and how "live" or "constructed" does the whole thing feel?</li>
+  <li><strong>Where is the engineer?</strong> For each piece, is the mixing trying to disappear, build something whole, or step to the front? Point to one specific thing you hear that places it on the spectrum.</li>
+  <li><strong>The console as instrument.</strong> In the dub track, name two specific moves the engineer makes that you do not hear in the Bill Evans or the Ronettes recording (for example, a dropout, an echo on a single hit, a sudden filter sweep). Describe what each one does to the track.</li>
+  <li><strong>Your own ear.</strong> When you record your own samples, which approach pulls at you: capturing a sound as it truly is in the room, or shaping it into something new? There is no right answer. Notice your instinct, and say why, in a sentence or two.</li>
+</ol>
+
+<div class="submission-card">
+  <div class="submission-title">Submission details</div>
+
+  <div class="submission-row">
+    <div class="submission-label">Where</div>
+    <div class="submission-value">Upload to Canvas under this assignment.</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">File format</div>
+    <div class="submission-value">Word document (<code>.docx</code>) or PDF (<code>.pdf</code>).</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Filename</div>
+    <div class="submission-value"><code>lastname-listening-03.docx</code> (lowercase, hyphens, your last name).</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Length</div>
+    <div class="submission-value">About half a page total, roughly 250 to 350 words. Concise is fine; don't pad.</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Formatting</div>
+    <div class="submission-value">12 pt, double-spaced, 1-inch margins. Use Times New Roman, Garamond, or another standard serif. Include your name, the course (MUS 381), the assignment, and the date at the top.</div>
+  </div>
+
+  <div class="submission-row">
+    <div class="submission-label">Citations</div>
+    <div class="submission-value">If you reference a recording, source, or piece beyond the three on this list, cite it. Use either the <em>Chicago Manual of Style</em> (notes-bibliography form) or the <em>MLA Handbook</em>. Pick one and stay consistent.<br><br>Examples for the recordings on this list:<br>
+      <strong>Chicago:</strong> Augustus Pablo. <em>King Tubbys Meets Rockers Uptown</em>. Clocktower Records, 1976, vinyl LP.<br>
+      <strong>MLA:</strong> Augustus Pablo. <em>King Tubbys Meets Rockers Uptown</em>. Clocktower Records, 1976.</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>A note on listening</h2>
+
+<p>Use headphones if you can, and listen to each piece all the way through once before you start writing. These three records were made decades apart, in different countries, for different audiences. What connects them is a decision every engineer makes: how much the mix should show. Listen for that decision, and write what you actually hear.</p>
+
+<div class="callout">
+  <div class="callout-label">Why this listening, in this module</div>
+  <p>You just learned what a mixer does. This is where you hear what it is for. The same desk that handles a live show or a studio session can also become the instrument that makes the record. Keep that range in mind when you start mixing in Module 4.</p>
+</div>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 03 · Listening</span>
+</footer>
+
+</body>
+</html>
