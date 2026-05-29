@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUS 381 · Midterm Review</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    /* Review-packet helpers. The packet is dense by nature (a full
+       course's vocabulary in one place), so a few small affordances
+       make it scannable for study. No new colors: all values pull from
+       the shared palette variables. */
+
+    /* A compact label that marks which module each vocabulary cluster
+       comes from, so students can map the review back to where they
+       learned the material. */
+    .from-module {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      margin: 0 0 0.4rem;
+    }
+
+    /* The self-check question list. Numbered, with a little breathing
+       room between questions so they read as prompts, not prose. */
+    ol.self-check > li {
+      margin-bottom: 0.7rem;
+    }
+    ol.self-check {
+      padding-left: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="handout-header">
+  <span class="course">MUS 381 · Essentials of Music Technology</span>
+  <span class="meta">Module 03 · Midterm review</span>
+</header>
+
+<div class="title-block">
+  <div class="module-tag">Module 03 · Recording, sample prep &amp; library building</div>
+  <h1>Midterm Review</h1>
+</div>
+
+<p class="lede">A study packet for the terminology exam. It gathers the vocabulary from the first half of the course into one place, grouped the way you met it: the lab and its workflow, then digital audio, then sound and editing, then recording and the mixer. Read each definition, then check that you can give it back in your own words and point to where it shows up in your own work.</p>
+
+<hr>
+
+<h2>How the exam works</h2>
+
+<p>The terminology exam is cumulative. It covers vocabulary and concepts from the first day of class through the mixer. Expect to do three kinds of thinking with the terms below: <em>define</em> a term in plain language, <em>identify</em> a component or signal from a description (which cable carries instrument level, which mic needs phantom power), and <em>trace</em> a signal flow from acoustic source to stored file, naming what happens at each stage.</p>
+
+<p>Knowing a definition by heart matters less than knowing what the thing does and where it sits in the chain. The connecting sections at the end of this packet are there for exactly that: they show how the separate terms link into a single path that sound takes from the air to your library.</p>
+
+<div class="callout">
+  <div class="callout-label">How to use this packet</div>
+  <p>Cover the definitions and read only the terms. For each one, say what it is out loud or write it down, then uncover and compare. The terms you can already give back are done. The ones you stumble on are your study list. The full explanations for every term live in the module readings, which are the place to go when a definition here is too short to make sense on its own.</p>
+</div>
+
+<hr>
+
+<h2>1 · Working in the lab</h2>
+<p class="from-module">From Module 1 · First day &amp; session routines</p>
+
+<p>The first week was about fluency: moving around the Mac, managing files, and following the session workflow that keeps everyone's work safe. The testable ideas here are about the workflow itself.</p>
+
+<dl class="vocab">
+  <dt>Local working folder</dt>
+  <dd>The folder on the Mac where you do your actual work during a session, at <code>~/Documents/lastname/</code>. Fast and local. This is where files live while you edit them.</dd>
+
+  <dt>NAS</dt>
+  <dd>The network drive that holds the master copy of everyone's work. You download your folder from it at the start of a session and upload your folder back to it at the end. The NAS is the master copy, not a live working location: you never edit files directly on it.</dd>
+
+  <dt>The session workflow</dt>
+  <dd>Download from the NAS at the start of a session, work locally, upload back to the NAS at the end. This pattern keeps the master copy current and protects your work if a lab Mac is wiped between sessions.</dd>
+
+  <dt>File-naming format</dt>
+  <dd>The naming rule for this class: lowercase, no spaces, hyphens between words, a clear and consistent structure. A filename should tell you what the file is without your having to open it.</dd>
+
+  <dt>File extension</dt>
+  <dd>The suffix after the dot in a filename (<code>.wav</code>, <code>.mp3</code>, <code>.als</code>) that says what kind of file it is. Showing extensions in Finder is part of the first-day setup so you always know what you are working with.</dd>
+</dl>
+
+<hr>
+
+<h2>2 · Digital audio</h2>
+<p class="from-module">From Module 2 · Digital audio</p>
+
+<p>This is the layer underneath everything else: how a continuous sound in the air becomes a sequence of numbers a computer can store. Two settings, sample rate and bit depth, decide how faithful that conversion is.</p>
+
+<dl class="vocab">
+  <dt>Analog</dt>
+  <dd>Continuous and smoothly varying. Sound in the air and voltage in a wire are both analog.</dd>
+
+  <dt>Digital</dt>
+  <dd>Made of discrete numbers. Sound stored on a computer as a sequence of samples is digital.</dd>
+
+  <dt>Sample</dt>
+  <dd>A single measurement of a sound's amplitude at one moment in time. (The same word also means a recorded sound used as creative material; context tells you which is meant.)</dd>
+
+  <dt>Sample rate</dt>
+  <dd>How many samples are taken per second, measured in Hz or kHz. The standard for audio is 44.1 kHz.</dd>
+
+  <dt>Bit depth</dt>
+  <dd>How many bits store each sample. Higher bit depth means finer amplitude resolution and a lower noise floor. Common values: 16-bit (CD), 24-bit (recording), 32-bit float (DAW working files).</dd>
+
+  <dt>Nyquist theorem</dt>
+  <dd>The principle that you must sample at twice the highest frequency you want to capture. This is why 44.1 kHz is enough for the range of human hearing.</dd>
+
+  <dt>Quantization</dt>
+  <dd>Rounding a continuous amplitude value to the nearest available digital value.</dd>
+
+  <dt>Quantization noise</dt>
+  <dd>The low-level hiss that results when bit depth is too low: the rounding errors of quantization accumulate into audible noise. Lower bit depth means louder noise relative to the signal.</dd>
+
+  <dt>Aliasing</dt>
+  <dd>The artifact of a sample rate too low for the frequencies present. Frequencies above the Nyquist limit fold back into the audible range as false lower tones, producing strange whistles.</dd>
+
+  <dt>Signal-to-noise ratio (SNR)</dt>
+  <dd>The ratio of signal level to background noise level, in decibels. Higher is better. Bit depth sets the ceiling: roughly 6 dB per bit, so 16-bit gives about 96 dB.</dd>
+
+  <dt>Headroom</dt>
+  <dd>The margin between your loudest signal and the maximum the system can handle. Working with headroom (peaks below 0 dBFS) leaves room for processing without clipping.</dd>
+
+  <dt>ADC / DAC</dt>
+  <dd>Analog-to-Digital Converter and Digital-to-Analog Converter. The hardware that turns analog sound into digital samples for recording (ADC) and digital samples back into analog sound for playback (DAC).</dd>
+
+  <dt>WAV / AIFF</dt>
+  <dd>Uncompressed audio formats. Use these for working files and final exports.</dd>
+
+  <dt>Lossy compression</dt>
+  <dd>Shrinks a file by discarding information the ear is unlikely to notice. The discarded data is gone for good. MP3 and AAC are lossy. Use for distribution only.</dd>
+
+  <dt>Lossless compression</dt>
+  <dd>Shrinks a file with no loss: it decodes back to bit-perfect identical with the original. FLAC and ALAC are lossless. Useful for high-quality archiving.</dd>
+</dl>
+
+<hr>
+
+<h2>3 · Sound and timbre</h2>
+<p class="from-module">From Module 2 · Digital audio explorer</p>
+
+<p>What makes one sound different from another, even at the same pitch and volume, comes down to its mix of frequencies. These terms name the parts of that mix.</p>
+
+<dl class="vocab">
+  <dt>Waveform</dt>
+  <dd>The shape of a sound, plotted as amplitude (up and down) over time (left to right).</dd>
+
+  <dt>Sine wave</dt>
+  <dd>The simplest waveform, a single pure frequency with no added partials. A pure tone.</dd>
+
+  <dt>Fundamental</dt>
+  <dd>The lowest frequency in a tone, the one your ear usually hears as its pitch.</dd>
+
+  <dt>Partial</dt>
+  <dd>Any single frequency component present in a complex tone. The fundamental is the first partial.</dd>
+
+  <dt>Harmonic series</dt>
+  <dd>The set of partials that sit at whole-number multiples of the fundamental. Most pitched instruments produce a harmonic series.</dd>
+
+  <dt>Timbre</dt>
+  <dd>The quality of a sound that lets you tell a violin from a flute at the same pitch. Determined largely by which partials are present and how strong each one is.</dd>
+
+  <dt>Additive synthesis</dt>
+  <dd>Building a complex tone by stacking sine waves, one partial at a time. The reverse of breaking a sound down into its frequency components.</dd>
+</dl>
+
+<hr>
+
+<h2>4 · Editing and the envelope</h2>
+<p class="from-module">From Module 2 · Editing &amp; the envelope</p>
+
+<p>These are the moves you make on a sound once it is in Audacity: cutting it, joining it to other sounds, smoothing the seams, and reshaping it in time and pitch.</p>
+
+<dl class="vocab">
+  <dt>Cut</dt>
+  <dd>Remove a selected region; the audio on either side closes the gap.</dd>
+
+  <dt>Trim</dt>
+  <dd>Keep a selected region and remove everything else. The opposite of cut.</dd>
+
+  <dt>Splice</dt>
+  <dd>Place sound fragments next to each other in time. The core musique concrète move, named for the physical splicing of tape.</dd>
+
+  <dt>Fade in / fade out</dt>
+  <dd>A volume ramp at the edge of an edit. Even a very short fade (10 to 50 milliseconds) prevents the click that a hard edit boundary makes.</dd>
+
+  <dt>Crossfade</dt>
+  <dd>An overlapping fade-out and fade-in: one sound fades out as another fades in, so the seam between them blends instead of jumping.</dd>
+
+  <dt>Loop</dt>
+  <dd>A region played repeatedly, used either as a working aid or as a compositional element.</dd>
+
+  <dt>Reverse</dt>
+  <dd>Play a sound backward. The envelope flips: the attack becomes the release and the release becomes the attack. Duration and pitch stay the same.</dd>
+
+  <dt>Time-pitch coupling</dt>
+  <dd>The link between speed and pitch in recorded sound: changing playback speed changes both at once. Slowing a recording makes it longer and lower. This is what tape did.</dd>
+
+  <dt>Time-stretch</dt>
+  <dd>Change a sound's duration without changing its pitch. A digital operation that decouples what tape kept coupled.</dd>
+
+  <dt>Pitch-shift</dt>
+  <dd>Change a sound's pitch without changing its duration. The complement to time-stretch.</dd>
+
+  <dt>Envelope</dt>
+  <dd>The shape of a sound over time, described in three stages: attack, sustain, release.</dd>
+
+  <dt>Attack</dt>
+  <dd>How a sound begins, from silence to the body of the sound. Can be sharp or gradual.</dd>
+
+  <dt>Sustain</dt>
+  <dd>The body of a sound after the attack. Can be steady or evolving, long or very short.</dd>
+
+  <dt>Release</dt>
+  <dd>How a sound ends, from the body back to silence. Can be abrupt or gradual.</dd>
+
+  <dt>ADSR</dt>
+  <dd>Attack, Decay, Sustain, Release: the four-stage envelope used in synthesizers. Decay sits between the attack peak and the held sustain level. (We meet this again in Module 4.)</dd>
+</dl>
+
+<hr>
+
+<h2>5 · Dynamics</h2>
+<p class="from-module">From Module 2 · Dynamics</p>
+
+<p>One core term from the dynamics work is worth knowing precisely. The rest of that vocabulary is descriptive listening language: words for what over-processing sounds like.</p>
+
+<dl class="vocab">
+  <dt>Transient</dt>
+  <dd>The brief, sharp burst at the start of a note or hit, before its body settles: the strike of a drum, the pluck of a string, the consonant at the start of a word. Transients carry most of a sound's character, which is why a compressor's attack setting matters so much.</dd>
+</dl>
+
+<p>The listening words, in brief: a mix is <em>pumping</em> when you can hear the compressor's gain rise and fall in rhythm; <em>breathing</em> is a subtler version on the background of a sound; <em>squashed</em> means the transients have been clamped down so far the sound lost its punch; <em>glued</em> is the positive sense, where light compression makes a group of sounds feel like one coherent element; <em>pinned</em> means the signal is hitting a limiter ceiling continuously, the loudness-wars sound.</p>
+
+<hr>
+
+<h2>6 · Signal flow and the recording chain</h2>
+<p class="from-module">From Module 3 · The recording chain &amp; widening the flow</p>
+
+<p>Module 3 starts with the most common path from a microphone to a computer and then widens it. The first cluster covers the microphones themselves and how they hear.</p>
+
+<dl class="vocab">
+  <dt>Signal flow</dt>
+  <dd>The path sound takes from acoustic source to stored file. Every recording setup has one, whether it is a phone against a doorframe or a full studio.</dd>
+
+  <dt>Recording chain</dt>
+  <dd>The specific signal flow used at every lab station: dynamic mic, mic-level signal, XLR cable, audio interface, USB cable, computer.</dd>
+
+  <dt>Transducer</dt>
+  <dd>A device that converts one kind of energy into another. A microphone converts air pressure into voltage; a speaker does the reverse.</dd>
+
+  <dt>Dynamic microphone</dt>
+  <dd>A mic that uses a moving coil and a magnet to make its signal. Rugged, needs no power, common on stages and in studios. The kind in the lab's gear storage.</dd>
+
+  <dt>Condenser microphone</dt>
+  <dd>A more sensitive mic that captures more detail. Needs phantom power to work.</dd>
+
+  <dt>Ribbon microphone</dt>
+  <dd>A third transducer type, mentioned for completeness. Not used in the lab.</dd>
+
+  <dt>Phantom power</dt>
+  <dd>The 48-volt supply (marked +48V) that an interface or mixer sends up the XLR cable to power a condenser mic. Switched off for dynamic mics, which do not need it.</dd>
+
+  <dt>Polar pattern</dt>
+  <dd>The chart on a mic's spec sheet showing which directions it picks up sound from. Cardioid is one polar pattern.</dd>
+
+  <dt>Cardioid</dt>
+  <dd>The pattern of most dynamic mics, including the lab's: most sensitive in front, less at the sides, rejecting sound from behind. The response shape resembles a heart.</dd>
+
+  <dt>Omnidirectional</dt>
+  <dd>A pattern that picks up sound equally from all directions.</dd>
+
+  <dt>Figure-8</dt>
+  <dd>A pattern that picks up sound from front and back while rejecting the sides.</dd>
+
+  <dt>Frequency response</dt>
+  <dd>The chart showing which parts of the spectrum a mic emphasizes and which it plays down. A curve above the reference line means emphasis at that frequency.</dd>
+
+  <dt>Presence peak</dt>
+  <dd>A bump in a mic's frequency response in the upper mids (around 3 to 8 kHz) that emphasizes consonants and snare snap. Most stage and studio dynamic mics have one.</dd>
+
+  <dt>Proximity effect</dt>
+  <dd>The boost in low frequencies when a directional mic is held very close to its source. Vocal mics build in a low-frequency rolloff to compensate.</dd>
+</dl>
+
+<hr>
+
+<h2>7 · Signals, levels, and cables</h2>
+<p class="from-module">From Module 3 · Widening the flow</p>
+
+<p>Different gear puts out signals at different strengths and carries them on different cables. Matching a signal level to the right input is one of the most testable ideas in this module.</p>
+
+<dl class="vocab">
+  <dt>Mic level</dt>
+  <dd>The weakest signal level, around 1 millivolt, produced by any microphone. Needs a preamp before it is usable. Travels on XLR, balanced.</dd>
+
+  <dt>Instrument level</dt>
+  <dd>The middle level, around 100 millivolts, from electric guitar and bass pickups. Also high-impedance, so it wants a Hi-Z input. Travels on TS, unbalanced.</dd>
+
+  <dt>Line level</dt>
+  <dd>The strongest level, around 1 volt, from synths, mixers, and interface outputs. Travels on TRS or XLR (balanced) or RCA (unbalanced consumer).</dd>
+
+  <dt>Impedance / Hi-Z</dt>
+  <dd>A measure of how a source and an input load each other electrically. Instrument pickups are high-impedance (Hi-Z), which is why an interface has a dedicated Hi-Z input for them.</dd>
+
+  <dt>XLR cable</dt>
+  <dd>The standard cable for mic-level audio. Three-conductor, balanced. Carries two opposite-polarity copies of the signal so the receiver can cancel picked-up noise.</dd>
+
+  <dt>TS cable</dt>
+  <dd>A two-conductor unbalanced cable that carries instrument-level signals. What plugs into a guitar.</dd>
+
+  <dt>TRS cable</dt>
+  <dd>A three-conductor cable. Carries either a balanced line-level signal or an unbalanced stereo signal, depending on context. It cannot carry both at once.</dd>
+
+  <dt>RCA cable</dt>
+  <dd>An unbalanced consumer cable, common for line-level connections on home gear.</dd>
+
+  <dt>Balanced cable</dt>
+  <dd>A design that carries two opposite-polarity copies of the signal. At the far end one copy is flipped and summed with the other: the signal doubles, the noise cancels.</dd>
+
+  <dt>Unbalanced cable</dt>
+  <dd>A design that carries a single copy of the signal, with no built-in noise rejection. Fine over short runs; prone to picking up hum over long ones.</dd>
+
+  <dt>Phase</dt>
+  <dd>Where a signal sits in its cycle of going up and down. Two copies moving together are in phase; flip one upside down and they are out of phase, and summing them cancels. This is the principle a balanced cable relies on.</dd>
+
+  <dt>Mono</dt>
+  <dd>A single channel of audio.</dd>
+
+  <dt>Stereo</dt>
+  <dd>Two channels, left and right, carrying spatial information.</dd>
+
+  <dt>DI box</dt>
+  <dd>A signal modifier that converts an instrument-level signal to mic-level and balances it, so an instrument can plug into a mic input.</dd>
+
+  <dt>Hardware preamp</dt>
+  <dd>A signal modifier that lifts a mic-level signal up to line level, often adding sonic character.</dd>
+
+  <dt>Signal modifier</dt>
+  <dd>The general term for a device that changes a signal's level or type as it passes through, such as a DI box or a hardware preamp.</dd>
+</dl>
+
+<hr>
+
+<h2>8 · Capturing the signal: the interface</h2>
+<p class="from-module">From Module 3 · The recording chain</p>
+
+<p>The audio interface is the box where the analog world meets the computer. These terms cover what it does and the controls you use to get a clean recording.</p>
+
+<dl class="vocab">
+  <dt>Audio interface</dt>
+  <dd>The hardware that connects to the computer over USB and converts between analog and digital audio. Houses the preamp, the ADC, and the DAC.</dd>
+
+  <dt>Preamp (preamplifier)</dt>
+  <dd>The circuit inside the interface that boosts a mic-level signal up to line level. The gain knob is its control.</dd>
+
+  <dt>Gain</dt>
+  <dd>The knob that sets how much the preamp amplifies the incoming signal. The single most important control for a clean recording.</dd>
+
+  <dt>Clipping</dt>
+  <dd>The harsh distortion when a signal exceeds the digital ceiling (0 dBFS). Unrecoverable in editing. The clip indicator lights when it happens.</dd>
+
+  <dt>Direct monitoring</dt>
+  <dd>An interface feature that routes the incoming signal straight to your headphones, bypassing the computer, so you hear yourself without delay.</dd>
+
+  <dt>Monitor mix</dt>
+  <dd>The knob that blends the live input with the computer playback in your headphones. Toward "input" to hear the mic; toward "playback" to hear what is already recorded.</dd>
+
+  <dt>Latency</dt>
+  <dd>The round-trip delay between a sound entering the interface and returning to your headphones after a trip through the computer. Direct monitoring avoids it.</dd>
+
+  <dt>USB cable</dt>
+  <dd>The cable carrying digital data between interface and computer. It moves the stream of numbers the ADC produces, not an analog audio signal.</dd>
+
+  <dt>DSP</dt>
+  <dd>Digital signal processing: the computations performed on a digital signal, such as EQ, compression, and reverb.</dd>
+
+  <dt>Digital I/O</dt>
+  <dd>Inputs and outputs that carry audio as a digital signal rather than an analog voltage, used to connect digital gear and expand channel count.</dd>
+</dl>
+
+<hr>
+
+<h2>9 · The mixer</h2>
+<p class="from-module">From Module 3 · The mixer</p>
+
+<p>A mixer is the place where many signal flows converge, combine, and route to different destinations. You do not need to operate one for the exam; you need to know what its parts are and what they do.</p>
+
+<dl class="vocab">
+  <dt>Channel</dt>
+  <dd>One input on the mixer, with its own set of controls.</dd>
+
+  <dt>Channel strip</dt>
+  <dd>The vertical column of controls for one channel.</dd>
+
+  <dt>Fader</dt>
+  <dd>The sliding control that sets a channel's or group's level into the mix.</dd>
+
+  <dt>Unity gain</dt>
+  <dd>The fader or knob position where signal passes through unchanged, marked 0 dB. Above unity boosts; below unity reduces.</dd>
+
+  <dt>Bus</dt>
+  <dd>A summing point inside the console where many signals combine into one. Subgroup buses, aux buses, and the master mix are all buses.</dd>
+
+  <dt>Mix / sum</dt>
+  <dd>The combining operation on a bus: many channels arrive, each at its own level, and the bus adds them into one signal.</dd>
+
+  <dt>Subgroup / submaster</dt>
+  <dd>A bus that groups several channels into a sub-mix with its own fader before sending into the master mix. "Submaster" is what our Toft console labels it.</dd>
+
+  <dt>Master mix</dt>
+  <dd>The main stereo mix the console builds across all its inputs, controlled by the master fader.</dd>
+
+  <dt>Aux send</dt>
+  <dd>A separate tap from each channel to a separate destination, which lets the engineer build a different mix of the same channels for a different purpose (a headphone cue, a reverb, a stage monitor).</dd>
+
+  <dt>Pre-fader / post-fader</dt>
+  <dd>Where an aux taps the signal. Pre-fader sits before the channel fader, so the fader does not affect the aux level (typical for headphone cues). Post-fader sits after it (typical for reverb sends).</dd>
+
+  <dt>Front-of-house (FOH)</dt>
+  <dd>The main mix sent to the speakers facing the audience in a live show.</dd>
+
+  <dt>Headphone cue</dt>
+  <dd>A performer's headphone mix during recording, usually built from one or more aux sends.</dd>
+
+  <dt>In-line console</dt>
+  <dd>A console where each strip carries two inputs at once, so one strip can send a live mic to the DAW and bring a recorded track back from it at the same time.</dd>
+
+  <dt>Analog vs. digital mixer</dt>
+  <dd>An analog mixer moves real voltages through physical circuitry and needs a separate interface to reach a computer. A digital mixer processes samples and often includes the conversion, so it can act as the interface itself.</dd>
+</dl>
+
+<hr>
+
+<h2>10 · From recording to sample, and the library</h2>
+<p class="from-module">From Module 3 · The whole module</p>
+
+<p>The deliverable for this half of the course is your sample library. Two ideas hold it together.</p>
+
+<dl class="vocab">
+  <dt>Recording vs. sample</dt>
+  <dd>A recording is what comes out of the mic. A sample is what goes into the library. Turning one into the other is its own discipline.</dd>
+
+  <dt>The sample prep pipeline</dt>
+  <dd>The three steps applied to every raw recording before it enters the library: denoise (using a captured silence sample), trim the silence at the start and end, then peak-normalize to a consistent ceiling.</dd>
+
+  <dt>Recording with headroom</dt>
+  <dd>While tracking, keeping peaks around -12 to -6 dBFS. This leaves room to make decisions in editing rather than committing to a level you cannot undo.</dd>
+
+  <dt>Library organization</dt>
+  <dd>A documented folder structure, consistent file names, and an internal README. A library you can search is a library you will use.</dd>
+</dl>
+
+<hr>
+
+<h2>The thread that connects it all</h2>
+
+<p>The terms above are easier to hold onto as one path than as a list. Sound starts as pressure in the air. A microphone, a transducer, turns it into a weak mic-level signal. A balanced XLR cable carries that signal to an interface, where a preamp lifts it toward line level and an ADC turns it into digital samples at some sample rate and bit depth. The computer stores those samples as a WAV file. To play it back, a DAC turns the samples into an analog signal again for your headphones. Every recording you make is a trip along that path, and every term names a stage or a decision on it.</p>
+
+<div class="callout">
+  <div class="callout-label">Two terms that bridge the modules</div>
+  <p>The ADC and DAC are the hinge between Module 2 and Module 3. Module 2 taught what the converters produce: samples, sample rate, bit depth, the file formats that store them. Module 3 showed where the converters live and what feeds them: the mic, the cable, the preamp, the interface. The same two boxes connect the digital audio you edited to the recordings you now make.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Headroom shows up twice</div>
+  <p>You met headroom first in editing, as the margin below 0 dBFS that keeps a processing chain from clipping. You met it again while tracking, as the reason to record with peaks around -12 to -6 dBFS. Same idea, two stages: leave room so there are decisions left to make later.</p>
+</div>
+
+<hr>
+
+<h2>Test yourself</h2>
+
+<p>Work through these without the definitions in front of you. Each one points back to a section above and to the reading it came from.</p>
+
+<ol class="self-check">
+  <li>Trace the signal flow from a singer's voice to a WAV file on the computer, naming every stage and the cable or conversion between them.</li>
+  <li>A friend hands you a synth, an electric guitar, and a vocal mic. Which signal level does each one put out, and which cable carries it?</li>
+  <li>Why does a 16-bit recording have a higher noise floor than a 24-bit one? What sets that floor?</li>
+  <li>What is the difference between aliasing and quantization noise? Which setting causes each?</li>
+  <li>You hold a cardioid vocal mic right against your lips and the low end booms. Name the effect and say why vocal mics are built to counter it.</li>
+  <li>What does phantom power do, and which of the lab's mics needs it?</li>
+  <li>Explain how a balanced cable rejects noise. What property of the two signal copies makes it work?</li>
+  <li>A recording clips. Can you fix it in editing? Why or why not?</li>
+  <li>What is the difference between time-stretch and time-pitch coupling? Which one did tape do?</li>
+  <li>Describe the three steps of the sample prep pipeline, in order, and say what each one fixes.</li>
+  <li>What makes a recording into a sample? Give the one-sentence distinction.</li>
+  <li>What is a bus on a mixer, and name three examples of one.</li>
+  <li>An engineer builds a separate headphone mix for a performer. Which mixer feature does this, and would it usually be tapped pre-fader or post-fader?</li>
+  <li>Two sounds you splice together click at the seam. What edit removes the click, and why?</li>
+  <li>What gives a violin and a flute different timbres at the same pitch? Use the words fundamental and partial in your answer.</li>
+  <li>Why do you record with headroom rather than as loud as possible?</li>
+  <li>What is the job of a DI box, and where does it sit in the signal flow?</li>
+  <li>Name the two converters inside an audio interface and say which direction each one runs.</li>
+</ol>
+
+<p>If a question stops you cold, that section of the packet (and the reading behind it) is where to spend your study time before Wednesday.</p>
+
+<footer class="handout-footer">
+  <span>MUS 381 · CSU East Bay</span>
+  <span>Module 03 · Midterm review</span>
+</footer>
+
+</body>
+</html>
