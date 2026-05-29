@@ -264,7 +264,7 @@
   <h1>The Mixer in Practice · Studio Recording</h1>
 </div>
 
-<p class="lede">A guide to recording in our studio. It walks the studio's gear and how it's all wired together (live room, control room, the path each signal takes from a mic on a stand to the console), then closes with a six-part walkthrough that takes a single vocal mic from the live room onto the console with a working headphone cue and bus processing.</p>
+<p class="lede">A guide to recording in our studio. It walks the studio's gear and how it's all wired together (live room, control room, the path each signal takes from a mic on a stand to the console), then closes with a six-part walkthrough that takes a single vocal mic from the live room onto the console, into a headphone cue and bus processing, and out to a recording on a laptop.</p>
 
 <p>MB2508 has two rooms: the <strong>control room</strong> (where the engineer sits at the Toft) and the <strong>live room</strong> (where the band plays, behind the internal door). The two rooms share a wall full of XLR feed-throughs and TRS pass-throughs that connect everything in one room to everything in the other. This guide documents what's in each room and how it's all wired.</p>
 
@@ -344,13 +344,13 @@
   <div class="photo-pair-item">
     <img src="../../assets/images/module-03-week-09/db25-to-xlr-fan-cable.webp" alt="A DB25-to-8×XLR-female fan cable. One DB25 male connector on one end, fanning out to eight female XLR plugs on the other end, each on a colored wire." loading="lazy">
     <figcaption>DB25-to-8×XLR fan cable.</figcaption>
-    <div class="photo-attribution">Photo via cable manufacturer.</div>
+    <div class="photo-attribution">Manufacturer product photo.</div>
   </div>
 </figure>
 
 <div class="callout">
   <div class="callout-label">What's a DB25 connector?</div>
-  <p>A <strong>DB25</strong> (sometimes called DSUB-25) is a 25-pin connector that carries <strong>eight balanced audio signals on a single plug</strong>. Behind the racks in this studio, almost every multi-channel connection between two pieces of gear runs as DB25 to keep the wiring tidy. <strong>Fan cables</strong> (also called <strong>snakes</strong>) translate between DB25 and individual plugs at the gear that needs them. The two images above show the same idea in two flavors: DB25-to-8×TRS (used at the HDX, Toft submasters, and the patchbay) and DB25-to-8×XLR (used at the SSL G and M2000). These snakes are everywhere in the studio's internal wiring, but you almost never have to touch them once they're in place.</p>
+  <p>A <strong>DB25</strong> (sometimes called DSUB-25) is a 25-pin connector that carries <strong>eight balanced audio signals on a single plug</strong>. Behind the racks in this studio, almost every multi-channel connection between two pieces of gear runs as DB25 to keep the wiring tidy. <strong>Fan cables</strong> (also called <strong>snakes</strong>) translate between DB25 and individual plugs at the gear that needs them. The two images above show the same idea in two flavors: DB25-to-8×TRS (used at the HDX, the Toft submasters, and the PHB-350 line panel) and DB25-to-8×XLR (used at the two preamp outputs, which fan out into the Toft's MIC inputs). These snakes are everywhere in the studio's internal wiring, but you almost never have to touch them once they're in place.</p>
 </div>
 
 <p>The Toft inputs are labeled MIC, but they accept line-level too: an XLR cable can carry mic-level or line-level (you read this in Lecture 2). With a line-level signal arriving at the Toft's MIC input, the Toft's onboard preamp doesn't need to amplify; the channel's INPUT GAIN knob becomes a <strong>trim</strong>, set low to fine-tune the level. The OctoPre has already done the gain work; the Toft's gain knob just nudges what's there.</p>
@@ -988,20 +988,20 @@
 <p>A reverb on the vocal makes it sit in a sense of space (a room, a hall, a plate). The send-and-return setup: Toft channel 1 sends a copy of the dry vocal to <strong>Aux 3 (L)</strong> and <strong>Aux 4 (R)</strong>; the Aux 3-4 sends arrive at the Behringer on channels 3 and 4 XLR; those channels feed the Behringer's <strong>ALT 3-4 bus</strong> through the built-in FX processor (loaded with a reverb preset); the wet stereo output of the FX returns to the Toft on <strong>LINE inputs 11 and 12</strong>. The wet returns join the master mix on their own channels, blended against the dry vocal on channel 1.</p>
 
 <ol>
+  <li><strong>At the Toft master section:</strong> set <strong>Aux 3</strong> and <strong>Aux 4</strong> on the Aux Master row to unity (around 12 o'clock).</li>
   <li><strong>At the Behringer:</strong> on the FX section, browse to a reverb preset (hall, plate, room) and select it.</li>
-  <li><strong>At the Behringer, channels 3 and 4:</strong> set the strip controls so the Aux 3-4 sends from the Toft reach the FX bus.
+  <li><strong>At the Behringer, channels 3 and 4:</strong> set the strip controls so the Aux 3-4 sends from the Toft pass through the FX and out to the ALT 3-4 bus.
     <ul>
-      <li><strong>Gain (channels 3 and 4):</strong> start at noon. The Toft is sending a line-level Aux signal into the Behringer's XLR mic input; the Behringer's preamp is the gain stage. Watch the FX send meter as you turn up the Toft's Aux 3-4 sends in step 4; adjust gain on Behringer ch 3-4 if needed.</li>
-      <li><strong>FX send (channels 3 and 4):</strong> turn up to noon. This is what feeds the channel into the FX processor.</li>
-      <li><strong>Main mix faders (channels 3 and 4):</strong> leave <strong>down</strong>. The dry vocal is already on the Toft via channel 1; you don't want a second copy on the Behringer's main mix.</li>
-      <li><strong>ALT 3-4 button (channels 3 and 4):</strong> press <strong>in</strong>. This is the routing that sends the FX-processed signal to the ALT 3-4 bus and out the ALT 3-4 outputs, back into the Toft on LINE 11-12.</li>
-      <li><strong>FX RETURN to ALT 3-4:</strong> turn up to noon, so the wet signal lands on the ALT 3-4 bus.</li>
+      <li><strong>Gain (channels 3 and 4):</strong> start at noon. The Toft is sending a line-level Aux signal into the Behringer's XLR mic input; the Behringer's preamp is the gain stage. Watch the FX send meter as you turn up the Toft's Aux 3-4 sends in step 5; adjust gain on Behringer ch 3-4 if needed.</li>
+      <li><strong>FX send (channels 3 and 4):</strong> turn up to noon. This feeds the channel into the built-in FX processor; the processed signal returns to the channel.</li>
+      <li><strong>MUTE button (channels 3 and 4):</strong> press <strong>in</strong>. On the Xenyx, MUTE takes the channel off the Main mix and routes it to the <strong>ALT 3-4 bus</strong> instead. That bus leaves the Behringer on the ALT 3-4 outputs and returns to the Toft on LINE 11-12, carrying the wet reverb.</li>
+      <li><strong>Channel faders (channels 3 and 4):</strong> set to <strong>unity</strong>, so the muted channels feed the ALT 3-4 bus at a healthy level.</li>
     </ul>
   </li>
   <li><strong>At the Toft, channels 11 and 12:</strong> set up the strips like channels 9 and 10 in Part 2, with the L-R button pressed this time so the wet reverb reaches the master mix.
     <ul>
       <li><strong>LINE button:</strong> pressed in (the channels listen to the rear LINE jacks 11 and 12, which receive the Behringer ALT 3-4 outputs).</li>
-      <li><strong>Other top-of-strip controls:</strong> +48V off, PHASE off, I/P REV off, INPUT GAIN at zero (you'll trim in step 5).</li>
+      <li><strong>Other top-of-strip controls:</strong> +48V off, PHASE off, I/P REV off, INPUT GAIN at zero (you'll trim in step 6).</li>
       <li><strong>EQ section:</strong> leave alone.</li>
       <li><strong>Aux sends 1-6:</strong> all at zero (the reverb return doesn't need to feed any cues or further effects).</li>
       <li><strong>MON LEVEL:</strong> zero. MUTE/AFL off.</li>
@@ -1057,7 +1057,7 @@
   <li><strong>At the laptop:</strong> open a recording app (Audacity, GarageBand, Reaper, whatever you've installed). In the app's audio device settings, set the <strong>input device</strong> to the Behringer (it appears as the same <em>USB Audio CODEC</em> or <em>Xenyx QX1204USB</em> that you set for output in Part 2). Set the input to <strong>stereo</strong>. Set the file format to <strong>WAV, 48 kHz, 24-bit</strong> (the studio's recording standard for non-Pro-Tools sessions).</li>
   <li><strong>Arm a stereo track and watch the input meters in the app.</strong> They should respond to the singer. If they don't move, walk back through the chain: Behringer ch 1-2 main mix faders up, Behringer master fader up, Toft Master fader up, Toft channel 1 L-R down, channel 1 fader up, singer singing.</li>
   <li><strong>Set the recording level.</strong> The target on the laptop's input meter is the same target you've been using all session: loudest peaks landing around -6 to -3 dBFS, never lighting the red clip indicator. If peaks are too hot, the first place to fix it is at the Toft master fader (not at the laptop's input gain, not at the Behringer ch 1-2 gain). The Toft master is the cleanest stage to control the recording level.</li>
-  <li><strong>Record.</strong> Press record in the app, count the singer in, capture the take. Listen back through the laptop's playback output (which is still routed to the Behringer; the playback comes back out the Control Room outs to Toft LINE 9-10, joining the reference track path). The recording captures dry vocal + wet reverb + wet compression, summed at the Toft master fader.</li>
+  <li><strong>Record.</strong> Press record in the app, count the singer in, capture the take. Listen back to the take. The laptop's playback returns through the Behringer and out the Control Room outs to Toft LINE 9-10, the same channels the reference track uses. Those channels stay off the master (L-R up), so press SOLO on channels 9 and 10 to hear the take on the control-room speakers. The recording captures dry vocal + wet reverb + wet compression, summed at the Toft master fader.</li>
 </ol>
 
 <p>If the take is good, save the file to <code>~/Documents/lastname/recordings/</code> with a clear filename. If you want another take, arm a fresh track and roll again. Multiple takes are cheap; comp the best moments after the session ends.</p>
