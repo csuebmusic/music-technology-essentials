@@ -250,6 +250,16 @@
     .signal-group > table:last-child {
       margin-bottom: 0;
     }
+    /* Walkthrough: lift the section header, and give each part header an
+       uppercase, slightly larger treatment so the parts read as milestones. */
+    h3#walkthrough {
+      font-size: 1.25rem;
+    }
+    h4[id^="part-"] {
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-size: 1.15rem;
+    }
   </style>
 </head>
 <body>
@@ -866,6 +876,8 @@
 </table>
 </div>
 
+<hr>
+
 <h3 id="walkthrough">Walkthrough: a vocal mic, end to end</h3>
 
 <p>This walkthrough follows one vocal from the moment it hits the mic to a finished, recorded take. A singer stands in the live room at a mic on a stand, singing along to a reference track that plays from a laptop on the console desk. Each part adds one stage to the chain and assumes the one before it is working. The singer hears the reference in their headphones, but it stays off the recording: what the laptop captures is the vocal, plus the reverb and compression you add along the way.</p>
@@ -951,6 +963,8 @@
   <li><strong>The principle behind all of this:</strong> the loudness was set at the ISA (the earliest stage that can do it cleanly), and the Toft's INPUT GAIN only had to nudge or do nothing. If the Toft meter was silent or weak in the previous step and required a large INPUT GAIN move to come up, that's a sign the ISA gain is too low; go back and add gain there, not at the Toft. The rule is always the same: set the loudness at the earliest stage in the chain that can do the job cleanly. Adding gain later (at the Toft trim, in a recording app after capture) amplifies noise along with the signal.</li>
 </ol>
 
+<hr>
+
 <h4 id="part-2-reference">Part 2 · Bring a reference track from the laptop into the Toft</h4>
 
 <p>The singer often wants to sing along to a reference track: a backing instrumental, a song they're covering, an arrangement playing back from a streaming service. The reference lives on the laptop and travels into the Toft via the Behringer. While you build the session, the reference plays on the master mix so you can hear it on the control-room monitors and balance it against the vocal. In Part 6, before you record, you'll mute the reference channels so it stays out of the recorded take while the singer keeps hearing it in the headphone cue (Part 3).</p>
@@ -989,6 +1003,8 @@
   <li><strong>Confirm the reference is in the room.</strong> With the monitors up from Part 1, you now hear the reference track alongside the vocal. Set the balance between them with the channel 9 and 10 faders against the vocal on channel 1. This is the working mix you'll build the reverb and compression around in Parts 4 and 5.</li>
 </ol>
 
+<hr>
+
 <h4 id="part-3-cue">Part 3 · Build the singer's headphone cue</h4>
 
 <p>The singer needs to hear themselves and the reference track in the headphones. The studio's headphone path is: Toft <strong>Aux 1 (L)</strong> and <strong>Aux 2 (R)</strong> → Rane MH4 → headphones in the live room. Whatever channels turn up their Aux 1 and Aux 2 knobs land in the singer's ears.</p>
@@ -1003,6 +1019,8 @@
 </ol>
 
 <p>The cue mix is now independent of the control-room mix. The engineer can mute the vocal in the room, ride a fader, or solo something for inspection, and the singer hears none of it. If a second player joins on a later take, plug their headphones into Rane jack 2 and set jack 2's level knob to their preference. Everyone shares the same blend with their own volume.</p>
+
+<hr>
 
 <h4 id="part-4-reverb">Part 4 · Add a reverb on the vocal via the Behringer FX</h4>
 
@@ -1037,6 +1055,8 @@
   <li><strong>Adjust to taste.</strong> Two controls for the wet/dry balance: the Aux 3-4 send on channel 1 (how much vocal goes to the reverb in the first place) and the channel 11-12 faders (how loud the wet return joins the master mix). Move whichever feels right for the gesture you want.</li>
 </ol>
 
+<hr>
+
 <h4 id="part-5-compression">Part 5 · Add parallel compression on the vocal via the SSL</h4>
 
 <p>Parallel compression keeps the dry vocal intact on channel 1 and adds a heavily compressed copy alongside it on the master mix. The blend is the engineer's main control: full dynamics on the dry, full squash on the wet, dialed together. Same send-and-return shape as the reverb in Part 4, with two differences: the send goes on Aux 5-6 (which run direct to the SSL), and the return arrives on Toft LINE 13-14.</p>
@@ -1059,6 +1079,8 @@
 </ol>
 
 <p>If you want to compare with-and-without, pull the channel 13 and 14 faders all the way down. The dry vocal stays untouched on channel 1; you're hearing it alone. Bring 13-14 back up and the squashed parallel layer fills in underneath. That's the move: blend, A/B, blend again.</p>
+
+<hr>
 
 <h4 id="part-6-record">Part 6 · Record the master mix to the laptop</h4>
 
