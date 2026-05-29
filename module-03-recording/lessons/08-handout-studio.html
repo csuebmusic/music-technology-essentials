@@ -974,19 +974,35 @@
 
 <h4 id="part-2-reference">Part 2 · Bring a reference track from the laptop into the Toft</h4>
 
-<p>The singer often wants to sing along to a reference track: a backing instrumental, a song they're covering, an arrangement playing back from a streaming service. The reference lives on the laptop and travels into the Toft via the Behringer. While you build the session, the reference plays on the master mix so you can hear it on the control-room monitors and balance it against the vocal. In Part 6, before you record, you'll mute the reference channels so it stays out of the recorded take while the singer keeps hearing it in the headphone cue (Part 3).</p>
+<p>The singer often wants to sing along to a reference track: a backing instrumental, the song they're covering, a rough mix of their arrangement. The reference lives on the laptop and travels into the Toft via the Behringer. While you build the session, the reference plays on the master mix so you can hear it on the control-room monitors and balance it against the vocal. In Part 6, before you record, you'll mute the reference channels so it stays out of the recorded take while the singer keeps hearing it in the headphone cue (Part 3).</p>
 
 <ol>
-  <li><strong>Plug the laptop in:</strong> connect a USB cable from the laptop to the USB port on the rear of the Behringer.</li>
-  <li><strong>At the laptop:</strong> open the system audio output settings and select the Behringer (it usually appears as <em>USB Audio CODEC</em> or <em>Xenyx QX1204USB</em>). Queue up the reference track in a player app and pause it. Set the laptop's system volume to a moderate level (around 50%).</li>
+  <li><strong>Plug in and set the interface format.</strong> Connect a USB cable from the laptop to the USB port on the rear of the Behringer. On the Mac, open <strong>Audio MIDI Setup</strong> (Applications &gt; Utilities), select the Behringer in the device list (it appears as <em>USB Audio CODEC</em> or <em>Xenyx QX1204USB</em>), and set its Format to <strong>48,000 Hz</strong> and <strong>16-bit</strong>. That is the most this interface offers; it does not do 24- or 32-bit. Make the Behringer the system output and input device while you are here.
+    <div class="callout">
+      <div class="callout-label">Match the project to the hardware</div>
+      <p>The rule for a clean recording: the project you record into runs at the same sample rate and bit depth as the interface you record through. This Behringer tops out at 48 kHz / 16-bit, so the whole session runs there: the reference, the project, and the take. Other gear sets other numbers (the phone recordings earlier in this module were 48 kHz / 24-bit; the Ableton sessions in Module 4 run at 48 kHz / 32-bit float). The skill is reading what the interface supports and matching the project to it, every time you sit down at new gear.</p>
+    </div>
+  </li>
+  <li><strong>Build the recording project.</strong> The reference and the recording both live in one project, set to match the interface.
+    <ul>
+      <li><strong>Bounce the reference</strong> from wherever it lives as a <strong>48 kHz / 16-bit stereo WAV</strong>.</li>
+      <li><strong>Open a new project</strong> in your DAW, set it to <strong>48 kHz / 16-bit</strong>, and point its audio device at the Behringer.</li>
+      <li><strong>Import the reference WAV</strong> onto a track. This is what the singer sings along to, and what plays out to the monitors and the cue.</li>
+      <li><strong>Save and name the project</strong> before you go further.</li>
+    </ul>
+    <div class="callout">
+      <div class="callout-label">Naming and organizing the session</div>
+      <p>Save the project in your own folder, <code>~/Documents/lastname/recordings/</code>, with a name that still makes sense months later: lowercase, words joined by hyphens, performer and date. A vocal session for a singer named Garcia on September 23 becomes <code>garcia-vocal-2026-09-23</code>. Name the tracks inside plainly too: <code>reference</code> for the backing track, <code>vocal</code> for what you record. Clear labels are what let you reopen the session later and know what everything is.</p>
+    </div>
+  </li>
   <li><strong>At the Behringer:</strong> route the USB return to the Control Room bus, which is what feeds the cable going into Toft LINE 9-10.
     <ul>
       <li><strong>USB/2-TR source button</strong> (on the Control Room source matrix): press it <strong>in</strong>. The laptop's audio now lands on the Control Room bus.</li>
       <li><strong>Important: do NOT press USB/2-TR TO MAIN.</strong> That button would route the laptop also onto the Behringer's Main Mix bus, which is the bus that will eventually carry the Toft's master mix back to the laptop for recording. If the laptop's reference ends up on the Main Mix, it gets recorded into itself (feedback loop on the recording side). Keep USB/2-TR TO MAIN off.</li>
-      <li><strong>Control Room level knob:</strong> set to <strong>noon</strong>. This is the level out of the Behringer's Control Room outputs, which run through the wall to Toft LINE 9-10.</li>
+      <li><strong>Control Room level knob:</strong> set to <strong>noon</strong>. This is the level out of the Behringer's Control Room outputs, which run to Toft LINE 9-10.</li>
     </ul>
   </li>
-  <li><strong>Press play on the laptop</strong> at low volume. The Behringer's main meters won't move (the reference isn't on the Main Mix), but the Toft's LINE 9 and 10 jacks are now receiving signal.</li>
+  <li><strong>Play the reference track in your project</strong> at a moderate level. The Behringer's main meters won't move (the reference isn't on the Main Mix), but the Toft's LINE 9 and 10 jacks are now receiving signal.</li>
   <li><strong>At the Toft, channels 9 and 10:</strong> set up both strips the same way you set up channel 1 in Part 1, with one key difference. Pause the laptop first so this happens silently.
     <ul>
       <li><strong>+48V, PHASE, I/P REV:</strong> all <strong>off</strong>.</li>
@@ -1115,8 +1131,8 @@
     </ul>
   </li>
   <li><strong>Confirm the Behringer's main mix is sending out USB.</strong> The QX1204USB sends its main mix bus back out USB to the laptop automatically; there's no separate switch. Watch the Behringer's main mix meter LEDs respond to the singer.</li>
-  <li><strong>At the laptop:</strong> open a recording app (Audacity, GarageBand, Reaper, whatever you've installed). In the app's audio device settings, set the <strong>input device</strong> to the Behringer (it appears as the same <em>USB Audio CODEC</em> or <em>Xenyx QX1204USB</em> that you set for output in Part 2). Set the input to <strong>stereo</strong>. Set the file format to <strong>WAV, 48 kHz, 24-bit</strong> (the studio's recording standard for non-Pro-Tools sessions).</li>
-  <li><strong>Arm a stereo track and watch the input meters in the app.</strong> They should respond to the singer. If they don't move, walk back through the chain: Behringer ch 1-2 main mix faders up, Behringer master fader up, Toft Master fader up, Toft channel 1 L-R down, channel 1 fader up, singer singing.</li>
+  <li><strong>At the laptop, in the recording project from Part 2:</strong> add a new <strong>stereo</strong> audio track and set its input to the Behringer (the same <em>USB Audio CODEC</em> / <em>Xenyx QX1204USB</em>). This track captures the Toft master mix arriving over USB. The project is already at 48 kHz / 16-bit, matching the interface, so the take records at the session rate.</li>
+  <li><strong>Arm that track and watch the input meters in the app.</strong> They should respond to the singer. If they don't move, walk back through the chain: Behringer ch 1-2 main mix faders up, Behringer master fader up, Toft Master fader up, Toft channel 1 L-R down, channel 1 fader up, singer singing.</li>
   <li><strong>Set the recording level.</strong> The target on the laptop's input meter is the same target you've been using all session: loudest peaks landing around -6 to -3 dBFS, never lighting the red clip indicator. If peaks are too hot, the first place to fix it is at the Toft master fader (not at the laptop's input gain, not at the Behringer ch 1-2 gain). The Toft master is the cleanest stage to control the recording level.</li>
   <li><strong>Record.</strong> Press record in the app, count the singer in, capture the take. Listen back to the take. The laptop's playback returns through the Behringer and out the Control Room outs to Toft LINE 9-10, the same channels the reference track uses. Un-mute channels 9 and 10 (you muted them to record) to hear the take on the control-room speakers. The recording captures dry vocal + wet reverb + wet compression, summed at the Toft master fader.</li>
 </ol>
@@ -1125,7 +1141,7 @@
 
 <h3 id="comping">Comping the takes</h3>
 
-<p>You rarely keep one take whole. Across several passes, one take has the strongest first verse, another nails the last chorus, a third has the cleanest line into the bridge. <strong>Comping</strong> (short for compositing) is building one final performance from the best moments of several takes. You do it after the session, in a DAW on your own machine, working from the WAV files you saved to <code>~/Documents/lastname/recordings/</code>.</p>
+<p>You rarely keep one take whole. Across several passes, one take has the strongest first verse, another nails the last chorus, a third has the cleanest line into the bridge. <strong>Comping</strong> (short for compositing) is building one final performance from the best moments of several takes. You do it after the session, in a DAW on your own machine, working from the takes you recorded in Part 6, in your session project under <code>~/Documents/lastname/recordings/</code>.</p>
 
 <p>The idea is the same in every DAW: stack the takes so they line up in time, then move through the song and choose the best take for each phrase. Two guides follow, one for Logic Pro and one for Ableton Live. Use whichever you have.</p>
 
@@ -1139,7 +1155,7 @@
   <li><strong>Pack them into a Take Folder.</strong> Select all the regions, Control-click one, and choose <strong>Folder &gt; Pack Take Folder</strong>. The takes collapse into a single folder, each take on its own lane inside.</li>
   <li><strong>Swipe to comp.</strong> Open the folder with its disclosure triangle to see every take. Drag across the part of any take you want to keep; the swiped section highlights and plays, and the comp row at the top of the folder shows the result. Move through the song phrase by phrase, swiping the best take for each.</li>
   <li><strong>Audition and refine.</strong> Play it back. To change a choice, swipe a different take over that span; Logic crossfades the join automatically, so phrase-to-phrase transitions stay smooth.</li>
-  <li><strong>Flatten and export.</strong> When the comp is right, open the Take Folder menu (top-left of the folder) and choose <strong>Flatten</strong> to render it to one region. Then bounce the project (File &gt; Bounce) or export the region (File &gt; Export) as a <strong>WAV at 48 kHz / 24-bit</strong>.</li>
+  <li><strong>Flatten and export.</strong> When the comp is right, open the Take Folder menu (top-left of the folder) and choose <strong>Flatten</strong> to render it to one region. Then bounce the project (File &gt; Bounce) or export the region (File &gt; Export) as a <strong>WAV at 48 kHz / 16-bit</strong>.</li>
 </ol>
 
 <h4 id="comp-ableton">Comping in Ableton Live</h4>
@@ -1151,7 +1167,7 @@
   <li><strong>Drop the takes into take lanes.</strong> Drag the first take WAV onto an audio track at bar 1. Right-click the track and choose <strong>Show Take Lanes</strong>. Drag each remaining take into its own take lane below, all starting at bar 1, so the takes sit stacked and aligned.</li>
   <li><strong>Comp phrase by phrase.</strong> In a take lane, drag a time range across the part you want; that selection is promoted to the main lane at the top and becomes the active take for that span. Work through the song, choosing the best take in each take lane for each phrase.</li>
   <li><strong>Audition and refine.</strong> Play the main lane back. To swap a choice, select the same range in a different take lane. If you hear a click at a join, drag the fade handle at the clip edge to add a short crossfade.</li>
-  <li><strong>Consolidate and export.</strong> Select the full span of the finished comp in the main lane and press <strong>Cmd-J</strong> (Ctrl-J on Windows) to consolidate it into one clip. Then File &gt; Export Audio/Video and render a <strong>WAV at 48 kHz / 24-bit</strong>.</li>
+  <li><strong>Consolidate and export.</strong> Select the full span of the finished comp in the main lane and press <strong>Cmd-J</strong> (Ctrl-J on Windows) to consolidate it into one clip. Then File &gt; Export Audio/Video and render a <strong>WAV at 48 kHz / 16-bit</strong>.</li>
 </ol>
 
 <footer class="handout-footer">
